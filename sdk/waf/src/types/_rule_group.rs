@@ -7,9 +7,12 @@
 /// <p>A collection of predefined rules that you can add to a web ACL.</p>
 /// <p>Rule groups are subject to the following limits:</p>
 /// <ul>
-/// <li><p>Three rule groups per account. You can request an increase to this limit by contacting customer support.</p></li>
-/// <li><p>One rule group per web ACL.</p></li>
-/// <li><p>Ten rules per rule group.</p></li>
+/// <li>
+/// <p>Three rule groups per account. You can request an increase to this limit by contacting customer support.</p></li>
+/// <li>
+/// <p>One rule group per web ACL.</p></li>
+/// <li>
+/// <p>Ten rules per rule group.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

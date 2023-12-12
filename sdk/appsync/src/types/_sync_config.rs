@@ -7,15 +7,20 @@
 pub struct SyncConfig {
     /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
     /// <ul>
-    /// <li><p><b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p></li>
-    /// <li><p><b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p></li>
-    /// <li><p><b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p></li>
+    /// <li>
+    /// <p><b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p></li>
+    /// <li>
+    /// <p><b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p></li>
+    /// <li>
+    /// <p><b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p></li>
     /// </ul>
     pub conflict_handler: ::std::option::Option<crate::types::ConflictHandlerType>,
     /// <p>The Conflict Detection strategy to use.</p>
     /// <ul>
-    /// <li><p><b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p></li>
-    /// <li><p><b>NONE</b>: Do not detect conflicts when invoking this resolver.</p></li>
+    /// <li>
+    /// <p><b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p></li>
+    /// <li>
+    /// <p><b>NONE</b>: Do not detect conflicts when invoking this resolver.</p></li>
     /// </ul>
     pub conflict_detection: ::std::option::Option<crate::types::ConflictDetectionType>,
     /// <p>The <code>LambdaConflictHandlerConfig</code> when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
@@ -24,17 +29,22 @@ pub struct SyncConfig {
 impl SyncConfig {
     /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
     /// <ul>
-    /// <li><p><b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p></li>
-    /// <li><p><b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p></li>
-    /// <li><p><b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p></li>
+    /// <li>
+    /// <p><b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p></li>
+    /// <li>
+    /// <p><b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p></li>
+    /// <li>
+    /// <p><b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p></li>
     /// </ul>
     pub fn conflict_handler(&self) -> ::std::option::Option<&crate::types::ConflictHandlerType> {
         self.conflict_handler.as_ref()
     }
     /// <p>The Conflict Detection strategy to use.</p>
     /// <ul>
-    /// <li><p><b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p></li>
-    /// <li><p><b>NONE</b>: Do not detect conflicts when invoking this resolver.</p></li>
+    /// <li>
+    /// <p><b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p></li>
+    /// <li>
+    /// <p><b>NONE</b>: Do not detect conflicts when invoking this resolver.</p></li>
     /// </ul>
     pub fn conflict_detection(&self) -> ::std::option::Option<&crate::types::ConflictDetectionType> {
         self.conflict_detection.as_ref()
@@ -62,9 +72,12 @@ pub struct SyncConfigBuilder {
 impl SyncConfigBuilder {
     /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
     /// <ul>
-    /// <li><p><b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p></li>
-    /// <li><p><b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p></li>
-    /// <li><p><b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p></li>
+    /// <li>
+    /// <p><b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p></li>
+    /// <li>
+    /// <p><b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p></li>
+    /// <li>
+    /// <p><b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p></li>
     /// </ul>
     pub fn conflict_handler(mut self, input: crate::types::ConflictHandlerType) -> Self {
         self.conflict_handler = ::std::option::Option::Some(input);
@@ -72,9 +85,12 @@ impl SyncConfigBuilder {
     }
     /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
     /// <ul>
-    /// <li><p><b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p></li>
-    /// <li><p><b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p></li>
-    /// <li><p><b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p></li>
+    /// <li>
+    /// <p><b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p></li>
+    /// <li>
+    /// <p><b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p></li>
+    /// <li>
+    /// <p><b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p></li>
     /// </ul>
     pub fn set_conflict_handler(mut self, input: ::std::option::Option<crate::types::ConflictHandlerType>) -> Self {
         self.conflict_handler = input;
@@ -82,17 +98,22 @@ impl SyncConfigBuilder {
     }
     /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
     /// <ul>
-    /// <li><p><b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p></li>
-    /// <li><p><b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p></li>
-    /// <li><p><b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p></li>
+    /// <li>
+    /// <p><b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.</p></li>
+    /// <li>
+    /// <p><b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p></li>
+    /// <li>
+    /// <p><b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p></li>
     /// </ul>
     pub fn get_conflict_handler(&self) -> &::std::option::Option<crate::types::ConflictHandlerType> {
         &self.conflict_handler
     }
     /// <p>The Conflict Detection strategy to use.</p>
     /// <ul>
-    /// <li><p><b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p></li>
-    /// <li><p><b>NONE</b>: Do not detect conflicts when invoking this resolver.</p></li>
+    /// <li>
+    /// <p><b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p></li>
+    /// <li>
+    /// <p><b>NONE</b>: Do not detect conflicts when invoking this resolver.</p></li>
     /// </ul>
     pub fn conflict_detection(mut self, input: crate::types::ConflictDetectionType) -> Self {
         self.conflict_detection = ::std::option::Option::Some(input);
@@ -100,8 +121,10 @@ impl SyncConfigBuilder {
     }
     /// <p>The Conflict Detection strategy to use.</p>
     /// <ul>
-    /// <li><p><b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p></li>
-    /// <li><p><b>NONE</b>: Do not detect conflicts when invoking this resolver.</p></li>
+    /// <li>
+    /// <p><b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p></li>
+    /// <li>
+    /// <p><b>NONE</b>: Do not detect conflicts when invoking this resolver.</p></li>
     /// </ul>
     pub fn set_conflict_detection(mut self, input: ::std::option::Option<crate::types::ConflictDetectionType>) -> Self {
         self.conflict_detection = input;
@@ -109,8 +132,10 @@ impl SyncConfigBuilder {
     }
     /// <p>The Conflict Detection strategy to use.</p>
     /// <ul>
-    /// <li><p><b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p></li>
-    /// <li><p><b>NONE</b>: Do not detect conflicts when invoking this resolver.</p></li>
+    /// <li>
+    /// <p><b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p></li>
+    /// <li>
+    /// <p><b>NONE</b>: Do not detect conflicts when invoking this resolver.</p></li>
     /// </ul>
     pub fn get_conflict_detection(&self) -> &::std::option::Option<crate::types::ConflictDetectionType> {
         &self.conflict_detection

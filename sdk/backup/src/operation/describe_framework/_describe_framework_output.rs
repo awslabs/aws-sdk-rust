@@ -18,10 +18,14 @@ pub struct DescribeFrameworkOutput {
     pub deployment_status: ::std::option::Option<::std::string::String>,
     /// <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p></li>
-    /// <li><p><code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p></li>
-    /// <li><p><code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p></li>
-    /// <li><p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
     /// </ul>
     pub framework_status: ::std::option::Option<::std::string::String>,
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>DescribeFrameworkOutput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
@@ -58,10 +62,14 @@ impl DescribeFrameworkOutput {
     }
     /// <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p></li>
-    /// <li><p><code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p></li>
-    /// <li><p><code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p></li>
-    /// <li><p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
     /// </ul>
     pub fn framework_status(&self) -> ::std::option::Option<&str> {
         self.framework_status.as_deref()
@@ -193,10 +201,14 @@ impl DescribeFrameworkOutputBuilder {
     }
     /// <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p></li>
-    /// <li><p><code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p></li>
-    /// <li><p><code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p></li>
-    /// <li><p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
     /// </ul>
     pub fn framework_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_status = ::std::option::Option::Some(input.into());
@@ -204,10 +216,14 @@ impl DescribeFrameworkOutputBuilder {
     }
     /// <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p></li>
-    /// <li><p><code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p></li>
-    /// <li><p><code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p></li>
-    /// <li><p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
     /// </ul>
     pub fn set_framework_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_status = input;
@@ -215,10 +231,14 @@ impl DescribeFrameworkOutputBuilder {
     }
     /// <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p></li>
-    /// <li><p><code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p></li>
-    /// <li><p><code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p></li>
-    /// <li><p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p></li>
+    /// <li>
+    /// <p><code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p></li>
     /// </ul>
     pub fn get_framework_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.framework_status

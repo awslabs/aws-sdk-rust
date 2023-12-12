@@ -22,7 +22,7 @@ impl DescribeAggregateComplianceByConfigRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAggregateComplianceByConfigRules`.
 ///
-/// <p>Returns a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant rules. Does not display rules that do not have compliance results.</p> <note>
+/// <p>Returns a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant rules. Does not display rules that do not have compliance results.</p><note>
 /// <p>The results can return an empty result page, but if you have a <code>nextToken</code>, the results are displayed on the next page.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -23,9 +23,12 @@ pub enum Error {
     ResourceTypeNotSupportedException(crate::types::error::ResourceTypeNotSupportedException),
     /// <p>The specified S3 bucket does not belong to the S3 region in which the service is running. The following regions are supported:</p>
     /// <ul>
-    /// <li><p>IAD/us-east-1</p></li>
-    /// <li><p>PDX/us-west-2</p></li>
-    /// <li><p>DUB/eu-west-1</p></li>
+    /// <li>
+    /// <p>IAD/us-east-1</p></li>
+    /// <li>
+    /// <p>PDX/us-west-2</p></li>
+    /// <li>
+    /// <p>DUB/eu-west-1</p></li>
     /// </ul>
     S3LocationNotInServiceRegionException(crate::types::error::S3LocationNotInServiceRegionException),
     /// <p>The specified account does not have a subscription to Amazon S3.</p>

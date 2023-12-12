@@ -22,7 +22,7 @@ impl DeleteUserPermissionsBoundaryInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteUserPermissionsBoundary`.
 ///
-/// <p>Deletes the permissions boundary for the specified IAM user.</p> <important>
+/// <p>Deletes the permissions boundary for the specified IAM user.</p><important>
 /// <p>Deleting the permissions boundary for a user might increase its permissions by allowing the user to perform all the actions granted in its permissions policies.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

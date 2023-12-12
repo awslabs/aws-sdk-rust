@@ -11,7 +11,7 @@ pub struct ConformancePackEvaluationFilters {
     pub compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
     /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
-    /// <p>Filters the results by resource IDs.</p> <note>
+    /// <p>Filters the results by resource IDs.</p><note>
     /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
     /// </note>
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -32,7 +32,7 @@ impl ConformancePackEvaluationFilters {
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>Filters the results by resource IDs.</p> <note>
+    /// <p>Filters the results by resource IDs.</p><note>
     /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
     /// </note>
     ///
@@ -113,7 +113,7 @@ impl ConformancePackEvaluationFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
-    /// <p>Filters the results by resource IDs.</p> <note>
+    /// <p>Filters the results by resource IDs.</p><note>
     /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
     /// </note>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,14 +122,14 @@ impl ConformancePackEvaluationFiltersBuilder {
         self.resource_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters the results by resource IDs.</p> <note>
+    /// <p>Filters the results by resource IDs.</p><note>
     /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
     /// </note>
     pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
-    /// <p>Filters the results by resource IDs.</p> <note>
+    /// <p>Filters the results by resource IDs.</p><note>
     /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
     /// </note>
     pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

@@ -22,7 +22,7 @@ impl GetDeploymentInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDeployment`.
 ///
-/// <p>Gets information about a deployment.</p> <note>
+/// <p>Gets information about a deployment.</p><note>
 /// <p>The <code>content</code> property of the <code>appSpecContent</code> object in the returned revision is always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code> property of the returned <code>appSpecContent</code> object to get the content of the deployment’s AppSpec file.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

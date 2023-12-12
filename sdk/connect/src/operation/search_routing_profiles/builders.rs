@@ -170,21 +170,21 @@ impl SearchRoutingProfilesFluentBuilder {
     pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::RoutingProfileSearchFilter> {
         self.inner.get_search_filter()
     }
-    /// <p>The search criteria to be used to return routing profiles.</p> <note>
+    /// <p>The search criteria to be used to return routing profiles.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn search_criteria(mut self, input: crate::types::RoutingProfileSearchCriteria) -> Self {
         self.inner = self.inner.search_criteria(input);
         self
     }
-    /// <p>The search criteria to be used to return routing profiles.</p> <note>
+    /// <p>The search criteria to be used to return routing profiles.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::RoutingProfileSearchCriteria>) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
     }
-    /// <p>The search criteria to be used to return routing profiles.</p> <note>
+    /// <p>The search criteria to be used to return routing profiles.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::RoutingProfileSearchCriteria> {

@@ -31,10 +31,14 @@ impl UpdateRuleGroupInputBuilder {
 /// <p>You can have a maximum of ten rules per rule group.</p>
 /// <p>To create and configure a <code>RuleGroup</code>, perform the following steps:</p>
 /// <ol>
-/// <li><p>Create and update the <code>Rules</code> that you want to include in the <code>RuleGroup</code>. See <code>CreateRule</code>.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateRuleGroup</code> request.</p></li>
-/// <li><p>Submit an <code>UpdateRuleGroup</code> request to add <code>Rules</code> to the <code>RuleGroup</code>.</p></li>
-/// <li><p>Create and update a <code>WebACL</code> that contains the <code>RuleGroup</code>. See <code>CreateWebACL</code>.</p></li>
+/// <li>
+/// <p>Create and update the <code>Rules</code> that you want to include in the <code>RuleGroup</code>. See <code>CreateRule</code>.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateRuleGroup</code> request.</p></li>
+/// <li>
+/// <p>Submit an <code>UpdateRuleGroup</code> request to add <code>Rules</code> to the <code>RuleGroup</code>.</p></li>
+/// <li>
+/// <p>Create and update a <code>WebACL</code> that contains the <code>RuleGroup</code>. See <code>CreateWebACL</code>.</p></li>
 /// </ol>
 /// <p>If you want to replace one <code>Rule</code> with another, you delete the existing one and add the new one.</p>
 /// <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.</p>

@@ -8,11 +8,16 @@ pub struct LoadBalancerTargetGroupState {
     pub load_balancer_target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the target group.</p>
     /// <ul>
-    /// <li><p><code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p></li>
-    /// <li><p><code>Added</code> - All Auto Scaling instances are registered with the target group.</p></li>
-    /// <li><p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
-    /// <li><p><code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li><p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
+    /// <li>
+    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p></li>
+    /// <li>
+    /// <p><code>Added</code> - All Auto Scaling instances are registered with the target group.</p></li>
+    /// <li>
+    /// <p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
+    /// <li>
+    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
+    /// <li>
+    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
     /// </ul>
     pub state: ::std::option::Option<::std::string::String>,
 }
@@ -23,11 +28,16 @@ impl LoadBalancerTargetGroupState {
     }
     /// <p>The state of the target group.</p>
     /// <ul>
-    /// <li><p><code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p></li>
-    /// <li><p><code>Added</code> - All Auto Scaling instances are registered with the target group.</p></li>
-    /// <li><p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
-    /// <li><p><code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li><p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
+    /// <li>
+    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p></li>
+    /// <li>
+    /// <p><code>Added</code> - All Auto Scaling instances are registered with the target group.</p></li>
+    /// <li>
+    /// <p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
+    /// <li>
+    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
+    /// <li>
+    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
@@ -64,11 +74,16 @@ impl LoadBalancerTargetGroupStateBuilder {
     }
     /// <p>The state of the target group.</p>
     /// <ul>
-    /// <li><p><code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p></li>
-    /// <li><p><code>Added</code> - All Auto Scaling instances are registered with the target group.</p></li>
-    /// <li><p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
-    /// <li><p><code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li><p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
+    /// <li>
+    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p></li>
+    /// <li>
+    /// <p><code>Added</code> - All Auto Scaling instances are registered with the target group.</p></li>
+    /// <li>
+    /// <p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
+    /// <li>
+    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
+    /// <li>
+    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
     /// </ul>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -76,11 +91,16 @@ impl LoadBalancerTargetGroupStateBuilder {
     }
     /// <p>The state of the target group.</p>
     /// <ul>
-    /// <li><p><code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p></li>
-    /// <li><p><code>Added</code> - All Auto Scaling instances are registered with the target group.</p></li>
-    /// <li><p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
-    /// <li><p><code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li><p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
+    /// <li>
+    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p></li>
+    /// <li>
+    /// <p><code>Added</code> - All Auto Scaling instances are registered with the target group.</p></li>
+    /// <li>
+    /// <p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
+    /// <li>
+    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
+    /// <li>
+    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
@@ -88,11 +108,16 @@ impl LoadBalancerTargetGroupStateBuilder {
     }
     /// <p>The state of the target group.</p>
     /// <ul>
-    /// <li><p><code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p></li>
-    /// <li><p><code>Added</code> - All Auto Scaling instances are registered with the target group.</p></li>
-    /// <li><p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
-    /// <li><p><code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
-    /// <li><p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
+    /// <li>
+    /// <p><code>Adding</code> - The Auto Scaling instances are being registered with the target group.</p></li>
+    /// <li>
+    /// <p><code>Added</code> - All Auto Scaling instances are registered with the target group.</p></li>
+    /// <li>
+    /// <p><code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.</p></li>
+    /// <li>
+    /// <p><code>Removing</code> - The Auto Scaling instances are being deregistered from the target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p></li>
+    /// <li>
+    /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state

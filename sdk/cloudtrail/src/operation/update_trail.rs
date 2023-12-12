@@ -273,10 +273,14 @@ pub enum UpdateTrailError {
     /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
     /// <p>You can:</p>
     /// <ul>
-    /// <li><p>Specify a valid number of event selectors (1 to 5) for a trail.</p></li>
-    /// <li><p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p></li>
-    /// <li><p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p></li>
-    /// <li><p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p></li>
+    /// <li>
+    /// <p>Specify a valid number of event selectors (1 to 5) for a trail.</p></li>
+    /// <li>
+    /// <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p></li>
+    /// <li>
+    /// <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p></li>
+    /// <li>
+    /// <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p></li>
     /// </ul>
     InvalidEventSelectorsException(crate::types::error::InvalidEventSelectorsException),
     /// <p>This exception is thrown when an operation is called on a trail from a Region other than the Region in which the trail was created.</p>
@@ -295,11 +299,16 @@ pub enum UpdateTrailError {
     InvalidSnsTopicNameException(crate::types::error::InvalidSnsTopicNameException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li><p>Be between 3 and 128 characters</p></li>
-    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p></li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     InvalidTrailNameException(crate::types::error::InvalidTrailNameException),
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be updated.</p>

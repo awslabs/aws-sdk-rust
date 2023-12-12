@@ -5,8 +5,10 @@
 pub struct ListOriginRequestPoliciesInput {
     /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
-    /// <li><p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::OriginRequestPolicyType>,
     /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
@@ -17,8 +19,10 @@ pub struct ListOriginRequestPoliciesInput {
 impl ListOriginRequestPoliciesInput {
     /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
-    /// <li><p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyType> {
         self.r#type.as_ref()
@@ -50,8 +54,10 @@ pub struct ListOriginRequestPoliciesInputBuilder {
 impl ListOriginRequestPoliciesInputBuilder {
     /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
-    /// <li><p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::OriginRequestPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -59,8 +65,10 @@ impl ListOriginRequestPoliciesInputBuilder {
     }
     /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
-    /// <li><p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyType>) -> Self {
         self.r#type = input;
@@ -68,8 +76,10 @@ impl ListOriginRequestPoliciesInputBuilder {
     }
     /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
-    /// <li><p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
+    /// <li>
+    /// <p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyType> {
         &self.r#type

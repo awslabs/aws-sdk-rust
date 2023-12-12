@@ -17,7 +17,7 @@ pub struct Record {
     pub time: ::std::option::Option<::std::string::String>,
     /// <p>The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.</p>
     pub time_unit: ::std::option::Option<crate::types::TimeUnit>,
-    /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p> <note>
+    /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p><note>
     /// <p><code>Version</code> must be <code>1</code> or greater, or you will receive a <code>ValidationException</code> error.</p>
     /// </note>
     pub version: ::std::option::Option<i64>,
@@ -52,7 +52,7 @@ impl Record {
     pub fn time_unit(&self) -> ::std::option::Option<&crate::types::TimeUnit> {
         self.time_unit.as_ref()
     }
-    /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p> <note>
+    /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p><note>
     /// <p><code>Version</code> must be <code>1</code> or greater, or you will receive a <code>ValidationException</code> error.</p>
     /// </note>
     pub fn version(&self) -> ::std::option::Option<i64> {
@@ -177,21 +177,21 @@ impl RecordBuilder {
     pub fn get_time_unit(&self) -> &::std::option::Option<crate::types::TimeUnit> {
         &self.time_unit
     }
-    /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p> <note>
+    /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p><note>
     /// <p><code>Version</code> must be <code>1</code> or greater, or you will receive a <code>ValidationException</code> error.</p>
     /// </note>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p> <note>
+    /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p><note>
     /// <p><code>Version</code> must be <code>1</code> or greater, or you will receive a <code>ValidationException</code> error.</p>
     /// </note>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
     }
-    /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p> <note>
+    /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p><note>
     /// <p><code>Version</code> must be <code>1</code> or greater, or you will receive a <code>ValidationException</code> error.</p>
     /// </note>
     pub fn get_version(&self) -> &::std::option::Option<i64> {

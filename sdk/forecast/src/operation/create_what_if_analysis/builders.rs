@@ -143,9 +143,12 @@ impl CreateWhatIfAnalysisFluentBuilder {
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>Format</code></p></li>
-    /// <li><p><code>Schema</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>Format</code></p></li>
+    /// <li>
+    /// <p><code>Schema</code></p></li>
     /// </ul>
     pub fn time_series_selector(mut self, input: crate::types::TimeSeriesSelector) -> Self {
         self.inner = self.inner.time_series_selector(input);
@@ -154,9 +157,12 @@ impl CreateWhatIfAnalysisFluentBuilder {
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>Format</code></p></li>
-    /// <li><p><code>Schema</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>Format</code></p></li>
+    /// <li>
+    /// <p><code>Schema</code></p></li>
     /// </ul>
     pub fn set_time_series_selector(mut self, input: ::std::option::Option<crate::types::TimeSeriesSelector>) -> Self {
         self.inner = self.inner.set_time_series_selector(input);
@@ -165,9 +171,12 @@ impl CreateWhatIfAnalysisFluentBuilder {
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>Format</code></p></li>
-    /// <li><p><code>Schema</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>Format</code></p></li>
+    /// <li>
+    /// <p><code>Schema</code></p></li>
     /// </ul>
     pub fn get_time_series_selector(&self) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
         self.inner.get_time_series_selector()

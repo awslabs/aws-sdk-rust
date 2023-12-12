@@ -22,7 +22,7 @@ impl GetRolePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetRolePolicy`.
 ///
-/// <p>Retrieves the specified inline policy document that is embedded with the specified IAM role.</p> <note>
+/// <p>Retrieves the specified inline policy document that is embedded with the specified IAM role.</p><note>
 /// <p>Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON text. For example, if you use Java, you can use the <code>decode</code> method of the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages and SDKs provide similar functionality.</p>
 /// </note>
 /// <p>An IAM role can also have managed policies attached to it. To retrieve a managed policy document that is attached to a role, use <code>GetPolicy</code> to determine the policy's default version, then use <code>GetPolicyVersion</code> to retrieve the policy document.</p>

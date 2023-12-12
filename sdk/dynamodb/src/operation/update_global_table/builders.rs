@@ -22,7 +22,7 @@ impl UpdateGlobalTableInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateGlobalTable`.
 ///
-/// <p>Adds or removes replicas in the specified global table. The global table must already exist to be able to use this operation. Any replica to be added must be empty, have the same name as the global table, have the same key schema, have DynamoDB Streams enabled, and have the same provisioned and maximum write capacity units.</p> <important>
+/// <p>Adds or removes replicas in the specified global table. The global table must already exist to be able to use this operation. Any replica to be added must be empty, have the same name as the global table, have the same key schema, have DynamoDB Streams enabled, and have the same provisioned and maximum write capacity units.</p><important>
 /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility, higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining the version</a>. To update existing global tables from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html"> Updating global tables</a>.</p>
 /// </important> <note>
 /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version 2017.11.29</a> of global tables. If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a> instead.</p>
@@ -30,9 +30,12 @@ impl UpdateGlobalTableInputBuilder {
 /// </note>
 /// <p>If global secondary indexes are specified, then the following conditions must also be met:</p>
 /// <ul>
-/// <li><p>The global secondary indexes must have the same name.</p></li>
-/// <li><p>The global secondary indexes must have the same hash key and sort key (if present).</p></li>
-/// <li><p>The global secondary indexes must have the same provisioned and maximum write capacity units.</p></li>
+/// <li>
+/// <p>The global secondary indexes must have the same name.</p></li>
+/// <li>
+/// <p>The global secondary indexes must have the same hash key and sort key (if present).</p></li>
+/// <li>
+/// <p>The global secondary indexes must have the same provisioned and maximum write capacity units.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGlobalTableFluentBuilder {

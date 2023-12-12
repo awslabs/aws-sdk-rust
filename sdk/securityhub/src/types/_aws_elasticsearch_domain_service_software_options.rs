@@ -18,11 +18,16 @@ pub struct AwsElasticsearchDomainServiceSoftwareOptions {
     pub update_available: ::std::option::Option<bool>,
     /// <p>The status of the service software update. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>ELIGIBLE</code></p></li>
-    /// <li><p><code>IN_PROGRESS</code></p></li>
-    /// <li><p><code>NOT_ELIGIBLE</code></p></li>
-    /// <li><p><code>PENDING_UPDATE</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>ELIGIBLE</code></p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>NOT_ELIGIBLE</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_UPDATE</code></p></li>
     /// </ul>
     pub update_status: ::std::option::Option<::std::string::String>,
 }
@@ -53,11 +58,16 @@ impl AwsElasticsearchDomainServiceSoftwareOptions {
     }
     /// <p>The status of the service software update. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>ELIGIBLE</code></p></li>
-    /// <li><p><code>IN_PROGRESS</code></p></li>
-    /// <li><p><code>NOT_ELIGIBLE</code></p></li>
-    /// <li><p><code>PENDING_UPDATE</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>ELIGIBLE</code></p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>NOT_ELIGIBLE</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_UPDATE</code></p></li>
     /// </ul>
     pub fn update_status(&self) -> ::std::option::Option<&str> {
         self.update_status.as_deref()
@@ -169,11 +179,16 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     }
     /// <p>The status of the service software update. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>ELIGIBLE</code></p></li>
-    /// <li><p><code>IN_PROGRESS</code></p></li>
-    /// <li><p><code>NOT_ELIGIBLE</code></p></li>
-    /// <li><p><code>PENDING_UPDATE</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>ELIGIBLE</code></p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>NOT_ELIGIBLE</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_UPDATE</code></p></li>
     /// </ul>
     pub fn update_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_status = ::std::option::Option::Some(input.into());
@@ -181,11 +196,16 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     }
     /// <p>The status of the service software update. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>ELIGIBLE</code></p></li>
-    /// <li><p><code>IN_PROGRESS</code></p></li>
-    /// <li><p><code>NOT_ELIGIBLE</code></p></li>
-    /// <li><p><code>PENDING_UPDATE</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>ELIGIBLE</code></p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>NOT_ELIGIBLE</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_UPDATE</code></p></li>
     /// </ul>
     pub fn set_update_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_status = input;
@@ -193,11 +213,16 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     }
     /// <p>The status of the service software update. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>ELIGIBLE</code></p></li>
-    /// <li><p><code>IN_PROGRESS</code></p></li>
-    /// <li><p><code>NOT_ELIGIBLE</code></p></li>
-    /// <li><p><code>PENDING_UPDATE</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>ELIGIBLE</code></p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>NOT_ELIGIBLE</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_UPDATE</code></p></li>
     /// </ul>
     pub fn get_update_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.update_status

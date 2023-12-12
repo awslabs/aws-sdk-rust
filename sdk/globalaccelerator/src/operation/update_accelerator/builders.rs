@@ -24,12 +24,16 @@ impl UpdateAcceleratorInputBuilder {
 ///
 /// <p>Update an accelerator to make changes, such as the following:</p>
 /// <ul>
-/// <li><p>Change the name of the accelerator.</p></li>
-/// <li><p>Disable the accelerator so that it no longer accepts or routes traffic, or so that you can delete it.</p></li>
-/// <li><p>Enable the accelerator, if it is disabled.</p></li>
-/// <li><p>Change the IP address type to dual-stack if it is IPv4, or change the IP address type to IPv4 if it's dual-stack.</p></li>
+/// <li>
+/// <p>Change the name of the accelerator.</p></li>
+/// <li>
+/// <p>Disable the accelerator so that it no longer accepts or routes traffic, or so that you can delete it.</p></li>
+/// <li>
+/// <p>Enable the accelerator, if it is disabled.</p></li>
+/// <li>
+/// <p>Change the IP address type to dual-stack if it is IPv4, or change the IP address type to IPv4 if it's dual-stack.</p></li>
 /// </ul>
-/// <p>Be aware that static IP addresses remain assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you delete the accelerator, you lose the static IP addresses that are assigned to it, so you can no longer route traffic by using them.</p> <important>
+/// <p>Be aware that static IP addresses remain assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you delete the accelerator, you lose the static IP addresses that are assigned to it, so you can no longer route traffic by using them.</p><important>
 /// <p>Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for example, specify <code>--region us-west-2</code> on Amazon Web Services CLI commands.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

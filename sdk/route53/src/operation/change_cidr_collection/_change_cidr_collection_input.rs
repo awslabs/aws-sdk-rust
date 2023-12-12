@@ -8,8 +8,10 @@ pub struct ChangeCidrCollectionInput {
     /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
     /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update:</p>
     /// <ul>
-    /// <li><p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p></li>
-    /// <li><p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error.</p></li>
+    /// <li>
+    /// <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p></li>
+    /// <li>
+    /// <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error.</p></li>
     /// </ul>
     pub collection_version: ::std::option::Option<i64>,
     /// <p>Information about changes to a CIDR collection.</p>
@@ -23,8 +25,10 @@ impl ChangeCidrCollectionInput {
     /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
     /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update:</p>
     /// <ul>
-    /// <li><p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p></li>
-    /// <li><p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error.</p></li>
+    /// <li>
+    /// <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p></li>
+    /// <li>
+    /// <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error.</p></li>
     /// </ul>
     pub fn collection_version(&self) -> ::std::option::Option<i64> {
         self.collection_version
@@ -70,8 +74,10 @@ impl ChangeCidrCollectionInputBuilder {
     /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
     /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update:</p>
     /// <ul>
-    /// <li><p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p></li>
-    /// <li><p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error.</p></li>
+    /// <li>
+    /// <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p></li>
+    /// <li>
+    /// <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error.</p></li>
     /// </ul>
     pub fn collection_version(mut self, input: i64) -> Self {
         self.collection_version = ::std::option::Option::Some(input);
@@ -80,8 +86,10 @@ impl ChangeCidrCollectionInputBuilder {
     /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
     /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update:</p>
     /// <ul>
-    /// <li><p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p></li>
-    /// <li><p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error.</p></li>
+    /// <li>
+    /// <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p></li>
+    /// <li>
+    /// <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error.</p></li>
     /// </ul>
     pub fn set_collection_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.collection_version = input;
@@ -90,8 +98,10 @@ impl ChangeCidrCollectionInputBuilder {
     /// <p>A sequential counter that Amazon Route&nbsp;53 sets to 1 when you create a collection and increments it by 1 each time you update the collection.</p>
     /// <p>We recommend that you use <code>ListCidrCollection</code> to get the current value of <code>CollectionVersion</code> for the collection that you want to update, and then include that value with the change request. This prevents Route&nbsp;53 from overwriting an intervening update:</p>
     /// <ul>
-    /// <li><p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p></li>
-    /// <li><p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error.</p></li>
+    /// <li>
+    /// <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p></li>
+    /// <li>
+    /// <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error.</p></li>
     /// </ul>
     pub fn get_collection_version(&self) -> &::std::option::Option<i64> {
         &self.collection_version

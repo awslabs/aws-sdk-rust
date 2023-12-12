@@ -22,7 +22,7 @@ impl DeleteMapInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteMap`.
 ///
-/// <p>Deletes a map resource from your Amazon Web Services account.</p> <note>
+/// <p>Deletes a map resource from your Amazon Web Services account.</p><note>
 /// <p>This operation deletes the resource permanently. If the map is being used in an application, the map may not render.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

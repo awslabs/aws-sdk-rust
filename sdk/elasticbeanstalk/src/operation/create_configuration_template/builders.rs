@@ -26,9 +26,12 @@ impl CreateConfigurationTemplateInputBuilder {
 /// <p>Templates aren't associated with any environment. The <code>EnvironmentName</code> response element is always <code>null</code>.</p>
 /// <p>Related Topics</p>
 /// <ul>
-/// <li><p><code>DescribeConfigurationOptions</code></p></li>
-/// <li><p><code>DescribeConfigurationSettings</code></p></li>
-/// <li><p><code>ListAvailableSolutionStacks</code></p></li>
+/// <li>
+/// <p><code>DescribeConfigurationOptions</code></p></li>
+/// <li>
+/// <p><code>DescribeConfigurationSettings</code></p></li>
+/// <li>
+/// <p><code>ListAvailableSolutionStacks</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConfigurationTemplateFluentBuilder {
@@ -166,21 +169,21 @@ impl CreateConfigurationTemplateFluentBuilder {
     pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_solution_stack_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><note>
     /// <p>If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.</p>
     /// </note>
     pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><note>
     /// <p>If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.</p>
     /// </note>
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><note>
     /// <p>If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.</p>
     /// </note>
     pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {

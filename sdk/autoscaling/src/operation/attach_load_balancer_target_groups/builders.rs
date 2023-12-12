@@ -28,9 +28,12 @@ impl AttachLoadBalancerTargetGroupsInputBuilder {
 /// <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
 /// <p>This operation is used with the following load balancer types:</p>
 /// <ul>
-/// <li><p>Application Load Balancer - Operates at the application layer (layer 7) and supports HTTP and HTTPS.</p></li>
-/// <li><p>Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP, TLS, and UDP.</p></li>
-/// <li><p>Gateway Load Balancer - Operates at the network layer (layer 3).</p></li>
+/// <li>
+/// <p>Application Load Balancer - Operates at the application layer (layer 7) and supports HTTP and HTTPS.</p></li>
+/// <li>
+/// <p>Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP, TLS, and UDP.</p></li>
+/// <li>
+/// <p>Gateway Load Balancer - Operates at the network layer (layer 3).</p></li>
 /// </ul>
 /// <p>To describe the target groups for an Auto Scaling group, call the <code>DescribeLoadBalancerTargetGroups</code> API. To detach the target group from the Auto Scaling group, call the <code>DetachLoadBalancerTargetGroups</code> API.</p>
 /// <p>This operation is additive and does not detach existing target groups or Classic Load Balancers from the Auto Scaling group.</p>

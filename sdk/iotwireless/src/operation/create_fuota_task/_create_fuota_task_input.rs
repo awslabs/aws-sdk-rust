@@ -21,7 +21,7 @@ pub struct CreateFuotaTaskInput {
     pub redundancy_percent: ::std::option::Option<i32>,
     /// <p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>
     pub fragment_size_bytes: ::std::option::Option<i32>,
-    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note>
+    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p><note>
     /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
     /// </note>
     pub fragment_interval_ms: ::std::option::Option<i32>,
@@ -65,7 +65,7 @@ impl CreateFuotaTaskInput {
     pub fn fragment_size_bytes(&self) -> ::std::option::Option<i32> {
         self.fragment_size_bytes
     }
-    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note>
+    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p><note>
     /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
     /// </note>
     pub fn fragment_interval_ms(&self) -> ::std::option::Option<i32> {
@@ -229,21 +229,21 @@ impl CreateFuotaTaskInputBuilder {
     pub fn get_fragment_size_bytes(&self) -> &::std::option::Option<i32> {
         &self.fragment_size_bytes
     }
-    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note>
+    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p><note>
     /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
     /// </note>
     pub fn fragment_interval_ms(mut self, input: i32) -> Self {
         self.fragment_interval_ms = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note>
+    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p><note>
     /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
     /// </note>
     pub fn set_fragment_interval_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.fragment_interval_ms = input;
         self
     }
-    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note>
+    /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p><note>
     /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
     /// </note>
     pub fn get_fragment_interval_ms(&self) -> &::std::option::Option<i32> {

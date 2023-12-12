@@ -10,9 +10,12 @@ pub struct FeatureDefinition {
     pub feature_type: ::std::option::Option<crate::types::FeatureType>,
     /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
     /// <ul>
-    /// <li><p><code>List</code>: An ordered collection of elements.</p></li>
-    /// <li><p><code>Set</code>: An unordered collection of unique elements.</p></li>
-    /// <li><p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
+    /// <li>
+    /// <p><code>List</code>: An ordered collection of elements.</p></li>
+    /// <li>
+    /// <p><code>Set</code>: An unordered collection of unique elements.</p></li>
+    /// <li>
+    /// <p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
     /// </ul>
     pub collection_type: ::std::option::Option<crate::types::CollectionType>,
     /// <p>Configuration for your collection.</p>
@@ -29,9 +32,12 @@ impl FeatureDefinition {
     }
     /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
     /// <ul>
-    /// <li><p><code>List</code>: An ordered collection of elements.</p></li>
-    /// <li><p><code>Set</code>: An unordered collection of unique elements.</p></li>
-    /// <li><p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
+    /// <li>
+    /// <p><code>List</code>: An ordered collection of elements.</p></li>
+    /// <li>
+    /// <p><code>Set</code>: An unordered collection of unique elements.</p></li>
+    /// <li>
+    /// <p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
     /// </ul>
     pub fn collection_type(&self) -> ::std::option::Option<&crate::types::CollectionType> {
         self.collection_type.as_ref()
@@ -88,9 +94,12 @@ impl FeatureDefinitionBuilder {
     }
     /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
     /// <ul>
-    /// <li><p><code>List</code>: An ordered collection of elements.</p></li>
-    /// <li><p><code>Set</code>: An unordered collection of unique elements.</p></li>
-    /// <li><p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
+    /// <li>
+    /// <p><code>List</code>: An ordered collection of elements.</p></li>
+    /// <li>
+    /// <p><code>Set</code>: An unordered collection of unique elements.</p></li>
+    /// <li>
+    /// <p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
     /// </ul>
     pub fn collection_type(mut self, input: crate::types::CollectionType) -> Self {
         self.collection_type = ::std::option::Option::Some(input);
@@ -98,9 +107,12 @@ impl FeatureDefinitionBuilder {
     }
     /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
     /// <ul>
-    /// <li><p><code>List</code>: An ordered collection of elements.</p></li>
-    /// <li><p><code>Set</code>: An unordered collection of unique elements.</p></li>
-    /// <li><p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
+    /// <li>
+    /// <p><code>List</code>: An ordered collection of elements.</p></li>
+    /// <li>
+    /// <p><code>Set</code>: An unordered collection of unique elements.</p></li>
+    /// <li>
+    /// <p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
     /// </ul>
     pub fn set_collection_type(mut self, input: ::std::option::Option<crate::types::CollectionType>) -> Self {
         self.collection_type = input;
@@ -108,9 +120,12 @@ impl FeatureDefinitionBuilder {
     }
     /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
     /// <ul>
-    /// <li><p><code>List</code>: An ordered collection of elements.</p></li>
-    /// <li><p><code>Set</code>: An unordered collection of unique elements.</p></li>
-    /// <li><p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
+    /// <li>
+    /// <p><code>List</code>: An ordered collection of elements.</p></li>
+    /// <li>
+    /// <p><code>Set</code>: An unordered collection of unique elements.</p></li>
+    /// <li>
+    /// <p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
     /// </ul>
     pub fn get_collection_type(&self) -> &::std::option::Option<crate::types::CollectionType> {
         &self.collection_type

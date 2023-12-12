@@ -170,21 +170,21 @@ impl DescribeReservedDBInstancesOfferingsFluentBuilder {
     pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_duration()
     }
-    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
+    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p><note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
     pub fn product_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_description(input.into());
         self
     }
-    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
+    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p><note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
     pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_description(input);
         self
     }
-    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
+    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p><note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
     pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {

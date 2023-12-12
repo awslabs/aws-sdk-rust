@@ -27,7 +27,7 @@ pub struct UpdateComponentInput {
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
     pub service_spec: ::std::option::Option<::std::string::String>,
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub template_file: ::std::option::Option<::std::string::String>,
@@ -71,7 +71,7 @@ impl UpdateComponentInput {
     pub fn service_spec(&self) -> ::std::option::Option<&str> {
         self.service_spec.as_deref()
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn template_file(&self) -> ::std::option::Option<&str> {
@@ -239,21 +239,21 @@ impl UpdateComponentInputBuilder {
     pub fn get_service_spec(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_spec
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn template_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_file = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn set_template_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_file = input;
         self
     }
-    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
+    /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn get_template_file(&self) -> &::std::option::Option<::std::string::String> {

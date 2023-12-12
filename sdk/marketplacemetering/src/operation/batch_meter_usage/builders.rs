@@ -29,7 +29,7 @@ impl BatchMeterUsageInputBuilder {
 /// <p><code>BatchMeterUsage</code> can process up to 25 <code>UsageRecords</code> at a time.</p>
 /// <p>A <code>UsageRecord</code> can optionally include multiple usage allocations, to provide customers with usage data split into buckets by tags that you define (or allow the customer to define).</p>
 /// <p><code>BatchMeterUsage</code> returns a list of <code>UsageRecordResult</code> objects, showing the result for each <code>UsageRecord</code>, as well as a list of <code>UnprocessedRecords</code>, indicating errors in the service side that you should retry.</p>
-/// <p><code>BatchMeterUsage</code> requests must be less than 1MB in size.</p> <note>
+/// <p><code>BatchMeterUsage</code> requests must be less than 1MB in size.</p><note>
 /// <p>For an example of using <code>BatchMeterUsage</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-example"> BatchMeterUsage code example</a> in the <i>AWS Marketplace Seller Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

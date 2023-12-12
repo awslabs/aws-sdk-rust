@@ -128,21 +128,21 @@ impl ListCommandsFluentBuilder {
     pub fn get_command_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_command_id()
     }
-    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
+    /// <p>(Optional) Lists commands issued against this managed node ID.</p><note>
     /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
     /// </note>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
+    /// <p>(Optional) Lists commands issued against this managed node ID.</p><note>
     /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
     /// </note>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
+    /// <p>(Optional) Lists commands issued against this managed node ID.</p><note>
     /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
     /// </note>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {

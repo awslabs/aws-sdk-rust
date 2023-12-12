@@ -23,7 +23,7 @@ impl CreateDbSecurityGroupInputBuilder {
 /// Fluent builder constructing a request to `CreateDBSecurityGroup`.
 ///
 /// <p>Creates a new DB security group. DB security groups control access to a DB instance.</p>
-/// <p>A DB security group controls access to EC2-Classic DB instances that are not in a VPC.</p> <note>
+/// <p>A DB security group controls access to EC2-Classic DB instances that are not in a VPC.</p><note>
 /// <p>EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic to a VPC, we recommend that you migrate as soon as possible. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -114,10 +114,14 @@ impl CreateDBSecurityGroupFluentBuilder {
     /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
-    /// <li><p>Must not be "Default"</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must not be "Default"</p></li>
     /// </ul>
     /// <p>Example: <code>mysecuritygroup</code></p>
     pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,10 +131,14 @@ impl CreateDBSecurityGroupFluentBuilder {
     /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
-    /// <li><p>Must not be "Default"</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must not be "Default"</p></li>
     /// </ul>
     /// <p>Example: <code>mysecuritygroup</code></p>
     pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -140,10 +148,14 @@ impl CreateDBSecurityGroupFluentBuilder {
     /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
-    /// <li><p>Must not be "Default"</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must not be "Default"</p></li>
     /// </ul>
     /// <p>Example: <code>mysecuritygroup</code></p>
     pub fn get_db_security_group_name(&self) -> &::std::option::Option<::std::string::String> {

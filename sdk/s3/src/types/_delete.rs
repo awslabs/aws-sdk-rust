@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Delete {
-    /// <p>The object to delete.</p> <note>
+    /// <p>The object to delete.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, an object that's composed entirely of whitespace characters is not supported by the <code>DeleteObjects</code> API operation. The request will receive a <code>400 Bad Request</code> error and none of the objects in the request will be deleted.</p>
     /// </note>
     pub objects: ::std::vec::Vec<crate::types::ObjectIdentifier>,
@@ -12,7 +12,7 @@ pub struct Delete {
     pub quiet: ::std::option::Option<bool>,
 }
 impl Delete {
-    /// <p>The object to delete.</p> <note>
+    /// <p>The object to delete.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, an object that's composed entirely of whitespace characters is not supported by the <code>DeleteObjects</code> API operation. The request will receive a <code>400 Bad Request</code> error and none of the objects in the request will be deleted.</p>
     /// </note>
     pub fn objects(&self) -> &[crate::types::ObjectIdentifier] {
@@ -43,7 +43,7 @@ impl DeleteBuilder {
     ///
     /// To override the contents of this collection use [`set_objects`](Self::set_objects).
     ///
-    /// <p>The object to delete.</p> <note>
+    /// <p>The object to delete.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, an object that's composed entirely of whitespace characters is not supported by the <code>DeleteObjects</code> API operation. The request will receive a <code>400 Bad Request</code> error and none of the objects in the request will be deleted.</p>
     /// </note>
     pub fn objects(mut self, input: crate::types::ObjectIdentifier) -> Self {
@@ -52,14 +52,14 @@ impl DeleteBuilder {
         self.objects = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The object to delete.</p> <note>
+    /// <p>The object to delete.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, an object that's composed entirely of whitespace characters is not supported by the <code>DeleteObjects</code> API operation. The request will receive a <code>400 Bad Request</code> error and none of the objects in the request will be deleted.</p>
     /// </note>
     pub fn set_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>>) -> Self {
         self.objects = input;
         self
     }
-    /// <p>The object to delete.</p> <note>
+    /// <p>The object to delete.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, an object that's composed entirely of whitespace characters is not supported by the <code>DeleteObjects</code> API operation. The request will receive a <code>400 Bad Request</code> error and none of the objects in the request will be deleted.</p>
     /// </note>
     pub fn get_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>> {

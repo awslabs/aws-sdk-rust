@@ -26,9 +26,12 @@ impl GetComputeAuthTokenInputBuilder {
 /// <p>Authentication tokens are valid for a limited time span. Use a mechanism to regularly request a fresh authentication token before the current token expires.</p>
 /// <p><b>Learn more</b></p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html">Create an Anywhere fleet</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing.html">Test your integration</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Server SDK reference guides</a> (for version 5.x)</p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html">Create an Anywhere fleet</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing.html">Test your integration</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Server SDK reference guides</a> (for version 5.x)</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComputeAuthTokenFluentBuilder {

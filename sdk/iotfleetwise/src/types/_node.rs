@@ -4,21 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Node {
-    /// <p>Information about a node specified as an actuator.</p> <note>
+    /// <p>Information about a node specified as an actuator.</p><note>
     /// <p>An actuator is a digital representation of a vehicle device.</p>
     /// </note>
     Actuator(crate::types::Actuator),
-    /// <p>Information about a node specified as an attribute.</p> <note>
+    /// <p>Information about a node specified as an attribute.</p><note>
     /// <p>An attribute represents static information about a vehicle.</p>
     /// </note>
     Attribute(crate::types::Attribute),
-    /// <p>Information about a node specified as a branch.</p> <note>
+    /// <p>Information about a node specified as a branch.</p><note>
     /// <p>A group of signals that are defined in a hierarchical structure.</p>
     /// </note>
     Branch(crate::types::Branch),
     /// <p>Represents a member of the complex data structure. The <code>datatype</code> of the property can be either primitive or another <code>struct</code>.</p>
     Property(crate::types::CustomProperty),
-    /// <p>An input component that reports the environmental condition of a vehicle.</p> <note>
+    /// <p>An input component that reports the environmental condition of a vehicle.</p><note>
     /// <p>You can collect data about fluid levels, temperatures, vibrations, or battery voltage from sensors.</p>
     /// </note>
     Sensor(crate::types::Sensor),

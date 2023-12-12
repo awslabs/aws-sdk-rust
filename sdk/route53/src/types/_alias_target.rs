@@ -3,7 +3,8 @@
 /// <p><i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p>
 /// <p>When creating resource record sets for a private hosted zone, note the following:</p>
 /// <ul>
-/// <li><p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p></li>
+/// <li>
+/// <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -16,8 +17,10 @@ pub struct AliasTarget {
     /// <dd>
     /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
-    /// <li><p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p></li>
-    /// <li><p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -30,7 +33,7 @@ pub struct AliasTarget {
     /// CloudFront distribution
     /// </dt>
     /// <dd>
-    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note>
+    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p><note>
     /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p>
     /// </note>
     /// </dd>
@@ -46,17 +49,25 @@ pub struct AliasTarget {
     /// <dd>
     /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p></li>
-    /// <li><p><b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p></li>
-    /// <li><p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p></li>
+    /// <li>
+    /// <p><b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
-    /// <li><p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
     /// </ul></li>
-    /// <li><p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
-    /// <li><p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -88,9 +99,11 @@ pub struct AliasTarget {
     /// <dd>
     /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
-    /// <li><p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p></li>
-    /// <li><p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p></li>
+    /// <li>
+    /// <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p></li>
+    /// </ul><note>
     /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p>
     /// </note>
     /// </dd>
@@ -106,7 +119,7 @@ pub struct AliasTarget {
     /// <dd>
     /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p>
     /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note>
+    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p><note>
     /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution.</p>
     /// </note>
     /// </dd>
@@ -114,14 +127,17 @@ pub struct AliasTarget {
     /// Elastic Beanstalk environment
     /// </dt>
     /// <dd>
-    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name.</p> <important>
+    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name.</p><important>
     /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p>
     /// </important>
     /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p>
     /// <ul>
-    /// <li><p><i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p></li>
-    /// <li><p><i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p></li>
-    /// <li><p><i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p></li>
+    /// <li>
+    /// <p><i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p></li>
+    /// <li>
+    /// <p><i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -130,16 +146,24 @@ pub struct AliasTarget {
     /// <dd>
     /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI.</p>
     /// <ul>
-    /// <li><p><b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.</p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p></li>
-    /// <li><p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.</p>
+    /// <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
-    /// <li><p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
     /// </ul></li>
-    /// <li><p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a></p></li>
-    /// <li><p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a></p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a></p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a></p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -149,8 +173,10 @@ pub struct AliasTarget {
     /// <dd>
     /// <p>Specify the DNS name for your accelerator:</p>
     /// <ul>
-    /// <li><p><b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p></li>
-    /// <li><p><b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p></li>
+    /// <li>
+    /// <p><b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p></li>
+    /// <li>
+    /// <p><b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -163,7 +189,7 @@ pub struct AliasTarget {
     /// Another Route 53 resource record set
     /// </dt>
     /// <dd>
-    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note>
+    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p><note>
     /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
     /// </note>
     /// </dd>
@@ -191,13 +217,17 @@ pub struct AliasTarget {
     /// <dd>
     /// <p>Health checking behavior depends on the type of load balancer:</p>
     /// <ul>
-    /// <li><p><b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p></li>
-    /// <li><p><b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
+    /// <li>
+    /// <p><b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p></li>
+    /// <li>
+    /// <p><b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
     /// <ul>
-    /// <li><p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p></li>
-    /// <li><p>A target group that has no registered targets is considered unhealthy.</p></li>
+    /// <li>
+    /// <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p></li>
+    /// <li>
+    /// <p>A target group that has no registered targets is considered unhealthy.</p></li>
     /// </ul></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer.</p>
     /// </note>
     /// </dd>
@@ -226,8 +256,10 @@ impl AliasTarget {
     /// <dd>
     /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
-    /// <li><p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p></li>
-    /// <li><p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -240,7 +272,7 @@ impl AliasTarget {
     /// CloudFront distribution
     /// </dt>
     /// <dd>
-    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note>
+    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p><note>
     /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p>
     /// </note>
     /// </dd>
@@ -256,17 +288,25 @@ impl AliasTarget {
     /// <dd>
     /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p></li>
-    /// <li><p><b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p></li>
-    /// <li><p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p></li>
+    /// <li>
+    /// <p><b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
-    /// <li><p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
     /// </ul></li>
-    /// <li><p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
-    /// <li><p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -301,9 +341,11 @@ impl AliasTarget {
     /// <dd>
     /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
-    /// <li><p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p></li>
-    /// <li><p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p></li>
+    /// <li>
+    /// <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p></li>
+    /// </ul><note>
     /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p>
     /// </note>
     /// </dd>
@@ -319,7 +361,7 @@ impl AliasTarget {
     /// <dd>
     /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p>
     /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note>
+    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p><note>
     /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution.</p>
     /// </note>
     /// </dd>
@@ -327,14 +369,17 @@ impl AliasTarget {
     /// Elastic Beanstalk environment
     /// </dt>
     /// <dd>
-    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name.</p> <important>
+    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name.</p><important>
     /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p>
     /// </important>
     /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p>
     /// <ul>
-    /// <li><p><i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p></li>
-    /// <li><p><i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p></li>
-    /// <li><p><i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p></li>
+    /// <li>
+    /// <p><i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p></li>
+    /// <li>
+    /// <p><i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -343,16 +388,24 @@ impl AliasTarget {
     /// <dd>
     /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI.</p>
     /// <ul>
-    /// <li><p><b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.</p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p></li>
-    /// <li><p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.</p>
+    /// <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
-    /// <li><p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
     /// </ul></li>
-    /// <li><p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a></p></li>
-    /// <li><p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a></p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a></p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a></p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -362,8 +415,10 @@ impl AliasTarget {
     /// <dd>
     /// <p>Specify the DNS name for your accelerator:</p>
     /// <ul>
-    /// <li><p><b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p></li>
-    /// <li><p><b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p></li>
+    /// <li>
+    /// <p><b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p></li>
+    /// <li>
+    /// <p><b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -376,7 +431,7 @@ impl AliasTarget {
     /// Another Route 53 resource record set
     /// </dt>
     /// <dd>
-    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note>
+    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p><note>
     /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
     /// </note>
     /// </dd>
@@ -407,13 +462,17 @@ impl AliasTarget {
     /// <dd>
     /// <p>Health checking behavior depends on the type of load balancer:</p>
     /// <ul>
-    /// <li><p><b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p></li>
-    /// <li><p><b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
+    /// <li>
+    /// <p><b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p></li>
+    /// <li>
+    /// <p><b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
     /// <ul>
-    /// <li><p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p></li>
-    /// <li><p>A target group that has no registered targets is considered unhealthy.</p></li>
+    /// <li>
+    /// <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p></li>
+    /// <li>
+    /// <p>A target group that has no registered targets is considered unhealthy.</p></li>
     /// </ul></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer.</p>
     /// </note>
     /// </dd>
@@ -459,8 +518,10 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
-    /// <li><p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p></li>
-    /// <li><p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -473,7 +534,7 @@ impl AliasTargetBuilder {
     /// CloudFront distribution
     /// </dt>
     /// <dd>
-    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note>
+    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p><note>
     /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p>
     /// </note>
     /// </dd>
@@ -489,17 +550,25 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p></li>
-    /// <li><p><b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p></li>
-    /// <li><p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p></li>
+    /// <li>
+    /// <p><b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
-    /// <li><p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
     /// </ul></li>
-    /// <li><p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
-    /// <li><p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -535,8 +604,10 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
-    /// <li><p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p></li>
-    /// <li><p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -549,7 +620,7 @@ impl AliasTargetBuilder {
     /// CloudFront distribution
     /// </dt>
     /// <dd>
-    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note>
+    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p><note>
     /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p>
     /// </note>
     /// </dd>
@@ -565,17 +636,25 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p></li>
-    /// <li><p><b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p></li>
-    /// <li><p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p></li>
+    /// <li>
+    /// <p><b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
-    /// <li><p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
     /// </ul></li>
-    /// <li><p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
-    /// <li><p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -610,8 +689,10 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
-    /// <li><p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p></li>
-    /// <li><p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -624,7 +705,7 @@ impl AliasTargetBuilder {
     /// CloudFront distribution
     /// </dt>
     /// <dd>
-    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note>
+    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p><note>
     /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p>
     /// </note>
     /// </dd>
@@ -640,17 +721,25 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p></li>
-    /// <li><p><b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p></li>
-    /// <li><p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p></li>
+    /// <li>
+    /// <p><b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
-    /// <li><p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
     /// </ul></li>
-    /// <li><p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
-    /// <li><p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -684,9 +773,11 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
-    /// <li><p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p></li>
-    /// <li><p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p></li>
+    /// <li>
+    /// <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p></li>
+    /// </ul><note>
     /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p>
     /// </note>
     /// </dd>
@@ -702,7 +793,7 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p>
     /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note>
+    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p><note>
     /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution.</p>
     /// </note>
     /// </dd>
@@ -710,14 +801,17 @@ impl AliasTargetBuilder {
     /// Elastic Beanstalk environment
     /// </dt>
     /// <dd>
-    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name.</p> <important>
+    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name.</p><important>
     /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p>
     /// </important>
     /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p>
     /// <ul>
-    /// <li><p><i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p></li>
-    /// <li><p><i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p></li>
-    /// <li><p><i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p></li>
+    /// <li>
+    /// <p><i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p></li>
+    /// <li>
+    /// <p><i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -726,16 +820,24 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI.</p>
     /// <ul>
-    /// <li><p><b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.</p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p></li>
-    /// <li><p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.</p>
+    /// <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
-    /// <li><p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
     /// </ul></li>
-    /// <li><p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a></p></li>
-    /// <li><p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a></p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a></p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a></p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -745,8 +847,10 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the DNS name for your accelerator:</p>
     /// <ul>
-    /// <li><p><b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p></li>
-    /// <li><p><b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p></li>
+    /// <li>
+    /// <p><b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p></li>
+    /// <li>
+    /// <p><b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -759,7 +863,7 @@ impl AliasTargetBuilder {
     /// Another Route 53 resource record set
     /// </dt>
     /// <dd>
-    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note>
+    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p><note>
     /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
     /// </note>
     /// </dd>
@@ -777,9 +881,11 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
-    /// <li><p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p></li>
-    /// <li><p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p></li>
+    /// <li>
+    /// <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p></li>
+    /// </ul><note>
     /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p>
     /// </note>
     /// </dd>
@@ -795,7 +901,7 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p>
     /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note>
+    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p><note>
     /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution.</p>
     /// </note>
     /// </dd>
@@ -803,14 +909,17 @@ impl AliasTargetBuilder {
     /// Elastic Beanstalk environment
     /// </dt>
     /// <dd>
-    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name.</p> <important>
+    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name.</p><important>
     /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p>
     /// </important>
     /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p>
     /// <ul>
-    /// <li><p><i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p></li>
-    /// <li><p><i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p></li>
-    /// <li><p><i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p></li>
+    /// <li>
+    /// <p><i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p></li>
+    /// <li>
+    /// <p><i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -819,16 +928,24 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI.</p>
     /// <ul>
-    /// <li><p><b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.</p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p></li>
-    /// <li><p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.</p>
+    /// <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
-    /// <li><p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
     /// </ul></li>
-    /// <li><p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a></p></li>
-    /// <li><p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a></p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a></p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a></p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -838,8 +955,10 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the DNS name for your accelerator:</p>
     /// <ul>
-    /// <li><p><b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p></li>
-    /// <li><p><b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p></li>
+    /// <li>
+    /// <p><b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p></li>
+    /// <li>
+    /// <p><b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -852,7 +971,7 @@ impl AliasTargetBuilder {
     /// Another Route 53 resource record set
     /// </dt>
     /// <dd>
-    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note>
+    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p><note>
     /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
     /// </note>
     /// </dd>
@@ -869,9 +988,11 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
     /// <ul>
-    /// <li><p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p></li>
-    /// <li><p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p></li>
+    /// <li>
+    /// <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p></li>
+    /// </ul><note>
     /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p>
     /// </note>
     /// </dd>
@@ -887,7 +1008,7 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p>
     /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note>
+    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p><note>
     /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution.</p>
     /// </note>
     /// </dd>
@@ -895,14 +1016,17 @@ impl AliasTargetBuilder {
     /// Elastic Beanstalk environment
     /// </dt>
     /// <dd>
-    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name.</p> <important>
+    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name.</p><important>
     /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p>
     /// </important>
     /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p>
     /// <ul>
-    /// <li><p><i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p></li>
-    /// <li><p><i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p></li>
-    /// <li><p><i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p></li>
+    /// <li>
+    /// <p><i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p></li>
+    /// <li>
+    /// <p><i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -911,16 +1035,24 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI.</p>
     /// <ul>
-    /// <li><p><b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.</p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p></li>
-    /// <li><p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field.</p>
+    /// <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
-    /// <li><p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a></p></li>
     /// </ul></li>
-    /// <li><p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
+    /// <li>
+    /// <p><b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
     /// <ul>
-    /// <li><p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a></p></li>
-    /// <li><p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a></p></li>
+    /// <li>
+    /// <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a></p></li>
+    /// <li>
+    /// <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a></p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -930,8 +1062,10 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Specify the DNS name for your accelerator:</p>
     /// <ul>
-    /// <li><p><b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p></li>
-    /// <li><p><b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p></li>
+    /// <li>
+    /// <p><b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p></li>
+    /// <li>
+    /// <p><b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -944,7 +1078,7 @@ impl AliasTargetBuilder {
     /// Another Route 53 resource record set
     /// </dt>
     /// <dd>
-    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note>
+    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p><note>
     /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
     /// </note>
     /// </dd>
@@ -974,13 +1108,17 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Health checking behavior depends on the type of load balancer:</p>
     /// <ul>
-    /// <li><p><b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p></li>
-    /// <li><p><b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
+    /// <li>
+    /// <p><b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p></li>
+    /// <li>
+    /// <p><b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
     /// <ul>
-    /// <li><p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p></li>
-    /// <li><p>A target group that has no registered targets is considered unhealthy.</p></li>
+    /// <li>
+    /// <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p></li>
+    /// <li>
+    /// <p>A target group that has no registered targets is considered unhealthy.</p></li>
     /// </ul></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer.</p>
     /// </note>
     /// </dd>
@@ -1025,13 +1163,17 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Health checking behavior depends on the type of load balancer:</p>
     /// <ul>
-    /// <li><p><b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p></li>
-    /// <li><p><b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
+    /// <li>
+    /// <p><b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p></li>
+    /// <li>
+    /// <p><b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
     /// <ul>
-    /// <li><p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p></li>
-    /// <li><p>A target group that has no registered targets is considered unhealthy.</p></li>
+    /// <li>
+    /// <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p></li>
+    /// <li>
+    /// <p>A target group that has no registered targets is considered unhealthy.</p></li>
     /// </ul></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer.</p>
     /// </note>
     /// </dd>
@@ -1075,13 +1217,17 @@ impl AliasTargetBuilder {
     /// <dd>
     /// <p>Health checking behavior depends on the type of load balancer:</p>
     /// <ul>
-    /// <li><p><b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p></li>
-    /// <li><p><b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
+    /// <li>
+    /// <p><b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p></li>
+    /// <li>
+    /// <p><b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
     /// <ul>
-    /// <li><p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p></li>
-    /// <li><p>A target group that has no registered targets is considered unhealthy.</p></li>
+    /// <li>
+    /// <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p></li>
+    /// <li>
+    /// <p>A target group that has no registered targets is considered unhealthy.</p></li>
     /// </ul></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer.</p>
     /// </note>
     /// </dd>

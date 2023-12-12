@@ -22,7 +22,7 @@ impl DeleteSubscriberInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSubscriber`.
 ///
-/// <p>Deletes a subscriber.</p> <important>
+/// <p>Deletes a subscriber.</p><important>
 /// <p>Deleting the last subscriber to a notification also deletes the notification.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

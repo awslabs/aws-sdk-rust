@@ -7,9 +7,13 @@ pub struct StatefulRule {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow.</p>
     /// <p>The actions for a stateful rule are defined as follows:</p>
     /// <ul>
-    /// <li><p><b>PASS</b> - Permits the packets to go to the intended destination.</p></li>
-    /// <li><p><b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p></li>
-    /// <li><p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
+    /// <li>
+    /// <p><b>PASS</b> - Permits the packets to go to the intended destination.</p></li>
+    /// <li>
+    /// <p><b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p></li>
+    /// <li>
+    /// <p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p>
+    /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
     /// </ul>
     pub action: crate::types::StatefulAction,
     /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows.</p>
@@ -21,9 +25,13 @@ impl StatefulRule {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow.</p>
     /// <p>The actions for a stateful rule are defined as follows:</p>
     /// <ul>
-    /// <li><p><b>PASS</b> - Permits the packets to go to the intended destination.</p></li>
-    /// <li><p><b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p></li>
-    /// <li><p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
+    /// <li>
+    /// <p><b>PASS</b> - Permits the packets to go to the intended destination.</p></li>
+    /// <li>
+    /// <p><b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p></li>
+    /// <li>
+    /// <p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p>
+    /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
     /// </ul>
     pub fn action(&self) -> &crate::types::StatefulAction {
         &self.action
@@ -57,9 +65,13 @@ impl StatefulRuleBuilder {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow.</p>
     /// <p>The actions for a stateful rule are defined as follows:</p>
     /// <ul>
-    /// <li><p><b>PASS</b> - Permits the packets to go to the intended destination.</p></li>
-    /// <li><p><b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p></li>
-    /// <li><p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
+    /// <li>
+    /// <p><b>PASS</b> - Permits the packets to go to the intended destination.</p></li>
+    /// <li>
+    /// <p><b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p></li>
+    /// <li>
+    /// <p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p>
+    /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn action(mut self, input: crate::types::StatefulAction) -> Self {
@@ -69,9 +81,13 @@ impl StatefulRuleBuilder {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow.</p>
     /// <p>The actions for a stateful rule are defined as follows:</p>
     /// <ul>
-    /// <li><p><b>PASS</b> - Permits the packets to go to the intended destination.</p></li>
-    /// <li><p><b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p></li>
-    /// <li><p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
+    /// <li>
+    /// <p><b>PASS</b> - Permits the packets to go to the intended destination.</p></li>
+    /// <li>
+    /// <p><b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p></li>
+    /// <li>
+    /// <p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p>
+    /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::StatefulAction>) -> Self {
         self.action = input;
@@ -80,9 +96,13 @@ impl StatefulRuleBuilder {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow.</p>
     /// <p>The actions for a stateful rule are defined as follows:</p>
     /// <ul>
-    /// <li><p><b>PASS</b> - Permits the packets to go to the intended destination.</p></li>
-    /// <li><p><b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p></li>
-    /// <li><p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
+    /// <li>
+    /// <p><b>PASS</b> - Permits the packets to go to the intended destination.</p></li>
+    /// <li>
+    /// <p><b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p></li>
+    /// <li>
+    /// <p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p>
+    /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
     /// </ul>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::StatefulAction> {
         &self.action

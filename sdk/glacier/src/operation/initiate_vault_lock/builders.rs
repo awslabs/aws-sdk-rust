@@ -24,9 +24,12 @@ impl InitiateVaultLockInputBuilder {
 ///
 /// <p>This operation initiates the vault locking process by doing the following:</p>
 /// <ul>
-/// <li><p>Installing a vault lock policy on the specified vault.</p></li>
-/// <li><p>Setting the lock state of vault lock to <code>InProgress</code>.</p></li>
-/// <li><p>Returning a lock ID, which is used to complete the vault locking process.</p></li>
+/// <li>
+/// <p>Installing a vault lock policy on the specified vault.</p></li>
+/// <li>
+/// <p>Setting the lock state of vault lock to <code>InProgress</code>.</p></li>
+/// <li>
+/// <p>Returning a lock ID, which is used to complete the vault locking process.</p></li>
 /// </ul>
 /// <p>You can set one vault lock policy for each vault and this policy can be up to 20 KB in size. For more information about vault lock policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon Glacier Access Control with Vault Lock Policies</a>.</p>
 /// <p>You must complete the vault locking process within 24 hours after the vault lock enters the <code>InProgress</code> state. After the 24 hour window ends, the lock ID expires, the vault automatically exits the <code>InProgress</code> state, and the vault lock policy is removed from the vault. You call <code>CompleteVaultLock</code> to complete the vault locking process by setting the state of the vault lock to <code>Locked</code>.</p>

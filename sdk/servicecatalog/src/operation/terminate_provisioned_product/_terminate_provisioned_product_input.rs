@@ -13,8 +13,10 @@ pub struct TerminateProvisionedProductInput {
     pub ignore_errors: ::std::option::Option<bool>,
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
@@ -39,8 +41,10 @@ impl TerminateProvisionedProductInput {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -128,8 +132,10 @@ impl TerminateProvisionedProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
@@ -137,8 +143,10 @@ impl TerminateProvisionedProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
@@ -146,8 +154,10 @@ impl TerminateProvisionedProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language

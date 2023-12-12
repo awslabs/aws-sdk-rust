@@ -11,9 +11,12 @@ pub struct CollapseConfiguration {
     /// <p>Specifies the behavior for documents without a value for the collapse attribute.</p>
     /// <p>Amazon Kendra offers three customization options:</p>
     /// <ul>
-    /// <li><p>Choose to <code>COLLAPSE</code> all documents with null or missing values in one group. This is the default configuration.</p></li>
-    /// <li><p>Choose to <code>IGNORE</code> documents with null or missing values. Ignored documents will not appear in query results.</p></li>
-    /// <li><p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
+    /// <li>
+    /// <p>Choose to <code>COLLAPSE</code> all documents with null or missing values in one group. This is the default configuration.</p></li>
+    /// <li>
+    /// <p>Choose to <code>IGNORE</code> documents with null or missing values. Ignored documents will not appear in query results.</p></li>
+    /// <li>
+    /// <p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
     /// </ul>
     pub missing_attribute_key_strategy: ::std::option::Option<crate::types::MissingAttributeKeyStrategy>,
     /// <p>Specifies whether to expand the collapsed results.</p>
@@ -36,9 +39,12 @@ impl CollapseConfiguration {
     /// <p>Specifies the behavior for documents without a value for the collapse attribute.</p>
     /// <p>Amazon Kendra offers three customization options:</p>
     /// <ul>
-    /// <li><p>Choose to <code>COLLAPSE</code> all documents with null or missing values in one group. This is the default configuration.</p></li>
-    /// <li><p>Choose to <code>IGNORE</code> documents with null or missing values. Ignored documents will not appear in query results.</p></li>
-    /// <li><p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
+    /// <li>
+    /// <p>Choose to <code>COLLAPSE</code> all documents with null or missing values in one group. This is the default configuration.</p></li>
+    /// <li>
+    /// <p>Choose to <code>IGNORE</code> documents with null or missing values. Ignored documents will not appear in query results.</p></li>
+    /// <li>
+    /// <p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
     /// </ul>
     pub fn missing_attribute_key_strategy(&self) -> ::std::option::Option<&crate::types::MissingAttributeKeyStrategy> {
         self.missing_attribute_key_strategy.as_ref()
@@ -108,9 +114,12 @@ impl CollapseConfigurationBuilder {
     /// <p>Specifies the behavior for documents without a value for the collapse attribute.</p>
     /// <p>Amazon Kendra offers three customization options:</p>
     /// <ul>
-    /// <li><p>Choose to <code>COLLAPSE</code> all documents with null or missing values in one group. This is the default configuration.</p></li>
-    /// <li><p>Choose to <code>IGNORE</code> documents with null or missing values. Ignored documents will not appear in query results.</p></li>
-    /// <li><p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
+    /// <li>
+    /// <p>Choose to <code>COLLAPSE</code> all documents with null or missing values in one group. This is the default configuration.</p></li>
+    /// <li>
+    /// <p>Choose to <code>IGNORE</code> documents with null or missing values. Ignored documents will not appear in query results.</p></li>
+    /// <li>
+    /// <p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
     /// </ul>
     pub fn missing_attribute_key_strategy(mut self, input: crate::types::MissingAttributeKeyStrategy) -> Self {
         self.missing_attribute_key_strategy = ::std::option::Option::Some(input);
@@ -119,9 +128,12 @@ impl CollapseConfigurationBuilder {
     /// <p>Specifies the behavior for documents without a value for the collapse attribute.</p>
     /// <p>Amazon Kendra offers three customization options:</p>
     /// <ul>
-    /// <li><p>Choose to <code>COLLAPSE</code> all documents with null or missing values in one group. This is the default configuration.</p></li>
-    /// <li><p>Choose to <code>IGNORE</code> documents with null or missing values. Ignored documents will not appear in query results.</p></li>
-    /// <li><p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
+    /// <li>
+    /// <p>Choose to <code>COLLAPSE</code> all documents with null or missing values in one group. This is the default configuration.</p></li>
+    /// <li>
+    /// <p>Choose to <code>IGNORE</code> documents with null or missing values. Ignored documents will not appear in query results.</p></li>
+    /// <li>
+    /// <p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
     /// </ul>
     pub fn set_missing_attribute_key_strategy(mut self, input: ::std::option::Option<crate::types::MissingAttributeKeyStrategy>) -> Self {
         self.missing_attribute_key_strategy = input;
@@ -130,9 +142,12 @@ impl CollapseConfigurationBuilder {
     /// <p>Specifies the behavior for documents without a value for the collapse attribute.</p>
     /// <p>Amazon Kendra offers three customization options:</p>
     /// <ul>
-    /// <li><p>Choose to <code>COLLAPSE</code> all documents with null or missing values in one group. This is the default configuration.</p></li>
-    /// <li><p>Choose to <code>IGNORE</code> documents with null or missing values. Ignored documents will not appear in query results.</p></li>
-    /// <li><p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
+    /// <li>
+    /// <p>Choose to <code>COLLAPSE</code> all documents with null or missing values in one group. This is the default configuration.</p></li>
+    /// <li>
+    /// <p>Choose to <code>IGNORE</code> documents with null or missing values. Ignored documents will not appear in query results.</p></li>
+    /// <li>
+    /// <p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
     /// </ul>
     pub fn get_missing_attribute_key_strategy(&self) -> &::std::option::Option<crate::types::MissingAttributeKeyStrategy> {
         &self.missing_attribute_key_strategy

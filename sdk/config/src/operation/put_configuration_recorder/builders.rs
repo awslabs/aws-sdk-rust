@@ -23,7 +23,7 @@ impl PutConfigurationRecorderInputBuilder {
 /// Fluent builder constructing a request to `PutConfigurationRecorder`.
 ///
 /// <p>Creates a new configuration recorder to record configuration changes for specified resource types.</p>
-/// <p>You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html"> <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.</p> <note>
+/// <p>You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html"> <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.</p><note>
 /// <p>You can specify only one configuration recorder for each Amazon Web Services Region for each account.</p>
 /// <p>If the configuration recorder does not have the <code>recordingGroup</code> field specified, the default is to record all supported resource types.</p>
 /// </note>

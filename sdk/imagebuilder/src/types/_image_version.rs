@@ -4,18 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageVersion {
-    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -23,7 +26,7 @@ pub struct ImageVersion {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
     pub r#type: ::std::option::Option<crate::types::ImageType>,
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
+    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -51,27 +54,33 @@ pub struct ImageVersion {
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
-    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
-    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
+    /// <li>
+    /// <p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li>
+    /// <p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li>
+    /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub build_type: ::std::option::Option<crate::types::BuildType>,
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
     pub image_source: ::std::option::Option<crate::types::ImageSource>,
 }
 impl ImageVersion {
-    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -85,7 +94,7 @@ impl ImageVersion {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImageType> {
         self.r#type.as_ref()
     }
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
+    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -123,9 +132,12 @@ impl ImageVersion {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
-    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
-    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
+    /// <li>
+    /// <p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li>
+    /// <p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li>
+    /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn build_type(&self) -> ::std::option::Option<&crate::types::BuildType> {
         self.build_type.as_ref()
@@ -158,54 +170,63 @@ pub struct ImageVersionBuilder {
     pub(crate) image_source: ::std::option::Option<crate::types::ImageSource>,
 }
 impl ImageVersionBuilder {
-    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,7 +260,7 @@ impl ImageVersionBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ImageType> {
         &self.r#type
     }
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
+    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -260,7 +281,7 @@ impl ImageVersionBuilder {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
+    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -281,7 +302,7 @@ impl ImageVersionBuilder {
         self.version = input;
         self
     }
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p> <note>
+    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -359,9 +380,12 @@ impl ImageVersionBuilder {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
-    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
-    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
+    /// <li>
+    /// <p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li>
+    /// <p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li>
+    /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn build_type(mut self, input: crate::types::BuildType) -> Self {
         self.build_type = ::std::option::Option::Some(input);
@@ -369,9 +393,12 @@ impl ImageVersionBuilder {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
-    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
-    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
+    /// <li>
+    /// <p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li>
+    /// <p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li>
+    /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn set_build_type(mut self, input: ::std::option::Option<crate::types::BuildType>) -> Self {
         self.build_type = input;
@@ -379,9 +406,12 @@ impl ImageVersionBuilder {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
-    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
-    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
+    /// <li>
+    /// <p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li>
+    /// <p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li>
+    /// <p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn get_build_type(&self) -> &::std::option::Option<crate::types::BuildType> {
         &self.build_type

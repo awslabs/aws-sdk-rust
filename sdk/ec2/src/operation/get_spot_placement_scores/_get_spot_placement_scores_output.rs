@@ -5,7 +5,7 @@
 pub struct GetSpotPlacementScoresOutput {
     /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone.</p>
     /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
-    /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+    /// <p>Different  Regions or Availability Zones might return the same score.</p><note>
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
     pub spot_placement_scores: ::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>>,
@@ -16,7 +16,7 @@ pub struct GetSpotPlacementScoresOutput {
 impl GetSpotPlacementScoresOutput {
     /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone.</p>
     /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
-    /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+    /// <p>Different  Regions or Availability Zones might return the same score.</p><note>
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
     ///
@@ -56,7 +56,7 @@ impl GetSpotPlacementScoresOutputBuilder {
     ///
     /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone.</p>
     /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
-    /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+    /// <p>Different  Regions or Availability Zones might return the same score.</p><note>
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
     pub fn spot_placement_scores(mut self, input: crate::types::SpotPlacementScore) -> Self {
@@ -67,7 +67,7 @@ impl GetSpotPlacementScoresOutputBuilder {
     }
     /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone.</p>
     /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
-    /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+    /// <p>Different  Regions or Availability Zones might return the same score.</p><note>
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
     pub fn set_spot_placement_scores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>>) -> Self {
@@ -76,7 +76,7 @@ impl GetSpotPlacementScoresOutputBuilder {
     }
     /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone.</p>
     /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
-    /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+    /// <p>Different  Regions or Availability Zones might return the same score.</p><note>
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
     pub fn get_spot_placement_scores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotPlacementScore>> {

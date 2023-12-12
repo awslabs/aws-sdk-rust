@@ -163,21 +163,21 @@ impl DescribeTapesFluentBuilder {
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_marker()
     }
-    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note>
+    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p><note>
     /// <p>Amazon Web Services may impose its own limit, if this field is not set.</p>
     /// </note>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note>
+    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p><note>
     /// <p>Amazon Web Services may impose its own limit, if this field is not set.</p>
     /// </note>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note>
+    /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p><note>
     /// <p>Amazon Web Services may impose its own limit, if this field is not set.</p>
     /// </note>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {

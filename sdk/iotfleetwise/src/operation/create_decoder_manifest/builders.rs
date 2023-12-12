@@ -24,10 +24,14 @@ impl CreateDecoderManifestInputBuilder {
 ///
 /// <p>Creates the decoder manifest associated with a model manifest. To create a decoder manifest, the following must be true:</p>
 /// <ul>
-/// <li><p>Every signal decoder has a unique name.</p></li>
-/// <li><p>Each signal decoder is associated with a network interface.</p></li>
-/// <li><p>Each network interface has a unique ID.</p></li>
-/// <li><p>The signal decoders are specified in the model manifest.</p></li>
+/// <li>
+/// <p>Every signal decoder has a unique name.</p></li>
+/// <li>
+/// <p>Each signal decoder is associated with a network interface.</p></li>
+/// <li>
+/// <p>Each network interface has a unique ID.</p></li>
+/// <li>
+/// <p>The signal decoders are specified in the model manifest.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDecoderManifestFluentBuilder {

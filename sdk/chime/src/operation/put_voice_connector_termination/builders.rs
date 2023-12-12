@@ -22,7 +22,7 @@ impl PutVoiceConnectorTerminationInputBuilder {
 }
 /// Fluent builder constructing a request to `PutVoiceConnectorTermination`.
 ///
-/// <p>Adds termination settings for the specified Amazon Chime Voice Connector.</p> <note>
+/// <p>Adds termination settings for the specified Amazon Chime Voice Connector.</p><note>
 /// <p>If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off termination settings.</p>
 /// </note> <important>
 /// <p><b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorTermination.html">PutVoiceConnectorTermination</a>, in the Amazon Chime SDK.</p>

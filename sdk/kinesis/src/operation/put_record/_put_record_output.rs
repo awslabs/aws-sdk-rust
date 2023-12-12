@@ -10,8 +10,10 @@ pub struct PutRecordOutput {
     pub sequence_number: ::std::string::String,
     /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Do not encrypt the records in the stream.</p></li>
-    /// <li><p><code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Do not encrypt the records in the stream.</p></li>
+    /// <li>
+    /// <p><code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     _request_id: Option<String>,
@@ -29,8 +31,10 @@ impl PutRecordOutput {
     }
     /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Do not encrypt the records in the stream.</p></li>
-    /// <li><p><code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Do not encrypt the records in the stream.</p></li>
+    /// <li>
+    /// <p><code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
     pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
         self.encryption_type.as_ref()
@@ -90,8 +94,10 @@ impl PutRecordOutputBuilder {
     }
     /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Do not encrypt the records in the stream.</p></li>
-    /// <li><p><code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Do not encrypt the records in the stream.</p></li>
+    /// <li>
+    /// <p><code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
@@ -99,8 +105,10 @@ impl PutRecordOutputBuilder {
     }
     /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Do not encrypt the records in the stream.</p></li>
-    /// <li><p><code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Do not encrypt the records in the stream.</p></li>
+    /// <li>
+    /// <p><code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
@@ -108,8 +116,10 @@ impl PutRecordOutputBuilder {
     }
     /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Do not encrypt the records in the stream.</p></li>
-    /// <li><p><code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Do not encrypt the records in the stream.</p></li>
+    /// <li>
+    /// <p><code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
         &self.encryption_type

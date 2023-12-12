@@ -22,7 +22,7 @@ impl GetDevEndpointsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDevEndpoints`.
 ///
-/// <p>Retrieves all the development endpoints in this Amazon Web Services account.</p> <note>
+/// <p>Retrieves all the development endpoints in this Amazon Web Services account.</p><note>
 /// <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -111,7 +111,8 @@ impl ResetDBParameterGroupFluentBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the name of an existing DBParameterGroup.</p></li>
+    /// <li>
+    /// <p>Must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_name(input.into());
@@ -120,7 +121,8 @@ impl ResetDBParameterGroupFluentBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the name of an existing DBParameterGroup.</p></li>
+    /// <li>
+    /// <p>Must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
@@ -129,7 +131,8 @@ impl ResetDBParameterGroupFluentBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the name of an existing DBParameterGroup.</p></li>
+    /// <li>
+    /// <p>Must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_parameter_group_name()

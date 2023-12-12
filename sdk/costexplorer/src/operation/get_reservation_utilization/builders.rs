@@ -159,17 +159,28 @@ impl GetReservationUtilizationFluentBuilder {
     }
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
-    /// <li><p>AZ</p></li>
-    /// <li><p>CACHE_ENGINE</p></li>
-    /// <li><p>DEPLOYMENT_OPTION</p></li>
-    /// <li><p>INSTANCE_TYPE</p></li>
-    /// <li><p>LINKED_ACCOUNT</p></li>
-    /// <li><p>OPERATING_SYSTEM</p></li>
-    /// <li><p>PLATFORM</p></li>
-    /// <li><p>REGION</p></li>
-    /// <li><p>SERVICE</p></li>
-    /// <li><p>SCOPE</p></li>
-    /// <li><p>TENANCY</p></li>
+    /// <li>
+    /// <p>AZ</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT</p></li>
+    /// <li>
+    /// <p>OPERATING_SYSTEM</p></li>
+    /// <li>
+    /// <p>PLATFORM</p></li>
+    /// <li>
+    /// <p>REGION</p></li>
+    /// <li>
+    /// <p>SERVICE</p></li>
+    /// <li>
+    /// <p>SCOPE</p></li>
+    /// <li>
+    /// <p>TENANCY</p></li>
     /// </ul>
     /// <p><code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     pub fn filter(mut self, input: crate::types::Expression) -> Self {
@@ -178,17 +189,28 @@ impl GetReservationUtilizationFluentBuilder {
     }
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
-    /// <li><p>AZ</p></li>
-    /// <li><p>CACHE_ENGINE</p></li>
-    /// <li><p>DEPLOYMENT_OPTION</p></li>
-    /// <li><p>INSTANCE_TYPE</p></li>
-    /// <li><p>LINKED_ACCOUNT</p></li>
-    /// <li><p>OPERATING_SYSTEM</p></li>
-    /// <li><p>PLATFORM</p></li>
-    /// <li><p>REGION</p></li>
-    /// <li><p>SERVICE</p></li>
-    /// <li><p>SCOPE</p></li>
-    /// <li><p>TENANCY</p></li>
+    /// <li>
+    /// <p>AZ</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT</p></li>
+    /// <li>
+    /// <p>OPERATING_SYSTEM</p></li>
+    /// <li>
+    /// <p>PLATFORM</p></li>
+    /// <li>
+    /// <p>REGION</p></li>
+    /// <li>
+    /// <p>SERVICE</p></li>
+    /// <li>
+    /// <p>SCOPE</p></li>
+    /// <li>
+    /// <p>TENANCY</p></li>
     /// </ul>
     /// <p><code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
@@ -197,17 +219,28 @@ impl GetReservationUtilizationFluentBuilder {
     }
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
-    /// <li><p>AZ</p></li>
-    /// <li><p>CACHE_ENGINE</p></li>
-    /// <li><p>DEPLOYMENT_OPTION</p></li>
-    /// <li><p>INSTANCE_TYPE</p></li>
-    /// <li><p>LINKED_ACCOUNT</p></li>
-    /// <li><p>OPERATING_SYSTEM</p></li>
-    /// <li><p>PLATFORM</p></li>
-    /// <li><p>REGION</p></li>
-    /// <li><p>SERVICE</p></li>
-    /// <li><p>SCOPE</p></li>
-    /// <li><p>TENANCY</p></li>
+    /// <li>
+    /// <p>AZ</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT</p></li>
+    /// <li>
+    /// <p>OPERATING_SYSTEM</p></li>
+    /// <li>
+    /// <p>PLATFORM</p></li>
+    /// <li>
+    /// <p>REGION</p></li>
+    /// <li>
+    /// <p>SERVICE</p></li>
+    /// <li>
+    /// <p>SCOPE</p></li>
+    /// <li>
+    /// <p>TENANCY</p></li>
     /// </ul>
     /// <p><code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
@@ -216,23 +249,40 @@ impl GetReservationUtilizationFluentBuilder {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li><p><code>UtilizationPercentage</code></p></li>
-    /// <li><p><code>UtilizationPercentageInUnits</code></p></li>
-    /// <li><p><code>PurchasedHours</code></p></li>
-    /// <li><p><code>PurchasedUnits</code></p></li>
-    /// <li><p><code>TotalActualHours</code></p></li>
-    /// <li><p><code>TotalActualUnits</code></p></li>
-    /// <li><p><code>UnusedHours</code></p></li>
-    /// <li><p><code>UnusedUnits</code></p></li>
-    /// <li><p><code>OnDemandCostOfRIHoursUsed</code></p></li>
-    /// <li><p><code>NetRISavings</code></p></li>
-    /// <li><p><code>TotalPotentialRISavings</code></p></li>
-    /// <li><p><code>AmortizedUpfrontFee</code></p></li>
-    /// <li><p><code>AmortizedRecurringFee</code></p></li>
-    /// <li><p><code>TotalAmortizedFee</code></p></li>
-    /// <li><p><code>RICostForUnusedHours</code></p></li>
-    /// <li><p><code>RealizedSavings</code></p></li>
-    /// <li><p><code>UnrealizedSavings</code></p></li>
+    /// <li>
+    /// <p><code>UtilizationPercentage</code></p></li>
+    /// <li>
+    /// <p><code>UtilizationPercentageInUnits</code></p></li>
+    /// <li>
+    /// <p><code>PurchasedHours</code></p></li>
+    /// <li>
+    /// <p><code>PurchasedUnits</code></p></li>
+    /// <li>
+    /// <p><code>TotalActualHours</code></p></li>
+    /// <li>
+    /// <p><code>TotalActualUnits</code></p></li>
+    /// <li>
+    /// <p><code>UnusedHours</code></p></li>
+    /// <li>
+    /// <p><code>UnusedUnits</code></p></li>
+    /// <li>
+    /// <p><code>OnDemandCostOfRIHoursUsed</code></p></li>
+    /// <li>
+    /// <p><code>NetRISavings</code></p></li>
+    /// <li>
+    /// <p><code>TotalPotentialRISavings</code></p></li>
+    /// <li>
+    /// <p><code>AmortizedUpfrontFee</code></p></li>
+    /// <li>
+    /// <p><code>AmortizedRecurringFee</code></p></li>
+    /// <li>
+    /// <p><code>TotalAmortizedFee</code></p></li>
+    /// <li>
+    /// <p><code>RICostForUnusedHours</code></p></li>
+    /// <li>
+    /// <p><code>RealizedSavings</code></p></li>
+    /// <li>
+    /// <p><code>UnrealizedSavings</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortDefinition) -> Self {
@@ -242,23 +292,40 @@ impl GetReservationUtilizationFluentBuilder {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li><p><code>UtilizationPercentage</code></p></li>
-    /// <li><p><code>UtilizationPercentageInUnits</code></p></li>
-    /// <li><p><code>PurchasedHours</code></p></li>
-    /// <li><p><code>PurchasedUnits</code></p></li>
-    /// <li><p><code>TotalActualHours</code></p></li>
-    /// <li><p><code>TotalActualUnits</code></p></li>
-    /// <li><p><code>UnusedHours</code></p></li>
-    /// <li><p><code>UnusedUnits</code></p></li>
-    /// <li><p><code>OnDemandCostOfRIHoursUsed</code></p></li>
-    /// <li><p><code>NetRISavings</code></p></li>
-    /// <li><p><code>TotalPotentialRISavings</code></p></li>
-    /// <li><p><code>AmortizedUpfrontFee</code></p></li>
-    /// <li><p><code>AmortizedRecurringFee</code></p></li>
-    /// <li><p><code>TotalAmortizedFee</code></p></li>
-    /// <li><p><code>RICostForUnusedHours</code></p></li>
-    /// <li><p><code>RealizedSavings</code></p></li>
-    /// <li><p><code>UnrealizedSavings</code></p></li>
+    /// <li>
+    /// <p><code>UtilizationPercentage</code></p></li>
+    /// <li>
+    /// <p><code>UtilizationPercentageInUnits</code></p></li>
+    /// <li>
+    /// <p><code>PurchasedHours</code></p></li>
+    /// <li>
+    /// <p><code>PurchasedUnits</code></p></li>
+    /// <li>
+    /// <p><code>TotalActualHours</code></p></li>
+    /// <li>
+    /// <p><code>TotalActualUnits</code></p></li>
+    /// <li>
+    /// <p><code>UnusedHours</code></p></li>
+    /// <li>
+    /// <p><code>UnusedUnits</code></p></li>
+    /// <li>
+    /// <p><code>OnDemandCostOfRIHoursUsed</code></p></li>
+    /// <li>
+    /// <p><code>NetRISavings</code></p></li>
+    /// <li>
+    /// <p><code>TotalPotentialRISavings</code></p></li>
+    /// <li>
+    /// <p><code>AmortizedUpfrontFee</code></p></li>
+    /// <li>
+    /// <p><code>AmortizedRecurringFee</code></p></li>
+    /// <li>
+    /// <p><code>TotalAmortizedFee</code></p></li>
+    /// <li>
+    /// <p><code>RICostForUnusedHours</code></p></li>
+    /// <li>
+    /// <p><code>RealizedSavings</code></p></li>
+    /// <li>
+    /// <p><code>UnrealizedSavings</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
@@ -268,23 +335,40 @@ impl GetReservationUtilizationFluentBuilder {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li><p><code>UtilizationPercentage</code></p></li>
-    /// <li><p><code>UtilizationPercentageInUnits</code></p></li>
-    /// <li><p><code>PurchasedHours</code></p></li>
-    /// <li><p><code>PurchasedUnits</code></p></li>
-    /// <li><p><code>TotalActualHours</code></p></li>
-    /// <li><p><code>TotalActualUnits</code></p></li>
-    /// <li><p><code>UnusedHours</code></p></li>
-    /// <li><p><code>UnusedUnits</code></p></li>
-    /// <li><p><code>OnDemandCostOfRIHoursUsed</code></p></li>
-    /// <li><p><code>NetRISavings</code></p></li>
-    /// <li><p><code>TotalPotentialRISavings</code></p></li>
-    /// <li><p><code>AmortizedUpfrontFee</code></p></li>
-    /// <li><p><code>AmortizedRecurringFee</code></p></li>
-    /// <li><p><code>TotalAmortizedFee</code></p></li>
-    /// <li><p><code>RICostForUnusedHours</code></p></li>
-    /// <li><p><code>RealizedSavings</code></p></li>
-    /// <li><p><code>UnrealizedSavings</code></p></li>
+    /// <li>
+    /// <p><code>UtilizationPercentage</code></p></li>
+    /// <li>
+    /// <p><code>UtilizationPercentageInUnits</code></p></li>
+    /// <li>
+    /// <p><code>PurchasedHours</code></p></li>
+    /// <li>
+    /// <p><code>PurchasedUnits</code></p></li>
+    /// <li>
+    /// <p><code>TotalActualHours</code></p></li>
+    /// <li>
+    /// <p><code>TotalActualUnits</code></p></li>
+    /// <li>
+    /// <p><code>UnusedHours</code></p></li>
+    /// <li>
+    /// <p><code>UnusedUnits</code></p></li>
+    /// <li>
+    /// <p><code>OnDemandCostOfRIHoursUsed</code></p></li>
+    /// <li>
+    /// <p><code>NetRISavings</code></p></li>
+    /// <li>
+    /// <p><code>TotalPotentialRISavings</code></p></li>
+    /// <li>
+    /// <p><code>AmortizedUpfrontFee</code></p></li>
+    /// <li>
+    /// <p><code>AmortizedRecurringFee</code></p></li>
+    /// <li>
+    /// <p><code>TotalAmortizedFee</code></p></li>
+    /// <li>
+    /// <p><code>RICostForUnusedHours</code></p></li>
+    /// <li>
+    /// <p><code>RealizedSavings</code></p></li>
+    /// <li>
+    /// <p><code>UnrealizedSavings</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortDefinition> {

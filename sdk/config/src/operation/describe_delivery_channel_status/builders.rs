@@ -22,7 +22,7 @@ impl DescribeDeliveryChannelStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDeliveryChannelStatus`.
 ///
-/// <p>Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action returns the current status of all delivery channels associated with the account.</p> <note>
+/// <p>Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action returns the current status of all delivery channels associated with the account.</p><note>
 /// <p>Currently, you can specify only one delivery channel per region in your account.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

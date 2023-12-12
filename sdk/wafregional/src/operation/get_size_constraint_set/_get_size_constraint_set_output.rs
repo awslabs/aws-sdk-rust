@@ -5,9 +5,12 @@
 pub struct GetSizeConstraintSetOutput {
     /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li><p><code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code></p></li>
-    /// <li><p><code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code></p></li>
+    /// <li>
+    /// <p><code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub size_constraint_set: ::std::option::Option<crate::types::SizeConstraintSet>,
     _request_id: Option<String>,
@@ -15,9 +18,12 @@ pub struct GetSizeConstraintSetOutput {
 impl GetSizeConstraintSetOutput {
     /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li><p><code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code></p></li>
-    /// <li><p><code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code></p></li>
+    /// <li>
+    /// <p><code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn size_constraint_set(&self) -> ::std::option::Option<&crate::types::SizeConstraintSet> {
         self.size_constraint_set.as_ref()
@@ -45,9 +51,12 @@ pub struct GetSizeConstraintSetOutputBuilder {
 impl GetSizeConstraintSetOutputBuilder {
     /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li><p><code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code></p></li>
-    /// <li><p><code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code></p></li>
+    /// <li>
+    /// <p><code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn size_constraint_set(mut self, input: crate::types::SizeConstraintSet) -> Self {
         self.size_constraint_set = ::std::option::Option::Some(input);
@@ -55,9 +64,12 @@ impl GetSizeConstraintSetOutputBuilder {
     }
     /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li><p><code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code></p></li>
-    /// <li><p><code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code></p></li>
+    /// <li>
+    /// <p><code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn set_size_constraint_set(mut self, input: ::std::option::Option<crate::types::SizeConstraintSet>) -> Self {
         self.size_constraint_set = input;
@@ -65,9 +77,12 @@ impl GetSizeConstraintSetOutputBuilder {
     }
     /// <p>Information about the <code>SizeConstraintSet</code> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the following topics:</p>
     /// <ul>
-    /// <li><p><code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code></p></li>
-    /// <li><p><code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>SizeConstraintSet</code>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code></p></li>
+    /// <li>
+    /// <p><code>SizeConstraints</code>: Contains an array of <code>SizeConstraint</code> objects. Each <code>SizeConstraint</code> object contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn get_size_constraint_set(&self) -> &::std::option::Option<crate::types::SizeConstraintSet> {
         &self.size_constraint_set

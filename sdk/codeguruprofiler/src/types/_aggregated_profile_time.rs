@@ -9,9 +9,12 @@ pub struct AggregatedProfileTime {
     pub start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub period: ::std::option::Option<crate::types::AggregationPeriod>,
 }
@@ -23,9 +26,12 @@ impl AggregatedProfileTime {
     }
     /// <p>The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn period(&self) -> ::std::option::Option<&crate::types::AggregationPeriod> {
         self.period.as_ref()
@@ -65,9 +71,12 @@ impl AggregatedProfileTimeBuilder {
     }
     /// <p>The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn period(mut self, input: crate::types::AggregationPeriod) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -75,9 +84,12 @@ impl AggregatedProfileTimeBuilder {
     }
     /// <p>The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn set_period(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.period = input;
@@ -85,9 +97,12 @@ impl AggregatedProfileTimeBuilder {
     }
     /// <p>The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn get_period(&self) -> &::std::option::Option<crate::types::AggregationPeriod> {
         &self.period

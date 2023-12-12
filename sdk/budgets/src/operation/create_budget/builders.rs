@@ -22,7 +22,7 @@ impl CreateBudgetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBudget`.
 ///
-/// <p>Creates a budget and, if included, notifications and subscribers.</p> <important>
+/// <p>Creates a budget and, if included, notifications and subscribers.</p><important>
 /// <p>Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a> section.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

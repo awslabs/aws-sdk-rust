@@ -12,8 +12,10 @@ pub struct PostAgentProfileInput {
     pub profile_token: ::std::option::Option<::std::string::String>,
     /// <p>The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .</p>
     /// <ul>
-    /// <li><p><code>application/json</code> — standard JSON format</p></li>
-    /// <li><p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
+    /// <li>
+    /// <p><code>application/json</code> — standard JSON format</p></li>
+    /// <li>
+    /// <p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
     /// </ul>
     pub content_type: ::std::option::Option<::std::string::String>,
 }
@@ -32,8 +34,10 @@ impl PostAgentProfileInput {
     }
     /// <p>The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .</p>
     /// <ul>
-    /// <li><p><code>application/json</code> — standard JSON format</p></li>
-    /// <li><p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
+    /// <li>
+    /// <p><code>application/json</code> — standard JSON format</p></li>
+    /// <li>
+    /// <p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
     /// </ul>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
@@ -102,8 +106,10 @@ impl PostAgentProfileInputBuilder {
     }
     /// <p>The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .</p>
     /// <ul>
-    /// <li><p><code>application/json</code> — standard JSON format</p></li>
-    /// <li><p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
+    /// <li>
+    /// <p><code>application/json</code> — standard JSON format</p></li>
+    /// <li>
+    /// <p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,8 +118,10 @@ impl PostAgentProfileInputBuilder {
     }
     /// <p>The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .</p>
     /// <ul>
-    /// <li><p><code>application/json</code> — standard JSON format</p></li>
-    /// <li><p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
+    /// <li>
+    /// <p><code>application/json</code> — standard JSON format</p></li>
+    /// <li>
+    /// <p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
@@ -121,8 +129,10 @@ impl PostAgentProfileInputBuilder {
     }
     /// <p>The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .</p>
     /// <ul>
-    /// <li><p><code>application/json</code> — standard JSON format</p></li>
-    /// <li><p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
+    /// <li>
+    /// <p><code>application/json</code> — standard JSON format</p></li>
+    /// <li>
+    /// <p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type

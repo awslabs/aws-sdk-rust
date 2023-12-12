@@ -7,12 +7,18 @@ pub struct ShardFilter {
     /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
     /// <p>You can specify the following valid values:</p>
     /// <ul>
-    /// <li><p><code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided.</p></li>
-    /// <li><p><code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p></li>
-    /// <li><p><code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p></li>
-    /// <li><p><code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p></li>
-    /// <li><p><code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open.</p></li>
-    /// <li><p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided.</p></li>
+    /// <li>
+    /// <p><code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p></li>
+    /// <li>
+    /// <p><code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p></li>
+    /// <li>
+    /// <p><code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p></li>
+    /// <li>
+    /// <p><code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open.</p></li>
+    /// <li>
+    /// <p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
     /// </ul>
     pub r#type: crate::types::ShardFilterType,
     /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
@@ -24,12 +30,18 @@ impl ShardFilter {
     /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
     /// <p>You can specify the following valid values:</p>
     /// <ul>
-    /// <li><p><code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided.</p></li>
-    /// <li><p><code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p></li>
-    /// <li><p><code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p></li>
-    /// <li><p><code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p></li>
-    /// <li><p><code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open.</p></li>
-    /// <li><p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided.</p></li>
+    /// <li>
+    /// <p><code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p></li>
+    /// <li>
+    /// <p><code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p></li>
+    /// <li>
+    /// <p><code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p></li>
+    /// <li>
+    /// <p><code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open.</p></li>
+    /// <li>
+    /// <p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
     /// </ul>
     pub fn r#type(&self) -> &crate::types::ShardFilterType {
         &self.r#type
@@ -62,12 +74,18 @@ impl ShardFilterBuilder {
     /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
     /// <p>You can specify the following valid values:</p>
     /// <ul>
-    /// <li><p><code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided.</p></li>
-    /// <li><p><code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p></li>
-    /// <li><p><code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p></li>
-    /// <li><p><code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p></li>
-    /// <li><p><code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open.</p></li>
-    /// <li><p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided.</p></li>
+    /// <li>
+    /// <p><code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p></li>
+    /// <li>
+    /// <p><code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p></li>
+    /// <li>
+    /// <p><code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p></li>
+    /// <li>
+    /// <p><code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open.</p></li>
+    /// <li>
+    /// <p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ShardFilterType) -> Self {
@@ -77,12 +95,18 @@ impl ShardFilterBuilder {
     /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
     /// <p>You can specify the following valid values:</p>
     /// <ul>
-    /// <li><p><code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided.</p></li>
-    /// <li><p><code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p></li>
-    /// <li><p><code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p></li>
-    /// <li><p><code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p></li>
-    /// <li><p><code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open.</p></li>
-    /// <li><p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided.</p></li>
+    /// <li>
+    /// <p><code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p></li>
+    /// <li>
+    /// <p><code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p></li>
+    /// <li>
+    /// <p><code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p></li>
+    /// <li>
+    /// <p><code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open.</p></li>
+    /// <li>
+    /// <p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ShardFilterType>) -> Self {
         self.r#type = input;
@@ -91,12 +115,18 @@ impl ShardFilterBuilder {
     /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
     /// <p>You can specify the following valid values:</p>
     /// <ul>
-    /// <li><p><code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided.</p></li>
-    /// <li><p><code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p></li>
-    /// <li><p><code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p></li>
-    /// <li><p><code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p></li>
-    /// <li><p><code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open.</p></li>
-    /// <li><p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with the shard whose ID immediately follows the <code>ShardId</code> that you provided.</p></li>
+    /// <li>
+    /// <p><code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open at <code>TRIM_HORIZON</code>.</p></li>
+    /// <li>
+    /// <p><code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards within the retention period of the data stream (trim to tip).</p></li>
+    /// <li>
+    /// <p><code>AT_LATEST</code> - the response includes only the currently open shards of the data stream.</p></li>
+    /// <li>
+    /// <p><code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open.</p></li>
+    /// <li>
+    /// <p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ShardFilterType> {
         &self.r#type

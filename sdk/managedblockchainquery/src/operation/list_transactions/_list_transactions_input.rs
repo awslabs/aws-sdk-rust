@@ -15,7 +15,7 @@ pub struct ListTransactionsInput {
     pub sort: ::std::option::Option<crate::types::ListTransactionsSort>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of transactions to list.</p> <note>
+    /// <p>The maximum number of transactions to list.</p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -46,7 +46,7 @@ impl ListTransactionsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of transactions to list.</p> <note>
+    /// <p>The maximum number of transactions to list.</p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -160,7 +160,7 @@ impl ListTransactionsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of transactions to list.</p> <note>
+    /// <p>The maximum number of transactions to list.</p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -168,7 +168,7 @@ impl ListTransactionsInputBuilder {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of transactions to list.</p> <note>
+    /// <p>The maximum number of transactions to list.</p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -176,7 +176,7 @@ impl ListTransactionsInputBuilder {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of transactions to list.</p> <note>
+    /// <p>The maximum number of transactions to list.</p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>

@@ -6,7 +6,7 @@
 pub struct DescribeVtlDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
-    /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
+    /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p><note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
     pub vtl_device_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -20,7 +20,7 @@ impl DescribeVtlDevicesInput {
     pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
-    /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
+    /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p><note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
     ///
@@ -73,7 +73,7 @@ impl DescribeVtlDevicesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_vtl_device_arns`](Self::set_vtl_device_arns).
     ///
-    /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
+    /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p><note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
     pub fn vtl_device_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,14 +82,14 @@ impl DescribeVtlDevicesInputBuilder {
         self.vtl_device_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
+    /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p><note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
     pub fn set_vtl_device_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vtl_device_arns = input;
         self
     }
-    /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
+    /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p><note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
     pub fn get_vtl_device_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

@@ -139,9 +139,12 @@ impl CreateTenantDatabaseFluentBuilder {
     /// <p>The name for the master user account in your tenant database. RDS creates this user account in the tenant database and grants privileges to the master user. This parameter is case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_username(input.into());
@@ -150,9 +153,12 @@ impl CreateTenantDatabaseFluentBuilder {
     /// <p>The name for the master user account in your tenant database. RDS creates this user account in the tenant database and grants privileges to the master user. This parameter is case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_username(input);
@@ -161,9 +167,12 @@ impl CreateTenantDatabaseFluentBuilder {
     /// <p>The name for the master user account in your tenant database. RDS creates this user account in the tenant database and grants privileges to the master user. This parameter is case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_username()
@@ -171,8 +180,10 @@ impl CreateTenantDatabaseFluentBuilder {
     /// <p>The password for the master user in your tenant database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 8 to 30 characters.</p></li>
-    /// <li><p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li>
+    /// <p>Must be 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_user_password(input.into());
@@ -181,8 +192,10 @@ impl CreateTenantDatabaseFluentBuilder {
     /// <p>The password for the master user in your tenant database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 8 to 30 characters.</p></li>
-    /// <li><p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li>
+    /// <p>Must be 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_user_password(input);
@@ -191,8 +204,10 @@ impl CreateTenantDatabaseFluentBuilder {
     /// <p>The password for the master user in your tenant database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 8 to 30 characters.</p></li>
-    /// <li><p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
+    /// <li>
+    /// <p>Must be 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except forward slash (<code>/</code>), double quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>), or single quote (<code>'</code>).</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_password()

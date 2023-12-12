@@ -150,7 +150,7 @@ impl CreateParticipantFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Information identifying the participant.</p> <important>
+    /// <p>Information identifying the participant.</p><important>
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
     /// <p><code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
@@ -158,7 +158,7 @@ impl CreateParticipantFluentBuilder {
         self.inner = self.inner.participant_details(input);
         self
     }
-    /// <p>Information identifying the participant.</p> <important>
+    /// <p>Information identifying the participant.</p><important>
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
     /// <p><code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
@@ -166,7 +166,7 @@ impl CreateParticipantFluentBuilder {
         self.inner = self.inner.set_participant_details(input);
         self
     }
-    /// <p>Information identifying the participant.</p> <important>
+    /// <p>Information identifying the participant.</p><important>
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
     /// <p><code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>

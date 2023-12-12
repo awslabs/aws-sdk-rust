@@ -10,8 +10,7 @@ pub struct JobReport {
     pub format: ::std::option::Option<crate::types::JobReportFormat>,
     /// <p>Indicates whether the specified job will generate a job-completion report.</p>
     pub enabled: bool,
-    /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code>
-    /// <prefix>
+    /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code><prefix>
     /// /job-
     /// <job-id>
     /// /report.json
@@ -34,8 +33,7 @@ impl JobReport {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code>
-    /// <prefix>
+    /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code><prefix>
     /// /job-
     /// <job-id>
     /// /report.json
@@ -110,8 +108,7 @@ impl JobReportBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
-    /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code>
-    /// <prefix>
+    /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code><prefix>
     /// /job-
     /// <job-id>
     /// /report.json
@@ -121,8 +118,7 @@ impl JobReportBuilder {
         self.prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code>
-    /// <prefix>
+    /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code><prefix>
     /// /job-
     /// <job-id>
     /// /report.json
@@ -132,8 +128,7 @@ impl JobReportBuilder {
         self.prefix = input;
         self
     }
-    /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code>
-    /// <prefix>
+    /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code><prefix>
     /// /job-
     /// <job-id>
     /// /report.json

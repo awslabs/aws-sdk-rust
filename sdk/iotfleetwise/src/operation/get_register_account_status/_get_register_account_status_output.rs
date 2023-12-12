@@ -7,9 +7,12 @@ pub struct GetRegisterAccountStatusOutput {
     pub customer_account_id: ::std::string::String,
     /// <p>The status of registering your account and resources. The status can be one of:</p>
     /// <ul>
-    /// <li><p><code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p></li>
-    /// <li><p><code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p></li>
-    /// <li><p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
     /// </ul>
     pub account_status: crate::types::RegistrationStatus,
     /// <p>Information about the registered Amazon Timestream resources or errors, if any.</p>
@@ -30,9 +33,12 @@ impl GetRegisterAccountStatusOutput {
     }
     /// <p>The status of registering your account and resources. The status can be one of:</p>
     /// <ul>
-    /// <li><p><code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p></li>
-    /// <li><p><code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p></li>
-    /// <li><p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
     /// </ul>
     pub fn account_status(&self) -> &crate::types::RegistrationStatus {
         &self.account_status
@@ -96,9 +102,12 @@ impl GetRegisterAccountStatusOutputBuilder {
     }
     /// <p>The status of registering your account and resources. The status can be one of:</p>
     /// <ul>
-    /// <li><p><code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p></li>
-    /// <li><p><code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p></li>
-    /// <li><p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
     /// </ul>
     /// This field is required.
     pub fn account_status(mut self, input: crate::types::RegistrationStatus) -> Self {
@@ -107,9 +116,12 @@ impl GetRegisterAccountStatusOutputBuilder {
     }
     /// <p>The status of registering your account and resources. The status can be one of:</p>
     /// <ul>
-    /// <li><p><code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p></li>
-    /// <li><p><code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p></li>
-    /// <li><p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
     /// </ul>
     pub fn set_account_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.account_status = input;
@@ -117,9 +129,12 @@ impl GetRegisterAccountStatusOutputBuilder {
     }
     /// <p>The status of registering your account and resources. The status can be one of:</p>
     /// <ul>
-    /// <li><p><code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p></li>
-    /// <li><p><code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p></li>
-    /// <li><p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p></li>
+    /// <li>
+    /// <p><code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p></li>
     /// </ul>
     pub fn get_account_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         &self.account_status

@@ -22,7 +22,7 @@ impl ListDataIntegrationAssociationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDataIntegrationAssociations`.
 ///
-/// <p>Returns a paginated list of DataIntegration associations in the account.</p> <note>
+/// <p>Returns a paginated list of DataIntegration associations in the account.</p><note>
 /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

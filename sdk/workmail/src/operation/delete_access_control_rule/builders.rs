@@ -22,7 +22,7 @@ impl DeleteAccessControlRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAccessControlRule`.
 ///
-/// <p>Deletes an access control rule for the specified WorkMail organization.</p> <note>
+/// <p>Deletes an access control rule for the specified WorkMail organization.</p><note>
 /// <p>Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -10,7 +10,8 @@ pub struct DisassociateNodeInput {
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
     /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
     pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
 }
@@ -26,7 +27,8 @@ impl DisassociateNodeInput {
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
     /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
@@ -87,7 +89,8 @@ impl DisassociateNodeInputBuilder {
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
     /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         let mut v = self.engine_attributes.unwrap_or_default();
@@ -98,7 +101,8 @@ impl DisassociateNodeInputBuilder {
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
     /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
     pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.engine_attributes = input;
@@ -107,7 +111,8 @@ impl DisassociateNodeInputBuilder {
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
     /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
     pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         &self.engine_attributes

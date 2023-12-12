@@ -10,9 +10,12 @@ pub struct DescribeClusterVersionsInput {
     /// <p>The name of a specific cluster parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub cluster_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
@@ -31,9 +34,12 @@ impl DescribeClusterVersionsInput {
     /// <p>The name of a specific cluster parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn cluster_parameter_group_family(&self) -> ::std::option::Option<&str> {
         self.cluster_parameter_group_family.as_deref()
@@ -86,9 +92,12 @@ impl DescribeClusterVersionsInputBuilder {
     /// <p>The name of a specific cluster parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn cluster_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_parameter_group_family = ::std::option::Option::Some(input.into());
@@ -97,9 +106,12 @@ impl DescribeClusterVersionsInputBuilder {
     /// <p>The name of a specific cluster parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn set_cluster_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_parameter_group_family = input;
@@ -108,9 +120,12 @@ impl DescribeClusterVersionsInputBuilder {
     /// <p>The name of a specific cluster parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn get_cluster_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_parameter_group_family

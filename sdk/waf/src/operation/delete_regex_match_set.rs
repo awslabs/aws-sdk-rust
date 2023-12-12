@@ -253,18 +253,24 @@ pub enum DeleteRegexMatchSetError {
     WafInvalidAccountException(crate::types::error::WafInvalidAccountException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li><p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p></li>
-    /// <li><p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p></li>
-    /// <li><p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p></li>
-    /// <li><p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p></li>
+    /// <li>
+    /// <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p></li>
+    /// <li>
+    /// <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p></li>
+    /// <li>
+    /// <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p></li>
+    /// <li>
+    /// <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p></li>
     /// </ul>
     WafNonEmptyEntityException(crate::types::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::types::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li><p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p></li>
-    /// <li><p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p></li>
+    /// <li>
+    /// <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p></li>
     /// </ul>
     WafReferencedItemException(crate::types::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>

@@ -111,12 +111,16 @@ impl ListTypesFluentBuilder {
     /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:</p>
+    /// <li>
+    /// <p><code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:</p>
     /// <ul>
-    /// <li><p>Private extensions you have registered in this account and Region.</p></li>
-    /// <li><p>Public extensions that you have activated in this account and Region.</p></li>
+    /// <li>
+    /// <p>Private extensions you have registered in this account and Region.</p></li>
+    /// <li>
+    /// <p>Public extensions that you have activated in this account and Region.</p></li>
     /// </ul></li>
-    /// <li><p><code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p></li>
     /// </ul>
     /// <p>The default is <code>PRIVATE</code>.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -126,12 +130,16 @@ impl ListTypesFluentBuilder {
     /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:</p>
+    /// <li>
+    /// <p><code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:</p>
     /// <ul>
-    /// <li><p>Private extensions you have registered in this account and Region.</p></li>
-    /// <li><p>Public extensions that you have activated in this account and Region.</p></li>
+    /// <li>
+    /// <p>Private extensions you have registered in this account and Region.</p></li>
+    /// <li>
+    /// <p>Public extensions that you have activated in this account and Region.</p></li>
     /// </ul></li>
-    /// <li><p><code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p></li>
     /// </ul>
     /// <p>The default is <code>PRIVATE</code>.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
@@ -141,12 +149,16 @@ impl ListTypesFluentBuilder {
     /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:</p>
+    /// <li>
+    /// <p><code>PRIVATE</code>: Extensions that are visible and usable within this account and Region. This includes:</p>
     /// <ul>
-    /// <li><p>Private extensions you have registered in this account and Region.</p></li>
-    /// <li><p>Public extensions that you have activated in this account and Region.</p></li>
+    /// <li>
+    /// <p>Private extensions you have registered in this account and Region.</p></li>
+    /// <li>
+    /// <p>Public extensions that you have activated in this account and Region.</p></li>
     /// </ul></li>
-    /// <li><p><code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p></li>
     /// </ul>
     /// <p>The default is <code>PRIVATE</code>.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -155,9 +167,12 @@ impl ListTypesFluentBuilder {
     /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p></li>
-    /// <li><p><code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p></li>
-    /// <li><p><code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p></li>
+    /// <li>
+    /// <p><code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p></li>
+    /// <li>
+    /// <p><code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p></li>
+    /// <li>
+    /// <p><code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p></li>
     /// </ul>
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
     pub fn provisioning_type(mut self, input: crate::types::ProvisioningType) -> Self {
@@ -167,9 +182,12 @@ impl ListTypesFluentBuilder {
     /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p></li>
-    /// <li><p><code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p></li>
-    /// <li><p><code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p></li>
+    /// <li>
+    /// <p><code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p></li>
+    /// <li>
+    /// <p><code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p></li>
+    /// <li>
+    /// <p><code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p></li>
     /// </ul>
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
     pub fn set_provisioning_type(mut self, input: ::std::option::Option<crate::types::ProvisioningType>) -> Self {
@@ -179,9 +197,12 @@ impl ListTypesFluentBuilder {
     /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p></li>
-    /// <li><p><code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p></li>
-    /// <li><p><code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p></li>
+    /// <li>
+    /// <p><code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p></li>
+    /// <li>
+    /// <p><code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p></li>
+    /// <li>
+    /// <p><code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p></li>
     /// </ul>
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
     pub fn get_provisioning_type(&self) -> &::std::option::Option<crate::types::ProvisioningType> {
@@ -190,8 +211,10 @@ impl ListTypesFluentBuilder {
     /// <p>The deprecation status of the extension that you want to get summary information about.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p></li>
-    /// <li><p><code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p></li>
+    /// <li>
+    /// <p><code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p></li>
     /// </ul>
     pub fn deprecated_status(mut self, input: crate::types::DeprecatedStatus) -> Self {
         self.inner = self.inner.deprecated_status(input);
@@ -200,8 +223,10 @@ impl ListTypesFluentBuilder {
     /// <p>The deprecation status of the extension that you want to get summary information about.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p></li>
-    /// <li><p><code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p></li>
+    /// <li>
+    /// <p><code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p></li>
     /// </ul>
     pub fn set_deprecated_status(mut self, input: ::std::option::Option<crate::types::DeprecatedStatus>) -> Self {
         self.inner = self.inner.set_deprecated_status(input);
@@ -210,8 +235,10 @@ impl ListTypesFluentBuilder {
     /// <p>The deprecation status of the extension that you want to get summary information about.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p></li>
-    /// <li><p><code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p></li>
+    /// <li>
+    /// <p><code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p></li>
     /// </ul>
     pub fn get_deprecated_status(&self) -> &::std::option::Option<crate::types::DeprecatedStatus> {
         self.inner.get_deprecated_status()

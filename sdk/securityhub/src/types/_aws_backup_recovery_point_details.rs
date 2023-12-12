@@ -38,19 +38,26 @@ pub struct AwsBackupRecoveryPointDetails {
     pub source_backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>DELETING</code></p></li>
-    /// <li><p><code>EXPIRED</code></p></li>
-    /// <li><p><code>PARTIAL</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>DELETING</code></p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code></p></li>
+    /// <li>
+    /// <p><code>PARTIAL</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A message explaining the reason of the recovery point deletion failure.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COLD</code></p></li>
-    /// <li><p><code>DELETED</code></p></li>
-    /// <li><p><code>WARM</code></p></li>
+    /// <li>
+    /// <p><code>COLD</code></p></li>
+    /// <li>
+    /// <p><code>DELETED</code></p></li>
+    /// <li>
+    /// <p><code>WARM</code></p></li>
     /// </ul>
     pub storage_class: ::std::option::Option<::std::string::String>,
 }
@@ -121,10 +128,14 @@ impl AwsBackupRecoveryPointDetails {
     }
     /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>DELETING</code></p></li>
-    /// <li><p><code>EXPIRED</code></p></li>
-    /// <li><p><code>PARTIAL</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>DELETING</code></p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code></p></li>
+    /// <li>
+    /// <p><code>PARTIAL</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -135,9 +146,12 @@ impl AwsBackupRecoveryPointDetails {
     }
     /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COLD</code></p></li>
-    /// <li><p><code>DELETED</code></p></li>
-    /// <li><p><code>WARM</code></p></li>
+    /// <li>
+    /// <p><code>COLD</code></p></li>
+    /// <li>
+    /// <p><code>DELETED</code></p></li>
+    /// <li>
+    /// <p><code>WARM</code></p></li>
     /// </ul>
     pub fn storage_class(&self) -> ::std::option::Option<&str> {
         self.storage_class.as_deref()
@@ -401,10 +415,14 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>DELETING</code></p></li>
-    /// <li><p><code>EXPIRED</code></p></li>
-    /// <li><p><code>PARTIAL</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>DELETING</code></p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code></p></li>
+    /// <li>
+    /// <p><code>PARTIAL</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -412,10 +430,14 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>DELETING</code></p></li>
-    /// <li><p><code>EXPIRED</code></p></li>
-    /// <li><p><code>PARTIAL</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>DELETING</code></p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code></p></li>
+    /// <li>
+    /// <p><code>PARTIAL</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -423,10 +445,14 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>DELETING</code></p></li>
-    /// <li><p><code>EXPIRED</code></p></li>
-    /// <li><p><code>PARTIAL</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>DELETING</code></p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code></p></li>
+    /// <li>
+    /// <p><code>PARTIAL</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -447,9 +473,12 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COLD</code></p></li>
-    /// <li><p><code>DELETED</code></p></li>
-    /// <li><p><code>WARM</code></p></li>
+    /// <li>
+    /// <p><code>COLD</code></p></li>
+    /// <li>
+    /// <p><code>DELETED</code></p></li>
+    /// <li>
+    /// <p><code>WARM</code></p></li>
     /// </ul>
     pub fn storage_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_class = ::std::option::Option::Some(input.into());
@@ -457,9 +486,12 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COLD</code></p></li>
-    /// <li><p><code>DELETED</code></p></li>
-    /// <li><p><code>WARM</code></p></li>
+    /// <li>
+    /// <p><code>COLD</code></p></li>
+    /// <li>
+    /// <p><code>DELETED</code></p></li>
+    /// <li>
+    /// <p><code>WARM</code></p></li>
     /// </ul>
     pub fn set_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_class = input;
@@ -467,9 +499,12 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     }
     /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COLD</code></p></li>
-    /// <li><p><code>DELETED</code></p></li>
-    /// <li><p><code>WARM</code></p></li>
+    /// <li>
+    /// <p><code>COLD</code></p></li>
+    /// <li>
+    /// <p><code>DELETED</code></p></li>
+    /// <li>
+    /// <p><code>WARM</code></p></li>
     /// </ul>
     pub fn get_storage_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_class

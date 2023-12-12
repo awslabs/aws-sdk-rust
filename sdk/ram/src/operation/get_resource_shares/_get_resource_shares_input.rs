@@ -9,8 +9,10 @@ pub struct GetResourceSharesInput {
     pub resource_share_status: ::std::option::Option<crate::types::ResourceShareStatus>,
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
-    /// <li><p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
-    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
+    /// <li>
+    /// <p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
+    /// <li>
+    /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
     /// </ul>
     pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
@@ -39,8 +41,10 @@ impl GetResourceSharesInput {
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
-    /// <li><p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
-    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
+    /// <li>
+    /// <p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
+    /// <li>
+    /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
     /// </ul>
     pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
         self.resource_owner.as_ref()
@@ -130,8 +134,10 @@ impl GetResourceSharesInputBuilder {
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
-    /// <li><p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
-    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
+    /// <li>
+    /// <p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
+    /// <li>
+    /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
@@ -140,8 +146,10 @@ impl GetResourceSharesInputBuilder {
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
-    /// <li><p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
-    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
+    /// <li>
+    /// <p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
+    /// <li>
+    /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
     /// </ul>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.resource_owner = input;
@@ -149,8 +157,10 @@ impl GetResourceSharesInputBuilder {
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
-    /// <li><p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
-    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
+    /// <li>
+    /// <p><b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p></li>
+    /// <li>
+    /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
     /// </ul>
     pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
         &self.resource_owner

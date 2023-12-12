@@ -18,9 +18,12 @@ pub struct CreateUsageLimitOutput {
     pub period: ::std::option::Option<crate::types::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are:</p>
     /// <ul>
-    /// <li><p><b>log</b> - To log an event in a system table. The default is log.</p></li>
-    /// <li><p><b>emit-metric</b> - To emit CloudWatch metrics.</p></li>
-    /// <li><p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
+    /// <li>
+    /// <p><b>log</b> - To log an event in a system table. The default is log.</p></li>
+    /// <li>
+    /// <p><b>emit-metric</b> - To emit CloudWatch metrics.</p></li>
+    /// <li>
+    /// <p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
     /// </ul>
     pub breach_action: ::std::option::Option<crate::types::UsageLimitBreachAction>,
     /// <p>A list of tag instances.</p>
@@ -54,9 +57,12 @@ impl CreateUsageLimitOutput {
     }
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are:</p>
     /// <ul>
-    /// <li><p><b>log</b> - To log an event in a system table. The default is log.</p></li>
-    /// <li><p><b>emit-metric</b> - To emit CloudWatch metrics.</p></li>
-    /// <li><p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
+    /// <li>
+    /// <p><b>log</b> - To log an event in a system table. The default is log.</p></li>
+    /// <li>
+    /// <p><b>emit-metric</b> - To emit CloudWatch metrics.</p></li>
+    /// <li>
+    /// <p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
     /// </ul>
     pub fn breach_action(&self) -> ::std::option::Option<&crate::types::UsageLimitBreachAction> {
         self.breach_action.as_ref()
@@ -181,9 +187,12 @@ impl CreateUsageLimitOutputBuilder {
     }
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are:</p>
     /// <ul>
-    /// <li><p><b>log</b> - To log an event in a system table. The default is log.</p></li>
-    /// <li><p><b>emit-metric</b> - To emit CloudWatch metrics.</p></li>
-    /// <li><p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
+    /// <li>
+    /// <p><b>log</b> - To log an event in a system table. The default is log.</p></li>
+    /// <li>
+    /// <p><b>emit-metric</b> - To emit CloudWatch metrics.</p></li>
+    /// <li>
+    /// <p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
     /// </ul>
     pub fn breach_action(mut self, input: crate::types::UsageLimitBreachAction) -> Self {
         self.breach_action = ::std::option::Option::Some(input);
@@ -191,9 +200,12 @@ impl CreateUsageLimitOutputBuilder {
     }
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are:</p>
     /// <ul>
-    /// <li><p><b>log</b> - To log an event in a system table. The default is log.</p></li>
-    /// <li><p><b>emit-metric</b> - To emit CloudWatch metrics.</p></li>
-    /// <li><p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
+    /// <li>
+    /// <p><b>log</b> - To log an event in a system table. The default is log.</p></li>
+    /// <li>
+    /// <p><b>emit-metric</b> - To emit CloudWatch metrics.</p></li>
+    /// <li>
+    /// <p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
     /// </ul>
     pub fn set_breach_action(mut self, input: ::std::option::Option<crate::types::UsageLimitBreachAction>) -> Self {
         self.breach_action = input;
@@ -201,9 +213,12 @@ impl CreateUsageLimitOutputBuilder {
     }
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are:</p>
     /// <ul>
-    /// <li><p><b>log</b> - To log an event in a system table. The default is log.</p></li>
-    /// <li><p><b>emit-metric</b> - To emit CloudWatch metrics.</p></li>
-    /// <li><p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
+    /// <li>
+    /// <p><b>log</b> - To log an event in a system table. The default is log.</p></li>
+    /// <li>
+    /// <p><b>emit-metric</b> - To emit CloudWatch metrics.</p></li>
+    /// <li>
+    /// <p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
     /// </ul>
     pub fn get_breach_action(&self) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
         &self.breach_action

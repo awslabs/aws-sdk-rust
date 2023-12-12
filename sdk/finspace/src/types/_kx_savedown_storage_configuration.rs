@@ -6,7 +6,8 @@
 pub struct KxSavedownStorageConfiguration {
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
     /// <ul>
-    /// <li><p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
+    /// <li>
+    /// <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::KxSavedownStorageType>,
     /// <p>The size of temporary storage in gibibytes.</p>
@@ -17,7 +18,8 @@ pub struct KxSavedownStorageConfiguration {
 impl KxSavedownStorageConfiguration {
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
     /// <ul>
-    /// <li><p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
+    /// <li>
+    /// <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::KxSavedownStorageType> {
         self.r#type.as_ref()
@@ -49,7 +51,8 @@ pub struct KxSavedownStorageConfigurationBuilder {
 impl KxSavedownStorageConfigurationBuilder {
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
     /// <ul>
-    /// <li><p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
+    /// <li>
+    /// <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::KxSavedownStorageType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,7 +60,8 @@ impl KxSavedownStorageConfigurationBuilder {
     }
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
     /// <ul>
-    /// <li><p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
+    /// <li>
+    /// <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::KxSavedownStorageType>) -> Self {
         self.r#type = input;
@@ -65,7 +69,8 @@ impl KxSavedownStorageConfigurationBuilder {
     }
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
     /// <ul>
-    /// <li><p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
+    /// <li>
+    /// <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::KxSavedownStorageType> {
         &self.r#type

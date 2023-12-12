@@ -5,11 +5,16 @@
 pub struct DescribeDataSourcesInput {
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p></li>
-    /// <li><p><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p></li>
-    /// <li><p><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p></li>
-    /// <li><p><code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p></li>
-    /// <li><p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
+    /// <li>
+    /// <p><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p></li>
+    /// <li>
+    /// <p><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p></li>
+    /// <li>
+    /// <p><code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p></li>
+    /// <li>
+    /// <p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
     /// </ul>
     pub filter_variable: ::std::option::Option<crate::types::DataSourceFilterVariable>,
     /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
@@ -27,15 +32,20 @@ pub struct DescribeDataSourcesInput {
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>:</p>
     /// <ul>
-    /// <li><p>2014-09</p></li>
-    /// <li><p>2014-09-09</p></li>
-    /// <li><p>2014-09-09-Holiday</p></li>
+    /// <li>
+    /// <p>2014-09</p></li>
+    /// <li>
+    /// <p>2014-09-09</p></li>
+    /// <li>
+    /// <p>2014-09-09-Holiday</p></li>
     /// </ul>
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
     /// <ul>
-    /// <li><p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
-    /// <li><p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
+    /// <li>
+    /// <p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
+    /// <li>
+    /// <p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -47,11 +57,16 @@ pub struct DescribeDataSourcesInput {
 impl DescribeDataSourcesInput {
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p></li>
-    /// <li><p><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p></li>
-    /// <li><p><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p></li>
-    /// <li><p><code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p></li>
-    /// <li><p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
+    /// <li>
+    /// <p><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p></li>
+    /// <li>
+    /// <p><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p></li>
+    /// <li>
+    /// <p><code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p></li>
+    /// <li>
+    /// <p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
     /// </ul>
     pub fn filter_variable(&self) -> ::std::option::Option<&crate::types::DataSourceFilterVariable> {
         self.filter_variable.as_ref()
@@ -83,17 +98,22 @@ impl DescribeDataSourcesInput {
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>:</p>
     /// <ul>
-    /// <li><p>2014-09</p></li>
-    /// <li><p>2014-09-09</p></li>
-    /// <li><p>2014-09-09-Holiday</p></li>
+    /// <li>
+    /// <p>2014-09</p></li>
+    /// <li>
+    /// <p>2014-09-09</p></li>
+    /// <li>
+    /// <p>2014-09-09-Holiday</p></li>
     /// </ul>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
     /// <ul>
-    /// <li><p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
-    /// <li><p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
+    /// <li>
+    /// <p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
+    /// <li>
+    /// <p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
@@ -134,11 +154,16 @@ pub struct DescribeDataSourcesInputBuilder {
 impl DescribeDataSourcesInputBuilder {
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p></li>
-    /// <li><p><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p></li>
-    /// <li><p><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p></li>
-    /// <li><p><code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p></li>
-    /// <li><p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
+    /// <li>
+    /// <p><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p></li>
+    /// <li>
+    /// <p><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p></li>
+    /// <li>
+    /// <p><code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p></li>
+    /// <li>
+    /// <p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
     /// </ul>
     pub fn filter_variable(mut self, input: crate::types::DataSourceFilterVariable) -> Self {
         self.filter_variable = ::std::option::Option::Some(input);
@@ -146,11 +171,16 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p></li>
-    /// <li><p><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p></li>
-    /// <li><p><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p></li>
-    /// <li><p><code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p></li>
-    /// <li><p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
+    /// <li>
+    /// <p><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p></li>
+    /// <li>
+    /// <p><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p></li>
+    /// <li>
+    /// <p><code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p></li>
+    /// <li>
+    /// <p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
     /// </ul>
     pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::DataSourceFilterVariable>) -> Self {
         self.filter_variable = input;
@@ -158,11 +188,16 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p></li>
-    /// <li><p><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p></li>
-    /// <li><p><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p></li>
-    /// <li><p><code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p></li>
-    /// <li><p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
+    /// <li>
+    /// <p><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p></li>
+    /// <li>
+    /// <p><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p></li>
+    /// <li>
+    /// <p><code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p></li>
+    /// <li>
+    /// <p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
     /// </ul>
     pub fn get_filter_variable(&self) -> &::std::option::Option<crate::types::DataSourceFilterVariable> {
         &self.filter_variable
@@ -254,9 +289,12 @@ impl DescribeDataSourcesInputBuilder {
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>:</p>
     /// <ul>
-    /// <li><p>2014-09</p></li>
-    /// <li><p>2014-09-09</p></li>
-    /// <li><p>2014-09-09-Holiday</p></li>
+    /// <li>
+    /// <p>2014-09</p></li>
+    /// <li>
+    /// <p>2014-09-09</p></li>
+    /// <li>
+    /// <p>2014-09-09-Holiday</p></li>
     /// </ul>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -265,9 +303,12 @@ impl DescribeDataSourcesInputBuilder {
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>:</p>
     /// <ul>
-    /// <li><p>2014-09</p></li>
-    /// <li><p>2014-09-09</p></li>
-    /// <li><p>2014-09-09-Holiday</p></li>
+    /// <li>
+    /// <p>2014-09</p></li>
+    /// <li>
+    /// <p>2014-09-09</p></li>
+    /// <li>
+    /// <p>2014-09-09-Holiday</p></li>
     /// </ul>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
@@ -276,17 +317,22 @@ impl DescribeDataSourcesInputBuilder {
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>:</p>
     /// <ul>
-    /// <li><p>2014-09</p></li>
-    /// <li><p>2014-09-09</p></li>
-    /// <li><p>2014-09-09-Holiday</p></li>
+    /// <li>
+    /// <p>2014-09</p></li>
+    /// <li>
+    /// <p>2014-09-09</p></li>
+    /// <li>
+    /// <p>2014-09-09-Holiday</p></li>
     /// </ul>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
     /// <ul>
-    /// <li><p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
-    /// <li><p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
+    /// <li>
+    /// <p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
+    /// <li>
+    /// <p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -295,8 +341,10 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
     /// <ul>
-    /// <li><p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
-    /// <li><p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
+    /// <li>
+    /// <p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
+    /// <li>
+    /// <p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
@@ -305,8 +353,10 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
     /// <ul>
-    /// <li><p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
-    /// <li><p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
+    /// <li>
+    /// <p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
+    /// <li>
+    /// <p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {

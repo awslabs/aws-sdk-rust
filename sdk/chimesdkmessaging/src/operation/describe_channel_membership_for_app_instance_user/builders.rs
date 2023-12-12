@@ -22,7 +22,7 @@ impl DescribeChannelMembershipForAppInstanceUserInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeChannelMembershipForAppInstanceUser`.
 ///
-/// <p>Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.</p> <note>
+/// <p>Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.</p><note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

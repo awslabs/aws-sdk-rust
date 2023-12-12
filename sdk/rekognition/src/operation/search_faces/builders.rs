@@ -22,7 +22,7 @@ impl SearchFacesInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchFaces`.
 ///
-/// <p>For a given input face ID, searches for matching faces in the collection the face belongs to. You get a face ID when you add a face to the collection using the <code>IndexFaces</code> operation. The operation compares the features of the input face with faces in the specified collection.</p> <note>
+/// <p>For a given input face ID, searches for matching faces in the collection the face belongs to. You get a face ID when you add a face to the collection using the <code>IndexFaces</code> operation. The operation compares the features of the input face with faces in the specified collection.</p><note>
 /// <p>You can also search faces without indexing faces by using the <code>SearchFacesByImage</code> operation.</p>
 /// </note>
 /// <p>The operation response returns an array of faces that match, ordered by similarity score with the highest similarity first. More specifically, it is an array of metadata for each face match that is found. Along with the metadata, the response also includes a <code>confidence</code> value for each face match, indicating the confidence that the specific face matches the input face.</p>

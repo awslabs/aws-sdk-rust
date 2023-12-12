@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartQueryInput {
-    /// <p>The log group on which to perform the query.</p> <note>
+    /// <p>The log group on which to perform the query.</p><note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
     /// </note>
     pub log_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
     /// </note>
     pub log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -26,13 +26,13 @@ pub struct StartQueryInput {
     pub limit: ::std::option::Option<i32>,
 }
 impl StartQueryInput {
-    /// <p>The log group on which to perform the query.</p> <note>
+    /// <p>The log group on which to perform the query.</p><note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
     /// </note>
     pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
     /// </note>
     ///
@@ -86,21 +86,21 @@ pub struct StartQueryInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl StartQueryInputBuilder {
-    /// <p>The log group on which to perform the query.</p> <note>
+    /// <p>The log group on which to perform the query.</p><note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
     /// </note>
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The log group on which to perform the query.</p> <note>
+    /// <p>The log group on which to perform the query.</p><note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
     /// </note>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
-    /// <p>The log group on which to perform the query.</p> <note>
+    /// <p>The log group on which to perform the query.</p><note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
     /// </note>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,7 +110,7 @@ impl StartQueryInputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_group_names`](Self::set_log_group_names).
     ///
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
     /// </note>
     pub fn log_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,14 +119,14 @@ impl StartQueryInputBuilder {
         self.log_group_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
     /// </note>
     pub fn set_log_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_group_names = input;
         self
     }
-    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
+    /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p><note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>.</p>
     /// </note>
     pub fn get_log_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

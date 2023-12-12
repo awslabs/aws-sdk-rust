@@ -8,38 +8,64 @@
 pub struct Block {
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
     /// <ul>
-    /// <li><p><i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.</p></li>
-    /// <li><p><i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
     /// </ul>
     /// <p>In text analysis operations, the following types are returned:</p>
     /// <ul>
-    /// <li><p><i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.</p></li>
-    /// <li><p><i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY <code>Block</code> object or a VALUE <code>Block</code> object.</p></li>
-    /// <li><p><i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
-    /// <li><p><i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table.</p></li>
-    /// <li><p><i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p></li>
-    /// <li><p><i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p></li>
-    /// <li><p><i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p></li>
-    /// <li><p><i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p></li>
-    /// <li><p><i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p></li>
-    /// <li><p><i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p></li>
+    /// <li>
+    /// <p><i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY <code>Block</code> object or a VALUE <code>Block</code> object.</p></li>
+    /// <li>
+    /// <p><i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table.</p></li>
+    /// <li>
+    /// <p><i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p></li>
+    /// <li>
+    /// <p><i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p></li>
+    /// <li>
+    /// <p><i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p></li>
+    /// <li>
+    /// <p><i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p></li>
+    /// <li>
+    /// <p><i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p></li>
+    /// <li>
+    /// <p><i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p></li>
     /// </ul>
     /// <p>The following BlockTypes are only returned for Amazon Textract Layout.</p>
     /// <ul>
-    /// <li><p><code>LAYOUT_TITLE</code> - The main title of the document.</p></li>
-    /// <li><p><code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p></li>
-    /// <li><p><code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p></li>
-    /// <li><p><code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p></li>
-    /// <li><p><code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p></li>
-    /// <li><p><code>LAYOUT_LIST</code> - Any information grouped together in list form.</p></li>
-    /// <li><p><code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p></li>
-    /// <li><p><code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p></li>
-    /// <li><p><code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p></li>
-    /// <li><p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TITLE</code> - The main title of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_LIST</code> - Any information grouped together in list form.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
     /// </ul>
     pub block_type: ::std::option::Option<crate::types::BlockType>,
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
@@ -65,18 +91,27 @@ pub struct Block {
     /// <p>The type of entity.</p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
     /// <ul>
-    /// <li><p><i>KEY</i> - An identifier for a field on the document.</p></li>
-    /// <li><p><i>VALUE</i> - The field text.</p></li>
+    /// <li>
+    /// <p><i>KEY</i> - An identifier for a field on the document.</p></li>
+    /// <li>
+    /// <p><i>VALUE</i> - The field text.</p></li>
     /// </ul>
     /// <p>The following entity types can be returned by TABLES analysis:</p>
     /// <ul>
-    /// <li><p><i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - Identifies a cell that is a title within the table.</p></li>
-    /// <li><p><i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table.</p></li>
-    /// <li><p><i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table.</p></li>
-    /// <li><p><i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers.</p></li>
-    /// <li><p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
+    /// <li>
+    /// <p><i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - Identifies a cell that is a title within the table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table.</p></li>
+    /// <li>
+    /// <p><i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers.</p></li>
+    /// <li>
+    /// <p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
     /// </ul>
     /// <p><code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
@@ -90,38 +125,64 @@ pub struct Block {
 impl Block {
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
     /// <ul>
-    /// <li><p><i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.</p></li>
-    /// <li><p><i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
     /// </ul>
     /// <p>In text analysis operations, the following types are returned:</p>
     /// <ul>
-    /// <li><p><i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.</p></li>
-    /// <li><p><i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY <code>Block</code> object or a VALUE <code>Block</code> object.</p></li>
-    /// <li><p><i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
-    /// <li><p><i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table.</p></li>
-    /// <li><p><i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p></li>
-    /// <li><p><i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p></li>
-    /// <li><p><i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p></li>
-    /// <li><p><i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p></li>
-    /// <li><p><i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p></li>
-    /// <li><p><i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p></li>
+    /// <li>
+    /// <p><i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY <code>Block</code> object or a VALUE <code>Block</code> object.</p></li>
+    /// <li>
+    /// <p><i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table.</p></li>
+    /// <li>
+    /// <p><i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p></li>
+    /// <li>
+    /// <p><i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p></li>
+    /// <li>
+    /// <p><i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p></li>
+    /// <li>
+    /// <p><i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p></li>
+    /// <li>
+    /// <p><i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p></li>
+    /// <li>
+    /// <p><i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p></li>
     /// </ul>
     /// <p>The following BlockTypes are only returned for Amazon Textract Layout.</p>
     /// <ul>
-    /// <li><p><code>LAYOUT_TITLE</code> - The main title of the document.</p></li>
-    /// <li><p><code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p></li>
-    /// <li><p><code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p></li>
-    /// <li><p><code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p></li>
-    /// <li><p><code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p></li>
-    /// <li><p><code>LAYOUT_LIST</code> - Any information grouped together in list form.</p></li>
-    /// <li><p><code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p></li>
-    /// <li><p><code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p></li>
-    /// <li><p><code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p></li>
-    /// <li><p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TITLE</code> - The main title of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_LIST</code> - Any information grouped together in list form.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
     /// </ul>
     pub fn block_type(&self) -> ::std::option::Option<&crate::types::BlockType> {
         self.block_type.as_ref()
@@ -171,18 +232,27 @@ impl Block {
     /// <p>The type of entity.</p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
     /// <ul>
-    /// <li><p><i>KEY</i> - An identifier for a field on the document.</p></li>
-    /// <li><p><i>VALUE</i> - The field text.</p></li>
+    /// <li>
+    /// <p><i>KEY</i> - An identifier for a field on the document.</p></li>
+    /// <li>
+    /// <p><i>VALUE</i> - The field text.</p></li>
     /// </ul>
     /// <p>The following entity types can be returned by TABLES analysis:</p>
     /// <ul>
-    /// <li><p><i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - Identifies a cell that is a title within the table.</p></li>
-    /// <li><p><i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table.</p></li>
-    /// <li><p><i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table.</p></li>
-    /// <li><p><i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers.</p></li>
-    /// <li><p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
+    /// <li>
+    /// <p><i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - Identifies a cell that is a title within the table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table.</p></li>
+    /// <li>
+    /// <p><i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers.</p></li>
+    /// <li>
+    /// <p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
     /// </ul>
     /// <p><code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     ///
@@ -233,38 +303,64 @@ pub struct BlockBuilder {
 impl BlockBuilder {
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
     /// <ul>
-    /// <li><p><i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.</p></li>
-    /// <li><p><i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
     /// </ul>
     /// <p>In text analysis operations, the following types are returned:</p>
     /// <ul>
-    /// <li><p><i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.</p></li>
-    /// <li><p><i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY <code>Block</code> object or a VALUE <code>Block</code> object.</p></li>
-    /// <li><p><i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
-    /// <li><p><i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table.</p></li>
-    /// <li><p><i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p></li>
-    /// <li><p><i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p></li>
-    /// <li><p><i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p></li>
-    /// <li><p><i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p></li>
-    /// <li><p><i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p></li>
-    /// <li><p><i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p></li>
+    /// <li>
+    /// <p><i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY <code>Block</code> object or a VALUE <code>Block</code> object.</p></li>
+    /// <li>
+    /// <p><i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table.</p></li>
+    /// <li>
+    /// <p><i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p></li>
+    /// <li>
+    /// <p><i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p></li>
+    /// <li>
+    /// <p><i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p></li>
+    /// <li>
+    /// <p><i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p></li>
+    /// <li>
+    /// <p><i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p></li>
+    /// <li>
+    /// <p><i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p></li>
     /// </ul>
     /// <p>The following BlockTypes are only returned for Amazon Textract Layout.</p>
     /// <ul>
-    /// <li><p><code>LAYOUT_TITLE</code> - The main title of the document.</p></li>
-    /// <li><p><code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p></li>
-    /// <li><p><code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p></li>
-    /// <li><p><code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p></li>
-    /// <li><p><code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p></li>
-    /// <li><p><code>LAYOUT_LIST</code> - Any information grouped together in list form.</p></li>
-    /// <li><p><code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p></li>
-    /// <li><p><code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p></li>
-    /// <li><p><code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p></li>
-    /// <li><p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TITLE</code> - The main title of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_LIST</code> - Any information grouped together in list form.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
     /// </ul>
     pub fn block_type(mut self, input: crate::types::BlockType) -> Self {
         self.block_type = ::std::option::Option::Some(input);
@@ -272,38 +368,64 @@ impl BlockBuilder {
     }
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
     /// <ul>
-    /// <li><p><i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.</p></li>
-    /// <li><p><i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
     /// </ul>
     /// <p>In text analysis operations, the following types are returned:</p>
     /// <ul>
-    /// <li><p><i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.</p></li>
-    /// <li><p><i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY <code>Block</code> object or a VALUE <code>Block</code> object.</p></li>
-    /// <li><p><i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
-    /// <li><p><i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table.</p></li>
-    /// <li><p><i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p></li>
-    /// <li><p><i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p></li>
-    /// <li><p><i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p></li>
-    /// <li><p><i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p></li>
-    /// <li><p><i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p></li>
-    /// <li><p><i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p></li>
+    /// <li>
+    /// <p><i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY <code>Block</code> object or a VALUE <code>Block</code> object.</p></li>
+    /// <li>
+    /// <p><i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table.</p></li>
+    /// <li>
+    /// <p><i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p></li>
+    /// <li>
+    /// <p><i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p></li>
+    /// <li>
+    /// <p><i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p></li>
+    /// <li>
+    /// <p><i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p></li>
+    /// <li>
+    /// <p><i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p></li>
+    /// <li>
+    /// <p><i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p></li>
     /// </ul>
     /// <p>The following BlockTypes are only returned for Amazon Textract Layout.</p>
     /// <ul>
-    /// <li><p><code>LAYOUT_TITLE</code> - The main title of the document.</p></li>
-    /// <li><p><code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p></li>
-    /// <li><p><code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p></li>
-    /// <li><p><code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p></li>
-    /// <li><p><code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p></li>
-    /// <li><p><code>LAYOUT_LIST</code> - Any information grouped together in list form.</p></li>
-    /// <li><p><code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p></li>
-    /// <li><p><code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p></li>
-    /// <li><p><code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p></li>
-    /// <li><p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TITLE</code> - The main title of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_LIST</code> - Any information grouped together in list form.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
     /// </ul>
     pub fn set_block_type(mut self, input: ::std::option::Option<crate::types::BlockType>) -> Self {
         self.block_type = input;
@@ -311,38 +433,64 @@ impl BlockBuilder {
     }
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
     /// <ul>
-    /// <li><p><i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.</p></li>
-    /// <li><p><i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
     /// </ul>
     /// <p>In text analysis operations, the following types are returned:</p>
     /// <ul>
-    /// <li><p><i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.</p></li>
-    /// <li><p><i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY <code>Block</code> object or a VALUE <code>Block</code> object.</p></li>
-    /// <li><p><i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
-    /// <li><p><i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table.</p></li>
-    /// <li><p><i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p></li>
-    /// <li><p><i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p></li>
-    /// <li><p><i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p></li>
-    /// <li><p><i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p></li>
-    /// <li><p><i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p></li>
-    /// <li><p><i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p></li>
+    /// <li>
+    /// <p><i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY <code>Block</code> object or a VALUE <code>Block</code> object.</p></li>
+    /// <li>
+    /// <p><i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p><i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.</p></li>
+    /// <li>
+    /// <p><i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more rows or columns, with a cell span of one row and one column each.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - The title of a table. A title is typically a line of text above or below a table, or embedded as the first row of a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - The footer associated with a table. A footer is typically a line or lines of text below a table or embedded as the last row of a table.</p></li>
+    /// <li>
+    /// <p><i>CELL</i> - A cell within a detected table. The cell is the parent of the block that contains the text in the cell.</p></li>
+    /// <li>
+    /// <p><i>MERGED_CELL</i> - A cell in a table whose content spans more than one row or column. The <code>Relationships</code> array for this cell contain data from individual cells.</p></li>
+    /// <li>
+    /// <p><i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.</p></li>
+    /// <li>
+    /// <p><i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p></li>
+    /// <li>
+    /// <p><i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p></li>
+    /// <li>
+    /// <p><i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p></li>
     /// </ul>
     /// <p>The following BlockTypes are only returned for Amazon Textract Layout.</p>
     /// <ul>
-    /// <li><p><code>LAYOUT_TITLE</code> - The main title of the document.</p></li>
-    /// <li><p><code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p></li>
-    /// <li><p><code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p></li>
-    /// <li><p><code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p></li>
-    /// <li><p><code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p></li>
-    /// <li><p><code>LAYOUT_LIST</code> - Any information grouped together in list form.</p></li>
-    /// <li><p><code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p></li>
-    /// <li><p><code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p></li>
-    /// <li><p><code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p></li>
-    /// <li><p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TITLE</code> - The main title of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_LIST</code> - Any information grouped together in list form.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p></li>
+    /// <li>
+    /// <p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
     /// </ul>
     pub fn get_block_type(&self) -> &::std::option::Option<crate::types::BlockType> {
         &self.block_type
@@ -500,18 +648,27 @@ impl BlockBuilder {
     /// <p>The type of entity.</p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
     /// <ul>
-    /// <li><p><i>KEY</i> - An identifier for a field on the document.</p></li>
-    /// <li><p><i>VALUE</i> - The field text.</p></li>
+    /// <li>
+    /// <p><i>KEY</i> - An identifier for a field on the document.</p></li>
+    /// <li>
+    /// <p><i>VALUE</i> - The field text.</p></li>
     /// </ul>
     /// <p>The following entity types can be returned by TABLES analysis:</p>
     /// <ul>
-    /// <li><p><i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - Identifies a cell that is a title within the table.</p></li>
-    /// <li><p><i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table.</p></li>
-    /// <li><p><i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table.</p></li>
-    /// <li><p><i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers.</p></li>
-    /// <li><p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
+    /// <li>
+    /// <p><i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - Identifies a cell that is a title within the table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table.</p></li>
+    /// <li>
+    /// <p><i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers.</p></li>
+    /// <li>
+    /// <p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
     /// </ul>
     /// <p><code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn entity_types(mut self, input: crate::types::EntityType) -> Self {
@@ -523,18 +680,27 @@ impl BlockBuilder {
     /// <p>The type of entity.</p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
     /// <ul>
-    /// <li><p><i>KEY</i> - An identifier for a field on the document.</p></li>
-    /// <li><p><i>VALUE</i> - The field text.</p></li>
+    /// <li>
+    /// <p><i>KEY</i> - An identifier for a field on the document.</p></li>
+    /// <li>
+    /// <p><i>VALUE</i> - The field text.</p></li>
     /// </ul>
     /// <p>The following entity types can be returned by TABLES analysis:</p>
     /// <ul>
-    /// <li><p><i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - Identifies a cell that is a title within the table.</p></li>
-    /// <li><p><i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table.</p></li>
-    /// <li><p><i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table.</p></li>
-    /// <li><p><i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers.</p></li>
-    /// <li><p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
+    /// <li>
+    /// <p><i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - Identifies a cell that is a title within the table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table.</p></li>
+    /// <li>
+    /// <p><i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers.</p></li>
+    /// <li>
+    /// <p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
     /// </ul>
     /// <p><code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>) -> Self {
@@ -544,18 +710,27 @@ impl BlockBuilder {
     /// <p>The type of entity.</p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
     /// <ul>
-    /// <li><p><i>KEY</i> - An identifier for a field on the document.</p></li>
-    /// <li><p><i>VALUE</i> - The field text.</p></li>
+    /// <li>
+    /// <p><i>KEY</i> - An identifier for a field on the document.</p></li>
+    /// <li>
+    /// <p><i>VALUE</i> - The field text.</p></li>
     /// </ul>
     /// <p>The following entity types can be returned by TABLES analysis:</p>
     /// <ul>
-    /// <li><p><i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - Identifies a cell that is a title within the table.</p></li>
-    /// <li><p><i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table.</p></li>
-    /// <li><p><i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table.</p></li>
-    /// <li><p><i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers.</p></li>
-    /// <li><p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
+    /// <li>
+    /// <p><i>COLUMN_HEADER</i> - Identifies a cell that is a header of a column.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - Identifies a cell that is a title within the table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_SECTION_TITLE</i> - Identifies a cell that is a title of a section within a table. A section title is a cell that typically spans an entire row above a section.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - Identifies a cell that is a footer of a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_SUMMARY</i> - Identifies a summary cell of a table. A summary cell can be a row of a table or an additional, smaller table that contains summary information for another table.</p></li>
+    /// <li>
+    /// <p><i>STRUCTURED_TABLE </i> - Identifies a table with column headers where the content of each row corresponds to the headers.</p></li>
+    /// <li>
+    /// <p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
     /// </ul>
     /// <p><code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {

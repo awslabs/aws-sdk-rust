@@ -141,21 +141,21 @@ impl PutFileFluentBuilder {
     pub fn get_file_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_file_content()
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p><note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_path(input.into());
         self
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p><note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_path(input);
         self
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p><note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {

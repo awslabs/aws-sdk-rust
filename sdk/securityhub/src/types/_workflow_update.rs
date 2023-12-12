@@ -7,14 +7,21 @@ pub struct WorkflowUpdate {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li>
+    /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
+    /// <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li><p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p>The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p>The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
-    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
-    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <li>
+    /// <p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
+    /// <li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::WorkflowStatus>,
 }
@@ -22,14 +29,21 @@ impl WorkflowUpdate {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li>
+    /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
+    /// <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li><p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p>The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p>The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
-    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
-    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <li>
+    /// <p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
+    /// <li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WorkflowStatus> {
         self.status.as_ref()
@@ -52,14 +66,21 @@ impl WorkflowUpdateBuilder {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li>
+    /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
+    /// <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li><p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p>The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p>The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
-    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
-    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <li>
+    /// <p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
+    /// <li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::WorkflowStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -68,14 +89,21 @@ impl WorkflowUpdateBuilder {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li>
+    /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
+    /// <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li><p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p>The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p>The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
-    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
-    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <li>
+    /// <p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
+    /// <li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStatus>) -> Self {
         self.status = input;
@@ -84,14 +112,21 @@ impl WorkflowUpdateBuilder {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li>
+    /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
+    /// <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li><p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p>The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p>The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
-    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
-    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
+    /// <li>
+    /// <p><code>NOTIFIED</code> - Indicates that you notified the resource owner about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
+    /// <li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowStatus> {
         &self.status

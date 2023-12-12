@@ -22,7 +22,7 @@ impl ListCampaignsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCampaigns`.
 ///
-/// <p>Lists information about created campaigns.</p> <note>
+/// <p>Lists information about created campaigns.</p><note>
 /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the request to return more results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

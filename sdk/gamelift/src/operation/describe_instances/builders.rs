@@ -25,9 +25,12 @@ impl DescribeInstancesInputBuilder {
 /// <p>Retrieves information about the EC2 instances in an Amazon GameLift managed fleet, including instance ID, connection data, and status. You can use this operation with a multi-location fleet to get location-specific instance information. As an alternative, use the operations <code>ListCompute</code> and <code>DescribeCompute</code> to retrieve information for compute resources, including EC2 and Anywhere fleets.</p>
 /// <p>You can call this operation in the following ways:</p>
 /// <ul>
-/// <li><p>To get information on all instances in a fleet's home Region, specify the fleet ID.</p></li>
-/// <li><p>To get information on all instances in a fleet's remote location, specify the fleet ID and location name.</p></li>
-/// <li><p>To get information on a specific instance in a fleet, specify the fleet ID and instance ID.</p></li>
+/// <li>
+/// <p>To get information on all instances in a fleet's home Region, specify the fleet ID.</p></li>
+/// <li>
+/// <p>To get information on all instances in a fleet's remote location, specify the fleet ID and location name.</p></li>
+/// <li>
+/// <p>To get information on a specific instance in a fleet, specify the fleet ID and instance ID.</p></li>
 /// </ul>
 /// <p>Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, this operation returns <code>Instance</code> objects for each requested instance, listed in no particular order. If you call this operation for an Anywhere fleet, you receive an InvalidRequestException.</p>

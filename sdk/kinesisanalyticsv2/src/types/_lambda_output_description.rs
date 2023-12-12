@@ -6,7 +6,7 @@
 pub struct LambdaOutputDescription {
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
     pub resource_arn: ::std::string::String,
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p><note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl LambdaOutputDescription {
         use std::ops::Deref;
         self.resource_arn.deref()
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p><note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -54,21 +54,21 @@ impl LambdaOutputDescriptionBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p><note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p><note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p><note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {

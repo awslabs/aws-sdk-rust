@@ -9,7 +9,7 @@ pub struct JsonMatchPattern {
     pub all: ::std::option::Option<crate::types::All>,
     /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
     /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
-    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
+    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p><note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting.</p>
     /// </note>
     pub included_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -22,7 +22,7 @@ impl JsonMatchPattern {
     }
     /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
     /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
-    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
+    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p><note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting.</p>
     /// </note>
     ///
@@ -69,7 +69,7 @@ impl JsonMatchPatternBuilder {
     ///
     /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
     /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
-    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
+    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p><note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting.</p>
     /// </note>
     pub fn included_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,7 +80,7 @@ impl JsonMatchPatternBuilder {
     }
     /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
     /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
-    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
+    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p><note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting.</p>
     /// </note>
     pub fn set_included_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -89,7 +89,7 @@ impl JsonMatchPatternBuilder {
     }
     /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>.</p>
     /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
-    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
+    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p><note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting.</p>
     /// </note>
     pub fn get_included_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

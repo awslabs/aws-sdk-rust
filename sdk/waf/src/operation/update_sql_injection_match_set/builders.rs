@@ -28,16 +28,23 @@ impl UpdateSqlInjectionMatchSetInputBuilder {
 /// </note>
 /// <p>Inserts or deletes <code>SqlInjectionMatchTuple</code> objects (filters) in a <code>SqlInjectionMatchSet</code>. For each <code>SqlInjectionMatchTuple</code> object, you specify the following values:</p>
 /// <ul>
-/// <li><p><code>Action</code>: Whether to insert the object into or delete the object from the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing object and add a new one.</p></li>
-/// <li><p><code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header or custom query parameter, the name of the header or parameter.</p></li>
-/// <li><p><code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before inspecting the request for snippets of malicious SQL code.</p> <p>You can only specify a single type of TextTransformation.</p></li>
+/// <li>
+/// <p><code>Action</code>: Whether to insert the object into or delete the object from the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing object and add a new one.</p></li>
+/// <li>
+/// <p><code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header or custom query parameter, the name of the header or parameter.</p></li>
+/// <li>
+/// <p><code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before inspecting the request for snippets of malicious SQL code.</p>
+/// <p>You can only specify a single type of TextTransformation.</p></li>
 /// </ul>
 /// <p>You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests that you want to allow, block, or count. For example, if you're receiving requests that contain snippets of SQL code in the query string and you want to block the requests, you can create a <code>SqlInjectionMatchSet</code> with the applicable settings, and then configure AWS WAF to block the requests.</p>
 /// <p>To create and configure a <code>SqlInjectionMatchSet</code>, perform the following steps:</p>
 /// <ol>
-/// <li><p>Submit a <code>CreateSqlInjectionMatchSet</code> request.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateIPSet</code> request.</p></li>
-/// <li><p>Submit an <code>UpdateSqlInjectionMatchSet</code> request to specify the parts of web requests that you want AWS WAF to inspect for snippets of SQL code.</p></li>
+/// <li>
+/// <p>Submit a <code>CreateSqlInjectionMatchSet</code> request.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateIPSet</code> request.</p></li>
+/// <li>
+/// <p>Submit an <code>UpdateSqlInjectionMatchSet</code> request to specify the parts of web requests that you want AWS WAF to inspect for snippets of SQL code.</p></li>
 /// </ol>
 /// <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -159,9 +166,12 @@ impl UpdateSqlInjectionMatchSetFluentBuilder {
     ///
     /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></p></li>
-    /// <li><p><code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></p></li>
+    /// <li>
+    /// <p><code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn updates(mut self, input: crate::types::SqlInjectionMatchSetUpdate) -> Self {
         self.inner = self.inner.updates(input);
@@ -169,9 +179,12 @@ impl UpdateSqlInjectionMatchSetFluentBuilder {
     }
     /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></p></li>
-    /// <li><p><code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></p></li>
+    /// <li>
+    /// <p><code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
@@ -179,9 +192,12 @@ impl UpdateSqlInjectionMatchSetFluentBuilder {
     }
     /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></p></li>
-    /// <li><p><code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></p></li>
+    /// <li>
+    /// <p><code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>> {
         self.inner.get_updates()

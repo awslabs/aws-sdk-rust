@@ -13,11 +13,16 @@ pub struct SetPermissionInput {
     pub allow_sudo: ::std::option::Option<bool>,
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
-    /// <li><p><code>deny</code></p></li>
-    /// <li><p><code>show</code></p></li>
-    /// <li><p><code>deploy</code></p></li>
-    /// <li><p><code>manage</code></p></li>
-    /// <li><p><code>iam_only</code></p></li>
+    /// <li>
+    /// <p><code>deny</code></p></li>
+    /// <li>
+    /// <p><code>show</code></p></li>
+    /// <li>
+    /// <p><code>deploy</code></p></li>
+    /// <li>
+    /// <p><code>manage</code></p></li>
+    /// <li>
+    /// <p><code>iam_only</code></p></li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub level: ::std::option::Option<::std::string::String>,
@@ -41,11 +46,16 @@ impl SetPermissionInput {
     }
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
-    /// <li><p><code>deny</code></p></li>
-    /// <li><p><code>show</code></p></li>
-    /// <li><p><code>deploy</code></p></li>
-    /// <li><p><code>manage</code></p></li>
-    /// <li><p><code>iam_only</code></p></li>
+    /// <li>
+    /// <p><code>deny</code></p></li>
+    /// <li>
+    /// <p><code>show</code></p></li>
+    /// <li>
+    /// <p><code>deploy</code></p></li>
+    /// <li>
+    /// <p><code>manage</code></p></li>
+    /// <li>
+    /// <p><code>iam_only</code></p></li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub fn level(&self) -> ::std::option::Option<&str> {
@@ -130,11 +140,16 @@ impl SetPermissionInputBuilder {
     }
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
-    /// <li><p><code>deny</code></p></li>
-    /// <li><p><code>show</code></p></li>
-    /// <li><p><code>deploy</code></p></li>
-    /// <li><p><code>manage</code></p></li>
-    /// <li><p><code>iam_only</code></p></li>
+    /// <li>
+    /// <p><code>deny</code></p></li>
+    /// <li>
+    /// <p><code>show</code></p></li>
+    /// <li>
+    /// <p><code>deploy</code></p></li>
+    /// <li>
+    /// <p><code>manage</code></p></li>
+    /// <li>
+    /// <p><code>iam_only</code></p></li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub fn level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,11 +158,16 @@ impl SetPermissionInputBuilder {
     }
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
-    /// <li><p><code>deny</code></p></li>
-    /// <li><p><code>show</code></p></li>
-    /// <li><p><code>deploy</code></p></li>
-    /// <li><p><code>manage</code></p></li>
-    /// <li><p><code>iam_only</code></p></li>
+    /// <li>
+    /// <p><code>deny</code></p></li>
+    /// <li>
+    /// <p><code>show</code></p></li>
+    /// <li>
+    /// <p><code>deploy</code></p></li>
+    /// <li>
+    /// <p><code>manage</code></p></li>
+    /// <li>
+    /// <p><code>iam_only</code></p></li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub fn set_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -156,11 +176,16 @@ impl SetPermissionInputBuilder {
     }
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
-    /// <li><p><code>deny</code></p></li>
-    /// <li><p><code>show</code></p></li>
-    /// <li><p><code>deploy</code></p></li>
-    /// <li><p><code>manage</code></p></li>
-    /// <li><p><code>iam_only</code></p></li>
+    /// <li>
+    /// <p><code>deny</code></p></li>
+    /// <li>
+    /// <p><code>show</code></p></li>
+    /// <li>
+    /// <p><code>deploy</code></p></li>
+    /// <li>
+    /// <p><code>manage</code></p></li>
+    /// <li>
+    /// <p><code>iam_only</code></p></li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub fn get_level(&self) -> &::std::option::Option<::std::string::String> {

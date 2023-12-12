@@ -22,7 +22,7 @@ impl SendChannelMessageInputBuilder {
 }
 /// Fluent builder constructing a request to `SendChannelMessage`.
 ///
-/// <p>Sends a message to a particular channel that the member is a part of.</p> <note>
+/// <p>Sends a message to a particular channel that the member is a part of.</p><note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// <p>Also, <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
 /// <p><code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>

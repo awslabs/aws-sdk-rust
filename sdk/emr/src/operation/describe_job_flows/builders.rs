@@ -27,8 +27,10 @@ impl DescribeJobFlowsInputBuilder {
 /// <p>Regardless of supplied parameters, only job flows created within the last two months are returned.</p>
 /// <p>If no parameters are supplied, then job flows matching either of the following criteria are returned:</p>
 /// <ul>
-/// <li><p>Job flows created and completed in the last two weeks</p></li>
-/// <li><p>Job flows created within the last two months that are in one of the following states: <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code></p></li>
+/// <li>
+/// <p>Job flows created and completed in the last two weeks</p></li>
+/// <li>
+/// <p>Job flows created within the last two months that are in one of the following states: <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code></p></li>
 /// </ul>
 /// <p>Amazon EMR can return a maximum of 512 job flow descriptions.</p>
 #[deprecated]

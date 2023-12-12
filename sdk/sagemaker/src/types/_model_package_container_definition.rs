@@ -11,7 +11,7 @@ pub struct ModelPackageContainerDefinition {
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for training.</p>
     pub image_digest: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
+    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p><note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
     /// </note>
     pub model_data_url: ::std::option::Option<::std::string::String>,
@@ -44,7 +44,7 @@ impl ModelPackageContainerDefinition {
     pub fn image_digest(&self) -> ::std::option::Option<&str> {
         self.image_digest.as_deref()
     }
-    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
+    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p><note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
     /// </note>
     pub fn model_data_url(&self) -> ::std::option::Option<&str> {
@@ -149,21 +149,21 @@ impl ModelPackageContainerDefinitionBuilder {
     pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_digest
     }
-    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
+    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p><note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
     /// </note>
     pub fn model_data_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_data_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
+    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p><note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
     /// </note>
     pub fn set_model_data_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_data_url = input;
         self
     }
-    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
+    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p><note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
     /// </note>
     pub fn get_model_data_url(&self) -> &::std::option::Option<::std::string::String> {

@@ -24,9 +24,12 @@ impl ListMigrationTasksInputBuilder {
 ///
 /// <p>Lists all, or filtered by resource name, migration tasks associated with the user account making this call. This API has the following traits:</p>
 /// <ul>
-/// <li><p>Can show a summary list of the most recent migration tasks.</p></li>
-/// <li><p>Can show a summary list of migration tasks associated with a given discovered resource.</p></li>
-/// <li><p>Lists migration tasks in a paginated interface.</p></li>
+/// <li>
+/// <p>Can show a summary list of the most recent migration tasks.</p></li>
+/// <li>
+/// <p>Can show a summary list of migration tasks associated with a given discovered resource.</p></li>
+/// <li>
+/// <p>Lists migration tasks in a paginated interface.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMigrationTasksFluentBuilder {

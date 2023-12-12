@@ -22,7 +22,7 @@ impl ListExecutionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListExecutions`.
 ///
-/// <p>Lists all in-progress executions for the specified workflow.</p> <note>
+/// <p>Lists all in-progress executions for the specified workflow.</p><note>
 /// <p>If the specified workflow ID cannot be found, <code>ListExecutions</code> returns a <code>ResourceNotFound</code> exception.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

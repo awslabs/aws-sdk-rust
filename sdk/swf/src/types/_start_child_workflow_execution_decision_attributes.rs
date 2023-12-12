@@ -4,14 +4,21 @@
 /// <p><b>Access Control</b></p>
 /// <p>You can use IAM policies to control this decision's access to Amazon SWF resources as follows:</p>
 /// <ul>
-/// <li><p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p></li>
-/// <li><p>Use an <code>Action</code> element to allow or deny permission to call this action.</p></li>
-/// <li><p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
+/// <li>
+/// <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p></li>
+/// <li>
+/// <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p></li>
+/// <li>
+/// <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
 /// <ul>
-/// <li><p><code>tagList.member.N</code> – The key is "swf:tagList.N" where N is the tag number from 0 to 4, inclusive.</p></li>
-/// <li><p><code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p></li>
-/// <li><p><code>workflowType.name</code> – String constraint. The key is <code>swf:workflowType.name</code>.</p></li>
-/// <li><p><code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.</p></li>
+/// <li>
+/// <p><code>tagList.member.N</code> – The key is "swf:tagList.N" where N is the tag number from 0 to 4, inclusive.</p></li>
+/// <li>
+/// <p><code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.</p></li>
+/// <li>
+/// <p><code>workflowType.name</code> – String constraint. The key is <code>swf:workflowType.name</code>.</p></li>
+/// <li>
+/// <p><code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.</p></li>
 /// </ul></li>
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -28,11 +35,11 @@ pub struct StartChildWorkflowExecutionDecisionAttributes {
     /// <p>The input to be provided to the workflow execution.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p> <note>
+    /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p><note>
     /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -41,17 +48,20 @@ pub struct StartChildWorkflowExecutionDecisionAttributes {
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub task_priority: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>If set, specifies the policy to use for the child workflow executions if the workflow execution being started is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li>
+    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li>
+    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
+    /// </ul><note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
@@ -80,13 +90,13 @@ impl StartChildWorkflowExecutionDecisionAttributes {
         self.input.as_deref()
     }
     /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn execution_start_to_close_timeout(&self) -> ::std::option::Option<&str> {
         self.execution_start_to_close_timeout.as_deref()
     }
-    /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p> <note>
+    /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p><note>
     /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -99,7 +109,7 @@ impl StartChildWorkflowExecutionDecisionAttributes {
         self.task_priority.as_deref()
     }
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn task_start_to_close_timeout(&self) -> ::std::option::Option<&str> {
@@ -108,10 +118,13 @@ impl StartChildWorkflowExecutionDecisionAttributes {
     /// <p>If set, specifies the policy to use for the child workflow executions if the workflow execution being started is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li>
+    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li>
+    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
+    /// </ul><note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn child_policy(&self) -> ::std::option::Option<&crate::types::ChildPolicy> {
@@ -214,7 +227,7 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         &self.input
     }
     /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn execution_start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -222,7 +235,7 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self
     }
     /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn set_execution_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -230,13 +243,13 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self
     }
     /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn get_execution_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_start_to_close_timeout
     }
-    /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p> <note>
+    /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p><note>
     /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -244,7 +257,7 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self.task_list = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p> <note>
+    /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p><note>
     /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -252,7 +265,7 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self.task_list = input;
         self
     }
-    /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p> <note>
+    /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p><note>
     /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -277,7 +290,7 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         &self.task_priority
     }
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn task_start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -285,7 +298,7 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self
     }
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn set_task_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -293,7 +306,7 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self
     }
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p><note>
     /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn get_task_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,10 +315,13 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
     /// <p>If set, specifies the policy to use for the child workflow executions if the workflow execution being started is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li>
+    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li>
+    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
+    /// </ul><note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
@@ -315,10 +331,13 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
     /// <p>If set, specifies the policy to use for the child workflow executions if the workflow execution being started is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li>
+    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li>
+    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
+    /// </ul><note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
@@ -328,10 +347,13 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
     /// <p>If set, specifies the policy to use for the child workflow executions if the workflow execution being started is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li>
+    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li>
+    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
+    /// </ul><note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn get_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {

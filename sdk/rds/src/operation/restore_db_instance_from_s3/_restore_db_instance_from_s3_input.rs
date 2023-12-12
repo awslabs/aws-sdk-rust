@@ -8,13 +8,16 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub allocated_storage: ::std::option::Option<i32>,
@@ -27,25 +30,36 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>The name for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
-    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
-    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>A list of DB security groups to associate with this DB instance.</p>
@@ -65,11 +79,16 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
-    /// <li><p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred backup window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred backup window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -80,10 +99,14 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the database accepts connections.</p>
@@ -156,16 +179,23 @@ pub struct RestoreDbInstanceFromS3Input {
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
-    /// <li><p>7</p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
-    /// <li><p>731</p></li>
+    /// <li>
+    /// <p>7</p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
+    /// <li>
+    /// <p>731</p></li>
     /// </ul>
     /// <p>For example, the following values are valid:</p>
     /// <ul>
-    /// <li><p>93 (3 months * 31)</p></li>
-    /// <li><p>341 (11 months * 31)</p></li>
-    /// <li><p>589 (19 months * 31)</p></li>
-    /// <li><p>731</p></li>
+    /// <li>
+    /// <p>93 (3 months * 31)</p></li>
+    /// <li>
+    /// <p>341 (11 months * 31)</p></li>
+    /// <li>
+    /// <p>589 (19 months * 31)</p></li>
+    /// <li>
+    /// <p>731</p></li>
     /// </ul>
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub performance_insights_retention_period: ::std::option::Option<i32>,
@@ -183,8 +213,10 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -196,7 +228,8 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub manage_master_user_password: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
@@ -216,15 +249,18 @@ impl RestoreDbInstanceFromS3Input {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
@@ -243,9 +279,12 @@ impl RestoreDbInstanceFromS3Input {
     /// <p>The name for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
@@ -253,17 +292,25 @@ impl RestoreDbInstanceFromS3Input {
     /// <p>The password for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
-    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
-    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -297,11 +344,16 @@ impl RestoreDbInstanceFromS3Input {
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
-    /// <li><p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred backup window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred backup window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
@@ -318,10 +370,14 @@ impl RestoreDbInstanceFromS3Input {
     /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
@@ -444,16 +500,23 @@ impl RestoreDbInstanceFromS3Input {
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
-    /// <li><p>7</p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
-    /// <li><p>731</p></li>
+    /// <li>
+    /// <p>7</p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
+    /// <li>
+    /// <p>731</p></li>
     /// </ul>
     /// <p>For example, the following values are valid:</p>
     /// <ul>
-    /// <li><p>93 (3 months * 31)</p></li>
-    /// <li><p>341 (11 months * 31)</p></li>
-    /// <li><p>589 (19 months * 31)</p></li>
-    /// <li><p>731</p></li>
+    /// <li>
+    /// <p>93 (3 months * 31)</p></li>
+    /// <li>
+    /// <p>341 (11 months * 31)</p></li>
+    /// <li>
+    /// <p>589 (19 months * 31)</p></li>
+    /// <li>
+    /// <p>731</p></li>
     /// </ul>
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub fn performance_insights_retention_period(&self) -> ::std::option::Option<i32> {
@@ -487,8 +550,10 @@ impl RestoreDbInstanceFromS3Input {
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -504,7 +569,8 @@ impl RestoreDbInstanceFromS3Input {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn manage_master_user_password(&self) -> ::std::option::Option<bool> {
         self.manage_master_user_password
@@ -601,9 +667,12 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     /// This field is required.
@@ -614,9 +683,12 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -626,29 +698,32 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
     }
-    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
+    /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -693,9 +768,12 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The name for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
@@ -704,9 +782,12 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The name for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
@@ -715,9 +796,12 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The name for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_username
@@ -725,17 +809,25 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The password for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
-    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
-    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
@@ -744,17 +836,25 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The password for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
-    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
-    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
@@ -763,17 +863,25 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The password for the master user.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
-    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
-    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Db2 - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_password
@@ -867,11 +975,16 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
-    /// <li><p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred backup window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred backup window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
@@ -880,11 +993,16 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
-    /// <li><p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred backup window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred backup window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
@@ -893,11 +1011,16 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
-    /// <li><p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred backup window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred backup window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
@@ -936,10 +1059,14 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
@@ -948,10 +1075,14 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
@@ -960,10 +1091,14 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_backup_window
@@ -1368,16 +1503,23 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
-    /// <li><p>7</p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
-    /// <li><p>731</p></li>
+    /// <li>
+    /// <p>7</p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
+    /// <li>
+    /// <p>731</p></li>
     /// </ul>
     /// <p>For example, the following values are valid:</p>
     /// <ul>
-    /// <li><p>93 (3 months * 31)</p></li>
-    /// <li><p>341 (11 months * 31)</p></li>
-    /// <li><p>589 (19 months * 31)</p></li>
-    /// <li><p>731</p></li>
+    /// <li>
+    /// <p>93 (3 months * 31)</p></li>
+    /// <li>
+    /// <p>341 (11 months * 31)</p></li>
+    /// <li>
+    /// <p>589 (19 months * 31)</p></li>
+    /// <li>
+    /// <p>731</p></li>
     /// </ul>
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
@@ -1386,16 +1528,23 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
-    /// <li><p>7</p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
-    /// <li><p>731</p></li>
+    /// <li>
+    /// <p>7</p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
+    /// <li>
+    /// <p>731</p></li>
     /// </ul>
     /// <p>For example, the following values are valid:</p>
     /// <ul>
-    /// <li><p>93 (3 months * 31)</p></li>
-    /// <li><p>341 (11 months * 31)</p></li>
-    /// <li><p>589 (19 months * 31)</p></li>
-    /// <li><p>731</p></li>
+    /// <li>
+    /// <p>93 (3 months * 31)</p></li>
+    /// <li>
+    /// <p>341 (11 months * 31)</p></li>
+    /// <li>
+    /// <p>589 (19 months * 31)</p></li>
+    /// <li>
+    /// <p>731</p></li>
     /// </ul>
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub fn set_performance_insights_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -1404,16 +1553,23 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
-    /// <li><p>7</p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
-    /// <li><p>731</p></li>
+    /// <li>
+    /// <p>7</p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p></li>
+    /// <li>
+    /// <p>731</p></li>
     /// </ul>
     /// <p>For example, the following values are valid:</p>
     /// <ul>
-    /// <li><p>93 (3 months * 31)</p></li>
-    /// <li><p>341 (11 months * 31)</p></li>
-    /// <li><p>589 (19 months * 31)</p></li>
-    /// <li><p>731</p></li>
+    /// <li>
+    /// <p>93 (3 months * 31)</p></li>
+    /// <li>
+    /// <p>341 (11 months * 31)</p></li>
+    /// <li>
+    /// <p>589 (19 months * 31)</p></li>
+    /// <li>
+    /// <p>731</p></li>
     /// </ul>
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
@@ -1507,8 +1663,10 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -1519,8 +1677,10 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -1531,8 +1691,10 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -1560,7 +1722,8 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn manage_master_user_password(mut self, input: bool) -> Self {
         self.manage_master_user_password = ::std::option::Option::Some(input);
@@ -1570,7 +1733,8 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.manage_master_user_password = input;
@@ -1580,7 +1744,8 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
         &self.manage_master_user_password

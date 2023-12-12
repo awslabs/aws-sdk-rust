@@ -16,9 +16,12 @@ pub struct ReplacePermissionAssociationsWork {
     pub to_permission_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current status of the background tasks for the specified ID. The output is one of the following strings:</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code></p></li>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>FAILED</code></p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>,
     /// <p>Specifies the reason for a <code>FAILED</code> status. This field is present only when there <code>status</code> is <code>FAILED</code>.</p>
@@ -51,9 +54,12 @@ impl ReplacePermissionAssociationsWork {
     }
     /// <p>Specifies the current status of the background tasks for the specified ID. The output is one of the following strings:</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code></p></li>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>FAILED</code></p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ReplacePermissionAssociationsWorkStatus> {
         self.status.as_ref()
@@ -165,9 +171,12 @@ impl ReplacePermissionAssociationsWorkBuilder {
     }
     /// <p>Specifies the current status of the background tasks for the specified ID. The output is one of the following strings:</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code></p></li>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>FAILED</code></p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED</code></p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ReplacePermissionAssociationsWorkStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -175,9 +184,12 @@ impl ReplacePermissionAssociationsWorkBuilder {
     }
     /// <p>Specifies the current status of the background tasks for the specified ID. The output is one of the following strings:</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code></p></li>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>FAILED</code></p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>) -> Self {
         self.status = input;
@@ -185,9 +197,12 @@ impl ReplacePermissionAssociationsWorkBuilder {
     }
     /// <p>Specifies the current status of the background tasks for the specified ID. The output is one of the following strings:</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code></p></li>
-    /// <li><p><code>COMPLETED</code></p></li>
-    /// <li><p><code>FAILED</code></p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus> {
         &self.status

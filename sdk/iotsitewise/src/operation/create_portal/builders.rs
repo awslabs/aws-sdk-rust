@@ -22,7 +22,7 @@ impl CreatePortalInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePortal`.
 ///
-/// <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM to authenticate portal users and manage user permissions.</p> <note>
+/// <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM to authenticate portal users and manage user permissions.</p><note>
 /// <p>Before you can sign in to a new portal, you must add at least one identity to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -214,8 +214,10 @@ impl CreatePortalFluentBuilder {
     }
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p></li>
-    /// <li><p><code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p></li>
+    /// <li>
+    /// <p><code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p></li>
+    /// <li>
+    /// <p><code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p></li>
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
     /// <p>Default: <code>SSO</code></p>
@@ -225,8 +227,10 @@ impl CreatePortalFluentBuilder {
     }
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p></li>
-    /// <li><p><code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p></li>
+    /// <li>
+    /// <p><code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p></li>
+    /// <li>
+    /// <p><code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p></li>
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
     /// <p>Default: <code>SSO</code></p>
@@ -236,29 +240,31 @@ impl CreatePortalFluentBuilder {
     }
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p></li>
-    /// <li><p><code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p></li>
+    /// <li>
+    /// <p><code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p></li>
+    /// <li>
+    /// <p><code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p></li>
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
     /// <p>Default: <code>SSO</code></p>
     pub fn get_portal_auth_mode(&self) -> &::std::option::Option<crate::types::AuthMode> {
         self.inner.get_portal_auth_mode()
     }
-    /// <p>The email address that sends alarm notifications.</p> <important>
+    /// <p>The email address that sends alarm notifications.</p><important>
     /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
     /// </important>
     pub fn notification_sender_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_sender_email(input.into());
         self
     }
-    /// <p>The email address that sends alarm notifications.</p> <important>
+    /// <p>The email address that sends alarm notifications.</p><important>
     /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
     /// </important>
     pub fn set_notification_sender_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_sender_email(input);
         self
     }
-    /// <p>The email address that sends alarm notifications.</p> <important>
+    /// <p>The email address that sends alarm notifications.</p><important>
     /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
     /// </important>
     pub fn get_notification_sender_email(&self) -> &::std::option::Option<::std::string::String> {

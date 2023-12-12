@@ -7,7 +7,7 @@ pub struct CreateLocationSmbInput {
     /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
     /// <p>To copy all data in the specified subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p><note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     pub server_hostname: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl CreateLocationSmbInput {
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
-    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p><note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     pub fn server_hostname(&self) -> ::std::option::Option<&str> {
@@ -126,7 +126,7 @@ impl CreateLocationSmbInputBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdirectory
     }
-    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p><note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     /// This field is required.
@@ -134,14 +134,14 @@ impl CreateLocationSmbInputBuilder {
         self.server_hostname = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p><note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_hostname = input;
         self
     }
-    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
+    /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p><note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {

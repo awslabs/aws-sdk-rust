@@ -12,7 +12,7 @@ pub struct Workspace {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the WorkSpace.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>The operational state of the WorkSpace.</p> <note>
+    /// <p>The operational state of the WorkSpace.</p><note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub state: ::std::option::Option<crate::types::WorkspaceState>,
@@ -60,7 +60,7 @@ impl Workspace {
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>The operational state of the WorkSpace.</p> <note>
+    /// <p>The operational state of the WorkSpace.</p><note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub fn state(&self) -> ::std::option::Option<&crate::types::WorkspaceState> {
@@ -212,21 +212,21 @@ impl WorkspaceBuilder {
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
-    /// <p>The operational state of the WorkSpace.</p> <note>
+    /// <p>The operational state of the WorkSpace.</p><note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub fn state(mut self, input: crate::types::WorkspaceState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operational state of the WorkSpace.</p> <note>
+    /// <p>The operational state of the WorkSpace.</p><note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkspaceState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The operational state of the WorkSpace.</p> <note>
+    /// <p>The operational state of the WorkSpace.</p><note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkspaceState> {

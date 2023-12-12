@@ -11,13 +11,16 @@ pub struct CreateGrantInput {
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
     /// <ul>
-    /// <li><p>An Amazon Web Services account, which includes only the account specified.</p></li>
+    /// <li>
+    /// <p>An Amazon Web Services account, which includes only the account specified.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>An organizational unit (OU), which includes all accounts in the OU.</p></li>
+    /// <li>
+    /// <p>An organizational unit (OU), which includes all accounts in the OU.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>An organization, which will include all accounts across your organization.</p></li>
+    /// <li>
+    /// <p>An organization, which will include all accounts across your organization.</p></li>
     /// </ul>
     pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Home Region of the grant.</p>
@@ -40,13 +43,16 @@ impl CreateGrantInput {
     }
     /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
     /// <ul>
-    /// <li><p>An Amazon Web Services account, which includes only the account specified.</p></li>
+    /// <li>
+    /// <p>An Amazon Web Services account, which includes only the account specified.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>An organizational unit (OU), which includes all accounts in the OU.</p></li>
+    /// <li>
+    /// <p>An organizational unit (OU), which includes all accounts in the OU.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>An organization, which will include all accounts across your organization.</p></li>
+    /// <li>
+    /// <p>An organization, which will include all accounts across your organization.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
@@ -134,13 +140,16 @@ impl CreateGrantInputBuilder {
     ///
     /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
     /// <ul>
-    /// <li><p>An Amazon Web Services account, which includes only the account specified.</p></li>
+    /// <li>
+    /// <p>An Amazon Web Services account, which includes only the account specified.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>An organizational unit (OU), which includes all accounts in the OU.</p></li>
+    /// <li>
+    /// <p>An organizational unit (OU), which includes all accounts in the OU.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>An organization, which will include all accounts across your organization.</p></li>
+    /// <li>
+    /// <p>An organization, which will include all accounts across your organization.</p></li>
     /// </ul>
     pub fn principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
@@ -150,13 +159,16 @@ impl CreateGrantInputBuilder {
     }
     /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
     /// <ul>
-    /// <li><p>An Amazon Web Services account, which includes only the account specified.</p></li>
+    /// <li>
+    /// <p>An Amazon Web Services account, which includes only the account specified.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>An organizational unit (OU), which includes all accounts in the OU.</p></li>
+    /// <li>
+    /// <p>An organizational unit (OU), which includes all accounts in the OU.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>An organization, which will include all accounts across your organization.</p></li>
+    /// <li>
+    /// <p>An organization, which will include all accounts across your organization.</p></li>
     /// </ul>
     pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.principals = input;
@@ -164,13 +176,16 @@ impl CreateGrantInputBuilder {
     }
     /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
     /// <ul>
-    /// <li><p>An Amazon Web Services account, which includes only the account specified.</p></li>
+    /// <li>
+    /// <p>An Amazon Web Services account, which includes only the account specified.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>An organizational unit (OU), which includes all accounts in the OU.</p></li>
+    /// <li>
+    /// <p>An organizational unit (OU), which includes all accounts in the OU.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>An organization, which will include all accounts across your organization.</p></li>
+    /// <li>
+    /// <p>An organization, which will include all accounts across your organization.</p></li>
     /// </ul>
     pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.principals

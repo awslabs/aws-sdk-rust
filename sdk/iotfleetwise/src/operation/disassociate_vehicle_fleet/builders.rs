@@ -22,7 +22,7 @@ impl DisassociateVehicleFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateVehicleFleet`.
 ///
-/// <p>Removes, or disassociates, a vehicle from a fleet. Disassociating a vehicle from a fleet doesn't delete the vehicle.</p> <note>
+/// <p>Removes, or disassociates, a vehicle from a fleet. Disassociating a vehicle from a fleet doesn't delete the vehicle.</p><note>
 /// <p>If the vehicle is successfully dissociated from a fleet, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

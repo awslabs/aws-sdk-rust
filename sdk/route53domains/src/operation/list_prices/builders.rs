@@ -24,11 +24,16 @@ impl ListPricesInputBuilder {
 ///
 /// <p>Lists the following prices for either all the TLDs supported by Route&nbsp;53, or the specified TLD:</p>
 /// <ul>
-/// <li><p>Registration</p></li>
-/// <li><p>Transfer</p></li>
-/// <li><p>Owner change</p></li>
-/// <li><p>Domain renewal</p></li>
-/// <li><p>Domain restoration</p></li>
+/// <li>
+/// <p>Registration</p></li>
+/// <li>
+/// <p>Transfer</p></li>
+/// <li>
+/// <p>Owner change</p></li>
+/// <li>
+/// <p>Domain renewal</p></li>
+/// <li>
+/// <p>Domain restoration</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPricesFluentBuilder {

@@ -14,9 +14,12 @@ pub struct TrialComponentSummary {
     pub trial_component_source: ::std::option::Option<crate::types::TrialComponentSource>,
     /// <p>The status of the component. States include:</p>
     /// <ul>
-    /// <li><p>InProgress</p></li>
-    /// <li><p>Completed</p></li>
-    /// <li><p>Failed</p></li>
+    /// <li>
+    /// <p>InProgress</p></li>
+    /// <li>
+    /// <p>Completed</p></li>
+    /// <li>
+    /// <p>Failed</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::TrialComponentStatus>,
     /// <p>When the component started.</p>
@@ -51,9 +54,12 @@ impl TrialComponentSummary {
     }
     /// <p>The status of the component. States include:</p>
     /// <ul>
-    /// <li><p>InProgress</p></li>
-    /// <li><p>Completed</p></li>
-    /// <li><p>Failed</p></li>
+    /// <li>
+    /// <p>InProgress</p></li>
+    /// <li>
+    /// <p>Completed</p></li>
+    /// <li>
+    /// <p>Failed</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TrialComponentStatus> {
         self.status.as_ref()
@@ -165,9 +171,12 @@ impl TrialComponentSummaryBuilder {
     }
     /// <p>The status of the component. States include:</p>
     /// <ul>
-    /// <li><p>InProgress</p></li>
-    /// <li><p>Completed</p></li>
-    /// <li><p>Failed</p></li>
+    /// <li>
+    /// <p>InProgress</p></li>
+    /// <li>
+    /// <p>Completed</p></li>
+    /// <li>
+    /// <p>Failed</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::TrialComponentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -175,9 +184,12 @@ impl TrialComponentSummaryBuilder {
     }
     /// <p>The status of the component. States include:</p>
     /// <ul>
-    /// <li><p>InProgress</p></li>
-    /// <li><p>Completed</p></li>
-    /// <li><p>Failed</p></li>
+    /// <li>
+    /// <p>InProgress</p></li>
+    /// <li>
+    /// <p>Completed</p></li>
+    /// <li>
+    /// <p>Failed</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TrialComponentStatus>) -> Self {
         self.status = input;
@@ -185,9 +197,12 @@ impl TrialComponentSummaryBuilder {
     }
     /// <p>The status of the component. States include:</p>
     /// <ul>
-    /// <li><p>InProgress</p></li>
-    /// <li><p>Completed</p></li>
-    /// <li><p>Failed</p></li>
+    /// <li>
+    /// <p>InProgress</p></li>
+    /// <li>
+    /// <p>Completed</p></li>
+    /// <li>
+    /// <p>Failed</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TrialComponentStatus> {
         &self.status

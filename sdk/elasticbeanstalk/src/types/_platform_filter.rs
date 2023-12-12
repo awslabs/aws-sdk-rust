@@ -14,10 +14,14 @@ pub struct PlatformFilter {
     /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
     /// <p>The following list shows valid filter values for some filter attributes.</p>
     /// <ul>
-    /// <li><p><code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code></p></li>
-    /// <li><p><code>PlatformLifecycleState</code>: <code>recommended</code></p></li>
-    /// <li><p><code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
-    /// <li><p><code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code></p></li>
+    /// <li>
+    /// <p><code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code></p></li>
+    /// <li>
+    /// <p><code>PlatformLifecycleState</code>: <code>recommended</code></p></li>
+    /// <li>
+    /// <p><code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
+    /// <li>
+    /// <p><code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code></p></li>
     /// </ul>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,10 +39,14 @@ impl PlatformFilter {
     /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
     /// <p>The following list shows valid filter values for some filter attributes.</p>
     /// <ul>
-    /// <li><p><code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code></p></li>
-    /// <li><p><code>PlatformLifecycleState</code>: <code>recommended</code></p></li>
-    /// <li><p><code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
-    /// <li><p><code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code></p></li>
+    /// <li>
+    /// <p><code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code></p></li>
+    /// <li>
+    /// <p><code>PlatformLifecycleState</code>: <code>recommended</code></p></li>
+    /// <li>
+    /// <p><code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
+    /// <li>
+    /// <p><code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
@@ -103,10 +111,14 @@ impl PlatformFilterBuilder {
     /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
     /// <p>The following list shows valid filter values for some filter attributes.</p>
     /// <ul>
-    /// <li><p><code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code></p></li>
-    /// <li><p><code>PlatformLifecycleState</code>: <code>recommended</code></p></li>
-    /// <li><p><code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
-    /// <li><p><code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code></p></li>
+    /// <li>
+    /// <p><code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code></p></li>
+    /// <li>
+    /// <p><code>PlatformLifecycleState</code>: <code>recommended</code></p></li>
+    /// <li>
+    /// <p><code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
+    /// <li>
+    /// <p><code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code></p></li>
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
@@ -117,10 +129,14 @@ impl PlatformFilterBuilder {
     /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
     /// <p>The following list shows valid filter values for some filter attributes.</p>
     /// <ul>
-    /// <li><p><code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code></p></li>
-    /// <li><p><code>PlatformLifecycleState</code>: <code>recommended</code></p></li>
-    /// <li><p><code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
-    /// <li><p><code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code></p></li>
+    /// <li>
+    /// <p><code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code></p></li>
+    /// <li>
+    /// <p><code>PlatformLifecycleState</code>: <code>recommended</code></p></li>
+    /// <li>
+    /// <p><code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
+    /// <li>
+    /// <p><code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code></p></li>
     /// </ul>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
@@ -129,10 +145,14 @@ impl PlatformFilterBuilder {
     /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
     /// <p>The following list shows valid filter values for some filter attributes.</p>
     /// <ul>
-    /// <li><p><code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code></p></li>
-    /// <li><p><code>PlatformLifecycleState</code>: <code>recommended</code></p></li>
-    /// <li><p><code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
-    /// <li><p><code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code></p></li>
+    /// <li>
+    /// <p><code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code></p></li>
+    /// <li>
+    /// <p><code>PlatformLifecycleState</code>: <code>recommended</code></p></li>
+    /// <li>
+    /// <p><code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></p></li>
+    /// <li>
+    /// <p><code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code></p></li>
     /// </ul>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values

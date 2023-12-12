@@ -8,10 +8,14 @@ pub struct GetSparqlStreamInput {
     pub limit: ::std::option::Option<i64>,
     /// <p>Can be one of:</p>
     /// <ul>
-    /// <li><p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
-    /// <li><p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
     /// </ul>
     pub iterator_type: ::std::option::Option<crate::types::IteratorType>,
     /// <p>The commit number of the starting record to read from the change-log stream. This parameter is required when <code>iteratorType</code> is<code>AT_SEQUENCE_NUMBER</code> or <code>AFTER_SEQUENCE_NUMBER</code>, and ignored when <code>iteratorType</code> is <code>TRIM_HORIZON</code> or <code>LATEST</code>.</p>
@@ -29,10 +33,14 @@ impl GetSparqlStreamInput {
     }
     /// <p>Can be one of:</p>
     /// <ul>
-    /// <li><p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
-    /// <li><p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
     /// </ul>
     pub fn iterator_type(&self) -> ::std::option::Option<&crate::types::IteratorType> {
         self.iterator_type.as_ref()
@@ -87,10 +95,14 @@ impl GetSparqlStreamInputBuilder {
     }
     /// <p>Can be one of:</p>
     /// <ul>
-    /// <li><p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
-    /// <li><p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
     /// </ul>
     pub fn iterator_type(mut self, input: crate::types::IteratorType) -> Self {
         self.iterator_type = ::std::option::Option::Some(input);
@@ -98,10 +110,14 @@ impl GetSparqlStreamInputBuilder {
     }
     /// <p>Can be one of:</p>
     /// <ul>
-    /// <li><p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
-    /// <li><p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
     /// </ul>
     pub fn set_iterator_type(mut self, input: ::std::option::Option<crate::types::IteratorType>) -> Self {
         self.iterator_type = input;
@@ -109,10 +125,14 @@ impl GetSparqlStreamInputBuilder {
     }
     /// <p>Can be one of:</p>
     /// <ul>
-    /// <li><p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
-    /// <li><p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
     /// </ul>
     pub fn get_iterator_type(&self) -> &::std::option::Option<crate::types::IteratorType> {
         &self.iterator_type

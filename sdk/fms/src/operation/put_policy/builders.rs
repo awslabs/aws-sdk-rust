@@ -27,14 +27,21 @@ impl PutPolicyInputBuilder {
 /// <p>If you add a new account to an organization that you created with Organizations, Firewall Manager automatically applies the policy to the resources in that account that are within scope of the policy.</p>
 /// <p>Firewall Manager provides the following types of policies:</p>
 /// <ul>
-/// <li><p><b>Shield Advanced policy</b> - This policy applies Shield Advanced protection to specified accounts and resources.</p></li>
-/// <li><p><b>Security Groups policy</b> - This type of policy gives you control over security groups that are in use throughout your organization in Organizations and lets you enforce a baseline set of rules across your organization.</p></li>
-/// <li><p><b>Network Firewall policy</b> - This policy applies Network Firewall protection to your organization's VPCs.</p></li>
-/// <li><p><b>DNS Firewall policy</b> - This policy applies Amazon Route 53 Resolver DNS Firewall protections to your organization's VPCs.</p></li>
-/// <li><p><b>Third-party firewall policy</b> - This policy applies third-party firewall protections. Third-party firewalls are available by subscription through the Amazon Web Services Marketplace console at <a href="https://aws.amazon.com/marketplace">Amazon Web Services Marketplace</a>.</p>
+/// <li>
+/// <p><b>Shield Advanced policy</b> - This policy applies Shield Advanced protection to specified accounts and resources.</p></li>
+/// <li>
+/// <p><b>Security Groups policy</b> - This type of policy gives you control over security groups that are in use throughout your organization in Organizations and lets you enforce a baseline set of rules across your organization.</p></li>
+/// <li>
+/// <p><b>Network Firewall policy</b> - This policy applies Network Firewall protection to your organization's VPCs.</p></li>
+/// <li>
+/// <p><b>DNS Firewall policy</b> - This policy applies Amazon Route 53 Resolver DNS Firewall protections to your organization's VPCs.</p></li>
+/// <li>
+/// <p><b>Third-party firewall policy</b> - This policy applies third-party firewall protections. Third-party firewalls are available by subscription through the Amazon Web Services Marketplace console at <a href="https://aws.amazon.com/marketplace">Amazon Web Services Marketplace</a>.</p>
 /// <ul>
-/// <li><p><b>Palo Alto Networks Cloud NGFW policy</b> - This policy applies Palo Alto Networks Cloud Next Generation Firewall (NGFW) protections and Palo Alto Networks Cloud NGFW rulestacks to your organization's VPCs.</p></li>
-/// <li><p><b>Fortigate CNF policy</b> - This policy applies Fortigate Cloud Native Firewall (CNF) protections. Fortigate CNF is a cloud-centered solution that blocks Zero-Day threats and secures cloud infrastructures with industry-leading advanced threat prevention, smart web application firewalls (WAF), and API protection.</p></li>
+/// <li>
+/// <p><b>Palo Alto Networks Cloud NGFW policy</b> - This policy applies Palo Alto Networks Cloud Next Generation Firewall (NGFW) protections and Palo Alto Networks Cloud NGFW rulestacks to your organization's VPCs.</p></li>
+/// <li>
+/// <p><b>Fortigate CNF policy</b> - This policy applies Fortigate Cloud Native Firewall (CNF) protections. Fortigate CNF is a cloud-centered solution that blocks Zero-Day threats and secures cloud infrastructures with industry-leading advanced threat prevention, smart web application firewalls (WAF), and API protection.</p></li>
 /// </ul></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

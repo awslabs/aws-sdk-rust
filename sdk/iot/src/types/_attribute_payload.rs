@@ -8,7 +8,7 @@ pub struct AttributePayload {
     /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p><note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub merge: bool,
@@ -20,7 +20,7 @@ impl AttributePayload {
         self.attributes.as_ref()
     }
     /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p><note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub fn merge(&self) -> bool {
@@ -66,7 +66,7 @@ impl AttributePayloadBuilder {
         &self.attributes
     }
     /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p><note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub fn merge(mut self, input: bool) -> Self {
@@ -74,7 +74,7 @@ impl AttributePayloadBuilder {
         self
     }
     /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p><note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub fn set_merge(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -82,7 +82,7 @@ impl AttributePayloadBuilder {
         self
     }
     /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p><note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub fn get_merge(&self) -> &::std::option::Option<bool> {

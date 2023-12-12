@@ -131,8 +131,10 @@ impl ListBuildsForProjectFluentBuilder {
     /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p></li>
-    /// <li><p><code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p></li>
     /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
@@ -142,8 +144,10 @@ impl ListBuildsForProjectFluentBuilder {
     /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p></li>
-    /// <li><p><code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p></li>
     /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
@@ -153,8 +157,10 @@ impl ListBuildsForProjectFluentBuilder {
     /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p></li>
-    /// <li><p><code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p></li>
     /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {

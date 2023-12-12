@@ -22,7 +22,7 @@ impl CreatePublicDnsNamespaceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePublicDnsNamespace`.
 ///
-/// <p>Creates a public namespace based on DNS, which is visible on the internet. The namespace defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. You can discover instances that were registered with a public DNS namespace by using either a <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you can create using the same Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p> <important>
+/// <p>Creates a public namespace based on DNS, which is visible on the internet. The namespace defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. You can discover instances that were registered with a public DNS namespace by using either a <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you can create using the same Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><important>
 /// <p>The <code>CreatePublicDnsNamespace</code> API operation is not supported in the Amazon Web Services GovCloud (US) Regions.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,21 +110,21 @@ impl CreatePublicDnsNamespaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name that you want to assign to this namespace.</p> <note>
+    /// <p>The name that you want to assign to this namespace.</p><note>
     /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name that you want to assign to this namespace.</p> <note>
+    /// <p>The name that you want to assign to this namespace.</p><note>
     /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name that you want to assign to this namespace.</p> <note>
+    /// <p>The name that you want to assign to this namespace.</p><note>
     /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {

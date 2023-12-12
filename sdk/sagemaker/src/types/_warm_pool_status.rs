@@ -6,10 +6,14 @@
 pub struct WarmPoolStatus {
     /// <p>The status of the warm pool.</p>
     /// <ul>
-    /// <li><p><code>InUse</code>: The warm pool is in use for the training job.</p></li>
-    /// <li><p><code>Available</code>: The warm pool is available to reuse for a matching training job.</p></li>
-    /// <li><p><code>Reused</code>: The warm pool moved to a matching training job for reuse.</p></li>
-    /// <li><p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>InUse</code>: The warm pool is in use for the training job.</p></li>
+    /// <li>
+    /// <p><code>Available</code>: The warm pool is available to reuse for a matching training job.</p></li>
+    /// <li>
+    /// <p><code>Reused</code>: The warm pool moved to a matching training job for reuse.</p></li>
+    /// <li>
+    /// <p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::WarmPoolResourceStatus>,
     /// <p>The billable time in seconds used by the warm pool. Billable time refers to the absolute wall-clock time.</p>
@@ -21,10 +25,14 @@ pub struct WarmPoolStatus {
 impl WarmPoolStatus {
     /// <p>The status of the warm pool.</p>
     /// <ul>
-    /// <li><p><code>InUse</code>: The warm pool is in use for the training job.</p></li>
-    /// <li><p><code>Available</code>: The warm pool is available to reuse for a matching training job.</p></li>
-    /// <li><p><code>Reused</code>: The warm pool moved to a matching training job for reuse.</p></li>
-    /// <li><p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>InUse</code>: The warm pool is in use for the training job.</p></li>
+    /// <li>
+    /// <p><code>Available</code>: The warm pool is available to reuse for a matching training job.</p></li>
+    /// <li>
+    /// <p><code>Reused</code>: The warm pool moved to a matching training job for reuse.</p></li>
+    /// <li>
+    /// <p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WarmPoolResourceStatus> {
         self.status.as_ref()
@@ -57,10 +65,14 @@ pub struct WarmPoolStatusBuilder {
 impl WarmPoolStatusBuilder {
     /// <p>The status of the warm pool.</p>
     /// <ul>
-    /// <li><p><code>InUse</code>: The warm pool is in use for the training job.</p></li>
-    /// <li><p><code>Available</code>: The warm pool is available to reuse for a matching training job.</p></li>
-    /// <li><p><code>Reused</code>: The warm pool moved to a matching training job for reuse.</p></li>
-    /// <li><p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>InUse</code>: The warm pool is in use for the training job.</p></li>
+    /// <li>
+    /// <p><code>Available</code>: The warm pool is available to reuse for a matching training job.</p></li>
+    /// <li>
+    /// <p><code>Reused</code>: The warm pool moved to a matching training job for reuse.</p></li>
+    /// <li>
+    /// <p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::WarmPoolResourceStatus) -> Self {
@@ -69,10 +81,14 @@ impl WarmPoolStatusBuilder {
     }
     /// <p>The status of the warm pool.</p>
     /// <ul>
-    /// <li><p><code>InUse</code>: The warm pool is in use for the training job.</p></li>
-    /// <li><p><code>Available</code>: The warm pool is available to reuse for a matching training job.</p></li>
-    /// <li><p><code>Reused</code>: The warm pool moved to a matching training job for reuse.</p></li>
-    /// <li><p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>InUse</code>: The warm pool is in use for the training job.</p></li>
+    /// <li>
+    /// <p><code>Available</code>: The warm pool is available to reuse for a matching training job.</p></li>
+    /// <li>
+    /// <p><code>Reused</code>: The warm pool moved to a matching training job for reuse.</p></li>
+    /// <li>
+    /// <p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WarmPoolResourceStatus>) -> Self {
         self.status = input;
@@ -80,10 +96,14 @@ impl WarmPoolStatusBuilder {
     }
     /// <p>The status of the warm pool.</p>
     /// <ul>
-    /// <li><p><code>InUse</code>: The warm pool is in use for the training job.</p></li>
-    /// <li><p><code>Available</code>: The warm pool is available to reuse for a matching training job.</p></li>
-    /// <li><p><code>Reused</code>: The warm pool moved to a matching training job for reuse.</p></li>
-    /// <li><p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
+    /// <li>
+    /// <p><code>InUse</code>: The warm pool is in use for the training job.</p></li>
+    /// <li>
+    /// <p><code>Available</code>: The warm pool is available to reuse for a matching training job.</p></li>
+    /// <li>
+    /// <p><code>Reused</code>: The warm pool moved to a matching training job for reuse.</p></li>
+    /// <li>
+    /// <p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WarmPoolResourceStatus> {
         &self.status

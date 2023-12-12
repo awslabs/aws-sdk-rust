@@ -8,8 +8,10 @@ pub struct UpdatePipelineStatusInput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
-    /// <li><p><code>Active</code>: The pipeline is processing jobs.</p></li>
-    /// <li><p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Active</code>: The pipeline is processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
@@ -20,8 +22,10 @@ impl UpdatePipelineStatusInput {
     }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
-    /// <li><p><code>Active</code>: The pipeline is processing jobs.</p></li>
-    /// <li><p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Active</code>: The pipeline is processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -59,8 +63,10 @@ impl UpdatePipelineStatusInputBuilder {
     }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
-    /// <li><p><code>Active</code>: The pipeline is processing jobs.</p></li>
-    /// <li><p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Active</code>: The pipeline is processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,8 +75,10 @@ impl UpdatePipelineStatusInputBuilder {
     }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
-    /// <li><p><code>Active</code>: The pipeline is processing jobs.</p></li>
-    /// <li><p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Active</code>: The pipeline is processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -78,8 +86,10 @@ impl UpdatePipelineStatusInputBuilder {
     }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
-    /// <li><p><code>Active</code>: The pipeline is processing jobs.</p></li>
-    /// <li><p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Active</code>: The pipeline is processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

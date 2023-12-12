@@ -11,10 +11,12 @@ pub struct ImageConfiguration {
     /// <p>The port that your application listens to in the container.</p>
     /// <p>Default: <code>8080</code></p>
     pub port: ::std::option::Option<::std::string::String>,
-    /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
+    /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
     /// <ul>
-    /// <li><p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services Region as the service that you're launching, you can use either the full ARN or name of the secret. If the parameter exists in a different Region, then the full ARN must be specified.</p></li>
-    /// <li><p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
+    /// <li>
+    /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services Region as the service that you're launching, you can use either the full ARN or name of the secret. If the parameter exists in a different Region, then the full ARN must be specified.</p></li>
+    /// <li>
+    /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
     pub runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -33,10 +35,12 @@ impl ImageConfiguration {
     pub fn port(&self) -> ::std::option::Option<&str> {
         self.port.as_deref()
     }
-    /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
+    /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
     /// <ul>
-    /// <li><p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services Region as the service that you're launching, you can use either the full ARN or name of the secret. If the parameter exists in a different Region, then the full ARN must be specified.</p></li>
-    /// <li><p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
+    /// <li>
+    /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services Region as the service that you're launching, you can use either the full ARN or name of the secret. If the parameter exists in a different Region, then the full ARN must be specified.</p></li>
+    /// <li>
+    /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
     pub fn runtime_environment_secrets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -134,10 +138,12 @@ impl ImageConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_runtime_environment_secrets`](Self::set_runtime_environment_secrets).
     ///
-    /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
+    /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
     /// <ul>
-    /// <li><p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services Region as the service that you're launching, you can use either the full ARN or name of the secret. If the parameter exists in a different Region, then the full ARN must be specified.</p></li>
-    /// <li><p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
+    /// <li>
+    /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services Region as the service that you're launching, you can use either the full ARN or name of the secret. If the parameter exists in a different Region, then the full ARN must be specified.</p></li>
+    /// <li>
+    /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
     pub fn runtime_environment_secrets(
@@ -150,10 +156,12 @@ impl ImageConfigurationBuilder {
         self.runtime_environment_secrets = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
+    /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
     /// <ul>
-    /// <li><p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services Region as the service that you're launching, you can use either the full ARN or name of the secret. If the parameter exists in a different Region, then the full ARN must be specified.</p></li>
-    /// <li><p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
+    /// <li>
+    /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services Region as the service that you're launching, you can use either the full ARN or name of the secret. If the parameter exists in a different Region, then the full ARN must be specified.</p></li>
+    /// <li>
+    /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
     pub fn set_runtime_environment_secrets(
@@ -163,10 +171,12 @@ impl ImageConfigurationBuilder {
         self.runtime_environment_secrets = input;
         self
     }
-    /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p> <note>
+    /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
     /// <ul>
-    /// <li><p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services Region as the service that you're launching, you can use either the full ARN or name of the secret. If the parameter exists in a different Region, then the full ARN must be specified.</p></li>
-    /// <li><p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
+    /// <li>
+    /// <p>If the Amazon Web Services Systems Manager Parameter Store parameter exists in the same Amazon Web Services Region as the service that you're launching, you can use either the full ARN or name of the secret. If the parameter exists in a different Region, then the full ARN must be specified.</p></li>
+    /// <li>
+    /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
     pub fn get_runtime_environment_secrets(

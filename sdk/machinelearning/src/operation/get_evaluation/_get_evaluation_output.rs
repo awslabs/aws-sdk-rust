@@ -22,18 +22,26 @@ pub struct GetEvaluationOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the evaluation. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The evaluation is underway.</p></li>
-    /// <li><p><code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The evaluation process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The evaluation is underway.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The evaluation process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>Measurements of how well the <code>MLModel</code> performed using observations referenced by the <code>DataSource</code>. One of the following metric is returned based on the type of the <code>MLModel</code>:</p>
     /// <ul>
-    /// <li><p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.</p></li>
-    /// <li><p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p></li>
-    /// <li><p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.</p></li>
+    /// <li>
+    /// <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.</p></li>
+    /// <li>
+    /// <p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p></li>
+    /// <li>
+    /// <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.</p></li>
     /// </ul>
     /// <p>For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub performance_metrics: ::std::option::Option<crate::types::PerformanceMetrics>,
@@ -84,20 +92,28 @@ impl GetEvaluationOutput {
     }
     /// <p>The status of the evaluation. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The evaluation is underway.</p></li>
-    /// <li><p><code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The evaluation process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The evaluation is underway.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The evaluation process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EntityStatus> {
         self.status.as_ref()
     }
     /// <p>Measurements of how well the <code>MLModel</code> performed using observations referenced by the <code>DataSource</code>. One of the following metric is returned based on the type of the <code>MLModel</code>:</p>
     /// <ul>
-    /// <li><p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.</p></li>
-    /// <li><p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p></li>
-    /// <li><p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.</p></li>
+    /// <li>
+    /// <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.</p></li>
+    /// <li>
+    /// <p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p></li>
+    /// <li>
+    /// <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.</p></li>
     /// </ul>
     /// <p>For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub fn performance_metrics(&self) -> ::std::option::Option<&crate::types::PerformanceMetrics> {
@@ -272,11 +288,16 @@ impl GetEvaluationOutputBuilder {
     }
     /// <p>The status of the evaluation. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The evaluation is underway.</p></li>
-    /// <li><p><code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The evaluation process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The evaluation is underway.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The evaluation process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EntityStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -284,11 +305,16 @@ impl GetEvaluationOutputBuilder {
     }
     /// <p>The status of the evaluation. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The evaluation is underway.</p></li>
-    /// <li><p><code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The evaluation process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The evaluation is underway.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The evaluation process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EntityStatus>) -> Self {
         self.status = input;
@@ -296,20 +322,28 @@ impl GetEvaluationOutputBuilder {
     }
     /// <p>The status of the evaluation. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The evaluation is underway.</p></li>
-    /// <li><p><code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The evaluation process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The evaluation is underway.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The evaluation process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EntityStatus> {
         &self.status
     }
     /// <p>Measurements of how well the <code>MLModel</code> performed using observations referenced by the <code>DataSource</code>. One of the following metric is returned based on the type of the <code>MLModel</code>:</p>
     /// <ul>
-    /// <li><p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.</p></li>
-    /// <li><p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p></li>
-    /// <li><p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.</p></li>
+    /// <li>
+    /// <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.</p></li>
+    /// <li>
+    /// <p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p></li>
+    /// <li>
+    /// <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.</p></li>
     /// </ul>
     /// <p>For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub fn performance_metrics(mut self, input: crate::types::PerformanceMetrics) -> Self {
@@ -318,9 +352,12 @@ impl GetEvaluationOutputBuilder {
     }
     /// <p>Measurements of how well the <code>MLModel</code> performed using observations referenced by the <code>DataSource</code>. One of the following metric is returned based on the type of the <code>MLModel</code>:</p>
     /// <ul>
-    /// <li><p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.</p></li>
-    /// <li><p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p></li>
-    /// <li><p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.</p></li>
+    /// <li>
+    /// <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.</p></li>
+    /// <li>
+    /// <p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p></li>
+    /// <li>
+    /// <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.</p></li>
     /// </ul>
     /// <p>For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub fn set_performance_metrics(mut self, input: ::std::option::Option<crate::types::PerformanceMetrics>) -> Self {
@@ -329,9 +366,12 @@ impl GetEvaluationOutputBuilder {
     }
     /// <p>Measurements of how well the <code>MLModel</code> performed using observations referenced by the <code>DataSource</code>. One of the following metric is returned based on the type of the <code>MLModel</code>:</p>
     /// <ul>
-    /// <li><p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.</p></li>
-    /// <li><p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p></li>
-    /// <li><p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.</p></li>
+    /// <li>
+    /// <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.</p></li>
+    /// <li>
+    /// <p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p></li>
+    /// <li>
+    /// <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance.</p></li>
     /// </ul>
     /// <p>For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub fn get_performance_metrics(&self) -> &::std::option::Option<crate::types::PerformanceMetrics> {

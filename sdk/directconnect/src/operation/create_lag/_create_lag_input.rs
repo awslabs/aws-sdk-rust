@@ -19,7 +19,7 @@ pub struct CreateLagInput {
     pub child_connection_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the LAG.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p><note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub request_mac_sec: ::std::option::Option<bool>,
@@ -61,7 +61,7 @@ impl CreateLagInput {
     pub fn provider_name(&self) -> ::std::option::Option<&str> {
         self.provider_name.as_deref()
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p><note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub fn request_mac_sec(&self) -> ::std::option::Option<bool> {
@@ -218,21 +218,21 @@ impl CreateLagInputBuilder {
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_name
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p><note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub fn request_mac_sec(mut self, input: bool) -> Self {
         self.request_mac_sec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p><note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub fn set_request_mac_sec(mut self, input: ::std::option::Option<bool>) -> Self {
         self.request_mac_sec = input;
         self
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p><note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub fn get_request_mac_sec(&self) -> &::std::option::Option<bool> {

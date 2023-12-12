@@ -27,9 +27,12 @@ impl RegisterComputeInputBuilder {
 /// <p>If successful, this operation returns the compute details, including an Amazon GameLift SDK endpoint. Game server processes that run on the compute use this endpoint to communicate with the Amazon GameLift service. Each server process includes the SDK endpoint in its call to the Amazon GameLift server SDK action <code>InitSDK()</code>.</p>
 /// <p><b>Learn more</b></p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html">Create an Anywhere fleet</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing.html">Test your integration</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Server SDK reference guides</a> (for version 5.x)</p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html">Create an Anywhere fleet</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing.html">Test your integration</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Server SDK reference guides</a> (for version 5.x)</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterComputeFluentBuilder {

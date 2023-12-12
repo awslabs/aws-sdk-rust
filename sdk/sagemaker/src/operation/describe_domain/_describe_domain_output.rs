@@ -29,8 +29,10 @@ pub struct DescribeDomainOutput {
     pub default_user_settings: ::std::option::Option<crate::types::UserSettings>,
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
-    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
+    /// <li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li>
+    /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
     /// <p>Use <code>KmsKeyId</code>.</p>
@@ -105,8 +107,10 @@ impl DescribeDomainOutput {
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
-    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
+    /// <li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li>
+    /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub fn app_network_access_type(&self) -> ::std::option::Option<&crate::types::AppNetworkAccessType> {
         self.app_network_access_type.as_ref()
@@ -362,8 +366,10 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
-    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
+    /// <li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li>
+    /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub fn app_network_access_type(mut self, input: crate::types::AppNetworkAccessType) -> Self {
         self.app_network_access_type = ::std::option::Option::Some(input);
@@ -371,8 +377,10 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
-    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
+    /// <li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li>
+    /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub fn set_app_network_access_type(mut self, input: ::std::option::Option<crate::types::AppNetworkAccessType>) -> Self {
         self.app_network_access_type = input;
@@ -380,8 +388,10 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
-    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
+    /// <li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li>
+    /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub fn get_app_network_access_type(&self) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
         &self.app_network_access_type

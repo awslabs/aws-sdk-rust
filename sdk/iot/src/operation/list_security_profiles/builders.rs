@@ -23,7 +23,7 @@ impl ListSecurityProfilesInputBuilder {
 /// Fluent builder constructing a request to `ListSecurityProfiles`.
 ///
 /// <p>Lists the Device Defender security profiles you've created. You can filter security profiles by dimension or custom metric.</p>
-/// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfiles</a> action.</p> <note>
+/// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfiles</a> action.</p><note>
 /// <p><code>dimensionName</code> and <code>metricName</code> cannot be used in the same request.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

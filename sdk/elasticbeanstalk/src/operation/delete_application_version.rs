@@ -258,9 +258,12 @@ pub enum DeleteApplicationVersionError {
     OperationInProgressException(crate::types::error::OperationInProgressException),
     /// <p>The specified S3 bucket does not belong to the S3 region in which the service is running. The following regions are supported:</p>
     /// <ul>
-    /// <li><p>IAD/us-east-1</p></li>
-    /// <li><p>PDX/us-west-2</p></li>
-    /// <li><p>DUB/eu-west-1</p></li>
+    /// <li>
+    /// <p>IAD/us-east-1</p></li>
+    /// <li>
+    /// <p>PDX/us-west-2</p></li>
+    /// <li>
+    /// <p>DUB/eu-west-1</p></li>
     /// </ul>
     S3LocationNotInServiceRegionException(crate::types::error::S3LocationNotInServiceRegionException),
     /// <p>Unable to delete the Amazon S3 source bundle associated with the application version. The application version was deleted successfully.</p>

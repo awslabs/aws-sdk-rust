@@ -25,31 +25,50 @@ impl UpdateEventSourceMappingInputBuilder {
 /// <p>Updates an event source mapping. You can change the function that Lambda invokes, or pause invocation and resume later from the same location.</p>
 /// <p>For details about how to configure different event sources, see the following topics.</p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping"> Amazon DynamoDB Streams</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping"> Amazon Kinesis</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource"> Amazon SQS</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping"> Amazon MQ and RabbitMQ</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Amazon MSK</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping"> Amazon DynamoDB Streams</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping"> Amazon Kinesis</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource"> Amazon SQS</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping"> Amazon MQ and RabbitMQ</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Amazon MSK</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a></p></li>
 /// </ul>
 /// <p>The following error handling options are available only for stream sources (DynamoDB and Kinesis):</p>
 /// <ul>
-/// <li><p><code>BisectBatchOnFunctionError</code> – If the function returns an error, split the batch in two and retry.</p></li>
-/// <li><p><code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or Amazon SNS topic.</p></li>
-/// <li><p><code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires</p></li>
-/// <li><p><code>MaximumRetryAttempts</code> – Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p></li>
-/// <li><p><code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.</p></li>
+/// <li>
+/// <p><code>BisectBatchOnFunctionError</code> – If the function returns an error, split the batch in two and retry.</p></li>
+/// <li>
+/// <p><code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or Amazon SNS topic.</p></li>
+/// <li>
+/// <p><code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires</p></li>
+/// <li>
+/// <p><code>MaximumRetryAttempts</code> – Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p></li>
+/// <li>
+/// <p><code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.</p></li>
 /// </ul>
 /// <p>For information about which configuration parameters apply to each event source, see the following topics.</p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-params"> Amazon DynamoDB Streams</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-params"> Amazon Kinesis</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#services-sqs-params"> Amazon SQS</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-params"> Amazon MQ and RabbitMQ</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-parms"> Amazon MSK</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon DocumentDB</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-params"> Amazon DynamoDB Streams</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-params"> Amazon Kinesis</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#services-sqs-params"> Amazon SQS</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-params"> Amazon MQ and RabbitMQ</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-parms"> Amazon MSK</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon DocumentDB</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventSourceMappingFluentBuilder {
@@ -153,10 +172,14 @@ impl UpdateEventSourceMappingFluentBuilder {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li><p><b>Function name</b> – <code>MyFunction</code>.</p></li>
-    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
-    /// <li><p><b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p></li>
-    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
+    /// <li>
+    /// <p><b>Function name</b> – <code>MyFunction</code>.</p></li>
+    /// <li>
+    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
+    /// <li>
+    /// <p><b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p></li>
+    /// <li>
+    /// <p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -166,10 +189,14 @@ impl UpdateEventSourceMappingFluentBuilder {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li><p><b>Function name</b> – <code>MyFunction</code>.</p></li>
-    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
-    /// <li><p><b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p></li>
-    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
+    /// <li>
+    /// <p><b>Function name</b> – <code>MyFunction</code>.</p></li>
+    /// <li>
+    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
+    /// <li>
+    /// <p><b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p></li>
+    /// <li>
+    /// <p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -179,10 +206,14 @@ impl UpdateEventSourceMappingFluentBuilder {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li><p><b>Function name</b> – <code>MyFunction</code>.</p></li>
-    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
-    /// <li><p><b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p></li>
-    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
+    /// <li>
+    /// <p><b>Function name</b> – <code>MyFunction</code>.</p></li>
+    /// <li>
+    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
+    /// <li>
+    /// <p><b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p></li>
+    /// <li>
+    /// <p><b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,13 +238,20 @@ impl UpdateEventSourceMappingFluentBuilder {
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li><p><b>Amazon Kinesis</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p></li>
-    /// <li><p><b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>DocumentDB</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon Kinesis</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p></li>
+    /// <li>
+    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>DocumentDB</b> – Default 100. Max 10,000.</p></li>
     /// </ul>
     pub fn batch_size(mut self, input: i32) -> Self {
         self.inner = self.inner.batch_size(input);
@@ -221,13 +259,20 @@ impl UpdateEventSourceMappingFluentBuilder {
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li><p><b>Amazon Kinesis</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p></li>
-    /// <li><p><b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>DocumentDB</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon Kinesis</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p></li>
+    /// <li>
+    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>DocumentDB</b> – Default 100. Max 10,000.</p></li>
     /// </ul>
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_batch_size(input);
@@ -235,13 +280,20 @@ impl UpdateEventSourceMappingFluentBuilder {
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li><p><b>Amazon Kinesis</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p></li>
-    /// <li><p><b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p></li>
-    /// <li><p><b>DocumentDB</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon Kinesis</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p></li>
+    /// <li>
+    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p></li>
+    /// <li>
+    /// <p><b>DocumentDB</b> – Default 100. Max 10,000.</p></li>
     /// </ul>
     pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_batch_size()

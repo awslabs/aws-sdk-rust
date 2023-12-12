@@ -12,10 +12,14 @@ pub struct DescribePlayerSessionsInput {
     /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
-    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
-    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
+    /// <li>
+    /// <p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li>
+    /// <p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li>
+    /// <p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub player_session_status_filter: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
@@ -39,10 +43,14 @@ impl DescribePlayerSessionsInput {
     /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
-    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
-    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
+    /// <li>
+    /// <p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li>
+    /// <p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li>
+    /// <p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub fn player_session_status_filter(&self) -> ::std::option::Option<&str> {
         self.player_session_status_filter.as_deref()
@@ -132,10 +140,14 @@ impl DescribePlayerSessionsInputBuilder {
     /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
-    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
-    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
+    /// <li>
+    /// <p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li>
+    /// <p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li>
+    /// <p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub fn player_session_status_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_session_status_filter = ::std::option::Option::Some(input.into());
@@ -144,10 +156,14 @@ impl DescribePlayerSessionsInputBuilder {
     /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
-    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
-    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
+    /// <li>
+    /// <p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li>
+    /// <p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li>
+    /// <p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub fn set_player_session_status_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_session_status_filter = input;
@@ -156,10 +172,14 @@ impl DescribePlayerSessionsInputBuilder {
     /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
-    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
-    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
+    /// <li>
+    /// <p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li>
+    /// <p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li>
+    /// <p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub fn get_player_session_status_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.player_session_status_filter

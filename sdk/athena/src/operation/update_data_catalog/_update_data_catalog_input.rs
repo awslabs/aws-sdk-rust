@@ -11,11 +11,18 @@ pub struct UpdateDataCatalogInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type.</p>
     /// <ul>
-    /// <li><p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p><code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code></p></li>
-    /// <li><p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
+    /// <li>
+    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p>
+    /// <p><code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code></p></li>
+    /// <li>
+    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li><p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p><code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code></p></li>
-    /// <li><p>If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p><code>function=<i>lambda_arn</i> </code></p></li>
+    /// <li>
+    /// <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p>
+    /// <p><code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code></p></li>
+    /// <li>
+    /// <p>If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p>
+    /// <p><code>function=<i>lambda_arn</i> </code></p></li>
     /// </ul></li>
     /// </ul>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -35,11 +42,18 @@ impl UpdateDataCatalogInput {
     }
     /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type.</p>
     /// <ul>
-    /// <li><p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p><code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code></p></li>
-    /// <li><p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
+    /// <li>
+    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p>
+    /// <p><code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code></p></li>
+    /// <li>
+    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li><p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p><code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code></p></li>
-    /// <li><p>If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p><code>function=<i>lambda_arn</i> </code></p></li>
+    /// <li>
+    /// <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p>
+    /// <p><code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code></p></li>
+    /// <li>
+    /// <p>If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p>
+    /// <p><code>function=<i>lambda_arn</i> </code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -113,11 +127,18 @@ impl UpdateDataCatalogInputBuilder {
     ///
     /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type.</p>
     /// <ul>
-    /// <li><p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p><code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code></p></li>
-    /// <li><p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
+    /// <li>
+    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p>
+    /// <p><code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code></p></li>
+    /// <li>
+    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li><p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p><code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code></p></li>
-    /// <li><p>If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p><code>function=<i>lambda_arn</i> </code></p></li>
+    /// <li>
+    /// <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p>
+    /// <p><code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code></p></li>
+    /// <li>
+    /// <p>If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p>
+    /// <p><code>function=<i>lambda_arn</i> </code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,11 +149,18 @@ impl UpdateDataCatalogInputBuilder {
     }
     /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type.</p>
     /// <ul>
-    /// <li><p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p><code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code></p></li>
-    /// <li><p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
+    /// <li>
+    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p>
+    /// <p><code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code></p></li>
+    /// <li>
+    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li><p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p><code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code></p></li>
-    /// <li><p>If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p><code>function=<i>lambda_arn</i> </code></p></li>
+    /// <li>
+    /// <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p>
+    /// <p><code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code></p></li>
+    /// <li>
+    /// <p>If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p>
+    /// <p><code>function=<i>lambda_arn</i> </code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
@@ -141,11 +169,18 @@ impl UpdateDataCatalogInputBuilder {
     }
     /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type.</p>
     /// <ul>
-    /// <li><p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p><code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code></p></li>
-    /// <li><p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
+    /// <li>
+    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p>
+    /// <p><code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code></p></li>
+    /// <li>
+    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li><p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p><code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code></p></li>
-    /// <li><p>If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p><code>function=<i>lambda_arn</i> </code></p></li>
+    /// <li>
+    /// <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p>
+    /// <p><code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code></p></li>
+    /// <li>
+    /// <p>If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p>
+    /// <p><code>function=<i>lambda_arn</i> </code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

@@ -22,7 +22,7 @@ impl UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Deletes specified tags from a resource.</p> <note>
+/// <p>Deletes specified tags from a resource.</p><note>
 /// <p>The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.</p>
 /// </note>
 /// <p>To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:</p>

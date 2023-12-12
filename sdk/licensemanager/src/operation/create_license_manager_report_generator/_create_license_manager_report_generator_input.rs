@@ -7,8 +7,10 @@ pub struct CreateLicenseManagerReportGeneratorInput {
     pub report_generator_name: ::std::option::Option<::std::string::String>,
     /// <p>Type of reports to generate. The following report types an be generated:</p>
     /// <ul>
-    /// <li><p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
-    /// <li><p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
+    /// <li>
+    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
+    /// <li>
+    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>,
     /// <p>Defines the type of license configuration the report generator tracks.</p>
@@ -29,8 +31,10 @@ impl CreateLicenseManagerReportGeneratorInput {
     }
     /// <p>Type of reports to generate. The following report types an be generated:</p>
     /// <ul>
-    /// <li><p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
-    /// <li><p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
+    /// <li>
+    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
+    /// <li>
+    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.r#type.is_none()`.
@@ -101,8 +105,10 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
     ///
     /// <p>Type of reports to generate. The following report types an be generated:</p>
     /// <ul>
-    /// <li><p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
-    /// <li><p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
+    /// <li>
+    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
+    /// <li>
+    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ReportType) -> Self {
         let mut v = self.r#type.unwrap_or_default();
@@ -112,8 +118,10 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
     }
     /// <p>Type of reports to generate. The following report types an be generated:</p>
     /// <ul>
-    /// <li><p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
-    /// <li><p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
+    /// <li>
+    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
+    /// <li>
+    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>) -> Self {
         self.r#type = input;
@@ -121,8 +129,10 @@ impl CreateLicenseManagerReportGeneratorInputBuilder {
     }
     /// <p>Type of reports to generate. The following report types an be generated:</p>
     /// <ul>
-    /// <li><p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
-    /// <li><p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
+    /// <li>
+    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p></li>
+    /// <li>
+    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportType>> {
         &self.r#type

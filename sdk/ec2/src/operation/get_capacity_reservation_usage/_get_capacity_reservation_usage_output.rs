@@ -15,11 +15,16 @@ pub struct GetCapacityReservationUsageOutput {
     pub available_instance_count: ::std::option::Option<i32>,
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
-    /// <li><p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
-    /// <li><p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
-    /// <li><p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
-    /// <li><p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
-    /// <li><p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
+    /// <li>
+    /// <p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
+    /// <li>
+    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
+    /// <li>
+    /// <p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
+    /// <li>
+    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::CapacityReservationState>,
     /// <p>Information about the Capacity Reservation usage.</p>
@@ -49,11 +54,16 @@ impl GetCapacityReservationUsageOutput {
     }
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
-    /// <li><p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
-    /// <li><p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
-    /// <li><p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
-    /// <li><p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
-    /// <li><p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
+    /// <li>
+    /// <p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
+    /// <li>
+    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
+    /// <li>
+    /// <p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
+    /// <li>
+    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::CapacityReservationState> {
         self.state.as_ref()
@@ -163,11 +173,16 @@ impl GetCapacityReservationUsageOutputBuilder {
     }
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
-    /// <li><p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
-    /// <li><p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
-    /// <li><p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
-    /// <li><p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
-    /// <li><p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
+    /// <li>
+    /// <p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
+    /// <li>
+    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
+    /// <li>
+    /// <p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
+    /// <li>
+    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::CapacityReservationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -175,11 +190,16 @@ impl GetCapacityReservationUsageOutputBuilder {
     }
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
-    /// <li><p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
-    /// <li><p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
-    /// <li><p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
-    /// <li><p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
-    /// <li><p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
+    /// <li>
+    /// <p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
+    /// <li>
+    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
+    /// <li>
+    /// <p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
+    /// <li>
+    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CapacityReservationState>) -> Self {
         self.state = input;
@@ -187,11 +207,16 @@ impl GetCapacityReservationUsageOutputBuilder {
     }
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
-    /// <li><p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
-    /// <li><p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
-    /// <li><p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
-    /// <li><p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
-    /// <li><p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
+    /// <li>
+    /// <p><code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p></li>
+    /// <li>
+    /// <p><code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p></li>
+    /// <li>
+    /// <p><code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p></li>
+    /// <li>
+    /// <p><code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CapacityReservationState> {
         &self.state

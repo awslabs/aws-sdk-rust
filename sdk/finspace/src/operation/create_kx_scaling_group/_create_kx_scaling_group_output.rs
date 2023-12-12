@@ -13,14 +13,22 @@ pub struct CreateKxScalingGroupOutput {
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of scaling group.</p>
     /// <ul>
-    /// <li><p>CREATING – The scaling group creation is in progress.</p></li>
-    /// <li><p>CREATE_FAILED – The scaling group creation has failed.</p></li>
-    /// <li><p>ACTIVE – The scaling group is active.</p></li>
-    /// <li><p>UPDATING – The scaling group is in the process of being updated.</p></li>
-    /// <li><p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li><p>DELETING – The scaling group is in the process of being deleted.</p></li>
-    /// <li><p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
-    /// <li><p>DELETED – The scaling group is successfully deleted.</p></li>
+    /// <li>
+    /// <p>CREATING – The scaling group creation is in progress.</p></li>
+    /// <li>
+    /// <p>CREATE_FAILED – The scaling group creation has failed.</p></li>
+    /// <li>
+    /// <p>ACTIVE – The scaling group is active.</p></li>
+    /// <li>
+    /// <p>UPDATING – The scaling group is in the process of being updated.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED – The update action failed.</p></li>
+    /// <li>
+    /// <p>DELETING – The scaling group is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
+    /// <li>
+    /// <p>DELETED – The scaling group is successfully deleted.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::KxScalingGroupStatus>,
     /// <p>The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -48,14 +56,22 @@ impl CreateKxScalingGroupOutput {
     }
     /// <p>The status of scaling group.</p>
     /// <ul>
-    /// <li><p>CREATING – The scaling group creation is in progress.</p></li>
-    /// <li><p>CREATE_FAILED – The scaling group creation has failed.</p></li>
-    /// <li><p>ACTIVE – The scaling group is active.</p></li>
-    /// <li><p>UPDATING – The scaling group is in the process of being updated.</p></li>
-    /// <li><p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li><p>DELETING – The scaling group is in the process of being deleted.</p></li>
-    /// <li><p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
-    /// <li><p>DELETED – The scaling group is successfully deleted.</p></li>
+    /// <li>
+    /// <p>CREATING – The scaling group creation is in progress.</p></li>
+    /// <li>
+    /// <p>CREATE_FAILED – The scaling group creation has failed.</p></li>
+    /// <li>
+    /// <p>ACTIVE – The scaling group is active.</p></li>
+    /// <li>
+    /// <p>UPDATING – The scaling group is in the process of being updated.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED – The update action failed.</p></li>
+    /// <li>
+    /// <p>DELETING – The scaling group is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
+    /// <li>
+    /// <p>DELETED – The scaling group is successfully deleted.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::KxScalingGroupStatus> {
         self.status.as_ref()
@@ -153,14 +169,22 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>The status of scaling group.</p>
     /// <ul>
-    /// <li><p>CREATING – The scaling group creation is in progress.</p></li>
-    /// <li><p>CREATE_FAILED – The scaling group creation has failed.</p></li>
-    /// <li><p>ACTIVE – The scaling group is active.</p></li>
-    /// <li><p>UPDATING – The scaling group is in the process of being updated.</p></li>
-    /// <li><p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li><p>DELETING – The scaling group is in the process of being deleted.</p></li>
-    /// <li><p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
-    /// <li><p>DELETED – The scaling group is successfully deleted.</p></li>
+    /// <li>
+    /// <p>CREATING – The scaling group creation is in progress.</p></li>
+    /// <li>
+    /// <p>CREATE_FAILED – The scaling group creation has failed.</p></li>
+    /// <li>
+    /// <p>ACTIVE – The scaling group is active.</p></li>
+    /// <li>
+    /// <p>UPDATING – The scaling group is in the process of being updated.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED – The update action failed.</p></li>
+    /// <li>
+    /// <p>DELETING – The scaling group is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
+    /// <li>
+    /// <p>DELETED – The scaling group is successfully deleted.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::KxScalingGroupStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -168,14 +192,22 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>The status of scaling group.</p>
     /// <ul>
-    /// <li><p>CREATING – The scaling group creation is in progress.</p></li>
-    /// <li><p>CREATE_FAILED – The scaling group creation has failed.</p></li>
-    /// <li><p>ACTIVE – The scaling group is active.</p></li>
-    /// <li><p>UPDATING – The scaling group is in the process of being updated.</p></li>
-    /// <li><p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li><p>DELETING – The scaling group is in the process of being deleted.</p></li>
-    /// <li><p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
-    /// <li><p>DELETED – The scaling group is successfully deleted.</p></li>
+    /// <li>
+    /// <p>CREATING – The scaling group creation is in progress.</p></li>
+    /// <li>
+    /// <p>CREATE_FAILED – The scaling group creation has failed.</p></li>
+    /// <li>
+    /// <p>ACTIVE – The scaling group is active.</p></li>
+    /// <li>
+    /// <p>UPDATING – The scaling group is in the process of being updated.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED – The update action failed.</p></li>
+    /// <li>
+    /// <p>DELETING – The scaling group is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
+    /// <li>
+    /// <p>DELETED – The scaling group is successfully deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxScalingGroupStatus>) -> Self {
         self.status = input;
@@ -183,14 +215,22 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>The status of scaling group.</p>
     /// <ul>
-    /// <li><p>CREATING – The scaling group creation is in progress.</p></li>
-    /// <li><p>CREATE_FAILED – The scaling group creation has failed.</p></li>
-    /// <li><p>ACTIVE – The scaling group is active.</p></li>
-    /// <li><p>UPDATING – The scaling group is in the process of being updated.</p></li>
-    /// <li><p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li><p>DELETING – The scaling group is in the process of being deleted.</p></li>
-    /// <li><p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
-    /// <li><p>DELETED – The scaling group is successfully deleted.</p></li>
+    /// <li>
+    /// <p>CREATING – The scaling group creation is in progress.</p></li>
+    /// <li>
+    /// <p>CREATE_FAILED – The scaling group creation has failed.</p></li>
+    /// <li>
+    /// <p>ACTIVE – The scaling group is active.</p></li>
+    /// <li>
+    /// <p>UPDATING – The scaling group is in the process of being updated.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED – The update action failed.</p></li>
+    /// <li>
+    /// <p>DELETING – The scaling group is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>DELETE_FAILED – The system failed to delete the scaling group.</p></li>
+    /// <li>
+    /// <p>DELETED – The scaling group is successfully deleted.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KxScalingGroupStatus> {
         &self.status

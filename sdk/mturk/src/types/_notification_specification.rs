@@ -6,9 +6,12 @@
 pub struct NotificationSpecification {
     /// <p>The target for notification messages. The Destination’s format is determined by the specified Transport:</p>
     /// <ul>
-    /// <li><p>When Transport is Email, the Destination is your email address.</p></li>
-    /// <li><p>When Transport is SQS, the Destination is your queue URL.</p></li>
-    /// <li><p>When Transport is SNS, the Destination is the ARN of your topic.</p></li>
+    /// <li>
+    /// <p>When Transport is Email, the Destination is your email address.</p></li>
+    /// <li>
+    /// <p>When Transport is SQS, the Destination is your queue URL.</p></li>
+    /// <li>
+    /// <p>When Transport is SNS, the Destination is the ARN of your topic.</p></li>
     /// </ul>
     pub destination: ::std::string::String,
     /// <p>The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.</p>
@@ -21,9 +24,12 @@ pub struct NotificationSpecification {
 impl NotificationSpecification {
     /// <p>The target for notification messages. The Destination’s format is determined by the specified Transport:</p>
     /// <ul>
-    /// <li><p>When Transport is Email, the Destination is your email address.</p></li>
-    /// <li><p>When Transport is SQS, the Destination is your queue URL.</p></li>
-    /// <li><p>When Transport is SNS, the Destination is the ARN of your topic.</p></li>
+    /// <li>
+    /// <p>When Transport is Email, the Destination is your email address.</p></li>
+    /// <li>
+    /// <p>When Transport is SQS, the Destination is your queue URL.</p></li>
+    /// <li>
+    /// <p>When Transport is SNS, the Destination is the ARN of your topic.</p></li>
     /// </ul>
     pub fn destination(&self) -> &str {
         use std::ops::Deref;
@@ -63,9 +69,12 @@ pub struct NotificationSpecificationBuilder {
 impl NotificationSpecificationBuilder {
     /// <p>The target for notification messages. The Destination’s format is determined by the specified Transport:</p>
     /// <ul>
-    /// <li><p>When Transport is Email, the Destination is your email address.</p></li>
-    /// <li><p>When Transport is SQS, the Destination is your queue URL.</p></li>
-    /// <li><p>When Transport is SNS, the Destination is the ARN of your topic.</p></li>
+    /// <li>
+    /// <p>When Transport is Email, the Destination is your email address.</p></li>
+    /// <li>
+    /// <p>When Transport is SQS, the Destination is your queue URL.</p></li>
+    /// <li>
+    /// <p>When Transport is SNS, the Destination is the ARN of your topic.</p></li>
     /// </ul>
     /// This field is required.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,9 +83,12 @@ impl NotificationSpecificationBuilder {
     }
     /// <p>The target for notification messages. The Destination’s format is determined by the specified Transport:</p>
     /// <ul>
-    /// <li><p>When Transport is Email, the Destination is your email address.</p></li>
-    /// <li><p>When Transport is SQS, the Destination is your queue URL.</p></li>
-    /// <li><p>When Transport is SNS, the Destination is the ARN of your topic.</p></li>
+    /// <li>
+    /// <p>When Transport is Email, the Destination is your email address.</p></li>
+    /// <li>
+    /// <p>When Transport is SQS, the Destination is your queue URL.</p></li>
+    /// <li>
+    /// <p>When Transport is SNS, the Destination is the ARN of your topic.</p></li>
     /// </ul>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
@@ -84,9 +96,12 @@ impl NotificationSpecificationBuilder {
     }
     /// <p>The target for notification messages. The Destination’s format is determined by the specified Transport:</p>
     /// <ul>
-    /// <li><p>When Transport is Email, the Destination is your email address.</p></li>
-    /// <li><p>When Transport is SQS, the Destination is your queue URL.</p></li>
-    /// <li><p>When Transport is SNS, the Destination is the ARN of your topic.</p></li>
+    /// <li>
+    /// <p>When Transport is Email, the Destination is your email address.</p></li>
+    /// <li>
+    /// <p>When Transport is SQS, the Destination is your queue URL.</p></li>
+    /// <li>
+    /// <p>When Transport is SNS, the Destination is the ARN of your topic.</p></li>
     /// </ul>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination

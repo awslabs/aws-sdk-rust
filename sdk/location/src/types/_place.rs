@@ -32,11 +32,11 @@ pub struct Place {
     pub interpolated: ::std::option::Option<bool>,
     /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
     pub time_zone: ::std::option::Option<crate::types::TimeZone>,
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
     /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub unit_type: ::std::option::Option<::std::string::String>,
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
     /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub unit_number: ::std::option::Option<::std::string::String>,
@@ -98,13 +98,13 @@ impl Place {
     pub fn time_zone(&self) -> ::std::option::Option<&crate::types::TimeZone> {
         self.time_zone.as_ref()
     }
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
     /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn unit_type(&self) -> ::std::option::Option<&str> {
         self.unit_type.as_deref()
     }
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
     /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn unit_number(&self) -> ::std::option::Option<&str> {
@@ -331,41 +331,41 @@ impl PlaceBuilder {
     pub fn get_time_zone(&self) -> &::std::option::Option<crate::types::TimeZone> {
         &self.time_zone
     }
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
     /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn unit_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
     /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn set_unit_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_type = input;
         self
     }
-    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
+    /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
     /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn get_unit_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.unit_type
     }
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
     /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn unit_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
     /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn set_unit_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_number = input;
         self
     }
-    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
+    /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
     /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn get_unit_number(&self) -> &::std::option::Option<::std::string::String> {

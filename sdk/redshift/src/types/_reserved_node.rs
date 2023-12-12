@@ -25,11 +25,16 @@ pub struct ReservedNode {
     /// <p>The state of the reserved compute node.</p>
     /// <p>Possible Values:</p>
     /// <ul>
-    /// <li><p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p></li>
-    /// <li><p>active-This reserved node is owned by the caller and is available for use.</p></li>
-    /// <li><p>payment-failed-Payment failed for the purchase attempt.</p></li>
-    /// <li><p>retired-The reserved node is no longer available.</p></li>
-    /// <li><p>exchanging-The owner is exchanging the reserved node for another reserved node.</p></li>
+    /// <li>
+    /// <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p></li>
+    /// <li>
+    /// <p>active-This reserved node is owned by the caller and is available for use.</p></li>
+    /// <li>
+    /// <p>payment-failed-Payment failed for the purchase attempt.</p></li>
+    /// <li>
+    /// <p>retired-The reserved node is no longer available.</p></li>
+    /// <li>
+    /// <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p></li>
     /// </ul>
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
@@ -79,11 +84,16 @@ impl ReservedNode {
     /// <p>The state of the reserved compute node.</p>
     /// <p>Possible Values:</p>
     /// <ul>
-    /// <li><p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p></li>
-    /// <li><p>active-This reserved node is owned by the caller and is available for use.</p></li>
-    /// <li><p>payment-failed-Payment failed for the purchase attempt.</p></li>
-    /// <li><p>retired-The reserved node is no longer available.</p></li>
-    /// <li><p>exchanging-The owner is exchanging the reserved node for another reserved node.</p></li>
+    /// <li>
+    /// <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p></li>
+    /// <li>
+    /// <p>active-This reserved node is owned by the caller and is available for use.</p></li>
+    /// <li>
+    /// <p>payment-failed-Payment failed for the purchase attempt.</p></li>
+    /// <li>
+    /// <p>retired-The reserved node is no longer available.</p></li>
+    /// <li>
+    /// <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
@@ -258,11 +268,16 @@ impl ReservedNodeBuilder {
     /// <p>The state of the reserved compute node.</p>
     /// <p>Possible Values:</p>
     /// <ul>
-    /// <li><p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p></li>
-    /// <li><p>active-This reserved node is owned by the caller and is available for use.</p></li>
-    /// <li><p>payment-failed-Payment failed for the purchase attempt.</p></li>
-    /// <li><p>retired-The reserved node is no longer available.</p></li>
-    /// <li><p>exchanging-The owner is exchanging the reserved node for another reserved node.</p></li>
+    /// <li>
+    /// <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p></li>
+    /// <li>
+    /// <p>active-This reserved node is owned by the caller and is available for use.</p></li>
+    /// <li>
+    /// <p>payment-failed-Payment failed for the purchase attempt.</p></li>
+    /// <li>
+    /// <p>retired-The reserved node is no longer available.</p></li>
+    /// <li>
+    /// <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p></li>
     /// </ul>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -271,11 +286,16 @@ impl ReservedNodeBuilder {
     /// <p>The state of the reserved compute node.</p>
     /// <p>Possible Values:</p>
     /// <ul>
-    /// <li><p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p></li>
-    /// <li><p>active-This reserved node is owned by the caller and is available for use.</p></li>
-    /// <li><p>payment-failed-Payment failed for the purchase attempt.</p></li>
-    /// <li><p>retired-The reserved node is no longer available.</p></li>
-    /// <li><p>exchanging-The owner is exchanging the reserved node for another reserved node.</p></li>
+    /// <li>
+    /// <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p></li>
+    /// <li>
+    /// <p>active-This reserved node is owned by the caller and is available for use.</p></li>
+    /// <li>
+    /// <p>payment-failed-Payment failed for the purchase attempt.</p></li>
+    /// <li>
+    /// <p>retired-The reserved node is no longer available.</p></li>
+    /// <li>
+    /// <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
@@ -284,11 +304,16 @@ impl ReservedNodeBuilder {
     /// <p>The state of the reserved compute node.</p>
     /// <p>Possible Values:</p>
     /// <ul>
-    /// <li><p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p></li>
-    /// <li><p>active-This reserved node is owned by the caller and is available for use.</p></li>
-    /// <li><p>payment-failed-Payment failed for the purchase attempt.</p></li>
-    /// <li><p>retired-The reserved node is no longer available.</p></li>
-    /// <li><p>exchanging-The owner is exchanging the reserved node for another reserved node.</p></li>
+    /// <li>
+    /// <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p></li>
+    /// <li>
+    /// <p>active-This reserved node is owned by the caller and is available for use.</p></li>
+    /// <li>
+    /// <p>payment-failed-Payment failed for the purchase attempt.</p></li>
+    /// <li>
+    /// <p>retired-The reserved node is no longer available.</p></li>
+    /// <li>
+    /// <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state

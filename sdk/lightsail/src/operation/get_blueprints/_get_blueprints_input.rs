@@ -8,7 +8,7 @@ pub struct GetBlueprintsInput {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
-    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p><important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
     /// </important>
     pub app_category: ::std::option::Option<crate::types::AppCategory>,
@@ -23,7 +23,7 @@ impl GetBlueprintsInput {
     pub fn page_token(&self) -> ::std::option::Option<&str> {
         self.page_token.as_deref()
     }
-    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p><important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
     /// </important>
     pub fn app_category(&self) -> ::std::option::Option<&crate::types::AppCategory> {
@@ -77,21 +77,21 @@ impl GetBlueprintsInputBuilder {
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.page_token
     }
-    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p><important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
     /// </important>
     pub fn app_category(mut self, input: crate::types::AppCategory) -> Self {
         self.app_category = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p><important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
     /// </important>
     pub fn set_app_category(mut self, input: ::std::option::Option<crate::types::AppCategory>) -> Self {
         self.app_category = input;
         self
     }
-    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p> <important>
+    /// <p>Returns a list of blueprints that are specific to Lightsail for Research.</p><important>
     /// <p>You must use this parameter to view Lightsail for Research blueprints.</p>
     /// </important>
     pub fn get_app_category(&self) -> &::std::option::Option<crate::types::AppCategory> {

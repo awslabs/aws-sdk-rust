@@ -22,7 +22,7 @@ impl GetDomainPermissionsPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDomainPermissionsPolicy`.
 ///
-/// <p>Returns the resource policy attached to the specified domain.</p> <note>
+/// <p>Returns the resource policy attached to the specified domain.</p><note>
 /// <p>The policy is a resource-based policy, not an identity-based policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies </a> in the <i>IAM User Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -10,15 +10,21 @@ pub struct UpdatePolicyInput {
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
-    /// <li><p>The <code>action</code> referenced by the policy.</p></li>
-    /// <li><p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li>
+    /// <p>The <code>action</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li><p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
-    /// <li><p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
-    /// <li><p>The <code>principal</code> referenced by the policy.</p></li>
-    /// <li><p>The <code>resource</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
+    /// <li>
+    /// <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
+    /// <li>
+    /// <p>The <code>principal</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>The <code>resource</code> referenced by the policy.</p></li>
     /// </ul>
     pub definition: ::std::option::Option<crate::types::UpdatePolicyDefinition>,
 }
@@ -34,15 +40,21 @@ impl UpdatePolicyInput {
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
-    /// <li><p>The <code>action</code> referenced by the policy.</p></li>
-    /// <li><p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li>
+    /// <p>The <code>action</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li><p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
-    /// <li><p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
-    /// <li><p>The <code>principal</code> referenced by the policy.</p></li>
-    /// <li><p>The <code>resource</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
+    /// <li>
+    /// <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
+    /// <li>
+    /// <p>The <code>principal</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>The <code>resource</code> referenced by the policy.</p></li>
     /// </ul>
     pub fn definition(&self) -> ::std::option::Option<&crate::types::UpdatePolicyDefinition> {
         self.definition.as_ref()
@@ -97,15 +109,21 @@ impl UpdatePolicyInputBuilder {
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
-    /// <li><p>The <code>action</code> referenced by the policy.</p></li>
-    /// <li><p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li>
+    /// <p>The <code>action</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li><p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
-    /// <li><p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
-    /// <li><p>The <code>principal</code> referenced by the policy.</p></li>
-    /// <li><p>The <code>resource</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
+    /// <li>
+    /// <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
+    /// <li>
+    /// <p>The <code>principal</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>The <code>resource</code> referenced by the policy.</p></li>
     /// </ul>
     /// This field is required.
     pub fn definition(mut self, input: crate::types::UpdatePolicyDefinition) -> Self {
@@ -115,15 +133,21 @@ impl UpdatePolicyInputBuilder {
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
-    /// <li><p>The <code>action</code> referenced by the policy.</p></li>
-    /// <li><p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li>
+    /// <p>The <code>action</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li><p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
-    /// <li><p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
-    /// <li><p>The <code>principal</code> referenced by the policy.</p></li>
-    /// <li><p>The <code>resource</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
+    /// <li>
+    /// <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
+    /// <li>
+    /// <p>The <code>principal</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>The <code>resource</code> referenced by the policy.</p></li>
     /// </ul>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::UpdatePolicyDefinition>) -> Self {
         self.definition = input;
@@ -132,15 +156,21 @@ impl UpdatePolicyInputBuilder {
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
-    /// <li><p>The <code>action</code> referenced by the policy.</p></li>
-    /// <li><p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
+    /// <li>
+    /// <p>The <code>action</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p></li>
     /// </ul>
     /// <p>You <b>can't</b> change the following elements:</p>
     /// <ul>
-    /// <li><p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
-    /// <li><p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
-    /// <li><p>The <code>principal</code> referenced by the policy.</p></li>
-    /// <li><p>The <code>resource</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>Changing from <code>static</code> to <code>templateLinked</code>.</p></li>
+    /// <li>
+    /// <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p></li>
+    /// <li>
+    /// <p>The <code>principal</code> referenced by the policy.</p></li>
+    /// <li>
+    /// <p>The <code>resource</code> referenced by the policy.</p></li>
     /// </ul>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::UpdatePolicyDefinition> {
         &self.definition

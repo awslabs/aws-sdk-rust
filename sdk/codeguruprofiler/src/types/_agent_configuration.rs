@@ -10,11 +10,16 @@ pub struct AgentConfiguration {
     pub period_in_seconds: i32,
     /// <p>Parameters used by the profiler. The valid parameters are:</p>
     /// <ul>
-    /// <li><p><code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>.</p></li>
-    /// <li><p><code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p></li>
-    /// <li><p><code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports.</p></li>
-    /// <li><p><code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles.</p></li>
-    /// <li><p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
+    /// <li>
+    /// <p><code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>.</p></li>
+    /// <li>
+    /// <p><code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p></li>
+    /// <li>
+    /// <p><code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports.</p></li>
+    /// <li>
+    /// <p><code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles.</p></li>
+    /// <li>
+    /// <p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
     /// </ul>
     pub agent_parameters: ::std::option::Option<::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>>,
 }
@@ -29,11 +34,16 @@ impl AgentConfiguration {
     }
     /// <p>Parameters used by the profiler. The valid parameters are:</p>
     /// <ul>
-    /// <li><p><code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>.</p></li>
-    /// <li><p><code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p></li>
-    /// <li><p><code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports.</p></li>
-    /// <li><p><code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles.</p></li>
-    /// <li><p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
+    /// <li>
+    /// <p><code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>.</p></li>
+    /// <li>
+    /// <p><code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p></li>
+    /// <li>
+    /// <p><code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports.</p></li>
+    /// <li>
+    /// <p><code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles.</p></li>
+    /// <li>
+    /// <p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
     /// </ul>
     pub fn agent_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>> {
         self.agent_parameters.as_ref()
@@ -91,11 +101,16 @@ impl AgentConfigurationBuilder {
     ///
     /// <p>Parameters used by the profiler. The valid parameters are:</p>
     /// <ul>
-    /// <li><p><code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>.</p></li>
-    /// <li><p><code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p></li>
-    /// <li><p><code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports.</p></li>
-    /// <li><p><code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles.</p></li>
-    /// <li><p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
+    /// <li>
+    /// <p><code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>.</p></li>
+    /// <li>
+    /// <p><code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p></li>
+    /// <li>
+    /// <p><code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports.</p></li>
+    /// <li>
+    /// <p><code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles.</p></li>
+    /// <li>
+    /// <p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
     /// </ul>
     pub fn agent_parameters(mut self, k: crate::types::AgentParameterField, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.agent_parameters.unwrap_or_default();
@@ -105,11 +120,16 @@ impl AgentConfigurationBuilder {
     }
     /// <p>Parameters used by the profiler. The valid parameters are:</p>
     /// <ul>
-    /// <li><p><code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>.</p></li>
-    /// <li><p><code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p></li>
-    /// <li><p><code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports.</p></li>
-    /// <li><p><code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles.</p></li>
-    /// <li><p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
+    /// <li>
+    /// <p><code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>.</p></li>
+    /// <li>
+    /// <p><code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p></li>
+    /// <li>
+    /// <p><code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports.</p></li>
+    /// <li>
+    /// <p><code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles.</p></li>
+    /// <li>
+    /// <p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
     /// </ul>
     pub fn set_agent_parameters(
         mut self,
@@ -120,11 +140,16 @@ impl AgentConfigurationBuilder {
     }
     /// <p>Parameters used by the profiler. The valid parameters are:</p>
     /// <ul>
-    /// <li><p><code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>.</p></li>
-    /// <li><p><code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p></li>
-    /// <li><p><code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports.</p></li>
-    /// <li><p><code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles.</p></li>
-    /// <li><p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
+    /// <li>
+    /// <p><code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>.</p></li>
+    /// <li>
+    /// <p><code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p></li>
+    /// <li>
+    /// <p><code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports.</p></li>
+    /// <li>
+    /// <p><code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles.</p></li>
+    /// <li>
+    /// <p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
     /// </ul>
     pub fn get_agent_parameters(
         &self,

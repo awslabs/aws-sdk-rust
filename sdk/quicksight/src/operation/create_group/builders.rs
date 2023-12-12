@@ -23,13 +23,10 @@ impl CreateGroupInputBuilder {
 /// Fluent builder constructing a request to `CreateGroup`.
 ///
 /// <p>Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight. You can create up to 10,000 groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact AWS Support.</p>
-/// <p>The permissions resource is <code>arn:aws:quicksight:
-/// <your-region>
+/// <p>The permissions resource is <code>arn:aws:quicksight:<your-region>
 /// :
-/// <i>
-/// <relevant-aws-account-id></relevant-aws-account-id></i>:group/default/
-/// <i>
-/// <group-name></group-name></i>
+/// <i><relevant-aws-account-id></relevant-aws-account-id></i>:group/default/
+/// <i><group-name></group-name></i>
 /// </your-region></code>.</p>
 /// <p>The response is a group object.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

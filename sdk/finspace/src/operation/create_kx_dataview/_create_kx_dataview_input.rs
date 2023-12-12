@@ -11,8 +11,10 @@ pub struct CreateKxDataviewInput {
     pub dataview_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
     /// <p>The identifier of the availability zones.</p>
@@ -45,8 +47,10 @@ impl CreateKxDataviewInput {
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
         self.az_mode.as_ref()
@@ -153,8 +157,10 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     /// This field is required.
     pub fn az_mode(mut self, input: crate::types::KxAzMode) -> Self {
@@ -163,8 +169,10 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
         self.az_mode = input;
@@ -172,8 +180,10 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
         &self.az_mode

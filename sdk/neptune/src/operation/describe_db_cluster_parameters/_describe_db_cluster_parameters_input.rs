@@ -6,7 +6,8 @@ pub struct DescribeDbClusterParametersInput {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
@@ -24,7 +25,8 @@ impl DescribeDbClusterParametersInput {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
@@ -71,7 +73,8 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,7 +84,8 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
@@ -90,7 +94,8 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name

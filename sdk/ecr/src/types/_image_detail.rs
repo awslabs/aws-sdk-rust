@@ -13,7 +13,7 @@ pub struct ImageDetail {
     /// <p>The list of tags associated with this image.</p>
     pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p> <note>
+    /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p><note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub image_size_in_bytes: ::std::option::Option<i64>,
@@ -27,7 +27,7 @@ pub struct ImageDetail {
     pub image_manifest_media_type: ::std::option::Option<::std::string::String>,
     /// <p>The artifact media type of the image.</p>
     pub artifact_media_type: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p> <note>
+    /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p><note>
     /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
     /// </note>
     pub last_recorded_pull_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,7 +52,7 @@ impl ImageDetail {
         self.image_tags.as_deref().unwrap_or_default()
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p> <note>
+    /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p><note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn image_size_in_bytes(&self) -> ::std::option::Option<i64> {
@@ -78,7 +78,7 @@ impl ImageDetail {
     pub fn artifact_media_type(&self) -> ::std::option::Option<&str> {
         self.artifact_media_type.as_deref()
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p> <note>
+    /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p><note>
     /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
     /// </note>
     pub fn last_recorded_pull_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -172,7 +172,7 @@ impl ImageDetailBuilder {
         &self.image_tags
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p> <note>
+    /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p><note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn image_size_in_bytes(mut self, input: i64) -> Self {
@@ -180,7 +180,7 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p> <note>
+    /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p><note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn set_image_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
@@ -188,7 +188,7 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p> <note>
+    /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p><note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn get_image_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -264,21 +264,21 @@ impl ImageDetailBuilder {
     pub fn get_artifact_media_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.artifact_media_type
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p> <note>
+    /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p><note>
     /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
     /// </note>
     pub fn last_recorded_pull_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_recorded_pull_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p> <note>
+    /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p><note>
     /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
     /// </note>
     pub fn set_last_recorded_pull_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_recorded_pull_time = input;
         self
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p> <note>
+    /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p><note>
     /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
     /// </note>
     pub fn get_last_recorded_pull_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {

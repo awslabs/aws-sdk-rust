@@ -22,7 +22,7 @@ impl ListVehiclesInFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `ListVehiclesInFleet`.
 ///
-/// <p>Retrieves a list of summaries of all vehicles associated with a fleet.</p> <note>
+/// <p>Retrieves a list of summaries of all vehicles associated with a fleet.</p><note>
 /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the request to return more results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

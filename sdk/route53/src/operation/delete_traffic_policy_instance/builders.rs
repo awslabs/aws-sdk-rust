@@ -22,7 +22,7 @@ impl DeleteTrafficPolicyInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteTrafficPolicyInstance`.
 ///
-/// <p>Deletes a traffic policy instance and all of the resource record sets that Amazon Route 53 created when you created the instance.</p> <note>
+/// <p>Deletes a traffic policy instance and all of the resource record sets that Amazon Route 53 created when you created the instance.</p><note>
 /// <p>In the Route 53 console, traffic policy instances are known as policy records.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,21 +110,21 @@ impl DeleteTrafficPolicyInstanceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the traffic policy instance that you want to delete.</p> <important>
+    /// <p>The ID of the traffic policy instance that you want to delete.</p><important>
     /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>
     /// </important>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>The ID of the traffic policy instance that you want to delete.</p> <important>
+    /// <p>The ID of the traffic policy instance that you want to delete.</p><important>
     /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>
     /// </important>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>The ID of the traffic policy instance that you want to delete.</p> <important>
+    /// <p>The ID of the traffic policy instance that you want to delete.</p><important>
     /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>
     /// </important>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {

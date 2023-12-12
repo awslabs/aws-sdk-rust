@@ -24,10 +24,14 @@ pub struct ZonalShiftInResource {
     pub comment: ::std::string::String,
     /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
     /// <ul>
-    /// <li><p><b>PENDING:</b> Outcome value when a practice run is in progress.</p></li>
-    /// <li><p><b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p></li>
-    /// <li><p><b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p></li>
-    /// <li><p><b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p></li>
+    /// <li>
+    /// <p><b>PENDING:</b> Outcome value when a practice run is in progress.</p></li>
+    /// <li>
+    /// <p><b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p></li>
+    /// <li>
+    /// <p><b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p></li>
+    /// <li>
+    /// <p><b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p></li>
     /// </ul>
     /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub practice_run_outcome: ::std::option::Option<crate::types::PracticeRunOutcome>,
@@ -71,10 +75,14 @@ impl ZonalShiftInResource {
     }
     /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
     /// <ul>
-    /// <li><p><b>PENDING:</b> Outcome value when a practice run is in progress.</p></li>
-    /// <li><p><b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p></li>
-    /// <li><p><b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p></li>
-    /// <li><p><b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p></li>
+    /// <li>
+    /// <p><b>PENDING:</b> Outcome value when a practice run is in progress.</p></li>
+    /// <li>
+    /// <p><b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p></li>
+    /// <li>
+    /// <p><b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p></li>
+    /// <li>
+    /// <p><b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p></li>
     /// </ul>
     /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn practice_run_outcome(&self) -> ::std::option::Option<&crate::types::PracticeRunOutcome> {
@@ -221,10 +229,14 @@ impl ZonalShiftInResourceBuilder {
     }
     /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
     /// <ul>
-    /// <li><p><b>PENDING:</b> Outcome value when a practice run is in progress.</p></li>
-    /// <li><p><b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p></li>
-    /// <li><p><b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p></li>
-    /// <li><p><b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p></li>
+    /// <li>
+    /// <p><b>PENDING:</b> Outcome value when a practice run is in progress.</p></li>
+    /// <li>
+    /// <p><b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p></li>
+    /// <li>
+    /// <p><b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p></li>
+    /// <li>
+    /// <p><b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p></li>
     /// </ul>
     /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn practice_run_outcome(mut self, input: crate::types::PracticeRunOutcome) -> Self {
@@ -233,10 +245,14 @@ impl ZonalShiftInResourceBuilder {
     }
     /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
     /// <ul>
-    /// <li><p><b>PENDING:</b> Outcome value when a practice run is in progress.</p></li>
-    /// <li><p><b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p></li>
-    /// <li><p><b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p></li>
-    /// <li><p><b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p></li>
+    /// <li>
+    /// <p><b>PENDING:</b> Outcome value when a practice run is in progress.</p></li>
+    /// <li>
+    /// <p><b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p></li>
+    /// <li>
+    /// <p><b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p></li>
+    /// <li>
+    /// <p><b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p></li>
     /// </ul>
     /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn set_practice_run_outcome(mut self, input: ::std::option::Option<crate::types::PracticeRunOutcome>) -> Self {
@@ -245,10 +261,14 @@ impl ZonalShiftInResourceBuilder {
     }
     /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
     /// <ul>
-    /// <li><p><b>PENDING:</b> Outcome value when a practice run is in progress.</p></li>
-    /// <li><p><b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p></li>
-    /// <li><p><b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p></li>
-    /// <li><p><b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p></li>
+    /// <li>
+    /// <p><b>PENDING:</b> Outcome value when a practice run is in progress.</p></li>
+    /// <li>
+    /// <p><b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p></li>
+    /// <li>
+    /// <p><b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p></li>
+    /// <li>
+    /// <p><b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p></li>
     /// </ul>
     /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn get_practice_run_outcome(&self) -> &::std::option::Option<crate::types::PracticeRunOutcome> {

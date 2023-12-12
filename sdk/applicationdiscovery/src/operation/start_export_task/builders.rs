@@ -22,7 +22,7 @@ impl StartExportTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `StartExportTask`.
 ///
-/// <p>Begins the export of a discovered data report to an Amazon S3 bucket managed by Amazon Web Services.</p> <note>
+/// <p>Begins the export of a discovered data report to an Amazon S3 bucket managed by Amazon Web Services.</p><note>
 /// <p>Exports might provide an estimate of fees and savings based on certain information that you provide. Fee estimates do not include any taxes that might apply. Your actual fees and savings depend on a variety of factors, including your actual usage of Amazon Web Services services, which might vary from the estimates provided in this report.</p>
 /// </note>
 /// <p>If you do not specify <code>preferences</code> or <code>agentIds</code> in the filter, a summary of all servers, applications, tags, and performance is generated. This data is an aggregation of all server data collected through on-premises tooling, file import, application grouping and applying tags.</p>

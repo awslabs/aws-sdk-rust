@@ -8,8 +8,10 @@ pub struct CreateNodeInput {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li><p><code>n-ethereum-mainnet</code></p></li>
-    /// <li><p><code>n-ethereum-goerli</code></p></li>
+    /// <li>
+    /// <p><code>n-ethereum-mainnet</code></p></li>
+    /// <li>
+    /// <p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member that owns this node.</p>
@@ -30,8 +32,10 @@ impl CreateNodeInput {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li><p><code>n-ethereum-mainnet</code></p></li>
-    /// <li><p><code>n-ethereum-goerli</code></p></li>
+    /// <li>
+    /// <p><code>n-ethereum-mainnet</code></p></li>
+    /// <li>
+    /// <p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub fn network_id(&self) -> ::std::option::Option<&str> {
         self.network_id.as_deref()
@@ -88,8 +92,10 @@ impl CreateNodeInputBuilder {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li><p><code>n-ethereum-mainnet</code></p></li>
-    /// <li><p><code>n-ethereum-goerli</code></p></li>
+    /// <li>
+    /// <p><code>n-ethereum-mainnet</code></p></li>
+    /// <li>
+    /// <p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,8 +105,10 @@ impl CreateNodeInputBuilder {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li><p><code>n-ethereum-mainnet</code></p></li>
-    /// <li><p><code>n-ethereum-goerli</code></p></li>
+    /// <li>
+    /// <p><code>n-ethereum-mainnet</code></p></li>
+    /// <li>
+    /// <p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_id = input;
@@ -109,8 +117,10 @@ impl CreateNodeInputBuilder {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li><p><code>n-ethereum-mainnet</code></p></li>
-    /// <li><p><code>n-ethereum-goerli</code></p></li>
+    /// <li>
+    /// <p><code>n-ethereum-mainnet</code></p></li>
+    /// <li>
+    /// <p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_id

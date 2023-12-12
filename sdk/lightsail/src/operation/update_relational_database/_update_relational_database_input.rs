@@ -17,21 +17,31 @@ pub struct UpdateRelationalDatabaseInput {
     /// <p>The daily time range during which automated backups are created for your database if automated backups are enabled.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code></p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p>
+    /// <p>Example: <code>16:00-16:30</code></p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur on your database.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p></li>
-    /// <li><p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
+    /// <li>
+    /// <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p></li>
+    /// <li>
+    /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
     /// </ul>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, enables automated backup retention for your database.</p>
@@ -70,10 +80,15 @@ impl UpdateRelationalDatabaseInput {
     /// <p>The daily time range during which automated backups are created for your database if automated backups are enabled.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code></p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p>
+    /// <p>Example: <code>16:00-16:30</code></p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
@@ -82,11 +97,16 @@ impl UpdateRelationalDatabaseInput {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p></li>
-    /// <li><p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
+    /// <li>
+    /// <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p></li>
+    /// <li>
+    /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
     /// </ul>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
@@ -216,10 +236,15 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <p>The daily time range during which automated backups are created for your database if automated backups are enabled.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code></p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p>
+    /// <p>Example: <code>16:00-16:30</code></p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
@@ -228,10 +253,15 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <p>The daily time range during which automated backups are created for your database if automated backups are enabled.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code></p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p>
+    /// <p>Example: <code>16:00-16:30</code></p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
@@ -240,10 +270,15 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <p>The daily time range during which automated backups are created for your database if automated backups are enabled.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code></p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p>
+    /// <p>Example: <code>16:00-16:30</code></p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_backup_window
@@ -252,11 +287,16 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p></li>
-    /// <li><p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
+    /// <li>
+    /// <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p></li>
+    /// <li>
+    /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
     /// </ul>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
@@ -266,11 +306,16 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p></li>
-    /// <li><p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
+    /// <li>
+    /// <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p></li>
+    /// <li>
+    /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
     /// </ul>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
@@ -280,11 +325,16 @@ impl UpdateRelationalDatabaseInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p></li>
-    /// <li><p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
+    /// <li>
+    /// <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p></li>
+    /// <li>
+    /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
     /// </ul>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window

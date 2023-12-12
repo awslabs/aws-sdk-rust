@@ -22,15 +22,18 @@ impl QueryInputBuilder {
 }
 /// Fluent builder constructing a request to `Query`.
 ///
-/// <p>Searches an index given an input query.</p> <note>
+/// <p>Searches an index given an input query.</p><note>
 /// <p>If you are working with large language models (LLMs) or implementing retrieval augmented generation (RAG) systems, you can use Amazon Kendra's <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Retrieve.html">Retrieve</a> API, which can return longer semantically relevant passages. We recommend using the <code>Retrieve</code> API instead of filing a service limit increase to increase the <code>Query</code> API document excerpt length.</p>
 /// </note>
 /// <p>You can configure boosting or relevance tuning at the query level to override boosting at the index level, filter based on document fields/attributes and faceted search, and filter based on the user or their group access to documents. You can also include certain fields in the response that might provide useful additional information.</p>
 /// <p>A query response contains three types of results.</p>
 /// <ul>
-/// <li><p>Relevant suggested answers. The answers can be either a text excerpt or table excerpt. The answer can be highlighted in the excerpt.</p></li>
-/// <li><p>Matching FAQs or questions-answer from your FAQ file.</p></li>
-/// <li><p>Relevant documents. This result type includes an excerpt of the document with the document title. The searched terms can be highlighted in the excerpt.</p></li>
+/// <li>
+/// <p>Relevant suggested answers. The answers can be either a text excerpt or table excerpt. The answer can be highlighted in the excerpt.</p></li>
+/// <li>
+/// <p>Matching FAQs or questions-answer from your FAQ file.</p></li>
+/// <li>
+/// <p>Relevant documents. This result type includes an excerpt of the document with the document title. The searched terms can be highlighted in the excerpt.</p></li>
 /// </ul>
 /// <p>You can specify that the query return only one type of result using the <code>QueryResultTypeFilter</code> parameter. Each query returns the 100 most relevant results. If you filter result type to only question-answers, a maximum of four results are returned. If you filter result type to only answers, a maximum of three results are returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

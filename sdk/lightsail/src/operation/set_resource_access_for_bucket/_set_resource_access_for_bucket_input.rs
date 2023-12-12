@@ -10,8 +10,10 @@ pub struct SetResourceAccessForBucketInput {
     /// <p>The access setting.</p>
     /// <p>The following access settings are available:</p>
     /// <ul>
-    /// <li><p><code>allow</code> - Allows access to the bucket and its objects.</p></li>
-    /// <li><p><code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p></li>
+    /// <li>
+    /// <p><code>allow</code> - Allows access to the bucket and its objects.</p></li>
+    /// <li>
+    /// <p><code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p></li>
     /// </ul>
     pub access: ::std::option::Option<crate::types::ResourceBucketAccess>,
 }
@@ -27,8 +29,10 @@ impl SetResourceAccessForBucketInput {
     /// <p>The access setting.</p>
     /// <p>The following access settings are available:</p>
     /// <ul>
-    /// <li><p><code>allow</code> - Allows access to the bucket and its objects.</p></li>
-    /// <li><p><code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p></li>
+    /// <li>
+    /// <p><code>allow</code> - Allows access to the bucket and its objects.</p></li>
+    /// <li>
+    /// <p><code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p></li>
     /// </ul>
     pub fn access(&self) -> ::std::option::Option<&crate::types::ResourceBucketAccess> {
         self.access.as_ref()
@@ -83,8 +87,10 @@ impl SetResourceAccessForBucketInputBuilder {
     /// <p>The access setting.</p>
     /// <p>The following access settings are available:</p>
     /// <ul>
-    /// <li><p><code>allow</code> - Allows access to the bucket and its objects.</p></li>
-    /// <li><p><code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p></li>
+    /// <li>
+    /// <p><code>allow</code> - Allows access to the bucket and its objects.</p></li>
+    /// <li>
+    /// <p><code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn access(mut self, input: crate::types::ResourceBucketAccess) -> Self {
@@ -94,8 +100,10 @@ impl SetResourceAccessForBucketInputBuilder {
     /// <p>The access setting.</p>
     /// <p>The following access settings are available:</p>
     /// <ul>
-    /// <li><p><code>allow</code> - Allows access to the bucket and its objects.</p></li>
-    /// <li><p><code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p></li>
+    /// <li>
+    /// <p><code>allow</code> - Allows access to the bucket and its objects.</p></li>
+    /// <li>
+    /// <p><code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p></li>
     /// </ul>
     pub fn set_access(mut self, input: ::std::option::Option<crate::types::ResourceBucketAccess>) -> Self {
         self.access = input;
@@ -104,8 +112,10 @@ impl SetResourceAccessForBucketInputBuilder {
     /// <p>The access setting.</p>
     /// <p>The following access settings are available:</p>
     /// <ul>
-    /// <li><p><code>allow</code> - Allows access to the bucket and its objects.</p></li>
-    /// <li><p><code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p></li>
+    /// <li>
+    /// <p><code>allow</code> - Allows access to the bucket and its objects.</p></li>
+    /// <li>
+    /// <p><code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p></li>
     /// </ul>
     pub fn get_access(&self) -> &::std::option::Option<crate::types::ResourceBucketAccess> {
         &self.access

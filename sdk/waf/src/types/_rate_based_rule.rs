@@ -6,8 +6,10 @@
 /// </note>
 /// <p>A <code>RateBasedRule</code> is identical to a regular <code>Rule</code>, with one addition: a <code>RateBasedRule</code> counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a <code>RateBasedRule</code> that includes the following conditions:</p>
 /// <ul>
-/// <li><p>The requests come from 192.0.2.44.</p></li>
-/// <li><p>They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.</p></li>
+/// <li>
+/// <p>The requests come from 192.0.2.44.</p></li>
+/// <li>
+/// <p>They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.</p></li>
 /// </ul>
 /// <p>In the rule, you also define the rate limit as 1,000.</p>
 /// <p>Requests that meet both of these conditions and exceed 1,000 requests every five minutes trigger the rule's action (block or count), which is defined in the web ACL.</p>

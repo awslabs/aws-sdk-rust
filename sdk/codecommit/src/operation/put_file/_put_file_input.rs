@@ -9,7 +9,7 @@ pub struct PutFileInput {
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The content of the file, in binary object format.</p>
     pub file_content: ::std::option::Option<::aws_smithy_types::Blob>,
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p><note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub file_path: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl PutFileInput {
     pub fn file_content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.file_content.as_ref()
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p><note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub fn file_path(&self) -> ::std::option::Option<&str> {
@@ -133,7 +133,7 @@ impl PutFileInputBuilder {
     pub fn get_file_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.file_content
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p><note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     /// This field is required.
@@ -141,14 +141,14 @@ impl PutFileInputBuilder {
         self.file_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p><note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p><note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {

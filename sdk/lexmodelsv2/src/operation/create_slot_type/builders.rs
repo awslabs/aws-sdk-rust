@@ -157,8 +157,10 @@ impl CreateSlotTypeFluentBuilder {
     }
     /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
-    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p></li>
+    /// <li>
+    /// <p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li>
+    /// <p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn value_selection_setting(mut self, input: crate::types::SlotValueSelectionSetting) -> Self {
@@ -167,8 +169,10 @@ impl CreateSlotTypeFluentBuilder {
     }
     /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
-    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p></li>
+    /// <li>
+    /// <p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li>
+    /// <p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn set_value_selection_setting(mut self, input: ::std::option::Option<crate::types::SlotValueSelectionSetting>) -> Self {
@@ -177,8 +181,10 @@ impl CreateSlotTypeFluentBuilder {
     }
     /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
-    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p></li>
+    /// <li>
+    /// <p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li>
+    /// <p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn get_value_selection_setting(&self) -> &::std::option::Option<crate::types::SlotValueSelectionSetting> {

@@ -28,8 +28,10 @@ impl GetBucketLoggingInputBuilder {
 /// <p>Returns the logging status of a bucket and the permissions users have to view and modify that status.</p>
 /// <p>The following operations are related to <code>GetBucketLogging</code>:</p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBucketLoggingFluentBuilder {

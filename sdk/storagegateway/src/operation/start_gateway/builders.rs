@@ -22,7 +22,7 @@ impl StartGatewayInputBuilder {
 }
 /// Fluent builder constructing a request to `StartGateway`.
 ///
-/// <p>Starts a gateway that you previously shut down (see <code>ShutdownGateway</code>). After the gateway starts, you can then make other API calls, your applications can read from or write to the gateway's storage volumes and you will be able to take snapshot backups.</p> <note>
+/// <p>Starts a gateway that you previously shut down (see <code>ShutdownGateway</code>). After the gateway starts, you can then make other API calls, your applications can read from or write to the gateway's storage volumes and you will be able to take snapshot backups.</p><note>
 /// <p>When you make a request, you will get a 200 OK success response immediately. However, it might take some time for the gateway to be ready. You should call <code>DescribeGatewayInformation</code> and check the status before making any additional API calls. For more information, see <code>ActivateGateway</code>.</p>
 /// </note>
 /// <p>To specify which gateway to start, use the Amazon Resource Name (ARN) of the gateway in your request.</p>

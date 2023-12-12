@@ -11,18 +11,24 @@ pub struct Filter {
     /// <p><b>DescribeAutoScalingGroups</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>tag-key</code> - Accepts tag keys. The results only include information about the Auto Scaling groups associated with these tag keys.</p></li>
-    /// <li><p><code>tag-value</code> - Accepts tag values. The results only include information about the Auto Scaling groups associated with these tag values.</p></li>
-    /// <li><p><code>tag:
-    /// <key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - Accepts tag keys. The results only include information about the Auto Scaling groups associated with these tag keys.</p></li>
+    /// <li>
+    /// <p><code>tag-value</code> - Accepts tag values. The results only include information about the Auto Scaling groups associated with these tag values.</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
     /// </ul>
     /// <p><b>DescribeTags</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results only include information about the tags associated with these Auto Scaling groups.</p></li>
-    /// <li><p><code>key</code> - Accepts tag keys. The results only include information about the tags associated with these tag keys.</p></li>
-    /// <li><p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
-    /// <li><p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
+    /// <li>
+    /// <p><code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results only include information about the tags associated with these Auto Scaling groups.</p></li>
+    /// <li>
+    /// <p><code>key</code> - Accepts tag keys. The results only include information about the tags associated with these tag keys.</p></li>
+    /// <li>
+    /// <p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
+    /// <li>
+    /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
     /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more filter values. Filter values are case-sensitive.</p>
@@ -35,18 +41,24 @@ impl Filter {
     /// <p><b>DescribeAutoScalingGroups</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>tag-key</code> - Accepts tag keys. The results only include information about the Auto Scaling groups associated with these tag keys.</p></li>
-    /// <li><p><code>tag-value</code> - Accepts tag values. The results only include information about the Auto Scaling groups associated with these tag values.</p></li>
-    /// <li><p><code>tag:
-    /// <key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - Accepts tag keys. The results only include information about the Auto Scaling groups associated with these tag keys.</p></li>
+    /// <li>
+    /// <p><code>tag-value</code> - Accepts tag values. The results only include information about the Auto Scaling groups associated with these tag values.</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
     /// </ul>
     /// <p><b>DescribeTags</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results only include information about the tags associated with these Auto Scaling groups.</p></li>
-    /// <li><p><code>key</code> - Accepts tag keys. The results only include information about the tags associated with these tag keys.</p></li>
-    /// <li><p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
-    /// <li><p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
+    /// <li>
+    /// <p><code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results only include information about the tags associated with these Auto Scaling groups.</p></li>
+    /// <li>
+    /// <p><code>key</code> - Accepts tag keys. The results only include information about the tags associated with these tag keys.</p></li>
+    /// <li>
+    /// <p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
+    /// <li>
+    /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -79,18 +91,24 @@ impl FilterBuilder {
     /// <p><b>DescribeAutoScalingGroups</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>tag-key</code> - Accepts tag keys. The results only include information about the Auto Scaling groups associated with these tag keys.</p></li>
-    /// <li><p><code>tag-value</code> - Accepts tag values. The results only include information about the Auto Scaling groups associated with these tag values.</p></li>
-    /// <li><p><code>tag:
-    /// <key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - Accepts tag keys. The results only include information about the Auto Scaling groups associated with these tag keys.</p></li>
+    /// <li>
+    /// <p><code>tag-value</code> - Accepts tag values. The results only include information about the Auto Scaling groups associated with these tag values.</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
     /// </ul>
     /// <p><b>DescribeTags</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results only include information about the tags associated with these Auto Scaling groups.</p></li>
-    /// <li><p><code>key</code> - Accepts tag keys. The results only include information about the tags associated with these tag keys.</p></li>
-    /// <li><p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
-    /// <li><p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
+    /// <li>
+    /// <p><code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results only include information about the tags associated with these Auto Scaling groups.</p></li>
+    /// <li>
+    /// <p><code>key</code> - Accepts tag keys. The results only include information about the tags associated with these tag keys.</p></li>
+    /// <li>
+    /// <p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
+    /// <li>
+    /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
     /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -101,18 +119,24 @@ impl FilterBuilder {
     /// <p><b>DescribeAutoScalingGroups</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>tag-key</code> - Accepts tag keys. The results only include information about the Auto Scaling groups associated with these tag keys.</p></li>
-    /// <li><p><code>tag-value</code> - Accepts tag values. The results only include information about the Auto Scaling groups associated with these tag values.</p></li>
-    /// <li><p><code>tag:
-    /// <key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - Accepts tag keys. The results only include information about the Auto Scaling groups associated with these tag keys.</p></li>
+    /// <li>
+    /// <p><code>tag-value</code> - Accepts tag values. The results only include information about the Auto Scaling groups associated with these tag values.</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
     /// </ul>
     /// <p><b>DescribeTags</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results only include information about the tags associated with these Auto Scaling groups.</p></li>
-    /// <li><p><code>key</code> - Accepts tag keys. The results only include information about the tags associated with these tag keys.</p></li>
-    /// <li><p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
-    /// <li><p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
+    /// <li>
+    /// <p><code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results only include information about the tags associated with these Auto Scaling groups.</p></li>
+    /// <li>
+    /// <p><code>key</code> - Accepts tag keys. The results only include information about the tags associated with these tag keys.</p></li>
+    /// <li>
+    /// <p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
+    /// <li>
+    /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -123,18 +147,24 @@ impl FilterBuilder {
     /// <p><b>DescribeAutoScalingGroups</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>tag-key</code> - Accepts tag keys. The results only include information about the Auto Scaling groups associated with these tag keys.</p></li>
-    /// <li><p><code>tag-value</code> - Accepts tag values. The results only include information about the Auto Scaling groups associated with these tag values.</p></li>
-    /// <li><p><code>tag:
-    /// <key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - Accepts tag keys. The results only include information about the Auto Scaling groups associated with these tag keys.</p></li>
+    /// <li>
+    /// <p><code>tag-value</code> - Accepts tag values. The results only include information about the Auto Scaling groups associated with these tag values.</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
     /// </ul>
     /// <p><b>DescribeTags</b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results only include information about the tags associated with these Auto Scaling groups.</p></li>
-    /// <li><p><code>key</code> - Accepts tag keys. The results only include information about the tags associated with these tag keys.</p></li>
-    /// <li><p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
-    /// <li><p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
+    /// <li>
+    /// <p><code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results only include information about the tags associated with these Auto Scaling groups.</p></li>
+    /// <li>
+    /// <p><code>key</code> - Accepts tag keys. The results only include information about the tags associated with these tag keys.</p></li>
+    /// <li>
+    /// <p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
+    /// <li>
+    /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name

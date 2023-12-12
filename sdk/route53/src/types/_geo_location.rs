@@ -7,13 +7,20 @@ pub struct GeoLocation {
     /// <p>The two-letter code for the continent.</p>
     /// <p>Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
-    /// <li><p><b>AF</b>: Africa</p></li>
-    /// <li><p><b>AN</b>: Antarctica</p></li>
-    /// <li><p><b>AS</b>: Asia</p></li>
-    /// <li><p><b>EU</b>: Europe</p></li>
-    /// <li><p><b>OC</b>: Oceania</p></li>
-    /// <li><p><b>NA</b>: North America</p></li>
-    /// <li><p><b>SA</b>: South America</p></li>
+    /// <li>
+    /// <p><b>AF</b>: Africa</p></li>
+    /// <li>
+    /// <p><b>AN</b>: Antarctica</p></li>
+    /// <li>
+    /// <p><b>AS</b>: Asia</p></li>
+    /// <li>
+    /// <p><b>EU</b>: Europe</p></li>
+    /// <li>
+    /// <p><b>OC</b>: Oceania</p></li>
+    /// <li>
+    /// <p><b>NA</b>: North America</p></li>
+    /// <li>
+    /// <p><b>SA</b>: South America</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
     pub continent_code: ::std::option::Option<::std::string::String>,
@@ -29,13 +36,20 @@ impl GeoLocation {
     /// <p>The two-letter code for the continent.</p>
     /// <p>Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
-    /// <li><p><b>AF</b>: Africa</p></li>
-    /// <li><p><b>AN</b>: Antarctica</p></li>
-    /// <li><p><b>AS</b>: Asia</p></li>
-    /// <li><p><b>EU</b>: Europe</p></li>
-    /// <li><p><b>OC</b>: Oceania</p></li>
-    /// <li><p><b>NA</b>: North America</p></li>
-    /// <li><p><b>SA</b>: South America</p></li>
+    /// <li>
+    /// <p><b>AF</b>: Africa</p></li>
+    /// <li>
+    /// <p><b>AN</b>: Antarctica</p></li>
+    /// <li>
+    /// <p><b>AS</b>: Asia</p></li>
+    /// <li>
+    /// <p><b>EU</b>: Europe</p></li>
+    /// <li>
+    /// <p><b>OC</b>: Oceania</p></li>
+    /// <li>
+    /// <p><b>NA</b>: North America</p></li>
+    /// <li>
+    /// <p><b>SA</b>: South America</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
     pub fn continent_code(&self) -> ::std::option::Option<&str> {
@@ -72,13 +86,20 @@ impl GeoLocationBuilder {
     /// <p>The two-letter code for the continent.</p>
     /// <p>Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
-    /// <li><p><b>AF</b>: Africa</p></li>
-    /// <li><p><b>AN</b>: Antarctica</p></li>
-    /// <li><p><b>AS</b>: Asia</p></li>
-    /// <li><p><b>EU</b>: Europe</p></li>
-    /// <li><p><b>OC</b>: Oceania</p></li>
-    /// <li><p><b>NA</b>: North America</p></li>
-    /// <li><p><b>SA</b>: South America</p></li>
+    /// <li>
+    /// <p><b>AF</b>: Africa</p></li>
+    /// <li>
+    /// <p><b>AN</b>: Antarctica</p></li>
+    /// <li>
+    /// <p><b>AS</b>: Asia</p></li>
+    /// <li>
+    /// <p><b>EU</b>: Europe</p></li>
+    /// <li>
+    /// <p><b>OC</b>: Oceania</p></li>
+    /// <li>
+    /// <p><b>NA</b>: North America</p></li>
+    /// <li>
+    /// <p><b>SA</b>: South America</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
     pub fn continent_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,13 +109,20 @@ impl GeoLocationBuilder {
     /// <p>The two-letter code for the continent.</p>
     /// <p>Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
-    /// <li><p><b>AF</b>: Africa</p></li>
-    /// <li><p><b>AN</b>: Antarctica</p></li>
-    /// <li><p><b>AS</b>: Asia</p></li>
-    /// <li><p><b>EU</b>: Europe</p></li>
-    /// <li><p><b>OC</b>: Oceania</p></li>
-    /// <li><p><b>NA</b>: North America</p></li>
-    /// <li><p><b>SA</b>: South America</p></li>
+    /// <li>
+    /// <p><b>AF</b>: Africa</p></li>
+    /// <li>
+    /// <p><b>AN</b>: Antarctica</p></li>
+    /// <li>
+    /// <p><b>AS</b>: Asia</p></li>
+    /// <li>
+    /// <p><b>EU</b>: Europe</p></li>
+    /// <li>
+    /// <p><b>OC</b>: Oceania</p></li>
+    /// <li>
+    /// <p><b>NA</b>: North America</p></li>
+    /// <li>
+    /// <p><b>SA</b>: South America</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
     pub fn set_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -104,13 +132,20 @@ impl GeoLocationBuilder {
     /// <p>The two-letter code for the continent.</p>
     /// <p>Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
-    /// <li><p><b>AF</b>: Africa</p></li>
-    /// <li><p><b>AN</b>: Antarctica</p></li>
-    /// <li><p><b>AS</b>: Asia</p></li>
-    /// <li><p><b>EU</b>: Europe</p></li>
-    /// <li><p><b>OC</b>: Oceania</p></li>
-    /// <li><p><b>NA</b>: North America</p></li>
-    /// <li><p><b>SA</b>: South America</p></li>
+    /// <li>
+    /// <p><b>AF</b>: Africa</p></li>
+    /// <li>
+    /// <p><b>AN</b>: Antarctica</p></li>
+    /// <li>
+    /// <p><b>AS</b>: Asia</p></li>
+    /// <li>
+    /// <p><b>EU</b>: Europe</p></li>
+    /// <li>
+    /// <p><b>OC</b>: Oceania</p></li>
+    /// <li>
+    /// <p><b>NA</b>: North America</p></li>
+    /// <li>
+    /// <p><b>SA</b>: South America</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
     pub fn get_continent_code(&self) -> &::std::option::Option<::std::string::String> {

@@ -10,35 +10,60 @@ pub struct Cluster {
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the cluster. Possible values are the following:</p>
     /// <ul>
-    /// <li><p><code>available</code></p></li>
-    /// <li><p><code>available, prep-for-resize</code></p></li>
-    /// <li><p><code>available, resize-cleanup</code></p></li>
-    /// <li><p><code>cancelling-resize</code></p></li>
-    /// <li><p><code>creating</code></p></li>
-    /// <li><p><code>deleting</code></p></li>
-    /// <li><p><code>final-snapshot</code></p></li>
-    /// <li><p><code>hardware-failure</code></p></li>
-    /// <li><p><code>incompatible-hsm</code></p></li>
-    /// <li><p><code>incompatible-network</code></p></li>
-    /// <li><p><code>incompatible-parameters</code></p></li>
-    /// <li><p><code>incompatible-restore</code></p></li>
-    /// <li><p><code>modifying</code></p></li>
-    /// <li><p><code>paused</code></p></li>
-    /// <li><p><code>rebooting</code></p></li>
-    /// <li><p><code>renaming</code></p></li>
-    /// <li><p><code>resizing</code></p></li>
-    /// <li><p><code>rotating-keys</code></p></li>
-    /// <li><p><code>storage-full</code></p></li>
-    /// <li><p><code>updating-hsm</code></p></li>
+    /// <li>
+    /// <p><code>available</code></p></li>
+    /// <li>
+    /// <p><code>available, prep-for-resize</code></p></li>
+    /// <li>
+    /// <p><code>available, resize-cleanup</code></p></li>
+    /// <li>
+    /// <p><code>cancelling-resize</code></p></li>
+    /// <li>
+    /// <p><code>creating</code></p></li>
+    /// <li>
+    /// <p><code>deleting</code></p></li>
+    /// <li>
+    /// <p><code>final-snapshot</code></p></li>
+    /// <li>
+    /// <p><code>hardware-failure</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-hsm</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-network</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-parameters</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-restore</code></p></li>
+    /// <li>
+    /// <p><code>modifying</code></p></li>
+    /// <li>
+    /// <p><code>paused</code></p></li>
+    /// <li>
+    /// <p><code>rebooting</code></p></li>
+    /// <li>
+    /// <p><code>renaming</code></p></li>
+    /// <li>
+    /// <p><code>resizing</code></p></li>
+    /// <li>
+    /// <p><code>rotating-keys</code></p></li>
+    /// <li>
+    /// <p><code>storage-full</code></p></li>
+    /// <li>
+    /// <p><code>updating-hsm</code></p></li>
     /// </ul>
     pub cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li><p>Available - The cluster is available for queries.</p></li>
-    /// <li><p>Unavailable - The cluster is not available for queries.</p></li>
-    /// <li><p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li><p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li><p>Failed - The cluster failed and is not available for queries.</p></li>
+    /// <li>
+    /// <p>Available - The cluster is available for queries.</p></li>
+    /// <li>
+    /// <p>Unavailable - The cluster is not available for queries.</p></li>
+    /// <li>
+    /// <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li>
+    /// <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li>
+    /// <p>Failed - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub cluster_availability_status: ::std::option::Option<::std::string::String>,
     /// <p>The status of a modify operation, if any, initiated for the cluster.</p>
@@ -126,16 +151,20 @@ pub struct Cluster {
     pub expected_next_snapshot_schedule_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
     /// <ul>
-    /// <li><p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
-    /// <li><p>Pending - The next snapshot is pending to be taken.</p></li>
+    /// <li>
+    /// <p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
+    /// <li>
+    /// <p>Pending - The next snapshot is pending to be taken.</p></li>
     /// </ul>
     pub expected_next_snapshot_schedule_time_status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time in UTC when system maintenance can begin.</p>
     pub next_maintenance_window_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the following:</p>
     /// <ul>
-    /// <li><p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
-    /// <li><p>ResizeType: Returns ClassicResize</p></li>
+    /// <li>
+    /// <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
+    /// <li>
+    /// <p>ResizeType: Returns ClassicResize</p></li>
     /// </ul>
     pub resize_info: ::std::option::Option<crate::types::ResizeInfo>,
     /// <p>Describes the status of the Availability Zone relocation operation.</p>
@@ -178,37 +207,62 @@ impl Cluster {
     }
     /// <p>The current state of the cluster. Possible values are the following:</p>
     /// <ul>
-    /// <li><p><code>available</code></p></li>
-    /// <li><p><code>available, prep-for-resize</code></p></li>
-    /// <li><p><code>available, resize-cleanup</code></p></li>
-    /// <li><p><code>cancelling-resize</code></p></li>
-    /// <li><p><code>creating</code></p></li>
-    /// <li><p><code>deleting</code></p></li>
-    /// <li><p><code>final-snapshot</code></p></li>
-    /// <li><p><code>hardware-failure</code></p></li>
-    /// <li><p><code>incompatible-hsm</code></p></li>
-    /// <li><p><code>incompatible-network</code></p></li>
-    /// <li><p><code>incompatible-parameters</code></p></li>
-    /// <li><p><code>incompatible-restore</code></p></li>
-    /// <li><p><code>modifying</code></p></li>
-    /// <li><p><code>paused</code></p></li>
-    /// <li><p><code>rebooting</code></p></li>
-    /// <li><p><code>renaming</code></p></li>
-    /// <li><p><code>resizing</code></p></li>
-    /// <li><p><code>rotating-keys</code></p></li>
-    /// <li><p><code>storage-full</code></p></li>
-    /// <li><p><code>updating-hsm</code></p></li>
+    /// <li>
+    /// <p><code>available</code></p></li>
+    /// <li>
+    /// <p><code>available, prep-for-resize</code></p></li>
+    /// <li>
+    /// <p><code>available, resize-cleanup</code></p></li>
+    /// <li>
+    /// <p><code>cancelling-resize</code></p></li>
+    /// <li>
+    /// <p><code>creating</code></p></li>
+    /// <li>
+    /// <p><code>deleting</code></p></li>
+    /// <li>
+    /// <p><code>final-snapshot</code></p></li>
+    /// <li>
+    /// <p><code>hardware-failure</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-hsm</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-network</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-parameters</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-restore</code></p></li>
+    /// <li>
+    /// <p><code>modifying</code></p></li>
+    /// <li>
+    /// <p><code>paused</code></p></li>
+    /// <li>
+    /// <p><code>rebooting</code></p></li>
+    /// <li>
+    /// <p><code>renaming</code></p></li>
+    /// <li>
+    /// <p><code>resizing</code></p></li>
+    /// <li>
+    /// <p><code>rotating-keys</code></p></li>
+    /// <li>
+    /// <p><code>storage-full</code></p></li>
+    /// <li>
+    /// <p><code>updating-hsm</code></p></li>
     /// </ul>
     pub fn cluster_status(&self) -> ::std::option::Option<&str> {
         self.cluster_status.as_deref()
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li><p>Available - The cluster is available for queries.</p></li>
-    /// <li><p>Unavailable - The cluster is not available for queries.</p></li>
-    /// <li><p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li><p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li><p>Failed - The cluster failed and is not available for queries.</p></li>
+    /// <li>
+    /// <p>Available - The cluster is available for queries.</p></li>
+    /// <li>
+    /// <p>Unavailable - The cluster is not available for queries.</p></li>
+    /// <li>
+    /// <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li>
+    /// <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li>
+    /// <p>Failed - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn cluster_availability_status(&self) -> ::std::option::Option<&str> {
         self.cluster_availability_status.as_deref()
@@ -392,8 +446,10 @@ impl Cluster {
     }
     /// <p>The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
     /// <ul>
-    /// <li><p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
-    /// <li><p>Pending - The next snapshot is pending to be taken.</p></li>
+    /// <li>
+    /// <p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
+    /// <li>
+    /// <p>Pending - The next snapshot is pending to be taken.</p></li>
     /// </ul>
     pub fn expected_next_snapshot_schedule_time_status(&self) -> ::std::option::Option<&str> {
         self.expected_next_snapshot_schedule_time_status.as_deref()
@@ -404,8 +460,10 @@ impl Cluster {
     }
     /// <p>Returns the following:</p>
     /// <ul>
-    /// <li><p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
-    /// <li><p>ResizeType: Returns ClassicResize</p></li>
+    /// <li>
+    /// <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
+    /// <li>
+    /// <p>ResizeType: Returns ClassicResize</p></li>
     /// </ul>
     pub fn resize_info(&self) -> ::std::option::Option<&crate::types::ResizeInfo> {
         self.resize_info.as_ref()
@@ -570,26 +628,46 @@ impl ClusterBuilder {
     }
     /// <p>The current state of the cluster. Possible values are the following:</p>
     /// <ul>
-    /// <li><p><code>available</code></p></li>
-    /// <li><p><code>available, prep-for-resize</code></p></li>
-    /// <li><p><code>available, resize-cleanup</code></p></li>
-    /// <li><p><code>cancelling-resize</code></p></li>
-    /// <li><p><code>creating</code></p></li>
-    /// <li><p><code>deleting</code></p></li>
-    /// <li><p><code>final-snapshot</code></p></li>
-    /// <li><p><code>hardware-failure</code></p></li>
-    /// <li><p><code>incompatible-hsm</code></p></li>
-    /// <li><p><code>incompatible-network</code></p></li>
-    /// <li><p><code>incompatible-parameters</code></p></li>
-    /// <li><p><code>incompatible-restore</code></p></li>
-    /// <li><p><code>modifying</code></p></li>
-    /// <li><p><code>paused</code></p></li>
-    /// <li><p><code>rebooting</code></p></li>
-    /// <li><p><code>renaming</code></p></li>
-    /// <li><p><code>resizing</code></p></li>
-    /// <li><p><code>rotating-keys</code></p></li>
-    /// <li><p><code>storage-full</code></p></li>
-    /// <li><p><code>updating-hsm</code></p></li>
+    /// <li>
+    /// <p><code>available</code></p></li>
+    /// <li>
+    /// <p><code>available, prep-for-resize</code></p></li>
+    /// <li>
+    /// <p><code>available, resize-cleanup</code></p></li>
+    /// <li>
+    /// <p><code>cancelling-resize</code></p></li>
+    /// <li>
+    /// <p><code>creating</code></p></li>
+    /// <li>
+    /// <p><code>deleting</code></p></li>
+    /// <li>
+    /// <p><code>final-snapshot</code></p></li>
+    /// <li>
+    /// <p><code>hardware-failure</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-hsm</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-network</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-parameters</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-restore</code></p></li>
+    /// <li>
+    /// <p><code>modifying</code></p></li>
+    /// <li>
+    /// <p><code>paused</code></p></li>
+    /// <li>
+    /// <p><code>rebooting</code></p></li>
+    /// <li>
+    /// <p><code>renaming</code></p></li>
+    /// <li>
+    /// <p><code>resizing</code></p></li>
+    /// <li>
+    /// <p><code>rotating-keys</code></p></li>
+    /// <li>
+    /// <p><code>storage-full</code></p></li>
+    /// <li>
+    /// <p><code>updating-hsm</code></p></li>
     /// </ul>
     pub fn cluster_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_status = ::std::option::Option::Some(input.into());
@@ -597,26 +675,46 @@ impl ClusterBuilder {
     }
     /// <p>The current state of the cluster. Possible values are the following:</p>
     /// <ul>
-    /// <li><p><code>available</code></p></li>
-    /// <li><p><code>available, prep-for-resize</code></p></li>
-    /// <li><p><code>available, resize-cleanup</code></p></li>
-    /// <li><p><code>cancelling-resize</code></p></li>
-    /// <li><p><code>creating</code></p></li>
-    /// <li><p><code>deleting</code></p></li>
-    /// <li><p><code>final-snapshot</code></p></li>
-    /// <li><p><code>hardware-failure</code></p></li>
-    /// <li><p><code>incompatible-hsm</code></p></li>
-    /// <li><p><code>incompatible-network</code></p></li>
-    /// <li><p><code>incompatible-parameters</code></p></li>
-    /// <li><p><code>incompatible-restore</code></p></li>
-    /// <li><p><code>modifying</code></p></li>
-    /// <li><p><code>paused</code></p></li>
-    /// <li><p><code>rebooting</code></p></li>
-    /// <li><p><code>renaming</code></p></li>
-    /// <li><p><code>resizing</code></p></li>
-    /// <li><p><code>rotating-keys</code></p></li>
-    /// <li><p><code>storage-full</code></p></li>
-    /// <li><p><code>updating-hsm</code></p></li>
+    /// <li>
+    /// <p><code>available</code></p></li>
+    /// <li>
+    /// <p><code>available, prep-for-resize</code></p></li>
+    /// <li>
+    /// <p><code>available, resize-cleanup</code></p></li>
+    /// <li>
+    /// <p><code>cancelling-resize</code></p></li>
+    /// <li>
+    /// <p><code>creating</code></p></li>
+    /// <li>
+    /// <p><code>deleting</code></p></li>
+    /// <li>
+    /// <p><code>final-snapshot</code></p></li>
+    /// <li>
+    /// <p><code>hardware-failure</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-hsm</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-network</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-parameters</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-restore</code></p></li>
+    /// <li>
+    /// <p><code>modifying</code></p></li>
+    /// <li>
+    /// <p><code>paused</code></p></li>
+    /// <li>
+    /// <p><code>rebooting</code></p></li>
+    /// <li>
+    /// <p><code>renaming</code></p></li>
+    /// <li>
+    /// <p><code>resizing</code></p></li>
+    /// <li>
+    /// <p><code>rotating-keys</code></p></li>
+    /// <li>
+    /// <p><code>storage-full</code></p></li>
+    /// <li>
+    /// <p><code>updating-hsm</code></p></li>
     /// </ul>
     pub fn set_cluster_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_status = input;
@@ -624,37 +722,62 @@ impl ClusterBuilder {
     }
     /// <p>The current state of the cluster. Possible values are the following:</p>
     /// <ul>
-    /// <li><p><code>available</code></p></li>
-    /// <li><p><code>available, prep-for-resize</code></p></li>
-    /// <li><p><code>available, resize-cleanup</code></p></li>
-    /// <li><p><code>cancelling-resize</code></p></li>
-    /// <li><p><code>creating</code></p></li>
-    /// <li><p><code>deleting</code></p></li>
-    /// <li><p><code>final-snapshot</code></p></li>
-    /// <li><p><code>hardware-failure</code></p></li>
-    /// <li><p><code>incompatible-hsm</code></p></li>
-    /// <li><p><code>incompatible-network</code></p></li>
-    /// <li><p><code>incompatible-parameters</code></p></li>
-    /// <li><p><code>incompatible-restore</code></p></li>
-    /// <li><p><code>modifying</code></p></li>
-    /// <li><p><code>paused</code></p></li>
-    /// <li><p><code>rebooting</code></p></li>
-    /// <li><p><code>renaming</code></p></li>
-    /// <li><p><code>resizing</code></p></li>
-    /// <li><p><code>rotating-keys</code></p></li>
-    /// <li><p><code>storage-full</code></p></li>
-    /// <li><p><code>updating-hsm</code></p></li>
+    /// <li>
+    /// <p><code>available</code></p></li>
+    /// <li>
+    /// <p><code>available, prep-for-resize</code></p></li>
+    /// <li>
+    /// <p><code>available, resize-cleanup</code></p></li>
+    /// <li>
+    /// <p><code>cancelling-resize</code></p></li>
+    /// <li>
+    /// <p><code>creating</code></p></li>
+    /// <li>
+    /// <p><code>deleting</code></p></li>
+    /// <li>
+    /// <p><code>final-snapshot</code></p></li>
+    /// <li>
+    /// <p><code>hardware-failure</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-hsm</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-network</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-parameters</code></p></li>
+    /// <li>
+    /// <p><code>incompatible-restore</code></p></li>
+    /// <li>
+    /// <p><code>modifying</code></p></li>
+    /// <li>
+    /// <p><code>paused</code></p></li>
+    /// <li>
+    /// <p><code>rebooting</code></p></li>
+    /// <li>
+    /// <p><code>renaming</code></p></li>
+    /// <li>
+    /// <p><code>resizing</code></p></li>
+    /// <li>
+    /// <p><code>rotating-keys</code></p></li>
+    /// <li>
+    /// <p><code>storage-full</code></p></li>
+    /// <li>
+    /// <p><code>updating-hsm</code></p></li>
     /// </ul>
     pub fn get_cluster_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_status
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li><p>Available - The cluster is available for queries.</p></li>
-    /// <li><p>Unavailable - The cluster is not available for queries.</p></li>
-    /// <li><p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li><p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li><p>Failed - The cluster failed and is not available for queries.</p></li>
+    /// <li>
+    /// <p>Available - The cluster is available for queries.</p></li>
+    /// <li>
+    /// <p>Unavailable - The cluster is not available for queries.</p></li>
+    /// <li>
+    /// <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li>
+    /// <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li>
+    /// <p>Failed - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn cluster_availability_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_availability_status = ::std::option::Option::Some(input.into());
@@ -662,11 +785,16 @@ impl ClusterBuilder {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li><p>Available - The cluster is available for queries.</p></li>
-    /// <li><p>Unavailable - The cluster is not available for queries.</p></li>
-    /// <li><p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li><p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li><p>Failed - The cluster failed and is not available for queries.</p></li>
+    /// <li>
+    /// <p>Available - The cluster is available for queries.</p></li>
+    /// <li>
+    /// <p>Unavailable - The cluster is not available for queries.</p></li>
+    /// <li>
+    /// <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li>
+    /// <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li>
+    /// <p>Failed - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn set_cluster_availability_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_availability_status = input;
@@ -674,11 +802,16 @@ impl ClusterBuilder {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li><p>Available - The cluster is available for queries.</p></li>
-    /// <li><p>Unavailable - The cluster is not available for queries.</p></li>
-    /// <li><p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li><p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li><p>Failed - The cluster failed and is not available for queries.</p></li>
+    /// <li>
+    /// <p>Available - The cluster is available for queries.</p></li>
+    /// <li>
+    /// <p>Unavailable - The cluster is not available for queries.</p></li>
+    /// <li>
+    /// <p>Maintenance - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li>
+    /// <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li>
+    /// <p>Failed - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn get_cluster_availability_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_availability_status
@@ -1300,8 +1433,10 @@ impl ClusterBuilder {
     }
     /// <p>The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
     /// <ul>
-    /// <li><p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
-    /// <li><p>Pending - The next snapshot is pending to be taken.</p></li>
+    /// <li>
+    /// <p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
+    /// <li>
+    /// <p>Pending - The next snapshot is pending to be taken.</p></li>
     /// </ul>
     pub fn expected_next_snapshot_schedule_time_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_next_snapshot_schedule_time_status = ::std::option::Option::Some(input.into());
@@ -1309,8 +1444,10 @@ impl ClusterBuilder {
     }
     /// <p>The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
     /// <ul>
-    /// <li><p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
-    /// <li><p>Pending - The next snapshot is pending to be taken.</p></li>
+    /// <li>
+    /// <p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
+    /// <li>
+    /// <p>Pending - The next snapshot is pending to be taken.</p></li>
     /// </ul>
     pub fn set_expected_next_snapshot_schedule_time_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_next_snapshot_schedule_time_status = input;
@@ -1318,8 +1455,10 @@ impl ClusterBuilder {
     }
     /// <p>The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
     /// <ul>
-    /// <li><p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
-    /// <li><p>Pending - The next snapshot is pending to be taken.</p></li>
+    /// <li>
+    /// <p>OnTrack - The next snapshot is expected to be taken on time.</p></li>
+    /// <li>
+    /// <p>Pending - The next snapshot is pending to be taken.</p></li>
     /// </ul>
     pub fn get_expected_next_snapshot_schedule_time_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_next_snapshot_schedule_time_status
@@ -1340,8 +1479,10 @@ impl ClusterBuilder {
     }
     /// <p>Returns the following:</p>
     /// <ul>
-    /// <li><p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
-    /// <li><p>ResizeType: Returns ClassicResize</p></li>
+    /// <li>
+    /// <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
+    /// <li>
+    /// <p>ResizeType: Returns ClassicResize</p></li>
     /// </ul>
     pub fn resize_info(mut self, input: crate::types::ResizeInfo) -> Self {
         self.resize_info = ::std::option::Option::Some(input);
@@ -1349,8 +1490,10 @@ impl ClusterBuilder {
     }
     /// <p>Returns the following:</p>
     /// <ul>
-    /// <li><p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
-    /// <li><p>ResizeType: Returns ClassicResize</p></li>
+    /// <li>
+    /// <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
+    /// <li>
+    /// <p>ResizeType: Returns ClassicResize</p></li>
     /// </ul>
     pub fn set_resize_info(mut self, input: ::std::option::Option<crate::types::ResizeInfo>) -> Self {
         self.resize_info = input;
@@ -1358,8 +1501,10 @@ impl ClusterBuilder {
     }
     /// <p>Returns the following:</p>
     /// <ul>
-    /// <li><p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
-    /// <li><p>ResizeType: Returns ClassicResize</p></li>
+    /// <li>
+    /// <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p></li>
+    /// <li>
+    /// <p>ResizeType: Returns ClassicResize</p></li>
     /// </ul>
     pub fn get_resize_info(&self) -> &::std::option::Option<crate::types::ResizeInfo> {
         &self.resize_info

@@ -22,7 +22,7 @@ impl ListAppsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListApps`.
 ///
-/// <p>Lists your Resilience Hub applications.</p> <note>
+/// <p>Lists your Resilience Hub applications.</p><note>
 /// <p>You can filter applications using only one filter at a time or without using any filter. If you try to filter applications using multiple filters, you will get the following error:</p>
 /// <p><code>An error occurred (ValidationException) when calling the ListApps operation: Only one filter is supported for this operation.</code></p>
 /// </note>

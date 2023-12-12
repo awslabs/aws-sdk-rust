@@ -8,8 +8,10 @@ pub struct InstanceSummary {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A string map that contains the following information:</p>
     /// <ul>
-    /// <li><p>The attributes that are associated with the instance.</p></li>
-    /// <li><p>For each attribute, the applicable value.</p></li>
+    /// <li>
+    /// <p>The attributes that are associated with the instance.</p></li>
+    /// <li>
+    /// <p>For each attribute, the applicable value.</p></li>
     /// </ul>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>
@@ -65,8 +67,10 @@ impl InstanceSummary {
     }
     /// <p>A string map that contains the following information:</p>
     /// <ul>
-    /// <li><p>The attributes that are associated with the instance.</p></li>
-    /// <li><p>For each attribute, the applicable value.</p></li>
+    /// <li>
+    /// <p>The attributes that are associated with the instance.</p></li>
+    /// <li>
+    /// <p>For each attribute, the applicable value.</p></li>
     /// </ul>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>
@@ -152,8 +156,10 @@ impl InstanceSummaryBuilder {
     ///
     /// <p>A string map that contains the following information:</p>
     /// <ul>
-    /// <li><p>The attributes that are associated with the instance.</p></li>
-    /// <li><p>For each attribute, the applicable value.</p></li>
+    /// <li>
+    /// <p>The attributes that are associated with the instance.</p></li>
+    /// <li>
+    /// <p>For each attribute, the applicable value.</p></li>
     /// </ul>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>
@@ -208,8 +214,10 @@ impl InstanceSummaryBuilder {
     }
     /// <p>A string map that contains the following information:</p>
     /// <ul>
-    /// <li><p>The attributes that are associated with the instance.</p></li>
-    /// <li><p>For each attribute, the applicable value.</p></li>
+    /// <li>
+    /// <p>The attributes that are associated with the instance.</p></li>
+    /// <li>
+    /// <p>For each attribute, the applicable value.</p></li>
     /// </ul>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>
@@ -262,8 +270,10 @@ impl InstanceSummaryBuilder {
     }
     /// <p>A string map that contains the following information:</p>
     /// <ul>
-    /// <li><p>The attributes that are associated with the instance.</p></li>
-    /// <li><p>For each attribute, the applicable value.</p></li>
+    /// <li>
+    /// <p>The attributes that are associated with the instance.</p></li>
+    /// <li>
+    /// <p>For each attribute, the applicable value.</p></li>
     /// </ul>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>

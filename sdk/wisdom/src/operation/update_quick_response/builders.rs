@@ -166,8 +166,10 @@ impl UpdateQuickResponseFluentBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
@@ -175,8 +177,10 @@ impl UpdateQuickResponseFluentBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
@@ -184,8 +188,10 @@ impl UpdateQuickResponseFluentBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content_type()

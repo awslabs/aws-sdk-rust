@@ -22,7 +22,7 @@ impl CancelTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelTask`.
 ///
-/// <p>Sends a cancel request for a specified task. You can cancel a task only if it's still in a <code>QUEUED</code> state. Tasks that are already running can't be cancelled.</p> <note>
+/// <p>Sends a cancel request for a specified task. You can cancel a task only if it's still in a <code>QUEUED</code> state. Tasks that are already running can't be cancelled.</p><note>
 /// <p>A task might still run if it's processed from the queue before the <code>CancelTask</code> operation changes the task's state.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

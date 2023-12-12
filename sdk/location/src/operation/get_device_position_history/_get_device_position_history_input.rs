@@ -13,13 +13,15 @@ pub struct GetDevicePositionHistoryInput {
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li><p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
+    /// <li>
+    /// <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
     /// </ul>
     pub start_time_inclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li><p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
+    /// <li>
+    /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
     /// </ul>
     pub end_time_exclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional limit for the number of device positions returned in a single call.</p>
@@ -43,7 +45,8 @@ impl GetDevicePositionHistoryInput {
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li><p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
+    /// <li>
+    /// <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
     /// </ul>
     pub fn start_time_inclusive(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time_inclusive.as_ref()
@@ -51,7 +54,8 @@ impl GetDevicePositionHistoryInput {
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li><p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
+    /// <li>
+    /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
     /// </ul>
     pub fn end_time_exclusive(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time_exclusive.as_ref()
@@ -131,7 +135,8 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li><p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
+    /// <li>
+    /// <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
     /// </ul>
     pub fn start_time_inclusive(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time_inclusive = ::std::option::Option::Some(input);
@@ -140,7 +145,8 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li><p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
+    /// <li>
+    /// <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
     /// </ul>
     pub fn set_start_time_inclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time_inclusive = input;
@@ -149,7 +155,8 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li><p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
+    /// <li>
+    /// <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
     /// </ul>
     pub fn get_start_time_inclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time_inclusive
@@ -157,7 +164,8 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li><p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
+    /// <li>
+    /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
     /// </ul>
     pub fn end_time_exclusive(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time_exclusive = ::std::option::Option::Some(input);
@@ -166,7 +174,8 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li><p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
+    /// <li>
+    /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
     /// </ul>
     pub fn set_end_time_exclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time_exclusive = input;
@@ -175,7 +184,8 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li><p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
+    /// <li>
+    /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
     /// </ul>
     pub fn get_end_time_exclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time_exclusive

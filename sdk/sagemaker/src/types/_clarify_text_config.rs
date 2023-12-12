@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClarifyTextConfig {
-    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language.</p> <note>
+    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language.</p><note>
     /// <p>For a mix of multiple languages, use code <code>'xx'</code>.</p>
     /// </note>
     pub language: ::std::option::Option<crate::types::ClarifyTextLanguage>,
@@ -12,7 +12,7 @@ pub struct ClarifyTextConfig {
     pub granularity: ::std::option::Option<crate::types::ClarifyTextGranularity>,
 }
 impl ClarifyTextConfig {
-    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language.</p> <note>
+    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language.</p><note>
     /// <p>For a mix of multiple languages, use code <code>'xx'</code>.</p>
     /// </note>
     pub fn language(&self) -> ::std::option::Option<&crate::types::ClarifyTextLanguage> {
@@ -38,7 +38,7 @@ pub struct ClarifyTextConfigBuilder {
     pub(crate) granularity: ::std::option::Option<crate::types::ClarifyTextGranularity>,
 }
 impl ClarifyTextConfigBuilder {
-    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language.</p> <note>
+    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language.</p><note>
     /// <p>For a mix of multiple languages, use code <code>'xx'</code>.</p>
     /// </note>
     /// This field is required.
@@ -46,14 +46,14 @@ impl ClarifyTextConfigBuilder {
         self.language = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language.</p> <note>
+    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language.</p><note>
     /// <p>For a mix of multiple languages, use code <code>'xx'</code>.</p>
     /// </note>
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::ClarifyTextLanguage>) -> Self {
         self.language = input;
         self
     }
-    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language.</p> <note>
+    /// <p>Specifies the language of the text features in <a href=" https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> or <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code of a supported language.</p><note>
     /// <p>For a mix of multiple languages, use code <code>'xx'</code>.</p>
     /// </note>
     pub fn get_language(&self) -> &::std::option::Option<crate::types::ClarifyTextLanguage> {

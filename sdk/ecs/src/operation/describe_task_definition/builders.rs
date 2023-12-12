@@ -22,7 +22,7 @@ impl DescribeTaskDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeTaskDefinition`.
 ///
-/// <p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information about a specific task definition, or you can simply specify the family to find the latest <code>ACTIVE</code> revision in that family.</p> <note>
+/// <p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information about a specific task definition, or you can simply specify the family to find the latest <code>ACTIVE</code> revision in that family.</p><note>
 /// <p>You can only describe <code>INACTIVE</code> task definitions while an active task or service references them.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

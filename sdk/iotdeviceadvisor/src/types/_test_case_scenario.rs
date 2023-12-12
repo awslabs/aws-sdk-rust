@@ -8,20 +8,30 @@ pub struct TestCaseScenario {
     pub test_case_scenario_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides test case scenario type. Type is one of the following:</p>
     /// <ul>
-    /// <li><p>Advanced</p></li>
-    /// <li><p>Basic</p></li>
+    /// <li>
+    /// <p>Advanced</p></li>
+    /// <li>
+    /// <p>Basic</p></li>
     /// </ul>
     pub test_case_scenario_type: ::std::option::Option<crate::types::TestCaseScenarioType>,
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
     /// <ul>
-    /// <li><p><code>PASS</code>: Test passed.</p></li>
-    /// <li><p><code>FAIL</code>: Test failed.</p></li>
-    /// <li><p><code>PENDING</code>: Test has not started running but is scheduled.</p></li>
-    /// <li><p><code>RUNNING</code>: Test is running.</p></li>
-    /// <li><p><code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p></li>
-    /// <li><p><code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p></li>
-    /// <li><p><code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p></li>
-    /// <li><p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
+    /// <li>
+    /// <p><code>PASS</code>: Test passed.</p></li>
+    /// <li>
+    /// <p><code>FAIL</code>: Test failed.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code>: Test has not started running but is scheduled.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code>: Test is running.</p></li>
+    /// <li>
+    /// <p><code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p></li>
+    /// <li>
+    /// <p><code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p></li>
+    /// <li>
+    /// <p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::TestCaseScenarioStatus>,
     /// <p>Provides test case scenario failure result.</p>
@@ -36,22 +46,32 @@ impl TestCaseScenario {
     }
     /// <p>Provides test case scenario type. Type is one of the following:</p>
     /// <ul>
-    /// <li><p>Advanced</p></li>
-    /// <li><p>Basic</p></li>
+    /// <li>
+    /// <p>Advanced</p></li>
+    /// <li>
+    /// <p>Basic</p></li>
     /// </ul>
     pub fn test_case_scenario_type(&self) -> ::std::option::Option<&crate::types::TestCaseScenarioType> {
         self.test_case_scenario_type.as_ref()
     }
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
     /// <ul>
-    /// <li><p><code>PASS</code>: Test passed.</p></li>
-    /// <li><p><code>FAIL</code>: Test failed.</p></li>
-    /// <li><p><code>PENDING</code>: Test has not started running but is scheduled.</p></li>
-    /// <li><p><code>RUNNING</code>: Test is running.</p></li>
-    /// <li><p><code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p></li>
-    /// <li><p><code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p></li>
-    /// <li><p><code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p></li>
-    /// <li><p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
+    /// <li>
+    /// <p><code>PASS</code>: Test passed.</p></li>
+    /// <li>
+    /// <p><code>FAIL</code>: Test failed.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code>: Test has not started running but is scheduled.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code>: Test is running.</p></li>
+    /// <li>
+    /// <p><code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p></li>
+    /// <li>
+    /// <p><code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p></li>
+    /// <li>
+    /// <p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TestCaseScenarioStatus> {
         self.status.as_ref()
@@ -99,8 +119,10 @@ impl TestCaseScenarioBuilder {
     }
     /// <p>Provides test case scenario type. Type is one of the following:</p>
     /// <ul>
-    /// <li><p>Advanced</p></li>
-    /// <li><p>Basic</p></li>
+    /// <li>
+    /// <p>Advanced</p></li>
+    /// <li>
+    /// <p>Basic</p></li>
     /// </ul>
     pub fn test_case_scenario_type(mut self, input: crate::types::TestCaseScenarioType) -> Self {
         self.test_case_scenario_type = ::std::option::Option::Some(input);
@@ -108,8 +130,10 @@ impl TestCaseScenarioBuilder {
     }
     /// <p>Provides test case scenario type. Type is one of the following:</p>
     /// <ul>
-    /// <li><p>Advanced</p></li>
-    /// <li><p>Basic</p></li>
+    /// <li>
+    /// <p>Advanced</p></li>
+    /// <li>
+    /// <p>Basic</p></li>
     /// </ul>
     pub fn set_test_case_scenario_type(mut self, input: ::std::option::Option<crate::types::TestCaseScenarioType>) -> Self {
         self.test_case_scenario_type = input;
@@ -117,22 +141,32 @@ impl TestCaseScenarioBuilder {
     }
     /// <p>Provides test case scenario type. Type is one of the following:</p>
     /// <ul>
-    /// <li><p>Advanced</p></li>
-    /// <li><p>Basic</p></li>
+    /// <li>
+    /// <p>Advanced</p></li>
+    /// <li>
+    /// <p>Basic</p></li>
     /// </ul>
     pub fn get_test_case_scenario_type(&self) -> &::std::option::Option<crate::types::TestCaseScenarioType> {
         &self.test_case_scenario_type
     }
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
     /// <ul>
-    /// <li><p><code>PASS</code>: Test passed.</p></li>
-    /// <li><p><code>FAIL</code>: Test failed.</p></li>
-    /// <li><p><code>PENDING</code>: Test has not started running but is scheduled.</p></li>
-    /// <li><p><code>RUNNING</code>: Test is running.</p></li>
-    /// <li><p><code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p></li>
-    /// <li><p><code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p></li>
-    /// <li><p><code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p></li>
-    /// <li><p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
+    /// <li>
+    /// <p><code>PASS</code>: Test passed.</p></li>
+    /// <li>
+    /// <p><code>FAIL</code>: Test failed.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code>: Test has not started running but is scheduled.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code>: Test is running.</p></li>
+    /// <li>
+    /// <p><code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p></li>
+    /// <li>
+    /// <p><code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p></li>
+    /// <li>
+    /// <p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::TestCaseScenarioStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -140,14 +174,22 @@ impl TestCaseScenarioBuilder {
     }
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
     /// <ul>
-    /// <li><p><code>PASS</code>: Test passed.</p></li>
-    /// <li><p><code>FAIL</code>: Test failed.</p></li>
-    /// <li><p><code>PENDING</code>: Test has not started running but is scheduled.</p></li>
-    /// <li><p><code>RUNNING</code>: Test is running.</p></li>
-    /// <li><p><code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p></li>
-    /// <li><p><code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p></li>
-    /// <li><p><code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p></li>
-    /// <li><p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
+    /// <li>
+    /// <p><code>PASS</code>: Test passed.</p></li>
+    /// <li>
+    /// <p><code>FAIL</code>: Test failed.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code>: Test has not started running but is scheduled.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code>: Test is running.</p></li>
+    /// <li>
+    /// <p><code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p></li>
+    /// <li>
+    /// <p><code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p></li>
+    /// <li>
+    /// <p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TestCaseScenarioStatus>) -> Self {
         self.status = input;
@@ -155,14 +197,22 @@ impl TestCaseScenarioBuilder {
     }
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
     /// <ul>
-    /// <li><p><code>PASS</code>: Test passed.</p></li>
-    /// <li><p><code>FAIL</code>: Test failed.</p></li>
-    /// <li><p><code>PENDING</code>: Test has not started running but is scheduled.</p></li>
-    /// <li><p><code>RUNNING</code>: Test is running.</p></li>
-    /// <li><p><code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p></li>
-    /// <li><p><code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p></li>
-    /// <li><p><code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p></li>
-    /// <li><p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
+    /// <li>
+    /// <p><code>PASS</code>: Test passed.</p></li>
+    /// <li>
+    /// <p><code>FAIL</code>: Test failed.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code>: Test has not started running but is scheduled.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code>: Test is running.</p></li>
+    /// <li>
+    /// <p><code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p></li>
+    /// <li>
+    /// <p><code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p></li>
+    /// <li>
+    /// <p><code>ERORR</code>: Test faced an error when running due to an internal issue.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TestCaseScenarioStatus> {
         &self.status

@@ -6,10 +6,14 @@ pub struct DescribeAssetBundleImportJobOutput {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code> returns one of the following values:</p>
     /// <ul>
-    /// <li><p><code>SUCCESSFUL</code></p></li>
-    /// <li><p><code>FAILED</code></p></li>
-    /// <li><p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
-    /// <li><p><code>FAILED_ROLLBACK_ERROR</code></p></li>
+    /// <li>
+    /// <p><code>SUCCESSFUL</code></p></li>
+    /// <li>
+    /// <p><code>FAILED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_ROLLBACK_ERROR</code></p></li>
     /// </ul>
     pub job_status: ::std::option::Option<crate::types::AssetBundleImportJobStatus>,
     /// <p>An array of error records that describes any failures that occurred during the export job processing.</p>
@@ -48,10 +52,14 @@ impl DescribeAssetBundleImportJobOutput {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code> returns one of the following values:</p>
     /// <ul>
-    /// <li><p><code>SUCCESSFUL</code></p></li>
-    /// <li><p><code>FAILED</code></p></li>
-    /// <li><p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
-    /// <li><p><code>FAILED_ROLLBACK_ERROR</code></p></li>
+    /// <li>
+    /// <p><code>SUCCESSFUL</code></p></li>
+    /// <li>
+    /// <p><code>FAILED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_ROLLBACK_ERROR</code></p></li>
     /// </ul>
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::AssetBundleImportJobStatus> {
         self.job_status.as_ref()
@@ -156,10 +164,14 @@ impl DescribeAssetBundleImportJobOutputBuilder {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code> returns one of the following values:</p>
     /// <ul>
-    /// <li><p><code>SUCCESSFUL</code></p></li>
-    /// <li><p><code>FAILED</code></p></li>
-    /// <li><p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
-    /// <li><p><code>FAILED_ROLLBACK_ERROR</code></p></li>
+    /// <li>
+    /// <p><code>SUCCESSFUL</code></p></li>
+    /// <li>
+    /// <p><code>FAILED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_ROLLBACK_ERROR</code></p></li>
     /// </ul>
     pub fn job_status(mut self, input: crate::types::AssetBundleImportJobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -168,10 +180,14 @@ impl DescribeAssetBundleImportJobOutputBuilder {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code> returns one of the following values:</p>
     /// <ul>
-    /// <li><p><code>SUCCESSFUL</code></p></li>
-    /// <li><p><code>FAILED</code></p></li>
-    /// <li><p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
-    /// <li><p><code>FAILED_ROLLBACK_ERROR</code></p></li>
+    /// <li>
+    /// <p><code>SUCCESSFUL</code></p></li>
+    /// <li>
+    /// <p><code>FAILED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_ROLLBACK_ERROR</code></p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::AssetBundleImportJobStatus>) -> Self {
         self.job_status = input;
@@ -180,10 +196,14 @@ impl DescribeAssetBundleImportJobOutputBuilder {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code> returns one of the following values:</p>
     /// <ul>
-    /// <li><p><code>SUCCESSFUL</code></p></li>
-    /// <li><p><code>FAILED</code></p></li>
-    /// <li><p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
-    /// <li><p><code>FAILED_ROLLBACK_ERROR</code></p></li>
+    /// <li>
+    /// <p><code>SUCCESSFUL</code></p></li>
+    /// <li>
+    /// <p><code>FAILED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_ROLLBACK_COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_ROLLBACK_ERROR</code></p></li>
     /// </ul>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobStatus> {
         &self.job_status

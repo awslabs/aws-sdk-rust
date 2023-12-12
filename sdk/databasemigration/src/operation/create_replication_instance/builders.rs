@@ -23,7 +23,7 @@ impl CreateReplicationInstanceInputBuilder {
 /// Fluent builder constructing a request to `CreateReplicationInstance`.
 ///
 /// <p>Creates the replication instance using the specified parameters.</p>
-/// <p>DMS requires that your account have certain roles with appropriate permissions before you can create a replication instance. For information on the required roles, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.APIRole">Creating the IAM Roles to Use With the CLI and DMS API</a>. For information on the required permissions, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM Permissions Needed to Use DMS</a>.</p> <note>
+/// <p>DMS requires that your account have certain roles with appropriate permissions before you can create a replication instance. For information on the required roles, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.APIRole">Creating the IAM Roles to Use With the CLI and DMS API</a>. For information on the required permissions, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM Permissions Needed to Use DMS</a>.</p><note>
 /// <p>If you don't specify a version when creating a replication instance, DMS will create the instance using the default engine version. For information about the default engine version, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReleaseNotes.html">Release Notes</a>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -114,9 +114,12 @@ impl CreateReplicationInstanceFluentBuilder {
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code></p>
     pub fn replication_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,9 +129,12 @@ impl CreateReplicationInstanceFluentBuilder {
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code></p>
     pub fn set_replication_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -138,9 +144,12 @@ impl CreateReplicationInstanceFluentBuilder {
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code></p>
     pub fn get_replication_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {

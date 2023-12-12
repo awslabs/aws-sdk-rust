@@ -17,10 +17,14 @@ pub struct CodeReviewSummary {
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
-    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
-    /// <li><p><code>Failed</code>: The code review failed.</p></li>
-    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The code review failed.</p></li>
+    /// <li>
+    /// <p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::JobState>,
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
@@ -60,10 +64,14 @@ impl CodeReviewSummary {
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
-    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
-    /// <li><p><code>Failed</code>: The code review failed.</p></li>
-    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The code review failed.</p></li>
+    /// <li>
+    /// <p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::JobState> {
         self.state.as_ref()
@@ -191,10 +199,14 @@ impl CodeReviewSummaryBuilder {
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
-    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
-    /// <li><p><code>Failed</code>: The code review failed.</p></li>
-    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The code review failed.</p></li>
+    /// <li>
+    /// <p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::JobState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -203,10 +215,14 @@ impl CodeReviewSummaryBuilder {
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
-    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
-    /// <li><p><code>Failed</code>: The code review failed.</p></li>
-    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The code review failed.</p></li>
+    /// <li>
+    /// <p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::JobState>) -> Self {
         self.state = input;
@@ -215,10 +231,14 @@ impl CodeReviewSummaryBuilder {
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
-    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
-    /// <li><p><code>Failed</code>: The code review failed.</p></li>
-    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The code review failed.</p></li>
+    /// <li>
+    /// <p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::JobState> {
         &self.state

@@ -8,8 +8,10 @@ pub struct SnapshotFileSheetSelection {
     pub sheet_id: ::std::string::String,
     /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
     /// <ul>
-    /// <li><p><code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p></li>
-    /// <li><p><code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p></li>
+    /// <li>
+    /// <p><code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p></li>
+    /// <li>
+    /// <p><code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p></li>
     /// </ul>
     pub selection_scope: crate::types::SnapshotFileSheetSelectionScope,
     /// <p>A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV or Excel workbook. This value supports a maximum of 1 visual ID for CSV and 5 visual IDs across up to 5 sheet selections for Excel. If you are generating an Excel workbook, the order of the visual IDs provided in this structure determines the order of the worksheets in the Excel file.</p>
@@ -23,8 +25,10 @@ impl SnapshotFileSheetSelection {
     }
     /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
     /// <ul>
-    /// <li><p><code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p></li>
-    /// <li><p><code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p></li>
+    /// <li>
+    /// <p><code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p></li>
+    /// <li>
+    /// <p><code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p></li>
     /// </ul>
     pub fn selection_scope(&self) -> &crate::types::SnapshotFileSheetSelectionScope {
         &self.selection_scope
@@ -69,8 +73,10 @@ impl SnapshotFileSheetSelectionBuilder {
     }
     /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
     /// <ul>
-    /// <li><p><code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p></li>
-    /// <li><p><code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p></li>
+    /// <li>
+    /// <p><code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p></li>
+    /// <li>
+    /// <p><code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p></li>
     /// </ul>
     /// This field is required.
     pub fn selection_scope(mut self, input: crate::types::SnapshotFileSheetSelectionScope) -> Self {
@@ -79,8 +85,10 @@ impl SnapshotFileSheetSelectionBuilder {
     }
     /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
     /// <ul>
-    /// <li><p><code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p></li>
-    /// <li><p><code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p></li>
+    /// <li>
+    /// <p><code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p></li>
+    /// <li>
+    /// <p><code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p></li>
     /// </ul>
     pub fn set_selection_scope(mut self, input: ::std::option::Option<crate::types::SnapshotFileSheetSelectionScope>) -> Self {
         self.selection_scope = input;
@@ -88,8 +96,10 @@ impl SnapshotFileSheetSelectionBuilder {
     }
     /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
     /// <ul>
-    /// <li><p><code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p></li>
-    /// <li><p><code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p></li>
+    /// <li>
+    /// <p><code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p></li>
+    /// <li>
+    /// <p><code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p></li>
     /// </ul>
     pub fn get_selection_scope(&self) -> &::std::option::Option<crate::types::SnapshotFileSheetSelectionScope> {
         &self.selection_scope

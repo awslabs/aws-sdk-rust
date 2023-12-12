@@ -22,7 +22,7 @@ impl BatchUpdateVehicleInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchUpdateVehicle`.
 ///
-/// <p>Updates a group, or batch, of vehicles.</p> <note>
+/// <p>Updates a group, or batch, of vehicles.</p><note>
 /// <p>You must specify a decoder manifest and a vehicle model (model manifest) for each vehicle.</p>
 /// </note>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/update-vehicles-cli.html">Update multiple vehicles (AWS CLI)</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>

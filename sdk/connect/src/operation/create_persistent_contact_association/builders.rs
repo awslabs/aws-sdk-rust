@@ -138,34 +138,48 @@ impl CreatePersistentContactAssociationFluentBuilder {
     }
     /// <p>The contactId chosen for rehydration depends on the type chosen.</p>
     /// <ul>
-    /// <li><p><code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated past chat contact of the specified past ended chat session. To use this type, provide the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code> field. In this type, Amazon Connect determines what the most recent chat contact on the past ended chat session and uses it to start a persistent chat.</p></li>
-    /// <li><p><code>FROM_SEGMENT</code>: Rehydrates a chat from the specified past chat contact provided in the <code>sourceContactId</code> field.</p></li>
+    /// <li>
+    /// <p><code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated past chat contact of the specified past ended chat session. To use this type, provide the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code> field. In this type, Amazon Connect determines what the most recent chat contact on the past ended chat session and uses it to start a persistent chat.</p></li>
+    /// <li>
+    /// <p><code>FROM_SEGMENT</code>: Rehydrates a chat from the specified past chat contact provided in the <code>sourceContactId</code> field.</p></li>
     /// </ul>
     /// <p>The actual contactId used for rehydration is provided in the response of this API.</p>
     /// <p>To illustrate how to use rehydration type, consider the following example: A customer starts a chat session. Agent a1 accepts the chat and a conversation starts between the customer and Agent a1. This first contact creates a contact ID <b>C1</b>. Agent a1 then transfers the chat to Agent a2. This creates another contact ID <b>C2</b>. At this point Agent a2 ends the chat. The customer is forwarded to the disconnect flow for a post chat survey that creates another contact ID <b>C3</b>. After the chat survey, the chat session ends. Later, the customer returns and wants to resume their past chat session. At this point, the customer can have following use cases:</p>
     /// <ul>
-    /// <li><p><b>Use Case 1</b>: The customer wants to continue the past chat session but they want to hide the post chat survey. For this they will use the following configuration:</p>
+    /// <li>
+    /// <p><b>Use Case 1</b>: The customer wants to continue the past chat session but they want to hide the post chat survey. For this they will use the following configuration:</p>
     /// <ul>
-    /// <li><p><b>Configuration</b></p>
+    /// <li>
+    /// <p><b>Configuration</b></p>
     /// <ul>
-    /// <li><p>SourceContactId = "C2"</p></li>
-    /// <li><p>RehydrationType = "FROM_SEGMENT"</p></li>
+    /// <li>
+    /// <p>SourceContactId = "C2"</p></li>
+    /// <li>
+    /// <p>RehydrationType = "FROM_SEGMENT"</p></li>
     /// </ul></li>
-    /// <li><p><b>Expected behavior</b></p>
+    /// <li>
+    /// <p><b>Expected behavior</b></p>
     /// <ul>
-    /// <li><p>This starts a persistent chat session from the specified past ended contact (C2). Transcripts of past chat sessions C2 and C1 are accessible in the current persistent chat session. Note that chat segment C3 is dropped from the persistent chat session.</p></li>
+    /// <li>
+    /// <p>This starts a persistent chat session from the specified past ended contact (C2). Transcripts of past chat sessions C2 and C1 are accessible in the current persistent chat session. Note that chat segment C3 is dropped from the persistent chat session.</p></li>
     /// </ul></li>
     /// </ul></li>
-    /// <li><p><b>Use Case 2</b>: The customer wants to continue the past chat session and see the transcript of the entire past engagement, including the post chat survey. For this they will use the following configuration:</p>
+    /// <li>
+    /// <p><b>Use Case 2</b>: The customer wants to continue the past chat session and see the transcript of the entire past engagement, including the post chat survey. For this they will use the following configuration:</p>
     /// <ul>
-    /// <li><p><b>Configuration</b></p>
+    /// <li>
+    /// <p><b>Configuration</b></p>
     /// <ul>
-    /// <li><p>SourceContactId = "C1"</p></li>
-    /// <li><p>RehydrationType = "ENTIRE_PAST_SESSION"</p></li>
+    /// <li>
+    /// <p>SourceContactId = "C1"</p></li>
+    /// <li>
+    /// <p>RehydrationType = "ENTIRE_PAST_SESSION"</p></li>
     /// </ul></li>
-    /// <li><p><b>Expected behavior</b></p>
+    /// <li>
+    /// <p><b>Expected behavior</b></p>
     /// <ul>
-    /// <li><p>This starts a persistent chat session from the most recently ended chat contact (C3). Transcripts of past chat sessions C3, C2 and C1 are accessible in the current persistent chat session.</p></li>
+    /// <li>
+    /// <p>This starts a persistent chat session from the most recently ended chat contact (C3). Transcripts of past chat sessions C3, C2 and C1 are accessible in the current persistent chat session.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -175,34 +189,48 @@ impl CreatePersistentContactAssociationFluentBuilder {
     }
     /// <p>The contactId chosen for rehydration depends on the type chosen.</p>
     /// <ul>
-    /// <li><p><code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated past chat contact of the specified past ended chat session. To use this type, provide the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code> field. In this type, Amazon Connect determines what the most recent chat contact on the past ended chat session and uses it to start a persistent chat.</p></li>
-    /// <li><p><code>FROM_SEGMENT</code>: Rehydrates a chat from the specified past chat contact provided in the <code>sourceContactId</code> field.</p></li>
+    /// <li>
+    /// <p><code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated past chat contact of the specified past ended chat session. To use this type, provide the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code> field. In this type, Amazon Connect determines what the most recent chat contact on the past ended chat session and uses it to start a persistent chat.</p></li>
+    /// <li>
+    /// <p><code>FROM_SEGMENT</code>: Rehydrates a chat from the specified past chat contact provided in the <code>sourceContactId</code> field.</p></li>
     /// </ul>
     /// <p>The actual contactId used for rehydration is provided in the response of this API.</p>
     /// <p>To illustrate how to use rehydration type, consider the following example: A customer starts a chat session. Agent a1 accepts the chat and a conversation starts between the customer and Agent a1. This first contact creates a contact ID <b>C1</b>. Agent a1 then transfers the chat to Agent a2. This creates another contact ID <b>C2</b>. At this point Agent a2 ends the chat. The customer is forwarded to the disconnect flow for a post chat survey that creates another contact ID <b>C3</b>. After the chat survey, the chat session ends. Later, the customer returns and wants to resume their past chat session. At this point, the customer can have following use cases:</p>
     /// <ul>
-    /// <li><p><b>Use Case 1</b>: The customer wants to continue the past chat session but they want to hide the post chat survey. For this they will use the following configuration:</p>
+    /// <li>
+    /// <p><b>Use Case 1</b>: The customer wants to continue the past chat session but they want to hide the post chat survey. For this they will use the following configuration:</p>
     /// <ul>
-    /// <li><p><b>Configuration</b></p>
+    /// <li>
+    /// <p><b>Configuration</b></p>
     /// <ul>
-    /// <li><p>SourceContactId = "C2"</p></li>
-    /// <li><p>RehydrationType = "FROM_SEGMENT"</p></li>
+    /// <li>
+    /// <p>SourceContactId = "C2"</p></li>
+    /// <li>
+    /// <p>RehydrationType = "FROM_SEGMENT"</p></li>
     /// </ul></li>
-    /// <li><p><b>Expected behavior</b></p>
+    /// <li>
+    /// <p><b>Expected behavior</b></p>
     /// <ul>
-    /// <li><p>This starts a persistent chat session from the specified past ended contact (C2). Transcripts of past chat sessions C2 and C1 are accessible in the current persistent chat session. Note that chat segment C3 is dropped from the persistent chat session.</p></li>
+    /// <li>
+    /// <p>This starts a persistent chat session from the specified past ended contact (C2). Transcripts of past chat sessions C2 and C1 are accessible in the current persistent chat session. Note that chat segment C3 is dropped from the persistent chat session.</p></li>
     /// </ul></li>
     /// </ul></li>
-    /// <li><p><b>Use Case 2</b>: The customer wants to continue the past chat session and see the transcript of the entire past engagement, including the post chat survey. For this they will use the following configuration:</p>
+    /// <li>
+    /// <p><b>Use Case 2</b>: The customer wants to continue the past chat session and see the transcript of the entire past engagement, including the post chat survey. For this they will use the following configuration:</p>
     /// <ul>
-    /// <li><p><b>Configuration</b></p>
+    /// <li>
+    /// <p><b>Configuration</b></p>
     /// <ul>
-    /// <li><p>SourceContactId = "C1"</p></li>
-    /// <li><p>RehydrationType = "ENTIRE_PAST_SESSION"</p></li>
+    /// <li>
+    /// <p>SourceContactId = "C1"</p></li>
+    /// <li>
+    /// <p>RehydrationType = "ENTIRE_PAST_SESSION"</p></li>
     /// </ul></li>
-    /// <li><p><b>Expected behavior</b></p>
+    /// <li>
+    /// <p><b>Expected behavior</b></p>
     /// <ul>
-    /// <li><p>This starts a persistent chat session from the most recently ended chat contact (C3). Transcripts of past chat sessions C3, C2 and C1 are accessible in the current persistent chat session.</p></li>
+    /// <li>
+    /// <p>This starts a persistent chat session from the most recently ended chat contact (C3). Transcripts of past chat sessions C3, C2 and C1 are accessible in the current persistent chat session.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>
@@ -212,34 +240,48 @@ impl CreatePersistentContactAssociationFluentBuilder {
     }
     /// <p>The contactId chosen for rehydration depends on the type chosen.</p>
     /// <ul>
-    /// <li><p><code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated past chat contact of the specified past ended chat session. To use this type, provide the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code> field. In this type, Amazon Connect determines what the most recent chat contact on the past ended chat session and uses it to start a persistent chat.</p></li>
-    /// <li><p><code>FROM_SEGMENT</code>: Rehydrates a chat from the specified past chat contact provided in the <code>sourceContactId</code> field.</p></li>
+    /// <li>
+    /// <p><code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated past chat contact of the specified past ended chat session. To use this type, provide the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code> field. In this type, Amazon Connect determines what the most recent chat contact on the past ended chat session and uses it to start a persistent chat.</p></li>
+    /// <li>
+    /// <p><code>FROM_SEGMENT</code>: Rehydrates a chat from the specified past chat contact provided in the <code>sourceContactId</code> field.</p></li>
     /// </ul>
     /// <p>The actual contactId used for rehydration is provided in the response of this API.</p>
     /// <p>To illustrate how to use rehydration type, consider the following example: A customer starts a chat session. Agent a1 accepts the chat and a conversation starts between the customer and Agent a1. This first contact creates a contact ID <b>C1</b>. Agent a1 then transfers the chat to Agent a2. This creates another contact ID <b>C2</b>. At this point Agent a2 ends the chat. The customer is forwarded to the disconnect flow for a post chat survey that creates another contact ID <b>C3</b>. After the chat survey, the chat session ends. Later, the customer returns and wants to resume their past chat session. At this point, the customer can have following use cases:</p>
     /// <ul>
-    /// <li><p><b>Use Case 1</b>: The customer wants to continue the past chat session but they want to hide the post chat survey. For this they will use the following configuration:</p>
+    /// <li>
+    /// <p><b>Use Case 1</b>: The customer wants to continue the past chat session but they want to hide the post chat survey. For this they will use the following configuration:</p>
     /// <ul>
-    /// <li><p><b>Configuration</b></p>
+    /// <li>
+    /// <p><b>Configuration</b></p>
     /// <ul>
-    /// <li><p>SourceContactId = "C2"</p></li>
-    /// <li><p>RehydrationType = "FROM_SEGMENT"</p></li>
+    /// <li>
+    /// <p>SourceContactId = "C2"</p></li>
+    /// <li>
+    /// <p>RehydrationType = "FROM_SEGMENT"</p></li>
     /// </ul></li>
-    /// <li><p><b>Expected behavior</b></p>
+    /// <li>
+    /// <p><b>Expected behavior</b></p>
     /// <ul>
-    /// <li><p>This starts a persistent chat session from the specified past ended contact (C2). Transcripts of past chat sessions C2 and C1 are accessible in the current persistent chat session. Note that chat segment C3 is dropped from the persistent chat session.</p></li>
+    /// <li>
+    /// <p>This starts a persistent chat session from the specified past ended contact (C2). Transcripts of past chat sessions C2 and C1 are accessible in the current persistent chat session. Note that chat segment C3 is dropped from the persistent chat session.</p></li>
     /// </ul></li>
     /// </ul></li>
-    /// <li><p><b>Use Case 2</b>: The customer wants to continue the past chat session and see the transcript of the entire past engagement, including the post chat survey. For this they will use the following configuration:</p>
+    /// <li>
+    /// <p><b>Use Case 2</b>: The customer wants to continue the past chat session and see the transcript of the entire past engagement, including the post chat survey. For this they will use the following configuration:</p>
     /// <ul>
-    /// <li><p><b>Configuration</b></p>
+    /// <li>
+    /// <p><b>Configuration</b></p>
     /// <ul>
-    /// <li><p>SourceContactId = "C1"</p></li>
-    /// <li><p>RehydrationType = "ENTIRE_PAST_SESSION"</p></li>
+    /// <li>
+    /// <p>SourceContactId = "C1"</p></li>
+    /// <li>
+    /// <p>RehydrationType = "ENTIRE_PAST_SESSION"</p></li>
     /// </ul></li>
-    /// <li><p><b>Expected behavior</b></p>
+    /// <li>
+    /// <p><b>Expected behavior</b></p>
     /// <ul>
-    /// <li><p>This starts a persistent chat session from the most recently ended chat contact (C3). Transcripts of past chat sessions C3, C2 and C1 are accessible in the current persistent chat session.</p></li>
+    /// <li>
+    /// <p>This starts a persistent chat session from the most recently ended chat contact (C3). Transcripts of past chat sessions C3, C2 and C1 are accessible in the current persistent chat session.</p></li>
     /// </ul></li>
     /// </ul></li>
     /// </ul>

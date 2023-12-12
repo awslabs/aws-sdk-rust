@@ -22,7 +22,7 @@ impl GetChannelMessageInputBuilder {
 }
 /// Fluent builder constructing a request to `GetChannelMessage`.
 ///
-/// <p>Gets the full details of a channel message.</p> <note>
+/// <p>Gets the full details of a channel message.</p><note>
 /// <p>The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
 /// </note> <important>
 /// <p><b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetChannelMessage.html">GetChannelMessage</a>, in the Amazon Chime SDK.</p>

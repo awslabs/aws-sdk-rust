@@ -255,21 +255,30 @@ pub enum UpdateRegexMatchSetError {
     WafInvalidAccountException(crate::types::error::WafInvalidAccountException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li><p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p></li>
-    /// <li><p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p></li>
-    /// <li><p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p></li>
-    /// <li><p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p></li>
-    /// <li><p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p></li>
+    /// <li>
+    /// <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p></li>
     /// </ul>
     WafInvalidOperationException(crate::types::error::WafInvalidOperationException),
     /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::types::error::WafLimitsExceededException),
     /// <p>The operation failed because you tried to add an object to or delete an object from another object that doesn't exist. For example:</p>
     /// <ul>
-    /// <li><p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p></li>
-    /// <li><p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p></li>
-    /// <li><p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p></li>
-    /// <li><p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p></li>
+    /// <li>
+    /// <p>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</p></li>
+    /// <li>
+    /// <p>You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</p></li>
+    /// <li>
+    /// <p>You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.</p></li>
+    /// <li>
+    /// <p>You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't exist.</p></li>
     /// </ul>
     WafNonexistentContainerException(crate::types::error::WafNonexistentContainerException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>

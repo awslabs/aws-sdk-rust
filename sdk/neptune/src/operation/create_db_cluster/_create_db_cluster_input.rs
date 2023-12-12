@@ -9,7 +9,8 @@ pub struct CreateDbClusterInput {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p><i>(Not supported by Neptune)</i></p>
@@ -21,16 +22,20 @@ pub struct CreateDbClusterInput {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
@@ -58,10 +63,14 @@ pub struct CreateDbClusterInput {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -80,8 +89,10 @@ pub struct CreateDbClusterInput {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li><p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p></li>
-    /// <li><p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p></li>
+    /// <li>
+    /// <p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p></li>
+    /// <li>
+    /// <p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p></li>
     /// </ul>
     /// <p>Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>
     /// <p>If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
@@ -103,12 +114,14 @@ pub struct CreateDbClusterInput {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>standard | iopt1</code></p></li>
+    /// <li>
+    /// <p><code>standard | iopt1</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p><code>standard</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>standard</code></p></li>
+    /// </ul><note>
     /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
     /// </note>
     pub storage_type: ::std::option::Option<::std::string::String>,
@@ -124,7 +137,8 @@ impl CreateDbClusterInput {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
@@ -144,9 +158,12 @@ impl CreateDbClusterInput {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -155,7 +172,8 @@ impl CreateDbClusterInput {
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
@@ -203,10 +221,14 @@ impl CreateDbClusterInput {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
@@ -237,8 +259,10 @@ impl CreateDbClusterInput {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li><p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p></li>
-    /// <li><p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p></li>
+    /// <li>
+    /// <p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p></li>
+    /// <li>
+    /// <p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p></li>
     /// </ul>
     /// <p>Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>
     /// <p>If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
@@ -276,12 +300,14 @@ impl CreateDbClusterInput {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>standard | iopt1</code></p></li>
+    /// <li>
+    /// <p><code>standard | iopt1</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p><code>standard</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>standard</code></p></li>
+    /// </ul><note>
     /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
     /// </note>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
@@ -353,7 +379,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -363,7 +390,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
@@ -373,7 +401,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
@@ -423,9 +452,12 @@ impl CreateDbClusterInputBuilder {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     /// This field is required.
@@ -436,9 +468,12 @@ impl CreateDbClusterInputBuilder {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -448,9 +483,12 @@ impl CreateDbClusterInputBuilder {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -459,7 +497,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
@@ -468,7 +507,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
@@ -477,7 +517,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
@@ -620,10 +661,14 @@ impl CreateDbClusterInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
@@ -633,10 +678,14 @@ impl CreateDbClusterInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
@@ -646,10 +695,14 @@ impl CreateDbClusterInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_backup_window
@@ -732,8 +785,10 @@ impl CreateDbClusterInputBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li><p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p></li>
-    /// <li><p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p></li>
+    /// <li>
+    /// <p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p></li>
+    /// <li>
+    /// <p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p></li>
     /// </ul>
     /// <p>Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>
     /// <p>If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
@@ -745,8 +800,10 @@ impl CreateDbClusterInputBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li><p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p></li>
-    /// <li><p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p></li>
+    /// <li>
+    /// <p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p></li>
+    /// <li>
+    /// <p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p></li>
     /// </ul>
     /// <p>Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>
     /// <p>If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
@@ -758,8 +815,10 @@ impl CreateDbClusterInputBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li><p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p></li>
-    /// <li><p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p></li>
+    /// <li>
+    /// <p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p></li>
+    /// <li>
+    /// <p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p></li>
     /// </ul>
     /// <p>Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>
     /// <p>If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
@@ -865,12 +924,14 @@ impl CreateDbClusterInputBuilder {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>standard | iopt1</code></p></li>
+    /// <li>
+    /// <p><code>standard | iopt1</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p><code>standard</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>standard</code></p></li>
+    /// </ul><note>
     /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
     /// </note>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -880,12 +941,14 @@ impl CreateDbClusterInputBuilder {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>standard | iopt1</code></p></li>
+    /// <li>
+    /// <p><code>standard | iopt1</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p><code>standard</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>standard</code></p></li>
+    /// </ul><note>
     /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
     /// </note>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -895,12 +958,14 @@ impl CreateDbClusterInputBuilder {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>standard | iopt1</code></p></li>
+    /// <li>
+    /// <p><code>standard | iopt1</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p><code>standard</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>standard</code></p></li>
+    /// </ul><note>
     /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
     /// </note>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {

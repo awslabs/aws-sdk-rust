@@ -12,35 +12,33 @@ pub struct MaintenanceWindowTask {
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of task.</p>
     pub r#type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
-    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=
-    /// <instanceid1>
+    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=<instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
-    /// </instanceid1></code>. Tags are specified using <code>Key=
-    /// <tag name>
+    /// </instanceid1></code>. Tags are specified using <code>Key=<tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    /// <p>The parameters that should be passed to the task when it is run.</p> <note>
+    /// <p>The parameters that should be passed to the task when it is run.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub task_parameters:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     /// <p>The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
     pub priority: i32,
-    /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
+    /// <p>Information about an S3 bucket to write task-level logs to.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub logging_info: ::std::option::Option<crate::types::LoggingInfo>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub service_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+    /// <p>The maximum number of targets this task can be run for, in parallel.</p><note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
     pub max_concurrency: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p><note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
@@ -71,12 +69,10 @@ impl MaintenanceWindowTask {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskType> {
         self.r#type.as_ref()
     }
-    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=
-    /// <instanceid1>
+    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=<instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
-    /// </instanceid1></code>. Tags are specified using <code>Key=
-    /// <tag name>
+    /// </instanceid1></code>. Tags are specified using <code>Key=<tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
@@ -85,7 +81,7 @@ impl MaintenanceWindowTask {
     pub fn targets(&self) -> &[crate::types::Target] {
         self.targets.as_deref().unwrap_or_default()
     }
-    /// <p>The parameters that should be passed to the task when it is run.</p> <note>
+    /// <p>The parameters that should be passed to the task when it is run.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn task_parameters(
@@ -97,7 +93,7 @@ impl MaintenanceWindowTask {
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
+    /// <p>Information about an S3 bucket to write task-level logs to.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn logging_info(&self) -> ::std::option::Option<&crate::types::LoggingInfo> {
@@ -107,14 +103,14 @@ impl MaintenanceWindowTask {
     pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+    /// <p>The maximum number of targets this task can be run for, in parallel.</p><note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
     pub fn max_concurrency(&self) -> ::std::option::Option<&str> {
         self.max_concurrency.as_deref()
     }
-    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p><note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
@@ -248,12 +244,10 @@ impl MaintenanceWindowTaskBuilder {
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=
-    /// <instanceid1>
+    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=<instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
-    /// </instanceid1></code>. Tags are specified using <code>Key=
-    /// <tag name>
+    /// </instanceid1></code>. Tags are specified using <code>Key=<tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
@@ -263,12 +257,10 @@ impl MaintenanceWindowTaskBuilder {
         self.targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=
-    /// <instanceid1>
+    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=<instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
-    /// </instanceid1></code>. Tags are specified using <code>Key=
-    /// <tag name>
+    /// </instanceid1></code>. Tags are specified using <code>Key=<tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
@@ -276,12 +268,10 @@ impl MaintenanceWindowTaskBuilder {
         self.targets = input;
         self
     }
-    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=
-    /// <instanceid1>
+    /// <p>The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=<instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
-    /// </instanceid1></code>. Tags are specified using <code>Key=
-    /// <tag name>
+    /// </instanceid1></code>. Tags are specified using <code>Key=<tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
@@ -292,7 +282,7 @@ impl MaintenanceWindowTaskBuilder {
     ///
     /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
     ///
-    /// <p>The parameters that should be passed to the task when it is run.</p> <note>
+    /// <p>The parameters that should be passed to the task when it is run.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn task_parameters(
@@ -305,7 +295,7 @@ impl MaintenanceWindowTaskBuilder {
         self.task_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The parameters that should be passed to the task when it is run.</p> <note>
+    /// <p>The parameters that should be passed to the task when it is run.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn set_task_parameters(
@@ -315,7 +305,7 @@ impl MaintenanceWindowTaskBuilder {
         self.task_parameters = input;
         self
     }
-    /// <p>The parameters that should be passed to the task when it is run.</p> <note>
+    /// <p>The parameters that should be passed to the task when it is run.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn get_task_parameters(
@@ -337,21 +327,21 @@ impl MaintenanceWindowTaskBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
+    /// <p>Information about an S3 bucket to write task-level logs to.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
         self.logging_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
+    /// <p>Information about an S3 bucket to write task-level logs to.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.logging_info = input;
         self
     }
-    /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
+    /// <p>Information about an S3 bucket to write task-level logs to.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {
@@ -371,7 +361,7 @@ impl MaintenanceWindowTaskBuilder {
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_role_arn
     }
-    /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+    /// <p>The maximum number of targets this task can be run for, in parallel.</p><note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
@@ -379,7 +369,7 @@ impl MaintenanceWindowTaskBuilder {
         self.max_concurrency = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+    /// <p>The maximum number of targets this task can be run for, in parallel.</p><note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
@@ -387,14 +377,14 @@ impl MaintenanceWindowTaskBuilder {
         self.max_concurrency = input;
         self
     }
-    /// <p>The maximum number of targets this task can be run for, in parallel.</p> <note>
+    /// <p>The maximum number of targets this task can be run for, in parallel.</p><note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
     pub fn get_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_concurrency
     }
-    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p><note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
@@ -402,7 +392,7 @@ impl MaintenanceWindowTaskBuilder {
         self.max_errors = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p><note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
@@ -410,7 +400,7 @@ impl MaintenanceWindowTaskBuilder {
         self.max_errors = input;
         self
     }
-    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+    /// <p>The maximum number of errors allowed before this task stops being scheduled.</p><note>
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>

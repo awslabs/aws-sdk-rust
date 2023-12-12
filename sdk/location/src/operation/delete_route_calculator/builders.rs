@@ -22,7 +22,7 @@ impl DeleteRouteCalculatorInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteRouteCalculator`.
 ///
-/// <p>Deletes a route calculator resource from your Amazon Web Services account.</p> <note>
+/// <p>Deletes a route calculator resource from your Amazon Web Services account.</p><note>
 /// <p>This operation deletes the resource permanently.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

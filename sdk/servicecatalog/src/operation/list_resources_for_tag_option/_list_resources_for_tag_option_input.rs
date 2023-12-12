@@ -7,8 +7,10 @@ pub struct ListResourcesForTagOptionInput {
     pub tag_option_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
     /// <ul>
-    /// <li><p><code>Portfolio</code></p></li>
-    /// <li><p><code>Product</code></p></li>
+    /// <li>
+    /// <p><code>Portfolio</code></p></li>
+    /// <li>
+    /// <p><code>Product</code></p></li>
     /// </ul>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
@@ -23,8 +25,10 @@ impl ListResourcesForTagOptionInput {
     }
     /// <p>The resource type.</p>
     /// <ul>
-    /// <li><p><code>Portfolio</code></p></li>
-    /// <li><p><code>Product</code></p></li>
+    /// <li>
+    /// <p><code>Portfolio</code></p></li>
+    /// <li>
+    /// <p><code>Product</code></p></li>
     /// </ul>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -72,8 +76,10 @@ impl ListResourcesForTagOptionInputBuilder {
     }
     /// <p>The resource type.</p>
     /// <ul>
-    /// <li><p><code>Portfolio</code></p></li>
-    /// <li><p><code>Product</code></p></li>
+    /// <li>
+    /// <p><code>Portfolio</code></p></li>
+    /// <li>
+    /// <p><code>Product</code></p></li>
     /// </ul>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
@@ -81,8 +87,10 @@ impl ListResourcesForTagOptionInputBuilder {
     }
     /// <p>The resource type.</p>
     /// <ul>
-    /// <li><p><code>Portfolio</code></p></li>
-    /// <li><p><code>Product</code></p></li>
+    /// <li>
+    /// <p><code>Portfolio</code></p></li>
+    /// <li>
+    /// <p><code>Product</code></p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
@@ -90,8 +98,10 @@ impl ListResourcesForTagOptionInputBuilder {
     }
     /// <p>The resource type.</p>
     /// <ul>
-    /// <li><p><code>Portfolio</code></p></li>
-    /// <li><p><code>Product</code></p></li>
+    /// <li>
+    /// <p><code>Portfolio</code></p></li>
+    /// <li>
+    /// <p><code>Product</code></p></li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type

@@ -9,9 +9,12 @@ pub struct UpdateRuleInput {
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
-    /// <li><p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
+    /// <li>
+    /// <p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>,
 }
@@ -26,9 +29,12 @@ impl UpdateRuleInput {
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
-    /// <li><p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
+    /// <li>
+    /// <p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
@@ -88,9 +94,12 @@ impl UpdateRuleInputBuilder {
     ///
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
-    /// <li><p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
+    /// <li>
+    /// <p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn updates(mut self, input: crate::types::RuleUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
@@ -100,9 +109,12 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
-    /// <li><p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
+    /// <li>
+    /// <p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>) -> Self {
         self.updates = input;
@@ -110,9 +122,12 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
-    /// <li><p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
-    /// <li><p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code></p></li>
+    /// <li>
+    /// <p><code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></p></li>
+    /// <li>
+    /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>> {
         &self.updates

@@ -17,31 +17,42 @@ pub struct CreateFileSystemFromBackupInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The configuration for this Microsoft Windows file system.</p>
     pub windows_configuration: ::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration>,
-    /// <p>The Lustre configuration for the file system being created.</p> <note>
+    /// <p>The Lustre configuration for the file system being created.</p><note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li><p><code>AutoImportPolicy</code></p></li>
-    /// <li><p><code>ExportPath</code></p></li>
-    /// <li><p><code>ImportedFileChunkSize</code></p></li>
-    /// <li><p><code>ImportPath</code></p></li>
+    /// <li>
+    /// <p><code>AutoImportPolicy</code></p></li>
+    /// <li>
+    /// <p><code>ExportPath</code></p></li>
+    /// <li>
+    /// <p><code>ImportedFileChunkSize</code></p></li>
+    /// <li>
+    /// <p><code>ImportPath</code></p></li>
     /// </ul>
     /// </note>
     pub lustre_configuration: ::std::option::Option<crate::types::CreateFileSystemLustreConfiguration>,
     /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li><p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
-    /// <li><p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
+    /// <li>
+    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
+    /// <li>
+    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
     /// </ul>
-    /// <p>The default value is <code>SSD</code>.</p> <note>
+    /// <p>The default value is <code>SSD</code>.</p><note>
     /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
     /// </note>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li><p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li><p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li><p>Amazon FSx for OpenZFS</p></li>
-    /// <li><p>Amazon FSx for Windows File Server</p></li>
+    /// <li>
+    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
+    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
+    /// <li>
+    /// <p>Amazon FSx for NetApp ONTAP</p></li>
+    /// <li>
+    /// <p>Amazon FSx for OpenZFS</p></li>
+    /// <li>
+    /// <p>Amazon FSx for Windows File Server</p></li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -86,13 +97,17 @@ impl CreateFileSystemFromBackupInput {
     pub fn windows_configuration(&self) -> ::std::option::Option<&crate::types::CreateFileSystemWindowsConfiguration> {
         self.windows_configuration.as_ref()
     }
-    /// <p>The Lustre configuration for the file system being created.</p> <note>
+    /// <p>The Lustre configuration for the file system being created.</p><note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li><p><code>AutoImportPolicy</code></p></li>
-    /// <li><p><code>ExportPath</code></p></li>
-    /// <li><p><code>ImportedFileChunkSize</code></p></li>
-    /// <li><p><code>ImportPath</code></p></li>
+    /// <li>
+    /// <p><code>AutoImportPolicy</code></p></li>
+    /// <li>
+    /// <p><code>ExportPath</code></p></li>
+    /// <li>
+    /// <p><code>ImportedFileChunkSize</code></p></li>
+    /// <li>
+    /// <p><code>ImportPath</code></p></li>
     /// </ul>
     /// </note>
     pub fn lustre_configuration(&self) -> ::std::option::Option<&crate::types::CreateFileSystemLustreConfiguration> {
@@ -100,10 +115,12 @@ impl CreateFileSystemFromBackupInput {
     }
     /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li><p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
-    /// <li><p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
+    /// <li>
+    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
+    /// <li>
+    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
     /// </ul>
-    /// <p>The default value is <code>SSD</code>.</p> <note>
+    /// <p>The default value is <code>SSD</code>.</p><note>
     /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
     /// </note>
     pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
@@ -111,10 +128,15 @@ impl CreateFileSystemFromBackupInput {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li><p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li><p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li><p>Amazon FSx for OpenZFS</p></li>
-    /// <li><p>Amazon FSx for Windows File Server</p></li>
+    /// <li>
+    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
+    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
+    /// <li>
+    /// <p>Amazon FSx for NetApp ONTAP</p></li>
+    /// <li>
+    /// <p>Amazon FSx for OpenZFS</p></li>
+    /// <li>
+    /// <p>Amazon FSx for Windows File Server</p></li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -266,39 +288,51 @@ impl CreateFileSystemFromBackupInputBuilder {
     pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration> {
         &self.windows_configuration
     }
-    /// <p>The Lustre configuration for the file system being created.</p> <note>
+    /// <p>The Lustre configuration for the file system being created.</p><note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li><p><code>AutoImportPolicy</code></p></li>
-    /// <li><p><code>ExportPath</code></p></li>
-    /// <li><p><code>ImportedFileChunkSize</code></p></li>
-    /// <li><p><code>ImportPath</code></p></li>
+    /// <li>
+    /// <p><code>AutoImportPolicy</code></p></li>
+    /// <li>
+    /// <p><code>ExportPath</code></p></li>
+    /// <li>
+    /// <p><code>ImportedFileChunkSize</code></p></li>
+    /// <li>
+    /// <p><code>ImportPath</code></p></li>
     /// </ul>
     /// </note>
     pub fn lustre_configuration(mut self, input: crate::types::CreateFileSystemLustreConfiguration) -> Self {
         self.lustre_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lustre configuration for the file system being created.</p> <note>
+    /// <p>The Lustre configuration for the file system being created.</p><note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li><p><code>AutoImportPolicy</code></p></li>
-    /// <li><p><code>ExportPath</code></p></li>
-    /// <li><p><code>ImportedFileChunkSize</code></p></li>
-    /// <li><p><code>ImportPath</code></p></li>
+    /// <li>
+    /// <p><code>AutoImportPolicy</code></p></li>
+    /// <li>
+    /// <p><code>ExportPath</code></p></li>
+    /// <li>
+    /// <p><code>ImportedFileChunkSize</code></p></li>
+    /// <li>
+    /// <p><code>ImportPath</code></p></li>
     /// </ul>
     /// </note>
     pub fn set_lustre_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemLustreConfiguration>) -> Self {
         self.lustre_configuration = input;
         self
     }
-    /// <p>The Lustre configuration for the file system being created.</p> <note>
+    /// <p>The Lustre configuration for the file system being created.</p><note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
     /// <ul>
-    /// <li><p><code>AutoImportPolicy</code></p></li>
-    /// <li><p><code>ExportPath</code></p></li>
-    /// <li><p><code>ImportedFileChunkSize</code></p></li>
-    /// <li><p><code>ImportPath</code></p></li>
+    /// <li>
+    /// <p><code>AutoImportPolicy</code></p></li>
+    /// <li>
+    /// <p><code>ExportPath</code></p></li>
+    /// <li>
+    /// <p><code>ImportedFileChunkSize</code></p></li>
+    /// <li>
+    /// <p><code>ImportPath</code></p></li>
     /// </ul>
     /// </note>
     pub fn get_lustre_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemLustreConfiguration> {
@@ -306,10 +340,12 @@ impl CreateFileSystemFromBackupInputBuilder {
     }
     /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li><p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
-    /// <li><p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
+    /// <li>
+    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
+    /// <li>
+    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
     /// </ul>
-    /// <p>The default value is <code>SSD</code>.</p> <note>
+    /// <p>The default value is <code>SSD</code>.</p><note>
     /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
     /// </note>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
@@ -318,10 +354,12 @@ impl CreateFileSystemFromBackupInputBuilder {
     }
     /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li><p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
-    /// <li><p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
+    /// <li>
+    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
+    /// <li>
+    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
     /// </ul>
-    /// <p>The default value is <code>SSD</code>.</p> <note>
+    /// <p>The default value is <code>SSD</code>.</p><note>
     /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
     /// </note>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
@@ -330,10 +368,12 @@ impl CreateFileSystemFromBackupInputBuilder {
     }
     /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
-    /// <li><p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
-    /// <li><p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
+    /// <li>
+    /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p></li>
+    /// <li>
+    /// <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p></li>
     /// </ul>
-    /// <p>The default value is <code>SSD</code>.</p> <note>
+    /// <p>The default value is <code>SSD</code>.</p><note>
     /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
     /// </note>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
@@ -341,10 +381,15 @@ impl CreateFileSystemFromBackupInputBuilder {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li><p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li><p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li><p>Amazon FSx for OpenZFS</p></li>
-    /// <li><p>Amazon FSx for Windows File Server</p></li>
+    /// <li>
+    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
+    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
+    /// <li>
+    /// <p>Amazon FSx for NetApp ONTAP</p></li>
+    /// <li>
+    /// <p>Amazon FSx for OpenZFS</p></li>
+    /// <li>
+    /// <p>Amazon FSx for Windows File Server</p></li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -353,10 +398,15 @@ impl CreateFileSystemFromBackupInputBuilder {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li><p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li><p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li><p>Amazon FSx for OpenZFS</p></li>
-    /// <li><p>Amazon FSx for Windows File Server</p></li>
+    /// <li>
+    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
+    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
+    /// <li>
+    /// <p>Amazon FSx for NetApp ONTAP</p></li>
+    /// <li>
+    /// <p>Amazon FSx for OpenZFS</p></li>
+    /// <li>
+    /// <p>Amazon FSx for Windows File Server</p></li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -365,10 +415,15 @@ impl CreateFileSystemFromBackupInputBuilder {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
-    /// <li><p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
-    /// <li><p>Amazon FSx for NetApp ONTAP</p></li>
-    /// <li><p>Amazon FSx for OpenZFS</p></li>
-    /// <li><p>Amazon FSx for Windows File Server</p></li>
+    /// <li>
+    /// <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p>
+    /// <p><code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p></li>
+    /// <li>
+    /// <p>Amazon FSx for NetApp ONTAP</p></li>
+    /// <li>
+    /// <p>Amazon FSx for OpenZFS</p></li>
+    /// <li>
+    /// <p>Amazon FSx for Windows File Server</p></li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {

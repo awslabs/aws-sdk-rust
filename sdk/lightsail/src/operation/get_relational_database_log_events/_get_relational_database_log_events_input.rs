@@ -11,18 +11,24 @@ pub struct GetRelationalDatabaseLogEventsInput {
     /// <p>The start of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p> <note>
+    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p><note>
     /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
     /// </note>
     pub start_from_head: ::std::option::Option<bool>,
@@ -43,8 +49,11 @@ impl GetRelationalDatabaseLogEventsInput {
     /// <p>The start of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
@@ -52,13 +61,16 @@ impl GetRelationalDatabaseLogEventsInput {
     /// <p>The end of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p> <note>
+    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p><note>
     /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
     /// </note>
     pub fn start_from_head(&self) -> ::std::option::Option<bool> {
@@ -125,8 +137,11 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>The start of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -135,8 +150,11 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>The start of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
@@ -145,8 +163,11 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>The start of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
@@ -154,8 +175,11 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>The end of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -164,8 +188,11 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>The end of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
@@ -174,27 +201,30 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>The end of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p> <note>
+    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p><note>
     /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
     /// </note>
     pub fn start_from_head(mut self, input: bool) -> Self {
         self.start_from_head = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p> <note>
+    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p><note>
     /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
     /// </note>
     pub fn set_start_from_head(mut self, input: ::std::option::Option<bool>) -> Self {
         self.start_from_head = input;
         self
     }
-    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p> <note>
+    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p><note>
     /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
     /// </note>
     pub fn get_start_from_head(&self) -> &::std::option::Option<bool> {

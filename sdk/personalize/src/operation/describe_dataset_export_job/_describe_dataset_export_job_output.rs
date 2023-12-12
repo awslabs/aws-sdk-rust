@@ -6,10 +6,14 @@ pub struct DescribeDatasetExportJobOutput {
     /// <p>Information about the dataset export job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING</p></li>
-    /// <li><p>CREATE IN_PROGRESS</p></li>
-    /// <li><p>ACTIVE</p></li>
-    /// <li><p>CREATE FAILED</p></li>
+    /// <li>
+    /// <p>CREATE PENDING</p></li>
+    /// <li>
+    /// <p>CREATE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>ACTIVE</p></li>
+    /// <li>
+    /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub dataset_export_job: ::std::option::Option<crate::types::DatasetExportJob>,
     _request_id: Option<String>,
@@ -18,10 +22,14 @@ impl DescribeDatasetExportJobOutput {
     /// <p>Information about the dataset export job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING</p></li>
-    /// <li><p>CREATE IN_PROGRESS</p></li>
-    /// <li><p>ACTIVE</p></li>
-    /// <li><p>CREATE FAILED</p></li>
+    /// <li>
+    /// <p>CREATE PENDING</p></li>
+    /// <li>
+    /// <p>CREATE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>ACTIVE</p></li>
+    /// <li>
+    /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub fn dataset_export_job(&self) -> ::std::option::Option<&crate::types::DatasetExportJob> {
         self.dataset_export_job.as_ref()
@@ -50,10 +58,14 @@ impl DescribeDatasetExportJobOutputBuilder {
     /// <p>Information about the dataset export job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING</p></li>
-    /// <li><p>CREATE IN_PROGRESS</p></li>
-    /// <li><p>ACTIVE</p></li>
-    /// <li><p>CREATE FAILED</p></li>
+    /// <li>
+    /// <p>CREATE PENDING</p></li>
+    /// <li>
+    /// <p>CREATE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>ACTIVE</p></li>
+    /// <li>
+    /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub fn dataset_export_job(mut self, input: crate::types::DatasetExportJob) -> Self {
         self.dataset_export_job = ::std::option::Option::Some(input);
@@ -62,10 +74,14 @@ impl DescribeDatasetExportJobOutputBuilder {
     /// <p>Information about the dataset export job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING</p></li>
-    /// <li><p>CREATE IN_PROGRESS</p></li>
-    /// <li><p>ACTIVE</p></li>
-    /// <li><p>CREATE FAILED</p></li>
+    /// <li>
+    /// <p>CREATE PENDING</p></li>
+    /// <li>
+    /// <p>CREATE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>ACTIVE</p></li>
+    /// <li>
+    /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub fn set_dataset_export_job(mut self, input: ::std::option::Option<crate::types::DatasetExportJob>) -> Self {
         self.dataset_export_job = input;
@@ -74,10 +90,14 @@ impl DescribeDatasetExportJobOutputBuilder {
     /// <p>Information about the dataset export job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING</p></li>
-    /// <li><p>CREATE IN_PROGRESS</p></li>
-    /// <li><p>ACTIVE</p></li>
-    /// <li><p>CREATE FAILED</p></li>
+    /// <li>
+    /// <p>CREATE PENDING</p></li>
+    /// <li>
+    /// <p>CREATE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>ACTIVE</p></li>
+    /// <li>
+    /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub fn get_dataset_export_job(&self) -> &::std::option::Option<crate::types::DatasetExportJob> {
         &self.dataset_export_job

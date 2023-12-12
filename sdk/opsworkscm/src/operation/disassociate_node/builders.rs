@@ -144,7 +144,8 @@ impl DisassociateNodeFluentBuilder {
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
     /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         self.inner = self.inner.engine_attributes(input);
@@ -153,7 +154,8 @@ impl DisassociateNodeFluentBuilder {
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
     /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
     pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.inner = self.inner.set_engine_attributes(input);
@@ -162,7 +164,8 @@ impl DisassociateNodeFluentBuilder {
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
     /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
     pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         self.inner.get_engine_attributes()

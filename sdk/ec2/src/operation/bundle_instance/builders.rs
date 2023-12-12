@@ -23,7 +23,7 @@ impl BundleInstanceInputBuilder {
 /// Fluent builder constructing a request to `BundleInstance`.
 ///
 /// <p>Bundles an Amazon instance store-backed Windows instance.</p>
-/// <p>During bundling, only the root device volume (C:\) is bundled. Data on other instance store volumes is not preserved.</p> <note>
+/// <p>During bundling, only the root device volume (C:\) is bundled. Data on other instance store volumes is not preserved.</p><note>
 /// <p>This action is not applicable for Linux/Unix instances or Windows instances that are backed by Amazon EBS.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

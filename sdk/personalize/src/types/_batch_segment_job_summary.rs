@@ -10,10 +10,14 @@ pub struct BatchSegmentJobSummary {
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the batch segment job. The status is one of the following values:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>IN PROGRESS</p></li>
-    /// <li><p>ACTIVE</p></li>
-    /// <li><p>CREATE FAILED</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>IN PROGRESS</p></li>
+    /// <li>
+    /// <p>ACTIVE</p></li>
+    /// <li>
+    /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the batch segment job was created.</p>
@@ -36,10 +40,14 @@ impl BatchSegmentJobSummary {
     }
     /// <p>The status of the batch segment job. The status is one of the following values:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>IN PROGRESS</p></li>
-    /// <li><p>ACTIVE</p></li>
-    /// <li><p>CREATE FAILED</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>IN PROGRESS</p></li>
+    /// <li>
+    /// <p>ACTIVE</p></li>
+    /// <li>
+    /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -111,10 +119,14 @@ impl BatchSegmentJobSummaryBuilder {
     }
     /// <p>The status of the batch segment job. The status is one of the following values:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>IN PROGRESS</p></li>
-    /// <li><p>ACTIVE</p></li>
-    /// <li><p>CREATE FAILED</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>IN PROGRESS</p></li>
+    /// <li>
+    /// <p>ACTIVE</p></li>
+    /// <li>
+    /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -122,10 +134,14 @@ impl BatchSegmentJobSummaryBuilder {
     }
     /// <p>The status of the batch segment job. The status is one of the following values:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>IN PROGRESS</p></li>
-    /// <li><p>ACTIVE</p></li>
-    /// <li><p>CREATE FAILED</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>IN PROGRESS</p></li>
+    /// <li>
+    /// <p>ACTIVE</p></li>
+    /// <li>
+    /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -133,10 +149,14 @@ impl BatchSegmentJobSummaryBuilder {
     }
     /// <p>The status of the batch segment job. The status is one of the following values:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>IN PROGRESS</p></li>
-    /// <li><p>ACTIVE</p></li>
-    /// <li><p>CREATE FAILED</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>IN PROGRESS</p></li>
+    /// <li>
+    /// <p>ACTIVE</p></li>
+    /// <li>
+    /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

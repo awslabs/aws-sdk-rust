@@ -14,10 +14,14 @@ pub struct CreateBotLocaleInput {
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
     /// <ul>
-    /// <li><p>AMAZON.FallbackIntent</p></li>
-    /// <li><p>IntentA</p></li>
-    /// <li><p>IntentB</p></li>
-    /// <li><p>IntentC</p></li>
+    /// <li>
+    /// <p>AMAZON.FallbackIntent</p></li>
+    /// <li>
+    /// <p>IntentA</p></li>
+    /// <li>
+    /// <p>IntentB</p></li>
+    /// <li>
+    /// <p>IntentC</p></li>
     /// </ul>
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
@@ -43,10 +47,14 @@ impl CreateBotLocaleInput {
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
     /// <ul>
-    /// <li><p>AMAZON.FallbackIntent</p></li>
-    /// <li><p>IntentA</p></li>
-    /// <li><p>IntentB</p></li>
-    /// <li><p>IntentC</p></li>
+    /// <li>
+    /// <p>AMAZON.FallbackIntent</p></li>
+    /// <li>
+    /// <p>IntentA</p></li>
+    /// <li>
+    /// <p>IntentB</p></li>
+    /// <li>
+    /// <p>IntentC</p></li>
     /// </ul>
     pub fn nlu_intent_confidence_threshold(&self) -> ::std::option::Option<f64> {
         self.nlu_intent_confidence_threshold
@@ -137,10 +145,14 @@ impl CreateBotLocaleInputBuilder {
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
     /// <ul>
-    /// <li><p>AMAZON.FallbackIntent</p></li>
-    /// <li><p>IntentA</p></li>
-    /// <li><p>IntentB</p></li>
-    /// <li><p>IntentC</p></li>
+    /// <li>
+    /// <p>AMAZON.FallbackIntent</p></li>
+    /// <li>
+    /// <p>IntentA</p></li>
+    /// <li>
+    /// <p>IntentB</p></li>
+    /// <li>
+    /// <p>IntentC</p></li>
     /// </ul>
     /// This field is required.
     pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
@@ -150,10 +162,14 @@ impl CreateBotLocaleInputBuilder {
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
     /// <ul>
-    /// <li><p>AMAZON.FallbackIntent</p></li>
-    /// <li><p>IntentA</p></li>
-    /// <li><p>IntentB</p></li>
-    /// <li><p>IntentC</p></li>
+    /// <li>
+    /// <p>AMAZON.FallbackIntent</p></li>
+    /// <li>
+    /// <p>IntentA</p></li>
+    /// <li>
+    /// <p>IntentB</p></li>
+    /// <li>
+    /// <p>IntentC</p></li>
     /// </ul>
     pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.nlu_intent_confidence_threshold = input;
@@ -162,10 +178,14 @@ impl CreateBotLocaleInputBuilder {
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
     /// <ul>
-    /// <li><p>AMAZON.FallbackIntent</p></li>
-    /// <li><p>IntentA</p></li>
-    /// <li><p>IntentB</p></li>
-    /// <li><p>IntentC</p></li>
+    /// <li>
+    /// <p>AMAZON.FallbackIntent</p></li>
+    /// <li>
+    /// <p>IntentA</p></li>
+    /// <li>
+    /// <p>IntentB</p></li>
+    /// <li>
+    /// <p>IntentC</p></li>
     /// </ul>
     pub fn get_nlu_intent_confidence_threshold(&self) -> &::std::option::Option<f64> {
         &self.nlu_intent_confidence_threshold

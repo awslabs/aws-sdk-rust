@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobManifestLocation {
-    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p><important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
     pub object_arn: ::std::string::String,
@@ -14,7 +14,7 @@ pub struct JobManifestLocation {
     pub e_tag: ::std::string::String,
 }
 impl JobManifestLocation {
-    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p><important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
     pub fn object_arn(&self) -> &str {
@@ -47,7 +47,7 @@ pub struct JobManifestLocationBuilder {
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
 }
 impl JobManifestLocationBuilder {
-    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p><important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
     /// This field is required.
@@ -55,14 +55,14 @@ impl JobManifestLocationBuilder {
         self.object_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p><important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
     pub fn set_object_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
+    /// <p>The Amazon Resource Name (ARN) for a manifest object.</p><important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
     pub fn get_object_arn(&self) -> &::std::option::Option<::std::string::String> {

@@ -28,8 +28,10 @@ impl CreateStreamInputBuilder {
 /// <p><code>CreateStream</code> is an asynchronous operation. Upon receiving a <code>CreateStream</code> request, Kinesis Data Streams immediately returns and sets the stream status to <code>CREATING</code>. After the stream is created, Kinesis Data Streams sets the stream status to <code>ACTIVE</code>. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p>
 /// <p>You receive a <code>LimitExceededException</code> when making a <code>CreateStream</code> request when you try to do one of the following:</p>
 /// <ul>
-/// <li><p>Have more than five streams in the <code>CREATING</code> state at any point in time.</p></li>
-/// <li><p>Create more shards than are authorized for your account.</p></li>
+/// <li>
+/// <p>Have more than five streams in the <code>CREATING</code> state at any point in time.</p></li>
+/// <li>
+/// <p>Create more shards than are authorized for your account.</p></li>
 /// </ul>
 /// <p>For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact Amazon Web Services Support</a>.</p>
 /// <p>You can use <code>DescribeStreamSummary</code> to check the stream status, which is returned in <code>StreamStatus</code>.</p>

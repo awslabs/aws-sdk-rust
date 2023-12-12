@@ -151,21 +151,21 @@ impl DeleteTenantDatabaseFluentBuilder {
     pub fn get_skip_final_snapshot(&self) -> &::std::option::Option<bool> {
         self.inner.get_skip_final_snapshot()
     }
-    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
+    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p><note>
     /// <p>If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command results in an error.</p>
     /// </note>
     pub fn final_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.final_db_snapshot_identifier(input.into());
         self
     }
-    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
+    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p><note>
     /// <p>If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command results in an error.</p>
     /// </note>
     pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_final_db_snapshot_identifier(input);
         self
     }
-    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
+    /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p><note>
     /// <p>If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command results in an error.</p>
     /// </note>
     pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {

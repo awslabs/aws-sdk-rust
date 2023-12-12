@@ -2,14 +2,16 @@
 
 /// <p>Information about credentials that provide access to a private Docker registry. When this is set:</p>
 /// <ul>
-/// <li><p><code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>.</p></li>
-/// <li><p>images cannot be curated or an Amazon ECR image.</p></li>
+/// <li>
+/// <p><code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>.</p></li>
+/// <li>
+/// <p>images cannot be curated or an Amazon ECR image.</p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with Secrets Manager Sample for CodeBuild</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryCredential {
-    /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p><note>
     /// <p>The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
     /// </note>
     pub credential: ::std::string::String,
@@ -17,7 +19,7 @@ pub struct RegistryCredential {
     pub credential_provider: crate::types::CredentialProviderType,
 }
 impl RegistryCredential {
-    /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p><note>
     /// <p>The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
     /// </note>
     pub fn credential(&self) -> &str {
@@ -44,7 +46,7 @@ pub struct RegistryCredentialBuilder {
     pub(crate) credential_provider: ::std::option::Option<crate::types::CredentialProviderType>,
 }
 impl RegistryCredentialBuilder {
-    /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p><note>
     /// <p>The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
     /// </note>
     /// This field is required.
@@ -52,14 +54,14 @@ impl RegistryCredentialBuilder {
         self.credential = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p><note>
     /// <p>The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
     /// </note>
     pub fn set_credential(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credential = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p><note>
     /// <p>The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
     /// </note>
     pub fn get_credential(&self) -> &::std::option::Option<::std::string::String> {

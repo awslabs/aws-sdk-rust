@@ -8,8 +8,10 @@ pub struct TargetSummary {
     pub target_address: ::std::option::Option<::std::string::String>,
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
-    /// <li><p>Chatbot topics are specified as <code>SNS</code>.</p></li>
-    /// <li><p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li>
+    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
+    /// <li>
+    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the target.</p>
@@ -22,8 +24,10 @@ impl TargetSummary {
     }
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
-    /// <li><p>Chatbot topics are specified as <code>SNS</code>.</p></li>
-    /// <li><p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li>
+    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
+    /// <li>
+    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
     pub fn target_type(&self) -> ::std::option::Option<&str> {
         self.target_type.as_deref()
@@ -74,8 +78,10 @@ impl TargetSummaryBuilder {
     }
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
-    /// <li><p>Chatbot topics are specified as <code>SNS</code>.</p></li>
-    /// <li><p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li>
+    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
+    /// <li>
+    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_type = ::std::option::Option::Some(input.into());
@@ -83,8 +89,10 @@ impl TargetSummaryBuilder {
     }
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
-    /// <li><p>Chatbot topics are specified as <code>SNS</code>.</p></li>
-    /// <li><p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li>
+    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
+    /// <li>
+    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
@@ -92,8 +100,10 @@ impl TargetSummaryBuilder {
     }
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
-    /// <li><p>Chatbot topics are specified as <code>SNS</code>.</p></li>
-    /// <li><p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li>
+    /// <p>Chatbot topics are specified as <code>SNS</code>.</p></li>
+    /// <li>
+    /// <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p></li>
     /// </ul>
     pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_type

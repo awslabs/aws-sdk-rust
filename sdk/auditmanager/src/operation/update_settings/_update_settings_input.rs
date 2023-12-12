@@ -11,7 +11,7 @@ pub struct UpdateSettingsInput {
     pub default_process_owners: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     /// <p>The KMS key details.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p><important>
     /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager.</p>
     /// </important>
     pub evidence_finder_enabled: ::std::option::Option<bool>,
@@ -39,7 +39,7 @@ impl UpdateSettingsInput {
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p><important>
     /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager.</p>
     /// </important>
     pub fn evidence_finder_enabled(&self) -> ::std::option::Option<bool> {
@@ -149,21 +149,21 @@ impl UpdateSettingsInputBuilder {
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key
     }
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p><important>
     /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager.</p>
     /// </important>
     pub fn evidence_finder_enabled(mut self, input: bool) -> Self {
         self.evidence_finder_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p><important>
     /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager.</p>
     /// </important>
     pub fn set_evidence_finder_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.evidence_finder_enabled = input;
         self
     }
-    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p> <important>
+    /// <p>Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.</p><important>
     /// <p>When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a> and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a> Audit Manager.</p>
     /// </important>
     pub fn get_evidence_finder_enabled(&self) -> &::std::option::Option<bool> {

@@ -152,8 +152,10 @@ impl UpdateGroupFluentBuilder {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li><p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
-    /// <li><p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub fn insights_configuration(mut self, input: crate::types::InsightsConfiguration) -> Self {
         self.inner = self.inner.insights_configuration(input);
@@ -161,8 +163,10 @@ impl UpdateGroupFluentBuilder {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li><p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
-    /// <li><p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub fn set_insights_configuration(mut self, input: ::std::option::Option<crate::types::InsightsConfiguration>) -> Self {
         self.inner = self.inner.set_insights_configuration(input);
@@ -170,8 +174,10 @@ impl UpdateGroupFluentBuilder {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li><p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
-    /// <li><p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub fn get_insights_configuration(&self) -> &::std::option::Option<crate::types::InsightsConfiguration> {
         self.inner.get_insights_configuration()

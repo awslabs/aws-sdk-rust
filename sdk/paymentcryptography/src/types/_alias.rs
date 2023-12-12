@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Alias {
-    /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p> <important>
+    /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     pub alias_name: ::std::string::String,
@@ -12,7 +12,7 @@ pub struct Alias {
     pub key_arn: ::std::option::Option<::std::string::String>,
 }
 impl Alias {
-    /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p> <important>
+    /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     pub fn alias_name(&self) -> &str {
@@ -39,7 +39,7 @@ pub struct AliasBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
 }
 impl AliasBuilder {
-    /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p> <important>
+    /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// This field is required.
@@ -47,14 +47,14 @@ impl AliasBuilder {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p> <important>
+    /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias_name = input;
         self
     }
-    /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p> <important>
+    /// <p>A friendly name that you can use to refer to a key. The value must begin with <code>alias/</code>.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {

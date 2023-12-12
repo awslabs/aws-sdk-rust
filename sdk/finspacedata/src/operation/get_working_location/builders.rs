@@ -111,8 +111,10 @@ impl GetWorkingLocationFluentBuilder {
     }
     /// <p>Specify the type of the working location.</p>
     /// <ul>
-    /// <li><p><code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p></li>
-    /// <li><p><code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p></li>
+    /// <li>
+    /// <p><code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p></li>
+    /// <li>
+    /// <p><code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p></li>
     /// </ul>
     pub fn location_type(mut self, input: crate::types::LocationType) -> Self {
         self.inner = self.inner.location_type(input);
@@ -120,8 +122,10 @@ impl GetWorkingLocationFluentBuilder {
     }
     /// <p>Specify the type of the working location.</p>
     /// <ul>
-    /// <li><p><code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p></li>
-    /// <li><p><code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p></li>
+    /// <li>
+    /// <p><code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p></li>
+    /// <li>
+    /// <p><code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p></li>
     /// </ul>
     pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
         self.inner = self.inner.set_location_type(input);
@@ -129,8 +133,10 @@ impl GetWorkingLocationFluentBuilder {
     }
     /// <p>Specify the type of the working location.</p>
     /// <ul>
-    /// <li><p><code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p></li>
-    /// <li><p><code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p></li>
+    /// <li>
+    /// <p><code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p></li>
+    /// <li>
+    /// <p><code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p></li>
     /// </ul>
     pub fn get_location_type(&self) -> &::std::option::Option<crate::types::LocationType> {
         self.inner.get_location_type()

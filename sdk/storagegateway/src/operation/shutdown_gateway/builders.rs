@@ -23,10 +23,10 @@ impl ShutdownGatewayInputBuilder {
 /// Fluent builder constructing a request to `ShutdownGateway`.
 ///
 /// <p>Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in the body of your request.</p>
-/// <p>The operation shuts down the gateway service component running in the gateway's virtual machine (VM) and not the host VM.</p> <note>
+/// <p>The operation shuts down the gateway service component running in the gateway's virtual machine (VM) and not the host VM.</p><note>
 /// <p>If you want to shut down the VM, it is recommended that you first shut down the gateway component in the VM to avoid unpredictable conditions.</p>
 /// </note>
-/// <p>After the gateway is shutdown, you cannot call any other API except <code>StartGateway</code>, <code>DescribeGatewayInformation</code>, and <code>ListGateways</code>. For more information, see <code>ActivateGateway</code>. Your applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.</p> <note>
+/// <p>After the gateway is shutdown, you cannot call any other API except <code>StartGateway</code>, <code>DescribeGatewayInformation</code>, and <code>ListGateways</code>. For more information, see <code>ActivateGateway</code>. Your applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.</p><note>
 /// <p>When you make a shutdown request, you will get a <code>200 OK</code> success response immediately. However, it might take some time for the gateway to shut down. You can call the <code>DescribeGatewayInformation</code> API to check the status. For more information, see <code>ActivateGateway</code>.</p>
 /// </note>
 /// <p>If do not intend to use the gateway again, you must delete the gateway (using <code>DeleteGateway</code>) to no longer pay software charges associated with the gateway.</p>

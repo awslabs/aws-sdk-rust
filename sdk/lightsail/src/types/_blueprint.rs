@@ -28,7 +28,7 @@ pub struct Blueprint {
     pub license_url: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.</p>
     pub platform: ::std::option::Option<crate::types::InstancePlatform>,
-    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub app_category: ::std::option::Option<crate::types::AppCategory>,
@@ -82,7 +82,7 @@ impl Blueprint {
     pub fn platform(&self) -> ::std::option::Option<&crate::types::InstancePlatform> {
         self.platform.as_ref()
     }
-    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn app_category(&self) -> ::std::option::Option<&crate::types::AppCategory> {
@@ -283,21 +283,21 @@ impl BlueprintBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::InstancePlatform> {
         &self.platform
     }
-    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn app_category(mut self, input: crate::types::AppCategory) -> Self {
         self.app_category = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn set_app_category(mut self, input: ::std::option::Option<crate::types::AppCategory>) -> Self {
         self.app_category = input;
         self
     }
-    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn get_app_category(&self) -> &::std::option::Option<crate::types::AppCategory> {

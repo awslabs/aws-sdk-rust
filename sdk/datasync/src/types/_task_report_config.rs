@@ -9,14 +9,18 @@ pub struct TaskReportConfig {
     pub destination: ::std::option::Option<crate::types::ReportDestination>,
     /// <p>Specifies the type of task report that you want:</p>
     /// <ul>
-    /// <li><p><code>SUMMARY_ONLY</code>: Provides necessary details about your task, including the number of files, objects, and directories transferred and transfer duration.</p></li>
-    /// <li><p><code>STANDARD</code>: Provides complete details about your task, including a full list of files, objects, and directories that were transferred, skipped, verified, and more.</p></li>
+    /// <li>
+    /// <p><code>SUMMARY_ONLY</code>: Provides necessary details about your task, including the number of files, objects, and directories transferred and transfer duration.</p></li>
+    /// <li>
+    /// <p><code>STANDARD</code>: Provides complete details about your task, including a full list of files, objects, and directories that were transferred, skipped, verified, and more.</p></li>
     /// </ul>
     pub output_type: ::std::option::Option<crate::types::ReportOutputType>,
     /// <p>Specifies whether you want your task report to include only what went wrong with your transfer or a list of what succeeded and didn't.</p>
     /// <ul>
-    /// <li><p><code>ERRORS_ONLY</code>: A report shows what DataSync was unable to transfer, skip, verify, and delete.</p></li>
-    /// <li><p><code>SUCCESSES_AND_ERRORS</code>: A report shows what DataSync was able and unable to transfer, skip, verify, and delete.</p></li>
+    /// <li>
+    /// <p><code>ERRORS_ONLY</code>: A report shows what DataSync was unable to transfer, skip, verify, and delete.</p></li>
+    /// <li>
+    /// <p><code>SUCCESSES_AND_ERRORS</code>: A report shows what DataSync was able and unable to transfer, skip, verify, and delete.</p></li>
     /// </ul>
     pub report_level: ::std::option::Option<crate::types::ReportLevel>,
     /// <p>Specifies whether your task report includes the new version of each object transferred into an S3 bucket. This only applies if you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html">enable versioning on your bucket</a>. Keep in mind that setting this to <code>INCLUDE</code> can increase the duration of your task execution.</p>
@@ -31,16 +35,20 @@ impl TaskReportConfig {
     }
     /// <p>Specifies the type of task report that you want:</p>
     /// <ul>
-    /// <li><p><code>SUMMARY_ONLY</code>: Provides necessary details about your task, including the number of files, objects, and directories transferred and transfer duration.</p></li>
-    /// <li><p><code>STANDARD</code>: Provides complete details about your task, including a full list of files, objects, and directories that were transferred, skipped, verified, and more.</p></li>
+    /// <li>
+    /// <p><code>SUMMARY_ONLY</code>: Provides necessary details about your task, including the number of files, objects, and directories transferred and transfer duration.</p></li>
+    /// <li>
+    /// <p><code>STANDARD</code>: Provides complete details about your task, including a full list of files, objects, and directories that were transferred, skipped, verified, and more.</p></li>
     /// </ul>
     pub fn output_type(&self) -> ::std::option::Option<&crate::types::ReportOutputType> {
         self.output_type.as_ref()
     }
     /// <p>Specifies whether you want your task report to include only what went wrong with your transfer or a list of what succeeded and didn't.</p>
     /// <ul>
-    /// <li><p><code>ERRORS_ONLY</code>: A report shows what DataSync was unable to transfer, skip, verify, and delete.</p></li>
-    /// <li><p><code>SUCCESSES_AND_ERRORS</code>: A report shows what DataSync was able and unable to transfer, skip, verify, and delete.</p></li>
+    /// <li>
+    /// <p><code>ERRORS_ONLY</code>: A report shows what DataSync was unable to transfer, skip, verify, and delete.</p></li>
+    /// <li>
+    /// <p><code>SUCCESSES_AND_ERRORS</code>: A report shows what DataSync was able and unable to transfer, skip, verify, and delete.</p></li>
     /// </ul>
     pub fn report_level(&self) -> ::std::option::Option<&crate::types::ReportLevel> {
         self.report_level.as_ref()
@@ -88,8 +96,10 @@ impl TaskReportConfigBuilder {
     }
     /// <p>Specifies the type of task report that you want:</p>
     /// <ul>
-    /// <li><p><code>SUMMARY_ONLY</code>: Provides necessary details about your task, including the number of files, objects, and directories transferred and transfer duration.</p></li>
-    /// <li><p><code>STANDARD</code>: Provides complete details about your task, including a full list of files, objects, and directories that were transferred, skipped, verified, and more.</p></li>
+    /// <li>
+    /// <p><code>SUMMARY_ONLY</code>: Provides necessary details about your task, including the number of files, objects, and directories transferred and transfer duration.</p></li>
+    /// <li>
+    /// <p><code>STANDARD</code>: Provides complete details about your task, including a full list of files, objects, and directories that were transferred, skipped, verified, and more.</p></li>
     /// </ul>
     pub fn output_type(mut self, input: crate::types::ReportOutputType) -> Self {
         self.output_type = ::std::option::Option::Some(input);
@@ -97,8 +107,10 @@ impl TaskReportConfigBuilder {
     }
     /// <p>Specifies the type of task report that you want:</p>
     /// <ul>
-    /// <li><p><code>SUMMARY_ONLY</code>: Provides necessary details about your task, including the number of files, objects, and directories transferred and transfer duration.</p></li>
-    /// <li><p><code>STANDARD</code>: Provides complete details about your task, including a full list of files, objects, and directories that were transferred, skipped, verified, and more.</p></li>
+    /// <li>
+    /// <p><code>SUMMARY_ONLY</code>: Provides necessary details about your task, including the number of files, objects, and directories transferred and transfer duration.</p></li>
+    /// <li>
+    /// <p><code>STANDARD</code>: Provides complete details about your task, including a full list of files, objects, and directories that were transferred, skipped, verified, and more.</p></li>
     /// </ul>
     pub fn set_output_type(mut self, input: ::std::option::Option<crate::types::ReportOutputType>) -> Self {
         self.output_type = input;
@@ -106,16 +118,20 @@ impl TaskReportConfigBuilder {
     }
     /// <p>Specifies the type of task report that you want:</p>
     /// <ul>
-    /// <li><p><code>SUMMARY_ONLY</code>: Provides necessary details about your task, including the number of files, objects, and directories transferred and transfer duration.</p></li>
-    /// <li><p><code>STANDARD</code>: Provides complete details about your task, including a full list of files, objects, and directories that were transferred, skipped, verified, and more.</p></li>
+    /// <li>
+    /// <p><code>SUMMARY_ONLY</code>: Provides necessary details about your task, including the number of files, objects, and directories transferred and transfer duration.</p></li>
+    /// <li>
+    /// <p><code>STANDARD</code>: Provides complete details about your task, including a full list of files, objects, and directories that were transferred, skipped, verified, and more.</p></li>
     /// </ul>
     pub fn get_output_type(&self) -> &::std::option::Option<crate::types::ReportOutputType> {
         &self.output_type
     }
     /// <p>Specifies whether you want your task report to include only what went wrong with your transfer or a list of what succeeded and didn't.</p>
     /// <ul>
-    /// <li><p><code>ERRORS_ONLY</code>: A report shows what DataSync was unable to transfer, skip, verify, and delete.</p></li>
-    /// <li><p><code>SUCCESSES_AND_ERRORS</code>: A report shows what DataSync was able and unable to transfer, skip, verify, and delete.</p></li>
+    /// <li>
+    /// <p><code>ERRORS_ONLY</code>: A report shows what DataSync was unable to transfer, skip, verify, and delete.</p></li>
+    /// <li>
+    /// <p><code>SUCCESSES_AND_ERRORS</code>: A report shows what DataSync was able and unable to transfer, skip, verify, and delete.</p></li>
     /// </ul>
     pub fn report_level(mut self, input: crate::types::ReportLevel) -> Self {
         self.report_level = ::std::option::Option::Some(input);
@@ -123,8 +139,10 @@ impl TaskReportConfigBuilder {
     }
     /// <p>Specifies whether you want your task report to include only what went wrong with your transfer or a list of what succeeded and didn't.</p>
     /// <ul>
-    /// <li><p><code>ERRORS_ONLY</code>: A report shows what DataSync was unable to transfer, skip, verify, and delete.</p></li>
-    /// <li><p><code>SUCCESSES_AND_ERRORS</code>: A report shows what DataSync was able and unable to transfer, skip, verify, and delete.</p></li>
+    /// <li>
+    /// <p><code>ERRORS_ONLY</code>: A report shows what DataSync was unable to transfer, skip, verify, and delete.</p></li>
+    /// <li>
+    /// <p><code>SUCCESSES_AND_ERRORS</code>: A report shows what DataSync was able and unable to transfer, skip, verify, and delete.</p></li>
     /// </ul>
     pub fn set_report_level(mut self, input: ::std::option::Option<crate::types::ReportLevel>) -> Self {
         self.report_level = input;
@@ -132,8 +150,10 @@ impl TaskReportConfigBuilder {
     }
     /// <p>Specifies whether you want your task report to include only what went wrong with your transfer or a list of what succeeded and didn't.</p>
     /// <ul>
-    /// <li><p><code>ERRORS_ONLY</code>: A report shows what DataSync was unable to transfer, skip, verify, and delete.</p></li>
-    /// <li><p><code>SUCCESSES_AND_ERRORS</code>: A report shows what DataSync was able and unable to transfer, skip, verify, and delete.</p></li>
+    /// <li>
+    /// <p><code>ERRORS_ONLY</code>: A report shows what DataSync was unable to transfer, skip, verify, and delete.</p></li>
+    /// <li>
+    /// <p><code>SUCCESSES_AND_ERRORS</code>: A report shows what DataSync was able and unable to transfer, skip, verify, and delete.</p></li>
     /// </ul>
     pub fn get_report_level(&self) -> &::std::option::Option<crate::types::ReportLevel> {
         &self.report_level

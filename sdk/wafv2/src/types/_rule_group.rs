@@ -22,14 +22,17 @@ pub struct RuleGroup {
     pub visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
     /// <ul>
-    /// <li><p>The syntax for the label namespace prefix for your rule groups is the following:</p> <p><code>awswaf:
-    /// <account id>
+    /// <li>
+    /// <p>The syntax for the label namespace prefix for your rule groups is the following:</p>
+    /// <p><code>awswaf:<account id>
     /// :rulegroup:
     /// <rule group name>
     /// :
     /// </rule>
     /// </account></code></p></li>
-    /// <li><p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p> <p><code><label namespace>:<label from rule></label></label></code></p></li>
+    /// <li>
+    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
+    /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub label_namespace: ::std::option::Option<::std::string::String>,
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group.</p>
@@ -79,14 +82,17 @@ impl RuleGroup {
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
     /// <ul>
-    /// <li><p>The syntax for the label namespace prefix for your rule groups is the following:</p> <p><code>awswaf:
-    /// <account id>
+    /// <li>
+    /// <p>The syntax for the label namespace prefix for your rule groups is the following:</p>
+    /// <p><code>awswaf:<account id>
     /// :rulegroup:
     /// <rule group name>
     /// :
     /// </rule>
     /// </account></code></p></li>
-    /// <li><p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p> <p><code><label namespace>:<label from rule></label></label></code></p></li>
+    /// <li>
+    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
+    /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn label_namespace(&self) -> ::std::option::Option<&str> {
         self.label_namespace.as_deref()
@@ -253,14 +259,17 @@ impl RuleGroupBuilder {
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
     /// <ul>
-    /// <li><p>The syntax for the label namespace prefix for your rule groups is the following:</p> <p><code>awswaf:
-    /// <account id>
+    /// <li>
+    /// <p>The syntax for the label namespace prefix for your rule groups is the following:</p>
+    /// <p><code>awswaf:<account id>
     /// :rulegroup:
     /// <rule group name>
     /// :
     /// </rule>
     /// </account></code></p></li>
-    /// <li><p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p> <p><code><label namespace>:<label from rule></label></label></code></p></li>
+    /// <li>
+    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
+    /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn label_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_namespace = ::std::option::Option::Some(input.into());
@@ -268,14 +277,17 @@ impl RuleGroupBuilder {
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
     /// <ul>
-    /// <li><p>The syntax for the label namespace prefix for your rule groups is the following:</p> <p><code>awswaf:
-    /// <account id>
+    /// <li>
+    /// <p>The syntax for the label namespace prefix for your rule groups is the following:</p>
+    /// <p><code>awswaf:<account id>
     /// :rulegroup:
     /// <rule group name>
     /// :
     /// </rule>
     /// </account></code></p></li>
-    /// <li><p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p> <p><code><label namespace>:<label from rule></label></label></code></p></li>
+    /// <li>
+    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
+    /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn set_label_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_namespace = input;
@@ -283,14 +295,17 @@ impl RuleGroupBuilder {
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
     /// <ul>
-    /// <li><p>The syntax for the label namespace prefix for your rule groups is the following:</p> <p><code>awswaf:
-    /// <account id>
+    /// <li>
+    /// <p>The syntax for the label namespace prefix for your rule groups is the following:</p>
+    /// <p><code>awswaf:<account id>
     /// :rulegroup:
     /// <rule group name>
     /// :
     /// </rule>
     /// </account></code></p></li>
-    /// <li><p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p> <p><code><label namespace>:<label from rule></label></label></code></p></li>
+    /// <li>
+    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
+    /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn get_label_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_namespace

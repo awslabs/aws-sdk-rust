@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`thing_arn(Option<String>)`](crate::operation::describe_thing::DescribeThingOutput::thing_arn): <p>The ARN of the thing to describe.</p>
     ///   - [`thing_type_name(Option<String>)`](crate::operation::describe_thing::DescribeThingOutput::thing_type_name): <p>The thing type name.</p>
     ///   - [`attributes(Option<HashMap::<String, String>>)`](crate::operation::describe_thing::DescribeThingOutput::attributes): <p>The thing attributes.</p>
-    ///   - [`version(i64)`](crate::operation::describe_thing::DescribeThingOutput::version): <p>The current version of the thing record in the registry.</p> <note>  <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>  </note>
+    ///   - [`version(i64)`](crate::operation::describe_thing::DescribeThingOutput::version): <p>The current version of the thing record in the registry.</p><note>  <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
     ///   - [`billing_group_name(Option<String>)`](crate::operation::describe_thing::DescribeThingOutput::billing_group_name): <p>The name of the billing group the thing belongs to.</p>
     /// - On failure, responds with [`SdkError<DescribeThingError>`](crate::operation::describe_thing::DescribeThingError)
     pub fn describe_thing(&self) -> crate::operation::describe_thing::builders::DescribeThingFluentBuilder {

@@ -40,7 +40,9 @@ pub struct Cluster {
     pub sse_description: ::std::option::Option<crate::types::SseDescription>,
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> for no encryption</p> <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li>
+    /// <p><code>NONE</code> for no encryption</p>
+    /// <p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
     pub cluster_endpoint_encryption_type: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
 }
@@ -121,7 +123,9 @@ impl Cluster {
     }
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> for no encryption</p> <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li>
+    /// <p><code>NONE</code> for no encryption</p>
+    /// <p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
     pub fn cluster_endpoint_encryption_type(&self) -> ::std::option::Option<&crate::types::ClusterEndpointEncryptionType> {
         self.cluster_endpoint_encryption_type.as_ref()
@@ -416,7 +420,9 @@ impl ClusterBuilder {
     }
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> for no encryption</p> <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li>
+    /// <p><code>NONE</code> for no encryption</p>
+    /// <p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
     pub fn cluster_endpoint_encryption_type(mut self, input: crate::types::ClusterEndpointEncryptionType) -> Self {
         self.cluster_endpoint_encryption_type = ::std::option::Option::Some(input);
@@ -424,7 +430,9 @@ impl ClusterBuilder {
     }
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> for no encryption</p> <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li>
+    /// <p><code>NONE</code> for no encryption</p>
+    /// <p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
     pub fn set_cluster_endpoint_encryption_type(mut self, input: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>) -> Self {
         self.cluster_endpoint_encryption_type = input;
@@ -432,7 +440,9 @@ impl ClusterBuilder {
     }
     /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> for no encryption</p> <p><code>TLS</code> for Transport Layer Security</p></li>
+    /// <li>
+    /// <p><code>NONE</code> for no encryption</p>
+    /// <p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
     pub fn get_cluster_endpoint_encryption_type(&self) -> &::std::option::Option<crate::types::ClusterEndpointEncryptionType> {
         &self.cluster_endpoint_encryption_type

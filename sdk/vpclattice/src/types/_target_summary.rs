@@ -10,12 +10,18 @@ pub struct TargetSummary {
     pub port: ::std::option::Option<i32>,
     /// <p>The status of the target.</p>
     /// <ul>
-    /// <li><p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
-    /// <li><p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
-    /// <li><p><code>Healthy</code>: The target is healthy.</p></li>
-    /// <li><p><code>Unhealthy</code>: The target is unhealthy.</p></li>
-    /// <li><p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
-    /// <li><p><code>Unused</code>: Target group is not used in a service.</p></li>
+    /// <li>
+    /// <p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
+    /// <li>
+    /// <p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
+    /// <li>
+    /// <p><code>Healthy</code>: The target is healthy.</p></li>
+    /// <li>
+    /// <p><code>Unhealthy</code>: The target is unhealthy.</p></li>
+    /// <li>
+    /// <p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
+    /// <li>
+    /// <p><code>Unused</code>: Target group is not used in a service.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::TargetStatus>,
     /// <p>The code for why the target status is what it is.</p>
@@ -32,12 +38,18 @@ impl TargetSummary {
     }
     /// <p>The status of the target.</p>
     /// <ul>
-    /// <li><p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
-    /// <li><p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
-    /// <li><p><code>Healthy</code>: The target is healthy.</p></li>
-    /// <li><p><code>Unhealthy</code>: The target is unhealthy.</p></li>
-    /// <li><p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
-    /// <li><p><code>Unused</code>: Target group is not used in a service.</p></li>
+    /// <li>
+    /// <p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
+    /// <li>
+    /// <p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
+    /// <li>
+    /// <p><code>Healthy</code>: The target is healthy.</p></li>
+    /// <li>
+    /// <p><code>Unhealthy</code>: The target is unhealthy.</p></li>
+    /// <li>
+    /// <p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
+    /// <li>
+    /// <p><code>Unused</code>: Target group is not used in a service.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TargetStatus> {
         self.status.as_ref()
@@ -94,12 +106,18 @@ impl TargetSummaryBuilder {
     }
     /// <p>The status of the target.</p>
     /// <ul>
-    /// <li><p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
-    /// <li><p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
-    /// <li><p><code>Healthy</code>: The target is healthy.</p></li>
-    /// <li><p><code>Unhealthy</code>: The target is unhealthy.</p></li>
-    /// <li><p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
-    /// <li><p><code>Unused</code>: Target group is not used in a service.</p></li>
+    /// <li>
+    /// <p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
+    /// <li>
+    /// <p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
+    /// <li>
+    /// <p><code>Healthy</code>: The target is healthy.</p></li>
+    /// <li>
+    /// <p><code>Unhealthy</code>: The target is unhealthy.</p></li>
+    /// <li>
+    /// <p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
+    /// <li>
+    /// <p><code>Unused</code>: Target group is not used in a service.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::TargetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -107,12 +125,18 @@ impl TargetSummaryBuilder {
     }
     /// <p>The status of the target.</p>
     /// <ul>
-    /// <li><p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
-    /// <li><p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
-    /// <li><p><code>Healthy</code>: The target is healthy.</p></li>
-    /// <li><p><code>Unhealthy</code>: The target is unhealthy.</p></li>
-    /// <li><p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
-    /// <li><p><code>Unused</code>: Target group is not used in a service.</p></li>
+    /// <li>
+    /// <p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
+    /// <li>
+    /// <p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
+    /// <li>
+    /// <p><code>Healthy</code>: The target is healthy.</p></li>
+    /// <li>
+    /// <p><code>Unhealthy</code>: The target is unhealthy.</p></li>
+    /// <li>
+    /// <p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
+    /// <li>
+    /// <p><code>Unused</code>: Target group is not used in a service.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetStatus>) -> Self {
         self.status = input;
@@ -120,12 +144,18 @@ impl TargetSummaryBuilder {
     }
     /// <p>The status of the target.</p>
     /// <ul>
-    /// <li><p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
-    /// <li><p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
-    /// <li><p><code>Healthy</code>: The target is healthy.</p></li>
-    /// <li><p><code>Unhealthy</code>: The target is unhealthy.</p></li>
-    /// <li><p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
-    /// <li><p><code>Unused</code>: Target group is not used in a service.</p></li>
+    /// <li>
+    /// <p><code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p></li>
+    /// <li>
+    /// <p><code>Unavailable</code>: Health checks are unavailable for the target group.</p></li>
+    /// <li>
+    /// <p><code>Healthy</code>: The target is healthy.</p></li>
+    /// <li>
+    /// <p><code>Unhealthy</code>: The target is unhealthy.</p></li>
+    /// <li>
+    /// <p><code>Initial</code>: Initial health checks on the target are being performed.</p></li>
+    /// <li>
+    /// <p><code>Unused</code>: Target group is not used in a service.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetStatus> {
         &self.status

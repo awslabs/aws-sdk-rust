@@ -10,14 +10,20 @@ pub struct UsageRecordResult {
     pub metering_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status of an individual <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.</p>
     /// <ul>
-    /// <li><p><i>Success</i>- The <code>UsageRecord</code> was accepted and honored by <code>BatchMeterUsage</code>.</p></li>
-    /// <li><p><i>CustomerNotSubscribed</i>- The <code>CustomerIdentifier</code> specified is not able to use your product. The <code>UsageRecord</code> was not honored. There are three causes for this result:</p>
+    /// <li>
+    /// <p><i>Success</i>- The <code>UsageRecord</code> was accepted and honored by <code>BatchMeterUsage</code>.</p></li>
+    /// <li>
+    /// <p><i>CustomerNotSubscribed</i>- The <code>CustomerIdentifier</code> specified is not able to use your product. The <code>UsageRecord</code> was not honored. There are three causes for this result:</p>
     /// <ul>
-    /// <li><p>The customer identifier is invalid.</p></li>
-    /// <li><p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
-    /// <li><p>The customer's AWS account was suspended.</p></li>
+    /// <li>
+    /// <p>The customer identifier is invalid.</p></li>
+    /// <li>
+    /// <p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
+    /// <li>
+    /// <p>The customer's AWS account was suspended.</p></li>
     /// </ul></li>
-    /// <li><p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
+    /// <li>
+    /// <p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::UsageRecordResultStatus>,
 }
@@ -32,14 +38,20 @@ impl UsageRecordResult {
     }
     /// <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status of an individual <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.</p>
     /// <ul>
-    /// <li><p><i>Success</i>- The <code>UsageRecord</code> was accepted and honored by <code>BatchMeterUsage</code>.</p></li>
-    /// <li><p><i>CustomerNotSubscribed</i>- The <code>CustomerIdentifier</code> specified is not able to use your product. The <code>UsageRecord</code> was not honored. There are three causes for this result:</p>
+    /// <li>
+    /// <p><i>Success</i>- The <code>UsageRecord</code> was accepted and honored by <code>BatchMeterUsage</code>.</p></li>
+    /// <li>
+    /// <p><i>CustomerNotSubscribed</i>- The <code>CustomerIdentifier</code> specified is not able to use your product. The <code>UsageRecord</code> was not honored. There are three causes for this result:</p>
     /// <ul>
-    /// <li><p>The customer identifier is invalid.</p></li>
-    /// <li><p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
-    /// <li><p>The customer's AWS account was suspended.</p></li>
+    /// <li>
+    /// <p>The customer identifier is invalid.</p></li>
+    /// <li>
+    /// <p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
+    /// <li>
+    /// <p>The customer's AWS account was suspended.</p></li>
     /// </ul></li>
-    /// <li><p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
+    /// <li>
+    /// <p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::UsageRecordResultStatus> {
         self.status.as_ref()
@@ -91,14 +103,20 @@ impl UsageRecordResultBuilder {
     }
     /// <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status of an individual <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.</p>
     /// <ul>
-    /// <li><p><i>Success</i>- The <code>UsageRecord</code> was accepted and honored by <code>BatchMeterUsage</code>.</p></li>
-    /// <li><p><i>CustomerNotSubscribed</i>- The <code>CustomerIdentifier</code> specified is not able to use your product. The <code>UsageRecord</code> was not honored. There are three causes for this result:</p>
+    /// <li>
+    /// <p><i>Success</i>- The <code>UsageRecord</code> was accepted and honored by <code>BatchMeterUsage</code>.</p></li>
+    /// <li>
+    /// <p><i>CustomerNotSubscribed</i>- The <code>CustomerIdentifier</code> specified is not able to use your product. The <code>UsageRecord</code> was not honored. There are three causes for this result:</p>
     /// <ul>
-    /// <li><p>The customer identifier is invalid.</p></li>
-    /// <li><p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
-    /// <li><p>The customer's AWS account was suspended.</p></li>
+    /// <li>
+    /// <p>The customer identifier is invalid.</p></li>
+    /// <li>
+    /// <p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
+    /// <li>
+    /// <p>The customer's AWS account was suspended.</p></li>
     /// </ul></li>
-    /// <li><p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
+    /// <li>
+    /// <p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::UsageRecordResultStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -106,14 +124,20 @@ impl UsageRecordResultBuilder {
     }
     /// <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status of an individual <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.</p>
     /// <ul>
-    /// <li><p><i>Success</i>- The <code>UsageRecord</code> was accepted and honored by <code>BatchMeterUsage</code>.</p></li>
-    /// <li><p><i>CustomerNotSubscribed</i>- The <code>CustomerIdentifier</code> specified is not able to use your product. The <code>UsageRecord</code> was not honored. There are three causes for this result:</p>
+    /// <li>
+    /// <p><i>Success</i>- The <code>UsageRecord</code> was accepted and honored by <code>BatchMeterUsage</code>.</p></li>
+    /// <li>
+    /// <p><i>CustomerNotSubscribed</i>- The <code>CustomerIdentifier</code> specified is not able to use your product. The <code>UsageRecord</code> was not honored. There are three causes for this result:</p>
     /// <ul>
-    /// <li><p>The customer identifier is invalid.</p></li>
-    /// <li><p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
-    /// <li><p>The customer's AWS account was suspended.</p></li>
+    /// <li>
+    /// <p>The customer identifier is invalid.</p></li>
+    /// <li>
+    /// <p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
+    /// <li>
+    /// <p>The customer's AWS account was suspended.</p></li>
     /// </ul></li>
-    /// <li><p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
+    /// <li>
+    /// <p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UsageRecordResultStatus>) -> Self {
         self.status = input;
@@ -121,14 +145,20 @@ impl UsageRecordResultBuilder {
     }
     /// <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status of an individual <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.</p>
     /// <ul>
-    /// <li><p><i>Success</i>- The <code>UsageRecord</code> was accepted and honored by <code>BatchMeterUsage</code>.</p></li>
-    /// <li><p><i>CustomerNotSubscribed</i>- The <code>CustomerIdentifier</code> specified is not able to use your product. The <code>UsageRecord</code> was not honored. There are three causes for this result:</p>
+    /// <li>
+    /// <p><i>Success</i>- The <code>UsageRecord</code> was accepted and honored by <code>BatchMeterUsage</code>.</p></li>
+    /// <li>
+    /// <p><i>CustomerNotSubscribed</i>- The <code>CustomerIdentifier</code> specified is not able to use your product. The <code>UsageRecord</code> was not honored. There are three causes for this result:</p>
     /// <ul>
-    /// <li><p>The customer identifier is invalid.</p></li>
-    /// <li><p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
-    /// <li><p>The customer's AWS account was suspended.</p></li>
+    /// <li>
+    /// <p>The customer identifier is invalid.</p></li>
+    /// <li>
+    /// <p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
+    /// <li>
+    /// <p>The customer's AWS account was suspended.</p></li>
     /// </ul></li>
-    /// <li><p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
+    /// <li>
+    /// <p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UsageRecordResultStatus> {
         &self.status

@@ -23,7 +23,7 @@ impl DeleteBackupInputBuilder {
 /// Fluent builder constructing a request to `DeleteBackup`.
 ///
 /// <p>Deletes an Amazon FSx backup. After deletion, the backup no longer exists, and its data is gone.</p>
-/// <p>The <code>DeleteBackup</code> call returns instantly. The backup won't show up in later <code>DescribeBackups</code> calls.</p> <important>
+/// <p>The <code>DeleteBackup</code> call returns instantly. The backup won't show up in later <code>DescribeBackups</code> calls.</p><important>
 /// <p>The data in a deleted backup is also deleted and can't be recovered by any means.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

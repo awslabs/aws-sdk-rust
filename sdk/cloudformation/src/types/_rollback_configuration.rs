@@ -8,9 +8,12 @@ pub struct RollbackConfiguration {
     /// <p>The triggers to monitor during stack creation or update actions.</p>
     /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to any subsequent update operations for the stack, unless you specify otherwise. If you do specify rollback triggers for this parameter, those triggers replace any list of triggers previously specified for the stack. This means:</p>
     /// <ul>
-    /// <li><p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p></li>
-    /// <li><p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specified before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p></li>
-    /// <li><p>To remove all currently specified triggers, specify an empty list for this parameter.</p></li>
+    /// <li>
+    /// <p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p></li>
+    /// <li>
+    /// <p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specified before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p></li>
+    /// <li>
+    /// <p>To remove all currently specified triggers, specify an empty list for this parameter.</p></li>
     /// </ul>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
     pub rollback_triggers: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
@@ -24,9 +27,12 @@ impl RollbackConfiguration {
     /// <p>The triggers to monitor during stack creation or update actions.</p>
     /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to any subsequent update operations for the stack, unless you specify otherwise. If you do specify rollback triggers for this parameter, those triggers replace any list of triggers previously specified for the stack. This means:</p>
     /// <ul>
-    /// <li><p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p></li>
-    /// <li><p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specified before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p></li>
-    /// <li><p>To remove all currently specified triggers, specify an empty list for this parameter.</p></li>
+    /// <li>
+    /// <p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p></li>
+    /// <li>
+    /// <p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specified before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p></li>
+    /// <li>
+    /// <p>To remove all currently specified triggers, specify an empty list for this parameter.</p></li>
     /// </ul>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
     ///
@@ -64,9 +70,12 @@ impl RollbackConfigurationBuilder {
     /// <p>The triggers to monitor during stack creation or update actions.</p>
     /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to any subsequent update operations for the stack, unless you specify otherwise. If you do specify rollback triggers for this parameter, those triggers replace any list of triggers previously specified for the stack. This means:</p>
     /// <ul>
-    /// <li><p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p></li>
-    /// <li><p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specified before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p></li>
-    /// <li><p>To remove all currently specified triggers, specify an empty list for this parameter.</p></li>
+    /// <li>
+    /// <p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p></li>
+    /// <li>
+    /// <p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specified before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p></li>
+    /// <li>
+    /// <p>To remove all currently specified triggers, specify an empty list for this parameter.</p></li>
     /// </ul>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
     pub fn rollback_triggers(mut self, input: crate::types::RollbackTrigger) -> Self {
@@ -78,9 +87,12 @@ impl RollbackConfigurationBuilder {
     /// <p>The triggers to monitor during stack creation or update actions.</p>
     /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to any subsequent update operations for the stack, unless you specify otherwise. If you do specify rollback triggers for this parameter, those triggers replace any list of triggers previously specified for the stack. This means:</p>
     /// <ul>
-    /// <li><p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p></li>
-    /// <li><p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specified before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p></li>
-    /// <li><p>To remove all currently specified triggers, specify an empty list for this parameter.</p></li>
+    /// <li>
+    /// <p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p></li>
+    /// <li>
+    /// <p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specified before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p></li>
+    /// <li>
+    /// <p>To remove all currently specified triggers, specify an empty list for this parameter.</p></li>
     /// </ul>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
     pub fn set_rollback_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>) -> Self {
@@ -90,9 +102,12 @@ impl RollbackConfigurationBuilder {
     /// <p>The triggers to monitor during stack creation or update actions.</p>
     /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to any subsequent update operations for the stack, unless you specify otherwise. If you do specify rollback triggers for this parameter, those triggers replace any list of triggers previously specified for the stack. This means:</p>
     /// <ul>
-    /// <li><p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p></li>
-    /// <li><p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specified before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p></li>
-    /// <li><p>To remove all currently specified triggers, specify an empty list for this parameter.</p></li>
+    /// <li>
+    /// <p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p></li>
+    /// <li>
+    /// <p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specified before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p></li>
+    /// <li>
+    /// <p>To remove all currently specified triggers, specify an empty list for this parameter.</p></li>
     /// </ul>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
     pub fn get_rollback_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>> {

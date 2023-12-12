@@ -24,10 +24,12 @@ impl RefreshTrustedAdvisorCheckInputBuilder {
 ///
 /// <p>Refreshes the Trusted Advisor check that you specify using the check ID. You can get the check IDs by calling the <code>DescribeTrustedAdvisorChecks</code> operation.</p>
 /// <p>Some checks are refreshed automatically. If you call the <code>RefreshTrustedAdvisorCheck</code> operation to refresh them, you might see the <code>InvalidParameterValue</code> error.</p>
-/// <p>The response contains a <code>TrustedAdvisorCheckRefreshStatus</code> object.</p> <note>
+/// <p>The response contains a <code>TrustedAdvisorCheckRefreshStatus</code> object.</p><note>
 /// <ul>
-/// <li><p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API.</p></li>
-/// <li><p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p></li>
+/// <li>
+/// <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API.</p></li>
+/// <li>
+/// <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p></li>
 /// </ul>
 /// </note>
 /// <p>To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N. Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted Advisor operations. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
@@ -116,21 +118,21 @@ impl RefreshTrustedAdvisorCheckFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p><note>
     /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
     /// </note>
     pub fn check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.check_id(input.into());
         self
     }
-    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p><note>
     /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
     /// </note>
     pub fn set_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_check_id(input);
         self
     }
-    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p><note>
     /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
     /// </note>
     pub fn get_check_id(&self) -> &::std::option::Option<::std::string::String> {

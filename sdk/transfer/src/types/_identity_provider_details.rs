@@ -14,10 +14,14 @@ pub struct IdentityProviderDetails {
     pub function: ::std::option::Option<::std::string::String>,
     /// <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate using a password, SSH key pair, or both.</p>
     /// <ul>
-    /// <li><p><code>PASSWORD</code> - users must provide their password to connect.</p></li>
-    /// <li><p><code>PUBLIC_KEY</code> - users must provide their private key to connect.</p></li>
-    /// <li><p><code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p></li>
-    /// <li><p><code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code> - users must provide their password to connect.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY</code> - users must provide their private key to connect.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p></li>
     /// </ul>
     pub sftp_authentication_methods: ::std::option::Option<crate::types::SftpAuthenticationMethods>,
 }
@@ -40,10 +44,14 @@ impl IdentityProviderDetails {
     }
     /// <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate using a password, SSH key pair, or both.</p>
     /// <ul>
-    /// <li><p><code>PASSWORD</code> - users must provide their password to connect.</p></li>
-    /// <li><p><code>PUBLIC_KEY</code> - users must provide their private key to connect.</p></li>
-    /// <li><p><code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p></li>
-    /// <li><p><code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code> - users must provide their password to connect.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY</code> - users must provide their private key to connect.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p></li>
     /// </ul>
     pub fn sftp_authentication_methods(&self) -> ::std::option::Option<&crate::types::SftpAuthenticationMethods> {
         self.sftp_authentication_methods.as_ref()
@@ -125,10 +133,14 @@ impl IdentityProviderDetailsBuilder {
     }
     /// <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate using a password, SSH key pair, or both.</p>
     /// <ul>
-    /// <li><p><code>PASSWORD</code> - users must provide their password to connect.</p></li>
-    /// <li><p><code>PUBLIC_KEY</code> - users must provide their private key to connect.</p></li>
-    /// <li><p><code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p></li>
-    /// <li><p><code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code> - users must provide their password to connect.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY</code> - users must provide their private key to connect.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p></li>
     /// </ul>
     pub fn sftp_authentication_methods(mut self, input: crate::types::SftpAuthenticationMethods) -> Self {
         self.sftp_authentication_methods = ::std::option::Option::Some(input);
@@ -136,10 +148,14 @@ impl IdentityProviderDetailsBuilder {
     }
     /// <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate using a password, SSH key pair, or both.</p>
     /// <ul>
-    /// <li><p><code>PASSWORD</code> - users must provide their password to connect.</p></li>
-    /// <li><p><code>PUBLIC_KEY</code> - users must provide their private key to connect.</p></li>
-    /// <li><p><code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p></li>
-    /// <li><p><code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code> - users must provide their password to connect.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY</code> - users must provide their private key to connect.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p></li>
     /// </ul>
     pub fn set_sftp_authentication_methods(mut self, input: ::std::option::Option<crate::types::SftpAuthenticationMethods>) -> Self {
         self.sftp_authentication_methods = input;
@@ -147,10 +163,14 @@ impl IdentityProviderDetailsBuilder {
     }
     /// <p>For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate using a password, SSH key pair, or both.</p>
     /// <ul>
-    /// <li><p><code>PASSWORD</code> - users must provide their password to connect.</p></li>
-    /// <li><p><code>PUBLIC_KEY</code> - users must provide their private key to connect.</p></li>
-    /// <li><p><code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p></li>
-    /// <li><p><code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p></li>
+    /// <li>
+    /// <p><code>PASSWORD</code> - users must provide their password to connect.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY</code> - users must provide their private key to connect.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p></li>
     /// </ul>
     pub fn get_sftp_authentication_methods(&self) -> &::std::option::Option<crate::types::SftpAuthenticationMethods> {
         &self.sftp_authentication_methods

@@ -22,7 +22,7 @@ impl UpdateIdentitySourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateIdentitySource`.
 ///
-/// <p>Updates the specified identity source to use a new identity provider (IdP) source, or to change the mapping of identities from the IdP to a different principal entity type.</p> <note>
+/// <p>Updates the specified identity source to use a new identity provider (IdP) source, or to change the mapping of identities from the IdP to a different principal entity type.</p><note>
 /// <p>Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a> </i>. It can take a few seconds for a new or changed element to be propagate through the service and be visible in the results of other Verified Permissions operations.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl UpdateIdentitySourceFluentBuilder {
     pub fn get_identity_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_source_id()
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p> <note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
@@ -146,7 +146,7 @@ impl UpdateIdentitySourceFluentBuilder {
         self.inner = self.inner.update_configuration(input);
         self
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p> <note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
@@ -154,7 +154,7 @@ impl UpdateIdentitySourceFluentBuilder {
         self.inner = self.inner.set_update_configuration(input);
         self
     }
-    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p> <note>
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>

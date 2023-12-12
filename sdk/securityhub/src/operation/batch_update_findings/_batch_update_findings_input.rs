@@ -13,10 +13,14 @@ pub struct BatchUpdateFindingsInput {
     /// <p>Indicates the veracity of a finding.</p>
     /// <p>The available values for <code>VerificationState</code> are as follows.</p>
     /// <ul>
-    /// <li><p><code>UNKNOWN</code> – The default disposition of a security finding</p></li>
-    /// <li><p><code>TRUE_POSITIVE</code> – The security finding is confirmed</p></li>
-    /// <li><p><code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p></li>
-    /// <li><p><code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – The default disposition of a security finding</p></li>
+    /// <li>
+    /// <p><code>TRUE_POSITIVE</code> – The security finding is confirmed</p></li>
+    /// <li>
+    /// <p><code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p></li>
+    /// <li>
+    /// <p><code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p></li>
     /// </ul>
     pub verification_state: ::std::option::Option<crate::types::VerificationState>,
     /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
@@ -28,11 +32,16 @@ pub struct BatchUpdateFindingsInput {
     /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
     /// <p>Valid namespace values are as follows.</p>
     /// <ul>
-    /// <li><p>Software and Configuration Checks</p></li>
-    /// <li><p>TTPs</p></li>
-    /// <li><p>Effects</p></li>
-    /// <li><p>Unusual Behaviors</p></li>
-    /// <li><p>Sensitive Data Identifications</p></li>
+    /// <li>
+    /// <p>Software and Configuration Checks</p></li>
+    /// <li>
+    /// <p>TTPs</p></li>
+    /// <li>
+    /// <p>Effects</p></li>
+    /// <li>
+    /// <p>Unusual Behaviors</p></li>
+    /// <li>
+    /// <p>Sensitive Data Identifications</p></li>
     /// </ul>
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
@@ -62,10 +71,14 @@ impl BatchUpdateFindingsInput {
     /// <p>Indicates the veracity of a finding.</p>
     /// <p>The available values for <code>VerificationState</code> are as follows.</p>
     /// <ul>
-    /// <li><p><code>UNKNOWN</code> – The default disposition of a security finding</p></li>
-    /// <li><p><code>TRUE_POSITIVE</code> – The security finding is confirmed</p></li>
-    /// <li><p><code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p></li>
-    /// <li><p><code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – The default disposition of a security finding</p></li>
+    /// <li>
+    /// <p><code>TRUE_POSITIVE</code> – The security finding is confirmed</p></li>
+    /// <li>
+    /// <p><code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p></li>
+    /// <li>
+    /// <p><code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p></li>
     /// </ul>
     pub fn verification_state(&self) -> ::std::option::Option<&crate::types::VerificationState> {
         self.verification_state.as_ref()
@@ -83,11 +96,16 @@ impl BatchUpdateFindingsInput {
     /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
     /// <p>Valid namespace values are as follows.</p>
     /// <ul>
-    /// <li><p>Software and Configuration Checks</p></li>
-    /// <li><p>TTPs</p></li>
-    /// <li><p>Effects</p></li>
-    /// <li><p>Unusual Behaviors</p></li>
-    /// <li><p>Sensitive Data Identifications</p></li>
+    /// <li>
+    /// <p>Software and Configuration Checks</p></li>
+    /// <li>
+    /// <p>TTPs</p></li>
+    /// <li>
+    /// <p>Effects</p></li>
+    /// <li>
+    /// <p>Unusual Behaviors</p></li>
+    /// <li>
+    /// <p>Sensitive Data Identifications</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
@@ -187,10 +205,14 @@ impl BatchUpdateFindingsInputBuilder {
     /// <p>Indicates the veracity of a finding.</p>
     /// <p>The available values for <code>VerificationState</code> are as follows.</p>
     /// <ul>
-    /// <li><p><code>UNKNOWN</code> – The default disposition of a security finding</p></li>
-    /// <li><p><code>TRUE_POSITIVE</code> – The security finding is confirmed</p></li>
-    /// <li><p><code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p></li>
-    /// <li><p><code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – The default disposition of a security finding</p></li>
+    /// <li>
+    /// <p><code>TRUE_POSITIVE</code> – The security finding is confirmed</p></li>
+    /// <li>
+    /// <p><code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p></li>
+    /// <li>
+    /// <p><code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p></li>
     /// </ul>
     pub fn verification_state(mut self, input: crate::types::VerificationState) -> Self {
         self.verification_state = ::std::option::Option::Some(input);
@@ -199,10 +221,14 @@ impl BatchUpdateFindingsInputBuilder {
     /// <p>Indicates the veracity of a finding.</p>
     /// <p>The available values for <code>VerificationState</code> are as follows.</p>
     /// <ul>
-    /// <li><p><code>UNKNOWN</code> – The default disposition of a security finding</p></li>
-    /// <li><p><code>TRUE_POSITIVE</code> – The security finding is confirmed</p></li>
-    /// <li><p><code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p></li>
-    /// <li><p><code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – The default disposition of a security finding</p></li>
+    /// <li>
+    /// <p><code>TRUE_POSITIVE</code> – The security finding is confirmed</p></li>
+    /// <li>
+    /// <p><code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p></li>
+    /// <li>
+    /// <p><code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p></li>
     /// </ul>
     pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.verification_state = input;
@@ -211,10 +237,14 @@ impl BatchUpdateFindingsInputBuilder {
     /// <p>Indicates the veracity of a finding.</p>
     /// <p>The available values for <code>VerificationState</code> are as follows.</p>
     /// <ul>
-    /// <li><p><code>UNKNOWN</code> – The default disposition of a security finding</p></li>
-    /// <li><p><code>TRUE_POSITIVE</code> – The security finding is confirmed</p></li>
-    /// <li><p><code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p></li>
-    /// <li><p><code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – The default disposition of a security finding</p></li>
+    /// <li>
+    /// <p><code>TRUE_POSITIVE</code> – The security finding is confirmed</p></li>
+    /// <li>
+    /// <p><code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p></li>
+    /// <li>
+    /// <p><code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p></li>
     /// </ul>
     pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
         &self.verification_state
@@ -260,11 +290,16 @@ impl BatchUpdateFindingsInputBuilder {
     /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
     /// <p>Valid namespace values are as follows.</p>
     /// <ul>
-    /// <li><p>Software and Configuration Checks</p></li>
-    /// <li><p>TTPs</p></li>
-    /// <li><p>Effects</p></li>
-    /// <li><p>Unusual Behaviors</p></li>
-    /// <li><p>Sensitive Data Identifications</p></li>
+    /// <li>
+    /// <p>Software and Configuration Checks</p></li>
+    /// <li>
+    /// <p>TTPs</p></li>
+    /// <li>
+    /// <p>Effects</p></li>
+    /// <li>
+    /// <p>Unusual Behaviors</p></li>
+    /// <li>
+    /// <p>Sensitive Data Identifications</p></li>
     /// </ul>
     pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
@@ -275,11 +310,16 @@ impl BatchUpdateFindingsInputBuilder {
     /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
     /// <p>Valid namespace values are as follows.</p>
     /// <ul>
-    /// <li><p>Software and Configuration Checks</p></li>
-    /// <li><p>TTPs</p></li>
-    /// <li><p>Effects</p></li>
-    /// <li><p>Unusual Behaviors</p></li>
-    /// <li><p>Sensitive Data Identifications</p></li>
+    /// <li>
+    /// <p>Software and Configuration Checks</p></li>
+    /// <li>
+    /// <p>TTPs</p></li>
+    /// <li>
+    /// <p>Effects</p></li>
+    /// <li>
+    /// <p>Unusual Behaviors</p></li>
+    /// <li>
+    /// <p>Sensitive Data Identifications</p></li>
     /// </ul>
     pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
@@ -288,11 +328,16 @@ impl BatchUpdateFindingsInputBuilder {
     /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
     /// <p>Valid namespace values are as follows.</p>
     /// <ul>
-    /// <li><p>Software and Configuration Checks</p></li>
-    /// <li><p>TTPs</p></li>
-    /// <li><p>Effects</p></li>
-    /// <li><p>Unusual Behaviors</p></li>
-    /// <li><p>Sensitive Data Identifications</p></li>
+    /// <li>
+    /// <p>Software and Configuration Checks</p></li>
+    /// <li>
+    /// <p>TTPs</p></li>
+    /// <li>
+    /// <p>Effects</p></li>
+    /// <li>
+    /// <p>Unusual Behaviors</p></li>
+    /// <li>
+    /// <p>Sensitive Data Identifications</p></li>
     /// </ul>
     pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.types

@@ -22,20 +22,26 @@ impl GetProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `GetProfile`.
 ///
-/// <p>Gets the aggregated profile of a profiling group for a specified time range. Amazon CodeGuru Profiler collects posted agent profiles for a profiling group into aggregated profiles.</p> <note>
+/// <p>Gets the aggregated profile of a profiling group for a specified time range. Amazon CodeGuru Profiler collects posted agent profiles for a profiling group into aggregated profiles.</p><note>
 /// <p>Because aggregated profiles expire over time <code>GetProfile</code> is not idempotent.</p>
 /// </note>
 /// <p>Specify the time range for the requested aggregated profile using 1 or 2 of the following parameters: <code>startTime</code>, <code>endTime</code>, <code>period</code>. The maximum time range allowed is 7 days. If you specify all 3 parameters, an exception is thrown. If you specify only <code>period</code>, the latest aggregated profile is returned.</p>
 /// <p>Aggregated profiles are available with aggregation periods of 5 minutes, 1 hour, and 1 day, aligned to UTC. The aggregation period of an aggregated profile determines how long it is retained. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html"> <code>AggregatedProfileTime</code> </a>. The aggregated profile's aggregation period determines how long it is retained by CodeGuru Profiler.</p>
 /// <ul>
-/// <li><p>If the aggregation period is 5 minutes, the aggregated profile is retained for 15 days.</p></li>
-/// <li><p>If the aggregation period is 1 hour, the aggregated profile is retained for 60 days.</p></li>
-/// <li><p>If the aggregation period is 1 day, the aggregated profile is retained for 3 years.</p></li>
+/// <li>
+/// <p>If the aggregation period is 5 minutes, the aggregated profile is retained for 15 days.</p></li>
+/// <li>
+/// <p>If the aggregation period is 1 hour, the aggregated profile is retained for 60 days.</p></li>
+/// <li>
+/// <p>If the aggregation period is 1 day, the aggregated profile is retained for 3 years.</p></li>
 /// </ul>
 /// <p>There are two use cases for calling <code>GetProfile</code>.</p>
 /// <ol>
-/// <li><p>If you want to return an aggregated profile that already exists, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfileTimes.html"> <code>ListProfileTimes</code> </a> to view the time ranges of existing aggregated profiles. Use them in a <code>GetProfile</code> request to return a specific, existing aggregated profile.</p></li>
-/// <li><p>If you want to return an aggregated profile for a time range that doesn't align with an existing aggregated profile, then CodeGuru Profiler makes a best effort to combine existing aggregated profiles from the requested time range and return them as one aggregated profile.</p> <p>If aggregated profiles do not exist for the full time range requested, then aggregated profiles for a smaller time range are returned. For example, if the requested time range is from 00:00 to 00:20, and the existing aggregated profiles are from 00:15 and 00:25, then the aggregated profiles from 00:15 to 00:20 are returned.</p></li>
+/// <li>
+/// <p>If you want to return an aggregated profile that already exists, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfileTimes.html"> <code>ListProfileTimes</code> </a> to view the time ranges of existing aggregated profiles. Use them in a <code>GetProfile</code> request to return a specific, existing aggregated profile.</p></li>
+/// <li>
+/// <p>If you want to return an aggregated profile for a time range that doesn't align with an existing aggregated profile, then CodeGuru Profiler makes a best effort to combine existing aggregated profiles from the requested time range and return them as one aggregated profile.</p>
+/// <p>If aggregated profiles do not exist for the full time range requested, then aggregated profiles for a smaller time range are returned. For example, if the requested time range is from 00:00 to 00:20, and the existing aggregated profiles are from 00:15 and 00:25, then the aggregated profiles from 00:15 to 00:20 are returned.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetProfileFluentBuilder {
@@ -203,8 +209,10 @@ impl GetProfileFluentBuilder {
     }
     /// <p>The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .</p>
     /// <ul>
-    /// <li><p><code>application/json</code> — standard JSON format</p></li>
-    /// <li><p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
+    /// <li>
+    /// <p><code>application/json</code> — standard JSON format</p></li>
+    /// <li>
+    /// <p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
     /// </ul>
     pub fn accept(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept(input.into());
@@ -212,8 +220,10 @@ impl GetProfileFluentBuilder {
     }
     /// <p>The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .</p>
     /// <ul>
-    /// <li><p><code>application/json</code> — standard JSON format</p></li>
-    /// <li><p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
+    /// <li>
+    /// <p><code>application/json</code> — standard JSON format</p></li>
+    /// <li>
+    /// <p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
     /// </ul>
     pub fn set_accept(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept(input);
@@ -221,8 +231,10 @@ impl GetProfileFluentBuilder {
     }
     /// <p>The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .</p>
     /// <ul>
-    /// <li><p><code>application/json</code> — standard JSON format</p></li>
-    /// <li><p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
+    /// <li>
+    /// <p><code>application/json</code> — standard JSON format</p></li>
+    /// <li>
+    /// <p><code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.</p></li>
     /// </ul>
     pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept()

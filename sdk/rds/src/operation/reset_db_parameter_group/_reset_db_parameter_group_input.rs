@@ -7,7 +7,8 @@ pub struct ResetDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the name of an existing <code>DBParameterGroup</code>.</p></li>
+    /// <li>
+    /// <p>Must match the name of an existing <code>DBParameterGroup</code>.</p></li>
     /// </ul>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
@@ -27,7 +28,8 @@ impl ResetDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the name of an existing <code>DBParameterGroup</code>.</p></li>
+    /// <li>
+    /// <p>Must match the name of an existing <code>DBParameterGroup</code>.</p></li>
     /// </ul>
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
@@ -70,7 +72,8 @@ impl ResetDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the name of an existing <code>DBParameterGroup</code>.</p></li>
+    /// <li>
+    /// <p>Must match the name of an existing <code>DBParameterGroup</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,7 +83,8 @@ impl ResetDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the name of an existing <code>DBParameterGroup</code>.</p></li>
+    /// <li>
+    /// <p>Must match the name of an existing <code>DBParameterGroup</code>.</p></li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
@@ -89,7 +93,8 @@ impl ResetDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the name of an existing <code>DBParameterGroup</code>.</p></li>
+    /// <li>
+    /// <p>Must match the name of an existing <code>DBParameterGroup</code>.</p></li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_name

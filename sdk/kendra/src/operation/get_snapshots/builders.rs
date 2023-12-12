@@ -130,12 +130,18 @@ impl GetSnapshotsFluentBuilder {
     }
     /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
     /// <ul>
-    /// <li><p><code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p></li>
-    /// <li><p><code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p></li>
-    /// <li><p><code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p></li>
-    /// <li><p><code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p></li>
-    /// <li><p><code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p></li>
-    /// <li><p><code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p></li>
+    /// <li>
+    /// <p><code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p></li>
+    /// <li>
+    /// <p><code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p></li>
+    /// <li>
+    /// <p><code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p></li>
+    /// <li>
+    /// <p><code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p></li>
+    /// <li>
+    /// <p><code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p></li>
+    /// <li>
+    /// <p><code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p></li>
     /// </ul>
     pub fn interval(mut self, input: crate::types::Interval) -> Self {
         self.inner = self.inner.interval(input);
@@ -143,12 +149,18 @@ impl GetSnapshotsFluentBuilder {
     }
     /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
     /// <ul>
-    /// <li><p><code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p></li>
-    /// <li><p><code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p></li>
-    /// <li><p><code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p></li>
-    /// <li><p><code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p></li>
-    /// <li><p><code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p></li>
-    /// <li><p><code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p></li>
+    /// <li>
+    /// <p><code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p></li>
+    /// <li>
+    /// <p><code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p></li>
+    /// <li>
+    /// <p><code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p></li>
+    /// <li>
+    /// <p><code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p></li>
+    /// <li>
+    /// <p><code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p></li>
+    /// <li>
+    /// <p><code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p></li>
     /// </ul>
     pub fn set_interval(mut self, input: ::std::option::Option<crate::types::Interval>) -> Self {
         self.inner = self.inner.set_interval(input);
@@ -156,12 +168,18 @@ impl GetSnapshotsFluentBuilder {
     }
     /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
     /// <ul>
-    /// <li><p><code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p></li>
-    /// <li><p><code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p></li>
-    /// <li><p><code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p></li>
-    /// <li><p><code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p></li>
-    /// <li><p><code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p></li>
-    /// <li><p><code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p></li>
+    /// <li>
+    /// <p><code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p></li>
+    /// <li>
+    /// <p><code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p></li>
+    /// <li>
+    /// <p><code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p></li>
+    /// <li>
+    /// <p><code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p></li>
+    /// <li>
+    /// <p><code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p></li>
+    /// <li>
+    /// <p><code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p></li>
     /// </ul>
     pub fn get_interval(&self) -> &::std::option::Option<crate::types::Interval> {
         self.inner.get_interval()

@@ -2,12 +2,18 @@
 
 /// <p>Specifies that WAF should run a <code>CAPTCHA</code> check against the request:</p>
 /// <ul>
-/// <li><p>If the request includes a valid, unexpired <code>CAPTCHA</code> token, WAF applies any custom request handling and labels that you've configured and then allows the web request inspection to proceed to the next rule, similar to a <code>CountAction</code>.</p></li>
-/// <li><p>If the request doesn't include a valid, unexpired token, WAF discontinues the web ACL evaluation of the request and blocks it from going to its intended destination.</p> <p>WAF generates a response that it sends back to the client, which includes the following:</p>
+/// <li>
+/// <p>If the request includes a valid, unexpired <code>CAPTCHA</code> token, WAF applies any custom request handling and labels that you've configured and then allows the web request inspection to proceed to the next rule, similar to a <code>CountAction</code>.</p></li>
+/// <li>
+/// <p>If the request doesn't include a valid, unexpired token, WAF discontinues the web ACL evaluation of the request and blocks it from going to its intended destination.</p>
+/// <p>WAF generates a response that it sends back to the client, which includes the following:</p>
 /// <ul>
-/// <li><p>The header <code>x-amzn-waf-action</code> with a value of <code>captcha</code>.</p></li>
-/// <li><p>The HTTP status code <code>405 Method Not Allowed</code>.</p></li>
-/// <li><p>If the request contains an <code>Accept</code> header with a value of <code>text/html</code>, the response includes a <code>CAPTCHA</code> JavaScript page interstitial.</p></li>
+/// <li>
+/// <p>The header <code>x-amzn-waf-action</code> with a value of <code>captcha</code>.</p></li>
+/// <li>
+/// <p>The HTTP status code <code>405 Method Not Allowed</code>.</p></li>
+/// <li>
+/// <p>If the request contains an <code>Accept</code> header with a value of <code>text/html</code>, the response includes a <code>CAPTCHA</code> JavaScript page interstitial.</p></li>
 /// </ul></li>
 /// </ul>
 /// <p>You can configure the expiration time in the <code>CaptchaConfig</code> <code>ImmunityTimeProperty</code> setting at the rule and web ACL level. The rule setting overrides the web ACL setting.</p>

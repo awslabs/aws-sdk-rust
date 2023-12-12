@@ -5,7 +5,7 @@
 pub struct CreateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub branch_filter: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ impl CreateWebhookInput {
     pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn branch_filter(&self) -> ::std::option::Option<&str> {
@@ -70,21 +70,21 @@ impl CreateWebhookInputBuilder {
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_name
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn branch_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_filter = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn set_branch_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_filter = input;
         self
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn get_branch_filter(&self) -> &::std::option::Option<::std::string::String> {

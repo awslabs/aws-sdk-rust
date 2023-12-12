@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetSessionTokenOutput {
-    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p><note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     _request_id: Option<String>,
 }
 impl GetSessionTokenOutput {
-    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p><note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
@@ -46,21 +46,21 @@ pub struct GetSessionTokenOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetSessionTokenOutputBuilder {
-    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p><note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub fn credentials(mut self, input: crate::types::Credentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p><note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.credentials = input;
         self
     }
-    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p><note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {

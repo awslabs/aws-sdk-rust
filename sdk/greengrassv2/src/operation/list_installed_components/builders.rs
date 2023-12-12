@@ -22,15 +22,20 @@ impl ListInstalledComponentsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListInstalledComponents`.
 ///
-/// <p>Retrieves a paginated list of the components that a Greengrass core device runs. By default, this list doesn't include components that are deployed as dependencies of other components. To include dependencies in the response, set the <code>topologyFilter</code> parameter to <code>ALL</code>.</p> <note>
+/// <p>Retrieves a paginated list of the components that a Greengrass core device runs. By default, this list doesn't include components that are deployed as dependencies of other components. To include dependencies in the response, set the <code>topologyFilter</code> parameter to <code>ALL</code>.</p><note>
 /// <p>IoT Greengrass relies on individual devices to send status updates to the Amazon Web Services Cloud. If the IoT Greengrass Core software isn't running on the device, or if device isn't connected to the Amazon Web Services Cloud, then the reported status of that device might not reflect its current status. The status timestamp indicates when the device status was last updated.</p>
 /// <p>Core devices send status updates at the following times:</p>
 /// <ul>
-/// <li><p>When the IoT Greengrass Core software starts</p></li>
-/// <li><p>When the core device receives a deployment from the Amazon Web Services Cloud</p></li>
-/// <li><p>When the status of any component on the core device becomes <code>BROKEN</code></p></li>
-/// <li><p>At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular interval that you can configure</a>, which defaults to 24 hours</p></li>
-/// <li><p>For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment</p></li>
+/// <li>
+/// <p>When the IoT Greengrass Core software starts</p></li>
+/// <li>
+/// <p>When the core device receives a deployment from the Amazon Web Services Cloud</p></li>
+/// <li>
+/// <p>When the status of any component on the core device becomes <code>BROKEN</code></p></li>
+/// <li>
+/// <p>At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular interval that you can configure</a>, which defaults to 24 hours</p></li>
+/// <li>
+/// <p>For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment and cloud deployment</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -168,8 +173,10 @@ impl ListInstalledComponentsFluentBuilder {
     }
     /// <p>The filter for the list of components. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
-    /// <li><p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
+    /// <li>
+    /// <p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
     /// </ul>
     /// <p>Default: <code>ROOT</code></p>
     pub fn topology_filter(mut self, input: crate::types::InstalledComponentTopologyFilter) -> Self {
@@ -178,8 +185,10 @@ impl ListInstalledComponentsFluentBuilder {
     }
     /// <p>The filter for the list of components. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
-    /// <li><p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
+    /// <li>
+    /// <p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
     /// </ul>
     /// <p>Default: <code>ROOT</code></p>
     pub fn set_topology_filter(mut self, input: ::std::option::Option<crate::types::InstalledComponentTopologyFilter>) -> Self {
@@ -188,8 +197,10 @@ impl ListInstalledComponentsFluentBuilder {
     }
     /// <p>The filter for the list of components. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
-    /// <li><p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
+    /// <li>
+    /// <p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
     /// </ul>
     /// <p>Default: <code>ROOT</code></p>
     pub fn get_topology_filter(&self) -> &::std::option::Option<crate::types::InstalledComponentTopologyFilter> {

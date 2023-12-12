@@ -8,18 +8,25 @@ pub struct EvidenceFinderEnablement {
     pub event_data_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the evidence finder feature and the related event data store.</p>
     /// <ul>
-    /// <li><p><code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p></li>
-    /// <li><p><code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p></li>
-    /// <li><p><code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p></li>
-    /// <li><p><code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p></li>
+    /// <li>
+    /// <p><code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p></li>
+    /// <li>
+    /// <p><code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p></li>
     /// </ul>
     pub enablement_status: ::std::option::Option<crate::types::EvidenceFinderEnablementStatus>,
     /// <p>The current status of the evidence data backfill process.</p>
     /// <p>The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data store with your past two years’ worth of evidence data so that your evidence can be queried.</p>
     /// <ul>
-    /// <li><p><code>NOT_STARTED</code> means that the backfill hasn’t started yet.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data.</p></li>
-    /// <li><p><code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable.</p></li>
+    /// <li>
+    /// <p><code>NOT_STARTED</code> means that the backfill hasn’t started yet.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable.</p></li>
     /// </ul>
     pub backfill_status: ::std::option::Option<crate::types::EvidenceFinderBackfillStatus>,
     /// <p>Represents any errors that occurred when enabling or disabling evidence finder.</p>
@@ -32,10 +39,14 @@ impl EvidenceFinderEnablement {
     }
     /// <p>The current status of the evidence finder feature and the related event data store.</p>
     /// <ul>
-    /// <li><p><code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p></li>
-    /// <li><p><code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p></li>
-    /// <li><p><code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p></li>
-    /// <li><p><code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p></li>
+    /// <li>
+    /// <p><code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p></li>
+    /// <li>
+    /// <p><code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p></li>
     /// </ul>
     pub fn enablement_status(&self) -> ::std::option::Option<&crate::types::EvidenceFinderEnablementStatus> {
         self.enablement_status.as_ref()
@@ -43,9 +54,12 @@ impl EvidenceFinderEnablement {
     /// <p>The current status of the evidence data backfill process.</p>
     /// <p>The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data store with your past two years’ worth of evidence data so that your evidence can be queried.</p>
     /// <ul>
-    /// <li><p><code>NOT_STARTED</code> means that the backfill hasn’t started yet.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data.</p></li>
-    /// <li><p><code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable.</p></li>
+    /// <li>
+    /// <p><code>NOT_STARTED</code> means that the backfill hasn’t started yet.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable.</p></li>
     /// </ul>
     pub fn backfill_status(&self) -> ::std::option::Option<&crate::types::EvidenceFinderBackfillStatus> {
         self.backfill_status.as_ref()
@@ -88,10 +102,14 @@ impl EvidenceFinderEnablementBuilder {
     }
     /// <p>The current status of the evidence finder feature and the related event data store.</p>
     /// <ul>
-    /// <li><p><code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p></li>
-    /// <li><p><code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p></li>
-    /// <li><p><code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p></li>
-    /// <li><p><code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p></li>
+    /// <li>
+    /// <p><code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p></li>
+    /// <li>
+    /// <p><code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p></li>
     /// </ul>
     pub fn enablement_status(mut self, input: crate::types::EvidenceFinderEnablementStatus) -> Self {
         self.enablement_status = ::std::option::Option::Some(input);
@@ -99,10 +117,14 @@ impl EvidenceFinderEnablementBuilder {
     }
     /// <p>The current status of the evidence finder feature and the related event data store.</p>
     /// <ul>
-    /// <li><p><code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p></li>
-    /// <li><p><code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p></li>
-    /// <li><p><code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p></li>
-    /// <li><p><code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p></li>
+    /// <li>
+    /// <p><code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p></li>
+    /// <li>
+    /// <p><code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p></li>
     /// </ul>
     pub fn set_enablement_status(mut self, input: ::std::option::Option<crate::types::EvidenceFinderEnablementStatus>) -> Self {
         self.enablement_status = input;
@@ -110,10 +132,14 @@ impl EvidenceFinderEnablementBuilder {
     }
     /// <p>The current status of the evidence finder feature and the related event data store.</p>
     /// <ul>
-    /// <li><p><code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p></li>
-    /// <li><p><code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p></li>
-    /// <li><p><code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p></li>
-    /// <li><p><code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p></li>
+    /// <li>
+    /// <p><code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> means that an event data store was successfully created and evidence finder is enabled. We recommend that you wait 7 days until the event data store is backfilled with your past two years’ worth of evidence data. You can use evidence finder in the meantime, but not all data might be available until the backfill is complete.</p></li>
+    /// <li>
+    /// <p><code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder, and your request is pending the deletion of the event data store.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p></li>
     /// </ul>
     pub fn get_enablement_status(&self) -> &::std::option::Option<crate::types::EvidenceFinderEnablementStatus> {
         &self.enablement_status
@@ -121,9 +147,12 @@ impl EvidenceFinderEnablementBuilder {
     /// <p>The current status of the evidence data backfill process.</p>
     /// <p>The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data store with your past two years’ worth of evidence data so that your evidence can be queried.</p>
     /// <ul>
-    /// <li><p><code>NOT_STARTED</code> means that the backfill hasn’t started yet.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data.</p></li>
-    /// <li><p><code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable.</p></li>
+    /// <li>
+    /// <p><code>NOT_STARTED</code> means that the backfill hasn’t started yet.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable.</p></li>
     /// </ul>
     pub fn backfill_status(mut self, input: crate::types::EvidenceFinderBackfillStatus) -> Self {
         self.backfill_status = ::std::option::Option::Some(input);
@@ -132,9 +161,12 @@ impl EvidenceFinderEnablementBuilder {
     /// <p>The current status of the evidence data backfill process.</p>
     /// <p>The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data store with your past two years’ worth of evidence data so that your evidence can be queried.</p>
     /// <ul>
-    /// <li><p><code>NOT_STARTED</code> means that the backfill hasn’t started yet.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data.</p></li>
-    /// <li><p><code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable.</p></li>
+    /// <li>
+    /// <p><code>NOT_STARTED</code> means that the backfill hasn’t started yet.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable.</p></li>
     /// </ul>
     pub fn set_backfill_status(mut self, input: ::std::option::Option<crate::types::EvidenceFinderBackfillStatus>) -> Self {
         self.backfill_status = input;
@@ -143,9 +175,12 @@ impl EvidenceFinderEnablementBuilder {
     /// <p>The current status of the evidence data backfill process.</p>
     /// <p>The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data store with your past two years’ worth of evidence data so that your evidence can be queried.</p>
     /// <ul>
-    /// <li><p><code>NOT_STARTED</code> means that the backfill hasn’t started yet.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data.</p></li>
-    /// <li><p><code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable.</p></li>
+    /// <li>
+    /// <p><code>NOT_STARTED</code> means that the backfill hasn’t started yet.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> means that the backfill is in progress. This can take up to 7 days to complete, depending on the amount of evidence data.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable.</p></li>
     /// </ul>
     pub fn get_backfill_status(&self) -> &::std::option::Option<crate::types::EvidenceFinderBackfillStatus> {
         &self.backfill_status

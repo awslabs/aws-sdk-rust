@@ -33,10 +33,14 @@ pub struct DeploymentInfo {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
-    /// <li><p><code>user</code>: A user created the deployment.</p></li>
-    /// <li><p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
-    /// <li><p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
-    /// <li><p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
+    /// <li>
+    /// <p><code>user</code>: A user created the deployment.</p></li>
+    /// <li>
+    /// <p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
+    /// <li>
+    /// <p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
+    /// <li>
+    /// <p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
     /// </ul>
     pub creator: ::std::option::Option<crate::types::DeploymentCreator>,
     /// <p>If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>.</p>
@@ -64,9 +68,12 @@ pub struct DeploymentInfo {
     pub additional_deployment_status_info: ::std::option::Option<::std::string::String>,
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
-    /// <li><p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
-    /// <li><p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
-    /// <li><p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
+    /// <li>
+    /// <p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
+    /// <li>
+    /// <p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
+    /// <li>
+    /// <p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
     /// </ul>
     pub file_exists_behavior: ::std::option::Option<crate::types::FileExistsBehavior>,
     /// <p>Messages that contain information about the status of a deployment.</p>
@@ -136,10 +143,14 @@ impl DeploymentInfo {
     }
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
-    /// <li><p><code>user</code>: A user created the deployment.</p></li>
-    /// <li><p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
-    /// <li><p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
-    /// <li><p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
+    /// <li>
+    /// <p><code>user</code>: A user created the deployment.</p></li>
+    /// <li>
+    /// <p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
+    /// <li>
+    /// <p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
+    /// <li>
+    /// <p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
     /// </ul>
     pub fn creator(&self) -> ::std::option::Option<&crate::types::DeploymentCreator> {
         self.creator.as_ref()
@@ -189,9 +200,12 @@ impl DeploymentInfo {
     }
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
-    /// <li><p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
-    /// <li><p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
-    /// <li><p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
+    /// <li>
+    /// <p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
+    /// <li>
+    /// <p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
+    /// <li>
+    /// <p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
     /// </ul>
     pub fn file_exists_behavior(&self) -> ::std::option::Option<&crate::types::FileExistsBehavior> {
         self.file_exists_behavior.as_ref()
@@ -449,10 +463,14 @@ impl DeploymentInfoBuilder {
     }
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
-    /// <li><p><code>user</code>: A user created the deployment.</p></li>
-    /// <li><p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
-    /// <li><p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
-    /// <li><p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
+    /// <li>
+    /// <p><code>user</code>: A user created the deployment.</p></li>
+    /// <li>
+    /// <p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
+    /// <li>
+    /// <p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
+    /// <li>
+    /// <p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
     /// </ul>
     pub fn creator(mut self, input: crate::types::DeploymentCreator) -> Self {
         self.creator = ::std::option::Option::Some(input);
@@ -460,10 +478,14 @@ impl DeploymentInfoBuilder {
     }
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
-    /// <li><p><code>user</code>: A user created the deployment.</p></li>
-    /// <li><p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
-    /// <li><p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
-    /// <li><p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
+    /// <li>
+    /// <p><code>user</code>: A user created the deployment.</p></li>
+    /// <li>
+    /// <p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
+    /// <li>
+    /// <p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
+    /// <li>
+    /// <p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
     /// </ul>
     pub fn set_creator(mut self, input: ::std::option::Option<crate::types::DeploymentCreator>) -> Self {
         self.creator = input;
@@ -471,10 +493,14 @@ impl DeploymentInfoBuilder {
     }
     /// <p>The means by which the deployment was created:</p>
     /// <ul>
-    /// <li><p><code>user</code>: A user created the deployment.</p></li>
-    /// <li><p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
-    /// <li><p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
-    /// <li><p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
+    /// <li>
+    /// <p><code>user</code>: A user created the deployment.</p></li>
+    /// <li>
+    /// <p><code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p></li>
+    /// <li>
+    /// <p><code>codeDeployRollback</code>: A rollback process created the deployment.</p></li>
+    /// <li>
+    /// <p><code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated Amazon EC2 instances.</p></li>
     /// </ul>
     pub fn get_creator(&self) -> &::std::option::Option<crate::types::DeploymentCreator> {
         &self.creator
@@ -630,9 +656,12 @@ impl DeploymentInfoBuilder {
     }
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
-    /// <li><p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
-    /// <li><p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
-    /// <li><p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
+    /// <li>
+    /// <p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
+    /// <li>
+    /// <p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
+    /// <li>
+    /// <p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
     /// </ul>
     pub fn file_exists_behavior(mut self, input: crate::types::FileExistsBehavior) -> Self {
         self.file_exists_behavior = ::std::option::Option::Some(input);
@@ -640,9 +669,12 @@ impl DeploymentInfoBuilder {
     }
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
-    /// <li><p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
-    /// <li><p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
-    /// <li><p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
+    /// <li>
+    /// <p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
+    /// <li>
+    /// <p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
+    /// <li>
+    /// <p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
     /// </ul>
     pub fn set_file_exists_behavior(mut self, input: ::std::option::Option<crate::types::FileExistsBehavior>) -> Self {
         self.file_exists_behavior = input;
@@ -650,9 +682,12 @@ impl DeploymentInfoBuilder {
     }
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <ul>
-    /// <li><p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
-    /// <li><p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
-    /// <li><p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
+    /// <li>
+    /// <p><code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.</p></li>
+    /// <li>
+    /// <p><code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p></li>
+    /// <li>
+    /// <p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
     /// </ul>
     pub fn get_file_exists_behavior(&self) -> &::std::option::Option<crate::types::FileExistsBehavior> {
         &self.file_exists_behavior

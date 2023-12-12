@@ -13,47 +13,83 @@ pub struct Upload {
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>ANDROID_APP</p></li>
-    /// <li><p>IOS_APP</p></li>
-    /// <li><p>WEB_APP</p></li>
-    /// <li><p>EXTERNAL_DATA</p></li>
-    /// <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_NODE_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_RUBY_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
-    /// <li><p>CALABASH_TEST_PACKAGE</p></li>
-    /// <li><p>INSTRUMENTATION_TEST_PACKAGE</p></li>
-    /// <li><p>UIAUTOMATION_TEST_PACKAGE</p></li>
-    /// <li><p>UIAUTOMATOR_TEST_PACKAGE</p></li>
-    /// <li><p>XCTEST_TEST_PACKAGE</p></li>
-    /// <li><p>XCTEST_UI_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_PYTHON_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_NODE_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_RUBY_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
-    /// <li><p>INSTRUMENTATION_TEST_SPEC</p></li>
-    /// <li><p>XCTEST_UI_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>ANDROID_APP</p></li>
+    /// <li>
+    /// <p>IOS_APP</p></li>
+    /// <li>
+    /// <p>WEB_APP</p></li>
+    /// <li>
+    /// <p>EXTERNAL_DATA</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>CALABASH_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>UIAUTOMATION_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>UIAUTOMATOR_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>XCTEST_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_SPEC</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::UploadType>,
     /// <p>The upload's status.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>FAILED</p></li>
-    /// <li><p>INITIALIZED</p></li>
-    /// <li><p>PROCESSING</p></li>
-    /// <li><p>SUCCEEDED</p></li>
+    /// <li>
+    /// <p>FAILED</p></li>
+    /// <li>
+    /// <p>INITIALIZED</p></li>
+    /// <li>
+    /// <p>PROCESSING</p></li>
+    /// <li>
+    /// <p>SUCCEEDED</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::UploadStatus>,
     /// <p>The presigned Amazon S3 URL that was used to store a file using a PUT request.</p>
@@ -66,8 +102,10 @@ pub struct Upload {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The upload's category. Allowed values include:</p>
     /// <ul>
-    /// <li><p>CURATED: An upload managed by AWS Device Farm.</p></li>
-    /// <li><p>PRIVATE: An upload managed by the AWS Device Farm customer.</p></li>
+    /// <li>
+    /// <p>CURATED: An upload managed by AWS Device Farm.</p></li>
+    /// <li>
+    /// <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p></li>
     /// </ul>
     pub category: ::std::option::Option<crate::types::UploadCategory>,
 }
@@ -87,38 +125,70 @@ impl Upload {
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>ANDROID_APP</p></li>
-    /// <li><p>IOS_APP</p></li>
-    /// <li><p>WEB_APP</p></li>
-    /// <li><p>EXTERNAL_DATA</p></li>
-    /// <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_NODE_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_RUBY_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
-    /// <li><p>CALABASH_TEST_PACKAGE</p></li>
-    /// <li><p>INSTRUMENTATION_TEST_PACKAGE</p></li>
-    /// <li><p>UIAUTOMATION_TEST_PACKAGE</p></li>
-    /// <li><p>UIAUTOMATOR_TEST_PACKAGE</p></li>
-    /// <li><p>XCTEST_TEST_PACKAGE</p></li>
-    /// <li><p>XCTEST_UI_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_PYTHON_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_NODE_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_RUBY_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
-    /// <li><p>INSTRUMENTATION_TEST_SPEC</p></li>
-    /// <li><p>XCTEST_UI_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>ANDROID_APP</p></li>
+    /// <li>
+    /// <p>IOS_APP</p></li>
+    /// <li>
+    /// <p>WEB_APP</p></li>
+    /// <li>
+    /// <p>EXTERNAL_DATA</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>CALABASH_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>UIAUTOMATION_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>UIAUTOMATOR_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>XCTEST_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_SPEC</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::UploadType> {
         self.r#type.as_ref()
@@ -126,10 +196,14 @@ impl Upload {
     /// <p>The upload's status.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>FAILED</p></li>
-    /// <li><p>INITIALIZED</p></li>
-    /// <li><p>PROCESSING</p></li>
-    /// <li><p>SUCCEEDED</p></li>
+    /// <li>
+    /// <p>FAILED</p></li>
+    /// <li>
+    /// <p>INITIALIZED</p></li>
+    /// <li>
+    /// <p>PROCESSING</p></li>
+    /// <li>
+    /// <p>SUCCEEDED</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::UploadStatus> {
         self.status.as_ref()
@@ -152,8 +226,10 @@ impl Upload {
     }
     /// <p>The upload's category. Allowed values include:</p>
     /// <ul>
-    /// <li><p>CURATED: An upload managed by AWS Device Farm.</p></li>
-    /// <li><p>PRIVATE: An upload managed by the AWS Device Farm customer.</p></li>
+    /// <li>
+    /// <p>CURATED: An upload managed by AWS Device Farm.</p></li>
+    /// <li>
+    /// <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p></li>
     /// </ul>
     pub fn category(&self) -> ::std::option::Option<&crate::types::UploadCategory> {
         self.category.as_ref()
@@ -243,38 +319,70 @@ impl UploadBuilder {
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>ANDROID_APP</p></li>
-    /// <li><p>IOS_APP</p></li>
-    /// <li><p>WEB_APP</p></li>
-    /// <li><p>EXTERNAL_DATA</p></li>
-    /// <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_NODE_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_RUBY_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
-    /// <li><p>CALABASH_TEST_PACKAGE</p></li>
-    /// <li><p>INSTRUMENTATION_TEST_PACKAGE</p></li>
-    /// <li><p>UIAUTOMATION_TEST_PACKAGE</p></li>
-    /// <li><p>UIAUTOMATOR_TEST_PACKAGE</p></li>
-    /// <li><p>XCTEST_TEST_PACKAGE</p></li>
-    /// <li><p>XCTEST_UI_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_PYTHON_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_NODE_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_RUBY_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
-    /// <li><p>INSTRUMENTATION_TEST_SPEC</p></li>
-    /// <li><p>XCTEST_UI_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>ANDROID_APP</p></li>
+    /// <li>
+    /// <p>IOS_APP</p></li>
+    /// <li>
+    /// <p>WEB_APP</p></li>
+    /// <li>
+    /// <p>EXTERNAL_DATA</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>CALABASH_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>UIAUTOMATION_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>UIAUTOMATOR_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>XCTEST_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_SPEC</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::UploadType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -283,38 +391,70 @@ impl UploadBuilder {
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>ANDROID_APP</p></li>
-    /// <li><p>IOS_APP</p></li>
-    /// <li><p>WEB_APP</p></li>
-    /// <li><p>EXTERNAL_DATA</p></li>
-    /// <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_NODE_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_RUBY_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
-    /// <li><p>CALABASH_TEST_PACKAGE</p></li>
-    /// <li><p>INSTRUMENTATION_TEST_PACKAGE</p></li>
-    /// <li><p>UIAUTOMATION_TEST_PACKAGE</p></li>
-    /// <li><p>UIAUTOMATOR_TEST_PACKAGE</p></li>
-    /// <li><p>XCTEST_TEST_PACKAGE</p></li>
-    /// <li><p>XCTEST_UI_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_PYTHON_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_NODE_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_RUBY_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
-    /// <li><p>INSTRUMENTATION_TEST_SPEC</p></li>
-    /// <li><p>XCTEST_UI_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>ANDROID_APP</p></li>
+    /// <li>
+    /// <p>IOS_APP</p></li>
+    /// <li>
+    /// <p>WEB_APP</p></li>
+    /// <li>
+    /// <p>EXTERNAL_DATA</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>CALABASH_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>UIAUTOMATION_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>UIAUTOMATOR_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>XCTEST_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_SPEC</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UploadType>) -> Self {
         self.r#type = input;
@@ -323,38 +463,70 @@ impl UploadBuilder {
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>ANDROID_APP</p></li>
-    /// <li><p>IOS_APP</p></li>
-    /// <li><p>WEB_APP</p></li>
-    /// <li><p>EXTERNAL_DATA</p></li>
-    /// <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_NODE_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_RUBY_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
-    /// <li><p>CALABASH_TEST_PACKAGE</p></li>
-    /// <li><p>INSTRUMENTATION_TEST_PACKAGE</p></li>
-    /// <li><p>UIAUTOMATION_TEST_PACKAGE</p></li>
-    /// <li><p>UIAUTOMATOR_TEST_PACKAGE</p></li>
-    /// <li><p>XCTEST_TEST_PACKAGE</p></li>
-    /// <li><p>XCTEST_UI_TEST_PACKAGE</p></li>
-    /// <li><p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_PYTHON_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_NODE_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_RUBY_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
-    /// <li><p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
-    /// <li><p>INSTRUMENTATION_TEST_SPEC</p></li>
-    /// <li><p>XCTEST_UI_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>ANDROID_APP</p></li>
+    /// <li>
+    /// <p>IOS_APP</p></li>
+    /// <li>
+    /// <p>WEB_APP</p></li>
+    /// <li>
+    /// <p>EXTERNAL_DATA</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>CALABASH_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>UIAUTOMATION_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>UIAUTOMATOR_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>XCTEST_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_PACKAGE</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION_TEST_SPEC</p></li>
+    /// <li>
+    /// <p>XCTEST_UI_TEST_SPEC</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UploadType> {
         &self.r#type
@@ -362,10 +534,14 @@ impl UploadBuilder {
     /// <p>The upload's status.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>FAILED</p></li>
-    /// <li><p>INITIALIZED</p></li>
-    /// <li><p>PROCESSING</p></li>
-    /// <li><p>SUCCEEDED</p></li>
+    /// <li>
+    /// <p>FAILED</p></li>
+    /// <li>
+    /// <p>INITIALIZED</p></li>
+    /// <li>
+    /// <p>PROCESSING</p></li>
+    /// <li>
+    /// <p>SUCCEEDED</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::UploadStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -374,10 +550,14 @@ impl UploadBuilder {
     /// <p>The upload's status.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>FAILED</p></li>
-    /// <li><p>INITIALIZED</p></li>
-    /// <li><p>PROCESSING</p></li>
-    /// <li><p>SUCCEEDED</p></li>
+    /// <li>
+    /// <p>FAILED</p></li>
+    /// <li>
+    /// <p>INITIALIZED</p></li>
+    /// <li>
+    /// <p>PROCESSING</p></li>
+    /// <li>
+    /// <p>SUCCEEDED</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UploadStatus>) -> Self {
         self.status = input;
@@ -386,10 +566,14 @@ impl UploadBuilder {
     /// <p>The upload's status.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>FAILED</p></li>
-    /// <li><p>INITIALIZED</p></li>
-    /// <li><p>PROCESSING</p></li>
-    /// <li><p>SUCCEEDED</p></li>
+    /// <li>
+    /// <p>FAILED</p></li>
+    /// <li>
+    /// <p>INITIALIZED</p></li>
+    /// <li>
+    /// <p>PROCESSING</p></li>
+    /// <li>
+    /// <p>SUCCEEDED</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UploadStatus> {
         &self.status
@@ -452,8 +636,10 @@ impl UploadBuilder {
     }
     /// <p>The upload's category. Allowed values include:</p>
     /// <ul>
-    /// <li><p>CURATED: An upload managed by AWS Device Farm.</p></li>
-    /// <li><p>PRIVATE: An upload managed by the AWS Device Farm customer.</p></li>
+    /// <li>
+    /// <p>CURATED: An upload managed by AWS Device Farm.</p></li>
+    /// <li>
+    /// <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p></li>
     /// </ul>
     pub fn category(mut self, input: crate::types::UploadCategory) -> Self {
         self.category = ::std::option::Option::Some(input);
@@ -461,8 +647,10 @@ impl UploadBuilder {
     }
     /// <p>The upload's category. Allowed values include:</p>
     /// <ul>
-    /// <li><p>CURATED: An upload managed by AWS Device Farm.</p></li>
-    /// <li><p>PRIVATE: An upload managed by the AWS Device Farm customer.</p></li>
+    /// <li>
+    /// <p>CURATED: An upload managed by AWS Device Farm.</p></li>
+    /// <li>
+    /// <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p></li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::UploadCategory>) -> Self {
         self.category = input;
@@ -470,8 +658,10 @@ impl UploadBuilder {
     }
     /// <p>The upload's category. Allowed values include:</p>
     /// <ul>
-    /// <li><p>CURATED: An upload managed by AWS Device Farm.</p></li>
-    /// <li><p>PRIVATE: An upload managed by the AWS Device Farm customer.</p></li>
+    /// <li>
+    /// <p>CURATED: An upload managed by AWS Device Farm.</p></li>
+    /// <li>
+    /// <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p></li>
     /// </ul>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::UploadCategory> {
         &self.category

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetLatestConfigurationOutput {
-    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code></p> <important>
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code></p><important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
     pub next_poll_configuration_token: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct GetLatestConfigurationOutput {
     _request_id: Option<String>,
 }
 impl GetLatestConfigurationOutput {
-    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code></p> <important>
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code></p><important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
     pub fn next_poll_configuration_token(&self) -> ::std::option::Option<&str> {
@@ -77,21 +77,21 @@ pub struct GetLatestConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetLatestConfigurationOutputBuilder {
-    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code></p> <important>
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code></p><important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
     pub fn next_poll_configuration_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_poll_configuration_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code></p> <important>
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code></p><important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
     pub fn set_next_poll_configuration_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_poll_configuration_token = input;
         self
     }
-    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code></p> <important>
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code></p><important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
     pub fn get_next_poll_configuration_token(&self) -> &::std::option::Option<::std::string::String> {

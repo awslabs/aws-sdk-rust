@@ -8,10 +8,14 @@ pub struct ReplicaSettingsDescription {
     pub region_name: ::std::string::String,
     /// <p>The current state of the Region:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> - The Region is being created.</p></li>
-    /// <li><p><code>UPDATING</code> - The Region is being updated.</p></li>
-    /// <li><p><code>DELETING</code> - The Region is being deleted.</p></li>
-    /// <li><p><code>ACTIVE</code> - The Region is ready for use.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - The Region is being created.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - The Region is being updated.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The Region is being deleted.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The Region is ready for use.</p></li>
     /// </ul>
     pub replica_status: ::std::option::Option<crate::types::ReplicaStatus>,
     /// <p>The read/write capacity mode of the replica.</p>
@@ -37,10 +41,14 @@ impl ReplicaSettingsDescription {
     }
     /// <p>The current state of the Region:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> - The Region is being created.</p></li>
-    /// <li><p><code>UPDATING</code> - The Region is being updated.</p></li>
-    /// <li><p><code>DELETING</code> - The Region is being deleted.</p></li>
-    /// <li><p><code>ACTIVE</code> - The Region is ready for use.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - The Region is being created.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - The Region is being updated.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The Region is being deleted.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The Region is ready for use.</p></li>
     /// </ul>
     pub fn replica_status(&self) -> ::std::option::Option<&crate::types::ReplicaStatus> {
         self.replica_status.as_ref()
@@ -116,10 +124,14 @@ impl ReplicaSettingsDescriptionBuilder {
     }
     /// <p>The current state of the Region:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> - The Region is being created.</p></li>
-    /// <li><p><code>UPDATING</code> - The Region is being updated.</p></li>
-    /// <li><p><code>DELETING</code> - The Region is being deleted.</p></li>
-    /// <li><p><code>ACTIVE</code> - The Region is ready for use.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - The Region is being created.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - The Region is being updated.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The Region is being deleted.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The Region is ready for use.</p></li>
     /// </ul>
     pub fn replica_status(mut self, input: crate::types::ReplicaStatus) -> Self {
         self.replica_status = ::std::option::Option::Some(input);
@@ -127,10 +139,14 @@ impl ReplicaSettingsDescriptionBuilder {
     }
     /// <p>The current state of the Region:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> - The Region is being created.</p></li>
-    /// <li><p><code>UPDATING</code> - The Region is being updated.</p></li>
-    /// <li><p><code>DELETING</code> - The Region is being deleted.</p></li>
-    /// <li><p><code>ACTIVE</code> - The Region is ready for use.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - The Region is being created.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - The Region is being updated.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The Region is being deleted.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The Region is ready for use.</p></li>
     /// </ul>
     pub fn set_replica_status(mut self, input: ::std::option::Option<crate::types::ReplicaStatus>) -> Self {
         self.replica_status = input;
@@ -138,10 +154,14 @@ impl ReplicaSettingsDescriptionBuilder {
     }
     /// <p>The current state of the Region:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> - The Region is being created.</p></li>
-    /// <li><p><code>UPDATING</code> - The Region is being updated.</p></li>
-    /// <li><p><code>DELETING</code> - The Region is being deleted.</p></li>
-    /// <li><p><code>ACTIVE</code> - The Region is ready for use.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - The Region is being created.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - The Region is being updated.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The Region is being deleted.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The Region is ready for use.</p></li>
     /// </ul>
     pub fn get_replica_status(&self) -> &::std::option::Option<crate::types::ReplicaStatus> {
         &self.replica_status

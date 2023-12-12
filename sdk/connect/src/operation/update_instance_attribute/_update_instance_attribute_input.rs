@@ -5,7 +5,7 @@
 pub struct UpdateInstanceAttributeInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of attribute.</p> <note>
+    /// <p>The type of attribute.</p><note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
     pub attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,
@@ -17,7 +17,7 @@ impl UpdateInstanceAttributeInput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The type of attribute.</p> <note>
+    /// <p>The type of attribute.</p><note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
     pub fn attribute_type(&self) -> ::std::option::Option<&crate::types::InstanceAttributeType> {
@@ -59,7 +59,7 @@ impl UpdateInstanceAttributeInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The type of attribute.</p> <note>
+    /// <p>The type of attribute.</p><note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
     /// This field is required.
@@ -67,14 +67,14 @@ impl UpdateInstanceAttributeInputBuilder {
         self.attribute_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of attribute.</p> <note>
+    /// <p>The type of attribute.</p><note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
     pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::InstanceAttributeType>) -> Self {
         self.attribute_type = input;
         self
     }
-    /// <p>The type of attribute.</p> <note>
+    /// <p>The type of attribute.</p><note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
     pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {

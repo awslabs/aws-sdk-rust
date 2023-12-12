@@ -124,21 +124,21 @@ impl DeleteKeyPairFluentBuilder {
     pub fn get_key_pair_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_pair_name()
     }
-    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
+    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p><note>
     /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
     /// </note>
     pub fn expected_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_fingerprint(input.into());
         self
     }
-    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
+    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p><note>
     /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
     /// </note>
     pub fn set_expected_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_fingerprint(input);
         self
     }
-    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
+    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p><note>
     /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
     /// </note>
     pub fn get_expected_fingerprint(&self) -> &::std::option::Option<::std::string::String> {

@@ -6,7 +6,7 @@
 pub struct GetPipelineStateOutput {
     /// <p>The name of the pipeline for which you want to get the state.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
-    /// <p>The version number of the pipeline.</p> <note>
+    /// <p>The version number of the pipeline.</p><note>
     /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
     /// </note>
     pub pipeline_version: ::std::option::Option<i32>,
@@ -23,7 +23,7 @@ impl GetPipelineStateOutput {
     pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
-    /// <p>The version number of the pipeline.</p> <note>
+    /// <p>The version number of the pipeline.</p><note>
     /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
     /// </note>
     pub fn pipeline_version(&self) -> ::std::option::Option<i32> {
@@ -82,21 +82,21 @@ impl GetPipelineStateOutputBuilder {
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_name
     }
-    /// <p>The version number of the pipeline.</p> <note>
+    /// <p>The version number of the pipeline.</p><note>
     /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
     /// </note>
     pub fn pipeline_version(mut self, input: i32) -> Self {
         self.pipeline_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The version number of the pipeline.</p> <note>
+    /// <p>The version number of the pipeline.</p><note>
     /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
     /// </note>
     pub fn set_pipeline_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pipeline_version = input;
         self
     }
-    /// <p>The version number of the pipeline.</p> <note>
+    /// <p>The version number of the pipeline.</p><note>
     /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
     /// </note>
     pub fn get_pipeline_version(&self) -> &::std::option::Option<i32> {

@@ -137,8 +137,7 @@ impl UpdateSourceControlFromJobFluentBuilder {
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::SourceControlProvider> {
         self.inner.get_provider()
     }
-    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code>
-    /// <workspacename>
+    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code><workspacename>
     /// /
     /// <repositoryname></repositoryname>
     /// </workspacename></code>.</p>
@@ -146,8 +145,7 @@ impl UpdateSourceControlFromJobFluentBuilder {
         self.inner = self.inner.repository_name(input.into());
         self
     }
-    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code>
-    /// <workspacename>
+    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code><workspacename>
     /// /
     /// <repositoryname></repositoryname>
     /// </workspacename></code>.</p>
@@ -155,8 +153,7 @@ impl UpdateSourceControlFromJobFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
-    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code>
-    /// <workspacename>
+    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code><workspacename>
     /// /
     /// <repositoryname></repositoryname>
     /// </workspacename></code>.</p>

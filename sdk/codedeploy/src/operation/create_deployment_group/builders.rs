@@ -350,8 +350,7 @@ impl CreateDeploymentGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).
     ///
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
@@ -359,8 +358,7 @@ impl CreateDeploymentGroupFluentBuilder {
         self.inner = self.inner.ecs_services(input);
         self
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
@@ -368,8 +366,7 @@ impl CreateDeploymentGroupFluentBuilder {
         self.inner = self.inner.set_ecs_services(input);
         self
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>

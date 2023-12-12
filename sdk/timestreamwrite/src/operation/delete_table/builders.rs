@@ -22,7 +22,7 @@ impl DeleteTableInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteTable`.
 ///
-/// <p>Deletes a given Timestream table. This is an irreversible operation. After a Timestream database table is deleted, the time-series data stored in the table cannot be recovered.</p> <note>
+/// <p>Deletes a given Timestream table. This is an irreversible operation. After a Timestream database table is deleted, the time-series data stored in the table cannot be recovered.</p><note>
 /// <p>Due to the nature of distributed retries, the operation can return either success or a ResourceNotFoundException. Clients should consider them equivalent.</p>
 /// </note>
 /// <p>See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.delete-table.html">code sample</a> for details.</p>

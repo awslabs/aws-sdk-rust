@@ -120,9 +120,12 @@ impl PutAlarmFluentBuilder {
     /// <p>You can configure up to two alarms per metric.</p>
     /// <p>The following metrics are available for each resource type:</p>
     /// <ul>
-    /// <li><p><b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.</p></li>
-    /// <li><p><b>Load balancers</b>: <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>, <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>, <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>, <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>, <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>, <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p></li>
-    /// <li><p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
+    /// <li>
+    /// <p><b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.</p></li>
+    /// <li>
+    /// <p><b>Load balancers</b>: <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>, <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>, <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>, <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>, <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>, <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p></li>
+    /// <li>
+    /// <p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
     /// </ul>
     /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
     pub fn metric_name(mut self, input: crate::types::MetricName) -> Self {
@@ -133,9 +136,12 @@ impl PutAlarmFluentBuilder {
     /// <p>You can configure up to two alarms per metric.</p>
     /// <p>The following metrics are available for each resource type:</p>
     /// <ul>
-    /// <li><p><b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.</p></li>
-    /// <li><p><b>Load balancers</b>: <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>, <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>, <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>, <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>, <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>, <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p></li>
-    /// <li><p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
+    /// <li>
+    /// <p><b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.</p></li>
+    /// <li>
+    /// <p><b>Load balancers</b>: <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>, <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>, <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>, <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>, <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>, <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p></li>
+    /// <li>
+    /// <p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
     /// </ul>
     /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::MetricName>) -> Self {
@@ -146,9 +152,12 @@ impl PutAlarmFluentBuilder {
     /// <p>You can configure up to two alarms per metric.</p>
     /// <p>The following metrics are available for each resource type:</p>
     /// <ul>
-    /// <li><p><b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.</p></li>
-    /// <li><p><b>Load balancers</b>: <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>, <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>, <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>, <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>, <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>, <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p></li>
-    /// <li><p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
+    /// <li>
+    /// <p><b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.</p></li>
+    /// <li>
+    /// <p><b>Load balancers</b>: <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>, <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>, <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>, <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>, <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>, <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p></li>
+    /// <li>
+    /// <p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
     /// </ul>
     /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::MetricName> {
@@ -239,10 +248,14 @@ impl PutAlarmFluentBuilder {
     /// <p>Sets how this alarm will handle missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
     /// <ul>
-    /// <li><p><code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p></li>
-    /// <li><p><code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p></li>
-    /// <li><p><code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p></li>
-    /// <li><p><code>missing</code> - Missing data is treated as missing.</p></li>
+    /// <li>
+    /// <p><code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p></li>
+    /// <li>
+    /// <p><code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p></li>
+    /// <li>
+    /// <p><code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p></li>
+    /// <li>
+    /// <p><code>missing</code> - Missing data is treated as missing.</p></li>
     /// </ul>
     /// <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
     pub fn treat_missing_data(mut self, input: crate::types::TreatMissingData) -> Self {
@@ -252,10 +265,14 @@ impl PutAlarmFluentBuilder {
     /// <p>Sets how this alarm will handle missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
     /// <ul>
-    /// <li><p><code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p></li>
-    /// <li><p><code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p></li>
-    /// <li><p><code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p></li>
-    /// <li><p><code>missing</code> - Missing data is treated as missing.</p></li>
+    /// <li>
+    /// <p><code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p></li>
+    /// <li>
+    /// <p><code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p></li>
+    /// <li>
+    /// <p><code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p></li>
+    /// <li>
+    /// <p><code>missing</code> - Missing data is treated as missing.</p></li>
     /// </ul>
     /// <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
     pub fn set_treat_missing_data(mut self, input: ::std::option::Option<crate::types::TreatMissingData>) -> Self {
@@ -265,10 +282,14 @@ impl PutAlarmFluentBuilder {
     /// <p>Sets how this alarm will handle missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
     /// <ul>
-    /// <li><p><code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p></li>
-    /// <li><p><code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p></li>
-    /// <li><p><code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p></li>
-    /// <li><p><code>missing</code> - Missing data is treated as missing.</p></li>
+    /// <li>
+    /// <p><code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p></li>
+    /// <li>
+    /// <p><code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p></li>
+    /// <li>
+    /// <p><code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p></li>
+    /// <li>
+    /// <p><code>missing</code> - Missing data is treated as missing.</p></li>
     /// </ul>
     /// <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
     pub fn get_treat_missing_data(&self) -> &::std::option::Option<crate::types::TreatMissingData> {
@@ -308,14 +329,19 @@ impl PutAlarmFluentBuilder {
     /// <p>The alarm states that trigger a notification.</p>
     /// <p>An alarm has the following possible states:</p>
     /// <ul>
-    /// <li><p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
-    /// <li><p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
-    /// <li><p><code>OK</code> - The metric is within the defined threshold.</p></li>
+    /// <li>
+    /// <p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
+    /// <li>
+    /// <p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
+    /// <li>
+    /// <p><code>OK</code> - The metric is within the defined threshold.</p></li>
     /// </ul>
     /// <p>When you specify a notification trigger, the <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code> and <code>OK</code> states can be specified in addition to the <code>ALARM</code> state.</p>
     /// <ul>
-    /// <li><p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to an <code>OK</code> state. This can be thought of as an <i>all clear</i> alarm notification.</p></li>
-    /// <li><p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
+    /// <li>
+    /// <p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to an <code>OK</code> state. This can be thought of as an <i>all clear</i> alarm notification.</p></li>
+    /// <li>
+    /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
     pub fn notification_triggers(mut self, input: crate::types::AlarmState) -> Self {
@@ -325,14 +351,19 @@ impl PutAlarmFluentBuilder {
     /// <p>The alarm states that trigger a notification.</p>
     /// <p>An alarm has the following possible states:</p>
     /// <ul>
-    /// <li><p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
-    /// <li><p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
-    /// <li><p><code>OK</code> - The metric is within the defined threshold.</p></li>
+    /// <li>
+    /// <p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
+    /// <li>
+    /// <p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
+    /// <li>
+    /// <p><code>OK</code> - The metric is within the defined threshold.</p></li>
     /// </ul>
     /// <p>When you specify a notification trigger, the <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code> and <code>OK</code> states can be specified in addition to the <code>ALARM</code> state.</p>
     /// <ul>
-    /// <li><p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to an <code>OK</code> state. This can be thought of as an <i>all clear</i> alarm notification.</p></li>
-    /// <li><p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
+    /// <li>
+    /// <p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to an <code>OK</code> state. This can be thought of as an <i>all clear</i> alarm notification.</p></li>
+    /// <li>
+    /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
     pub fn set_notification_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>) -> Self {
@@ -342,14 +373,19 @@ impl PutAlarmFluentBuilder {
     /// <p>The alarm states that trigger a notification.</p>
     /// <p>An alarm has the following possible states:</p>
     /// <ul>
-    /// <li><p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
-    /// <li><p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
-    /// <li><p><code>OK</code> - The metric is within the defined threshold.</p></li>
+    /// <li>
+    /// <p><code>ALARM</code> - The metric is outside of the defined threshold.</p></li>
+    /// <li>
+    /// <p><code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p></li>
+    /// <li>
+    /// <p><code>OK</code> - The metric is within the defined threshold.</p></li>
     /// </ul>
     /// <p>When you specify a notification trigger, the <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code> and <code>OK</code> states can be specified in addition to the <code>ALARM</code> state.</p>
     /// <ul>
-    /// <li><p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to an <code>OK</code> state. This can be thought of as an <i>all clear</i> alarm notification.</p></li>
-    /// <li><p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
+    /// <li>
+    /// <p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to an <code>OK</code> state. This can be thought of as an <i>all clear</i> alarm notification.</p></li>
+    /// <li>
+    /// <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p></li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
     pub fn get_notification_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmState>> {

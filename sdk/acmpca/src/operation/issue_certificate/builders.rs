@@ -22,7 +22,7 @@ impl IssueCertificateInputBuilder {
 }
 /// Fluent builder constructing a request to `IssueCertificate`.
 ///
-/// <p>Uses your private certificate authority (CA), or one that has been shared with you, to issue a client certificate. This action returns the Amazon Resource Name (ARN) of the certificate. You can retrieve the certificate by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> action and specifying the ARN.</p> <note>
+/// <p>Uses your private certificate authority (CA), or one that has been shared with you, to issue a client certificate. This action returns the Amazon Resource Name (ARN) of the certificate. You can retrieve the certificate by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> action and specifying the ARN.</p><note>
 /// <p>You cannot use the ACM <b>ListCertificateAuthorities</b> action to retrieve the ARNs of the certificates that you issue by using Amazon Web Services Private CA.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -171,7 +171,7 @@ impl IssueCertificateFluentBuilder {
         self.inner.get_csr()
     }
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p><note>
     /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithm) -> Self {
@@ -179,7 +179,7 @@ impl IssueCertificateFluentBuilder {
         self
     }
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p><note>
     /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
     pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlgorithm>) -> Self {
@@ -187,7 +187,7 @@ impl IssueCertificateFluentBuilder {
         self
     }
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p><note>
     /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
     pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlgorithm> {

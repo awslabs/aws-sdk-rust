@@ -23,7 +23,7 @@ impl DescribeConnectionsOnInterconnectInputBuilder {
 /// Fluent builder constructing a request to `DescribeConnectionsOnInterconnect`.
 ///
 /// <p>Deprecated. Use <code>DescribeHostedConnections</code> instead.</p>
-/// <p>Lists the connections that have been provisioned on the specified interconnect.</p> <note>
+/// <p>Lists the connections that have been provisioned on the specified interconnect.</p><note>
 /// <p>Intended for use by Direct Connect Partners only.</p>
 /// </note>
 #[deprecated]

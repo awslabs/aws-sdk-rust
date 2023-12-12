@@ -22,7 +22,7 @@ impl UpdateMaintenanceWindowInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateMaintenanceWindow`.
 ///
-/// <p>Updates an existing maintenance window. Only specified parameters are modified.</p> <note>
+/// <p>Updates an existing maintenance window. Only specified parameters are modified.</p><note>
 /// <p>The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start after 5 PM.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

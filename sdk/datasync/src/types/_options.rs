@@ -16,12 +16,12 @@ pub struct Options {
     /// <p>Specifies whether data at the destination location should be overwritten or preserved. If set to <code>NEVER</code>, a destination file for example will not be replaced by a source file (even if the destination file differs from the source file). If you modify files in the destination and you sync the files, you can use this value to protect against overwriting those changes.</p>
     /// <p>Some storage classes have specific behaviors that can affect your Amazon S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     pub overwrite_mode: ::std::option::Option<crate::types::OverwriteMode>,
-    /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to. If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution).</p> <note>
+    /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to. If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution).</p><note>
     /// <p>The behavior of <code>Atime</code> isn't fully standard across platforms, so DataSync can only do this on a best-effort basis.</p>
     /// </note>
     /// <p>Default value: <code>BEST_EFFORT</code></p>
     /// <p><code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
-    /// <p><code>NONE</code>: Ignore <code>Atime</code>.</p> <note>
+    /// <p><code>NONE</code>: Ignore <code>Atime</code>.</p><note>
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>.</p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
     /// </note>
@@ -29,7 +29,7 @@ pub struct Options {
     /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
     /// <p>Default Value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Preserve original <code>Mtime</code> (recommended)</p>
-    /// <p><code>NONE</code>: Ignore <code>Mtime</code>.</p> <note>
+    /// <p><code>NONE</code>: Ignore <code>Mtime</code>.</p><note>
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
     /// </note>
@@ -49,11 +49,11 @@ pub struct Options {
     /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Ignore such destination files (recommended).</p>
-    /// <p><code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
+    /// <p><code>REMOVE</code>: Delete destination files that aren’t present in the source.</p><note>
     /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
     /// </note>
     pub preserve_deleted_files: ::std::option::Option<crate::types::PreserveDeletedFiles>,
-    /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p> <note>
+    /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p><note>
     /// <p>DataSync can't copy the actual contents of these devices because they're nonterminal and don't return an end-of-file (EOF) marker.</p>
     /// </note>
     /// <p>Default value: <code>NONE</code></p>
@@ -64,7 +64,7 @@ pub struct Options {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p>
-    /// <p><code>NONE</code>: Ignore permissions.</p> <note>
+    /// <p><code>NONE</code>: Ignore permissions.</p><note>
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
     pub posix_permissions: ::std::option::Option<crate::types::PosixPermissions>,
@@ -84,14 +84,21 @@ pub struct Options {
     /// <p>Default value: <code>OWNER_DACL</code></p>
     /// <p><code>OWNER_DACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
-    /// <li><p>The object owner.</p></li>
-    /// <li><p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> <p>DataSync won't copy NTFS system access control lists (SACLs) with this option.</p></li>
+    /// <li>
+    /// <p>The object owner.</p></li>
+    /// <li>
+    /// <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p>
+    /// <p>DataSync won't copy NTFS system access control lists (SACLs) with this option.</p></li>
     /// </ul>
     /// <p><code>OWNER_DACL_SACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
-    /// <li><p>The object owner.</p></li>
-    /// <li><p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p></li>
-    /// <li><p>SACLs, which are used by administrators to log attempts to access a secured object.</p> <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p></li>
+    /// <li>
+    /// <p>The object owner.</p></li>
+    /// <li>
+    /// <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p></li>
+    /// <li>
+    /// <p>SACLs, which are used by administrators to log attempts to access a secured object.</p>
+    /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p></li>
     /// </ul>
     /// <p><code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration.</p>
     pub security_descriptor_copy_flags: ::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags>,
@@ -115,12 +122,12 @@ impl Options {
     pub fn overwrite_mode(&self) -> ::std::option::Option<&crate::types::OverwriteMode> {
         self.overwrite_mode.as_ref()
     }
-    /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to. If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution).</p> <note>
+    /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to. If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution).</p><note>
     /// <p>The behavior of <code>Atime</code> isn't fully standard across platforms, so DataSync can only do this on a best-effort basis.</p>
     /// </note>
     /// <p>Default value: <code>BEST_EFFORT</code></p>
     /// <p><code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
-    /// <p><code>NONE</code>: Ignore <code>Atime</code>.</p> <note>
+    /// <p><code>NONE</code>: Ignore <code>Atime</code>.</p><note>
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>.</p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
     /// </note>
@@ -130,7 +137,7 @@ impl Options {
     /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
     /// <p>Default Value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Preserve original <code>Mtime</code> (recommended)</p>
-    /// <p><code>NONE</code>: Ignore <code>Mtime</code>.</p> <note>
+    /// <p><code>NONE</code>: Ignore <code>Mtime</code>.</p><note>
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
     /// </note>
@@ -156,13 +163,13 @@ impl Options {
     /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Ignore such destination files (recommended).</p>
-    /// <p><code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
+    /// <p><code>REMOVE</code>: Delete destination files that aren’t present in the source.</p><note>
     /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
     /// </note>
     pub fn preserve_deleted_files(&self) -> ::std::option::Option<&crate::types::PreserveDeletedFiles> {
         self.preserve_deleted_files.as_ref()
     }
-    /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p> <note>
+    /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p><note>
     /// <p>DataSync can't copy the actual contents of these devices because they're nonterminal and don't return an end-of-file (EOF) marker.</p>
     /// </note>
     /// <p>Default value: <code>NONE</code></p>
@@ -175,7 +182,7 @@ impl Options {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p>
-    /// <p><code>NONE</code>: Ignore permissions.</p> <note>
+    /// <p><code>NONE</code>: Ignore permissions.</p><note>
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
     pub fn posix_permissions(&self) -> ::std::option::Option<&crate::types::PosixPermissions> {
@@ -205,14 +212,21 @@ impl Options {
     /// <p>Default value: <code>OWNER_DACL</code></p>
     /// <p><code>OWNER_DACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
-    /// <li><p>The object owner.</p></li>
-    /// <li><p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> <p>DataSync won't copy NTFS system access control lists (SACLs) with this option.</p></li>
+    /// <li>
+    /// <p>The object owner.</p></li>
+    /// <li>
+    /// <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p>
+    /// <p>DataSync won't copy NTFS system access control lists (SACLs) with this option.</p></li>
     /// </ul>
     /// <p><code>OWNER_DACL_SACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
-    /// <li><p>The object owner.</p></li>
-    /// <li><p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p></li>
-    /// <li><p>SACLs, which are used by administrators to log attempts to access a secured object.</p> <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p></li>
+    /// <li>
+    /// <p>The object owner.</p></li>
+    /// <li>
+    /// <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p></li>
+    /// <li>
+    /// <p>SACLs, which are used by administrators to log attempts to access a secured object.</p>
+    /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p></li>
     /// </ul>
     /// <p><code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration.</p>
     pub fn security_descriptor_copy_flags(&self) -> ::std::option::Option<&crate::types::SmbSecurityDescriptorCopyFlags> {
@@ -301,12 +315,12 @@ impl OptionsBuilder {
     pub fn get_overwrite_mode(&self) -> &::std::option::Option<crate::types::OverwriteMode> {
         &self.overwrite_mode
     }
-    /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to. If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution).</p> <note>
+    /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to. If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution).</p><note>
     /// <p>The behavior of <code>Atime</code> isn't fully standard across platforms, so DataSync can only do this on a best-effort basis.</p>
     /// </note>
     /// <p>Default value: <code>BEST_EFFORT</code></p>
     /// <p><code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
-    /// <p><code>NONE</code>: Ignore <code>Atime</code>.</p> <note>
+    /// <p><code>NONE</code>: Ignore <code>Atime</code>.</p><note>
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>.</p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
     /// </note>
@@ -314,12 +328,12 @@ impl OptionsBuilder {
         self.atime = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to. If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution).</p> <note>
+    /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to. If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution).</p><note>
     /// <p>The behavior of <code>Atime</code> isn't fully standard across platforms, so DataSync can only do this on a best-effort basis.</p>
     /// </note>
     /// <p>Default value: <code>BEST_EFFORT</code></p>
     /// <p><code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
-    /// <p><code>NONE</code>: Ignore <code>Atime</code>.</p> <note>
+    /// <p><code>NONE</code>: Ignore <code>Atime</code>.</p><note>
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>.</p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
     /// </note>
@@ -327,12 +341,12 @@ impl OptionsBuilder {
         self.atime = input;
         self
     }
-    /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to. If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution).</p> <note>
+    /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to. If you set <code>Atime</code> to <code>BEST_EFFORT</code>, DataSync attempts to preserve the original <code>Atime</code> attribute on all source files (that is, the version before the <code>PREPARING</code> phase of the task execution).</p><note>
     /// <p>The behavior of <code>Atime</code> isn't fully standard across platforms, so DataSync can only do this on a best-effort basis.</p>
     /// </note>
     /// <p>Default value: <code>BEST_EFFORT</code></p>
     /// <p><code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code> value (recommended).</p>
-    /// <p><code>NONE</code>: Ignore <code>Atime</code>.</p> <note>
+    /// <p><code>NONE</code>: Ignore <code>Atime</code>.</p><note>
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>.</p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
     /// </note>
@@ -342,7 +356,7 @@ impl OptionsBuilder {
     /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
     /// <p>Default Value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Preserve original <code>Mtime</code> (recommended)</p>
-    /// <p><code>NONE</code>: Ignore <code>Mtime</code>.</p> <note>
+    /// <p><code>NONE</code>: Ignore <code>Mtime</code>.</p><note>
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
     /// </note>
@@ -353,7 +367,7 @@ impl OptionsBuilder {
     /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
     /// <p>Default Value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Preserve original <code>Mtime</code> (recommended)</p>
-    /// <p><code>NONE</code>: Ignore <code>Mtime</code>.</p> <note>
+    /// <p><code>NONE</code>: Ignore <code>Mtime</code>.</p><note>
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
     /// </note>
@@ -364,7 +378,7 @@ impl OptionsBuilder {
     /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
     /// <p>Default Value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Preserve original <code>Mtime</code> (recommended)</p>
-    /// <p><code>NONE</code>: Ignore <code>Mtime</code>.</p> <note>
+    /// <p><code>NONE</code>: Ignore <code>Mtime</code>.</p><note>
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
     /// </note>
@@ -426,7 +440,7 @@ impl OptionsBuilder {
     /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Ignore such destination files (recommended).</p>
-    /// <p><code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
+    /// <p><code>REMOVE</code>: Delete destination files that aren’t present in the source.</p><note>
     /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
     /// </note>
     pub fn preserve_deleted_files(mut self, input: crate::types::PreserveDeletedFiles) -> Self {
@@ -436,7 +450,7 @@ impl OptionsBuilder {
     /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Ignore such destination files (recommended).</p>
-    /// <p><code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
+    /// <p><code>REMOVE</code>: Delete destination files that aren’t present in the source.</p><note>
     /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
     /// </note>
     pub fn set_preserve_deleted_files(mut self, input: ::std::option::Option<crate::types::PreserveDeletedFiles>) -> Self {
@@ -446,13 +460,13 @@ impl OptionsBuilder {
     /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Ignore such destination files (recommended).</p>
-    /// <p><code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
+    /// <p><code>REMOVE</code>: Delete destination files that aren’t present in the source.</p><note>
     /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
     /// </note>
     pub fn get_preserve_deleted_files(&self) -> &::std::option::Option<crate::types::PreserveDeletedFiles> {
         &self.preserve_deleted_files
     }
-    /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p> <note>
+    /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p><note>
     /// <p>DataSync can't copy the actual contents of these devices because they're nonterminal and don't return an end-of-file (EOF) marker.</p>
     /// </note>
     /// <p>Default value: <code>NONE</code></p>
@@ -462,7 +476,7 @@ impl OptionsBuilder {
         self.preserve_devices = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p> <note>
+    /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p><note>
     /// <p>DataSync can't copy the actual contents of these devices because they're nonterminal and don't return an end-of-file (EOF) marker.</p>
     /// </note>
     /// <p>Default value: <code>NONE</code></p>
@@ -472,7 +486,7 @@ impl OptionsBuilder {
         self.preserve_devices = input;
         self
     }
-    /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p> <note>
+    /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p><note>
     /// <p>DataSync can't copy the actual contents of these devices because they're nonterminal and don't return an end-of-file (EOF) marker.</p>
     /// </note>
     /// <p>Default value: <code>NONE</code></p>
@@ -485,7 +499,7 @@ impl OptionsBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p>
-    /// <p><code>NONE</code>: Ignore permissions.</p> <note>
+    /// <p><code>NONE</code>: Ignore permissions.</p><note>
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
     pub fn posix_permissions(mut self, input: crate::types::PosixPermissions) -> Self {
@@ -496,7 +510,7 @@ impl OptionsBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p>
-    /// <p><code>NONE</code>: Ignore permissions.</p> <note>
+    /// <p><code>NONE</code>: Ignore permissions.</p><note>
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
     pub fn set_posix_permissions(mut self, input: ::std::option::Option<crate::types::PosixPermissions>) -> Self {
@@ -507,7 +521,7 @@ impl OptionsBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
     /// <p>Default value: <code>PRESERVE</code></p>
     /// <p><code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p>
-    /// <p><code>NONE</code>: Ignore permissions.</p> <note>
+    /// <p><code>NONE</code>: Ignore permissions.</p><note>
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
     pub fn get_posix_permissions(&self) -> &::std::option::Option<crate::types::PosixPermissions> {
@@ -583,14 +597,21 @@ impl OptionsBuilder {
     /// <p>Default value: <code>OWNER_DACL</code></p>
     /// <p><code>OWNER_DACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
-    /// <li><p>The object owner.</p></li>
-    /// <li><p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> <p>DataSync won't copy NTFS system access control lists (SACLs) with this option.</p></li>
+    /// <li>
+    /// <p>The object owner.</p></li>
+    /// <li>
+    /// <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p>
+    /// <p>DataSync won't copy NTFS system access control lists (SACLs) with this option.</p></li>
     /// </ul>
     /// <p><code>OWNER_DACL_SACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
-    /// <li><p>The object owner.</p></li>
-    /// <li><p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p></li>
-    /// <li><p>SACLs, which are used by administrators to log attempts to access a secured object.</p> <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p></li>
+    /// <li>
+    /// <p>The object owner.</p></li>
+    /// <li>
+    /// <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p></li>
+    /// <li>
+    /// <p>SACLs, which are used by administrators to log attempts to access a secured object.</p>
+    /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p></li>
     /// </ul>
     /// <p><code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration.</p>
     pub fn security_descriptor_copy_flags(mut self, input: crate::types::SmbSecurityDescriptorCopyFlags) -> Self {
@@ -602,14 +623,21 @@ impl OptionsBuilder {
     /// <p>Default value: <code>OWNER_DACL</code></p>
     /// <p><code>OWNER_DACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
-    /// <li><p>The object owner.</p></li>
-    /// <li><p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> <p>DataSync won't copy NTFS system access control lists (SACLs) with this option.</p></li>
+    /// <li>
+    /// <p>The object owner.</p></li>
+    /// <li>
+    /// <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p>
+    /// <p>DataSync won't copy NTFS system access control lists (SACLs) with this option.</p></li>
     /// </ul>
     /// <p><code>OWNER_DACL_SACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
-    /// <li><p>The object owner.</p></li>
-    /// <li><p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p></li>
-    /// <li><p>SACLs, which are used by administrators to log attempts to access a secured object.</p> <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p></li>
+    /// <li>
+    /// <p>The object owner.</p></li>
+    /// <li>
+    /// <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p></li>
+    /// <li>
+    /// <p>SACLs, which are used by administrators to log attempts to access a secured object.</p>
+    /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p></li>
     /// </ul>
     /// <p><code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration.</p>
     pub fn set_security_descriptor_copy_flags(mut self, input: ::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags>) -> Self {
@@ -621,14 +649,21 @@ impl OptionsBuilder {
     /// <p>Default value: <code>OWNER_DACL</code></p>
     /// <p><code>OWNER_DACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
-    /// <li><p>The object owner.</p></li>
-    /// <li><p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p> <p>DataSync won't copy NTFS system access control lists (SACLs) with this option.</p></li>
+    /// <li>
+    /// <p>The object owner.</p></li>
+    /// <li>
+    /// <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p>
+    /// <p>DataSync won't copy NTFS system access control lists (SACLs) with this option.</p></li>
     /// </ul>
     /// <p><code>OWNER_DACL_SACL</code>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
-    /// <li><p>The object owner.</p></li>
-    /// <li><p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p></li>
-    /// <li><p>SACLs, which are used by administrators to log attempts to access a secured object.</p> <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p></li>
+    /// <li>
+    /// <p>The object owner.</p></li>
+    /// <li>
+    /// <p>NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.</p></li>
+    /// <li>
+    /// <p>SACLs, which are used by administrators to log attempts to access a secured object.</p>
+    /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p></li>
     /// </ul>
     /// <p><code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration.</p>
     pub fn get_security_descriptor_copy_flags(&self) -> &::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags> {

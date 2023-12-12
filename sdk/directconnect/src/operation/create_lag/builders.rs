@@ -226,21 +226,21 @@ impl CreateLagFluentBuilder {
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provider_name()
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p><note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub fn request_mac_sec(mut self, input: bool) -> Self {
         self.inner = self.inner.request_mac_sec(input);
         self
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p><note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub fn set_request_mac_sec(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_request_mac_sec(input);
         self
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p><note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub fn get_request_mac_sec(&self) -> &::std::option::Option<bool> {

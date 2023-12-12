@@ -6,16 +6,21 @@ pub struct DescribeBlueGreenDeploymentsInput {
     /// <p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li>
+    /// <p>Must match an existing blue/green deployment identifier.</p></li>
     /// </ul>
     pub blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p></li>
-    /// <li><p><code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p></li>
-    /// <li><p><code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p></li>
-    /// <li><p><code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p></li>
+    /// <li>
+    /// <p><code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p></li>
+    /// <li>
+    /// <p><code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p></li>
+    /// <li>
+    /// <p><code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p></li>
+    /// <li>
+    /// <p><code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you specify this parameter, the response only includes records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -24,8 +29,10 @@ pub struct DescribeBlueGreenDeploymentsInput {
     /// <p>Default: 100</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a minimum of 20.</p></li>
-    /// <li><p>Can't exceed 100.</p></li>
+    /// <li>
+    /// <p>Must be a minimum of 20.</p></li>
+    /// <li>
+    /// <p>Can't exceed 100.</p></li>
     /// </ul>
     pub max_records: ::std::option::Option<i32>,
 }
@@ -33,7 +40,8 @@ impl DescribeBlueGreenDeploymentsInput {
     /// <p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li>
+    /// <p>Must match an existing blue/green deployment identifier.</p></li>
     /// </ul>
     pub fn blue_green_deployment_identifier(&self) -> ::std::option::Option<&str> {
         self.blue_green_deployment_identifier.as_deref()
@@ -41,10 +49,14 @@ impl DescribeBlueGreenDeploymentsInput {
     /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p></li>
-    /// <li><p><code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p></li>
-    /// <li><p><code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p></li>
-    /// <li><p><code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p></li>
+    /// <li>
+    /// <p><code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p></li>
+    /// <li>
+    /// <p><code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p></li>
+    /// <li>
+    /// <p><code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p></li>
+    /// <li>
+    /// <p><code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -59,8 +71,10 @@ impl DescribeBlueGreenDeploymentsInput {
     /// <p>Default: 100</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a minimum of 20.</p></li>
-    /// <li><p>Can't exceed 100.</p></li>
+    /// <li>
+    /// <p>Must be a minimum of 20.</p></li>
+    /// <li>
+    /// <p>Can't exceed 100.</p></li>
     /// </ul>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
@@ -86,7 +100,8 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li>
+    /// <p>Must match an existing blue/green deployment identifier.</p></li>
     /// </ul>
     pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = ::std::option::Option::Some(input.into());
@@ -95,7 +110,8 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li>
+    /// <p>Must match an existing blue/green deployment identifier.</p></li>
     /// </ul>
     pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = input;
@@ -104,7 +120,8 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match an existing blue/green deployment identifier.</p></li>
+    /// <li>
+    /// <p>Must match an existing blue/green deployment identifier.</p></li>
     /// </ul>
     pub fn get_blue_green_deployment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.blue_green_deployment_identifier
@@ -116,10 +133,14 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p></li>
-    /// <li><p><code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p></li>
-    /// <li><p><code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p></li>
-    /// <li><p><code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p></li>
+    /// <li>
+    /// <p><code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p></li>
+    /// <li>
+    /// <p><code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p></li>
+    /// <li>
+    /// <p><code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p></li>
+    /// <li>
+    /// <p><code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -130,10 +151,14 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p></li>
-    /// <li><p><code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p></li>
-    /// <li><p><code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p></li>
-    /// <li><p><code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p></li>
+    /// <li>
+    /// <p><code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p></li>
+    /// <li>
+    /// <p><code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p></li>
+    /// <li>
+    /// <p><code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p></li>
+    /// <li>
+    /// <p><code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -142,10 +167,14 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <p>A filter that specifies one or more blue/green deployments to describe.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p></li>
-    /// <li><p><code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p></li>
-    /// <li><p><code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p></li>
-    /// <li><p><code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p></li>
+    /// <li>
+    /// <p><code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p></li>
+    /// <li>
+    /// <p><code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p></li>
+    /// <li>
+    /// <p><code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p></li>
+    /// <li>
+    /// <p><code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
@@ -168,8 +197,10 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a minimum of 20.</p></li>
-    /// <li><p>Can't exceed 100.</p></li>
+    /// <li>
+    /// <p>Must be a minimum of 20.</p></li>
+    /// <li>
+    /// <p>Can't exceed 100.</p></li>
     /// </ul>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -179,8 +210,10 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a minimum of 20.</p></li>
-    /// <li><p>Can't exceed 100.</p></li>
+    /// <li>
+    /// <p>Must be a minimum of 20.</p></li>
+    /// <li>
+    /// <p>Can't exceed 100.</p></li>
     /// </ul>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
@@ -190,8 +223,10 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a minimum of 20.</p></li>
-    /// <li><p>Can't exceed 100.</p></li>
+    /// <li>
+    /// <p>Must be a minimum of 20.</p></li>
+    /// <li>
+    /// <p>Can't exceed 100.</p></li>
     /// </ul>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records

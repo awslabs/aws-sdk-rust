@@ -22,7 +22,7 @@ impl ListTrainingJobsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTrainingJobs`.
 ///
-/// <p>Lists training jobs.</p> <note>
+/// <p>Lists training jobs.</p><note>
 /// <p>When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same time, the <code>MaxResults</code> number of training jobs are first retrieved ignoring the <code>StatusEquals</code> parameter and then they are filtered by the <code>StatusEquals</code> parameter, which is returned as a response.</p>
 /// <p>For example, if <code>ListTrainingJobs</code> is invoked with the following parameters:</p>
 /// <p><code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code></p>

@@ -16,9 +16,12 @@ pub struct GameServerGroup {
     pub instance_definitions: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
-    /// <li><p><code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p></li>
-    /// <li><p><code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p></li>
-    /// <li><p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
+    /// <li>
+    /// <p><code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p></li>
+    /// <li>
+    /// <p><code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p></li>
+    /// <li>
+    /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
     pub balancing_strategy: ::std::option::Option<crate::types::BalancingStrategy>,
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
@@ -27,13 +30,20 @@ pub struct GameServerGroup {
     pub auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the game server group. Possible statuses include:</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.</p></li>
-    /// <li><p><code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account.</p></li>
-    /// <li><p><code>ACTIVE</code> - The game server group has been successfully created.</p></li>
-    /// <li><p><code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group.</p></li>
-    /// <li><p><code>DELETED</code> - The game server group has been successfully deleted.</p></li>
-    /// <li><p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
+    /// <li>
+    /// <p><code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.</p></li>
+    /// <li>
+    /// <p><code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The game server group has been successfully created.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The game server group has been successfully deleted.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::GameServerGroupStatus>,
     /// <p>Additional information about the current game server group status. This information might provide additional insight on groups that are in <code>ERROR</code> status.</p>
@@ -66,9 +76,12 @@ impl GameServerGroup {
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
-    /// <li><p><code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p></li>
-    /// <li><p><code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p></li>
-    /// <li><p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
+    /// <li>
+    /// <p><code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p></li>
+    /// <li>
+    /// <p><code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p></li>
+    /// <li>
+    /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
     pub fn balancing_strategy(&self) -> ::std::option::Option<&crate::types::BalancingStrategy> {
         self.balancing_strategy.as_ref()
@@ -83,13 +96,20 @@ impl GameServerGroup {
     }
     /// <p>The current status of the game server group. Possible statuses include:</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.</p></li>
-    /// <li><p><code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account.</p></li>
-    /// <li><p><code>ACTIVE</code> - The game server group has been successfully created.</p></li>
-    /// <li><p><code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group.</p></li>
-    /// <li><p><code>DELETED</code> - The game server group has been successfully deleted.</p></li>
-    /// <li><p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
+    /// <li>
+    /// <p><code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.</p></li>
+    /// <li>
+    /// <p><code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The game server group has been successfully created.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The game server group has been successfully deleted.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::GameServerGroupStatus> {
         self.status.as_ref()
@@ -202,9 +222,12 @@ impl GameServerGroupBuilder {
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
-    /// <li><p><code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p></li>
-    /// <li><p><code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p></li>
-    /// <li><p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
+    /// <li>
+    /// <p><code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p></li>
+    /// <li>
+    /// <p><code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p></li>
+    /// <li>
+    /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
     pub fn balancing_strategy(mut self, input: crate::types::BalancingStrategy) -> Self {
         self.balancing_strategy = ::std::option::Option::Some(input);
@@ -212,9 +235,12 @@ impl GameServerGroupBuilder {
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
-    /// <li><p><code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p></li>
-    /// <li><p><code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p></li>
-    /// <li><p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
+    /// <li>
+    /// <p><code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p></li>
+    /// <li>
+    /// <p><code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p></li>
+    /// <li>
+    /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
     pub fn set_balancing_strategy(mut self, input: ::std::option::Option<crate::types::BalancingStrategy>) -> Self {
         self.balancing_strategy = input;
@@ -222,9 +248,12 @@ impl GameServerGroupBuilder {
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
-    /// <li><p><code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p></li>
-    /// <li><p><code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p></li>
-    /// <li><p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
+    /// <li>
+    /// <p><code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p></li>
+    /// <li>
+    /// <p><code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p></li>
+    /// <li>
+    /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
     pub fn get_balancing_strategy(&self) -> &::std::option::Option<crate::types::BalancingStrategy> {
         &self.balancing_strategy
@@ -259,13 +288,20 @@ impl GameServerGroupBuilder {
     }
     /// <p>The current status of the game server group. Possible statuses include:</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.</p></li>
-    /// <li><p><code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account.</p></li>
-    /// <li><p><code>ACTIVE</code> - The game server group has been successfully created.</p></li>
-    /// <li><p><code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group.</p></li>
-    /// <li><p><code>DELETED</code> - The game server group has been successfully deleted.</p></li>
-    /// <li><p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
+    /// <li>
+    /// <p><code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.</p></li>
+    /// <li>
+    /// <p><code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The game server group has been successfully created.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The game server group has been successfully deleted.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::GameServerGroupStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -273,13 +309,20 @@ impl GameServerGroupBuilder {
     }
     /// <p>The current status of the game server group. Possible statuses include:</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.</p></li>
-    /// <li><p><code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account.</p></li>
-    /// <li><p><code>ACTIVE</code> - The game server group has been successfully created.</p></li>
-    /// <li><p><code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group.</p></li>
-    /// <li><p><code>DELETED</code> - The game server group has been successfully deleted.</p></li>
-    /// <li><p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
+    /// <li>
+    /// <p><code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.</p></li>
+    /// <li>
+    /// <p><code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The game server group has been successfully created.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The game server group has been successfully deleted.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GameServerGroupStatus>) -> Self {
         self.status = input;
@@ -287,13 +330,20 @@ impl GameServerGroupBuilder {
     }
     /// <p>The current status of the game server group. Possible statuses include:</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.</p></li>
-    /// <li><p><code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account.</p></li>
-    /// <li><p><code>ACTIVE</code> - The game server group has been successfully created.</p></li>
-    /// <li><p><code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group.</p></li>
-    /// <li><p><code>DELETED</code> - The game server group has been successfully deleted.</p></li>
-    /// <li><p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
+    /// <li>
+    /// <p><code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.</p></li>
+    /// <li>
+    /// <p><code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group, which includes creating an Auto Scaling group in your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The game server group has been successfully created.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing it. Amazon GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group and the game server group.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The game server group has been successfully deleted.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GameServerGroupStatus> {
         &self.status

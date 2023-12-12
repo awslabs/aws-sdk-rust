@@ -7,9 +7,11 @@
 pub struct ValidationSettings {
     /// <p>The validation mode currently configured for this policy store. The valid values are:</p>
     /// <ul>
-    /// <li><p><b>OFF</b> – Neither Verified Permissions nor Cedar perform any validation on policies. No validation errors are reported by either service.</p></li>
-    /// <li><p><b>STRICT</b> – Requires a schema to be present in the policy store. Cedar performs validation on all submitted new or updated static policies and policy templates. Any that fail validation are rejected and Cedar doesn't store them in the policy store.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p><b>OFF</b> – Neither Verified Permissions nor Cedar perform any validation on policies. No validation errors are reported by either service.</p></li>
+    /// <li>
+    /// <p><b>STRICT</b> – Requires a schema to be present in the policy store. Cedar performs validation on all submitted new or updated static policies and policy templates. Any that fail validation are rejected and Cedar doesn't store them in the policy store.</p></li>
+    /// </ul><important>
     /// <p>If <code>Mode=STRICT</code> and the policy store doesn't contain a schema, Verified Permissions rejects all static policies and policy templates because there is no schema to validate against.</p>
     /// <p>To submit a static policy or policy template without a schema, you must turn off validation.</p>
     /// </important>
@@ -18,9 +20,11 @@ pub struct ValidationSettings {
 impl ValidationSettings {
     /// <p>The validation mode currently configured for this policy store. The valid values are:</p>
     /// <ul>
-    /// <li><p><b>OFF</b> – Neither Verified Permissions nor Cedar perform any validation on policies. No validation errors are reported by either service.</p></li>
-    /// <li><p><b>STRICT</b> – Requires a schema to be present in the policy store. Cedar performs validation on all submitted new or updated static policies and policy templates. Any that fail validation are rejected and Cedar doesn't store them in the policy store.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p><b>OFF</b> – Neither Verified Permissions nor Cedar perform any validation on policies. No validation errors are reported by either service.</p></li>
+    /// <li>
+    /// <p><b>STRICT</b> – Requires a schema to be present in the policy store. Cedar performs validation on all submitted new or updated static policies and policy templates. Any that fail validation are rejected and Cedar doesn't store them in the policy store.</p></li>
+    /// </ul><important>
     /// <p>If <code>Mode=STRICT</code> and the policy store doesn't contain a schema, Verified Permissions rejects all static policies and policy templates because there is no schema to validate against.</p>
     /// <p>To submit a static policy or policy template without a schema, you must turn off validation.</p>
     /// </important>
@@ -44,9 +48,11 @@ pub struct ValidationSettingsBuilder {
 impl ValidationSettingsBuilder {
     /// <p>The validation mode currently configured for this policy store. The valid values are:</p>
     /// <ul>
-    /// <li><p><b>OFF</b> – Neither Verified Permissions nor Cedar perform any validation on policies. No validation errors are reported by either service.</p></li>
-    /// <li><p><b>STRICT</b> – Requires a schema to be present in the policy store. Cedar performs validation on all submitted new or updated static policies and policy templates. Any that fail validation are rejected and Cedar doesn't store them in the policy store.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p><b>OFF</b> – Neither Verified Permissions nor Cedar perform any validation on policies. No validation errors are reported by either service.</p></li>
+    /// <li>
+    /// <p><b>STRICT</b> – Requires a schema to be present in the policy store. Cedar performs validation on all submitted new or updated static policies and policy templates. Any that fail validation are rejected and Cedar doesn't store them in the policy store.</p></li>
+    /// </ul><important>
     /// <p>If <code>Mode=STRICT</code> and the policy store doesn't contain a schema, Verified Permissions rejects all static policies and policy templates because there is no schema to validate against.</p>
     /// <p>To submit a static policy or policy template without a schema, you must turn off validation.</p>
     /// </important>
@@ -57,9 +63,11 @@ impl ValidationSettingsBuilder {
     }
     /// <p>The validation mode currently configured for this policy store. The valid values are:</p>
     /// <ul>
-    /// <li><p><b>OFF</b> – Neither Verified Permissions nor Cedar perform any validation on policies. No validation errors are reported by either service.</p></li>
-    /// <li><p><b>STRICT</b> – Requires a schema to be present in the policy store. Cedar performs validation on all submitted new or updated static policies and policy templates. Any that fail validation are rejected and Cedar doesn't store them in the policy store.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p><b>OFF</b> – Neither Verified Permissions nor Cedar perform any validation on policies. No validation errors are reported by either service.</p></li>
+    /// <li>
+    /// <p><b>STRICT</b> – Requires a schema to be present in the policy store. Cedar performs validation on all submitted new or updated static policies and policy templates. Any that fail validation are rejected and Cedar doesn't store them in the policy store.</p></li>
+    /// </ul><important>
     /// <p>If <code>Mode=STRICT</code> and the policy store doesn't contain a schema, Verified Permissions rejects all static policies and policy templates because there is no schema to validate against.</p>
     /// <p>To submit a static policy or policy template without a schema, you must turn off validation.</p>
     /// </important>
@@ -69,9 +77,11 @@ impl ValidationSettingsBuilder {
     }
     /// <p>The validation mode currently configured for this policy store. The valid values are:</p>
     /// <ul>
-    /// <li><p><b>OFF</b> – Neither Verified Permissions nor Cedar perform any validation on policies. No validation errors are reported by either service.</p></li>
-    /// <li><p><b>STRICT</b> – Requires a schema to be present in the policy store. Cedar performs validation on all submitted new or updated static policies and policy templates. Any that fail validation are rejected and Cedar doesn't store them in the policy store.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p><b>OFF</b> – Neither Verified Permissions nor Cedar perform any validation on policies. No validation errors are reported by either service.</p></li>
+    /// <li>
+    /// <p><b>STRICT</b> – Requires a schema to be present in the policy store. Cedar performs validation on all submitted new or updated static policies and policy templates. Any that fail validation are rejected and Cedar doesn't store them in the policy store.</p></li>
+    /// </ul><important>
     /// <p>If <code>Mode=STRICT</code> and the policy store doesn't contain a schema, Verified Permissions rejects all static policies and policy templates because there is no schema to validate against.</p>
     /// <p>To submit a static policy or policy template without a schema, you must turn off validation.</p>
     /// </important>

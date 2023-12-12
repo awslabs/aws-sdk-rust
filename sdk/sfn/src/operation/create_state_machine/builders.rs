@@ -23,7 +23,7 @@ impl CreateStateMachineInputBuilder {
 /// Fluent builder constructing a request to `CreateStateMachine`.
 ///
 /// <p>Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured language. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> in the Step Functions User Guide.</p>
-/// <p>If you set the <code>publish</code> parameter of this API action to <code>true</code>, it publishes version <code>1</code> as the first revision of the state machine.</p> <note>
+/// <p>If you set the <code>publish</code> parameter of this API action to <code>true</code>, it publishes version <code>1</code> as the first revision of the state machine.</p><note>
 /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
 /// </note> <note>
 /// <p><code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code>, and <code>TracingConfiguration</code>. The check is also based on the <code>publish</code> and <code>versionDescription</code> parameters. If a following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.</p>
@@ -116,11 +116,16 @@ impl CreateStateMachineFluentBuilder {
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li><p>white space</p></li>
-    /// <li><p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li><p>wildcard characters <code>? *</code></p></li>
-    /// <li><p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li><p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li>
+    /// <p>white space</p></li>
+    /// <li>
+    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code></p></li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,11 +135,16 @@ impl CreateStateMachineFluentBuilder {
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li><p>white space</p></li>
-    /// <li><p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li><p>wildcard characters <code>? *</code></p></li>
-    /// <li><p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li><p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li>
+    /// <p>white space</p></li>
+    /// <li>
+    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code></p></li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -144,11 +154,16 @@ impl CreateStateMachineFluentBuilder {
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li><p>white space</p></li>
-    /// <li><p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
-    /// <li><p>wildcard characters <code>? *</code></p></li>
-    /// <li><p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
-    /// <li><p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
+    /// <li>
+    /// <p>white space</p></li>
+    /// <li>
+    /// <p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <li>
+    /// <p>wildcard characters <code>? *</code></p></li>
+    /// <li>
+    /// <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
+    /// <li>
+    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,21 +211,21 @@ impl CreateStateMachineFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::StateMachineType> {
         self.inner.get_type()
     }
-    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+    /// <p>Defines what execution history events are logged and where they are logged.</p><note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.inner = self.inner.logging_configuration(input);
         self
     }
-    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+    /// <p>Defines what execution history events are logged and where they are logged.</p><note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.inner = self.inner.set_logging_configuration(input);
         self
     }
-    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+    /// <p>Defines what execution history events are logged and where they are logged.</p><note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {

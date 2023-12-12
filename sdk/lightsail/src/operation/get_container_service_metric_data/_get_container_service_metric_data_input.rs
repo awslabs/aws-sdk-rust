@@ -8,8 +8,14 @@ pub struct GetContainerServiceMetricDataInput {
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid container service metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p>
     /// <ul>
-    /// <li><p><code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p></li>
-    /// <li><p><code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p></li>
     /// </ul>
     pub metric_name: ::std::option::Option<crate::types::ContainerServiceMetricName>,
     /// <p>The start time of the time period.</p>
@@ -22,11 +28,16 @@ pub struct GetContainerServiceMetricDataInput {
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li><p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li><p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li><p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li><p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li><p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li>
+    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
+    /// <li>
+    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
+    /// <li>
+    /// <p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
+    /// <li>
+    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
     pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
 }
@@ -38,8 +49,14 @@ impl GetContainerServiceMetricDataInput {
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid container service metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p>
     /// <ul>
-    /// <li><p><code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p></li>
-    /// <li><p><code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p></li>
     /// </ul>
     pub fn metric_name(&self) -> ::std::option::Option<&crate::types::ContainerServiceMetricName> {
         self.metric_name.as_ref()
@@ -60,11 +77,16 @@ impl GetContainerServiceMetricDataInput {
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li><p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li><p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li><p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li><p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li><p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li>
+    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
+    /// <li>
+    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
+    /// <li>
+    /// <p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
+    /// <li>
+    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
@@ -109,8 +131,14 @@ impl GetContainerServiceMetricDataInputBuilder {
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid container service metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p>
     /// <ul>
-    /// <li><p><code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p></li>
-    /// <li><p><code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn metric_name(mut self, input: crate::types::ContainerServiceMetricName) -> Self {
@@ -120,8 +148,14 @@ impl GetContainerServiceMetricDataInputBuilder {
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid container service metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p>
     /// <ul>
-    /// <li><p><code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p></li>
-    /// <li><p><code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p></li>
     /// </ul>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::ContainerServiceMetricName>) -> Self {
         self.metric_name = input;
@@ -130,8 +164,14 @@ impl GetContainerServiceMetricDataInputBuilder {
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid container service metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p>
     /// <ul>
-    /// <li><p><code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p></li>
-    /// <li><p><code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p>
+    /// <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p>
+    /// <p>Unit: The published unit is <code>Percent</code>.</p></li>
     /// </ul>
     pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::ContainerServiceMetricName> {
         &self.metric_name
@@ -191,11 +231,16 @@ impl GetContainerServiceMetricDataInputBuilder {
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li><p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li><p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li><p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li><p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li><p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li>
+    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
+    /// <li>
+    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
+    /// <li>
+    /// <p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
+    /// <li>
+    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
     pub fn statistics(mut self, input: crate::types::MetricStatistic) -> Self {
         let mut v = self.statistics.unwrap_or_default();
@@ -206,11 +251,16 @@ impl GetContainerServiceMetricDataInputBuilder {
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li><p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li><p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li><p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li><p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li><p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li>
+    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
+    /// <li>
+    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
+    /// <li>
+    /// <p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
+    /// <li>
+    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
     pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
         self.statistics = input;
@@ -219,11 +269,16 @@ impl GetContainerServiceMetricDataInputBuilder {
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
     /// <ul>
-    /// <li><p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
-    /// <li><p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
-    /// <li><p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
-    /// <li><p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
-    /// <li><p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
+    /// <li>
+    /// <p><code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p></li>
+    /// <li>
+    /// <p><code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p></li>
+    /// <li>
+    /// <p><code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p></li>
+    /// <li>
+    /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
     pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
         &self.statistics

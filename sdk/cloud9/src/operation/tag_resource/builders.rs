@@ -22,7 +22,7 @@ impl TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Adds tags to an Cloud9 development environment.</p> <important>
+/// <p>Adds tags to an Cloud9 development environment.</p><important>
 /// <p>Tags that you add to an Cloud9 environment by using this method will NOT be automatically propagated to underlying resources.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

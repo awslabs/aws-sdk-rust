@@ -3,16 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServiceInput {
-    /// <p>The name that you want to assign to the service.</p> <note>
+    /// <p>The name that you want to assign to the service.</p><note>
     /// <p>Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.</p>
     /// </note>
     /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
     /// <ul>
-    /// <li><p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p></li>
-    /// <li><p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p></li>
+    /// <li>
+    /// <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p></li>
+    /// <li>
+    /// <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p></li>
     /// </ul>
     /// <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by concatenating the service name and the namespace name (for example,</p>
-    /// <p><code>_exampleservice._tcp.example.com</code>).</p> <note>
+    /// <p><code>_exampleservice._tcp.example.com</code>).</p><note>
     /// <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>
     /// </note>
     pub name: ::std::option::Option<::std::string::String>,
@@ -24,12 +26,12 @@ pub struct CreateServiceInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about the Amazon Route&nbsp;53 records that you want Cloud Map to create when you register an instance.</p>
     pub dns_config: ::std::option::Option<crate::types::DnsConfig>,
-    /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+    /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
     pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
-    /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+    /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
@@ -40,16 +42,18 @@ pub struct CreateServiceInput {
     pub r#type: ::std::option::Option<crate::types::ServiceTypeOption>,
 }
 impl CreateServiceInput {
-    /// <p>The name that you want to assign to the service.</p> <note>
+    /// <p>The name that you want to assign to the service.</p><note>
     /// <p>Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.</p>
     /// </note>
     /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
     /// <ul>
-    /// <li><p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p></li>
-    /// <li><p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p></li>
+    /// <li>
+    /// <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p></li>
+    /// <li>
+    /// <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p></li>
     /// </ul>
     /// <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by concatenating the service name and the namespace name (for example,</p>
-    /// <p><code>_exampleservice._tcp.example.com</code>).</p> <note>
+    /// <p><code>_exampleservice._tcp.example.com</code>).</p><note>
     /// <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>
     /// </note>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -71,14 +75,14 @@ impl CreateServiceInput {
     pub fn dns_config(&self) -> ::std::option::Option<&crate::types::DnsConfig> {
         self.dns_config.as_ref()
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+    /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
     pub fn health_check_config(&self) -> ::std::option::Option<&crate::types::HealthCheckConfig> {
         self.health_check_config.as_ref()
     }
-    /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+    /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
@@ -118,16 +122,18 @@ pub struct CreateServiceInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ServiceTypeOption>,
 }
 impl CreateServiceInputBuilder {
-    /// <p>The name that you want to assign to the service.</p> <note>
+    /// <p>The name that you want to assign to the service.</p><note>
     /// <p>Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.</p>
     /// </note>
     /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
     /// <ul>
-    /// <li><p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p></li>
-    /// <li><p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p></li>
+    /// <li>
+    /// <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p></li>
+    /// <li>
+    /// <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p></li>
     /// </ul>
     /// <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by concatenating the service name and the namespace name (for example,</p>
-    /// <p><code>_exampleservice._tcp.example.com</code>).</p> <note>
+    /// <p><code>_exampleservice._tcp.example.com</code>).</p><note>
     /// <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>
     /// </note>
     /// This field is required.
@@ -135,32 +141,36 @@ impl CreateServiceInputBuilder {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name that you want to assign to the service.</p> <note>
+    /// <p>The name that you want to assign to the service.</p><note>
     /// <p>Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.</p>
     /// </note>
     /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
     /// <ul>
-    /// <li><p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p></li>
-    /// <li><p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p></li>
+    /// <li>
+    /// <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p></li>
+    /// <li>
+    /// <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p></li>
     /// </ul>
     /// <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by concatenating the service name and the namespace name (for example,</p>
-    /// <p><code>_exampleservice._tcp.example.com</code>).</p> <note>
+    /// <p><code>_exampleservice._tcp.example.com</code>).</p><note>
     /// <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>
     /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name that you want to assign to the service.</p> <note>
+    /// <p>The name that you want to assign to the service.</p><note>
     /// <p>Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.</p>
     /// </note>
     /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
     /// <ul>
-    /// <li><p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p></li>
-    /// <li><p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p></li>
+    /// <li>
+    /// <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p></li>
+    /// <li>
+    /// <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p></li>
     /// </ul>
     /// <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by concatenating the service name and the namespace name (for example,</p>
-    /// <p><code>_exampleservice._tcp.example.com</code>).</p> <note>
+    /// <p><code>_exampleservice._tcp.example.com</code>).</p><note>
     /// <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>
     /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,7 +232,7 @@ impl CreateServiceInputBuilder {
     pub fn get_dns_config(&self) -> &::std::option::Option<crate::types::DnsConfig> {
         &self.dns_config
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+    /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
@@ -230,7 +240,7 @@ impl CreateServiceInputBuilder {
         self.health_check_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+    /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
@@ -238,14 +248,14 @@ impl CreateServiceInputBuilder {
         self.health_check_config = input;
         self
     }
-    /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+    /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
     pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
         &self.health_check_config
     }
-    /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+    /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
@@ -253,7 +263,7 @@ impl CreateServiceInputBuilder {
         self.health_check_custom_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+    /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
@@ -261,7 +271,7 @@ impl CreateServiceInputBuilder {
         self.health_check_custom_config = input;
         self
     }
-    /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+    /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>

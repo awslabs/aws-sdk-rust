@@ -139,9 +139,12 @@ impl StartMailboxExportJobFluentBuilder {
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
     /// <p>The identifier can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li><p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789 , or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: entity@domain.tld</p></li>
-    /// <li><p>Entity name: entity</p></li>
+    /// <li>
+    /// <p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789 , or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: entity@domain.tld</p></li>
+    /// <li>
+    /// <p>Entity name: entity</p></li>
     /// </ul>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -150,9 +153,12 @@ impl StartMailboxExportJobFluentBuilder {
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
     /// <p>The identifier can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li><p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789 , or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: entity@domain.tld</p></li>
-    /// <li><p>Entity name: entity</p></li>
+    /// <li>
+    /// <p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789 , or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: entity@domain.tld</p></li>
+    /// <li>
+    /// <p>Entity name: entity</p></li>
     /// </ul>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
@@ -161,9 +167,12 @@ impl StartMailboxExportJobFluentBuilder {
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
     /// <p>The identifier can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li><p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789 , or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: entity@domain.tld</p></li>
-    /// <li><p>Entity name: entity</p></li>
+    /// <li>
+    /// <p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789 , or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: entity@domain.tld</p></li>
+    /// <li>
+    /// <p>Entity name: entity</p></li>
     /// </ul>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_entity_id()

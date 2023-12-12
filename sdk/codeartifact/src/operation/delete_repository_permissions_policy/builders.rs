@@ -22,7 +22,7 @@ impl DeleteRepositoryPermissionsPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteRepositoryPermissionsPolicy`.
 ///
-/// <p>Deletes the resource policy that is set on a repository. After a resource policy is deleted, the permissions allowed and denied by the deleted policy are removed. The effect of deleting a resource policy might not be immediate.</p> <important>
+/// <p>Deletes the resource policy that is set on a repository. After a resource policy is deleted, the permissions allowed and denied by the deleted policy are removed. The effect of deleting a resource policy might not be immediate.</p><important>
 /// <p>Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is deleted, Amazon Web Services users, roles, and accounts lose permissions to perform the repository actions granted by the deleted policy.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

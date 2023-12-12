@@ -4,8 +4,10 @@
 /// <p>You define and name the custom actions that you want to be able to use, and then you reference them by name in your actions settings.</p>
 /// <p>You can use custom actions in the following places:</p>
 /// <ul>
-/// <li><p>In a rule group's <code>StatelessRulesAndCustomActions</code> specification. The custom actions are available for use by name inside the <code>StatelessRulesAndCustomActions</code> where you define them. You can use them for your stateless rule actions to specify what to do with a packet that matches the rule's match attributes.</p></li>
-/// <li><p>In a <code>FirewallPolicy</code> specification, in <code>StatelessCustomActions</code>. The custom actions are available for use inside the policy where you define them. You can use them for the policy's default stateless actions settings to specify what to do with packets that don't match any of the policy's stateless rules.</p></li>
+/// <li>
+/// <p>In a rule group's <code>StatelessRulesAndCustomActions</code> specification. The custom actions are available for use by name inside the <code>StatelessRulesAndCustomActions</code> where you define them. You can use them for your stateless rule actions to specify what to do with a packet that matches the rule's match attributes.</p></li>
+/// <li>
+/// <p>In a <code>FirewallPolicy</code> specification, in <code>StatelessCustomActions</code>. The custom actions are available for use inside the policy where you define them. You can use them for the policy's default stateless actions settings to specify what to do with packets that don't match any of the policy's stateless rules.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

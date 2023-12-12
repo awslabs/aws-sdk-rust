@@ -28,7 +28,8 @@ impl VerifyMacInputBuilder {
 /// <p><b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>GenerateMac</code></p></li>
+/// <li>
+/// <p><code>GenerateMac</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct VerifyMacFluentBuilder {

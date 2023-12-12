@@ -22,7 +22,7 @@ impl AssociateExternalConnectionInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateExternalConnection`.
 ///
-/// <p>Adds an existing external connection to a repository. One external connection is allowed per repository.</p> <note>
+/// <p>Adds an existing external connection to a repository. One external connection is allowed per repository.</p><note>
 /// <p>A repository can have one or more upstream repositories, or an external connection.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -154,14 +154,22 @@ impl AssociateExternalConnectionFluentBuilder {
     }
     /// <p>The name of the external connection to add to the repository. The following values are supported:</p>
     /// <ul>
-    /// <li><p><code>public:npmjs</code> - for the npm public repository.</p></li>
-    /// <li><p><code>public:nuget-org</code> - for the NuGet Gallery.</p></li>
-    /// <li><p><code>public:pypi</code> - for the Python Package Index.</p></li>
-    /// <li><p><code>public:maven-central</code> - for Maven Central.</p></li>
-    /// <li><p><code>public:maven-googleandroid</code> - for the Google Android repository.</p></li>
-    /// <li><p><code>public:maven-gradleplugins</code> - for the Gradle plugins repository.</p></li>
-    /// <li><p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
-    /// <li><p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li>
+    /// <p><code>public:npmjs</code> - for the npm public repository.</p></li>
+    /// <li>
+    /// <p><code>public:nuget-org</code> - for the NuGet Gallery.</p></li>
+    /// <li>
+    /// <p><code>public:pypi</code> - for the Python Package Index.</p></li>
+    /// <li>
+    /// <p><code>public:maven-central</code> - for Maven Central.</p></li>
+    /// <li>
+    /// <p><code>public:maven-googleandroid</code> - for the Google Android repository.</p></li>
+    /// <li>
+    /// <p><code>public:maven-gradleplugins</code> - for the Gradle plugins repository.</p></li>
+    /// <li>
+    /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
+    /// <li>
+    /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
     /// </ul>
     pub fn external_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_connection(input.into());
@@ -169,14 +177,22 @@ impl AssociateExternalConnectionFluentBuilder {
     }
     /// <p>The name of the external connection to add to the repository. The following values are supported:</p>
     /// <ul>
-    /// <li><p><code>public:npmjs</code> - for the npm public repository.</p></li>
-    /// <li><p><code>public:nuget-org</code> - for the NuGet Gallery.</p></li>
-    /// <li><p><code>public:pypi</code> - for the Python Package Index.</p></li>
-    /// <li><p><code>public:maven-central</code> - for Maven Central.</p></li>
-    /// <li><p><code>public:maven-googleandroid</code> - for the Google Android repository.</p></li>
-    /// <li><p><code>public:maven-gradleplugins</code> - for the Gradle plugins repository.</p></li>
-    /// <li><p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
-    /// <li><p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li>
+    /// <p><code>public:npmjs</code> - for the npm public repository.</p></li>
+    /// <li>
+    /// <p><code>public:nuget-org</code> - for the NuGet Gallery.</p></li>
+    /// <li>
+    /// <p><code>public:pypi</code> - for the Python Package Index.</p></li>
+    /// <li>
+    /// <p><code>public:maven-central</code> - for Maven Central.</p></li>
+    /// <li>
+    /// <p><code>public:maven-googleandroid</code> - for the Google Android repository.</p></li>
+    /// <li>
+    /// <p><code>public:maven-gradleplugins</code> - for the Gradle plugins repository.</p></li>
+    /// <li>
+    /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
+    /// <li>
+    /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
     /// </ul>
     pub fn set_external_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_connection(input);
@@ -184,14 +200,22 @@ impl AssociateExternalConnectionFluentBuilder {
     }
     /// <p>The name of the external connection to add to the repository. The following values are supported:</p>
     /// <ul>
-    /// <li><p><code>public:npmjs</code> - for the npm public repository.</p></li>
-    /// <li><p><code>public:nuget-org</code> - for the NuGet Gallery.</p></li>
-    /// <li><p><code>public:pypi</code> - for the Python Package Index.</p></li>
-    /// <li><p><code>public:maven-central</code> - for Maven Central.</p></li>
-    /// <li><p><code>public:maven-googleandroid</code> - for the Google Android repository.</p></li>
-    /// <li><p><code>public:maven-gradleplugins</code> - for the Gradle plugins repository.</p></li>
-    /// <li><p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
-    /// <li><p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
+    /// <li>
+    /// <p><code>public:npmjs</code> - for the npm public repository.</p></li>
+    /// <li>
+    /// <p><code>public:nuget-org</code> - for the NuGet Gallery.</p></li>
+    /// <li>
+    /// <p><code>public:pypi</code> - for the Python Package Index.</p></li>
+    /// <li>
+    /// <p><code>public:maven-central</code> - for Maven Central.</p></li>
+    /// <li>
+    /// <p><code>public:maven-googleandroid</code> - for the Google Android repository.</p></li>
+    /// <li>
+    /// <p><code>public:maven-gradleplugins</code> - for the Gradle plugins repository.</p></li>
+    /// <li>
+    /// <p><code>public:maven-commonsware</code> - for the CommonsWare Android repository.</p></li>
+    /// <li>
+    /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
     /// </ul>
     pub fn get_external_connection(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_external_connection()

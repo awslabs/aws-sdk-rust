@@ -6,10 +6,18 @@
 pub struct LabelingJobAlgorithmsConfig {
     /// <p>Specifies the Amazon Resource Name (ARN) of the algorithm used for auto-labeling. You must select one of the following ARNs:</p>
     /// <ul>
-    /// <li><p><i>Image classification</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code></p></li>
-    /// <li><p><i>Text classification</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code></p></li>
-    /// <li><p><i>Object detection</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code></p></li>
-    /// <li><p><i>Semantic Segmentation</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
+    /// <li>
+    /// <p><i>Image classification</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code></p></li>
+    /// <li>
+    /// <p><i>Text classification</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code></p></li>
+    /// <li>
+    /// <p><i>Object detection</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code></p></li>
+    /// <li>
+    /// <p><i>Semantic Segmentation</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
     /// </ul>
     pub labeling_job_algorithm_specification_arn: ::std::option::Option<::std::string::String>,
     /// <p>At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN) of the final model used for auto-labeling. You can use this model as the starting point for subsequent similar jobs by providing the ARN of the model here.</p>
@@ -20,10 +28,18 @@ pub struct LabelingJobAlgorithmsConfig {
 impl LabelingJobAlgorithmsConfig {
     /// <p>Specifies the Amazon Resource Name (ARN) of the algorithm used for auto-labeling. You must select one of the following ARNs:</p>
     /// <ul>
-    /// <li><p><i>Image classification</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code></p></li>
-    /// <li><p><i>Text classification</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code></p></li>
-    /// <li><p><i>Object detection</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code></p></li>
-    /// <li><p><i>Semantic Segmentation</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
+    /// <li>
+    /// <p><i>Image classification</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code></p></li>
+    /// <li>
+    /// <p><i>Text classification</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code></p></li>
+    /// <li>
+    /// <p><i>Object detection</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code></p></li>
+    /// <li>
+    /// <p><i>Semantic Segmentation</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
     /// </ul>
     pub fn labeling_job_algorithm_specification_arn(&self) -> ::std::option::Option<&str> {
         self.labeling_job_algorithm_specification_arn.as_deref()
@@ -55,10 +71,18 @@ pub struct LabelingJobAlgorithmsConfigBuilder {
 impl LabelingJobAlgorithmsConfigBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the algorithm used for auto-labeling. You must select one of the following ARNs:</p>
     /// <ul>
-    /// <li><p><i>Image classification</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code></p></li>
-    /// <li><p><i>Text classification</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code></p></li>
-    /// <li><p><i>Object detection</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code></p></li>
-    /// <li><p><i>Semantic Segmentation</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
+    /// <li>
+    /// <p><i>Image classification</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code></p></li>
+    /// <li>
+    /// <p><i>Text classification</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code></p></li>
+    /// <li>
+    /// <p><i>Object detection</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code></p></li>
+    /// <li>
+    /// <p><i>Semantic Segmentation</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn labeling_job_algorithm_specification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,10 +91,18 @@ impl LabelingJobAlgorithmsConfigBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the algorithm used for auto-labeling. You must select one of the following ARNs:</p>
     /// <ul>
-    /// <li><p><i>Image classification</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code></p></li>
-    /// <li><p><i>Text classification</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code></p></li>
-    /// <li><p><i>Object detection</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code></p></li>
-    /// <li><p><i>Semantic Segmentation</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
+    /// <li>
+    /// <p><i>Image classification</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code></p></li>
+    /// <li>
+    /// <p><i>Text classification</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code></p></li>
+    /// <li>
+    /// <p><i>Object detection</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code></p></li>
+    /// <li>
+    /// <p><i>Semantic Segmentation</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
     /// </ul>
     pub fn set_labeling_job_algorithm_specification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.labeling_job_algorithm_specification_arn = input;
@@ -78,10 +110,18 @@ impl LabelingJobAlgorithmsConfigBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the algorithm used for auto-labeling. You must select one of the following ARNs:</p>
     /// <ul>
-    /// <li><p><i>Image classification</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code></p></li>
-    /// <li><p><i>Text classification</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code></p></li>
-    /// <li><p><i>Object detection</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code></p></li>
-    /// <li><p><i>Semantic Segmentation</i></p> <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
+    /// <li>
+    /// <p><i>Image classification</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code></p></li>
+    /// <li>
+    /// <p><i>Text classification</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code></p></li>
+    /// <li>
+    /// <p><i>Object detection</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code></p></li>
+    /// <li>
+    /// <p><i>Semantic Segmentation</i></p>
+    /// <p><code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code></p></li>
     /// </ul>
     pub fn get_labeling_job_algorithm_specification_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.labeling_job_algorithm_specification_arn

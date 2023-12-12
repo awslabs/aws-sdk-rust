@@ -9,11 +9,16 @@ pub struct StopStreamEncryptionInput {
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
-    /// <li><p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li><p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
-    /// <li><p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li><p>Alias name example: <code>alias/MyAliasName</code></p></li>
-    /// <li><p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
+    /// <li>
+    /// <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li>
+    /// <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
+    /// <li>
+    /// <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li>
+    /// <p>Alias name example: <code>alias/MyAliasName</code></p></li>
+    /// <li>
+    /// <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
     /// </ul>
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream.</p>
@@ -30,11 +35,16 @@ impl StopStreamEncryptionInput {
     }
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
-    /// <li><p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li><p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
-    /// <li><p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li><p>Alias name example: <code>alias/MyAliasName</code></p></li>
-    /// <li><p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
+    /// <li>
+    /// <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li>
+    /// <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
+    /// <li>
+    /// <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li>
+    /// <p>Alias name example: <code>alias/MyAliasName</code></p></li>
+    /// <li>
+    /// <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
     /// </ul>
     pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
@@ -92,11 +102,16 @@ impl StopStreamEncryptionInputBuilder {
     }
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
-    /// <li><p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li><p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
-    /// <li><p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li><p>Alias name example: <code>alias/MyAliasName</code></p></li>
-    /// <li><p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
+    /// <li>
+    /// <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li>
+    /// <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
+    /// <li>
+    /// <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li>
+    /// <p>Alias name example: <code>alias/MyAliasName</code></p></li>
+    /// <li>
+    /// <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,11 +120,16 @@ impl StopStreamEncryptionInputBuilder {
     }
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
-    /// <li><p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li><p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
-    /// <li><p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li><p>Alias name example: <code>alias/MyAliasName</code></p></li>
-    /// <li><p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
+    /// <li>
+    /// <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li>
+    /// <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
+    /// <li>
+    /// <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li>
+    /// <p>Alias name example: <code>alias/MyAliasName</code></p></li>
+    /// <li>
+    /// <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
     /// </ul>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
@@ -117,11 +137,16 @@ impl StopStreamEncryptionInputBuilder {
     }
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
-    /// <li><p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li><p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
-    /// <li><p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
-    /// <li><p>Alias name example: <code>alias/MyAliasName</code></p></li>
-    /// <li><p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
+    /// <li>
+    /// <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li>
+    /// <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code></p></li>
+    /// <li>
+    /// <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code></p></li>
+    /// <li>
+    /// <p>Alias name example: <code>alias/MyAliasName</code></p></li>
+    /// <li>
+    /// <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
     /// </ul>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id

@@ -10,15 +10,24 @@ pub struct TaggedResource {
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource with which the tag is associated. Valid resource types are:</p>
     /// <ul>
-    /// <li><p>Cluster</p></li>
-    /// <li><p>CIDR/IP</p></li>
-    /// <li><p>EC2 security group</p></li>
-    /// <li><p>Snapshot</p></li>
-    /// <li><p>Cluster security group</p></li>
-    /// <li><p>Subnet group</p></li>
-    /// <li><p>HSM connection</p></li>
-    /// <li><p>HSM certificate</p></li>
-    /// <li><p>Parameter group</p></li>
+    /// <li>
+    /// <p>Cluster</p></li>
+    /// <li>
+    /// <p>CIDR/IP</p></li>
+    /// <li>
+    /// <p>EC2 security group</p></li>
+    /// <li>
+    /// <p>Snapshot</p></li>
+    /// <li>
+    /// <p>Cluster security group</p></li>
+    /// <li>
+    /// <p>Subnet group</p></li>
+    /// <li>
+    /// <p>HSM connection</p></li>
+    /// <li>
+    /// <p>HSM certificate</p></li>
+    /// <li>
+    /// <p>Parameter group</p></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
@@ -34,15 +43,24 @@ impl TaggedResource {
     }
     /// <p>The type of resource with which the tag is associated. Valid resource types are:</p>
     /// <ul>
-    /// <li><p>Cluster</p></li>
-    /// <li><p>CIDR/IP</p></li>
-    /// <li><p>EC2 security group</p></li>
-    /// <li><p>Snapshot</p></li>
-    /// <li><p>Cluster security group</p></li>
-    /// <li><p>Subnet group</p></li>
-    /// <li><p>HSM connection</p></li>
-    /// <li><p>HSM certificate</p></li>
-    /// <li><p>Parameter group</p></li>
+    /// <li>
+    /// <p>Cluster</p></li>
+    /// <li>
+    /// <p>CIDR/IP</p></li>
+    /// <li>
+    /// <p>EC2 security group</p></li>
+    /// <li>
+    /// <p>Snapshot</p></li>
+    /// <li>
+    /// <p>Cluster security group</p></li>
+    /// <li>
+    /// <p>Subnet group</p></li>
+    /// <li>
+    /// <p>HSM connection</p></li>
+    /// <li>
+    /// <p>HSM certificate</p></li>
+    /// <li>
+    /// <p>Parameter group</p></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
@@ -95,15 +113,24 @@ impl TaggedResourceBuilder {
     }
     /// <p>The type of resource with which the tag is associated. Valid resource types are:</p>
     /// <ul>
-    /// <li><p>Cluster</p></li>
-    /// <li><p>CIDR/IP</p></li>
-    /// <li><p>EC2 security group</p></li>
-    /// <li><p>Snapshot</p></li>
-    /// <li><p>Cluster security group</p></li>
-    /// <li><p>Subnet group</p></li>
-    /// <li><p>HSM connection</p></li>
-    /// <li><p>HSM certificate</p></li>
-    /// <li><p>Parameter group</p></li>
+    /// <li>
+    /// <p>Cluster</p></li>
+    /// <li>
+    /// <p>CIDR/IP</p></li>
+    /// <li>
+    /// <p>EC2 security group</p></li>
+    /// <li>
+    /// <p>Snapshot</p></li>
+    /// <li>
+    /// <p>Cluster security group</p></li>
+    /// <li>
+    /// <p>Subnet group</p></li>
+    /// <li>
+    /// <p>HSM connection</p></li>
+    /// <li>
+    /// <p>HSM certificate</p></li>
+    /// <li>
+    /// <p>Parameter group</p></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,15 +139,24 @@ impl TaggedResourceBuilder {
     }
     /// <p>The type of resource with which the tag is associated. Valid resource types are:</p>
     /// <ul>
-    /// <li><p>Cluster</p></li>
-    /// <li><p>CIDR/IP</p></li>
-    /// <li><p>EC2 security group</p></li>
-    /// <li><p>Snapshot</p></li>
-    /// <li><p>Cluster security group</p></li>
-    /// <li><p>Subnet group</p></li>
-    /// <li><p>HSM connection</p></li>
-    /// <li><p>HSM certificate</p></li>
-    /// <li><p>Parameter group</p></li>
+    /// <li>
+    /// <p>Cluster</p></li>
+    /// <li>
+    /// <p>CIDR/IP</p></li>
+    /// <li>
+    /// <p>EC2 security group</p></li>
+    /// <li>
+    /// <p>Snapshot</p></li>
+    /// <li>
+    /// <p>Cluster security group</p></li>
+    /// <li>
+    /// <p>Subnet group</p></li>
+    /// <li>
+    /// <p>HSM connection</p></li>
+    /// <li>
+    /// <p>HSM certificate</p></li>
+    /// <li>
+    /// <p>Parameter group</p></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -129,15 +165,24 @@ impl TaggedResourceBuilder {
     }
     /// <p>The type of resource with which the tag is associated. Valid resource types are:</p>
     /// <ul>
-    /// <li><p>Cluster</p></li>
-    /// <li><p>CIDR/IP</p></li>
-    /// <li><p>EC2 security group</p></li>
-    /// <li><p>Snapshot</p></li>
-    /// <li><p>Cluster security group</p></li>
-    /// <li><p>Subnet group</p></li>
-    /// <li><p>HSM connection</p></li>
-    /// <li><p>HSM certificate</p></li>
-    /// <li><p>Parameter group</p></li>
+    /// <li>
+    /// <p>Cluster</p></li>
+    /// <li>
+    /// <p>CIDR/IP</p></li>
+    /// <li>
+    /// <p>EC2 security group</p></li>
+    /// <li>
+    /// <p>Snapshot</p></li>
+    /// <li>
+    /// <p>Cluster security group</p></li>
+    /// <li>
+    /// <p>Subnet group</p></li>
+    /// <li>
+    /// <p>HSM connection</p></li>
+    /// <li>
+    /// <p>HSM certificate</p></li>
+    /// <li>
+    /// <p>Parameter group</p></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {

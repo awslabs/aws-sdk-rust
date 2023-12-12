@@ -16,9 +16,12 @@ pub struct Cookies {
     /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li><p><code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     pub oversize_handling: crate::types::OversizeHandling,
 }
@@ -37,9 +40,12 @@ impl Cookies {
     /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li><p><code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     pub fn oversize_handling(&self) -> &crate::types::OversizeHandling {
         &self.oversize_handling
@@ -103,9 +109,12 @@ impl CookiesBuilder {
     /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li><p><code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     /// This field is required.
     pub fn oversize_handling(mut self, input: crate::types::OversizeHandling) -> Self {
@@ -115,9 +124,12 @@ impl CookiesBuilder {
     /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li><p><code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     pub fn set_oversize_handling(mut self, input: ::std::option::Option<crate::types::OversizeHandling>) -> Self {
         self.oversize_handling = input;
@@ -126,9 +138,12 @@ impl CookiesBuilder {
     /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li><p><code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     pub fn get_oversize_handling(&self) -> &::std::option::Option<crate::types::OversizeHandling> {
         &self.oversize_handling

@@ -22,7 +22,7 @@ impl DescribePhoneNumberInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribePhoneNumber`.
 ///
-/// <p>Gets details and status of a phone number that’s claimed to your Amazon Connect instance or traffic distribution group.</p> <important>
+/// <p>Gets details and status of a phone number that’s claimed to your Amazon Connect instance or traffic distribution group.</p><important>
 /// <p>If the number is claimed to a traffic distribution group, and you are calling in the Amazon Web Services Region where the traffic distribution group was created, you can use either a phone number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed to a traffic distribution group and you are calling this API in the alternate Amazon Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -6,46 +6,70 @@
 pub struct ExportMetric {
     /// <p>The metric to export, can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SEND</code> - Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>COMPLAINT</code> - Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p></li>
-    /// <li><p><code>PERMANENT_BOUNCE</code> - Permanent bounces - i.e., feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>TRANSIENT_BOUNCE</code> - Transient bounces - i.e., feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>OPEN</code> - Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>CLICK</code> - Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>DELIVERY</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>DELIVERY_OPEN</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p></li>
-    /// <li><p><code>DELIVERY_CLICK</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p></li>
-    /// <li><p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
+    /// <li>
+    /// <p><code>SEND</code> - Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>COMPLAINT</code> - Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p></li>
+    /// <li>
+    /// <p><code>PERMANENT_BOUNCE</code> - Permanent bounces - i.e., feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>TRANSIENT_BOUNCE</code> - Transient bounces - i.e., feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>OPEN</code> - Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>CLICK</code> - Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_OPEN</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_CLICK</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::Metric>,
     /// <p>The aggregation to apply to a metric, can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>VOLUME</code> - The volume of events for this metric.</p></li>
-    /// <li><p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
+    /// <li>
+    /// <p><code>VOLUME</code> - The volume of events for this metric.</p></li>
+    /// <li>
+    /// <p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
     /// </ul>
     pub aggregation: ::std::option::Option<crate::types::MetricAggregation>,
 }
 impl ExportMetric {
     /// <p>The metric to export, can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SEND</code> - Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>COMPLAINT</code> - Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p></li>
-    /// <li><p><code>PERMANENT_BOUNCE</code> - Permanent bounces - i.e., feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>TRANSIENT_BOUNCE</code> - Transient bounces - i.e., feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>OPEN</code> - Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>CLICK</code> - Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>DELIVERY</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>DELIVERY_OPEN</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p></li>
-    /// <li><p><code>DELIVERY_CLICK</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p></li>
-    /// <li><p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
+    /// <li>
+    /// <p><code>SEND</code> - Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>COMPLAINT</code> - Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p></li>
+    /// <li>
+    /// <p><code>PERMANENT_BOUNCE</code> - Permanent bounces - i.e., feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>TRANSIENT_BOUNCE</code> - Transient bounces - i.e., feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>OPEN</code> - Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>CLICK</code> - Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_OPEN</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_CLICK</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::Metric> {
         self.name.as_ref()
     }
     /// <p>The aggregation to apply to a metric, can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>VOLUME</code> - The volume of events for this metric.</p></li>
-    /// <li><p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
+    /// <li>
+    /// <p><code>VOLUME</code> - The volume of events for this metric.</p></li>
+    /// <li>
+    /// <p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
     /// </ul>
     pub fn aggregation(&self) -> ::std::option::Option<&crate::types::MetricAggregation> {
         self.aggregation.as_ref()
@@ -68,16 +92,26 @@ pub struct ExportMetricBuilder {
 impl ExportMetricBuilder {
     /// <p>The metric to export, can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SEND</code> - Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>COMPLAINT</code> - Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p></li>
-    /// <li><p><code>PERMANENT_BOUNCE</code> - Permanent bounces - i.e., feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>TRANSIENT_BOUNCE</code> - Transient bounces - i.e., feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>OPEN</code> - Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>CLICK</code> - Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>DELIVERY</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>DELIVERY_OPEN</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p></li>
-    /// <li><p><code>DELIVERY_CLICK</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p></li>
-    /// <li><p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
+    /// <li>
+    /// <p><code>SEND</code> - Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>COMPLAINT</code> - Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p></li>
+    /// <li>
+    /// <p><code>PERMANENT_BOUNCE</code> - Permanent bounces - i.e., feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>TRANSIENT_BOUNCE</code> - Transient bounces - i.e., feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>OPEN</code> - Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>CLICK</code> - Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_OPEN</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_CLICK</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
     /// </ul>
     pub fn name(mut self, input: crate::types::Metric) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -85,16 +119,26 @@ impl ExportMetricBuilder {
     }
     /// <p>The metric to export, can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SEND</code> - Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>COMPLAINT</code> - Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p></li>
-    /// <li><p><code>PERMANENT_BOUNCE</code> - Permanent bounces - i.e., feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>TRANSIENT_BOUNCE</code> - Transient bounces - i.e., feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>OPEN</code> - Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>CLICK</code> - Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>DELIVERY</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>DELIVERY_OPEN</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p></li>
-    /// <li><p><code>DELIVERY_CLICK</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p></li>
-    /// <li><p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
+    /// <li>
+    /// <p><code>SEND</code> - Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>COMPLAINT</code> - Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p></li>
+    /// <li>
+    /// <p><code>PERMANENT_BOUNCE</code> - Permanent bounces - i.e., feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>TRANSIENT_BOUNCE</code> - Transient bounces - i.e., feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>OPEN</code> - Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>CLICK</code> - Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_OPEN</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_CLICK</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::Metric>) -> Self {
         self.name = input;
@@ -102,24 +146,36 @@ impl ExportMetricBuilder {
     }
     /// <p>The metric to export, can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SEND</code> - Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>COMPLAINT</code> - Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p></li>
-    /// <li><p><code>PERMANENT_BOUNCE</code> - Permanent bounces - i.e., feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>TRANSIENT_BOUNCE</code> - Transient bounces - i.e., feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>OPEN</code> - Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>CLICK</code> - Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>DELIVERY</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p></li>
-    /// <li><p><code>DELIVERY_OPEN</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p></li>
-    /// <li><p><code>DELIVERY_CLICK</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p></li>
-    /// <li><p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
+    /// <li>
+    /// <p><code>SEND</code> - Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>COMPLAINT</code> - Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p></li>
+    /// <li>
+    /// <p><code>PERMANENT_BOUNCE</code> - Permanent bounces - i.e., feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>TRANSIENT_BOUNCE</code> - Transient bounces - i.e., feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>OPEN</code> - Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>CLICK</code> - Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_OPEN</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_CLICK</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p></li>
+    /// <li>
+    /// <p><code>DELIVERY_COMPLAINT</code> - Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::Metric> {
         &self.name
     }
     /// <p>The aggregation to apply to a metric, can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>VOLUME</code> - The volume of events for this metric.</p></li>
-    /// <li><p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
+    /// <li>
+    /// <p><code>VOLUME</code> - The volume of events for this metric.</p></li>
+    /// <li>
+    /// <p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
     /// </ul>
     pub fn aggregation(mut self, input: crate::types::MetricAggregation) -> Self {
         self.aggregation = ::std::option::Option::Some(input);
@@ -127,8 +183,10 @@ impl ExportMetricBuilder {
     }
     /// <p>The aggregation to apply to a metric, can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>VOLUME</code> - The volume of events for this metric.</p></li>
-    /// <li><p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
+    /// <li>
+    /// <p><code>VOLUME</code> - The volume of events for this metric.</p></li>
+    /// <li>
+    /// <p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
     /// </ul>
     pub fn set_aggregation(mut self, input: ::std::option::Option<crate::types::MetricAggregation>) -> Self {
         self.aggregation = input;
@@ -136,8 +194,10 @@ impl ExportMetricBuilder {
     }
     /// <p>The aggregation to apply to a metric, can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>VOLUME</code> - The volume of events for this metric.</p></li>
-    /// <li><p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
+    /// <li>
+    /// <p><code>VOLUME</code> - The volume of events for this metric.</p></li>
+    /// <li>
+    /// <p><code>RATE</code> - The rate for this metric relative to the <code>SEND</code> metric volume.</p></li>
     /// </ul>
     pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::MetricAggregation> {
         &self.aggregation

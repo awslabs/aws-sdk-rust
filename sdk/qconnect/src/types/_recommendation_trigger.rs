@@ -10,8 +10,10 @@ pub struct RecommendationTrigger {
     pub r#type: crate::types::RecommendationTriggerType,
     /// <p>The source of the recommendation trigger.</p>
     /// <ul>
-    /// <li><p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p></li>
-    /// <li><p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
+    /// <li>
+    /// <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p></li>
+    /// <li>
+    /// <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
     /// </ul>
     pub source: crate::types::RecommendationSourceType,
     /// <p>A union type containing information related to the trigger.</p>
@@ -31,8 +33,10 @@ impl RecommendationTrigger {
     }
     /// <p>The source of the recommendation trigger.</p>
     /// <ul>
-    /// <li><p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p></li>
-    /// <li><p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
+    /// <li>
+    /// <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p></li>
+    /// <li>
+    /// <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
     /// </ul>
     pub fn source(&self) -> &crate::types::RecommendationSourceType {
         &self.source
@@ -97,8 +101,10 @@ impl RecommendationTriggerBuilder {
     }
     /// <p>The source of the recommendation trigger.</p>
     /// <ul>
-    /// <li><p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p></li>
-    /// <li><p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
+    /// <li>
+    /// <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p></li>
+    /// <li>
+    /// <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
     /// </ul>
     /// This field is required.
     pub fn source(mut self, input: crate::types::RecommendationSourceType) -> Self {
@@ -107,8 +113,10 @@ impl RecommendationTriggerBuilder {
     }
     /// <p>The source of the recommendation trigger.</p>
     /// <ul>
-    /// <li><p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p></li>
-    /// <li><p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
+    /// <li>
+    /// <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p></li>
+    /// <li>
+    /// <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
     /// </ul>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::RecommendationSourceType>) -> Self {
         self.source = input;
@@ -116,8 +124,10 @@ impl RecommendationTriggerBuilder {
     }
     /// <p>The source of the recommendation trigger.</p>
     /// <ul>
-    /// <li><p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p></li>
-    /// <li><p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
+    /// <li>
+    /// <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p></li>
+    /// <li>
+    /// <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
     /// </ul>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::RecommendationSourceType> {
         &self.source

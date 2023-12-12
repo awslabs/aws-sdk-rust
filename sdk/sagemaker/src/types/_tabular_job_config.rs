@@ -11,7 +11,7 @@ pub struct TabularJobConfig {
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
     /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
-    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p> <note>
+    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p><note>
     /// <p>These column keys may not include the target column.</p>
     /// </note>
     /// <p>In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code>, and <code>sequence</code>.</p>
@@ -25,7 +25,7 @@ pub struct TabularJobConfig {
     pub mode: ::std::option::Option<crate::types::AutoMlMode>,
     /// <p>Generates possible candidates without training the models. A model candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
     pub generate_candidate_definitions_only: ::std::option::Option<bool>,
-    /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p> <note>
+    /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p><note>
     /// <p>You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a> metric, or none at all.</p>
     /// </note>
     pub problem_type: ::std::option::Option<crate::types::ProblemType>,
@@ -48,7 +48,7 @@ impl TabularJobConfig {
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
     /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
-    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p> <note>
+    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p><note>
     /// <p>These column keys may not include the target column.</p>
     /// </note>
     /// <p>In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code>, and <code>sequence</code>.</p>
@@ -68,7 +68,7 @@ impl TabularJobConfig {
     pub fn generate_candidate_definitions_only(&self) -> ::std::option::Option<bool> {
         self.generate_candidate_definitions_only
     }
-    /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p> <note>
+    /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p><note>
     /// <p>You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a> metric, or none at all.</p>
     /// </note>
     pub fn problem_type(&self) -> ::std::option::Option<&crate::types::ProblemType> {
@@ -137,7 +137,7 @@ impl TabularJobConfigBuilder {
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
     /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
-    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p> <note>
+    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p><note>
     /// <p>These column keys may not include the target column.</p>
     /// </note>
     /// <p>In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code>, and <code>sequence</code>.</p>
@@ -151,7 +151,7 @@ impl TabularJobConfigBuilder {
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
     /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
-    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p> <note>
+    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p><note>
     /// <p>These column keys may not include the target column.</p>
     /// </note>
     /// <p>In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code>, and <code>sequence</code>.</p>
@@ -165,7 +165,7 @@ impl TabularJobConfigBuilder {
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:</p>
     /// <p><code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
     /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
-    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p> <note>
+    /// <p><code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code></p><note>
     /// <p>These column keys may not include the target column.</p>
     /// </note>
     /// <p>In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode, Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>, <code>datetime</code>, and <code>sequence</code>.</p>
@@ -209,21 +209,21 @@ impl TabularJobConfigBuilder {
     pub fn get_generate_candidate_definitions_only(&self) -> &::std::option::Option<bool> {
         &self.generate_candidate_definitions_only
     }
-    /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p> <note>
+    /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p><note>
     /// <p>You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a> metric, or none at all.</p>
     /// </note>
     pub fn problem_type(mut self, input: crate::types::ProblemType) -> Self {
         self.problem_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p> <note>
+    /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p><note>
     /// <p>You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a> metric, or none at all.</p>
     /// </note>
     pub fn set_problem_type(mut self, input: ::std::option::Option<crate::types::ProblemType>) -> Self {
         self.problem_type = input;
         self
     }
-    /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p> <note>
+    /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p><note>
     /// <p>You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a> metric, or none at all.</p>
     /// </note>
     pub fn get_problem_type(&self) -> &::std::option::Option<crate::types::ProblemType> {

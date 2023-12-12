@@ -6,11 +6,16 @@
 pub struct OriginRequestPolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li><p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li><p><code>allViewer</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li><p><code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p></li>
-    /// <li><p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
+    /// <li>
+    /// <p><code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
+    /// <li>
+    /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>allViewer</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p></li>
+    /// <li>
+    /// <p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
     /// </ul>
     pub header_behavior: crate::types::OriginRequestPolicyHeaderBehavior,
     /// <p>Contains a list of HTTP header names.</p>
@@ -19,11 +24,16 @@ pub struct OriginRequestPolicyHeadersConfig {
 impl OriginRequestPolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li><p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li><p><code>allViewer</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li><p><code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p></li>
-    /// <li><p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
+    /// <li>
+    /// <p><code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
+    /// <li>
+    /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>allViewer</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p></li>
+    /// <li>
+    /// <p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
     /// </ul>
     pub fn header_behavior(&self) -> &crate::types::OriginRequestPolicyHeaderBehavior {
         &self.header_behavior
@@ -50,11 +60,16 @@ pub struct OriginRequestPolicyHeadersConfigBuilder {
 impl OriginRequestPolicyHeadersConfigBuilder {
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li><p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li><p><code>allViewer</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li><p><code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p></li>
-    /// <li><p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
+    /// <li>
+    /// <p><code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
+    /// <li>
+    /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>allViewer</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p></li>
+    /// <li>
+    /// <p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
     /// </ul>
     /// This field is required.
     pub fn header_behavior(mut self, input: crate::types::OriginRequestPolicyHeaderBehavior) -> Self {
@@ -63,11 +78,16 @@ impl OriginRequestPolicyHeadersConfigBuilder {
     }
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li><p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li><p><code>allViewer</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li><p><code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p></li>
-    /// <li><p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
+    /// <li>
+    /// <p><code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
+    /// <li>
+    /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>allViewer</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p></li>
+    /// <li>
+    /// <p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
     /// </ul>
     pub fn set_header_behavior(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior>) -> Self {
         self.header_behavior = input;
@@ -75,11 +95,16 @@ impl OriginRequestPolicyHeadersConfigBuilder {
     }
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li><p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li><p><code>allViewer</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
-    /// <li><p><code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p></li>
-    /// <li><p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
+    /// <li>
+    /// <p><code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.</p></li>
+    /// <li>
+    /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>allViewer</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p></li>
+    /// <li>
+    /// <p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
     /// </ul>
     pub fn get_header_behavior(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior> {
         &self.header_behavior

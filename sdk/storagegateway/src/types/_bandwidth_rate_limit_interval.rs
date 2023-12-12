@@ -10,13 +10,13 @@ pub struct BandwidthRateLimitInterval {
     pub start_minute_of_hour: i32,
     /// <p>The hour of the day to end the bandwidth rate limit interval.</p>
     pub end_hour_of_day: i32,
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p><important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
     pub end_minute_of_hour: i32,
     /// <p>The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
     pub days_of_week: ::std::vec::Vec<i32>,
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
     /// <p>For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.</p>
     /// <p>For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.</p>
     /// </note>
@@ -37,7 +37,7 @@ impl BandwidthRateLimitInterval {
     pub fn end_hour_of_day(&self) -> i32 {
         self.end_hour_of_day
     }
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p><important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
     pub fn end_minute_of_hour(&self) -> i32 {
@@ -48,7 +48,7 @@ impl BandwidthRateLimitInterval {
         use std::ops::Deref;
         self.days_of_week.deref()
     }
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
     /// <p>For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.</p>
     /// <p>For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.</p>
     /// </note>
@@ -125,7 +125,7 @@ impl BandwidthRateLimitIntervalBuilder {
     pub fn get_end_hour_of_day(&self) -> &::std::option::Option<i32> {
         &self.end_hour_of_day
     }
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p><important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
     /// This field is required.
@@ -133,14 +133,14 @@ impl BandwidthRateLimitIntervalBuilder {
         self.end_minute_of_hour = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p><important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
     pub fn set_end_minute_of_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_minute_of_hour = input;
         self
     }
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p><important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
     pub fn get_end_minute_of_hour(&self) -> &::std::option::Option<i32> {
@@ -166,7 +166,7 @@ impl BandwidthRateLimitIntervalBuilder {
     pub fn get_days_of_week(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.days_of_week
     }
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
     /// <p>For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.</p>
     /// <p>For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.</p>
     /// </note>
@@ -174,7 +174,7 @@ impl BandwidthRateLimitIntervalBuilder {
         self.average_upload_rate_limit_in_bits_per_sec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
     /// <p>For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.</p>
     /// <p>For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.</p>
     /// </note>
@@ -182,7 +182,7 @@ impl BandwidthRateLimitIntervalBuilder {
         self.average_upload_rate_limit_in_bits_per_sec = input;
         self
     }
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
     /// <p>For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.</p>
     /// <p>For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.</p>
     /// </note>

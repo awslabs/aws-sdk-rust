@@ -22,7 +22,7 @@ impl GetCommentsForComparedCommitInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCommentsForComparedCommit`.
 ///
-/// <p>Returns information about comments made on the comparison between two commits.</p> <note>
+/// <p>Returns information about comments made on the comparison between two commits.</p><note>
 /// <p>Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of reactions from active identities, use GetCommentReactions.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

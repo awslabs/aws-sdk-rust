@@ -10,20 +10,34 @@ pub struct WriteGetObjectResponseInput {
     pub body: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
     /// <ul>
-    /// <li><p><code>200 - OK</code></p></li>
-    /// <li><p><code>206 - Partial Content</code></p></li>
-    /// <li><p><code>304 - Not Modified</code></p></li>
-    /// <li><p><code>400 - Bad Request</code></p></li>
-    /// <li><p><code>401 - Unauthorized</code></p></li>
-    /// <li><p><code>403 - Forbidden</code></p></li>
-    /// <li><p><code>404 - Not Found</code></p></li>
-    /// <li><p><code>405 - Method Not Allowed</code></p></li>
-    /// <li><p><code>409 - Conflict</code></p></li>
-    /// <li><p><code>411 - Length Required</code></p></li>
-    /// <li><p><code>412 - Precondition Failed</code></p></li>
-    /// <li><p><code>416 - Range Not Satisfiable</code></p></li>
-    /// <li><p><code>500 - Internal Server Error</code></p></li>
-    /// <li><p><code>503 - Service Unavailable</code></p></li>
+    /// <li>
+    /// <p><code>200 - OK</code></p></li>
+    /// <li>
+    /// <p><code>206 - Partial Content</code></p></li>
+    /// <li>
+    /// <p><code>304 - Not Modified</code></p></li>
+    /// <li>
+    /// <p><code>400 - Bad Request</code></p></li>
+    /// <li>
+    /// <p><code>401 - Unauthorized</code></p></li>
+    /// <li>
+    /// <p><code>403 - Forbidden</code></p></li>
+    /// <li>
+    /// <p><code>404 - Not Found</code></p></li>
+    /// <li>
+    /// <p><code>405 - Method Not Allowed</code></p></li>
+    /// <li>
+    /// <p><code>409 - Conflict</code></p></li>
+    /// <li>
+    /// <p><code>411 - Length Required</code></p></li>
+    /// <li>
+    /// <p><code>412 - Precondition Failed</code></p></li>
+    /// <li>
+    /// <p><code>416 - Range Not Satisfiable</code></p></li>
+    /// <li>
+    /// <p><code>500 - Internal Server Error</code></p></li>
+    /// <li>
+    /// <p><code>503 - Service Unavailable</code></p></li>
     /// </ul>
     pub status_code: ::std::option::Option<i32>,
     /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. The regular expression (regex) value is <code>"^[A-Z][a-zA-Z]+$"</code>.</code></p>
@@ -87,7 +101,7 @@ pub struct WriteGetObjectResponseInput {
     pub parts_count: ::std::option::Option<i32>,
     /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
     pub replication_status: ::std::option::Option<crate::types::ReplicationStatus>,
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
@@ -126,20 +140,34 @@ impl WriteGetObjectResponseInput {
     }
     /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
     /// <ul>
-    /// <li><p><code>200 - OK</code></p></li>
-    /// <li><p><code>206 - Partial Content</code></p></li>
-    /// <li><p><code>304 - Not Modified</code></p></li>
-    /// <li><p><code>400 - Bad Request</code></p></li>
-    /// <li><p><code>401 - Unauthorized</code></p></li>
-    /// <li><p><code>403 - Forbidden</code></p></li>
-    /// <li><p><code>404 - Not Found</code></p></li>
-    /// <li><p><code>405 - Method Not Allowed</code></p></li>
-    /// <li><p><code>409 - Conflict</code></p></li>
-    /// <li><p><code>411 - Length Required</code></p></li>
-    /// <li><p><code>412 - Precondition Failed</code></p></li>
-    /// <li><p><code>416 - Range Not Satisfiable</code></p></li>
-    /// <li><p><code>500 - Internal Server Error</code></p></li>
-    /// <li><p><code>503 - Service Unavailable</code></p></li>
+    /// <li>
+    /// <p><code>200 - OK</code></p></li>
+    /// <li>
+    /// <p><code>206 - Partial Content</code></p></li>
+    /// <li>
+    /// <p><code>304 - Not Modified</code></p></li>
+    /// <li>
+    /// <p><code>400 - Bad Request</code></p></li>
+    /// <li>
+    /// <p><code>401 - Unauthorized</code></p></li>
+    /// <li>
+    /// <p><code>403 - Forbidden</code></p></li>
+    /// <li>
+    /// <p><code>404 - Not Found</code></p></li>
+    /// <li>
+    /// <p><code>405 - Method Not Allowed</code></p></li>
+    /// <li>
+    /// <p><code>409 - Conflict</code></p></li>
+    /// <li>
+    /// <p><code>411 - Length Required</code></p></li>
+    /// <li>
+    /// <p><code>412 - Precondition Failed</code></p></li>
+    /// <li>
+    /// <p><code>416 - Range Not Satisfiable</code></p></li>
+    /// <li>
+    /// <p><code>500 - Internal Server Error</code></p></li>
+    /// <li>
+    /// <p><code>503 - Service Unavailable</code></p></li>
     /// </ul>
     pub fn status_code(&self) -> ::std::option::Option<i32> {
         self.status_code
@@ -257,7 +285,7 @@ impl WriteGetObjectResponseInput {
     pub fn replication_status(&self) -> ::std::option::Option<&crate::types::ReplicationStatus> {
         self.replication_status.as_ref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
@@ -446,20 +474,34 @@ impl WriteGetObjectResponseInputBuilder {
     }
     /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
     /// <ul>
-    /// <li><p><code>200 - OK</code></p></li>
-    /// <li><p><code>206 - Partial Content</code></p></li>
-    /// <li><p><code>304 - Not Modified</code></p></li>
-    /// <li><p><code>400 - Bad Request</code></p></li>
-    /// <li><p><code>401 - Unauthorized</code></p></li>
-    /// <li><p><code>403 - Forbidden</code></p></li>
-    /// <li><p><code>404 - Not Found</code></p></li>
-    /// <li><p><code>405 - Method Not Allowed</code></p></li>
-    /// <li><p><code>409 - Conflict</code></p></li>
-    /// <li><p><code>411 - Length Required</code></p></li>
-    /// <li><p><code>412 - Precondition Failed</code></p></li>
-    /// <li><p><code>416 - Range Not Satisfiable</code></p></li>
-    /// <li><p><code>500 - Internal Server Error</code></p></li>
-    /// <li><p><code>503 - Service Unavailable</code></p></li>
+    /// <li>
+    /// <p><code>200 - OK</code></p></li>
+    /// <li>
+    /// <p><code>206 - Partial Content</code></p></li>
+    /// <li>
+    /// <p><code>304 - Not Modified</code></p></li>
+    /// <li>
+    /// <p><code>400 - Bad Request</code></p></li>
+    /// <li>
+    /// <p><code>401 - Unauthorized</code></p></li>
+    /// <li>
+    /// <p><code>403 - Forbidden</code></p></li>
+    /// <li>
+    /// <p><code>404 - Not Found</code></p></li>
+    /// <li>
+    /// <p><code>405 - Method Not Allowed</code></p></li>
+    /// <li>
+    /// <p><code>409 - Conflict</code></p></li>
+    /// <li>
+    /// <p><code>411 - Length Required</code></p></li>
+    /// <li>
+    /// <p><code>412 - Precondition Failed</code></p></li>
+    /// <li>
+    /// <p><code>416 - Range Not Satisfiable</code></p></li>
+    /// <li>
+    /// <p><code>500 - Internal Server Error</code></p></li>
+    /// <li>
+    /// <p><code>503 - Service Unavailable</code></p></li>
     /// </ul>
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -467,20 +509,34 @@ impl WriteGetObjectResponseInputBuilder {
     }
     /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
     /// <ul>
-    /// <li><p><code>200 - OK</code></p></li>
-    /// <li><p><code>206 - Partial Content</code></p></li>
-    /// <li><p><code>304 - Not Modified</code></p></li>
-    /// <li><p><code>400 - Bad Request</code></p></li>
-    /// <li><p><code>401 - Unauthorized</code></p></li>
-    /// <li><p><code>403 - Forbidden</code></p></li>
-    /// <li><p><code>404 - Not Found</code></p></li>
-    /// <li><p><code>405 - Method Not Allowed</code></p></li>
-    /// <li><p><code>409 - Conflict</code></p></li>
-    /// <li><p><code>411 - Length Required</code></p></li>
-    /// <li><p><code>412 - Precondition Failed</code></p></li>
-    /// <li><p><code>416 - Range Not Satisfiable</code></p></li>
-    /// <li><p><code>500 - Internal Server Error</code></p></li>
-    /// <li><p><code>503 - Service Unavailable</code></p></li>
+    /// <li>
+    /// <p><code>200 - OK</code></p></li>
+    /// <li>
+    /// <p><code>206 - Partial Content</code></p></li>
+    /// <li>
+    /// <p><code>304 - Not Modified</code></p></li>
+    /// <li>
+    /// <p><code>400 - Bad Request</code></p></li>
+    /// <li>
+    /// <p><code>401 - Unauthorized</code></p></li>
+    /// <li>
+    /// <p><code>403 - Forbidden</code></p></li>
+    /// <li>
+    /// <p><code>404 - Not Found</code></p></li>
+    /// <li>
+    /// <p><code>405 - Method Not Allowed</code></p></li>
+    /// <li>
+    /// <p><code>409 - Conflict</code></p></li>
+    /// <li>
+    /// <p><code>411 - Length Required</code></p></li>
+    /// <li>
+    /// <p><code>412 - Precondition Failed</code></p></li>
+    /// <li>
+    /// <p><code>416 - Range Not Satisfiable</code></p></li>
+    /// <li>
+    /// <p><code>500 - Internal Server Error</code></p></li>
+    /// <li>
+    /// <p><code>503 - Service Unavailable</code></p></li>
     /// </ul>
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status_code = input;
@@ -488,20 +544,34 @@ impl WriteGetObjectResponseInputBuilder {
     }
     /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
     /// <ul>
-    /// <li><p><code>200 - OK</code></p></li>
-    /// <li><p><code>206 - Partial Content</code></p></li>
-    /// <li><p><code>304 - Not Modified</code></p></li>
-    /// <li><p><code>400 - Bad Request</code></p></li>
-    /// <li><p><code>401 - Unauthorized</code></p></li>
-    /// <li><p><code>403 - Forbidden</code></p></li>
-    /// <li><p><code>404 - Not Found</code></p></li>
-    /// <li><p><code>405 - Method Not Allowed</code></p></li>
-    /// <li><p><code>409 - Conflict</code></p></li>
-    /// <li><p><code>411 - Length Required</code></p></li>
-    /// <li><p><code>412 - Precondition Failed</code></p></li>
-    /// <li><p><code>416 - Range Not Satisfiable</code></p></li>
-    /// <li><p><code>500 - Internal Server Error</code></p></li>
-    /// <li><p><code>503 - Service Unavailable</code></p></li>
+    /// <li>
+    /// <p><code>200 - OK</code></p></li>
+    /// <li>
+    /// <p><code>206 - Partial Content</code></p></li>
+    /// <li>
+    /// <p><code>304 - Not Modified</code></p></li>
+    /// <li>
+    /// <p><code>400 - Bad Request</code></p></li>
+    /// <li>
+    /// <p><code>401 - Unauthorized</code></p></li>
+    /// <li>
+    /// <p><code>403 - Forbidden</code></p></li>
+    /// <li>
+    /// <p><code>404 - Not Found</code></p></li>
+    /// <li>
+    /// <p><code>405 - Method Not Allowed</code></p></li>
+    /// <li>
+    /// <p><code>409 - Conflict</code></p></li>
+    /// <li>
+    /// <p><code>411 - Length Required</code></p></li>
+    /// <li>
+    /// <p><code>412 - Precondition Failed</code></p></li>
+    /// <li>
+    /// <p><code>416 - Range Not Satisfiable</code></p></li>
+    /// <li>
+    /// <p><code>500 - Internal Server Error</code></p></li>
+    /// <li>
+    /// <p><code>503 - Service Unavailable</code></p></li>
     /// </ul>
     pub fn get_status_code(&self) -> &::std::option::Option<i32> {
         &self.status_code
@@ -903,21 +973,21 @@ impl WriteGetObjectResponseInputBuilder {
     pub fn get_replication_status(&self) -> &::std::option::Option<crate::types::ReplicationStatus> {
         &self.replication_status
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {

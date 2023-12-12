@@ -19,8 +19,10 @@ pub struct ExportTableToPointInTimeInput {
     pub s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
-    /// <li><p><code>AES256</code> - server-side encryption with Amazon S3 managed keys</p></li>
-    /// <li><p><code>KMS</code> - server-side encryption with KMS managed keys</p></li>
+    /// <li>
+    /// <p><code>AES256</code> - server-side encryption with Amazon S3 managed keys</p></li>
+    /// <li>
+    /// <p><code>KMS</code> - server-side encryption with KMS managed keys</p></li>
     /// </ul>
     pub s3_sse_algorithm: ::std::option::Option<crate::types::S3SseAlgorithm>,
     /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
@@ -61,8 +63,10 @@ impl ExportTableToPointInTimeInput {
     }
     /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
-    /// <li><p><code>AES256</code> - server-side encryption with Amazon S3 managed keys</p></li>
-    /// <li><p><code>KMS</code> - server-side encryption with KMS managed keys</p></li>
+    /// <li>
+    /// <p><code>AES256</code> - server-side encryption with Amazon S3 managed keys</p></li>
+    /// <li>
+    /// <p><code>KMS</code> - server-side encryption with KMS managed keys</p></li>
     /// </ul>
     pub fn s3_sse_algorithm(&self) -> ::std::option::Option<&crate::types::S3SseAlgorithm> {
         self.s3_sse_algorithm.as_ref()
@@ -202,8 +206,10 @@ impl ExportTableToPointInTimeInputBuilder {
     }
     /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
-    /// <li><p><code>AES256</code> - server-side encryption with Amazon S3 managed keys</p></li>
-    /// <li><p><code>KMS</code> - server-side encryption with KMS managed keys</p></li>
+    /// <li>
+    /// <p><code>AES256</code> - server-side encryption with Amazon S3 managed keys</p></li>
+    /// <li>
+    /// <p><code>KMS</code> - server-side encryption with KMS managed keys</p></li>
     /// </ul>
     pub fn s3_sse_algorithm(mut self, input: crate::types::S3SseAlgorithm) -> Self {
         self.s3_sse_algorithm = ::std::option::Option::Some(input);
@@ -211,8 +217,10 @@ impl ExportTableToPointInTimeInputBuilder {
     }
     /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
-    /// <li><p><code>AES256</code> - server-side encryption with Amazon S3 managed keys</p></li>
-    /// <li><p><code>KMS</code> - server-side encryption with KMS managed keys</p></li>
+    /// <li>
+    /// <p><code>AES256</code> - server-side encryption with Amazon S3 managed keys</p></li>
+    /// <li>
+    /// <p><code>KMS</code> - server-side encryption with KMS managed keys</p></li>
     /// </ul>
     pub fn set_s3_sse_algorithm(mut self, input: ::std::option::Option<crate::types::S3SseAlgorithm>) -> Self {
         self.s3_sse_algorithm = input;
@@ -220,8 +228,10 @@ impl ExportTableToPointInTimeInputBuilder {
     }
     /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
-    /// <li><p><code>AES256</code> - server-side encryption with Amazon S3 managed keys</p></li>
-    /// <li><p><code>KMS</code> - server-side encryption with KMS managed keys</p></li>
+    /// <li>
+    /// <p><code>AES256</code> - server-side encryption with Amazon S3 managed keys</p></li>
+    /// <li>
+    /// <p><code>KMS</code> - server-side encryption with KMS managed keys</p></li>
     /// </ul>
     pub fn get_s3_sse_algorithm(&self) -> &::std::option::Option<crate::types::S3SseAlgorithm> {
         &self.s3_sse_algorithm

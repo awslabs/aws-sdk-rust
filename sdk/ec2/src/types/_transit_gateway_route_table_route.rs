@@ -10,8 +10,10 @@ pub struct TransitGatewayRouteTableRoute {
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The route origin. The following are the possible values:</p>
     /// <ul>
-    /// <li><p>static</p></li>
-    /// <li><p>propagated</p></li>
+    /// <li>
+    /// <p>static</p></li>
+    /// <li>
+    /// <p>propagated</p></li>
     /// </ul>
     pub route_origin: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list.</p>
@@ -34,8 +36,10 @@ impl TransitGatewayRouteTableRoute {
     }
     /// <p>The route origin. The following are the possible values:</p>
     /// <ul>
-    /// <li><p>static</p></li>
-    /// <li><p>propagated</p></li>
+    /// <li>
+    /// <p>static</p></li>
+    /// <li>
+    /// <p>propagated</p></li>
     /// </ul>
     pub fn route_origin(&self) -> ::std::option::Option<&str> {
         self.route_origin.as_deref()
@@ -107,8 +111,10 @@ impl TransitGatewayRouteTableRouteBuilder {
     }
     /// <p>The route origin. The following are the possible values:</p>
     /// <ul>
-    /// <li><p>static</p></li>
-    /// <li><p>propagated</p></li>
+    /// <li>
+    /// <p>static</p></li>
+    /// <li>
+    /// <p>propagated</p></li>
     /// </ul>
     pub fn route_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_origin = ::std::option::Option::Some(input.into());
@@ -116,8 +122,10 @@ impl TransitGatewayRouteTableRouteBuilder {
     }
     /// <p>The route origin. The following are the possible values:</p>
     /// <ul>
-    /// <li><p>static</p></li>
-    /// <li><p>propagated</p></li>
+    /// <li>
+    /// <p>static</p></li>
+    /// <li>
+    /// <p>propagated</p></li>
     /// </ul>
     pub fn set_route_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_origin = input;
@@ -125,8 +133,10 @@ impl TransitGatewayRouteTableRouteBuilder {
     }
     /// <p>The route origin. The following are the possible values:</p>
     /// <ul>
-    /// <li><p>static</p></li>
-    /// <li><p>propagated</p></li>
+    /// <li>
+    /// <p>static</p></li>
+    /// <li>
+    /// <p>propagated</p></li>
     /// </ul>
     pub fn get_route_origin(&self) -> &::std::option::Option<::std::string::String> {
         &self.route_origin

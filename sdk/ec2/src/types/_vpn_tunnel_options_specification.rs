@@ -7,13 +7,20 @@ pub struct VpnTunnelOptionsSpecification {
     /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway.</p>
     /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and cannot be used:</p>
     /// <ul>
-    /// <li><p><code>169.254.0.0/30</code></p></li>
-    /// <li><p><code>169.254.1.0/30</code></p></li>
-    /// <li><p><code>169.254.2.0/30</code></p></li>
-    /// <li><p><code>169.254.3.0/30</code></p></li>
-    /// <li><p><code>169.254.4.0/30</code></p></li>
-    /// <li><p><code>169.254.5.0/30</code></p></li>
-    /// <li><p><code>169.254.169.252/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.0.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.1.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.2.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.3.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.4.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.5.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.169.252/30</code></p></li>
     /// </ul>
     pub tunnel_inside_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same transit gateway.</p>
@@ -84,13 +91,20 @@ impl VpnTunnelOptionsSpecification {
     /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway.</p>
     /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and cannot be used:</p>
     /// <ul>
-    /// <li><p><code>169.254.0.0/30</code></p></li>
-    /// <li><p><code>169.254.1.0/30</code></p></li>
-    /// <li><p><code>169.254.2.0/30</code></p></li>
-    /// <li><p><code>169.254.3.0/30</code></p></li>
-    /// <li><p><code>169.254.4.0/30</code></p></li>
-    /// <li><p><code>169.254.5.0/30</code></p></li>
-    /// <li><p><code>169.254.169.252/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.0.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.1.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.2.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.3.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.4.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.5.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.169.252/30</code></p></li>
     /// </ul>
     pub fn tunnel_inside_cidr(&self) -> ::std::option::Option<&str> {
         self.tunnel_inside_cidr.as_deref()
@@ -273,13 +287,20 @@ impl VpnTunnelOptionsSpecificationBuilder {
     /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway.</p>
     /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and cannot be used:</p>
     /// <ul>
-    /// <li><p><code>169.254.0.0/30</code></p></li>
-    /// <li><p><code>169.254.1.0/30</code></p></li>
-    /// <li><p><code>169.254.2.0/30</code></p></li>
-    /// <li><p><code>169.254.3.0/30</code></p></li>
-    /// <li><p><code>169.254.4.0/30</code></p></li>
-    /// <li><p><code>169.254.5.0/30</code></p></li>
-    /// <li><p><code>169.254.169.252/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.0.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.1.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.2.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.3.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.4.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.5.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.169.252/30</code></p></li>
     /// </ul>
     pub fn tunnel_inside_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tunnel_inside_cidr = ::std::option::Option::Some(input.into());
@@ -288,13 +309,20 @@ impl VpnTunnelOptionsSpecificationBuilder {
     /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway.</p>
     /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and cannot be used:</p>
     /// <ul>
-    /// <li><p><code>169.254.0.0/30</code></p></li>
-    /// <li><p><code>169.254.1.0/30</code></p></li>
-    /// <li><p><code>169.254.2.0/30</code></p></li>
-    /// <li><p><code>169.254.3.0/30</code></p></li>
-    /// <li><p><code>169.254.4.0/30</code></p></li>
-    /// <li><p><code>169.254.5.0/30</code></p></li>
-    /// <li><p><code>169.254.169.252/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.0.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.1.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.2.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.3.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.4.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.5.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.169.252/30</code></p></li>
     /// </ul>
     pub fn set_tunnel_inside_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tunnel_inside_cidr = input;
@@ -303,13 +331,20 @@ impl VpnTunnelOptionsSpecificationBuilder {
     /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway.</p>
     /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and cannot be used:</p>
     /// <ul>
-    /// <li><p><code>169.254.0.0/30</code></p></li>
-    /// <li><p><code>169.254.1.0/30</code></p></li>
-    /// <li><p><code>169.254.2.0/30</code></p></li>
-    /// <li><p><code>169.254.3.0/30</code></p></li>
-    /// <li><p><code>169.254.4.0/30</code></p></li>
-    /// <li><p><code>169.254.5.0/30</code></p></li>
-    /// <li><p><code>169.254.169.252/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.0.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.1.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.2.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.3.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.4.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.5.0/30</code></p></li>
+    /// <li>
+    /// <p><code>169.254.169.252/30</code></p></li>
     /// </ul>
     pub fn get_tunnel_inside_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.tunnel_inside_cidr

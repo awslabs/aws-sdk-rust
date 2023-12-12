@@ -6,12 +6,18 @@
 pub struct JourneyRunExecutionActivityMetricsResponse {
     /// <p>The type of activity that the metric applies to. Possible values are:</p>
     /// <ul>
-    /// <li><p>CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li>
-    /// <li><p>HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li>
-    /// <li><p>MESSAGE – For an email activity, which is an activity that sends an email message to participants.</p></li>
-    /// <li><p>MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li>
-    /// <li><p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
-    /// <li><p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
+    /// <li>
+    /// <p>CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li>
+    /// <li>
+    /// <p>HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li>
+    /// <li>
+    /// <p>MESSAGE – For an email activity, which is an activity that sends an email message to participants.</p></li>
+    /// <li>
+    /// <p>MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li>
+    /// <li>
+    /// <p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
+    /// <li>
+    /// <p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
     /// </ul>
     pub activity_type: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the application that the metric applies to.</p>
@@ -30,12 +36,18 @@ pub struct JourneyRunExecutionActivityMetricsResponse {
 impl JourneyRunExecutionActivityMetricsResponse {
     /// <p>The type of activity that the metric applies to. Possible values are:</p>
     /// <ul>
-    /// <li><p>CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li>
-    /// <li><p>HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li>
-    /// <li><p>MESSAGE – For an email activity, which is an activity that sends an email message to participants.</p></li>
-    /// <li><p>MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li>
-    /// <li><p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
-    /// <li><p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
+    /// <li>
+    /// <p>CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li>
+    /// <li>
+    /// <p>HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li>
+    /// <li>
+    /// <p>MESSAGE – For an email activity, which is an activity that sends an email message to participants.</p></li>
+    /// <li>
+    /// <p>MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li>
+    /// <li>
+    /// <p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
+    /// <li>
+    /// <p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
     /// </ul>
     pub fn activity_type(&self) -> ::std::option::Option<&str> {
         self.activity_type.as_deref()
@@ -87,12 +99,18 @@ pub struct JourneyRunExecutionActivityMetricsResponseBuilder {
 impl JourneyRunExecutionActivityMetricsResponseBuilder {
     /// <p>The type of activity that the metric applies to. Possible values are:</p>
     /// <ul>
-    /// <li><p>CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li>
-    /// <li><p>HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li>
-    /// <li><p>MESSAGE – For an email activity, which is an activity that sends an email message to participants.</p></li>
-    /// <li><p>MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li>
-    /// <li><p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
-    /// <li><p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
+    /// <li>
+    /// <p>CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li>
+    /// <li>
+    /// <p>HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li>
+    /// <li>
+    /// <p>MESSAGE – For an email activity, which is an activity that sends an email message to participants.</p></li>
+    /// <li>
+    /// <p>MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li>
+    /// <li>
+    /// <p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
+    /// <li>
+    /// <p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
     /// </ul>
     /// This field is required.
     pub fn activity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,12 +119,18 @@ impl JourneyRunExecutionActivityMetricsResponseBuilder {
     }
     /// <p>The type of activity that the metric applies to. Possible values are:</p>
     /// <ul>
-    /// <li><p>CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li>
-    /// <li><p>HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li>
-    /// <li><p>MESSAGE – For an email activity, which is an activity that sends an email message to participants.</p></li>
-    /// <li><p>MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li>
-    /// <li><p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
-    /// <li><p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
+    /// <li>
+    /// <p>CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li>
+    /// <li>
+    /// <p>HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li>
+    /// <li>
+    /// <p>MESSAGE – For an email activity, which is an activity that sends an email message to participants.</p></li>
+    /// <li>
+    /// <p>MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li>
+    /// <li>
+    /// <p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
+    /// <li>
+    /// <p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
     /// </ul>
     pub fn set_activity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.activity_type = input;
@@ -114,12 +138,18 @@ impl JourneyRunExecutionActivityMetricsResponseBuilder {
     }
     /// <p>The type of activity that the metric applies to. Possible values are:</p>
     /// <ul>
-    /// <li><p>CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li>
-    /// <li><p>HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li>
-    /// <li><p>MESSAGE – For an email activity, which is an activity that sends an email message to participants.</p></li>
-    /// <li><p>MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li>
-    /// <li><p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
-    /// <li><p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
+    /// <li>
+    /// <p>CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li>
+    /// <li>
+    /// <p>HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li>
+    /// <li>
+    /// <p>MESSAGE – For an email activity, which is an activity that sends an email message to participants.</p></li>
+    /// <li>
+    /// <p>MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li>
+    /// <li>
+    /// <p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
+    /// <li>
+    /// <p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
     /// </ul>
     pub fn get_activity_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.activity_type

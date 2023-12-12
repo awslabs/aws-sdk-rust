@@ -19,11 +19,16 @@ pub struct Proposal {
     pub proposed_by_member_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p></li>
-    /// <li><p><code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p></li>
-    /// <li><p><code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p></li>
-    /// <li><p><code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p></li>
-    /// <li><p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p></li>
+    /// <li>
+    /// <p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ProposalStatus>,
     /// <p>The date and time that the proposal was created.</p>
@@ -69,11 +74,16 @@ impl Proposal {
     }
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p></li>
-    /// <li><p><code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p></li>
-    /// <li><p><code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p></li>
-    /// <li><p><code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p></li>
-    /// <li><p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p></li>
+    /// <li>
+    /// <p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ProposalStatus> {
         self.status.as_ref()
@@ -221,11 +231,16 @@ impl ProposalBuilder {
     }
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p></li>
-    /// <li><p><code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p></li>
-    /// <li><p><code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p></li>
-    /// <li><p><code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p></li>
-    /// <li><p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p></li>
+    /// <li>
+    /// <p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ProposalStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -233,11 +248,16 @@ impl ProposalBuilder {
     }
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p></li>
-    /// <li><p><code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p></li>
-    /// <li><p><code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p></li>
-    /// <li><p><code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p></li>
-    /// <li><p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p></li>
+    /// <li>
+    /// <p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProposalStatus>) -> Self {
         self.status = input;
@@ -245,11 +265,16 @@ impl ProposalBuilder {
     }
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p></li>
-    /// <li><p><code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p></li>
-    /// <li><p><code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p></li>
-    /// <li><p><code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p></li>
-    /// <li><p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified proposal actions are carried out.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code> votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>. The specified <code>ProposalActions</code> aren't carried out.</p></li>
+    /// <li>
+    /// <p><code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p></li>
+    /// <li>
+    /// <p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProposalStatus> {
         &self.status

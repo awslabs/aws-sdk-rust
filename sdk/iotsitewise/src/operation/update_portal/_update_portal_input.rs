@@ -13,8 +13,10 @@ pub struct UpdatePortalInput {
     pub portal_contact_email: ::std::option::Option<::std::string::String>,
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
-    /// <li><p>An image file. Choose this option to upload a new image.</p></li>
-    /// <li><p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
+    /// <li>
+    /// <p>An image file. Choose this option to upload a new image.</p></li>
+    /// <li>
+    /// <p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
     /// </ul>
     pub portal_logo_image: ::std::option::Option<crate::types::Image>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -45,8 +47,10 @@ impl UpdatePortalInput {
     }
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
-    /// <li><p>An image file. Choose this option to upload a new image.</p></li>
-    /// <li><p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
+    /// <li>
+    /// <p>An image file. Choose this option to upload a new image.</p></li>
+    /// <li>
+    /// <p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
     /// </ul>
     pub fn portal_logo_image(&self) -> ::std::option::Option<&crate::types::Image> {
         self.portal_logo_image.as_ref()
@@ -151,8 +155,10 @@ impl UpdatePortalInputBuilder {
     }
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
-    /// <li><p>An image file. Choose this option to upload a new image.</p></li>
-    /// <li><p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
+    /// <li>
+    /// <p>An image file. Choose this option to upload a new image.</p></li>
+    /// <li>
+    /// <p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
     /// </ul>
     pub fn portal_logo_image(mut self, input: crate::types::Image) -> Self {
         self.portal_logo_image = ::std::option::Option::Some(input);
@@ -160,8 +166,10 @@ impl UpdatePortalInputBuilder {
     }
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
-    /// <li><p>An image file. Choose this option to upload a new image.</p></li>
-    /// <li><p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
+    /// <li>
+    /// <p>An image file. Choose this option to upload a new image.</p></li>
+    /// <li>
+    /// <p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
     /// </ul>
     pub fn set_portal_logo_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.portal_logo_image = input;
@@ -169,8 +177,10 @@ impl UpdatePortalInputBuilder {
     }
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
-    /// <li><p>An image file. Choose this option to upload a new image.</p></li>
-    /// <li><p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
+    /// <li>
+    /// <p>An image file. Choose this option to upload a new image.</p></li>
+    /// <li>
+    /// <p>The ID of an existing image. Choose this option to keep an existing image.</p></li>
     /// </ul>
     pub fn get_portal_logo_image(&self) -> &::std::option::Option<crate::types::Image> {
         &self.portal_logo_image

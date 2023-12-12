@@ -30,9 +30,12 @@ impl DeleteSqlInjectionMatchSetInputBuilder {
 /// <p>If you just want to remove a <code>SqlInjectionMatchSet</code> from a <code>Rule</code>, use <code>UpdateRule</code>.</p>
 /// <p>To permanently delete a <code>SqlInjectionMatchSet</code> from AWS WAF, perform the following steps:</p>
 /// <ol>
-/// <li><p>Update the <code>SqlInjectionMatchSet</code> to remove filters, if any. For more information, see <code>UpdateSqlInjectionMatchSet</code>.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteSqlInjectionMatchSet</code> request.</p></li>
-/// <li><p>Submit a <code>DeleteSqlInjectionMatchSet</code> request.</p></li>
+/// <li>
+/// <p>Update the <code>SqlInjectionMatchSet</code> to remove filters, if any. For more information, see <code>UpdateSqlInjectionMatchSet</code>.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteSqlInjectionMatchSet</code> request.</p></li>
+/// <li>
+/// <p>Submit a <code>DeleteSqlInjectionMatchSet</code> request.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSqlInjectionMatchSetFluentBuilder {

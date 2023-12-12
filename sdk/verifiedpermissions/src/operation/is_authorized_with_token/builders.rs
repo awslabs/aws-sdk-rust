@@ -22,12 +22,12 @@ impl IsAuthorizedWithTokenInputBuilder {
 }
 /// Fluent builder constructing a request to `IsAuthorizedWithToken`.
 ///
-/// <p>Makes an authorization decision about a service request described in the parameters. The principal in this request comes from an external identity source in the form of an identity token formatted as a <a href="https://wikipedia.org/wiki/JSON_Web_Token">JSON web token (JWT)</a>. The information in the parameters can also define additional context that Verified Permissions can include in the evaluation. The request is evaluated against all matching policies in the specified policy store. The result of the decision is either <code>Allow</code> or <code>Deny</code>, along with a list of the policies that resulted in the decision.</p> <important>
+/// <p>Makes an authorization decision about a service request described in the parameters. The principal in this request comes from an external identity source in the form of an identity token formatted as a <a href="https://wikipedia.org/wiki/JSON_Web_Token">JSON web token (JWT)</a>. The information in the parameters can also define additional context that Verified Permissions can include in the evaluation. The request is evaluated against all matching policies in the specified policy store. The result of the decision is either <code>Allow</code> or <code>Deny</code>, along with a list of the policies that resulted in the decision.</p><important>
 /// <p>If you specify the <code>identityToken</code> parameter, then this operation derives the principal from that token. You must not also include that principal in the <code>entities</code> parameter or the operation fails and reports a conflict between the two entity sources.</p>
 /// <p>If you provide only an <code>accessToken</code>, then you can include the entity as part of the <code>entities</code> parameter to provide additional attributes.</p>
 /// </important>
 /// <p>At this time, Verified Permissions accepts tokens from only Amazon Cognito.</p>
-/// <p>Verified Permissions validates each token that is specified in a request by checking its expiration date and its signature.</p> <important>
+/// <p>Verified Permissions validates each token that is specified in a request by checking its expiration date and its signature.</p><important>
 /// <p>If you delete a Amazon Cognito user pool or user, tokens from that deleted pool or that deleted user continue to be usable until they expire.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -199,33 +199,39 @@ impl IsAuthorizedWithTokenFluentBuilder {
     pub fn get_context(&self) -> &::std::option::Option<crate::types::ContextDefinition> {
         self.inner.get_context()
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p> <note>
+    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><note>
     /// <p>You can include only resource and action entities in this parameter; you can't include principals.</p>
     /// <ul>
-    /// <li><p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
-    /// <li><p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
+    /// <li>
+    /// <p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
+    /// <li>
+    /// <p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn entities(mut self, input: crate::types::EntitiesDefinition) -> Self {
         self.inner = self.inner.entities(input);
         self
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p> <note>
+    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><note>
     /// <p>You can include only resource and action entities in this parameter; you can't include principals.</p>
     /// <ul>
-    /// <li><p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
-    /// <li><p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
+    /// <li>
+    /// <p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
+    /// <li>
+    /// <p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn set_entities(mut self, input: ::std::option::Option<crate::types::EntitiesDefinition>) -> Self {
         self.inner = self.inner.set_entities(input);
         self
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p> <note>
+    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><note>
     /// <p>You can include only resource and action entities in this parameter; you can't include principals.</p>
     /// <ul>
-    /// <li><p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
-    /// <li><p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
+    /// <li>
+    /// <p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
+    /// <li>
+    /// <p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn get_entities(&self) -> &::std::option::Option<crate::types::EntitiesDefinition> {

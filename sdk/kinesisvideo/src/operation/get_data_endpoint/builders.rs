@@ -22,7 +22,7 @@ impl GetDataEndpointInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDataEndpoint`.
 ///
-/// <p>Gets an endpoint for a specified stream for either reading or writing. Use this endpoint in your application to read from the specified stream (using the <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or write to it (using the <code>PutMedia</code> operation).</p> <note>
+/// <p>Gets an endpoint for a specified stream for either reading or writing. Use this endpoint in your application to read from the specified stream (using the <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or write to it (using the <code>PutMedia</code> operation).</p><note>
 /// <p>The returned endpoint does not have the API name appended. The client needs to add the API name to the returned endpoint.</p>
 /// </note>
 /// <p>In the request, specify the stream either by <code>StreamName</code> or <code>StreamARN</code>.</p>

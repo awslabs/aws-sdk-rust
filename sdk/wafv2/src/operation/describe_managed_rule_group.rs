@@ -256,10 +256,14 @@ pub enum DescribeManagedRuleGroupError {
     WafInvalidOperationException(crate::types::error::WafInvalidOperationException),
     /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li><p>You specified a parameter name or value that isn't valid.</p></li>
-    /// <li><p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.</p></li>
-    /// <li><p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p></li>
-    /// <li><p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p></li>
+    /// <li>
+    /// <p>You specified a parameter name or value that isn't valid.</p></li>
+    /// <li>
+    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.</p></li>
+    /// <li>
+    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p></li>
+    /// <li>
+    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p></li>
     /// </ul>
     WafInvalidParameterException(crate::types::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>

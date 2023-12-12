@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCommitsInput {
-    /// <p>The full commit IDs of the commits to get information about.</p> <note>
+    /// <p>The full commit IDs of the commits to get information about.</p><note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
     pub commit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -11,7 +11,7 @@ pub struct BatchGetCommitsInput {
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetCommitsInput {
-    /// <p>The full commit IDs of the commits to get information about.</p> <note>
+    /// <p>The full commit IDs of the commits to get information about.</p><note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
     ///
@@ -43,7 +43,7 @@ impl BatchGetCommitsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_commit_ids`](Self::set_commit_ids).
     ///
-    /// <p>The full commit IDs of the commits to get information about.</p> <note>
+    /// <p>The full commit IDs of the commits to get information about.</p><note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
     pub fn commit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -52,14 +52,14 @@ impl BatchGetCommitsInputBuilder {
         self.commit_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The full commit IDs of the commits to get information about.</p> <note>
+    /// <p>The full commit IDs of the commits to get information about.</p><note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
     pub fn set_commit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.commit_ids = input;
         self
     }
-    /// <p>The full commit IDs of the commits to get information about.</p> <note>
+    /// <p>The full commit IDs of the commits to get information about.</p><note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
     pub fn get_commit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

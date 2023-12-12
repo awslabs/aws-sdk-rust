@@ -9,16 +9,22 @@ pub struct CreateContactChannelInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
-    /// <li><p><code>SMS</code></p></li>
-    /// <li><p><code>VOICE</code></p></li>
-    /// <li><p><code>EMAIL</code></p></li>
+    /// <li>
+    /// <p><code>SMS</code></p></li>
+    /// <li>
+    /// <p><code>VOICE</code></p></li>
+    /// <li>
+    /// <p><code>EMAIL</code></p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
-    /// <li><p>SMS - '+' followed by the country code and phone number</p></li>
-    /// <li><p>VOICE - '+' followed by the country code and phone number</p></li>
-    /// <li><p>EMAIL - any standard email format</p></li>
+    /// <li>
+    /// <p>SMS - '+' followed by the country code and phone number</p></li>
+    /// <li>
+    /// <p>VOICE - '+' followed by the country code and phone number</p></li>
+    /// <li>
+    /// <p>EMAIL - any standard email format</p></li>
     /// </ul>
     pub delivery_address: ::std::option::Option<crate::types::ContactChannelAddress>,
     /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
@@ -37,18 +43,24 @@ impl CreateContactChannelInput {
     }
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
-    /// <li><p><code>SMS</code></p></li>
-    /// <li><p><code>VOICE</code></p></li>
-    /// <li><p><code>EMAIL</code></p></li>
+    /// <li>
+    /// <p><code>SMS</code></p></li>
+    /// <li>
+    /// <p><code>VOICE</code></p></li>
+    /// <li>
+    /// <p><code>EMAIL</code></p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
         self.r#type.as_ref()
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
-    /// <li><p>SMS - '+' followed by the country code and phone number</p></li>
-    /// <li><p>VOICE - '+' followed by the country code and phone number</p></li>
-    /// <li><p>EMAIL - any standard email format</p></li>
+    /// <li>
+    /// <p>SMS - '+' followed by the country code and phone number</p></li>
+    /// <li>
+    /// <p>VOICE - '+' followed by the country code and phone number</p></li>
+    /// <li>
+    /// <p>EMAIL - any standard email format</p></li>
     /// </ul>
     pub fn delivery_address(&self) -> ::std::option::Option<&crate::types::ContactChannelAddress> {
         self.delivery_address.as_ref()
@@ -113,9 +125,12 @@ impl CreateContactChannelInputBuilder {
     }
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
-    /// <li><p><code>SMS</code></p></li>
-    /// <li><p><code>VOICE</code></p></li>
-    /// <li><p><code>EMAIL</code></p></li>
+    /// <li>
+    /// <p><code>SMS</code></p></li>
+    /// <li>
+    /// <p><code>VOICE</code></p></li>
+    /// <li>
+    /// <p><code>EMAIL</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ChannelType) -> Self {
@@ -124,9 +139,12 @@ impl CreateContactChannelInputBuilder {
     }
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
-    /// <li><p><code>SMS</code></p></li>
-    /// <li><p><code>VOICE</code></p></li>
-    /// <li><p><code>EMAIL</code></p></li>
+    /// <li>
+    /// <p><code>SMS</code></p></li>
+    /// <li>
+    /// <p><code>VOICE</code></p></li>
+    /// <li>
+    /// <p><code>EMAIL</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
         self.r#type = input;
@@ -134,18 +152,24 @@ impl CreateContactChannelInputBuilder {
     }
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
-    /// <li><p><code>SMS</code></p></li>
-    /// <li><p><code>VOICE</code></p></li>
-    /// <li><p><code>EMAIL</code></p></li>
+    /// <li>
+    /// <p><code>SMS</code></p></li>
+    /// <li>
+    /// <p><code>VOICE</code></p></li>
+    /// <li>
+    /// <p><code>EMAIL</code></p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
         &self.r#type
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
-    /// <li><p>SMS - '+' followed by the country code and phone number</p></li>
-    /// <li><p>VOICE - '+' followed by the country code and phone number</p></li>
-    /// <li><p>EMAIL - any standard email format</p></li>
+    /// <li>
+    /// <p>SMS - '+' followed by the country code and phone number</p></li>
+    /// <li>
+    /// <p>VOICE - '+' followed by the country code and phone number</p></li>
+    /// <li>
+    /// <p>EMAIL - any standard email format</p></li>
     /// </ul>
     /// This field is required.
     pub fn delivery_address(mut self, input: crate::types::ContactChannelAddress) -> Self {
@@ -154,9 +178,12 @@ impl CreateContactChannelInputBuilder {
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
-    /// <li><p>SMS - '+' followed by the country code and phone number</p></li>
-    /// <li><p>VOICE - '+' followed by the country code and phone number</p></li>
-    /// <li><p>EMAIL - any standard email format</p></li>
+    /// <li>
+    /// <p>SMS - '+' followed by the country code and phone number</p></li>
+    /// <li>
+    /// <p>VOICE - '+' followed by the country code and phone number</p></li>
+    /// <li>
+    /// <p>EMAIL - any standard email format</p></li>
     /// </ul>
     pub fn set_delivery_address(mut self, input: ::std::option::Option<crate::types::ContactChannelAddress>) -> Self {
         self.delivery_address = input;
@@ -164,9 +191,12 @@ impl CreateContactChannelInputBuilder {
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
-    /// <li><p>SMS - '+' followed by the country code and phone number</p></li>
-    /// <li><p>VOICE - '+' followed by the country code and phone number</p></li>
-    /// <li><p>EMAIL - any standard email format</p></li>
+    /// <li>
+    /// <p>SMS - '+' followed by the country code and phone number</p></li>
+    /// <li>
+    /// <p>VOICE - '+' followed by the country code and phone number</p></li>
+    /// <li>
+    /// <p>EMAIL - any standard email format</p></li>
     /// </ul>
     pub fn get_delivery_address(&self) -> &::std::option::Option<crate::types::ContactChannelAddress> {
         &self.delivery_address

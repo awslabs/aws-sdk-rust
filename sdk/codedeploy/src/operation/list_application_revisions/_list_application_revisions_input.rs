@@ -8,16 +8,21 @@ pub struct ListApplicationRevisionsInput {
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
-    /// <li><p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
-    /// <li><p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
-    /// <li><p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
+    /// <li>
+    /// <p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
+    /// <li>
+    /// <p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
+    /// <li>
+    /// <p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
     /// </ul>
     /// <p>If not specified or set to null, the results are returned in an arbitrary order.</p>
     pub sort_by: ::std::option::Option<crate::types::ApplicationRevisionSortBy>,
     /// <p>The order in which to sort the list results:</p>
     /// <ul>
-    /// <li><p><code>ascending</code>: ascending order.</p></li>
-    /// <li><p><code>descending</code>: descending order.</p></li>
+    /// <li>
+    /// <p><code>ascending</code>: ascending order.</p></li>
+    /// <li>
+    /// <p><code>descending</code>: descending order.</p></li>
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -29,9 +34,12 @@ pub struct ListApplicationRevisionsInput {
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Whether to list revisions based on whether the revision is the target revision of a deployment group:</p>
     /// <ul>
-    /// <li><p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
-    /// <li><p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
-    /// <li><p><code>ignore</code>: List all revisions.</p></li>
+    /// <li>
+    /// <p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
+    /// <li>
+    /// <p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
+    /// <li>
+    /// <p><code>ignore</code>: List all revisions.</p></li>
     /// </ul>
     pub deployed: ::std::option::Option<crate::types::ListStateFilterAction>,
     /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
@@ -44,9 +52,12 @@ impl ListApplicationRevisionsInput {
     }
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
-    /// <li><p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
-    /// <li><p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
-    /// <li><p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
+    /// <li>
+    /// <p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
+    /// <li>
+    /// <p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
+    /// <li>
+    /// <p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
     /// </ul>
     /// <p>If not specified or set to null, the results are returned in an arbitrary order.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ApplicationRevisionSortBy> {
@@ -54,8 +65,10 @@ impl ListApplicationRevisionsInput {
     }
     /// <p>The order in which to sort the list results:</p>
     /// <ul>
-    /// <li><p><code>ascending</code>: ascending order.</p></li>
-    /// <li><p><code>descending</code>: descending order.</p></li>
+    /// <li>
+    /// <p><code>ascending</code>: ascending order.</p></li>
+    /// <li>
+    /// <p><code>descending</code>: descending order.</p></li>
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -73,9 +86,12 @@ impl ListApplicationRevisionsInput {
     }
     /// <p>Whether to list revisions based on whether the revision is the target revision of a deployment group:</p>
     /// <ul>
-    /// <li><p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
-    /// <li><p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
-    /// <li><p><code>ignore</code>: List all revisions.</p></li>
+    /// <li>
+    /// <p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
+    /// <li>
+    /// <p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
+    /// <li>
+    /// <p><code>ignore</code>: List all revisions.</p></li>
     /// </ul>
     pub fn deployed(&self) -> ::std::option::Option<&crate::types::ListStateFilterAction> {
         self.deployed.as_ref()
@@ -122,9 +138,12 @@ impl ListApplicationRevisionsInputBuilder {
     }
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
-    /// <li><p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
-    /// <li><p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
-    /// <li><p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
+    /// <li>
+    /// <p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
+    /// <li>
+    /// <p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
+    /// <li>
+    /// <p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
     /// </ul>
     /// <p>If not specified or set to null, the results are returned in an arbitrary order.</p>
     pub fn sort_by(mut self, input: crate::types::ApplicationRevisionSortBy) -> Self {
@@ -133,9 +152,12 @@ impl ListApplicationRevisionsInputBuilder {
     }
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
-    /// <li><p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
-    /// <li><p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
-    /// <li><p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
+    /// <li>
+    /// <p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
+    /// <li>
+    /// <p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
+    /// <li>
+    /// <p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
     /// </ul>
     /// <p>If not specified or set to null, the results are returned in an arbitrary order.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ApplicationRevisionSortBy>) -> Self {
@@ -144,9 +166,12 @@ impl ListApplicationRevisionsInputBuilder {
     }
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
-    /// <li><p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
-    /// <li><p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
-    /// <li><p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
+    /// <li>
+    /// <p><code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p></li>
+    /// <li>
+    /// <p><code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p></li>
+    /// <li>
+    /// <p><code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p></li>
     /// </ul>
     /// <p>If not specified or set to null, the results are returned in an arbitrary order.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ApplicationRevisionSortBy> {
@@ -154,8 +179,10 @@ impl ListApplicationRevisionsInputBuilder {
     }
     /// <p>The order in which to sort the list results:</p>
     /// <ul>
-    /// <li><p><code>ascending</code>: ascending order.</p></li>
-    /// <li><p><code>descending</code>: descending order.</p></li>
+    /// <li>
+    /// <p><code>ascending</code>: ascending order.</p></li>
+    /// <li>
+    /// <p><code>descending</code>: descending order.</p></li>
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -165,8 +192,10 @@ impl ListApplicationRevisionsInputBuilder {
     }
     /// <p>The order in which to sort the list results:</p>
     /// <ul>
-    /// <li><p><code>ascending</code>: ascending order.</p></li>
-    /// <li><p><code>descending</code>: descending order.</p></li>
+    /// <li>
+    /// <p><code>ascending</code>: ascending order.</p></li>
+    /// <li>
+    /// <p><code>descending</code>: descending order.</p></li>
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -176,8 +205,10 @@ impl ListApplicationRevisionsInputBuilder {
     }
     /// <p>The order in which to sort the list results:</p>
     /// <ul>
-    /// <li><p><code>ascending</code>: ascending order.</p></li>
-    /// <li><p><code>descending</code>: descending order.</p></li>
+    /// <li>
+    /// <p><code>ascending</code>: ascending order.</p></li>
+    /// <li>
+    /// <p><code>descending</code>: descending order.</p></li>
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -217,9 +248,12 @@ impl ListApplicationRevisionsInputBuilder {
     }
     /// <p>Whether to list revisions based on whether the revision is the target revision of a deployment group:</p>
     /// <ul>
-    /// <li><p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
-    /// <li><p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
-    /// <li><p><code>ignore</code>: List all revisions.</p></li>
+    /// <li>
+    /// <p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
+    /// <li>
+    /// <p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
+    /// <li>
+    /// <p><code>ignore</code>: List all revisions.</p></li>
     /// </ul>
     pub fn deployed(mut self, input: crate::types::ListStateFilterAction) -> Self {
         self.deployed = ::std::option::Option::Some(input);
@@ -227,9 +261,12 @@ impl ListApplicationRevisionsInputBuilder {
     }
     /// <p>Whether to list revisions based on whether the revision is the target revision of a deployment group:</p>
     /// <ul>
-    /// <li><p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
-    /// <li><p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
-    /// <li><p><code>ignore</code>: List all revisions.</p></li>
+    /// <li>
+    /// <p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
+    /// <li>
+    /// <p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
+    /// <li>
+    /// <p><code>ignore</code>: List all revisions.</p></li>
     /// </ul>
     pub fn set_deployed(mut self, input: ::std::option::Option<crate::types::ListStateFilterAction>) -> Self {
         self.deployed = input;
@@ -237,9 +274,12 @@ impl ListApplicationRevisionsInputBuilder {
     }
     /// <p>Whether to list revisions based on whether the revision is the target revision of a deployment group:</p>
     /// <ul>
-    /// <li><p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
-    /// <li><p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
-    /// <li><p><code>ignore</code>: List all revisions.</p></li>
+    /// <li>
+    /// <p><code>include</code>: List revisions that are target revisions of a deployment group.</p></li>
+    /// <li>
+    /// <p><code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p></li>
+    /// <li>
+    /// <p><code>ignore</code>: List all revisions.</p></li>
     /// </ul>
     pub fn get_deployed(&self) -> &::std::option::Option<crate::types::ListStateFilterAction> {
         &self.deployed

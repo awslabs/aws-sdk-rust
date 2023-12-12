@@ -29,10 +29,14 @@ impl CreateIpSetInputBuilder {
 /// <p>Creates an <code>IPSet</code>, which you use to specify which web requests that you want to allow or block based on the IP addresses that the requests originate from. For example, if you're receiving a lot of requests from one or more individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can create an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF to block the requests.</p>
 /// <p>To create and configure an <code>IPSet</code>, perform the following steps:</p>
 /// <ol>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>CreateIPSet</code> request.</p></li>
-/// <li><p>Submit a <code>CreateIPSet</code> request.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateIPSet</code> request.</p></li>
-/// <li><p>Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>CreateIPSet</code> request.</p></li>
+/// <li>
+/// <p>Submit a <code>CreateIPSet</code> request.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateIPSet</code> request.</p></li>
+/// <li>
+/// <p>Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want AWS WAF to watch for.</p></li>
 /// </ol>
 /// <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

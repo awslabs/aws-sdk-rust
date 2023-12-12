@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssociationsInput {
-    /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
     pub association_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>,
@@ -13,7 +13,7 @@ pub struct ListAssociationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAssociationsInput {
-    /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
     ///
@@ -50,7 +50,7 @@ impl ListAssociationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_association_filter_list`](Self::set_association_filter_list).
     ///
-    /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
     pub fn association_filter_list(mut self, input: crate::types::AssociationFilter) -> Self {
@@ -59,14 +59,14 @@ impl ListAssociationsInputBuilder {
         self.association_filter_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
     pub fn set_association_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>) -> Self {
         self.association_filter_list = input;
         self
     }
-    /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
     pub fn get_association_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>> {

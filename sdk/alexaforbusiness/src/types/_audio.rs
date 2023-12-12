@@ -4,8 +4,7 @@
 /// <p>required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter software. One option for this is a command-line tool, FFmpeg. For more information, see <a href="https://www.ffmpeg.org/">FFmpeg</a>. The following command converts the provided <input-file>
 /// to an MP3 file that is played in the announcement:
 /// </input-file></p>
-/// <p><code>ffmpeg -i
-/// <input-file>
+/// <p><code>ffmpeg -i <input-file>
 /// -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000
 /// <output-file.mp3></output-file.mp3>
 /// </input-file></code></p>

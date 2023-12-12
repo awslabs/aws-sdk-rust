@@ -22,7 +22,7 @@ impl DeleteHubInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteHub`.
 ///
-/// <p>Delete a hub.</p> <note>
+/// <p>Delete a hub.</p><note>
 /// <p>Hub APIs are only callable through SageMaker Studio.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

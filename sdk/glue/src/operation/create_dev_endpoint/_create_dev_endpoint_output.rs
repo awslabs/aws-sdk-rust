@@ -43,7 +43,8 @@ pub struct CreateDevEndpointOutput {
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
+    /// <li>
+    /// <p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -128,7 +129,8 @@ impl CreateDevEndpointOutput {
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
+    /// <li>
+    /// <p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -441,7 +443,8 @@ impl CreateDevEndpointOutputBuilder {
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
+    /// <li>
+    /// <p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn arguments(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -453,7 +456,8 @@ impl CreateDevEndpointOutputBuilder {
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
+    /// <li>
+    /// <p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn set_arguments(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
@@ -463,7 +467,8 @@ impl CreateDevEndpointOutputBuilder {
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
+    /// <li>
+    /// <p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn get_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

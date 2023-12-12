@@ -136,21 +136,21 @@ impl StopPipelineExecutionFluentBuilder {
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_execution_id()
     }
-    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p><note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     pub fn abandon(mut self, input: bool) -> Self {
         self.inner = self.inner.abandon(input);
         self
     }
-    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p><note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     pub fn set_abandon(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_abandon(input);
         self
     }
-    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p><note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     pub fn get_abandon(&self) -> &::std::option::Option<bool> {

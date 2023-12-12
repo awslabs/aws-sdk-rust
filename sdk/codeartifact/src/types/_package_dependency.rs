@@ -6,22 +6,28 @@
 pub struct PackageDependency {
     /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
     /// </ul>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the package that this package depends on.</p>
     pub package: ::std::option::Option<::std::string::String>,
     /// <p>The type of a package dependency. The possible values depend on the package type.</p>
     /// <ul>
-    /// <li><p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code></p></li>
-    /// <li><p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note>
-    /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code>
-    /// <parent></parent></code> element if one is defined in the package version's POM file.</p>
+    /// <li>
+    /// <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code></p></li>
+    /// <li>
+    /// <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p><note>
+    /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code><parent></parent></code> element if one is defined in the package version's POM file.</p>
     /// </note></li>
-    /// <li><p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p></li>
-    /// <li><p>pypi: <code>Requires-Dist</code></p></li>
+    /// <li>
+    /// <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p></li>
+    /// <li>
+    /// <p>pypi: <code>Requires-Dist</code></p></li>
     /// </ul>
     pub dependency_type: ::std::option::Option<::std::string::String>,
     /// <p>The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>.</p>
@@ -30,9 +36,12 @@ pub struct PackageDependency {
 impl PackageDependency {
     /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
@@ -43,13 +52,16 @@ impl PackageDependency {
     }
     /// <p>The type of a package dependency. The possible values depend on the package type.</p>
     /// <ul>
-    /// <li><p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code></p></li>
-    /// <li><p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note>
-    /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code>
-    /// <parent></parent></code> element if one is defined in the package version's POM file.</p>
+    /// <li>
+    /// <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code></p></li>
+    /// <li>
+    /// <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p><note>
+    /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code><parent></parent></code> element if one is defined in the package version's POM file.</p>
     /// </note></li>
-    /// <li><p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p></li>
-    /// <li><p>pypi: <code>Requires-Dist</code></p></li>
+    /// <li>
+    /// <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p></li>
+    /// <li>
+    /// <p>pypi: <code>Requires-Dist</code></p></li>
     /// </ul>
     pub fn dependency_type(&self) -> ::std::option::Option<&str> {
         self.dependency_type.as_deref()
@@ -78,9 +90,12 @@ pub struct PackageDependencyBuilder {
 impl PackageDependencyBuilder {
     /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -88,9 +103,12 @@ impl PackageDependencyBuilder {
     }
     /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
@@ -98,9 +116,12 @@ impl PackageDependencyBuilder {
     }
     /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
@@ -121,13 +142,16 @@ impl PackageDependencyBuilder {
     }
     /// <p>The type of a package dependency. The possible values depend on the package type.</p>
     /// <ul>
-    /// <li><p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code></p></li>
-    /// <li><p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note>
-    /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code>
-    /// <parent></parent></code> element if one is defined in the package version's POM file.</p>
+    /// <li>
+    /// <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code></p></li>
+    /// <li>
+    /// <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p><note>
+    /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code><parent></parent></code> element if one is defined in the package version's POM file.</p>
     /// </note></li>
-    /// <li><p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p></li>
-    /// <li><p>pypi: <code>Requires-Dist</code></p></li>
+    /// <li>
+    /// <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p></li>
+    /// <li>
+    /// <p>pypi: <code>Requires-Dist</code></p></li>
     /// </ul>
     pub fn dependency_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dependency_type = ::std::option::Option::Some(input.into());
@@ -135,13 +159,16 @@ impl PackageDependencyBuilder {
     }
     /// <p>The type of a package dependency. The possible values depend on the package type.</p>
     /// <ul>
-    /// <li><p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code></p></li>
-    /// <li><p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note>
-    /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code>
-    /// <parent></parent></code> element if one is defined in the package version's POM file.</p>
+    /// <li>
+    /// <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code></p></li>
+    /// <li>
+    /// <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p><note>
+    /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code><parent></parent></code> element if one is defined in the package version's POM file.</p>
     /// </note></li>
-    /// <li><p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p></li>
-    /// <li><p>pypi: <code>Requires-Dist</code></p></li>
+    /// <li>
+    /// <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p></li>
+    /// <li>
+    /// <p>pypi: <code>Requires-Dist</code></p></li>
     /// </ul>
     pub fn set_dependency_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dependency_type = input;
@@ -149,13 +176,16 @@ impl PackageDependencyBuilder {
     }
     /// <p>The type of a package dependency. The possible values depend on the package type.</p>
     /// <ul>
-    /// <li><p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code></p></li>
-    /// <li><p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note>
-    /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code>
-    /// <parent></parent></code> element if one is defined in the package version's POM file.</p>
+    /// <li>
+    /// <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code></p></li>
+    /// <li>
+    /// <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p><note>
+    /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code><parent></parent></code> element if one is defined in the package version's POM file.</p>
     /// </note></li>
-    /// <li><p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p></li>
-    /// <li><p>pypi: <code>Requires-Dist</code></p></li>
+    /// <li>
+    /// <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p></li>
+    /// <li>
+    /// <p>pypi: <code>Requires-Dist</code></p></li>
     /// </ul>
     pub fn get_dependency_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.dependency_type

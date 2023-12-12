@@ -8,18 +8,30 @@ pub struct CreateIngestionInput {
     /// <p>The name of the application.</p>
     /// <p>Valid values are:</p>
     /// <ul>
-    /// <li><p><code>SLACK</code></p></li>
-    /// <li><p><code>ASANA</code></p></li>
-    /// <li><p><code>JIRA</code></p></li>
-    /// <li><p><code>M365</code></p></li>
-    /// <li><p><code>M365AUDITLOGS</code></p></li>
-    /// <li><p><code>ZOOM</code></p></li>
-    /// <li><p><code>ZENDESK</code></p></li>
-    /// <li><p><code>OKTA</code></p></li>
-    /// <li><p><code>GOOGLE</code></p></li>
-    /// <li><p><code>DROPBOX</code></p></li>
-    /// <li><p><code>SMARTSHEET</code></p></li>
-    /// <li><p><code>CISCO</code></p></li>
+    /// <li>
+    /// <p><code>SLACK</code></p></li>
+    /// <li>
+    /// <p><code>ASANA</code></p></li>
+    /// <li>
+    /// <p><code>JIRA</code></p></li>
+    /// <li>
+    /// <p><code>M365</code></p></li>
+    /// <li>
+    /// <p><code>M365AUDITLOGS</code></p></li>
+    /// <li>
+    /// <p><code>ZOOM</code></p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code></p></li>
+    /// <li>
+    /// <p><code>OKTA</code></p></li>
+    /// <li>
+    /// <p><code>GOOGLE</code></p></li>
+    /// <li>
+    /// <p><code>DROPBOX</code></p></li>
+    /// <li>
+    /// <p><code>SMARTSHEET</code></p></li>
+    /// <li>
+    /// <p><code>CISCO</code></p></li>
     /// </ul>
     pub app: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application tenant.</p>
@@ -41,18 +53,30 @@ impl CreateIngestionInput {
     /// <p>The name of the application.</p>
     /// <p>Valid values are:</p>
     /// <ul>
-    /// <li><p><code>SLACK</code></p></li>
-    /// <li><p><code>ASANA</code></p></li>
-    /// <li><p><code>JIRA</code></p></li>
-    /// <li><p><code>M365</code></p></li>
-    /// <li><p><code>M365AUDITLOGS</code></p></li>
-    /// <li><p><code>ZOOM</code></p></li>
-    /// <li><p><code>ZENDESK</code></p></li>
-    /// <li><p><code>OKTA</code></p></li>
-    /// <li><p><code>GOOGLE</code></p></li>
-    /// <li><p><code>DROPBOX</code></p></li>
-    /// <li><p><code>SMARTSHEET</code></p></li>
-    /// <li><p><code>CISCO</code></p></li>
+    /// <li>
+    /// <p><code>SLACK</code></p></li>
+    /// <li>
+    /// <p><code>ASANA</code></p></li>
+    /// <li>
+    /// <p><code>JIRA</code></p></li>
+    /// <li>
+    /// <p><code>M365</code></p></li>
+    /// <li>
+    /// <p><code>M365AUDITLOGS</code></p></li>
+    /// <li>
+    /// <p><code>ZOOM</code></p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code></p></li>
+    /// <li>
+    /// <p><code>OKTA</code></p></li>
+    /// <li>
+    /// <p><code>GOOGLE</code></p></li>
+    /// <li>
+    /// <p><code>DROPBOX</code></p></li>
+    /// <li>
+    /// <p><code>SMARTSHEET</code></p></li>
+    /// <li>
+    /// <p><code>CISCO</code></p></li>
     /// </ul>
     pub fn app(&self) -> ::std::option::Option<&str> {
         self.app.as_deref()
@@ -115,18 +139,30 @@ impl CreateIngestionInputBuilder {
     /// <p>The name of the application.</p>
     /// <p>Valid values are:</p>
     /// <ul>
-    /// <li><p><code>SLACK</code></p></li>
-    /// <li><p><code>ASANA</code></p></li>
-    /// <li><p><code>JIRA</code></p></li>
-    /// <li><p><code>M365</code></p></li>
-    /// <li><p><code>M365AUDITLOGS</code></p></li>
-    /// <li><p><code>ZOOM</code></p></li>
-    /// <li><p><code>ZENDESK</code></p></li>
-    /// <li><p><code>OKTA</code></p></li>
-    /// <li><p><code>GOOGLE</code></p></li>
-    /// <li><p><code>DROPBOX</code></p></li>
-    /// <li><p><code>SMARTSHEET</code></p></li>
-    /// <li><p><code>CISCO</code></p></li>
+    /// <li>
+    /// <p><code>SLACK</code></p></li>
+    /// <li>
+    /// <p><code>ASANA</code></p></li>
+    /// <li>
+    /// <p><code>JIRA</code></p></li>
+    /// <li>
+    /// <p><code>M365</code></p></li>
+    /// <li>
+    /// <p><code>M365AUDITLOGS</code></p></li>
+    /// <li>
+    /// <p><code>ZOOM</code></p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code></p></li>
+    /// <li>
+    /// <p><code>OKTA</code></p></li>
+    /// <li>
+    /// <p><code>GOOGLE</code></p></li>
+    /// <li>
+    /// <p><code>DROPBOX</code></p></li>
+    /// <li>
+    /// <p><code>SMARTSHEET</code></p></li>
+    /// <li>
+    /// <p><code>CISCO</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn app(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,18 +172,30 @@ impl CreateIngestionInputBuilder {
     /// <p>The name of the application.</p>
     /// <p>Valid values are:</p>
     /// <ul>
-    /// <li><p><code>SLACK</code></p></li>
-    /// <li><p><code>ASANA</code></p></li>
-    /// <li><p><code>JIRA</code></p></li>
-    /// <li><p><code>M365</code></p></li>
-    /// <li><p><code>M365AUDITLOGS</code></p></li>
-    /// <li><p><code>ZOOM</code></p></li>
-    /// <li><p><code>ZENDESK</code></p></li>
-    /// <li><p><code>OKTA</code></p></li>
-    /// <li><p><code>GOOGLE</code></p></li>
-    /// <li><p><code>DROPBOX</code></p></li>
-    /// <li><p><code>SMARTSHEET</code></p></li>
-    /// <li><p><code>CISCO</code></p></li>
+    /// <li>
+    /// <p><code>SLACK</code></p></li>
+    /// <li>
+    /// <p><code>ASANA</code></p></li>
+    /// <li>
+    /// <p><code>JIRA</code></p></li>
+    /// <li>
+    /// <p><code>M365</code></p></li>
+    /// <li>
+    /// <p><code>M365AUDITLOGS</code></p></li>
+    /// <li>
+    /// <p><code>ZOOM</code></p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code></p></li>
+    /// <li>
+    /// <p><code>OKTA</code></p></li>
+    /// <li>
+    /// <p><code>GOOGLE</code></p></li>
+    /// <li>
+    /// <p><code>DROPBOX</code></p></li>
+    /// <li>
+    /// <p><code>SMARTSHEET</code></p></li>
+    /// <li>
+    /// <p><code>CISCO</code></p></li>
     /// </ul>
     pub fn set_app(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app = input;
@@ -156,18 +204,30 @@ impl CreateIngestionInputBuilder {
     /// <p>The name of the application.</p>
     /// <p>Valid values are:</p>
     /// <ul>
-    /// <li><p><code>SLACK</code></p></li>
-    /// <li><p><code>ASANA</code></p></li>
-    /// <li><p><code>JIRA</code></p></li>
-    /// <li><p><code>M365</code></p></li>
-    /// <li><p><code>M365AUDITLOGS</code></p></li>
-    /// <li><p><code>ZOOM</code></p></li>
-    /// <li><p><code>ZENDESK</code></p></li>
-    /// <li><p><code>OKTA</code></p></li>
-    /// <li><p><code>GOOGLE</code></p></li>
-    /// <li><p><code>DROPBOX</code></p></li>
-    /// <li><p><code>SMARTSHEET</code></p></li>
-    /// <li><p><code>CISCO</code></p></li>
+    /// <li>
+    /// <p><code>SLACK</code></p></li>
+    /// <li>
+    /// <p><code>ASANA</code></p></li>
+    /// <li>
+    /// <p><code>JIRA</code></p></li>
+    /// <li>
+    /// <p><code>M365</code></p></li>
+    /// <li>
+    /// <p><code>M365AUDITLOGS</code></p></li>
+    /// <li>
+    /// <p><code>ZOOM</code></p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code></p></li>
+    /// <li>
+    /// <p><code>OKTA</code></p></li>
+    /// <li>
+    /// <p><code>GOOGLE</code></p></li>
+    /// <li>
+    /// <p><code>DROPBOX</code></p></li>
+    /// <li>
+    /// <p><code>SMARTSHEET</code></p></li>
+    /// <li>
+    /// <p><code>CISCO</code></p></li>
     /// </ul>
     pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
         &self.app

@@ -14,8 +14,10 @@ pub struct OnlineStoreConfig {
     pub ttl_duration: ::std::option::Option<crate::types::TtlDuration>,
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
     /// <ul>
-    /// <li><p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
-    /// <li><p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
+    /// <li>
+    /// <p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li>
+    /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
 }
@@ -35,8 +37,10 @@ impl OnlineStoreConfig {
     }
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
     /// <ul>
-    /// <li><p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
-    /// <li><p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
+    /// <li>
+    /// <p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li>
+    /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
         self.storage_type.as_ref()
@@ -106,8 +110,10 @@ impl OnlineStoreConfigBuilder {
     }
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
     /// <ul>
-    /// <li><p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
-    /// <li><p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
+    /// <li>
+    /// <p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li>
+    /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
         self.storage_type = ::std::option::Option::Some(input);
@@ -115,8 +121,10 @@ impl OnlineStoreConfigBuilder {
     }
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
     /// <ul>
-    /// <li><p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
-    /// <li><p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
+    /// <li>
+    /// <p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li>
+    /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.storage_type = input;
@@ -124,8 +132,10 @@ impl OnlineStoreConfigBuilder {
     }
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
     /// <ul>
-    /// <li><p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
-    /// <li><p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
+    /// <li>
+    /// <p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li>
+    /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         &self.storage_type

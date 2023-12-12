@@ -9,9 +9,12 @@ pub struct AttachPolicyInput {
     /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
-    /// <li><p><b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p></li>
-    /// <li><p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
-    /// <li><p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
+    /// <li>
+    /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     pub target_id: ::std::option::Option<::std::string::String>,
 }
@@ -24,9 +27,12 @@ impl AttachPolicyInput {
     /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
-    /// <li><p><b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p></li>
-    /// <li><p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
-    /// <li><p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
+    /// <li>
+    /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     pub fn target_id(&self) -> ::std::option::Option<&str> {
         self.target_id.as_deref()
@@ -68,9 +74,12 @@ impl AttachPolicyInputBuilder {
     /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
-    /// <li><p><b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p></li>
-    /// <li><p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
-    /// <li><p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
+    /// <li>
+    /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     /// This field is required.
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,9 +89,12 @@ impl AttachPolicyInputBuilder {
     /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
-    /// <li><p><b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p></li>
-    /// <li><p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
-    /// <li><p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
+    /// <li>
+    /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
@@ -91,9 +103,12 @@ impl AttachPolicyInputBuilder {
     /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
-    /// <li><p><b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p></li>
-    /// <li><p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
-    /// <li><p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
+    /// <li>
+    /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_id

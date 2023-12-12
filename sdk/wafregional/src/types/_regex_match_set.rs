@@ -16,9 +16,12 @@ pub struct RegexMatchSet {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains:</p>
     /// <ul>
-    /// <li><p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
-    /// <li><p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
-    /// <li><p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
+    /// <li>
+    /// <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
+    /// <li>
+    /// <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
+    /// <li>
+    /// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
     /// </ul>
     pub regex_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchTuple>>,
 }
@@ -34,9 +37,12 @@ impl RegexMatchSet {
     }
     /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains:</p>
     /// <ul>
-    /// <li><p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
-    /// <li><p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
-    /// <li><p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
+    /// <li>
+    /// <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
+    /// <li>
+    /// <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
+    /// <li>
+    /// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regex_match_tuples.is_none()`.
@@ -97,9 +103,12 @@ impl RegexMatchSetBuilder {
     ///
     /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains:</p>
     /// <ul>
-    /// <li><p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
-    /// <li><p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
-    /// <li><p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
+    /// <li>
+    /// <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
+    /// <li>
+    /// <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
+    /// <li>
+    /// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
     /// </ul>
     pub fn regex_match_tuples(mut self, input: crate::types::RegexMatchTuple) -> Self {
         let mut v = self.regex_match_tuples.unwrap_or_default();
@@ -109,9 +118,12 @@ impl RegexMatchSetBuilder {
     }
     /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains:</p>
     /// <ul>
-    /// <li><p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
-    /// <li><p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
-    /// <li><p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
+    /// <li>
+    /// <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
+    /// <li>
+    /// <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
+    /// <li>
+    /// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
     /// </ul>
     pub fn set_regex_match_tuples(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchTuple>>) -> Self {
         self.regex_match_tuples = input;
@@ -119,9 +131,12 @@ impl RegexMatchSetBuilder {
     }
     /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains:</p>
     /// <ul>
-    /// <li><p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
-    /// <li><p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
-    /// <li><p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
+    /// <li>
+    /// <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
+    /// <li>
+    /// <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
+    /// <li>
+    /// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
     /// </ul>
     pub fn get_regex_match_tuples(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexMatchTuple>> {
         &self.regex_match_tuples

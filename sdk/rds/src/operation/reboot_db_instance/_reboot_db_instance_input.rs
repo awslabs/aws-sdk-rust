@@ -7,7 +7,8 @@ pub struct RebootDbInstanceInput {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the reboot is conducted through a Multi-AZ failover.</p>
@@ -18,7 +19,8 @@ impl RebootDbInstanceInput {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
@@ -47,7 +49,8 @@ impl RebootDbInstanceInputBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -57,7 +60,8 @@ impl RebootDbInstanceInputBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -66,7 +70,8 @@ impl RebootDbInstanceInputBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier

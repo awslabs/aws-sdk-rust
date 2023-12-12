@@ -8,8 +8,10 @@ pub struct AnalysisSecurityGroupRule {
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The direction. The following are the possible values:</p>
     /// <ul>
-    /// <li><p>egress</p></li>
-    /// <li><p>ingress</p></li>
+    /// <li>
+    /// <p>egress</p></li>
+    /// <li>
+    /// <p>ingress</p></li>
     /// </ul>
     pub direction: ::std::option::Option<::std::string::String>,
     /// <p>The security group ID.</p>
@@ -28,8 +30,10 @@ impl AnalysisSecurityGroupRule {
     }
     /// <p>The direction. The following are the possible values:</p>
     /// <ul>
-    /// <li><p>egress</p></li>
-    /// <li><p>ingress</p></li>
+    /// <li>
+    /// <p>egress</p></li>
+    /// <li>
+    /// <p>ingress</p></li>
     /// </ul>
     pub fn direction(&self) -> ::std::option::Option<&str> {
         self.direction.as_deref()
@@ -86,8 +90,10 @@ impl AnalysisSecurityGroupRuleBuilder {
     }
     /// <p>The direction. The following are the possible values:</p>
     /// <ul>
-    /// <li><p>egress</p></li>
-    /// <li><p>ingress</p></li>
+    /// <li>
+    /// <p>egress</p></li>
+    /// <li>
+    /// <p>ingress</p></li>
     /// </ul>
     pub fn direction(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direction = ::std::option::Option::Some(input.into());
@@ -95,8 +101,10 @@ impl AnalysisSecurityGroupRuleBuilder {
     }
     /// <p>The direction. The following are the possible values:</p>
     /// <ul>
-    /// <li><p>egress</p></li>
-    /// <li><p>ingress</p></li>
+    /// <li>
+    /// <p>egress</p></li>
+    /// <li>
+    /// <p>ingress</p></li>
     /// </ul>
     pub fn set_direction(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direction = input;
@@ -104,8 +112,10 @@ impl AnalysisSecurityGroupRuleBuilder {
     }
     /// <p>The direction. The following are the possible values:</p>
     /// <ul>
-    /// <li><p>egress</p></li>
-    /// <li><p>ingress</p></li>
+    /// <li>
+    /// <p>egress</p></li>
+    /// <li>
+    /// <p>ingress</p></li>
     /// </ul>
     pub fn get_direction(&self) -> &::std::option::Option<::std::string::String> {
         &self.direction

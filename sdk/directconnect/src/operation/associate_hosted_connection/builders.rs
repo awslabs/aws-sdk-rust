@@ -22,7 +22,7 @@ impl AssociateHostedConnectionInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateHostedConnection`.
 ///
-/// <p>Associates a hosted connection and its virtual interfaces with a link aggregation group (LAG) or interconnect. If the target interconnect or LAG has an existing hosted connection with a conflicting VLAN number or IP address, the operation fails. This action temporarily interrupts the hosted connection's connectivity to Amazon Web Services as it is being migrated.</p> <note>
+/// <p>Associates a hosted connection and its virtual interfaces with a link aggregation group (LAG) or interconnect. If the target interconnect or LAG has an existing hosted connection with a conflicting VLAN number or IP address, the operation fails. This action temporarily interrupts the hosted connection's connectivity to Amazon Web Services as it is being migrated.</p><note>
 /// <p>Intended for use by Direct Connect Partners only.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

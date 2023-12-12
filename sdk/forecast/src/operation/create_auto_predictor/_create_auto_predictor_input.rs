@@ -17,12 +17,18 @@ pub struct CreateAutoPredictorInput {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li><p>Minute - 1-59</p></li>
-    /// <li><p>Hour - 1-23</p></li>
-    /// <li><p>Day - 1-6</p></li>
-    /// <li><p>Week - 1-4</p></li>
-    /// <li><p>Month - 1-11</p></li>
-    /// <li><p>Year - 1</p></li>
+    /// <li>
+    /// <p>Minute - 1-59</p></li>
+    /// <li>
+    /// <p>Hour - 1-23</p></li>
+    /// <li>
+    /// <p>Day - 1-6</p></li>
+    /// <li>
+    /// <p>Week - 1-4</p></li>
+    /// <li>
+    /// <p>Month - 1-11</p></li>
+    /// <li>
+    /// <p>Year - 1</p></li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
@@ -42,12 +48,18 @@ pub struct CreateAutoPredictorInput {
     /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
-    /// <li><p>Maximum number of tags per resource: 50.</p></li>
-    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
-    /// <li><p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource: 50.</p></li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
+    /// <li>
+    /// <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor monitoring.</p>
@@ -83,12 +95,18 @@ impl CreateAutoPredictorInput {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li><p>Minute - 1-59</p></li>
-    /// <li><p>Hour - 1-23</p></li>
-    /// <li><p>Day - 1-6</p></li>
-    /// <li><p>Week - 1-4</p></li>
-    /// <li><p>Month - 1-11</p></li>
-    /// <li><p>Year - 1</p></li>
+    /// <li>
+    /// <p>Minute - 1-59</p></li>
+    /// <li>
+    /// <p>Hour - 1-23</p></li>
+    /// <li>
+    /// <p>Day - 1-6</p></li>
+    /// <li>
+    /// <p>Week - 1-4</p></li>
+    /// <li>
+    /// <p>Month - 1-11</p></li>
+    /// <li>
+    /// <p>Year - 1</p></li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
@@ -120,12 +138,18 @@ impl CreateAutoPredictorInput {
     /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
-    /// <li><p>Maximum number of tags per resource: 50.</p></li>
-    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
-    /// <li><p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource: 50.</p></li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
+    /// <li>
+    /// <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -249,12 +273,18 @@ impl CreateAutoPredictorInputBuilder {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li><p>Minute - 1-59</p></li>
-    /// <li><p>Hour - 1-23</p></li>
-    /// <li><p>Day - 1-6</p></li>
-    /// <li><p>Week - 1-4</p></li>
-    /// <li><p>Month - 1-11</p></li>
-    /// <li><p>Year - 1</p></li>
+    /// <li>
+    /// <p>Minute - 1-59</p></li>
+    /// <li>
+    /// <p>Hour - 1-23</p></li>
+    /// <li>
+    /// <p>Day - 1-6</p></li>
+    /// <li>
+    /// <p>Week - 1-4</p></li>
+    /// <li>
+    /// <p>Month - 1-11</p></li>
+    /// <li>
+    /// <p>Year - 1</p></li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
@@ -266,12 +296,18 @@ impl CreateAutoPredictorInputBuilder {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li><p>Minute - 1-59</p></li>
-    /// <li><p>Hour - 1-23</p></li>
-    /// <li><p>Day - 1-6</p></li>
-    /// <li><p>Week - 1-4</p></li>
-    /// <li><p>Month - 1-11</p></li>
-    /// <li><p>Year - 1</p></li>
+    /// <li>
+    /// <p>Minute - 1-59</p></li>
+    /// <li>
+    /// <p>Hour - 1-23</p></li>
+    /// <li>
+    /// <p>Day - 1-6</p></li>
+    /// <li>
+    /// <p>Week - 1-4</p></li>
+    /// <li>
+    /// <p>Month - 1-11</p></li>
+    /// <li>
+    /// <p>Year - 1</p></li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
@@ -283,12 +319,18 @@ impl CreateAutoPredictorInputBuilder {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
-    /// <li><p>Minute - 1-59</p></li>
-    /// <li><p>Hour - 1-23</p></li>
-    /// <li><p>Day - 1-6</p></li>
-    /// <li><p>Week - 1-4</p></li>
-    /// <li><p>Month - 1-11</p></li>
-    /// <li><p>Year - 1</p></li>
+    /// <li>
+    /// <p>Minute - 1-59</p></li>
+    /// <li>
+    /// <p>Hour - 1-23</p></li>
+    /// <li>
+    /// <p>Day - 1-6</p></li>
+    /// <li>
+    /// <p>Week - 1-4</p></li>
+    /// <li>
+    /// <p>Month - 1-11</p></li>
+    /// <li>
+    /// <p>Year - 1</p></li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
@@ -376,12 +418,18 @@ impl CreateAutoPredictorInputBuilder {
     /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
-    /// <li><p>Maximum number of tags per resource: 50.</p></li>
-    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
-    /// <li><p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource: 50.</p></li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
+    /// <li>
+    /// <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -392,12 +440,18 @@ impl CreateAutoPredictorInputBuilder {
     /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
-    /// <li><p>Maximum number of tags per resource: 50.</p></li>
-    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
-    /// <li><p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource: 50.</p></li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
+    /// <li>
+    /// <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -406,12 +460,18 @@ impl CreateAutoPredictorInputBuilder {
     /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
-    /// <li><p>Maximum number of tags per resource: 50.</p></li>
-    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
-    /// <li><p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique and each tag key must have one value.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource: 50.</p></li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.</p></li>
+    /// <li>
+    /// <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

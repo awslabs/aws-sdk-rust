@@ -32,9 +32,12 @@ pub struct ModifyReplicationInstanceInput {
     /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible.</p>
     /// <p>An outage does result if these factors apply:</p>
     /// <ul>
-    /// <li><p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
-    /// <li><p>A newer minor version is available.</p></li>
-    /// <li><p>DMS has enabled automatic patching for the given engine version.</p></li>
+    /// <li>
+    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
+    /// <li>
+    /// <p>A newer minor version is available.</p></li>
+    /// <li>
+    /// <p>DMS has enabled automatic patching for the given engine version.</p></li>
     /// </ul>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
@@ -91,9 +94,12 @@ impl ModifyReplicationInstanceInput {
     /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible.</p>
     /// <p>An outage does result if these factors apply:</p>
     /// <ul>
-    /// <li><p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
-    /// <li><p>A newer minor version is available.</p></li>
-    /// <li><p>DMS has enabled automatic patching for the given engine version.</p></li>
+    /// <li>
+    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
+    /// <li>
+    /// <p>A newer minor version is available.</p></li>
+    /// <li>
+    /// <p>DMS has enabled automatic patching for the given engine version.</p></li>
     /// </ul>
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
@@ -289,9 +295,12 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible.</p>
     /// <p>An outage does result if these factors apply:</p>
     /// <ul>
-    /// <li><p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
-    /// <li><p>A newer minor version is available.</p></li>
-    /// <li><p>DMS has enabled automatic patching for the given engine version.</p></li>
+    /// <li>
+    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
+    /// <li>
+    /// <p>A newer minor version is available.</p></li>
+    /// <li>
+    /// <p>DMS has enabled automatic patching for the given engine version.</p></li>
     /// </ul>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
@@ -300,9 +309,12 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible.</p>
     /// <p>An outage does result if these factors apply:</p>
     /// <ul>
-    /// <li><p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
-    /// <li><p>A newer minor version is available.</p></li>
-    /// <li><p>DMS has enabled automatic patching for the given engine version.</p></li>
+    /// <li>
+    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
+    /// <li>
+    /// <p>A newer minor version is available.</p></li>
+    /// <li>
+    /// <p>DMS has enabled automatic patching for the given engine version.</p></li>
     /// </ul>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
@@ -311,9 +323,12 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible.</p>
     /// <p>An outage does result if these factors apply:</p>
     /// <ul>
-    /// <li><p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
-    /// <li><p>A newer minor version is available.</p></li>
-    /// <li><p>DMS has enabled automatic patching for the given engine version.</p></li>
+    /// <li>
+    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p></li>
+    /// <li>
+    /// <p>A newer minor version is available.</p></li>
+    /// <li>
+    /// <p>DMS has enabled automatic patching for the given engine version.</p></li>
     /// </ul>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade

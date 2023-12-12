@@ -2,8 +2,10 @@
 
 /// <p>Represents the output of one of the following operations:</p>
 /// <ul>
-/// <li><p><code>ModifyCacheParameterGroup</code></p></li>
-/// <li><p><code>ResetCacheParameterGroup</code></p></li>
+/// <li>
+/// <p><code>ModifyCacheParameterGroup</code></p></li>
+/// <li>
+/// <p><code>ResetCacheParameterGroup</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

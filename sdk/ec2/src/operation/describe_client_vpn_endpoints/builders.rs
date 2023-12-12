@@ -166,8 +166,10 @@ impl DescribeClientVpnEndpointsFluentBuilder {
     ///
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>endpoint-id</code> - The ID of the Client VPN endpoint.</p></li>
-    /// <li><p><code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p></li>
+    /// <li>
+    /// <p><code>endpoint-id</code> - The ID of the Client VPN endpoint.</p></li>
+    /// <li>
+    /// <p><code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -175,8 +177,10 @@ impl DescribeClientVpnEndpointsFluentBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>endpoint-id</code> - The ID of the Client VPN endpoint.</p></li>
-    /// <li><p><code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p></li>
+    /// <li>
+    /// <p><code>endpoint-id</code> - The ID of the Client VPN endpoint.</p></li>
+    /// <li>
+    /// <p><code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -184,8 +188,10 @@ impl DescribeClientVpnEndpointsFluentBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>endpoint-id</code> - The ID of the Client VPN endpoint.</p></li>
-    /// <li><p><code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p></li>
+    /// <li>
+    /// <p><code>endpoint-id</code> - The ID of the Client VPN endpoint.</p></li>
+    /// <li>
+    /// <p><code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

@@ -25,10 +25,13 @@ impl CreateChannelFlowInputBuilder {
 /// <p>Creates a channel flow, a container for processors. Processors are AWS Lambda functions that perform actions on chat messages, such as stripping out profanity. You can associate channel flows with channels, and the processors in the channel flow then take action on all messages sent to that channel. This is a developer API.</p>
 /// <p>Channel flows process the following items:</p>
 /// <ol>
-/// <li><p>New and updated messages</p></li>
-/// <li><p>Persistent and non-persistent messages</p></li>
-/// <li><p>The Standard message type</p></li>
-/// </ol> <note>
+/// <li>
+/// <p>New and updated messages</p></li>
+/// <li>
+/// <p>Persistent and non-persistent messages</p></li>
+/// <li>
+/// <p>The Standard message type</p></li>
+/// </ol><note>
 /// <p>Channel flows don't process Control or System messages. For more information about the message types provided by Chime SDK messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in the <i>Amazon Chime developer guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

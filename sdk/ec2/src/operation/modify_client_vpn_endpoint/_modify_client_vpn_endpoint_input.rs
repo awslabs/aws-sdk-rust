@@ -10,10 +10,14 @@ pub struct ModifyClientVpnEndpointInput {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li><p>Client connection requests</p></li>
-    /// <li><p>Client connection results (successful and unsuccessful)</p></li>
-    /// <li><p>Reasons for unsuccessful client connection requests</p></li>
-    /// <li><p>Client connection termination time</p></li>
+    /// <li>
+    /// <p>Client connection requests</p></li>
+    /// <li>
+    /// <p>Client connection results (successful and unsuccessful)</p></li>
+    /// <li>
+    /// <p>Reasons for unsuccessful client connection requests</p></li>
+    /// <li>
+    /// <p>Client connection termination time</p></li>
     /// </ul>
     pub connection_log_options: ::std::option::Option<crate::types::ConnectionLogOptions>,
     /// <p>Information about the DNS servers to be used by Client VPN connections. A Client VPN endpoint can have up to two DNS servers.</p>
@@ -56,10 +60,14 @@ impl ModifyClientVpnEndpointInput {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li><p>Client connection requests</p></li>
-    /// <li><p>Client connection results (successful and unsuccessful)</p></li>
-    /// <li><p>Reasons for unsuccessful client connection requests</p></li>
-    /// <li><p>Client connection termination time</p></li>
+    /// <li>
+    /// <p>Client connection requests</p></li>
+    /// <li>
+    /// <p>Client connection results (successful and unsuccessful)</p></li>
+    /// <li>
+    /// <p>Reasons for unsuccessful client connection requests</p></li>
+    /// <li>
+    /// <p>Client connection termination time</p></li>
     /// </ul>
     pub fn connection_log_options(&self) -> ::std::option::Option<&crate::types::ConnectionLogOptions> {
         self.connection_log_options.as_ref()
@@ -175,10 +183,14 @@ impl ModifyClientVpnEndpointInputBuilder {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li><p>Client connection requests</p></li>
-    /// <li><p>Client connection results (successful and unsuccessful)</p></li>
-    /// <li><p>Reasons for unsuccessful client connection requests</p></li>
-    /// <li><p>Client connection termination time</p></li>
+    /// <li>
+    /// <p>Client connection requests</p></li>
+    /// <li>
+    /// <p>Client connection results (successful and unsuccessful)</p></li>
+    /// <li>
+    /// <p>Reasons for unsuccessful client connection requests</p></li>
+    /// <li>
+    /// <p>Client connection termination time</p></li>
     /// </ul>
     pub fn connection_log_options(mut self, input: crate::types::ConnectionLogOptions) -> Self {
         self.connection_log_options = ::std::option::Option::Some(input);
@@ -187,10 +199,14 @@ impl ModifyClientVpnEndpointInputBuilder {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li><p>Client connection requests</p></li>
-    /// <li><p>Client connection results (successful and unsuccessful)</p></li>
-    /// <li><p>Reasons for unsuccessful client connection requests</p></li>
-    /// <li><p>Client connection termination time</p></li>
+    /// <li>
+    /// <p>Client connection requests</p></li>
+    /// <li>
+    /// <p>Client connection results (successful and unsuccessful)</p></li>
+    /// <li>
+    /// <p>Reasons for unsuccessful client connection requests</p></li>
+    /// <li>
+    /// <p>Client connection termination time</p></li>
     /// </ul>
     pub fn set_connection_log_options(mut self, input: ::std::option::Option<crate::types::ConnectionLogOptions>) -> Self {
         self.connection_log_options = input;
@@ -199,10 +215,14 @@ impl ModifyClientVpnEndpointInputBuilder {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li><p>Client connection requests</p></li>
-    /// <li><p>Client connection results (successful and unsuccessful)</p></li>
-    /// <li><p>Reasons for unsuccessful client connection requests</p></li>
-    /// <li><p>Client connection termination time</p></li>
+    /// <li>
+    /// <p>Client connection requests</p></li>
+    /// <li>
+    /// <p>Client connection results (successful and unsuccessful)</p></li>
+    /// <li>
+    /// <p>Reasons for unsuccessful client connection requests</p></li>
+    /// <li>
+    /// <p>Client connection termination time</p></li>
     /// </ul>
     pub fn get_connection_log_options(&self) -> &::std::option::Option<crate::types::ConnectionLogOptions> {
         &self.connection_log_options

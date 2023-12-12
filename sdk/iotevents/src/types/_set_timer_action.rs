@@ -11,9 +11,7 @@ pub struct SetTimerAction {
         note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
     )]
     pub seconds: ::std::option::Option<i32>,
-    /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.
-    /// <variable-name></variable-name></code>), and input values (<code>$input.
-    /// <input-name>
+    /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.<variable-name></variable-name></code>), and input values (<code>$input.<input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number.</p>
@@ -32,9 +30,7 @@ impl SetTimerAction {
     pub fn seconds(&self) -> ::std::option::Option<i32> {
         self.seconds
     }
-    /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.
-    /// <variable-name></variable-name></code>), and input values (<code>$input.
-    /// <input-name>
+    /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.<variable-name></variable-name></code>), and input values (<code>$input.<input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number.</p>
@@ -96,9 +92,7 @@ impl SetTimerActionBuilder {
     pub fn get_seconds(&self) -> &::std::option::Option<i32> {
         &self.seconds
     }
-    /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.
-    /// <variable-name></variable-name></code>), and input values (<code>$input.
-    /// <input-name>
+    /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.<variable-name></variable-name></code>), and input values (<code>$input.<input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number.</p>
@@ -106,9 +100,7 @@ impl SetTimerActionBuilder {
         self.duration_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.
-    /// <variable-name></variable-name></code>), and input values (<code>$input.
-    /// <input-name>
+    /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.<variable-name></variable-name></code>), and input values (<code>$input.<input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number.</p>
@@ -116,9 +108,7 @@ impl SetTimerActionBuilder {
         self.duration_expression = input;
         self
     }
-    /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.
-    /// <variable-name></variable-name></code>), and input values (<code>$input.
-    /// <input-name>
+    /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.<variable-name></variable-name></code>), and input values (<code>$input.<input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number.</p>

@@ -6,10 +6,14 @@
 pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETE</code></p></li>
-    /// <li><p><code>HEALTHY</code></p></li>
-    /// <li><p><code>SUCCESS</code></p></li>
-    /// <li><p><code>START</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETE</code></p></li>
+    /// <li>
+    /// <p><code>HEALTHY</code></p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code></p></li>
+    /// <li>
+    /// <p><code>START</code></p></li>
     /// </ul>
     pub condition: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dependent container.</p>
@@ -18,10 +22,14 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
 impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETE</code></p></li>
-    /// <li><p><code>HEALTHY</code></p></li>
-    /// <li><p><code>SUCCESS</code></p></li>
-    /// <li><p><code>START</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETE</code></p></li>
+    /// <li>
+    /// <p><code>HEALTHY</code></p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code></p></li>
+    /// <li>
+    /// <p><code>START</code></p></li>
     /// </ul>
     pub fn condition(&self) -> ::std::option::Option<&str> {
         self.condition.as_deref()
@@ -48,10 +56,14 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
 impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETE</code></p></li>
-    /// <li><p><code>HEALTHY</code></p></li>
-    /// <li><p><code>SUCCESS</code></p></li>
-    /// <li><p><code>START</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETE</code></p></li>
+    /// <li>
+    /// <p><code>HEALTHY</code></p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code></p></li>
+    /// <li>
+    /// <p><code>START</code></p></li>
     /// </ul>
     pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition = ::std::option::Option::Some(input.into());
@@ -59,10 +71,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
     }
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETE</code></p></li>
-    /// <li><p><code>HEALTHY</code></p></li>
-    /// <li><p><code>SUCCESS</code></p></li>
-    /// <li><p><code>START</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETE</code></p></li>
+    /// <li>
+    /// <p><code>HEALTHY</code></p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code></p></li>
+    /// <li>
+    /// <p><code>START</code></p></li>
     /// </ul>
     pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.condition = input;
@@ -70,10 +86,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
     }
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>COMPLETE</code></p></li>
-    /// <li><p><code>HEALTHY</code></p></li>
-    /// <li><p><code>SUCCESS</code></p></li>
-    /// <li><p><code>START</code></p></li>
+    /// <li>
+    /// <p><code>COMPLETE</code></p></li>
+    /// <li>
+    /// <p><code>HEALTHY</code></p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code></p></li>
+    /// <li>
+    /// <p><code>START</code></p></li>
     /// </ul>
     pub fn get_condition(&self) -> &::std::option::Option<::std::string::String> {
         &self.condition

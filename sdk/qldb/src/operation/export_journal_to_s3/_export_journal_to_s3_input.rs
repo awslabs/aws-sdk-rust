@@ -18,8 +18,10 @@ pub struct ExportJournalToS3Input {
     pub s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li><p>Write objects into your Amazon S3 bucket.</p></li>
-    /// <li><p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
+    /// <li>
+    /// <p>Write objects into your Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -52,8 +54,10 @@ impl ExportJournalToS3Input {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li><p>Write objects into your Amazon S3 bucket.</p></li>
-    /// <li><p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
+    /// <li>
+    /// <p>Write objects into your Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -162,8 +166,10 @@ impl ExportJournalToS3InputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li><p>Write objects into your Amazon S3 bucket.</p></li>
-    /// <li><p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
+    /// <li>
+    /// <p>Write objects into your Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
     /// This field is required.
@@ -173,8 +179,10 @@ impl ExportJournalToS3InputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li><p>Write objects into your Amazon S3 bucket.</p></li>
-    /// <li><p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
+    /// <li>
+    /// <p>Write objects into your Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -183,8 +191,10 @@ impl ExportJournalToS3InputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li><p>Write objects into your Amazon S3 bucket.</p></li>
-    /// <li><p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
+    /// <li>
+    /// <p>Write objects into your Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p></li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {

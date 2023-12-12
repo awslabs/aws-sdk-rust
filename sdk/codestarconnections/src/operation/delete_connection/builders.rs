@@ -108,21 +108,21 @@ impl DeleteConnectionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p><note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p><note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p><note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {

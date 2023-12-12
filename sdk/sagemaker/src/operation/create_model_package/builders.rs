@@ -23,11 +23,13 @@ impl CreateModelPackageInputBuilder {
 /// Fluent builder constructing a request to `CreateModelPackage`.
 ///
 /// <p>Creates a model package that you can use to create SageMaker models or list on Amazon Web Services Marketplace, or a versioned model that is part of a model group. Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to create models in SageMaker.</p>
-/// <p>To create a model package by specifying a Docker container that contains your inference code and the Amazon S3 location of your model artifacts, provide values for <code>InferenceSpecification</code>. To create a model from an algorithm resource that you created or subscribed to in Amazon Web Services Marketplace, provide a value for <code>SourceAlgorithmSpecification</code>.</p> <note>
+/// <p>To create a model package by specifying a Docker container that contains your inference code and the Amazon S3 location of your model artifacts, provide values for <code>InferenceSpecification</code>. To create a model from an algorithm resource that you created or subscribed to in Amazon Web Services Marketplace, provide a value for <code>SourceAlgorithmSpecification</code>.</p><note>
 /// <p>There are two types of model packages:</p>
 /// <ul>
-/// <li><p>Versioned - a model that is part of a model group in the model registry.</p></li>
-/// <li><p>Unversioned - a model package that is not part of a model group.</p></li>
+/// <li>
+/// <p>Versioned - a model that is part of a model group in the model registry.</p></li>
+/// <li>
+/// <p>Unversioned - a model package that is not part of a model group.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -165,9 +167,12 @@ impl CreateModelPackageFluentBuilder {
     }
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
-    /// <li><p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li><p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li><p>The input and output content formats that the model package supports for inference.</p></li>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
     /// </ul>
     pub fn inference_specification(mut self, input: crate::types::InferenceSpecification) -> Self {
         self.inner = self.inner.inference_specification(input);
@@ -175,9 +180,12 @@ impl CreateModelPackageFluentBuilder {
     }
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
-    /// <li><p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li><p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li><p>The input and output content formats that the model package supports for inference.</p></li>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
     /// </ul>
     pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
         self.inner = self.inner.set_inference_specification(input);
@@ -185,9 +193,12 @@ impl CreateModelPackageFluentBuilder {
     }
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
-    /// <li><p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li><p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li><p>The input and output content formats that the model package supports for inference.</p></li>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
     /// </ul>
     pub fn get_inference_specification(&self) -> &::std::option::Option<crate::types::InferenceSpecification> {
         self.inner.get_inference_specification()

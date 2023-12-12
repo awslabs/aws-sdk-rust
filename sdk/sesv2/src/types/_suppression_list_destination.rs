@@ -6,16 +6,20 @@
 pub struct SuppressionListDestination {
     /// <p>The type of action to perform on the address. The following are possible values:</p>
     /// <ul>
-    /// <li><p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p></li>
-    /// <li><p>DELETE: remove the addresses from the suppression list.</p></li>
+    /// <li>
+    /// <p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p></li>
+    /// <li>
+    /// <p>DELETE: remove the addresses from the suppression list.</p></li>
     /// </ul>
     pub suppression_list_import_action: crate::types::SuppressionListImportAction,
 }
 impl SuppressionListDestination {
     /// <p>The type of action to perform on the address. The following are possible values:</p>
     /// <ul>
-    /// <li><p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p></li>
-    /// <li><p>DELETE: remove the addresses from the suppression list.</p></li>
+    /// <li>
+    /// <p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p></li>
+    /// <li>
+    /// <p>DELETE: remove the addresses from the suppression list.</p></li>
     /// </ul>
     pub fn suppression_list_import_action(&self) -> &crate::types::SuppressionListImportAction {
         &self.suppression_list_import_action
@@ -37,8 +41,10 @@ pub struct SuppressionListDestinationBuilder {
 impl SuppressionListDestinationBuilder {
     /// <p>The type of action to perform on the address. The following are possible values:</p>
     /// <ul>
-    /// <li><p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p></li>
-    /// <li><p>DELETE: remove the addresses from the suppression list.</p></li>
+    /// <li>
+    /// <p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p></li>
+    /// <li>
+    /// <p>DELETE: remove the addresses from the suppression list.</p></li>
     /// </ul>
     /// This field is required.
     pub fn suppression_list_import_action(mut self, input: crate::types::SuppressionListImportAction) -> Self {
@@ -47,8 +53,10 @@ impl SuppressionListDestinationBuilder {
     }
     /// <p>The type of action to perform on the address. The following are possible values:</p>
     /// <ul>
-    /// <li><p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p></li>
-    /// <li><p>DELETE: remove the addresses from the suppression list.</p></li>
+    /// <li>
+    /// <p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p></li>
+    /// <li>
+    /// <p>DELETE: remove the addresses from the suppression list.</p></li>
     /// </ul>
     pub fn set_suppression_list_import_action(mut self, input: ::std::option::Option<crate::types::SuppressionListImportAction>) -> Self {
         self.suppression_list_import_action = input;
@@ -56,8 +64,10 @@ impl SuppressionListDestinationBuilder {
     }
     /// <p>The type of action to perform on the address. The following are possible values:</p>
     /// <ul>
-    /// <li><p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p></li>
-    /// <li><p>DELETE: remove the addresses from the suppression list.</p></li>
+    /// <li>
+    /// <p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p></li>
+    /// <li>
+    /// <p>DELETE: remove the addresses from the suppression list.</p></li>
     /// </ul>
     pub fn get_suppression_list_import_action(&self) -> &::std::option::Option<crate::types::SuppressionListImportAction> {
         &self.suppression_list_import_action

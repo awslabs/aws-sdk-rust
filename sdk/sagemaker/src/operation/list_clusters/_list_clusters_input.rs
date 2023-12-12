@@ -6,10 +6,14 @@ pub struct ListClustersInput {
     /// <p>Set a start time for the time range during which you want to list SageMaker HyperPod clusters. Timestamps are formatted according to the ISO 8601 standard.</p>
     /// <p>Acceptable formats include:</p>
     /// <ul>
-    /// <li><p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (UTC), for example, <code>2014-10-01T20:30:00.000Z</code></p></li>
-    /// <li><p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (with offset), for example, <code>2014-10-01T12:30:00.000-08:00</code></p></li>
-    /// <li><p><code>YYYY-MM-DD</code>, for example, <code>2014-10-01</code></p></li>
-    /// <li><p>Unix time in seconds, for example, <code>1412195400</code>. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (UTC), for example, <code>2014-10-01T20:30:00.000Z</code></p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (with offset), for example, <code>2014-10-01T12:30:00.000-08:00</code></p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DD</code>, for example, <code>2014-10-01</code></p></li>
+    /// <li>
+    /// <p>Unix time in seconds, for example, <code>1412195400</code>. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.</p></li>
     /// </ul>
     /// <p>For more information about the timestamp format, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -30,10 +34,14 @@ impl ListClustersInput {
     /// <p>Set a start time for the time range during which you want to list SageMaker HyperPod clusters. Timestamps are formatted according to the ISO 8601 standard.</p>
     /// <p>Acceptable formats include:</p>
     /// <ul>
-    /// <li><p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (UTC), for example, <code>2014-10-01T20:30:00.000Z</code></p></li>
-    /// <li><p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (with offset), for example, <code>2014-10-01T12:30:00.000-08:00</code></p></li>
-    /// <li><p><code>YYYY-MM-DD</code>, for example, <code>2014-10-01</code></p></li>
-    /// <li><p>Unix time in seconds, for example, <code>1412195400</code>. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (UTC), for example, <code>2014-10-01T20:30:00.000Z</code></p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (with offset), for example, <code>2014-10-01T12:30:00.000-08:00</code></p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DD</code>, for example, <code>2014-10-01</code></p></li>
+    /// <li>
+    /// <p>Unix time in seconds, for example, <code>1412195400</code>. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.</p></li>
     /// </ul>
     /// <p>For more information about the timestamp format, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
     pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -87,10 +95,14 @@ impl ListClustersInputBuilder {
     /// <p>Set a start time for the time range during which you want to list SageMaker HyperPod clusters. Timestamps are formatted according to the ISO 8601 standard.</p>
     /// <p>Acceptable formats include:</p>
     /// <ul>
-    /// <li><p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (UTC), for example, <code>2014-10-01T20:30:00.000Z</code></p></li>
-    /// <li><p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (with offset), for example, <code>2014-10-01T12:30:00.000-08:00</code></p></li>
-    /// <li><p><code>YYYY-MM-DD</code>, for example, <code>2014-10-01</code></p></li>
-    /// <li><p>Unix time in seconds, for example, <code>1412195400</code>. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (UTC), for example, <code>2014-10-01T20:30:00.000Z</code></p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (with offset), for example, <code>2014-10-01T12:30:00.000-08:00</code></p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DD</code>, for example, <code>2014-10-01</code></p></li>
+    /// <li>
+    /// <p>Unix time in seconds, for example, <code>1412195400</code>. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.</p></li>
     /// </ul>
     /// <p>For more information about the timestamp format, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -100,10 +112,14 @@ impl ListClustersInputBuilder {
     /// <p>Set a start time for the time range during which you want to list SageMaker HyperPod clusters. Timestamps are formatted according to the ISO 8601 standard.</p>
     /// <p>Acceptable formats include:</p>
     /// <ul>
-    /// <li><p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (UTC), for example, <code>2014-10-01T20:30:00.000Z</code></p></li>
-    /// <li><p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (with offset), for example, <code>2014-10-01T12:30:00.000-08:00</code></p></li>
-    /// <li><p><code>YYYY-MM-DD</code>, for example, <code>2014-10-01</code></p></li>
-    /// <li><p>Unix time in seconds, for example, <code>1412195400</code>. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (UTC), for example, <code>2014-10-01T20:30:00.000Z</code></p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (with offset), for example, <code>2014-10-01T12:30:00.000-08:00</code></p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DD</code>, for example, <code>2014-10-01</code></p></li>
+    /// <li>
+    /// <p>Unix time in seconds, for example, <code>1412195400</code>. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.</p></li>
     /// </ul>
     /// <p>For more information about the timestamp format, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
@@ -113,10 +129,14 @@ impl ListClustersInputBuilder {
     /// <p>Set a start time for the time range during which you want to list SageMaker HyperPod clusters. Timestamps are formatted according to the ISO 8601 standard.</p>
     /// <p>Acceptable formats include:</p>
     /// <ul>
-    /// <li><p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (UTC), for example, <code>2014-10-01T20:30:00.000Z</code></p></li>
-    /// <li><p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (with offset), for example, <code>2014-10-01T12:30:00.000-08:00</code></p></li>
-    /// <li><p><code>YYYY-MM-DD</code>, for example, <code>2014-10-01</code></p></li>
-    /// <li><p>Unix time in seconds, for example, <code>1412195400</code>. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (UTC), for example, <code>2014-10-01T20:30:00.000Z</code></p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDThh:mm:ss.sssTZD</code> (with offset), for example, <code>2014-10-01T12:30:00.000-08:00</code></p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DD</code>, for example, <code>2014-10-01</code></p></li>
+    /// <li>
+    /// <p>Unix time in seconds, for example, <code>1412195400</code>. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.</p></li>
     /// </ul>
     /// <p>For more information about the timestamp format, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {

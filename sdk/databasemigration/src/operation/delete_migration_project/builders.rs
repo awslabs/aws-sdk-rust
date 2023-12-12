@@ -22,7 +22,7 @@ impl DeleteMigrationProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteMigrationProject`.
 ///
-/// <p>Deletes the specified migration project.</p> <note>
+/// <p>Deletes the specified migration project.</p><note>
 /// <p>The migration project must be closed before you can delete it.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

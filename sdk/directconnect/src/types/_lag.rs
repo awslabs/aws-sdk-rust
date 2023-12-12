@@ -16,13 +16,20 @@ pub struct Lag {
     pub lag_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p></li>
-    /// <li><p><code>pending</code>: The LAG has been approved and is being initialized.</p></li>
-    /// <li><p><code>available</code>: The network link is established and the LAG is ready for use.</p></li>
-    /// <li><p><code>down</code>: The network link is down.</p></li>
-    /// <li><p><code>deleting</code>: The LAG is being deleted.</p></li>
-    /// <li><p><code>deleted</code>: The LAG is deleted.</p></li>
-    /// <li><p><code>unknown</code>: The state of the LAG is not available.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: The LAG has been approved and is being initialized.</p></li>
+    /// <li>
+    /// <p><code>available</code>: The network link is established and the LAG is ready for use.</p></li>
+    /// <li>
+    /// <p><code>down</code>: The network link is down.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The LAG is being deleted.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The LAG is deleted.</p></li>
+    /// <li>
+    /// <p><code>unknown</code>: The state of the LAG is not available.</p></li>
     /// </ul>
     pub lag_state: ::std::option::Option<crate::types::LagState>,
     /// <p>The location of the LAG.</p>
@@ -80,13 +87,20 @@ impl Lag {
     }
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p></li>
-    /// <li><p><code>pending</code>: The LAG has been approved and is being initialized.</p></li>
-    /// <li><p><code>available</code>: The network link is established and the LAG is ready for use.</p></li>
-    /// <li><p><code>down</code>: The network link is down.</p></li>
-    /// <li><p><code>deleting</code>: The LAG is being deleted.</p></li>
-    /// <li><p><code>deleted</code>: The LAG is deleted.</p></li>
-    /// <li><p><code>unknown</code>: The state of the LAG is not available.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: The LAG has been approved and is being initialized.</p></li>
+    /// <li>
+    /// <p><code>available</code>: The network link is established and the LAG is ready for use.</p></li>
+    /// <li>
+    /// <p><code>down</code>: The network link is down.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The LAG is being deleted.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The LAG is deleted.</p></li>
+    /// <li>
+    /// <p><code>unknown</code>: The state of the LAG is not available.</p></li>
     /// </ul>
     pub fn lag_state(&self) -> ::std::option::Option<&crate::types::LagState> {
         self.lag_state.as_ref()
@@ -265,13 +279,20 @@ impl LagBuilder {
     }
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p></li>
-    /// <li><p><code>pending</code>: The LAG has been approved and is being initialized.</p></li>
-    /// <li><p><code>available</code>: The network link is established and the LAG is ready for use.</p></li>
-    /// <li><p><code>down</code>: The network link is down.</p></li>
-    /// <li><p><code>deleting</code>: The LAG is being deleted.</p></li>
-    /// <li><p><code>deleted</code>: The LAG is deleted.</p></li>
-    /// <li><p><code>unknown</code>: The state of the LAG is not available.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: The LAG has been approved and is being initialized.</p></li>
+    /// <li>
+    /// <p><code>available</code>: The network link is established and the LAG is ready for use.</p></li>
+    /// <li>
+    /// <p><code>down</code>: The network link is down.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The LAG is being deleted.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The LAG is deleted.</p></li>
+    /// <li>
+    /// <p><code>unknown</code>: The state of the LAG is not available.</p></li>
     /// </ul>
     pub fn lag_state(mut self, input: crate::types::LagState) -> Self {
         self.lag_state = ::std::option::Option::Some(input);
@@ -279,13 +300,20 @@ impl LagBuilder {
     }
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p></li>
-    /// <li><p><code>pending</code>: The LAG has been approved and is being initialized.</p></li>
-    /// <li><p><code>available</code>: The network link is established and the LAG is ready for use.</p></li>
-    /// <li><p><code>down</code>: The network link is down.</p></li>
-    /// <li><p><code>deleting</code>: The LAG is being deleted.</p></li>
-    /// <li><p><code>deleted</code>: The LAG is deleted.</p></li>
-    /// <li><p><code>unknown</code>: The state of the LAG is not available.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: The LAG has been approved and is being initialized.</p></li>
+    /// <li>
+    /// <p><code>available</code>: The network link is established and the LAG is ready for use.</p></li>
+    /// <li>
+    /// <p><code>down</code>: The network link is down.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The LAG is being deleted.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The LAG is deleted.</p></li>
+    /// <li>
+    /// <p><code>unknown</code>: The state of the LAG is not available.</p></li>
     /// </ul>
     pub fn set_lag_state(mut self, input: ::std::option::Option<crate::types::LagState>) -> Self {
         self.lag_state = input;
@@ -293,13 +321,20 @@ impl LagBuilder {
     }
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p></li>
-    /// <li><p><code>pending</code>: The LAG has been approved and is being initialized.</p></li>
-    /// <li><p><code>available</code>: The network link is established and the LAG is ready for use.</p></li>
-    /// <li><p><code>down</code>: The network link is down.</p></li>
-    /// <li><p><code>deleting</code>: The LAG is being deleted.</p></li>
-    /// <li><p><code>deleted</code>: The LAG is deleted.</p></li>
-    /// <li><p><code>unknown</code>: The state of the LAG is not available.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: The LAG has been approved and is being initialized.</p></li>
+    /// <li>
+    /// <p><code>available</code>: The network link is established and the LAG is ready for use.</p></li>
+    /// <li>
+    /// <p><code>down</code>: The network link is down.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The LAG is being deleted.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The LAG is deleted.</p></li>
+    /// <li>
+    /// <p><code>unknown</code>: The state of the LAG is not available.</p></li>
     /// </ul>
     pub fn get_lag_state(&self) -> &::std::option::Option<crate::types::LagState> {
         &self.lag_state

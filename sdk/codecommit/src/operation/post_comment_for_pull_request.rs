@@ -302,7 +302,7 @@ pub enum PostCommentForPullRequestError {
     InvalidPullRequestIdException(crate::types::error::InvalidPullRequestIdException),
     /// <p>Either the enum is not in a valid format, or the specified file version enum is not valid in respect to the current file version.</p>
     InvalidRelativeFileVersionEnumException(crate::types::error::InvalidRelativeFileVersionEnumException),
-    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>A specified repository name is not valid.</p><note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),

@@ -22,7 +22,7 @@ impl CopyPackageVersionsInputBuilder {
 }
 /// Fluent builder constructing a request to `CopyPackageVersions`.
 ///
-/// <p>Copies package versions from one repository to another repository in the same domain.</p> <note>
+/// <p>Copies package versions from one repository to another repository in the same domain.</p><note>
 /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -182,10 +182,14 @@ impl CopyPackageVersionsFluentBuilder {
     }
     /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions.</p></li>
-    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -193,10 +197,14 @@ impl CopyPackageVersionsFluentBuilder {
     }
     /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions.</p></li>
-    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
@@ -204,10 +212,14 @@ impl CopyPackageVersionsFluentBuilder {
     }
     /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions.</p></li>
-    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
@@ -230,21 +242,21 @@ impl CopyPackageVersionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
     ///
-    /// <p>The versions of the package to be copied.</p> <note>
+    /// <p>The versions of the package to be copied.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.versions(input.into());
         self
     }
-    /// <p>The versions of the package to be copied.</p> <note>
+    /// <p>The versions of the package to be copied.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
     pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_versions(input);
         self
     }
-    /// <p>The versions of the package to be copied.</p> <note>
+    /// <p>The versions of the package to be copied.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
     pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -254,7 +266,7 @@ impl CopyPackageVersionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_version_revisions`](Self::set_version_revisions).
     ///
-    /// <p>A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision.</p> <note>
+    /// <p>A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
     pub fn version_revisions(
@@ -265,7 +277,7 @@ impl CopyPackageVersionsFluentBuilder {
         self.inner = self.inner.version_revisions(k.into(), v.into());
         self
     }
-    /// <p>A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision.</p> <note>
+    /// <p>A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
     pub fn set_version_revisions(
@@ -275,7 +287,7 @@ impl CopyPackageVersionsFluentBuilder {
         self.inner = self.inner.set_version_revisions(input);
         self
     }
-    /// <p>A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision.</p> <note>
+    /// <p>A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
     pub fn get_version_revisions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

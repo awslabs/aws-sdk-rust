@@ -7,7 +7,7 @@ pub struct CreateImageRecipeInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the image recipe.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -48,7 +48,7 @@ impl CreateImageRecipeInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -152,7 +152,7 @@ impl CreateImageRecipeInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -173,7 +173,7 @@ impl CreateImageRecipeInputBuilder {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -193,7 +193,7 @@ impl CreateImageRecipeInputBuilder {
         self.semantic_version = input;
         self
     }
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>

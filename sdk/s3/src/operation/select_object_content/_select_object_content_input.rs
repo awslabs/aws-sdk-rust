@@ -27,8 +27,8 @@ pub struct SelectObjectContentInput {
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
     /// <p><code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <start>
     /// 50
     /// </start>
@@ -36,14 +36,14 @@ pub struct SelectObjectContentInput {
     /// 100
     /// </end>
     /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <start>
     /// 50
     /// </start>
     /// </scanrange></code> - process only the records starting after the byte 50</p></li>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <end>
     /// 50
     /// </end>
@@ -97,8 +97,8 @@ impl SelectObjectContentInput {
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
     /// <p><code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <start>
     /// 50
     /// </start>
@@ -106,14 +106,14 @@ impl SelectObjectContentInput {
     /// 100
     /// </end>
     /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <start>
     /// 50
     /// </start>
     /// </scanrange></code> - process only the records starting after the byte 50</p></li>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <end>
     /// 50
     /// </end>
@@ -319,8 +319,8 @@ impl SelectObjectContentInputBuilder {
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
     /// <p><code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <start>
     /// 50
     /// </start>
@@ -328,14 +328,14 @@ impl SelectObjectContentInputBuilder {
     /// 100
     /// </end>
     /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <start>
     /// 50
     /// </start>
     /// </scanrange></code> - process only the records starting after the byte 50</p></li>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <end>
     /// 50
     /// </end>
@@ -348,8 +348,8 @@ impl SelectObjectContentInputBuilder {
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
     /// <p><code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <start>
     /// 50
     /// </start>
@@ -357,14 +357,14 @@ impl SelectObjectContentInputBuilder {
     /// 100
     /// </end>
     /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <start>
     /// 50
     /// </start>
     /// </scanrange></code> - process only the records starting after the byte 50</p></li>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <end>
     /// 50
     /// </end>
@@ -377,8 +377,8 @@ impl SelectObjectContentInputBuilder {
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
     /// <p><code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <start>
     /// 50
     /// </start>
@@ -386,14 +386,14 @@ impl SelectObjectContentInputBuilder {
     /// 100
     /// </end>
     /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p></li>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <start>
     /// 50
     /// </start>
     /// </scanrange></code> - process only the records starting after the byte 50</p></li>
-    /// <li><p><code>
-    /// <scanrange>
+    /// <li>
+    /// <p><code><scanrange>
     /// <end>
     /// 50
     /// </end>

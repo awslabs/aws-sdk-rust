@@ -5,9 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiGatewayV2ApiDetails {
     /// <p>The URI of the API.</p>
-    /// <p>Uses the format <code> <i>
-    /// <api-id></api-id></i>.execute-api.<i>
-    /// <region></region></i>.amazonaws.com</code></p>
+    /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
     pub api_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the API.</p>
@@ -35,9 +33,7 @@ pub struct AwsApiGatewayV2ApiDetails {
 }
 impl AwsApiGatewayV2ApiDetails {
     /// <p>The URI of the API.</p>
-    /// <p>Uses the format <code> <i>
-    /// <api-id></api-id></i>.execute-api.<i>
-    /// <region></region></i>.amazonaws.com</code></p>
+    /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
     pub fn api_endpoint(&self) -> ::std::option::Option<&str> {
         self.api_endpoint.as_deref()
@@ -107,27 +103,21 @@ pub struct AwsApiGatewayV2ApiDetailsBuilder {
 }
 impl AwsApiGatewayV2ApiDetailsBuilder {
     /// <p>The URI of the API.</p>
-    /// <p>Uses the format <code> <i>
-    /// <api-id></api-id></i>.execute-api.<i>
-    /// <region></region></i>.amazonaws.com</code></p>
+    /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
     pub fn api_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of the API.</p>
-    /// <p>Uses the format <code> <i>
-    /// <api-id></api-id></i>.execute-api.<i>
-    /// <region></region></i>.amazonaws.com</code></p>
+    /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
     pub fn set_api_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_endpoint = input;
         self
     }
     /// <p>The URI of the API.</p>
-    /// <p>Uses the format <code> <i>
-    /// <api-id></api-id></i>.execute-api.<i>
-    /// <region></region></i>.amazonaws.com</code></p>
+    /// <p>Uses the format <code> <i><api-id></api-id></i>.execute-api.<i><region></region></i>.amazonaws.com</code></p>
     /// <p>The stage name is typically appended to the URI to form a complete path to a deployed API stage.</p>
     pub fn get_api_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_endpoint

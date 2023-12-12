@@ -14,16 +14,22 @@ pub struct CreateFirewallRuleInput {
     pub priority: ::std::option::Option<i32>,
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code> - Permit the request to go through.</p></li>
-    /// <li><p><code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p></li>
-    /// <li><p><code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <li>
+    /// <p><code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>.</p></li>
     /// </ul>
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>.</p>
     /// <ul>
-    /// <li><p><code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p></li>
-    /// <li><p><code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p></li>
-    /// <li><p><code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings.</p></li>
+    /// <li>
+    /// <p><code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p></li>
+    /// <li>
+    /// <p><code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p></li>
+    /// <li>
+    /// <p><code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings.</p></li>
     /// </ul>
     /// <p>This setting is required if the rule action setting is <code>BLOCK</code>.</p>
     pub block_response: ::std::option::Option<crate::types::BlockResponse>,
@@ -59,18 +65,24 @@ impl CreateFirewallRuleInput {
     }
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code> - Permit the request to go through.</p></li>
-    /// <li><p><code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p></li>
-    /// <li><p><code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <li>
+    /// <p><code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>.</p></li>
     /// </ul>
     pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>.</p>
     /// <ul>
-    /// <li><p><code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p></li>
-    /// <li><p><code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p></li>
-    /// <li><p><code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings.</p></li>
+    /// <li>
+    /// <p><code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p></li>
+    /// <li>
+    /// <p><code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p></li>
+    /// <li>
+    /// <p><code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings.</p></li>
     /// </ul>
     /// <p>This setting is required if the rule action setting is <code>BLOCK</code>.</p>
     pub fn block_response(&self) -> ::std::option::Option<&crate::types::BlockResponse> {
@@ -184,9 +196,12 @@ impl CreateFirewallRuleInputBuilder {
     }
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code> - Permit the request to go through.</p></li>
-    /// <li><p><code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p></li>
-    /// <li><p><code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <li>
+    /// <p><code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn action(mut self, input: crate::types::Action) -> Self {
@@ -195,9 +210,12 @@ impl CreateFirewallRuleInputBuilder {
     }
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code> - Permit the request to go through.</p></li>
-    /// <li><p><code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p></li>
-    /// <li><p><code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <li>
+    /// <p><code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.action = input;
@@ -205,18 +223,24 @@ impl CreateFirewallRuleInputBuilder {
     }
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code> - Permit the request to go through.</p></li>
-    /// <li><p><code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p></li>
-    /// <li><p><code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> - Permit the request to go through.</p></li>
+    /// <li>
+    /// <p><code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>.</p></li>
     /// </ul>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
         &self.action
     }
     /// <p>The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>.</p>
     /// <ul>
-    /// <li><p><code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p></li>
-    /// <li><p><code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p></li>
-    /// <li><p><code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings.</p></li>
+    /// <li>
+    /// <p><code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p></li>
+    /// <li>
+    /// <p><code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p></li>
+    /// <li>
+    /// <p><code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings.</p></li>
     /// </ul>
     /// <p>This setting is required if the rule action setting is <code>BLOCK</code>.</p>
     pub fn block_response(mut self, input: crate::types::BlockResponse) -> Self {
@@ -225,9 +249,12 @@ impl CreateFirewallRuleInputBuilder {
     }
     /// <p>The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>.</p>
     /// <ul>
-    /// <li><p><code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p></li>
-    /// <li><p><code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p></li>
-    /// <li><p><code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings.</p></li>
+    /// <li>
+    /// <p><code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p></li>
+    /// <li>
+    /// <p><code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p></li>
+    /// <li>
+    /// <p><code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings.</p></li>
     /// </ul>
     /// <p>This setting is required if the rule action setting is <code>BLOCK</code>.</p>
     pub fn set_block_response(mut self, input: ::std::option::Option<crate::types::BlockResponse>) -> Self {
@@ -236,9 +263,12 @@ impl CreateFirewallRuleInputBuilder {
     }
     /// <p>The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>.</p>
     /// <ul>
-    /// <li><p><code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p></li>
-    /// <li><p><code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p></li>
-    /// <li><p><code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings.</p></li>
+    /// <li>
+    /// <p><code>NODATA</code> - Respond indicating that the query was successful, but no response is available for it.</p></li>
+    /// <li>
+    /// <p><code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query doesn't exist.</p></li>
+    /// <li>
+    /// <p><code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings.</p></li>
     /// </ul>
     /// <p>This setting is required if the rule action setting is <code>BLOCK</code>.</p>
     pub fn get_block_response(&self) -> &::std::option::Option<crate::types::BlockResponse> {

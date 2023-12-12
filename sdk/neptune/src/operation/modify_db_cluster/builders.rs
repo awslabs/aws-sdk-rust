@@ -111,7 +111,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
@@ -120,7 +121,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
@@ -129,7 +131,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
@@ -137,9 +140,12 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>The first character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>The first character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code></p>
     pub fn new_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,9 +155,12 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>The first character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>The first character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code></p>
     pub fn set_new_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -161,9 +170,12 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>The first character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>The first character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code></p>
     pub fn get_new_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,7 +205,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.backup_retention_period(input);
@@ -203,7 +216,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_backup_retention_period(input);
@@ -213,7 +227,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_backup_retention_period()
@@ -302,10 +317,14 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
@@ -315,10 +334,14 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
@@ -328,10 +351,14 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_backup_window()
@@ -427,40 +454,46 @@ impl ModifyDBClusterFluentBuilder {
     pub fn get_allow_major_version_upgrade(&self) -> &::std::option::Option<bool> {
         self.inner.get_allow_major_version_upgrade()
     }
-    /// <p>The name of the DB parameter group to apply to all instances of the DB cluster.</p> <note>
+    /// <p>The name of the DB parameter group to apply to all instances of the DB cluster.</p><note>
     /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
     /// </note>
     /// <p>Default: The existing name setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>The DB parameter group must be in the same DB parameter group family as the target DB cluster version.</p></li>
-    /// <li><p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p></li>
+    /// <li>
+    /// <p>The DB parameter group must be in the same DB parameter group family as the target DB cluster version.</p></li>
+    /// <li>
+    /// <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p></li>
     /// </ul>
     pub fn db_instance_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_parameter_group_name(input.into());
         self
     }
-    /// <p>The name of the DB parameter group to apply to all instances of the DB cluster.</p> <note>
+    /// <p>The name of the DB parameter group to apply to all instances of the DB cluster.</p><note>
     /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
     /// </note>
     /// <p>Default: The existing name setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>The DB parameter group must be in the same DB parameter group family as the target DB cluster version.</p></li>
-    /// <li><p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p></li>
+    /// <li>
+    /// <p>The DB parameter group must be in the same DB parameter group family as the target DB cluster version.</p></li>
+    /// <li>
+    /// <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p></li>
     /// </ul>
     pub fn set_db_instance_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_parameter_group_name(input);
         self
     }
-    /// <p>The name of the DB parameter group to apply to all instances of the DB cluster.</p> <note>
+    /// <p>The name of the DB parameter group to apply to all instances of the DB cluster.</p><note>
     /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
     /// </note>
     /// <p>Default: The existing name setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>The DB parameter group must be in the same DB parameter group family as the target DB cluster version.</p></li>
-    /// <li><p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p></li>
+    /// <li>
+    /// <p>The DB parameter group must be in the same DB parameter group family as the target DB cluster version.</p></li>
+    /// <li>
+    /// <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p></li>
     /// </ul>
     pub fn get_db_instance_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_parameter_group_name()
@@ -513,11 +546,13 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>standard | iopt1</code></p></li>
+    /// <li>
+    /// <p><code>standard | iopt1</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>standard</code></p></li>
     /// </ul>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
@@ -526,11 +561,13 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>standard | iopt1</code></p></li>
+    /// <li>
+    /// <p><code>standard | iopt1</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>standard</code></p></li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
@@ -539,11 +576,13 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>standard | iopt1</code></p></li>
+    /// <li>
+    /// <p><code>standard | iopt1</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>standard</code></p></li>
     /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_type()

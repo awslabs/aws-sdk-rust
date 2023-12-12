@@ -7,7 +7,7 @@ pub struct DescribeAppVersionOutput {
     pub app_arn: ::std::string::String,
     /// <p>Resilience Hub application version.</p>
     pub app_version: ::std::string::String,
-    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
+    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
     /// <p>Currently, this parameter supports only failover region and account.</p>
     /// </note>
     pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -24,7 +24,7 @@ impl DescribeAppVersionOutput {
         use std::ops::Deref;
         self.app_version.deref()
     }
-    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
+    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
     /// <p>Currently, this parameter supports only failover region and account.</p>
     /// </note>
     pub fn additional_info(
@@ -89,7 +89,7 @@ impl DescribeAppVersionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
     ///
-    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
+    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
     /// <p>Currently, this parameter supports only failover region and account.</p>
     /// </note>
     pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
@@ -98,7 +98,7 @@ impl DescribeAppVersionOutputBuilder {
         self.additional_info = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
+    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
     /// <p>Currently, this parameter supports only failover region and account.</p>
     /// </note>
     pub fn set_additional_info(
@@ -108,7 +108,7 @@ impl DescribeAppVersionOutputBuilder {
         self.additional_info = input;
         self
     }
-    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
+    /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p><note>
     /// <p>Currently, this parameter supports only failover region and account.</p>
     /// </note>
     pub fn get_additional_info(

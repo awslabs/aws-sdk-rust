@@ -138,8 +138,10 @@ impl GetDimensionKeyDetailsFluentBuilder {
     }
     /// <p>The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:</p>
     /// <ul>
-    /// <li><p><code>db.query</code> (Amazon DocumentDB only)</p></li>
-    /// <li><p><code>db.sql</code> (Amazon RDS and Aurora only)</p></li>
+    /// <li>
+    /// <p><code>db.query</code> (Amazon DocumentDB only)</p></li>
+    /// <li>
+    /// <p><code>db.sql</code> (Amazon RDS and Aurora only)</p></li>
     /// </ul>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group(input.into());
@@ -147,8 +149,10 @@ impl GetDimensionKeyDetailsFluentBuilder {
     }
     /// <p>The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:</p>
     /// <ul>
-    /// <li><p><code>db.query</code> (Amazon DocumentDB only)</p></li>
-    /// <li><p><code>db.sql</code> (Amazon RDS and Aurora only)</p></li>
+    /// <li>
+    /// <p><code>db.query</code> (Amazon DocumentDB only)</p></li>
+    /// <li>
+    /// <p><code>db.sql</code> (Amazon RDS and Aurora only)</p></li>
     /// </ul>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group(input);
@@ -156,16 +160,20 @@ impl GetDimensionKeyDetailsFluentBuilder {
     }
     /// <p>The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:</p>
     /// <ul>
-    /// <li><p><code>db.query</code> (Amazon DocumentDB only)</p></li>
-    /// <li><p><code>db.sql</code> (Amazon RDS and Aurora only)</p></li>
+    /// <li>
+    /// <p><code>db.query</code> (Amazon DocumentDB only)</p></li>
+    /// <li>
+    /// <p><code>db.sql</code> (Amazon RDS and Aurora only)</p></li>
     /// </ul>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group()
     }
     /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The following group ID values are valid:</p>
     /// <ul>
-    /// <li><p><code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p></li>
-    /// <li><p><code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p></li>
+    /// <li>
+    /// <p><code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p></li>
+    /// <li>
+    /// <p><code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p></li>
     /// </ul>
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_identifier(input.into());
@@ -173,8 +181,10 @@ impl GetDimensionKeyDetailsFluentBuilder {
     }
     /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The following group ID values are valid:</p>
     /// <ul>
-    /// <li><p><code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p></li>
-    /// <li><p><code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p></li>
+    /// <li>
+    /// <p><code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p></li>
+    /// <li>
+    /// <p><code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p></li>
     /// </ul>
     pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_identifier(input);
@@ -182,8 +192,10 @@ impl GetDimensionKeyDetailsFluentBuilder {
     }
     /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The following group ID values are valid:</p>
     /// <ul>
-    /// <li><p><code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p></li>
-    /// <li><p><code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p></li>
+    /// <li>
+    /// <p><code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p></li>
+    /// <li>
+    /// <p><code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p></li>
     /// </ul>
     pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_identifier()
@@ -194,8 +206,10 @@ impl GetDimensionKeyDetailsFluentBuilder {
     ///
     /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:</p>
     /// <ul>
-    /// <li><p><code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p></li>
-    /// <li><p><code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p></li>
+    /// <li>
+    /// <p><code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p></li>
+    /// <li>
+    /// <p><code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p></li>
     /// </ul>
     pub fn requested_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.requested_dimensions(input.into());
@@ -203,8 +217,10 @@ impl GetDimensionKeyDetailsFluentBuilder {
     }
     /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:</p>
     /// <ul>
-    /// <li><p><code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p></li>
-    /// <li><p><code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p></li>
+    /// <li>
+    /// <p><code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p></li>
+    /// <li>
+    /// <p><code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p></li>
     /// </ul>
     pub fn set_requested_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_requested_dimensions(input);
@@ -212,8 +228,10 @@ impl GetDimensionKeyDetailsFluentBuilder {
     }
     /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:</p>
     /// <ul>
-    /// <li><p><code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p></li>
-    /// <li><p><code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p></li>
+    /// <li>
+    /// <p><code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p></li>
+    /// <li>
+    /// <p><code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p></li>
     /// </ul>
     pub fn get_requested_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_requested_dimensions()

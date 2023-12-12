@@ -12,15 +12,13 @@ pub struct SampledHttpRequest {
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The action that WAF applied to the request.</p>
     pub action: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code>
-    /// <vendor name>
+    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code><vendor name>
     /// #
     /// <managed rule group name>
     /// #
     /// <rule name></rule>
     /// </managed>
-    /// </vendor></code>. For your own rule groups, the format for this name is <code>
-    /// <rule group name>
+    /// </vendor></code>. For your own rule groups, the format for this name is <code><rule group name>
     /// #
     /// <rule name></rule>
     /// </rule></code>. If the rule is not in a rule group, this field is absent.</p>
@@ -56,15 +54,13 @@ impl SampledHttpRequest {
     pub fn action(&self) -> ::std::option::Option<&str> {
         self.action.as_deref()
     }
-    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code>
-    /// <vendor name>
+    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code><vendor name>
     /// #
     /// <managed rule group name>
     /// #
     /// <rule name></rule>
     /// </managed>
-    /// </vendor></code>. For your own rule groups, the format for this name is <code>
-    /// <rule group name>
+    /// </vendor></code>. For your own rule groups, the format for this name is <code><rule group name>
     /// #
     /// <rule name></rule>
     /// </rule></code>. If the rule is not in a rule group, this field is absent.</p>
@@ -183,15 +179,13 @@ impl SampledHttpRequestBuilder {
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
         &self.action
     }
-    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code>
-    /// <vendor name>
+    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code><vendor name>
     /// #
     /// <managed rule group name>
     /// #
     /// <rule name></rule>
     /// </managed>
-    /// </vendor></code>. For your own rule groups, the format for this name is <code>
-    /// <rule group name>
+    /// </vendor></code>. For your own rule groups, the format for this name is <code><rule group name>
     /// #
     /// <rule name></rule>
     /// </rule></code>. If the rule is not in a rule group, this field is absent.</p>
@@ -199,15 +193,13 @@ impl SampledHttpRequestBuilder {
         self.rule_name_within_rule_group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code>
-    /// <vendor name>
+    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code><vendor name>
     /// #
     /// <managed rule group name>
     /// #
     /// <rule name></rule>
     /// </managed>
-    /// </vendor></code>. For your own rule groups, the format for this name is <code>
-    /// <rule group name>
+    /// </vendor></code>. For your own rule groups, the format for this name is <code><rule group name>
     /// #
     /// <rule name></rule>
     /// </rule></code>. If the rule is not in a rule group, this field is absent.</p>
@@ -215,15 +207,13 @@ impl SampledHttpRequestBuilder {
         self.rule_name_within_rule_group = input;
         self
     }
-    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code>
-    /// <vendor name>
+    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code><vendor name>
     /// #
     /// <managed rule group name>
     /// #
     /// <rule name></rule>
     /// </managed>
-    /// </vendor></code>. For your own rule groups, the format for this name is <code>
-    /// <rule group name>
+    /// </vendor></code>. For your own rule groups, the format for this name is <code><rule group name>
     /// #
     /// <rule name></rule>
     /// </rule></code>. If the rule is not in a rule group, this field is absent.</p>

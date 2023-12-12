@@ -27,8 +27,10 @@ impl AcceptMatchInputBuilder {
 /// <p>To register acceptance, specify the ticket ID, one or more players, and an acceptance response. When all players have accepted, Amazon GameLift advances the matchmaking tickets to status <code>PLACING</code>, and attempts to create a new game session for the match.</p>
 /// <p>If any player rejects the match, or if acceptances are not received before a specified timeout, the proposed match is dropped. Each matchmaking ticket in the failed match is handled as follows:</p>
 /// <ul>
-/// <li><p>If the ticket has one or more players who rejected the match or failed to respond, the ticket status is set <code>CANCELLED</code> and processing is terminated.</p></li>
-/// <li><p>If all players in the ticket accepted the match, the ticket status is returned to <code>SEARCHING</code> to find a new match.</p></li>
+/// <li>
+/// <p>If the ticket has one or more players who rejected the match or failed to respond, the ticket status is set <code>CANCELLED</code> and processing is terminated.</p></li>
+/// <li>
+/// <p>If all players in the ticket accepted the match, the ticket status is returned to <code>SEARCHING</code> to find a new match.</p></li>
 /// </ul>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html"> Add FlexMatch to a game client</a></p>

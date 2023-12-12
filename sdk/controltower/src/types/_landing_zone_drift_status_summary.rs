@@ -8,8 +8,10 @@ pub struct LandingZoneDriftStatusSummary {
     /// <p>The drift status of the landing zone.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>DRIFTED</code>: The landing zone deployed in this configuration does not match the configuration that Amazon Web Services Control Tower expected.</p></li>
-    /// <li><p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li>
+    /// <p><code>DRIFTED</code>: The landing zone deployed in this configuration does not match the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::LandingZoneDriftStatus>,
 }
@@ -17,8 +19,10 @@ impl LandingZoneDriftStatusSummary {
     /// <p>The drift status of the landing zone.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>DRIFTED</code>: The landing zone deployed in this configuration does not match the configuration that Amazon Web Services Control Tower expected.</p></li>
-    /// <li><p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li>
+    /// <p><code>DRIFTED</code>: The landing zone deployed in this configuration does not match the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::LandingZoneDriftStatus> {
         self.status.as_ref()
@@ -41,8 +45,10 @@ impl LandingZoneDriftStatusSummaryBuilder {
     /// <p>The drift status of the landing zone.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>DRIFTED</code>: The landing zone deployed in this configuration does not match the configuration that Amazon Web Services Control Tower expected.</p></li>
-    /// <li><p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li>
+    /// <p><code>DRIFTED</code>: The landing zone deployed in this configuration does not match the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::LandingZoneDriftStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -51,8 +57,10 @@ impl LandingZoneDriftStatusSummaryBuilder {
     /// <p>The drift status of the landing zone.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>DRIFTED</code>: The landing zone deployed in this configuration does not match the configuration that Amazon Web Services Control Tower expected.</p></li>
-    /// <li><p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li>
+    /// <p><code>DRIFTED</code>: The landing zone deployed in this configuration does not match the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LandingZoneDriftStatus>) -> Self {
         self.status = input;
@@ -61,8 +69,10 @@ impl LandingZoneDriftStatusSummaryBuilder {
     /// <p>The drift status of the landing zone.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>DRIFTED</code>: The landing zone deployed in this configuration does not match the configuration that Amazon Web Services Control Tower expected.</p></li>
-    /// <li><p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li>
+    /// <p><code>DRIFTED</code>: The landing zone deployed in this configuration does not match the configuration that Amazon Web Services Control Tower expected.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LandingZoneDriftStatus> {
         &self.status

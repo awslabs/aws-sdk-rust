@@ -11,10 +11,14 @@ pub struct DataSourceSearchFilter {
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "DIRECT_QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners or viewers of the data sources are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners if the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners or viewers of the data sources are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners if the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p></li>
     /// </ul>
     pub name: crate::types::DataSourceFilterAttribute,
     /// <p>The value of the named item, for example <code>DIRECT_QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
@@ -30,10 +34,14 @@ impl DataSourceSearchFilter {
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "DIRECT_QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners or viewers of the data sources are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners if the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners or viewers of the data sources are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners if the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p></li>
     /// </ul>
     pub fn name(&self) -> &crate::types::DataSourceFilterAttribute {
         &self.name
@@ -84,10 +92,14 @@ impl DataSourceSearchFilterBuilder {
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "DIRECT_QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners or viewers of the data sources are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners if the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners or viewers of the data sources are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners if the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p></li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: crate::types::DataSourceFilterAttribute) -> Self {
@@ -97,10 +109,14 @@ impl DataSourceSearchFilterBuilder {
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "DIRECT_QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners or viewers of the data sources are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners if the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners or viewers of the data sources are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners if the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::DataSourceFilterAttribute>) -> Self {
         self.name = input;
@@ -109,10 +125,14 @@ impl DataSourceSearchFilterBuilder {
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "DIRECT_QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners or viewers of the data sources are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners if the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
-    /// <li><p><code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners or viewers of the data sources are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as one of the owners if the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any data sources with that ARN listed as the only owner of the data source are returned. Implicit permissions from folders or groups are not considered.</p></li>
+    /// <li>
+    /// <p><code>DATASOURCE_NAME</code>: Any data sources whose names have a substring match to the provided value are returned.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::DataSourceFilterAttribute> {
         &self.name

@@ -6,20 +6,30 @@
 pub struct CrawlsFilter {
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
     /// <ul>
-    /// <li><p><code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p></li>
-    /// <li><p><code>STATE</code>: A string representing the state of the crawl.</p></li>
-    /// <li><p><code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p></li>
-    /// <li><p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
+    /// <li>
+    /// <p><code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p></li>
+    /// <li>
+    /// <p><code>STATE</code>: A string representing the state of the crawl.</p></li>
+    /// <li>
+    /// <p><code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p></li>
+    /// <li>
+    /// <p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
     /// </ul>
     pub field_name: ::std::option::Option<crate::types::FieldName>,
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
     /// <ul>
-    /// <li><p><code>GT</code>: Greater than.</p></li>
-    /// <li><p><code>GE</code>: Greater than or equal to.</p></li>
-    /// <li><p><code>LT</code>: Less than.</p></li>
-    /// <li><p><code>LE</code>: Less than or equal to.</p></li>
-    /// <li><p><code>EQ</code>: Equal to.</p></li>
-    /// <li><p><code>NE</code>: Not equal to.</p></li>
+    /// <li>
+    /// <p><code>GT</code>: Greater than.</p></li>
+    /// <li>
+    /// <p><code>GE</code>: Greater than or equal to.</p></li>
+    /// <li>
+    /// <p><code>LT</code>: Less than.</p></li>
+    /// <li>
+    /// <p><code>LE</code>: Less than or equal to.</p></li>
+    /// <li>
+    /// <p><code>EQ</code>: Equal to.</p></li>
+    /// <li>
+    /// <p><code>NE</code>: Not equal to.</p></li>
     /// </ul>
     pub filter_operator: ::std::option::Option<crate::types::FilterOperator>,
     /// <p>The value provided for comparison on the crawl field.</p>
@@ -28,22 +38,32 @@ pub struct CrawlsFilter {
 impl CrawlsFilter {
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
     /// <ul>
-    /// <li><p><code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p></li>
-    /// <li><p><code>STATE</code>: A string representing the state of the crawl.</p></li>
-    /// <li><p><code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p></li>
-    /// <li><p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
+    /// <li>
+    /// <p><code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p></li>
+    /// <li>
+    /// <p><code>STATE</code>: A string representing the state of the crawl.</p></li>
+    /// <li>
+    /// <p><code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p></li>
+    /// <li>
+    /// <p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
     /// </ul>
     pub fn field_name(&self) -> ::std::option::Option<&crate::types::FieldName> {
         self.field_name.as_ref()
     }
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
     /// <ul>
-    /// <li><p><code>GT</code>: Greater than.</p></li>
-    /// <li><p><code>GE</code>: Greater than or equal to.</p></li>
-    /// <li><p><code>LT</code>: Less than.</p></li>
-    /// <li><p><code>LE</code>: Less than or equal to.</p></li>
-    /// <li><p><code>EQ</code>: Equal to.</p></li>
-    /// <li><p><code>NE</code>: Not equal to.</p></li>
+    /// <li>
+    /// <p><code>GT</code>: Greater than.</p></li>
+    /// <li>
+    /// <p><code>GE</code>: Greater than or equal to.</p></li>
+    /// <li>
+    /// <p><code>LT</code>: Less than.</p></li>
+    /// <li>
+    /// <p><code>LE</code>: Less than or equal to.</p></li>
+    /// <li>
+    /// <p><code>EQ</code>: Equal to.</p></li>
+    /// <li>
+    /// <p><code>NE</code>: Not equal to.</p></li>
     /// </ul>
     pub fn filter_operator(&self) -> ::std::option::Option<&crate::types::FilterOperator> {
         self.filter_operator.as_ref()
@@ -71,10 +91,14 @@ pub struct CrawlsFilterBuilder {
 impl CrawlsFilterBuilder {
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
     /// <ul>
-    /// <li><p><code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p></li>
-    /// <li><p><code>STATE</code>: A string representing the state of the crawl.</p></li>
-    /// <li><p><code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p></li>
-    /// <li><p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
+    /// <li>
+    /// <p><code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p></li>
+    /// <li>
+    /// <p><code>STATE</code>: A string representing the state of the crawl.</p></li>
+    /// <li>
+    /// <p><code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p></li>
+    /// <li>
+    /// <p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
     /// </ul>
     pub fn field_name(mut self, input: crate::types::FieldName) -> Self {
         self.field_name = ::std::option::Option::Some(input);
@@ -82,10 +106,14 @@ impl CrawlsFilterBuilder {
     }
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
     /// <ul>
-    /// <li><p><code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p></li>
-    /// <li><p><code>STATE</code>: A string representing the state of the crawl.</p></li>
-    /// <li><p><code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p></li>
-    /// <li><p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
+    /// <li>
+    /// <p><code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p></li>
+    /// <li>
+    /// <p><code>STATE</code>: A string representing the state of the crawl.</p></li>
+    /// <li>
+    /// <p><code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p></li>
+    /// <li>
+    /// <p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
     /// </ul>
     pub fn set_field_name(mut self, input: ::std::option::Option<crate::types::FieldName>) -> Self {
         self.field_name = input;
@@ -93,22 +121,32 @@ impl CrawlsFilterBuilder {
     }
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
     /// <ul>
-    /// <li><p><code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p></li>
-    /// <li><p><code>STATE</code>: A string representing the state of the crawl.</p></li>
-    /// <li><p><code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p></li>
-    /// <li><p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
+    /// <li>
+    /// <p><code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p></li>
+    /// <li>
+    /// <p><code>STATE</code>: A string representing the state of the crawl.</p></li>
+    /// <li>
+    /// <p><code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p></li>
+    /// <li>
+    /// <p><code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p></li>
     /// </ul>
     pub fn get_field_name(&self) -> &::std::option::Option<crate::types::FieldName> {
         &self.field_name
     }
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
     /// <ul>
-    /// <li><p><code>GT</code>: Greater than.</p></li>
-    /// <li><p><code>GE</code>: Greater than or equal to.</p></li>
-    /// <li><p><code>LT</code>: Less than.</p></li>
-    /// <li><p><code>LE</code>: Less than or equal to.</p></li>
-    /// <li><p><code>EQ</code>: Equal to.</p></li>
-    /// <li><p><code>NE</code>: Not equal to.</p></li>
+    /// <li>
+    /// <p><code>GT</code>: Greater than.</p></li>
+    /// <li>
+    /// <p><code>GE</code>: Greater than or equal to.</p></li>
+    /// <li>
+    /// <p><code>LT</code>: Less than.</p></li>
+    /// <li>
+    /// <p><code>LE</code>: Less than or equal to.</p></li>
+    /// <li>
+    /// <p><code>EQ</code>: Equal to.</p></li>
+    /// <li>
+    /// <p><code>NE</code>: Not equal to.</p></li>
     /// </ul>
     pub fn filter_operator(mut self, input: crate::types::FilterOperator) -> Self {
         self.filter_operator = ::std::option::Option::Some(input);
@@ -116,12 +154,18 @@ impl CrawlsFilterBuilder {
     }
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
     /// <ul>
-    /// <li><p><code>GT</code>: Greater than.</p></li>
-    /// <li><p><code>GE</code>: Greater than or equal to.</p></li>
-    /// <li><p><code>LT</code>: Less than.</p></li>
-    /// <li><p><code>LE</code>: Less than or equal to.</p></li>
-    /// <li><p><code>EQ</code>: Equal to.</p></li>
-    /// <li><p><code>NE</code>: Not equal to.</p></li>
+    /// <li>
+    /// <p><code>GT</code>: Greater than.</p></li>
+    /// <li>
+    /// <p><code>GE</code>: Greater than or equal to.</p></li>
+    /// <li>
+    /// <p><code>LT</code>: Less than.</p></li>
+    /// <li>
+    /// <p><code>LE</code>: Less than or equal to.</p></li>
+    /// <li>
+    /// <p><code>EQ</code>: Equal to.</p></li>
+    /// <li>
+    /// <p><code>NE</code>: Not equal to.</p></li>
     /// </ul>
     pub fn set_filter_operator(mut self, input: ::std::option::Option<crate::types::FilterOperator>) -> Self {
         self.filter_operator = input;
@@ -129,12 +173,18 @@ impl CrawlsFilterBuilder {
     }
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
     /// <ul>
-    /// <li><p><code>GT</code>: Greater than.</p></li>
-    /// <li><p><code>GE</code>: Greater than or equal to.</p></li>
-    /// <li><p><code>LT</code>: Less than.</p></li>
-    /// <li><p><code>LE</code>: Less than or equal to.</p></li>
-    /// <li><p><code>EQ</code>: Equal to.</p></li>
-    /// <li><p><code>NE</code>: Not equal to.</p></li>
+    /// <li>
+    /// <p><code>GT</code>: Greater than.</p></li>
+    /// <li>
+    /// <p><code>GE</code>: Greater than or equal to.</p></li>
+    /// <li>
+    /// <p><code>LT</code>: Less than.</p></li>
+    /// <li>
+    /// <p><code>LE</code>: Less than or equal to.</p></li>
+    /// <li>
+    /// <p><code>EQ</code>: Equal to.</p></li>
+    /// <li>
+    /// <p><code>NE</code>: Not equal to.</p></li>
     /// </ul>
     pub fn get_filter_operator(&self) -> &::std::option::Option<crate::types::FilterOperator> {
         &self.filter_operator

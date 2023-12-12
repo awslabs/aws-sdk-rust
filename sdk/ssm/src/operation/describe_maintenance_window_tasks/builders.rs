@@ -22,7 +22,7 @@ impl DescribeMaintenanceWindowTasksInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeMaintenanceWindowTasks`.
 ///
-/// <p>Lists the tasks in a maintenance window.</p> <note>
+/// <p>Lists the tasks in a maintenance window.</p><note>
 /// <p>For maintenance window tasks without a specified target, you can't supply values for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. These values don't affect the running of your task and can be ignored.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

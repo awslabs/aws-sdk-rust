@@ -16,9 +16,12 @@ pub struct Product {
     pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
-    /// <li><p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
-    /// <li><p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
-    /// <li><p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
+    /// <li>
+    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
+    /// <li>
+    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
     /// </ul>
     pub integration_types: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationType>>,
     /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
@@ -54,9 +57,12 @@ impl Product {
     }
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
-    /// <li><p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
-    /// <li><p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
-    /// <li><p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
+    /// <li>
+    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
+    /// <li>
+    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integration_types.is_none()`.
@@ -182,9 +188,12 @@ impl ProductBuilder {
     ///
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
-    /// <li><p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
-    /// <li><p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
-    /// <li><p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
+    /// <li>
+    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
+    /// <li>
+    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
     /// </ul>
     pub fn integration_types(mut self, input: crate::types::IntegrationType) -> Self {
         let mut v = self.integration_types.unwrap_or_default();
@@ -194,9 +203,12 @@ impl ProductBuilder {
     }
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
-    /// <li><p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
-    /// <li><p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
-    /// <li><p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
+    /// <li>
+    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
+    /// <li>
+    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
     /// </ul>
     pub fn set_integration_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationType>>) -> Self {
         self.integration_types = input;
@@ -204,9 +216,12 @@ impl ProductBuilder {
     }
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
-    /// <li><p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
-    /// <li><p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
-    /// <li><p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
+    /// <li>
+    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
+    /// <li>
+    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
     /// </ul>
     pub fn get_integration_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegrationType>> {
         &self.integration_types

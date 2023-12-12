@@ -5,9 +5,12 @@
 pub struct DescribeCreateCaseOptionsOutput {
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
-    /// <li><p>available</p></li>
-    /// <li><p>best_effort</p></li>
-    /// <li><p>unavailable</p></li>
+    /// <li>
+    /// <p>available</p></li>
+    /// <li>
+    /// <p>best_effort</p></li>
+    /// <li>
+    /// <p>unavailable</p></li>
     /// </ul>
     pub language_availability: ::std::option::Option<::std::string::String>,
     /// <p>A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs.</p>
@@ -17,9 +20,12 @@ pub struct DescribeCreateCaseOptionsOutput {
 impl DescribeCreateCaseOptionsOutput {
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
-    /// <li><p>available</p></li>
-    /// <li><p>best_effort</p></li>
-    /// <li><p>unavailable</p></li>
+    /// <li>
+    /// <p>available</p></li>
+    /// <li>
+    /// <p>best_effort</p></li>
+    /// <li>
+    /// <p>unavailable</p></li>
     /// </ul>
     pub fn language_availability(&self) -> ::std::option::Option<&str> {
         self.language_availability.as_deref()
@@ -54,9 +60,12 @@ pub struct DescribeCreateCaseOptionsOutputBuilder {
 impl DescribeCreateCaseOptionsOutputBuilder {
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
-    /// <li><p>available</p></li>
-    /// <li><p>best_effort</p></li>
-    /// <li><p>unavailable</p></li>
+    /// <li>
+    /// <p>available</p></li>
+    /// <li>
+    /// <p>best_effort</p></li>
+    /// <li>
+    /// <p>unavailable</p></li>
     /// </ul>
     pub fn language_availability(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_availability = ::std::option::Option::Some(input.into());
@@ -64,9 +73,12 @@ impl DescribeCreateCaseOptionsOutputBuilder {
     }
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
-    /// <li><p>available</p></li>
-    /// <li><p>best_effort</p></li>
-    /// <li><p>unavailable</p></li>
+    /// <li>
+    /// <p>available</p></li>
+    /// <li>
+    /// <p>best_effort</p></li>
+    /// <li>
+    /// <p>unavailable</p></li>
     /// </ul>
     pub fn set_language_availability(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_availability = input;
@@ -74,9 +86,12 @@ impl DescribeCreateCaseOptionsOutputBuilder {
     }
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
-    /// <li><p>available</p></li>
-    /// <li><p>best_effort</p></li>
-    /// <li><p>unavailable</p></li>
+    /// <li>
+    /// <p>available</p></li>
+    /// <li>
+    /// <p>best_effort</p></li>
+    /// <li>
+    /// <p>unavailable</p></li>
     /// </ul>
     pub fn get_language_availability(&self) -> &::std::option::Option<::std::string::String> {
         &self.language_availability

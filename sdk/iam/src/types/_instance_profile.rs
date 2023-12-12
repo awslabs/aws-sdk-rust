@@ -3,10 +3,14 @@
 /// <p>Contains information about an instance profile.</p>
 /// <p>This data type is used as a response element in the following operations:</p>
 /// <ul>
-/// <li><p><code>CreateInstanceProfile</code></p></li>
-/// <li><p><code>GetInstanceProfile</code></p></li>
-/// <li><p><code>ListInstanceProfiles</code></p></li>
-/// <li><p><code>ListInstanceProfilesForRole</code></p></li>
+/// <li>
+/// <p><code>CreateInstanceProfile</code></p></li>
+/// <li>
+/// <p><code>GetInstanceProfile</code></p></li>
+/// <li>
+/// <p><code>ListInstanceProfiles</code></p></li>
+/// <li>
+/// <p><code>ListInstanceProfilesForRole</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

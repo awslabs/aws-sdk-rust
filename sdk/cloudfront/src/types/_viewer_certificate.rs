@@ -4,16 +4,23 @@
 /// <p>If the distribution doesn't use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code> to <code>true</code> and leave all other fields empty.</p>
 /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), use the fields in this type to specify the following settings:</p>
 /// <ul>
-/// <li><p>Which viewers the distribution accepts HTTPS connections from: only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a> (recommended), or all viewers including those that don't support SNI.</p>
+/// <li>
+/// <p>Which viewers the distribution accepts HTTPS connections from: only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a> (recommended), or all viewers including those that don't support SNI.</p>
 /// <ul>
-/// <li><p>To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is recommended. Most browsers and clients support SNI.</p></li>
-/// <li><p>To accept HTTPS connections from all viewers, including those that don't support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
+/// <li>
+/// <p>To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is recommended. Most browsers and clients support SNI.</p></li>
+/// <li>
+/// <p>To accept HTTPS connections from all viewers, including those that don't support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
 /// </ul></li>
-/// <li><p>The minimum SSL/TLS protocol version that the distribution can use to communicate with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p></li>
-/// <li><p>The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and Access Management (IAM)</a>. You specify the location by setting a value in one of the following fields (not both):</p>
+/// <li>
+/// <p>The minimum SSL/TLS protocol version that the distribution can use to communicate with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p></li>
+/// <li>
+/// <p>The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and Access Management (IAM)</a>. You specify the location by setting a value in one of the following fields (not both):</p>
 /// <ul>
-/// <li><p><code>ACMCertificateArn</code></p></li>
-/// <li><p><code>IAMCertificateId</code></p></li>
+/// <li>
+/// <p><code>ACMCertificateArn</code></p></li>
+/// <li>
+/// <p><code>IAMCertificateId</code></p></li>
 /// </ul></li>
 /// </ul>
 /// <p>All distributions support HTTPS connections from viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code> in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>.</p>
@@ -24,9 +31,12 @@ pub struct ViewerCertificate {
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, set this field to <code>true</code>.</p>
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), set this field to <code>false</code> and specify values for the following fields:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one, not both)</p></li>
-    /// <li><p><code>MinimumProtocolVersion</code></p></li>
-    /// <li><p><code>SSLSupportMethod</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one, not both)</p></li>
+    /// <li>
+    /// <p><code>MinimumProtocolVersion</code></p></li>
+    /// <li>
+    /// <p><code>SSLSupportMethod</code></p></li>
     /// </ul>
     pub cloud_front_default_certificate: ::std::option::Option<bool>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
@@ -37,18 +47,23 @@ pub struct ViewerCertificate {
     pub acm_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify which viewers the distribution accepts HTTPS connections from.</p>
     /// <ul>
-    /// <li><p><code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p></li>
-    /// <li><p><code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
-    /// <li><p><code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p><code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p></li>
+    /// <li>
+    /// <p><code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
+    /// <li>
+    /// <p><code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p></li>
     /// </ul>
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set a value for this field.</p>
     pub ssl_support_method: ::std::option::Option<crate::types::SslSupportMethod>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify the security policy that you want CloudFront to use for HTTPS connections with viewers. The security policy determines two settings:</p>
     /// <ul>
-    /// <li><p>The minimum SSL/TLS protocol that CloudFront can use to communicate with viewers.</p></li>
-    /// <li><p>The ciphers that CloudFront can use to encrypt the content that it returns to viewers.</p></li>
+    /// <li>
+    /// <p>The minimum SSL/TLS protocol that CloudFront can use to communicate with viewers.</p></li>
+    /// <li>
+    /// <p>The ciphers that CloudFront can use to encrypt the content that it returns to viewers.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><note>
     /// <p>On the CloudFront console, this setting is called <b>Security Policy</b>.</p>
     /// </note>
     /// <p>When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify <code>TLSv1</code> or higher.</p>
@@ -56,17 +71,23 @@ pub struct ViewerCertificate {
     pub minimum_protocol_version: ::std::option::Option<crate::types::MinimumProtocolVersion>,
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code></p></li>
-    /// <li><p><code>IAMCertificateId</code></p></li>
-    /// <li><p><code>CloudFrontDefaultCertificate</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code></p></li>
+    /// <li>
+    /// <p><code>IAMCertificateId</code></p></li>
+    /// <li>
+    /// <p><code>CloudFrontDefaultCertificate</code></p></li>
     /// </ul>
     #[deprecated]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code></p></li>
-    /// <li><p><code>IAMCertificateId</code></p></li>
-    /// <li><p><code>CloudFrontDefaultCertificate</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code></p></li>
+    /// <li>
+    /// <p><code>IAMCertificateId</code></p></li>
+    /// <li>
+    /// <p><code>CloudFrontDefaultCertificate</code></p></li>
     /// </ul>
     #[deprecated]
     pub certificate_source: ::std::option::Option<crate::types::CertificateSource>,
@@ -75,9 +96,12 @@ impl ViewerCertificate {
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, set this field to <code>true</code>.</p>
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), set this field to <code>false</code> and specify values for the following fields:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one, not both)</p></li>
-    /// <li><p><code>MinimumProtocolVersion</code></p></li>
-    /// <li><p><code>SSLSupportMethod</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one, not both)</p></li>
+    /// <li>
+    /// <p><code>MinimumProtocolVersion</code></p></li>
+    /// <li>
+    /// <p><code>SSLSupportMethod</code></p></li>
     /// </ul>
     pub fn cloud_front_default_certificate(&self) -> ::std::option::Option<bool> {
         self.cloud_front_default_certificate
@@ -94,9 +118,12 @@ impl ViewerCertificate {
     }
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify which viewers the distribution accepts HTTPS connections from.</p>
     /// <ul>
-    /// <li><p><code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p></li>
-    /// <li><p><code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
-    /// <li><p><code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p><code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p></li>
+    /// <li>
+    /// <p><code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
+    /// <li>
+    /// <p><code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p></li>
     /// </ul>
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set a value for this field.</p>
     pub fn ssl_support_method(&self) -> ::std::option::Option<&crate::types::SslSupportMethod> {
@@ -104,10 +131,12 @@ impl ViewerCertificate {
     }
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify the security policy that you want CloudFront to use for HTTPS connections with viewers. The security policy determines two settings:</p>
     /// <ul>
-    /// <li><p>The minimum SSL/TLS protocol that CloudFront can use to communicate with viewers.</p></li>
-    /// <li><p>The ciphers that CloudFront can use to encrypt the content that it returns to viewers.</p></li>
+    /// <li>
+    /// <p>The minimum SSL/TLS protocol that CloudFront can use to communicate with viewers.</p></li>
+    /// <li>
+    /// <p>The ciphers that CloudFront can use to encrypt the content that it returns to viewers.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><note>
     /// <p>On the CloudFront console, this setting is called <b>Security Policy</b>.</p>
     /// </note>
     /// <p>When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify <code>TLSv1</code> or higher.</p>
@@ -117,9 +146,12 @@ impl ViewerCertificate {
     }
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code></p></li>
-    /// <li><p><code>IAMCertificateId</code></p></li>
-    /// <li><p><code>CloudFrontDefaultCertificate</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code></p></li>
+    /// <li>
+    /// <p><code>IAMCertificateId</code></p></li>
+    /// <li>
+    /// <p><code>CloudFrontDefaultCertificate</code></p></li>
     /// </ul>
     #[deprecated]
     pub fn certificate(&self) -> ::std::option::Option<&str> {
@@ -127,9 +159,12 @@ impl ViewerCertificate {
     }
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code></p></li>
-    /// <li><p><code>IAMCertificateId</code></p></li>
-    /// <li><p><code>CloudFrontDefaultCertificate</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code></p></li>
+    /// <li>
+    /// <p><code>IAMCertificateId</code></p></li>
+    /// <li>
+    /// <p><code>CloudFrontDefaultCertificate</code></p></li>
     /// </ul>
     #[deprecated]
     pub fn certificate_source(&self) -> ::std::option::Option<&crate::types::CertificateSource> {
@@ -159,9 +194,12 @@ impl ViewerCertificateBuilder {
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, set this field to <code>true</code>.</p>
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), set this field to <code>false</code> and specify values for the following fields:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one, not both)</p></li>
-    /// <li><p><code>MinimumProtocolVersion</code></p></li>
-    /// <li><p><code>SSLSupportMethod</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one, not both)</p></li>
+    /// <li>
+    /// <p><code>MinimumProtocolVersion</code></p></li>
+    /// <li>
+    /// <p><code>SSLSupportMethod</code></p></li>
     /// </ul>
     pub fn cloud_front_default_certificate(mut self, input: bool) -> Self {
         self.cloud_front_default_certificate = ::std::option::Option::Some(input);
@@ -170,9 +208,12 @@ impl ViewerCertificateBuilder {
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, set this field to <code>true</code>.</p>
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), set this field to <code>false</code> and specify values for the following fields:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one, not both)</p></li>
-    /// <li><p><code>MinimumProtocolVersion</code></p></li>
-    /// <li><p><code>SSLSupportMethod</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one, not both)</p></li>
+    /// <li>
+    /// <p><code>MinimumProtocolVersion</code></p></li>
+    /// <li>
+    /// <p><code>SSLSupportMethod</code></p></li>
     /// </ul>
     pub fn set_cloud_front_default_certificate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cloud_front_default_certificate = input;
@@ -181,9 +222,12 @@ impl ViewerCertificateBuilder {
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, set this field to <code>true</code>.</p>
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), set this field to <code>false</code> and specify values for the following fields:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one, not both)</p></li>
-    /// <li><p><code>MinimumProtocolVersion</code></p></li>
-    /// <li><p><code>SSLSupportMethod</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one, not both)</p></li>
+    /// <li>
+    /// <p><code>MinimumProtocolVersion</code></p></li>
+    /// <li>
+    /// <p><code>SSLSupportMethod</code></p></li>
     /// </ul>
     pub fn get_cloud_front_default_certificate(&self) -> &::std::option::Option<bool> {
         &self.cloud_front_default_certificate
@@ -224,9 +268,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify which viewers the distribution accepts HTTPS connections from.</p>
     /// <ul>
-    /// <li><p><code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p></li>
-    /// <li><p><code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
-    /// <li><p><code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p><code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p></li>
+    /// <li>
+    /// <p><code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
+    /// <li>
+    /// <p><code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p></li>
     /// </ul>
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set a value for this field.</p>
     pub fn ssl_support_method(mut self, input: crate::types::SslSupportMethod) -> Self {
@@ -235,9 +282,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify which viewers the distribution accepts HTTPS connections from.</p>
     /// <ul>
-    /// <li><p><code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p></li>
-    /// <li><p><code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
-    /// <li><p><code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p><code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p></li>
+    /// <li>
+    /// <p><code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
+    /// <li>
+    /// <p><code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p></li>
     /// </ul>
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set a value for this field.</p>
     pub fn set_ssl_support_method(mut self, input: ::std::option::Option<crate::types::SslSupportMethod>) -> Self {
@@ -246,9 +296,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify which viewers the distribution accepts HTTPS connections from.</p>
     /// <ul>
-    /// <li><p><code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p></li>
-    /// <li><p><code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
-    /// <li><p><code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p></li>
+    /// <li>
+    /// <p><code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p></li>
+    /// <li>
+    /// <p><code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support SNI. This is not recommended, and results in additional monthly charges from CloudFront.</p></li>
+    /// <li>
+    /// <p><code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p></li>
     /// </ul>
     /// <p>If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set a value for this field.</p>
     pub fn get_ssl_support_method(&self) -> &::std::option::Option<crate::types::SslSupportMethod> {
@@ -256,10 +309,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify the security policy that you want CloudFront to use for HTTPS connections with viewers. The security policy determines two settings:</p>
     /// <ul>
-    /// <li><p>The minimum SSL/TLS protocol that CloudFront can use to communicate with viewers.</p></li>
-    /// <li><p>The ciphers that CloudFront can use to encrypt the content that it returns to viewers.</p></li>
+    /// <li>
+    /// <p>The minimum SSL/TLS protocol that CloudFront can use to communicate with viewers.</p></li>
+    /// <li>
+    /// <p>The ciphers that CloudFront can use to encrypt the content that it returns to viewers.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><note>
     /// <p>On the CloudFront console, this setting is called <b>Security Policy</b>.</p>
     /// </note>
     /// <p>When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify <code>TLSv1</code> or higher.</p>
@@ -270,10 +325,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify the security policy that you want CloudFront to use for HTTPS connections with viewers. The security policy determines two settings:</p>
     /// <ul>
-    /// <li><p>The minimum SSL/TLS protocol that CloudFront can use to communicate with viewers.</p></li>
-    /// <li><p>The ciphers that CloudFront can use to encrypt the content that it returns to viewers.</p></li>
+    /// <li>
+    /// <p>The minimum SSL/TLS protocol that CloudFront can use to communicate with viewers.</p></li>
+    /// <li>
+    /// <p>The ciphers that CloudFront can use to encrypt the content that it returns to viewers.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><note>
     /// <p>On the CloudFront console, this setting is called <b>Security Policy</b>.</p>
     /// </note>
     /// <p>When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify <code>TLSv1</code> or higher.</p>
@@ -284,10 +341,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify the security policy that you want CloudFront to use for HTTPS connections with viewers. The security policy determines two settings:</p>
     /// <ul>
-    /// <li><p>The minimum SSL/TLS protocol that CloudFront can use to communicate with viewers.</p></li>
-    /// <li><p>The ciphers that CloudFront can use to encrypt the content that it returns to viewers.</p></li>
+    /// <li>
+    /// <p>The minimum SSL/TLS protocol that CloudFront can use to communicate with viewers.</p></li>
+    /// <li>
+    /// <p>The ciphers that CloudFront can use to encrypt the content that it returns to viewers.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><note>
     /// <p>On the CloudFront console, this setting is called <b>Security Policy</b>.</p>
     /// </note>
     /// <p>When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify <code>TLSv1</code> or higher.</p>
@@ -297,9 +356,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code></p></li>
-    /// <li><p><code>IAMCertificateId</code></p></li>
-    /// <li><p><code>CloudFrontDefaultCertificate</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code></p></li>
+    /// <li>
+    /// <p><code>IAMCertificateId</code></p></li>
+    /// <li>
+    /// <p><code>CloudFrontDefaultCertificate</code></p></li>
     /// </ul>
     #[deprecated]
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -308,9 +370,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code></p></li>
-    /// <li><p><code>IAMCertificateId</code></p></li>
-    /// <li><p><code>CloudFrontDefaultCertificate</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code></p></li>
+    /// <li>
+    /// <p><code>IAMCertificateId</code></p></li>
+    /// <li>
+    /// <p><code>CloudFrontDefaultCertificate</code></p></li>
     /// </ul>
     #[deprecated]
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -319,9 +384,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code></p></li>
-    /// <li><p><code>IAMCertificateId</code></p></li>
-    /// <li><p><code>CloudFrontDefaultCertificate</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code></p></li>
+    /// <li>
+    /// <p><code>IAMCertificateId</code></p></li>
+    /// <li>
+    /// <p><code>CloudFrontDefaultCertificate</code></p></li>
     /// </ul>
     #[deprecated]
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -329,9 +397,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code></p></li>
-    /// <li><p><code>IAMCertificateId</code></p></li>
-    /// <li><p><code>CloudFrontDefaultCertificate</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code></p></li>
+    /// <li>
+    /// <p><code>IAMCertificateId</code></p></li>
+    /// <li>
+    /// <p><code>CloudFrontDefaultCertificate</code></p></li>
     /// </ul>
     #[deprecated]
     pub fn certificate_source(mut self, input: crate::types::CertificateSource) -> Self {
@@ -340,9 +411,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code></p></li>
-    /// <li><p><code>IAMCertificateId</code></p></li>
-    /// <li><p><code>CloudFrontDefaultCertificate</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code></p></li>
+    /// <li>
+    /// <p><code>IAMCertificateId</code></p></li>
+    /// <li>
+    /// <p><code>CloudFrontDefaultCertificate</code></p></li>
     /// </ul>
     #[deprecated]
     pub fn set_certificate_source(mut self, input: ::std::option::Option<crate::types::CertificateSource>) -> Self {
@@ -351,9 +425,12 @@ impl ViewerCertificateBuilder {
     }
     /// <p>This field is deprecated. Use one of the following fields instead:</p>
     /// <ul>
-    /// <li><p><code>ACMCertificateArn</code></p></li>
-    /// <li><p><code>IAMCertificateId</code></p></li>
-    /// <li><p><code>CloudFrontDefaultCertificate</code></p></li>
+    /// <li>
+    /// <p><code>ACMCertificateArn</code></p></li>
+    /// <li>
+    /// <p><code>IAMCertificateId</code></p></li>
+    /// <li>
+    /// <p><code>CloudFrontDefaultCertificate</code></p></li>
     /// </ul>
     #[deprecated]
     pub fn get_certificate_source(&self) -> &::std::option::Option<crate::types::CertificateSource> {

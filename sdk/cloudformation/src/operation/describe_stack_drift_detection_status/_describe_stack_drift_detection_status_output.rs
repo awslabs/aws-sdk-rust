@@ -10,17 +10,25 @@ pub struct DescribeStackDriftDetectionStatusOutput {
     pub stack_drift_detection_id: ::std::option::Option<::std::string::String>,
     /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
     /// <ul>
-    /// <li><p><code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p></li>
-    /// <li><p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p></li>
-    /// <li><p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
-    /// <li><p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li>
+    /// <p><code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
     /// </ul>
     pub stack_drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     /// <p>The status of the stack drift detection operation.</p>
     /// <ul>
-    /// <li><p><code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p></li>
-    /// <li><p><code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p></li>
-    /// <li><p><code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p>
+    /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p></li>
     /// </ul>
     pub detection_status: ::std::option::Option<crate::types::StackDriftDetectionStatus>,
     /// <p>The reason the stack drift detection operation has its current status.</p>
@@ -43,19 +51,27 @@ impl DescribeStackDriftDetectionStatusOutput {
     }
     /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
     /// <ul>
-    /// <li><p><code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p></li>
-    /// <li><p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p></li>
-    /// <li><p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
-    /// <li><p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li>
+    /// <p><code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
     /// </ul>
     pub fn stack_drift_status(&self) -> ::std::option::Option<&crate::types::StackDriftStatus> {
         self.stack_drift_status.as_ref()
     }
     /// <p>The status of the stack drift detection operation.</p>
     /// <ul>
-    /// <li><p><code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p></li>
-    /// <li><p><code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p></li>
-    /// <li><p><code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p>
+    /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p></li>
     /// </ul>
     pub fn detection_status(&self) -> ::std::option::Option<&crate::types::StackDriftDetectionStatus> {
         self.detection_status.as_ref()
@@ -134,10 +150,14 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     }
     /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
     /// <ul>
-    /// <li><p><code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p></li>
-    /// <li><p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p></li>
-    /// <li><p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
-    /// <li><p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li>
+    /// <p><code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
     /// </ul>
     pub fn stack_drift_status(mut self, input: crate::types::StackDriftStatus) -> Self {
         self.stack_drift_status = ::std::option::Option::Some(input);
@@ -145,10 +165,14 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     }
     /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
     /// <ul>
-    /// <li><p><code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p></li>
-    /// <li><p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p></li>
-    /// <li><p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
-    /// <li><p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li>
+    /// <p><code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
     /// </ul>
     pub fn set_stack_drift_status(mut self, input: ::std::option::Option<crate::types::StackDriftStatus>) -> Self {
         self.stack_drift_status = input;
@@ -156,19 +180,27 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     }
     /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
     /// <ul>
-    /// <li><p><code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p></li>
-    /// <li><p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p></li>
-    /// <li><p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
-    /// <li><p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
+    /// <li>
+    /// <p><code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
     /// </ul>
     pub fn get_stack_drift_status(&self) -> &::std::option::Option<crate::types::StackDriftStatus> {
         &self.stack_drift_status
     }
     /// <p>The status of the stack drift detection operation.</p>
     /// <ul>
-    /// <li><p><code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p></li>
-    /// <li><p><code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p></li>
-    /// <li><p><code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p>
+    /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p></li>
     /// </ul>
     /// This field is required.
     pub fn detection_status(mut self, input: crate::types::StackDriftDetectionStatus) -> Self {
@@ -177,9 +209,13 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     }
     /// <p>The status of the stack drift detection operation.</p>
     /// <ul>
-    /// <li><p><code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p></li>
-    /// <li><p><code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p></li>
-    /// <li><p><code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p>
+    /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p></li>
     /// </ul>
     pub fn set_detection_status(mut self, input: ::std::option::Option<crate::types::StackDriftDetectionStatus>) -> Self {
         self.detection_status = input;
@@ -187,9 +223,13 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     }
     /// <p>The status of the stack drift detection operation.</p>
     /// <ul>
-    /// <li><p><code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p></li>
-    /// <li><p><code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p></li>
-    /// <li><p><code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p>
+    /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p></li>
+    /// <li>
+    /// <p><code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p></li>
     /// </ul>
     pub fn get_detection_status(&self) -> &::std::option::Option<crate::types::StackDriftDetectionStatus> {
         &self.detection_status

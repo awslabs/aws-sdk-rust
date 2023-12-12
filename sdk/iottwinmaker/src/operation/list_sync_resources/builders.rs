@@ -128,21 +128,21 @@ impl ListSyncResourcesFluentBuilder {
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_source(input.into());
         self
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_source(input);
         self
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,9 +155,12 @@ impl ListSyncResourcesFluentBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li><p>Filter with state</p></li>
-    /// <li><p>Filter with ResourceType and ResourceId</p></li>
-    /// <li><p>Filter with ResourceType and ExternalId</p></li>
+    /// <li>
+    /// <p>Filter with state</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ResourceId</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::SyncResourceFilter) -> Self {
         self.inner = self.inner.filters(input);
@@ -166,9 +169,12 @@ impl ListSyncResourcesFluentBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li><p>Filter with state</p></li>
-    /// <li><p>Filter with ResourceType and ResourceId</p></li>
-    /// <li><p>Filter with ResourceType and ExternalId</p></li>
+    /// <li>
+    /// <p>Filter with state</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ResourceId</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -177,9 +183,12 @@ impl ListSyncResourcesFluentBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li><p>Filter with state</p></li>
-    /// <li><p>Filter with ResourceType and ResourceId</p></li>
-    /// <li><p>Filter with ResourceType and ExternalId</p></li>
+    /// <li>
+    /// <p>Filter with state</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ResourceId</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>> {
         self.inner.get_filters()

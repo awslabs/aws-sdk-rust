@@ -22,7 +22,7 @@ impl ListResourceRequestsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListResourceRequests`.
 ///
-/// <p>Returns existing resource operation requests. This includes requests of all status types. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-list">Listing active resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p> <note>
+/// <p>Returns existing resource operation requests. This includes requests of all status types. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-list">Listing active resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p><note>
 /// <p>Resource operation requests expire after 7 days.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

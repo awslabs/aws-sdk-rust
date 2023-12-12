@@ -25,7 +25,7 @@ impl CreateHsmInputBuilder {
 /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
 /// <p><b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
 /// <p>Creates an uninitialized HSM instance.</p>
-/// <p>There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <code>DeleteHsm</code> operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p> <important>
+/// <p>There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <code>DeleteHsm</code> operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p><important>
 /// <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the status of the HSM with the <code>DescribeHsm</code> operation. The HSM is ready to be initialized when the status changes to <code>RUNNING</code>.</p>
 /// </important>
 #[deprecated(note = "This API is deprecated.")]
@@ -183,8 +183,10 @@ impl CreateHsmFluentBuilder {
     }
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li><p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>
-    /// <li><p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li>
+    /// <li>
+    /// <p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>
+    /// <li>
+    /// <p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li>
     /// </ul>
     pub fn subscription_type(mut self, input: crate::types::SubscriptionType) -> Self {
         self.inner = self.inner.subscription_type(input);
@@ -192,8 +194,10 @@ impl CreateHsmFluentBuilder {
     }
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li><p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>
-    /// <li><p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li>
+    /// <li>
+    /// <p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>
+    /// <li>
+    /// <p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li>
     /// </ul>
     pub fn set_subscription_type(mut self, input: ::std::option::Option<crate::types::SubscriptionType>) -> Self {
         self.inner = self.inner.set_subscription_type(input);
@@ -201,8 +205,10 @@ impl CreateHsmFluentBuilder {
     }
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li><p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>
-    /// <li><p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li>
+    /// <li>
+    /// <p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>
+    /// <li>
+    /// <p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li>
     /// </ul>
     pub fn get_subscription_type(&self) -> &::std::option::Option<crate::types::SubscriptionType> {
         self.inner.get_subscription_type()

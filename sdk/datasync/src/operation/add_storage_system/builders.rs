@@ -122,21 +122,21 @@ impl AddStorageSystemFluentBuilder {
     pub fn get_server_configuration(&self) -> &::std::option::Option<crate::types::DiscoveryServerConfiguration> {
         self.inner.get_server_configuration()
     }
-    /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note>
+    /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p><note>
     /// <p>DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
     /// </note>
     pub fn system_type(mut self, input: crate::types::DiscoverySystemType) -> Self {
         self.inner = self.inner.system_type(input);
         self
     }
-    /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note>
+    /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p><note>
     /// <p>DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
     /// </note>
     pub fn set_system_type(mut self, input: ::std::option::Option<crate::types::DiscoverySystemType>) -> Self {
         self.inner = self.inner.set_system_type(input);
         self
     }
-    /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note>
+    /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p><note>
     /// <p>DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
     /// </note>
     pub fn get_system_type(&self) -> &::std::option::Option<crate::types::DiscoverySystemType> {

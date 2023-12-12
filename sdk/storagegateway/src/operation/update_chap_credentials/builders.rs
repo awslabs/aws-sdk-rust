@@ -22,7 +22,7 @@ impl UpdateChapCredentialsInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateChapCredentials`.
 ///
-/// <p>Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By default, a gateway does not have CHAP enabled; however, for added security, you might use it. This operation is supported in the volume and tape gateway types.</p> <important>
+/// <p>Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By default, a gateway does not have CHAP enabled; however, for added security, you might use it. This operation is supported in the volume and tape gateway types.</p><important>
 /// <p>When you update CHAP credentials, all existing connections on the target are closed and initiators must reconnect with the new credentials.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -124,21 +124,21 @@ impl UpdateChapCredentialsFluentBuilder {
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_arn()
     }
-    /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
+    /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p><note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
     pub fn secret_to_authenticate_initiator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_to_authenticate_initiator(input.into());
         self
     }
-    /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
+    /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p><note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
     pub fn set_secret_to_authenticate_initiator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_to_authenticate_initiator(input);
         self
     }
-    /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
+    /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p><note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
     pub fn get_secret_to_authenticate_initiator(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,7 +159,7 @@ impl UpdateChapCredentialsFluentBuilder {
         self.inner.get_initiator_name()
     }
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p>
-    /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
+    /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p><note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
     pub fn secret_to_authenticate_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,7 +167,7 @@ impl UpdateChapCredentialsFluentBuilder {
         self
     }
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p>
-    /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
+    /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p><note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
     pub fn set_secret_to_authenticate_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -175,7 +175,7 @@ impl UpdateChapCredentialsFluentBuilder {
         self
     }
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p>
-    /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
+    /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p><note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
     pub fn get_secret_to_authenticate_target(&self) -> &::std::option::Option<::std::string::String> {

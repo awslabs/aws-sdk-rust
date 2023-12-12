@@ -5,7 +5,7 @@
 pub struct ListPhoneNumbersInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of phone number.</p> <note>
+    /// <p>The type of phone number.</p><note>
     /// <p>We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.</p>
     /// </note>
     pub phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
@@ -21,7 +21,7 @@ impl ListPhoneNumbersInput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The type of phone number.</p> <note>
+    /// <p>The type of phone number.</p><note>
     /// <p>We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.</p>
     /// </note>
     ///
@@ -81,7 +81,7 @@ impl ListPhoneNumbersInputBuilder {
     ///
     /// To override the contents of this collection use [`set_phone_number_types`](Self::set_phone_number_types).
     ///
-    /// <p>The type of phone number.</p> <note>
+    /// <p>The type of phone number.</p><note>
     /// <p>We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.</p>
     /// </note>
     pub fn phone_number_types(mut self, input: crate::types::PhoneNumberType) -> Self {
@@ -90,14 +90,14 @@ impl ListPhoneNumbersInputBuilder {
         self.phone_number_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The type of phone number.</p> <note>
+    /// <p>The type of phone number.</p><note>
     /// <p>We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.</p>
     /// </note>
     pub fn set_phone_number_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>) -> Self {
         self.phone_number_types = input;
         self
     }
-    /// <p>The type of phone number.</p> <note>
+    /// <p>The type of phone number.</p><note>
     /// <p>We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.</p>
     /// </note>
     pub fn get_phone_number_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {

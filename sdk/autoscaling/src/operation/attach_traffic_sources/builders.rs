@@ -25,11 +25,16 @@ impl AttachTrafficSourcesInputBuilder {
 /// <p>Attaches one or more traffic sources to the specified Auto Scaling group.</p>
 /// <p>You can use any of the following as traffic sources for an Auto Scaling group:</p>
 /// <ul>
-/// <li><p>Application Load Balancer</p></li>
-/// <li><p>Classic Load Balancer</p></li>
-/// <li><p>Gateway Load Balancer</p></li>
-/// <li><p>Network Load Balancer</p></li>
-/// <li><p>VPC Lattice</p></li>
+/// <li>
+/// <p>Application Load Balancer</p></li>
+/// <li>
+/// <p>Classic Load Balancer</p></li>
+/// <li>
+/// <p>Gateway Load Balancer</p></li>
+/// <li>
+/// <p>Network Load Balancer</p></li>
+/// <li>
+/// <p>VPC Lattice</p></li>
 /// </ul>
 /// <p>This operation is additive and does not detach existing traffic sources from the Auto Scaling group.</p>
 /// <p>After the operation completes, use the <code>DescribeTrafficSources</code> API to return details about the state of the attachments between traffic sources and your Auto Scaling group. To detach a traffic source from the Auto Scaling group, call the <code>DetachTrafficSources</code> API.</p>

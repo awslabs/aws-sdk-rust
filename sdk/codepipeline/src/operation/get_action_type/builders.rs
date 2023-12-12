@@ -110,12 +110,18 @@ impl GetActionTypeFluentBuilder {
     }
     /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
     /// <ul>
-    /// <li><p><code>Source</code></p></li>
-    /// <li><p><code>Build</code></p></li>
-    /// <li><p><code>Test</code></p></li>
-    /// <li><p><code>Deploy</code></p></li>
-    /// <li><p><code>Approval</code></p></li>
-    /// <li><p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Source</code></p></li>
+    /// <li>
+    /// <p><code>Build</code></p></li>
+    /// <li>
+    /// <p><code>Test</code></p></li>
+    /// <li>
+    /// <p><code>Deploy</code></p></li>
+    /// <li>
+    /// <p><code>Approval</code></p></li>
+    /// <li>
+    /// <p><code>Invoke</code></p></li>
     /// </ul>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.inner = self.inner.category(input);
@@ -123,12 +129,18 @@ impl GetActionTypeFluentBuilder {
     }
     /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
     /// <ul>
-    /// <li><p><code>Source</code></p></li>
-    /// <li><p><code>Build</code></p></li>
-    /// <li><p><code>Test</code></p></li>
-    /// <li><p><code>Deploy</code></p></li>
-    /// <li><p><code>Approval</code></p></li>
-    /// <li><p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Source</code></p></li>
+    /// <li>
+    /// <p><code>Build</code></p></li>
+    /// <li>
+    /// <p><code>Test</code></p></li>
+    /// <li>
+    /// <p><code>Deploy</code></p></li>
+    /// <li>
+    /// <p><code>Approval</code></p></li>
+    /// <li>
+    /// <p><code>Invoke</code></p></li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.inner = self.inner.set_category(input);
@@ -136,12 +148,18 @@ impl GetActionTypeFluentBuilder {
     }
     /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
     /// <ul>
-    /// <li><p><code>Source</code></p></li>
-    /// <li><p><code>Build</code></p></li>
-    /// <li><p><code>Test</code></p></li>
-    /// <li><p><code>Deploy</code></p></li>
-    /// <li><p><code>Approval</code></p></li>
-    /// <li><p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Source</code></p></li>
+    /// <li>
+    /// <p><code>Build</code></p></li>
+    /// <li>
+    /// <p><code>Test</code></p></li>
+    /// <li>
+    /// <p><code>Deploy</code></p></li>
+    /// <li>
+    /// <p><code>Approval</code></p></li>
+    /// <li>
+    /// <p><code>Invoke</code></p></li>
     /// </ul>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
         self.inner.get_category()

@@ -5,13 +5,20 @@
 pub struct DescribeInstancePatchesOutput {
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li><p>Title (string)</p></li>
-    /// <li><p>KBId (string)</p></li>
-    /// <li><p>Classification (string)</p></li>
-    /// <li><p>Severity (string)</p></li>
-    /// <li><p>State (string, such as "INSTALLED" or "FAILED")</p></li>
-    /// <li><p>InstalledTime (DateTime)</p></li>
-    /// <li><p>InstalledBy (string)</p></li>
+    /// <li>
+    /// <p>Title (string)</p></li>
+    /// <li>
+    /// <p>KBId (string)</p></li>
+    /// <li>
+    /// <p>Classification (string)</p></li>
+    /// <li>
+    /// <p>Severity (string)</p></li>
+    /// <li>
+    /// <p>State (string, such as "INSTALLED" or "FAILED")</p></li>
+    /// <li>
+    /// <p>InstalledTime (DateTime)</p></li>
+    /// <li>
+    /// <p>InstalledBy (string)</p></li>
     /// </ul>
     pub patches: ::std::option::Option<::std::vec::Vec<crate::types::PatchComplianceData>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -21,13 +28,20 @@ pub struct DescribeInstancePatchesOutput {
 impl DescribeInstancePatchesOutput {
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li><p>Title (string)</p></li>
-    /// <li><p>KBId (string)</p></li>
-    /// <li><p>Classification (string)</p></li>
-    /// <li><p>Severity (string)</p></li>
-    /// <li><p>State (string, such as "INSTALLED" or "FAILED")</p></li>
-    /// <li><p>InstalledTime (DateTime)</p></li>
-    /// <li><p>InstalledBy (string)</p></li>
+    /// <li>
+    /// <p>Title (string)</p></li>
+    /// <li>
+    /// <p>KBId (string)</p></li>
+    /// <li>
+    /// <p>Classification (string)</p></li>
+    /// <li>
+    /// <p>Severity (string)</p></li>
+    /// <li>
+    /// <p>State (string, such as "INSTALLED" or "FAILED")</p></li>
+    /// <li>
+    /// <p>InstalledTime (DateTime)</p></li>
+    /// <li>
+    /// <p>InstalledBy (string)</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patches.is_none()`.
@@ -66,13 +80,20 @@ impl DescribeInstancePatchesOutputBuilder {
     ///
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li><p>Title (string)</p></li>
-    /// <li><p>KBId (string)</p></li>
-    /// <li><p>Classification (string)</p></li>
-    /// <li><p>Severity (string)</p></li>
-    /// <li><p>State (string, such as "INSTALLED" or "FAILED")</p></li>
-    /// <li><p>InstalledTime (DateTime)</p></li>
-    /// <li><p>InstalledBy (string)</p></li>
+    /// <li>
+    /// <p>Title (string)</p></li>
+    /// <li>
+    /// <p>KBId (string)</p></li>
+    /// <li>
+    /// <p>Classification (string)</p></li>
+    /// <li>
+    /// <p>Severity (string)</p></li>
+    /// <li>
+    /// <p>State (string, such as "INSTALLED" or "FAILED")</p></li>
+    /// <li>
+    /// <p>InstalledTime (DateTime)</p></li>
+    /// <li>
+    /// <p>InstalledBy (string)</p></li>
     /// </ul>
     pub fn patches(mut self, input: crate::types::PatchComplianceData) -> Self {
         let mut v = self.patches.unwrap_or_default();
@@ -82,13 +103,20 @@ impl DescribeInstancePatchesOutputBuilder {
     }
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li><p>Title (string)</p></li>
-    /// <li><p>KBId (string)</p></li>
-    /// <li><p>Classification (string)</p></li>
-    /// <li><p>Severity (string)</p></li>
-    /// <li><p>State (string, such as "INSTALLED" or "FAILED")</p></li>
-    /// <li><p>InstalledTime (DateTime)</p></li>
-    /// <li><p>InstalledBy (string)</p></li>
+    /// <li>
+    /// <p>Title (string)</p></li>
+    /// <li>
+    /// <p>KBId (string)</p></li>
+    /// <li>
+    /// <p>Classification (string)</p></li>
+    /// <li>
+    /// <p>Severity (string)</p></li>
+    /// <li>
+    /// <p>State (string, such as "INSTALLED" or "FAILED")</p></li>
+    /// <li>
+    /// <p>InstalledTime (DateTime)</p></li>
+    /// <li>
+    /// <p>InstalledBy (string)</p></li>
     /// </ul>
     pub fn set_patches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchComplianceData>>) -> Self {
         self.patches = input;
@@ -96,13 +124,20 @@ impl DescribeInstancePatchesOutputBuilder {
     }
     /// <p>Each entry in the array is a structure containing:</p>
     /// <ul>
-    /// <li><p>Title (string)</p></li>
-    /// <li><p>KBId (string)</p></li>
-    /// <li><p>Classification (string)</p></li>
-    /// <li><p>Severity (string)</p></li>
-    /// <li><p>State (string, such as "INSTALLED" or "FAILED")</p></li>
-    /// <li><p>InstalledTime (DateTime)</p></li>
-    /// <li><p>InstalledBy (string)</p></li>
+    /// <li>
+    /// <p>Title (string)</p></li>
+    /// <li>
+    /// <p>KBId (string)</p></li>
+    /// <li>
+    /// <p>Classification (string)</p></li>
+    /// <li>
+    /// <p>Severity (string)</p></li>
+    /// <li>
+    /// <p>State (string, such as "INSTALLED" or "FAILED")</p></li>
+    /// <li>
+    /// <p>InstalledTime (DateTime)</p></li>
+    /// <li>
+    /// <p>InstalledBy (string)</p></li>
     /// </ul>
     pub fn get_patches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchComplianceData>> {
         &self.patches

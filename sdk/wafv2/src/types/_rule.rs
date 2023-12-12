@@ -15,12 +15,14 @@ pub struct Rule {
     /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p>
     /// <p>You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not both:</p>
     /// <ul>
-    /// <li><p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting.</p></li>
-    /// <li><p>If the rule statement references a rule group, use the override action setting and not this action setting.</p></li>
+    /// <li>
+    /// <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting.</p></li>
+    /// <li>
+    /// <p>If the rule statement references a rule group, use the override action setting and not this action setting.</p></li>
     /// </ul>
     pub action: ::std::option::Option<crate::types::RuleAction>,
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p> <note>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p><note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     pub override_action: ::std::option::Option<crate::types::OverrideAction>,
@@ -28,10 +30,14 @@ pub struct Rule {
     /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
     /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>
-    /// <li><p>Separate each component of the label with a colon.</p></li>
-    /// <li><p>Each namespace or name can have up to 128 characters.</p></li>
-    /// <li><p>You can specify up to 5 namespaces in a label.</p></li>
-    /// <li><p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p></li>
+    /// <li>
+    /// <p>Separate each component of the label with a colon.</p></li>
+    /// <li>
+    /// <p>Each namespace or name can have up to 128 characters.</p></li>
+    /// <li>
+    /// <p>You can specify up to 5 namespaces in a label.</p></li>
+    /// <li>
+    /// <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p></li>
     /// </ul>
     /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.</p>
     pub rule_labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
@@ -62,14 +68,16 @@ impl Rule {
     /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p>
     /// <p>You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not both:</p>
     /// <ul>
-    /// <li><p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting.</p></li>
-    /// <li><p>If the rule statement references a rule group, use the override action setting and not this action setting.</p></li>
+    /// <li>
+    /// <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting.</p></li>
+    /// <li>
+    /// <p>If the rule statement references a rule group, use the override action setting and not this action setting.</p></li>
     /// </ul>
     pub fn action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
         self.action.as_ref()
     }
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p> <note>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p><note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     pub fn override_action(&self) -> ::std::option::Option<&crate::types::OverrideAction> {
@@ -79,10 +87,14 @@ impl Rule {
     /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
     /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>
-    /// <li><p>Separate each component of the label with a colon.</p></li>
-    /// <li><p>Each namespace or name can have up to 128 characters.</p></li>
-    /// <li><p>You can specify up to 5 namespaces in a label.</p></li>
-    /// <li><p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p></li>
+    /// <li>
+    /// <p>Separate each component of the label with a colon.</p></li>
+    /// <li>
+    /// <p>Each namespace or name can have up to 128 characters.</p></li>
+    /// <li>
+    /// <p>You can specify up to 5 namespaces in a label.</p></li>
+    /// <li>
+    /// <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p></li>
     /// </ul>
     /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.</p>
     ///
@@ -178,8 +190,10 @@ impl RuleBuilder {
     /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p>
     /// <p>You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not both:</p>
     /// <ul>
-    /// <li><p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting.</p></li>
-    /// <li><p>If the rule statement references a rule group, use the override action setting and not this action setting.</p></li>
+    /// <li>
+    /// <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting.</p></li>
+    /// <li>
+    /// <p>If the rule statement references a rule group, use the override action setting and not this action setting.</p></li>
     /// </ul>
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -189,8 +203,10 @@ impl RuleBuilder {
     /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p>
     /// <p>You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not both:</p>
     /// <ul>
-    /// <li><p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting.</p></li>
-    /// <li><p>If the rule statement references a rule group, use the override action setting and not this action setting.</p></li>
+    /// <li>
+    /// <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting.</p></li>
+    /// <li>
+    /// <p>If the rule statement references a rule group, use the override action setting and not this action setting.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.action = input;
@@ -200,14 +216,16 @@ impl RuleBuilder {
     /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p>
     /// <p>You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not both:</p>
     /// <ul>
-    /// <li><p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting.</p></li>
-    /// <li><p>If the rule statement references a rule group, use the override action setting and not this action setting.</p></li>
+    /// <li>
+    /// <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting.</p></li>
+    /// <li>
+    /// <p>If the rule statement references a rule group, use the override action setting and not this action setting.</p></li>
     /// </ul>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
         &self.action
     }
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p> <note>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p><note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     pub fn override_action(mut self, input: crate::types::OverrideAction) -> Self {
@@ -215,7 +233,7 @@ impl RuleBuilder {
         self
     }
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p> <note>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p><note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     pub fn set_override_action(mut self, input: ::std::option::Option<crate::types::OverrideAction>) -> Self {
@@ -223,7 +241,7 @@ impl RuleBuilder {
         self
     }
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only.</p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p> <note>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.</p><note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     pub fn get_override_action(&self) -> &::std::option::Option<crate::types::OverrideAction> {
@@ -237,10 +255,14 @@ impl RuleBuilder {
     /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
     /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>
-    /// <li><p>Separate each component of the label with a colon.</p></li>
-    /// <li><p>Each namespace or name can have up to 128 characters.</p></li>
-    /// <li><p>You can specify up to 5 namespaces in a label.</p></li>
-    /// <li><p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p></li>
+    /// <li>
+    /// <p>Separate each component of the label with a colon.</p></li>
+    /// <li>
+    /// <p>Each namespace or name can have up to 128 characters.</p></li>
+    /// <li>
+    /// <p>You can specify up to 5 namespaces in a label.</p></li>
+    /// <li>
+    /// <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p></li>
     /// </ul>
     /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.</p>
     pub fn rule_labels(mut self, input: crate::types::Label) -> Self {
@@ -253,10 +275,14 @@ impl RuleBuilder {
     /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
     /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>
-    /// <li><p>Separate each component of the label with a colon.</p></li>
-    /// <li><p>Each namespace or name can have up to 128 characters.</p></li>
-    /// <li><p>You can specify up to 5 namespaces in a label.</p></li>
-    /// <li><p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p></li>
+    /// <li>
+    /// <p>Separate each component of the label with a colon.</p></li>
+    /// <li>
+    /// <p>Each namespace or name can have up to 128 characters.</p></li>
+    /// <li>
+    /// <p>You can specify up to 5 namespaces in a label.</p></li>
+    /// <li>
+    /// <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p></li>
     /// </ul>
     /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.</p>
     pub fn set_rule_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>) -> Self {
@@ -267,10 +293,14 @@ impl RuleBuilder {
     /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
     /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>
-    /// <li><p>Separate each component of the label with a colon.</p></li>
-    /// <li><p>Each namespace or name can have up to 128 characters.</p></li>
-    /// <li><p>You can specify up to 5 namespaces in a label.</p></li>
-    /// <li><p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p></li>
+    /// <li>
+    /// <p>Separate each component of the label with a colon.</p></li>
+    /// <li>
+    /// <p>Each namespace or name can have up to 128 characters.</p></li>
+    /// <li>
+    /// <p>You can specify up to 5 namespaces in a label.</p></li>
+    /// <li>
+    /// <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p></li>
     /// </ul>
     /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.</p>
     pub fn get_rule_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Label>> {

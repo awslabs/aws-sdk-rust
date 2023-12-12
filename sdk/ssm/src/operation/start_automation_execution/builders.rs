@@ -297,9 +297,11 @@ impl StartAutomationExecutionFluentBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=environment,Value=test</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=environment,Value=test</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -308,9 +310,11 @@ impl StartAutomationExecutionFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=environment,Value=test</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=environment,Value=test</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
@@ -319,9 +323,11 @@ impl StartAutomationExecutionFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=environment,Value=test</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=environment,Value=test</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

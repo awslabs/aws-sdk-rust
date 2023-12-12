@@ -28,18 +28,26 @@ impl CreateRuleInputBuilder {
 /// </note>
 /// <p>Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects, and other predicates that identify the requests that you want to block. If you add more than one predicate to a <code>Rule</code>, a request must match all of the specifications to be allowed or blocked. For example, suppose that you add the following to a <code>Rule</code>:</p>
 /// <ul>
-/// <li><p>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code></p></li>
-/// <li><p>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header</p></li>
+/// <li>
+/// <p>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code></p></li>
+/// <li>
+/// <p>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header</p></li>
 /// </ul>
 /// <p>You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want to blocks requests that satisfy the <code>Rule</code>. For a request to be blocked, it must come from the IP address 192.0.2.44 <i>and</i> the <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>.</p>
 /// <p>To create and configure a <code>Rule</code>, perform the following steps:</p>
 /// <ol>
-/// <li><p>Create and update the predicates that you want to include in the <code>Rule</code>. For more information, see <code>CreateByteMatchSet</code>, <code>CreateIPSet</code>, and <code>CreateSqlInjectionMatchSet</code>.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>CreateRule</code> request.</p></li>
-/// <li><p>Submit a <code>CreateRule</code> request.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateRule</code> request.</p></li>
-/// <li><p>Submit an <code>UpdateRule</code> request to specify the predicates that you want to include in the <code>Rule</code>.</p></li>
-/// <li><p>Create and update a <code>WebACL</code> that contains the <code>Rule</code>. For more information, see <code>CreateWebACL</code>.</p></li>
+/// <li>
+/// <p>Create and update the predicates that you want to include in the <code>Rule</code>. For more information, see <code>CreateByteMatchSet</code>, <code>CreateIPSet</code>, and <code>CreateSqlInjectionMatchSet</code>.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>CreateRule</code> request.</p></li>
+/// <li>
+/// <p>Submit a <code>CreateRule</code> request.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateRule</code> request.</p></li>
+/// <li>
+/// <p>Submit an <code>UpdateRule</code> request to specify the predicates that you want to include in the <code>Rule</code>.</p></li>
+/// <li>
+/// <p>Create and update a <code>WebACL</code> that contains the <code>Rule</code>. For more information, see <code>CreateWebACL</code>.</p></li>
 /// </ol>
 /// <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

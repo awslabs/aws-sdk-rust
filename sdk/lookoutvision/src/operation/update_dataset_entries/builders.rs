@@ -24,7 +24,7 @@ impl UpdateDatasetEntriesInputBuilder {
 ///
 /// <p>Adds or updates one or more JSON Line entries in a dataset. A JSON Line includes information about an image used for training or testing an Amazon Lookout for Vision model.</p>
 /// <p>To update an existing JSON Line, use the <code>source-ref</code> field to identify the JSON Line. The JSON line that you supply replaces the existing JSON line. Any existing annotations that are not in the new JSON line are removed from the dataset.</p>
-/// <p>For more information, see <i>Defining JSON lines for anomaly classification</i> in the Amazon Lookout for Vision Developer Guide.</p> <note>
+/// <p>For more information, see <i>Defining JSON lines for anomaly classification</i> in the Amazon Lookout for Vision Developer Guide.</p><note>
 /// <p>The images you reference in the <code>source-ref</code> field of a JSON line, must be in the same S3 bucket as the existing images in the dataset.</p>
 /// </note>
 /// <p>Updating a dataset might take a while to complete. To check the current status, call <code>DescribeDataset</code> and check the <code>Status</code> field in the response.</p>

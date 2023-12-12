@@ -33,13 +33,17 @@ pub struct KeySigningKey {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li><p>DescribeKey</p></li>
-    /// <li><p>GetPublicKey</p></li>
-    /// <li><p>Sign</p></li>
+    /// <li>
+    /// <p>DescribeKey</p></li>
+    /// <li>
+    /// <p>GetPublicKey</p></li>
+    /// <li>
+    /// <p>Sign</p></li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li><p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
+    /// <li>
+    /// <p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -139,13 +143,17 @@ impl KeySigningKey {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li><p>DescribeKey</p></li>
-    /// <li><p>GetPublicKey</p></li>
-    /// <li><p>Sign</p></li>
+    /// <li>
+    /// <p>DescribeKey</p></li>
+    /// <li>
+    /// <p>GetPublicKey</p></li>
+    /// <li>
+    /// <p>Sign</p></li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li><p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
+    /// <li>
+    /// <p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -313,13 +321,17 @@ impl KeySigningKeyBuilder {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li><p>DescribeKey</p></li>
-    /// <li><p>GetPublicKey</p></li>
-    /// <li><p>Sign</p></li>
+    /// <li>
+    /// <p>DescribeKey</p></li>
+    /// <li>
+    /// <p>GetPublicKey</p></li>
+    /// <li>
+    /// <p>Sign</p></li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li><p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
+    /// <li>
+    /// <p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -355,13 +367,17 @@ impl KeySigningKeyBuilder {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li><p>DescribeKey</p></li>
-    /// <li><p>GetPublicKey</p></li>
-    /// <li><p>Sign</p></li>
+    /// <li>
+    /// <p>DescribeKey</p></li>
+    /// <li>
+    /// <p>GetPublicKey</p></li>
+    /// <li>
+    /// <p>Sign</p></li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li><p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
+    /// <li>
+    /// <p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -397,13 +413,17 @@ impl KeySigningKeyBuilder {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li><p>DescribeKey</p></li>
-    /// <li><p>GetPublicKey</p></li>
-    /// <li><p>Sign</p></li>
+    /// <li>
+    /// <p>DescribeKey</p></li>
+    /// <li>
+    /// <p>GetPublicKey</p></li>
+    /// <li>
+    /// <p>Sign</p></li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li><p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
+    /// <li>
+    /// <p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>

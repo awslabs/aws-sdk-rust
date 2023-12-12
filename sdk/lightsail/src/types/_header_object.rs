@@ -8,9 +8,12 @@ pub struct HeaderObject {
     /// <p>The headers that you want your distribution to forward to your origin and base caching on.</p>
     /// <p>You can configure your distribution to do one of the following:</p>
     /// <ul>
-    /// <li><p><b> <code>all</code> </b> - Forward all headers to your origin.</p></li>
-    /// <li><p><b> <code>none</code> </b> - Forward only the default headers.</p></li>
-    /// <li><p><b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p></li>
+    /// <li>
+    /// <p><b> <code>all</code> </b> - Forward all headers to your origin.</p></li>
+    /// <li>
+    /// <p><b> <code>none</code> </b> - Forward only the default headers.</p></li>
+    /// <li>
+    /// <p><b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p></li>
     /// </ul>
     pub option: ::std::option::Option<crate::types::ForwardValues>,
     /// <p>The specific headers to forward to your distribution's origin.</p>
@@ -20,9 +23,12 @@ impl HeaderObject {
     /// <p>The headers that you want your distribution to forward to your origin and base caching on.</p>
     /// <p>You can configure your distribution to do one of the following:</p>
     /// <ul>
-    /// <li><p><b> <code>all</code> </b> - Forward all headers to your origin.</p></li>
-    /// <li><p><b> <code>none</code> </b> - Forward only the default headers.</p></li>
-    /// <li><p><b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p></li>
+    /// <li>
+    /// <p><b> <code>all</code> </b> - Forward all headers to your origin.</p></li>
+    /// <li>
+    /// <p><b> <code>none</code> </b> - Forward only the default headers.</p></li>
+    /// <li>
+    /// <p><b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p></li>
     /// </ul>
     pub fn option(&self) -> ::std::option::Option<&crate::types::ForwardValues> {
         self.option.as_ref()
@@ -52,9 +58,12 @@ impl HeaderObjectBuilder {
     /// <p>The headers that you want your distribution to forward to your origin and base caching on.</p>
     /// <p>You can configure your distribution to do one of the following:</p>
     /// <ul>
-    /// <li><p><b> <code>all</code> </b> - Forward all headers to your origin.</p></li>
-    /// <li><p><b> <code>none</code> </b> - Forward only the default headers.</p></li>
-    /// <li><p><b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p></li>
+    /// <li>
+    /// <p><b> <code>all</code> </b> - Forward all headers to your origin.</p></li>
+    /// <li>
+    /// <p><b> <code>none</code> </b> - Forward only the default headers.</p></li>
+    /// <li>
+    /// <p><b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p></li>
     /// </ul>
     pub fn option(mut self, input: crate::types::ForwardValues) -> Self {
         self.option = ::std::option::Option::Some(input);
@@ -63,9 +72,12 @@ impl HeaderObjectBuilder {
     /// <p>The headers that you want your distribution to forward to your origin and base caching on.</p>
     /// <p>You can configure your distribution to do one of the following:</p>
     /// <ul>
-    /// <li><p><b> <code>all</code> </b> - Forward all headers to your origin.</p></li>
-    /// <li><p><b> <code>none</code> </b> - Forward only the default headers.</p></li>
-    /// <li><p><b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p></li>
+    /// <li>
+    /// <p><b> <code>all</code> </b> - Forward all headers to your origin.</p></li>
+    /// <li>
+    /// <p><b> <code>none</code> </b> - Forward only the default headers.</p></li>
+    /// <li>
+    /// <p><b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p></li>
     /// </ul>
     pub fn set_option(mut self, input: ::std::option::Option<crate::types::ForwardValues>) -> Self {
         self.option = input;
@@ -74,9 +86,12 @@ impl HeaderObjectBuilder {
     /// <p>The headers that you want your distribution to forward to your origin and base caching on.</p>
     /// <p>You can configure your distribution to do one of the following:</p>
     /// <ul>
-    /// <li><p><b> <code>all</code> </b> - Forward all headers to your origin.</p></li>
-    /// <li><p><b> <code>none</code> </b> - Forward only the default headers.</p></li>
-    /// <li><p><b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p></li>
+    /// <li>
+    /// <p><b> <code>all</code> </b> - Forward all headers to your origin.</p></li>
+    /// <li>
+    /// <p><b> <code>none</code> </b> - Forward only the default headers.</p></li>
+    /// <li>
+    /// <p><b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p></li>
     /// </ul>
     pub fn get_option(&self) -> &::std::option::Option<crate::types::ForwardValues> {
         &self.option

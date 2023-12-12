@@ -39,7 +39,7 @@ pub struct DescribeTaskExecutionOutput {
     pub files_deleted: i64,
     /// <p>The number of files, objects, and directories that DataSync skipped during your transfer.</p>
     pub files_skipped: i64,
-    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p> <note>
+    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p><note>
     /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
     /// </note>
     pub files_verified: i64,
@@ -121,7 +121,7 @@ impl DescribeTaskExecutionOutput {
     pub fn files_skipped(&self) -> i64 {
         self.files_skipped
     }
-    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p> <note>
+    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p><note>
     /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
     /// </note>
     pub fn files_verified(&self) -> i64 {
@@ -419,21 +419,21 @@ impl DescribeTaskExecutionOutputBuilder {
     pub fn get_files_skipped(&self) -> &::std::option::Option<i64> {
         &self.files_skipped
     }
-    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p> <note>
+    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p><note>
     /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
     /// </note>
     pub fn files_verified(mut self, input: i64) -> Self {
         self.files_verified = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p> <note>
+    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p><note>
     /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
     /// </note>
     pub fn set_files_verified(mut self, input: ::std::option::Option<i64>) -> Self {
         self.files_verified = input;
         self
     }
-    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p> <note>
+    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p><note>
     /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
     /// </note>
     pub fn get_files_verified(&self) -> &::std::option::Option<i64> {

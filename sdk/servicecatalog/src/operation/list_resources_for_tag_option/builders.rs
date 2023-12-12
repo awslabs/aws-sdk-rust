@@ -130,8 +130,10 @@ impl ListResourcesForTagOptionFluentBuilder {
     }
     /// <p>The resource type.</p>
     /// <ul>
-    /// <li><p><code>Portfolio</code></p></li>
-    /// <li><p><code>Product</code></p></li>
+    /// <li>
+    /// <p><code>Portfolio</code></p></li>
+    /// <li>
+    /// <p><code>Product</code></p></li>
     /// </ul>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
@@ -139,8 +141,10 @@ impl ListResourcesForTagOptionFluentBuilder {
     }
     /// <p>The resource type.</p>
     /// <ul>
-    /// <li><p><code>Portfolio</code></p></li>
-    /// <li><p><code>Product</code></p></li>
+    /// <li>
+    /// <p><code>Portfolio</code></p></li>
+    /// <li>
+    /// <p><code>Product</code></p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
@@ -148,8 +152,10 @@ impl ListResourcesForTagOptionFluentBuilder {
     }
     /// <p>The resource type.</p>
     /// <ul>
-    /// <li><p><code>Portfolio</code></p></li>
-    /// <li><p><code>Product</code></p></li>
+    /// <li>
+    /// <p><code>Portfolio</code></p></li>
+    /// <li>
+    /// <p><code>Product</code></p></li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()

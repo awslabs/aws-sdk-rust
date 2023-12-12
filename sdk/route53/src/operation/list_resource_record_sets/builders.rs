@@ -181,13 +181,20 @@ impl ListResourceRecordSetsFluentBuilder {
     /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
     /// <p>Values for alias resource record sets:</p>
     /// <ul>
-    /// <li><p><b>API Gateway custom regional API or edge-optimized API</b>: A</p></li>
-    /// <li><p><b>CloudFront distribution</b>: A or AAAA</p></li>
-    /// <li><p><b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p></li>
-    /// <li><p><b>Elastic Load Balancing load balancer</b>: A | AAAA</p></li>
-    /// <li><p><b>S3 bucket</b>: A</p></li>
-    /// <li><p><b>VPC interface VPC endpoint</b>: A</p></li>
-    /// <li><p><b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p></li>
+    /// <li>
+    /// <p><b>API Gateway custom regional API or edge-optimized API</b>: A</p></li>
+    /// <li>
+    /// <p><b>CloudFront distribution</b>: A or AAAA</p></li>
+    /// <li>
+    /// <p><b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing load balancer</b>: A | AAAA</p></li>
+    /// <li>
+    /// <p><b>S3 bucket</b>: A</p></li>
+    /// <li>
+    /// <p><b>VPC interface VPC endpoint</b>: A</p></li>
+    /// <li>
+    /// <p><b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
     pub fn start_record_type(mut self, input: crate::types::RrType) -> Self {
@@ -199,13 +206,20 @@ impl ListResourceRecordSetsFluentBuilder {
     /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
     /// <p>Values for alias resource record sets:</p>
     /// <ul>
-    /// <li><p><b>API Gateway custom regional API or edge-optimized API</b>: A</p></li>
-    /// <li><p><b>CloudFront distribution</b>: A or AAAA</p></li>
-    /// <li><p><b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p></li>
-    /// <li><p><b>Elastic Load Balancing load balancer</b>: A | AAAA</p></li>
-    /// <li><p><b>S3 bucket</b>: A</p></li>
-    /// <li><p><b>VPC interface VPC endpoint</b>: A</p></li>
-    /// <li><p><b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p></li>
+    /// <li>
+    /// <p><b>API Gateway custom regional API or edge-optimized API</b>: A</p></li>
+    /// <li>
+    /// <p><b>CloudFront distribution</b>: A or AAAA</p></li>
+    /// <li>
+    /// <p><b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing load balancer</b>: A | AAAA</p></li>
+    /// <li>
+    /// <p><b>S3 bucket</b>: A</p></li>
+    /// <li>
+    /// <p><b>VPC interface VPC endpoint</b>: A</p></li>
+    /// <li>
+    /// <p><b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
     pub fn set_start_record_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
@@ -217,13 +231,20 @@ impl ListResourceRecordSetsFluentBuilder {
     /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
     /// <p>Values for alias resource record sets:</p>
     /// <ul>
-    /// <li><p><b>API Gateway custom regional API or edge-optimized API</b>: A</p></li>
-    /// <li><p><b>CloudFront distribution</b>: A or AAAA</p></li>
-    /// <li><p><b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p></li>
-    /// <li><p><b>Elastic Load Balancing load balancer</b>: A | AAAA</p></li>
-    /// <li><p><b>S3 bucket</b>: A</p></li>
-    /// <li><p><b>VPC interface VPC endpoint</b>: A</p></li>
-    /// <li><p><b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p></li>
+    /// <li>
+    /// <p><b>API Gateway custom regional API or edge-optimized API</b>: A</p></li>
+    /// <li>
+    /// <p><b>CloudFront distribution</b>: A or AAAA</p></li>
+    /// <li>
+    /// <p><b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p></li>
+    /// <li>
+    /// <p><b>Elastic Load Balancing load balancer</b>: A | AAAA</p></li>
+    /// <li>
+    /// <p><b>S3 bucket</b>: A</p></li>
+    /// <li>
+    /// <p><b>VPC interface VPC endpoint</b>: A</p></li>
+    /// <li>
+    /// <p><b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
     pub fn get_start_record_type(&self) -> &::std::option::Option<crate::types::RrType> {

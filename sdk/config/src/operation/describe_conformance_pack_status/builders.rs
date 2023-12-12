@@ -22,7 +22,7 @@ impl DescribeConformancePackStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeConformancePackStatus`.
 ///
-/// <p>Provides one or more conformance packs deployment status.</p> <note>
+/// <p>Provides one or more conformance packs deployment status.</p><note>
 /// <p>If there are no conformance packs then you will see an empty result.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

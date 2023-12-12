@@ -27,8 +27,10 @@ pub struct ActivateTypeInput {
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
     /// <ul>
-    /// <li><p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
-    /// <li><p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
     /// </ul>
     pub version_bump: ::std::option::Option<crate::types::VersionBump>,
     /// <p>The major version of this extension you want to activate, if multiple major versions are available. The default is the latest major version. CloudFormation uses the latest available <i>minor</i> version of the major version selected.</p>
@@ -76,8 +78,10 @@ impl ActivateTypeInput {
     }
     /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
     /// <ul>
-    /// <li><p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
-    /// <li><p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
     /// </ul>
     pub fn version_bump(&self) -> ::std::option::Option<&crate::types::VersionBump> {
         self.version_bump.as_ref()
@@ -243,8 +247,10 @@ impl ActivateTypeInputBuilder {
     }
     /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
     /// <ul>
-    /// <li><p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
-    /// <li><p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
     /// </ul>
     pub fn version_bump(mut self, input: crate::types::VersionBump) -> Self {
         self.version_bump = ::std::option::Option::Some(input);
@@ -252,8 +258,10 @@ impl ActivateTypeInputBuilder {
     }
     /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
     /// <ul>
-    /// <li><p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
-    /// <li><p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
     /// </ul>
     pub fn set_version_bump(mut self, input: ::std::option::Option<crate::types::VersionBump>) -> Self {
         self.version_bump = input;
@@ -261,8 +269,10 @@ impl ActivateTypeInputBuilder {
     }
     /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
     /// <ul>
-    /// <li><p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
-    /// <li><p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
     /// </ul>
     pub fn get_version_bump(&self) -> &::std::option::Option<crate::types::VersionBump> {
         &self.version_bump

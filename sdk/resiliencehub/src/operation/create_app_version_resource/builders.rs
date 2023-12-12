@@ -22,11 +22,14 @@ impl CreateAppVersionResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAppVersionResource`.
 ///
-/// <p>Adds a resource to the Resilience Hub application and assigns it to the specified Application Components. If you specify a new Application Component, Resilience Hub will automatically create the Application Component.</p> <note>
+/// <p>Adds a resource to the Resilience Hub application and assigns it to the specified Application Components. If you specify a new Application Component, Resilience Hub will automatically create the Application Component.</p><note>
 /// <ul>
-/// <li><p>This action has no effect outside Resilience Hub.</p></li>
-/// <li><p>This API updates the Resilience Hub application draft version. To use this resource for running resiliency assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.</p></li>
-/// <li><p>To update application version with new <code>physicalResourceID</code>, you must call <code>ResolveAppVersionResources</code> API.</p></li>
+/// <li>
+/// <p>This action has no effect outside Resilience Hub.</p></li>
+/// <li>
+/// <p>This API updates the Resilience Hub application draft version. To use this resource for running resiliency assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.</p></li>
+/// <li>
+/// <p>To update application version with new <code>physicalResourceID</code>, you must call <code>ResolveAppVersionResources</code> API.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

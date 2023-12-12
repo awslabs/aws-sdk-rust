@@ -6,18 +6,24 @@
 pub struct InputStartingPositionConfiguration {
     /// <p>The starting position on the stream.</p>
     /// <ul>
-    /// <li><p><code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp that the customer issued.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p></li>
-    /// <li><p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
+    /// <li>
+    /// <p><code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp that the customer issued.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
     /// </ul>
     pub input_starting_position: ::std::option::Option<crate::types::InputStartingPosition>,
 }
 impl InputStartingPositionConfiguration {
     /// <p>The starting position on the stream.</p>
     /// <ul>
-    /// <li><p><code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp that the customer issued.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p></li>
-    /// <li><p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
+    /// <li>
+    /// <p><code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp that the customer issued.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
     /// </ul>
     pub fn input_starting_position(&self) -> ::std::option::Option<&crate::types::InputStartingPosition> {
         self.input_starting_position.as_ref()
@@ -39,9 +45,12 @@ pub struct InputStartingPositionConfigurationBuilder {
 impl InputStartingPositionConfigurationBuilder {
     /// <p>The starting position on the stream.</p>
     /// <ul>
-    /// <li><p><code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp that the customer issued.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p></li>
-    /// <li><p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
+    /// <li>
+    /// <p><code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp that the customer issued.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
     /// </ul>
     pub fn input_starting_position(mut self, input: crate::types::InputStartingPosition) -> Self {
         self.input_starting_position = ::std::option::Option::Some(input);
@@ -49,9 +58,12 @@ impl InputStartingPositionConfigurationBuilder {
     }
     /// <p>The starting position on the stream.</p>
     /// <ul>
-    /// <li><p><code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp that the customer issued.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p></li>
-    /// <li><p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
+    /// <li>
+    /// <p><code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp that the customer issued.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
     /// </ul>
     pub fn set_input_starting_position(mut self, input: ::std::option::Option<crate::types::InputStartingPosition>) -> Self {
         self.input_starting_position = input;
@@ -59,9 +71,12 @@ impl InputStartingPositionConfigurationBuilder {
     }
     /// <p>The starting position on the stream.</p>
     /// <ul>
-    /// <li><p><code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp that the customer issued.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p></li>
-    /// <li><p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
+    /// <li>
+    /// <p><code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp that the customer issued.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
     /// </ul>
     pub fn get_input_starting_position(&self) -> &::std::option::Option<crate::types::InputStartingPosition> {
         &self.input_starting_position

@@ -27,10 +27,14 @@ impl ListKeysInputBuilder {
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListKeys</a> (IAM policy)</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>CreateKey</code></p></li>
-/// <li><p><code>DescribeKey</code></p></li>
-/// <li><p><code>ListAliases</code></p></li>
-/// <li><p><code>ListResourceTags</code></p></li>
+/// <li>
+/// <p><code>CreateKey</code></p></li>
+/// <li>
+/// <p><code>DescribeKey</code></p></li>
+/// <li>
+/// <p><code>ListAliases</code></p></li>
+/// <li>
+/// <p><code>ListResourceTags</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeysFluentBuilder {

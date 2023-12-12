@@ -5,7 +5,8 @@
 pub struct CreateCompilationJobOutput {
     /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
     /// <ul>
-    /// <li><p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
+    /// <li>
+    /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
     /// </ul>
     pub compilation_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -13,7 +14,8 @@ pub struct CreateCompilationJobOutput {
 impl CreateCompilationJobOutput {
     /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
     /// <ul>
-    /// <li><p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
+    /// <li>
+    /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
     /// </ul>
     pub fn compilation_job_arn(&self) -> ::std::option::Option<&str> {
         self.compilation_job_arn.as_deref()
@@ -41,7 +43,8 @@ pub struct CreateCompilationJobOutputBuilder {
 impl CreateCompilationJobOutputBuilder {
     /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
     /// <ul>
-    /// <li><p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
+    /// <li>
+    /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
     /// </ul>
     /// This field is required.
     pub fn compilation_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -50,7 +53,8 @@ impl CreateCompilationJobOutputBuilder {
     }
     /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
     /// <ul>
-    /// <li><p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
+    /// <li>
+    /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
     /// </ul>
     pub fn set_compilation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compilation_job_arn = input;
@@ -58,7 +62,8 @@ impl CreateCompilationJobOutputBuilder {
     }
     /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
     /// <ul>
-    /// <li><p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
+    /// <li>
+    /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
     /// </ul>
     pub fn get_compilation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.compilation_job_arn

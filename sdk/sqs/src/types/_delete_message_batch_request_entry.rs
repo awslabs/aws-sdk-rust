@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMessageBatchRequestEntry {
-    /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+    /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -13,7 +13,7 @@ pub struct DeleteMessageBatchRequestEntry {
     pub receipt_handle: ::std::string::String,
 }
 impl DeleteMessageBatchRequestEntry {
-    /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+    /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -42,7 +42,7 @@ pub struct DeleteMessageBatchRequestEntryBuilder {
     pub(crate) receipt_handle: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMessageBatchRequestEntryBuilder {
-    /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+    /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -51,7 +51,7 @@ impl DeleteMessageBatchRequestEntryBuilder {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+    /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -59,7 +59,7 @@ impl DeleteMessageBatchRequestEntryBuilder {
         self.id = input;
         self
     }
-    /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+    /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>

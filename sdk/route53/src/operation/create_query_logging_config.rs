@@ -247,11 +247,16 @@ pub enum CreateQueryLoggingConfigError {
     ConcurrentModification(crate::types::error::ConcurrentModification),
     /// <p>Amazon Route 53 doesn't have the permissions required to create log streams and send query logs to log streams. Possible causes include the following:</p>
     /// <ul>
-    /// <li><p>There is no resource policy that specifies the log group ARN in the value for <code>Resource</code>.</p></li>
-    /// <li><p>The resource policy that includes the log group ARN in the value for <code>Resource</code> doesn't have the necessary permissions.</p></li>
-    /// <li><p>The resource policy hasn't finished propagating yet.</p></li>
-    /// <li><p>The Key management service (KMS) key you specified doesn’t exist or it can’t be used with the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p></li>
-    /// <li><p>The Key management service (KMS) key you specified is marked as disabled for the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p></li>
+    /// <li>
+    /// <p>There is no resource policy that specifies the log group ARN in the value for <code>Resource</code>.</p></li>
+    /// <li>
+    /// <p>The resource policy that includes the log group ARN in the value for <code>Resource</code> doesn't have the necessary permissions.</p></li>
+    /// <li>
+    /// <p>The resource policy hasn't finished propagating yet.</p></li>
+    /// <li>
+    /// <p>The Key management service (KMS) key you specified doesn’t exist or it can’t be used with the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p></li>
+    /// <li>
+    /// <p>The Key management service (KMS) key you specified is marked as disabled for the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p></li>
     /// </ul>
     InsufficientCloudWatchLogsResourcePolicy(crate::types::error::InsufficientCloudWatchLogsResourcePolicy),
     /// <p>The input is not valid.</p>

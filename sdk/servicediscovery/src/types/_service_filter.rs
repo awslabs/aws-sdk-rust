@@ -10,7 +10,8 @@ pub struct ServiceFilter {
     pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
+    /// <li>
+    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
     pub condition: ::std::option::Option<crate::types::FilterCondition>,
 }
@@ -26,7 +27,8 @@ impl ServiceFilter {
     }
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
+    /// <li>
+    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
     pub fn condition(&self) -> ::std::option::Option<&crate::types::FilterCondition> {
         self.condition.as_ref()
@@ -85,7 +87,8 @@ impl ServiceFilterBuilder {
     }
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
+    /// <li>
+    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
     pub fn condition(mut self, input: crate::types::FilterCondition) -> Self {
         self.condition = ::std::option::Option::Some(input);
@@ -93,7 +96,8 @@ impl ServiceFilterBuilder {
     }
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
+    /// <li>
+    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.condition = input;
@@ -101,7 +105,8 @@ impl ServiceFilterBuilder {
     }
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
-    /// <li><p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
+    /// <li>
+    /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::FilterCondition> {
         &self.condition

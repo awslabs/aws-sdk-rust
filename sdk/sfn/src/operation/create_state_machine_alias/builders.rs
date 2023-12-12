@@ -29,10 +29,14 @@ impl CreateStateMachineAliasInputBuilder {
 /// <p><code>CreateStateMachineAlias</code> is an idempotent API. Step Functions bases the idempotency check on the <code>stateMachineArn</code>, <code>description</code>, <code>name</code>, and <code>routingConfiguration</code> parameters. Requests that contain the same values for these parameters return a successful idempotent response without creating a duplicate resource.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>DescribeStateMachineAlias</code></p></li>
-/// <li><p><code>ListStateMachineAliases</code></p></li>
-/// <li><p><code>UpdateStateMachineAlias</code></p></li>
-/// <li><p><code>DeleteStateMachineAlias</code></p></li>
+/// <li>
+/// <p><code>DescribeStateMachineAlias</code></p></li>
+/// <li>
+/// <p><code>ListStateMachineAliases</code></p></li>
+/// <li>
+/// <p><code>UpdateStateMachineAlias</code></p></li>
+/// <li>
+/// <p><code>DeleteStateMachineAlias</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStateMachineAliasFluentBuilder {

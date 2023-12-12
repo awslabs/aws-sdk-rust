@@ -26,12 +26,18 @@ pub struct ActionInteraction {
     /// <p>The keys use camel case names that match the fields in the Action interactions schema. In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS' field defined in the Action interactions schema.</p>
     /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
     /// <ul>
-    /// <li><p>userId</p></li>
-    /// <li><p>sessionId</p></li>
-    /// <li><p>eventType</p></li>
-    /// <li><p>timestamp</p></li>
-    /// <li><p>recommendationId</p></li>
-    /// <li><p>impression</p></li>
+    /// <li>
+    /// <p>userId</p></li>
+    /// <li>
+    /// <p>sessionId</p></li>
+    /// <li>
+    /// <p>eventType</p></li>
+    /// <li>
+    /// <p>timestamp</p></li>
+    /// <li>
+    /// <p>recommendationId</p></li>
+    /// <li>
+    /// <p>impression</p></li>
     /// </ul>
     pub properties: ::std::option::Option<::std::string::String>,
 }
@@ -79,12 +85,18 @@ impl ActionInteraction {
     /// <p>The keys use camel case names that match the fields in the Action interactions schema. In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS' field defined in the Action interactions schema.</p>
     /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
     /// <ul>
-    /// <li><p>userId</p></li>
-    /// <li><p>sessionId</p></li>
-    /// <li><p>eventType</p></li>
-    /// <li><p>timestamp</p></li>
-    /// <li><p>recommendationId</p></li>
-    /// <li><p>impression</p></li>
+    /// <li>
+    /// <p>userId</p></li>
+    /// <li>
+    /// <p>sessionId</p></li>
+    /// <li>
+    /// <p>eventType</p></li>
+    /// <li>
+    /// <p>timestamp</p></li>
+    /// <li>
+    /// <p>recommendationId</p></li>
+    /// <li>
+    /// <p>impression</p></li>
     /// </ul>
     pub fn properties(&self) -> ::std::option::Option<&str> {
         self.properties.as_deref()
@@ -255,12 +267,18 @@ impl ActionInteractionBuilder {
     /// <p>The keys use camel case names that match the fields in the Action interactions schema. In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS' field defined in the Action interactions schema.</p>
     /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
     /// <ul>
-    /// <li><p>userId</p></li>
-    /// <li><p>sessionId</p></li>
-    /// <li><p>eventType</p></li>
-    /// <li><p>timestamp</p></li>
-    /// <li><p>recommendationId</p></li>
-    /// <li><p>impression</p></li>
+    /// <li>
+    /// <p>userId</p></li>
+    /// <li>
+    /// <p>sessionId</p></li>
+    /// <li>
+    /// <p>eventType</p></li>
+    /// <li>
+    /// <p>timestamp</p></li>
+    /// <li>
+    /// <p>recommendationId</p></li>
+    /// <li>
+    /// <p>impression</p></li>
     /// </ul>
     pub fn properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.properties = ::std::option::Option::Some(input.into());
@@ -272,12 +290,18 @@ impl ActionInteractionBuilder {
     /// <p>The keys use camel case names that match the fields in the Action interactions schema. In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS' field defined in the Action interactions schema.</p>
     /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
     /// <ul>
-    /// <li><p>userId</p></li>
-    /// <li><p>sessionId</p></li>
-    /// <li><p>eventType</p></li>
-    /// <li><p>timestamp</p></li>
-    /// <li><p>recommendationId</p></li>
-    /// <li><p>impression</p></li>
+    /// <li>
+    /// <p>userId</p></li>
+    /// <li>
+    /// <p>sessionId</p></li>
+    /// <li>
+    /// <p>eventType</p></li>
+    /// <li>
+    /// <p>timestamp</p></li>
+    /// <li>
+    /// <p>recommendationId</p></li>
+    /// <li>
+    /// <p>impression</p></li>
     /// </ul>
     pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.properties = input;
@@ -289,12 +313,18 @@ impl ActionInteractionBuilder {
     /// <p>The keys use camel case names that match the fields in the Action interactions schema. In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS' field defined in the Action interactions schema.</p>
     /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
     /// <ul>
-    /// <li><p>userId</p></li>
-    /// <li><p>sessionId</p></li>
-    /// <li><p>eventType</p></li>
-    /// <li><p>timestamp</p></li>
-    /// <li><p>recommendationId</p></li>
-    /// <li><p>impression</p></li>
+    /// <li>
+    /// <p>userId</p></li>
+    /// <li>
+    /// <p>sessionId</p></li>
+    /// <li>
+    /// <p>eventType</p></li>
+    /// <li>
+    /// <p>timestamp</p></li>
+    /// <li>
+    /// <p>recommendationId</p></li>
+    /// <li>
+    /// <p>impression</p></li>
     /// </ul>
     pub fn get_properties(&self) -> &::std::option::Option<::std::string::String> {
         &self.properties

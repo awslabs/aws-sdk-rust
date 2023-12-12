@@ -6,12 +6,18 @@
 pub struct UnindexedFace {
     /// <p>An array of reasons that specify why a face wasn't indexed.</p>
     /// <ul>
-    /// <li><p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p></li>
-    /// <li><p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p></li>
-    /// <li><p>LOW_BRIGHTNESS - The image is too dark.</p></li>
-    /// <li><p>LOW_SHARPNESS - The image is too blurry.</p></li>
-    /// <li><p>LOW_CONFIDENCE - The face was detected with a low confidence.</p></li>
-    /// <li><p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
+    /// <li>
+    /// <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p></li>
+    /// <li>
+    /// <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p></li>
+    /// <li>
+    /// <p>LOW_BRIGHTNESS - The image is too dark.</p></li>
+    /// <li>
+    /// <p>LOW_SHARPNESS - The image is too blurry.</p></li>
+    /// <li>
+    /// <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p></li>
+    /// <li>
+    /// <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
     /// </ul>
     pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>,
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.</p>
@@ -20,12 +26,18 @@ pub struct UnindexedFace {
 impl UnindexedFace {
     /// <p>An array of reasons that specify why a face wasn't indexed.</p>
     /// <ul>
-    /// <li><p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p></li>
-    /// <li><p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p></li>
-    /// <li><p>LOW_BRIGHTNESS - The image is too dark.</p></li>
-    /// <li><p>LOW_SHARPNESS - The image is too blurry.</p></li>
-    /// <li><p>LOW_CONFIDENCE - The face was detected with a low confidence.</p></li>
-    /// <li><p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
+    /// <li>
+    /// <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p></li>
+    /// <li>
+    /// <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p></li>
+    /// <li>
+    /// <p>LOW_BRIGHTNESS - The image is too dark.</p></li>
+    /// <li>
+    /// <p>LOW_SHARPNESS - The image is too blurry.</p></li>
+    /// <li>
+    /// <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p></li>
+    /// <li>
+    /// <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reasons.is_none()`.
@@ -58,12 +70,18 @@ impl UnindexedFaceBuilder {
     ///
     /// <p>An array of reasons that specify why a face wasn't indexed.</p>
     /// <ul>
-    /// <li><p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p></li>
-    /// <li><p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p></li>
-    /// <li><p>LOW_BRIGHTNESS - The image is too dark.</p></li>
-    /// <li><p>LOW_SHARPNESS - The image is too blurry.</p></li>
-    /// <li><p>LOW_CONFIDENCE - The face was detected with a low confidence.</p></li>
-    /// <li><p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
+    /// <li>
+    /// <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p></li>
+    /// <li>
+    /// <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p></li>
+    /// <li>
+    /// <p>LOW_BRIGHTNESS - The image is too dark.</p></li>
+    /// <li>
+    /// <p>LOW_SHARPNESS - The image is too blurry.</p></li>
+    /// <li>
+    /// <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p></li>
+    /// <li>
+    /// <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
     /// </ul>
     pub fn reasons(mut self, input: crate::types::Reason) -> Self {
         let mut v = self.reasons.unwrap_or_default();
@@ -73,12 +91,18 @@ impl UnindexedFaceBuilder {
     }
     /// <p>An array of reasons that specify why a face wasn't indexed.</p>
     /// <ul>
-    /// <li><p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p></li>
-    /// <li><p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p></li>
-    /// <li><p>LOW_BRIGHTNESS - The image is too dark.</p></li>
-    /// <li><p>LOW_SHARPNESS - The image is too blurry.</p></li>
-    /// <li><p>LOW_CONFIDENCE - The face was detected with a low confidence.</p></li>
-    /// <li><p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
+    /// <li>
+    /// <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p></li>
+    /// <li>
+    /// <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p></li>
+    /// <li>
+    /// <p>LOW_BRIGHTNESS - The image is too dark.</p></li>
+    /// <li>
+    /// <p>LOW_SHARPNESS - The image is too blurry.</p></li>
+    /// <li>
+    /// <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p></li>
+    /// <li>
+    /// <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
     /// </ul>
     pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>) -> Self {
         self.reasons = input;
@@ -86,12 +110,18 @@ impl UnindexedFaceBuilder {
     }
     /// <p>An array of reasons that specify why a face wasn't indexed.</p>
     /// <ul>
-    /// <li><p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p></li>
-    /// <li><p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p></li>
-    /// <li><p>LOW_BRIGHTNESS - The image is too dark.</p></li>
-    /// <li><p>LOW_SHARPNESS - The image is too blurry.</p></li>
-    /// <li><p>LOW_CONFIDENCE - The face was detected with a low confidence.</p></li>
-    /// <li><p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
+    /// <li>
+    /// <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the head is turned too far away from the camera.</p></li>
+    /// <li>
+    /// <p>EXCEEDS_MAX_FACES - The number of faces detected is already higher than that specified by the <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p></li>
+    /// <li>
+    /// <p>LOW_BRIGHTNESS - The image is too dark.</p></li>
+    /// <li>
+    /// <p>LOW_SHARPNESS - The image is too blurry.</p></li>
+    /// <li>
+    /// <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p></li>
+    /// <li>
+    /// <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p></li>
     /// </ul>
     pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Reason>> {
         &self.reasons

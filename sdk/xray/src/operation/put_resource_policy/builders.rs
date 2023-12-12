@@ -153,7 +153,7 @@ impl PutResourcePolicyFluentBuilder {
     pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_revision_id()
     }
-    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p> <important>
+    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p><important>
     /// <p>Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.</p>
     /// </important>
     /// <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>
@@ -162,7 +162,7 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.bypass_policy_lockout_check(input);
         self
     }
-    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p> <important>
+    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p><important>
     /// <p>Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.</p>
     /// </important>
     /// <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>
@@ -171,7 +171,7 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.set_bypass_policy_lockout_check(input);
         self
     }
-    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p> <important>
+    /// <p>A flag to indicate whether to bypass the resource policy lockout safety check.</p><important>
     /// <p>Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.</p>
     /// </important>
     /// <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>

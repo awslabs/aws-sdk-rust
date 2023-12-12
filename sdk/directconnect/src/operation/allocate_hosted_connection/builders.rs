@@ -23,7 +23,7 @@ impl AllocateHostedConnectionInputBuilder {
 /// Fluent builder constructing a request to `AllocateHostedConnection`.
 ///
 /// <p>Creates a hosted connection on the specified interconnect or a link aggregation group (LAG) of interconnects.</p>
-/// <p>Allocates a VLAN number and a specified amount of capacity (bandwidth) for use by a hosted connection on the specified interconnect or LAG of interconnects. Amazon Web Services polices the hosted connection for the specified capacity and the Direct Connect Partner must also police the hosted connection for the specified capacity.</p> <note>
+/// <p>Allocates a VLAN number and a specified amount of capacity (bandwidth) for use by a hosted connection on the specified interconnect or LAG of interconnects. Amazon Web Services polices the hosted connection for the specified capacity and the Direct Connect Partner must also police the hosted connection for the specified capacity.</p><note>
 /// <p>Intended for use by Direct Connect Partners only.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

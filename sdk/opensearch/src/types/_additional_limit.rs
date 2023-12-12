@@ -5,8 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalLimit {
     /// <ul>
-    /// <li><p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
-    /// <li><p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
+    /// <li>
+    /// <p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
+    /// <li>
+    /// <p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
     /// </ul>
     pub limit_name: ::std::option::Option<::std::string::String>,
     /// <p>The values of the additional instance type limits.</p>
@@ -14,8 +16,10 @@ pub struct AdditionalLimit {
 }
 impl AdditionalLimit {
     /// <ul>
-    /// <li><p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
-    /// <li><p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
+    /// <li>
+    /// <p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
+    /// <li>
+    /// <p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
     /// </ul>
     pub fn limit_name(&self) -> ::std::option::Option<&str> {
         self.limit_name.as_deref()
@@ -43,24 +47,30 @@ pub struct AdditionalLimitBuilder {
 }
 impl AdditionalLimitBuilder {
     /// <ul>
-    /// <li><p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
-    /// <li><p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
+    /// <li>
+    /// <p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
+    /// <li>
+    /// <p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
     /// </ul>
     pub fn limit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.limit_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <ul>
-    /// <li><p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
-    /// <li><p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
+    /// <li>
+    /// <p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
+    /// <li>
+    /// <p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
     /// </ul>
     pub fn set_limit_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.limit_name = input;
         self
     }
     /// <ul>
-    /// <li><p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
-    /// <li><p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
+    /// <li>
+    /// <p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
+    /// <li>
+    /// <p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
     /// </ul>
     pub fn get_limit_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.limit_name

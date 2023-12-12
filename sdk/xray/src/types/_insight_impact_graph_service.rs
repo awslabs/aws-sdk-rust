@@ -8,10 +8,14 @@ pub struct InsightImpactGraphService {
     pub reference_id: ::std::option::Option<i32>,
     /// <p>Identifier for the service. Unique within the service map.</p>
     /// <ul>
-    /// <li><p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.</p></li>
-    /// <li><p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li><p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li><p>remote - A downstream service of indeterminate type.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
+    /// <li>
+    /// <p>remote - A downstream service of indeterminate type.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The canonical name of the service.</p>
@@ -30,10 +34,14 @@ impl InsightImpactGraphService {
     }
     /// <p>Identifier for the service. Unique within the service map.</p>
     /// <ul>
-    /// <li><p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.</p></li>
-    /// <li><p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li><p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li><p>remote - A downstream service of indeterminate type.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
+    /// <li>
+    /// <p>remote - A downstream service of indeterminate type.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -94,10 +102,14 @@ impl InsightImpactGraphServiceBuilder {
     }
     /// <p>Identifier for the service. Unique within the service map.</p>
     /// <ul>
-    /// <li><p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.</p></li>
-    /// <li><p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li><p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li><p>remote - A downstream service of indeterminate type.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
+    /// <li>
+    /// <p>remote - A downstream service of indeterminate type.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -105,10 +117,14 @@ impl InsightImpactGraphServiceBuilder {
     }
     /// <p>Identifier for the service. Unique within the service map.</p>
     /// <ul>
-    /// <li><p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.</p></li>
-    /// <li><p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li><p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li><p>remote - A downstream service of indeterminate type.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
+    /// <li>
+    /// <p>remote - A downstream service of indeterminate type.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -116,10 +132,14 @@ impl InsightImpactGraphServiceBuilder {
     }
     /// <p>Identifier for the service. Unique within the service map.</p>
     /// <ul>
-    /// <li><p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.</p></li>
-    /// <li><p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li><p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
-    /// <li><p>remote - A downstream service of indeterminate type.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
+    /// <li>
+    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table.</p></li>
+    /// <li>
+    /// <p>remote - A downstream service of indeterminate type.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

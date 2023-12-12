@@ -24,15 +24,24 @@ impl DeleteUserInputBuilder {
 ///
 /// <p>Deletes the specified IAM user. Unlike the Amazon Web Services Management Console, when you delete a user programmatically, you must delete the items attached to the user manually, or the deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting an IAM user</a>. Before attempting to delete a user, remove the following items:</p>
 /// <ul>
-/// <li><p>Password (<code>DeleteLoginProfile</code>)</p></li>
-/// <li><p>Access keys (<code>DeleteAccessKey</code>)</p></li>
-/// <li><p>Signing certificate (<code>DeleteSigningCertificate</code>)</p></li>
-/// <li><p>SSH public key (<code>DeleteSSHPublicKey</code>)</p></li>
-/// <li><p>Git credentials (<code>DeleteServiceSpecificCredential</code>)</p></li>
-/// <li><p>Multi-factor authentication (MFA) device (<code>DeactivateMFADevice</code>, <code>DeleteVirtualMFADevice</code>)</p></li>
-/// <li><p>Inline policies (<code>DeleteUserPolicy</code>)</p></li>
-/// <li><p>Attached managed policies (<code>DetachUserPolicy</code>)</p></li>
-/// <li><p>Group memberships (<code>RemoveUserFromGroup</code>)</p></li>
+/// <li>
+/// <p>Password (<code>DeleteLoginProfile</code>)</p></li>
+/// <li>
+/// <p>Access keys (<code>DeleteAccessKey</code>)</p></li>
+/// <li>
+/// <p>Signing certificate (<code>DeleteSigningCertificate</code>)</p></li>
+/// <li>
+/// <p>SSH public key (<code>DeleteSSHPublicKey</code>)</p></li>
+/// <li>
+/// <p>Git credentials (<code>DeleteServiceSpecificCredential</code>)</p></li>
+/// <li>
+/// <p>Multi-factor authentication (MFA) device (<code>DeactivateMFADevice</code>, <code>DeleteVirtualMFADevice</code>)</p></li>
+/// <li>
+/// <p>Inline policies (<code>DeleteUserPolicy</code>)</p></li>
+/// <li>
+/// <p>Attached managed policies (<code>DetachUserPolicy</code>)</p></li>
+/// <li>
+/// <p>Group memberships (<code>RemoveUserFromGroup</code>)</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserFluentBuilder {

@@ -26,8 +26,10 @@ impl DeleteDatasetInputBuilder {
 /// <p>If your the project has a single dataset, you must create a new dataset before you can create a model.</p>
 /// <p>If you project has a training dataset and a test dataset consider the following.</p>
 /// <ul>
-/// <li><p>If you delete the test dataset, your project reverts to a single dataset project. If you then train the model, Amazon Lookout for Vision internally splits the remaining dataset into a training and test dataset.</p></li>
-/// <li><p>If you delete the training dataset, you must create a training dataset before you can create a model.</p></li>
+/// <li>
+/// <p>If you delete the test dataset, your project reverts to a single dataset project. If you then train the model, Amazon Lookout for Vision internally splits the remaining dataset into a training and test dataset.</p></li>
+/// <li>
+/// <p>If you delete the training dataset, you must create a training dataset before you can create a model.</p></li>
 /// </ul>
 /// <p>This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

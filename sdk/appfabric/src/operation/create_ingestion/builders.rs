@@ -125,18 +125,30 @@ impl CreateIngestionFluentBuilder {
     /// <p>The name of the application.</p>
     /// <p>Valid values are:</p>
     /// <ul>
-    /// <li><p><code>SLACK</code></p></li>
-    /// <li><p><code>ASANA</code></p></li>
-    /// <li><p><code>JIRA</code></p></li>
-    /// <li><p><code>M365</code></p></li>
-    /// <li><p><code>M365AUDITLOGS</code></p></li>
-    /// <li><p><code>ZOOM</code></p></li>
-    /// <li><p><code>ZENDESK</code></p></li>
-    /// <li><p><code>OKTA</code></p></li>
-    /// <li><p><code>GOOGLE</code></p></li>
-    /// <li><p><code>DROPBOX</code></p></li>
-    /// <li><p><code>SMARTSHEET</code></p></li>
-    /// <li><p><code>CISCO</code></p></li>
+    /// <li>
+    /// <p><code>SLACK</code></p></li>
+    /// <li>
+    /// <p><code>ASANA</code></p></li>
+    /// <li>
+    /// <p><code>JIRA</code></p></li>
+    /// <li>
+    /// <p><code>M365</code></p></li>
+    /// <li>
+    /// <p><code>M365AUDITLOGS</code></p></li>
+    /// <li>
+    /// <p><code>ZOOM</code></p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code></p></li>
+    /// <li>
+    /// <p><code>OKTA</code></p></li>
+    /// <li>
+    /// <p><code>GOOGLE</code></p></li>
+    /// <li>
+    /// <p><code>DROPBOX</code></p></li>
+    /// <li>
+    /// <p><code>SMARTSHEET</code></p></li>
+    /// <li>
+    /// <p><code>CISCO</code></p></li>
     /// </ul>
     pub fn app(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app(input.into());
@@ -145,18 +157,30 @@ impl CreateIngestionFluentBuilder {
     /// <p>The name of the application.</p>
     /// <p>Valid values are:</p>
     /// <ul>
-    /// <li><p><code>SLACK</code></p></li>
-    /// <li><p><code>ASANA</code></p></li>
-    /// <li><p><code>JIRA</code></p></li>
-    /// <li><p><code>M365</code></p></li>
-    /// <li><p><code>M365AUDITLOGS</code></p></li>
-    /// <li><p><code>ZOOM</code></p></li>
-    /// <li><p><code>ZENDESK</code></p></li>
-    /// <li><p><code>OKTA</code></p></li>
-    /// <li><p><code>GOOGLE</code></p></li>
-    /// <li><p><code>DROPBOX</code></p></li>
-    /// <li><p><code>SMARTSHEET</code></p></li>
-    /// <li><p><code>CISCO</code></p></li>
+    /// <li>
+    /// <p><code>SLACK</code></p></li>
+    /// <li>
+    /// <p><code>ASANA</code></p></li>
+    /// <li>
+    /// <p><code>JIRA</code></p></li>
+    /// <li>
+    /// <p><code>M365</code></p></li>
+    /// <li>
+    /// <p><code>M365AUDITLOGS</code></p></li>
+    /// <li>
+    /// <p><code>ZOOM</code></p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code></p></li>
+    /// <li>
+    /// <p><code>OKTA</code></p></li>
+    /// <li>
+    /// <p><code>GOOGLE</code></p></li>
+    /// <li>
+    /// <p><code>DROPBOX</code></p></li>
+    /// <li>
+    /// <p><code>SMARTSHEET</code></p></li>
+    /// <li>
+    /// <p><code>CISCO</code></p></li>
     /// </ul>
     pub fn set_app(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app(input);
@@ -165,18 +189,30 @@ impl CreateIngestionFluentBuilder {
     /// <p>The name of the application.</p>
     /// <p>Valid values are:</p>
     /// <ul>
-    /// <li><p><code>SLACK</code></p></li>
-    /// <li><p><code>ASANA</code></p></li>
-    /// <li><p><code>JIRA</code></p></li>
-    /// <li><p><code>M365</code></p></li>
-    /// <li><p><code>M365AUDITLOGS</code></p></li>
-    /// <li><p><code>ZOOM</code></p></li>
-    /// <li><p><code>ZENDESK</code></p></li>
-    /// <li><p><code>OKTA</code></p></li>
-    /// <li><p><code>GOOGLE</code></p></li>
-    /// <li><p><code>DROPBOX</code></p></li>
-    /// <li><p><code>SMARTSHEET</code></p></li>
-    /// <li><p><code>CISCO</code></p></li>
+    /// <li>
+    /// <p><code>SLACK</code></p></li>
+    /// <li>
+    /// <p><code>ASANA</code></p></li>
+    /// <li>
+    /// <p><code>JIRA</code></p></li>
+    /// <li>
+    /// <p><code>M365</code></p></li>
+    /// <li>
+    /// <p><code>M365AUDITLOGS</code></p></li>
+    /// <li>
+    /// <p><code>ZOOM</code></p></li>
+    /// <li>
+    /// <p><code>ZENDESK</code></p></li>
+    /// <li>
+    /// <p><code>OKTA</code></p></li>
+    /// <li>
+    /// <p><code>GOOGLE</code></p></li>
+    /// <li>
+    /// <p><code>DROPBOX</code></p></li>
+    /// <li>
+    /// <p><code>SMARTSHEET</code></p></li>
+    /// <li>
+    /// <p><code>CISCO</code></p></li>
     /// </ul>
     pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app()

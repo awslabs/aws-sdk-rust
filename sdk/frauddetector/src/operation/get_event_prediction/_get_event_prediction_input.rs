@@ -15,7 +15,7 @@ pub struct GetEventPredictionInput {
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub event_timestamp: ::std::option::Option<::std::string::String>,
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p><important>
     /// <p>You must provide at least one eventVariable</p>
     /// </important>
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
@@ -55,7 +55,7 @@ impl GetEventPredictionInput {
     pub fn event_timestamp(&self) -> ::std::option::Option<&str> {
         self.event_timestamp.as_deref()
     }
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p><important>
     /// <p>You must provide at least one eventVariable</p>
     /// </important>
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
@@ -207,7 +207,7 @@ impl GetEventPredictionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
     ///
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p><important>
     /// <p>You must provide at least one eventVariable</p>
     /// </important>
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
@@ -225,7 +225,7 @@ impl GetEventPredictionInputBuilder {
         self.event_variables = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p><important>
     /// <p>You must provide at least one eventVariable</p>
     /// </important>
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
@@ -240,7 +240,7 @@ impl GetEventPredictionInputBuilder {
         self.event_variables = input;
         self
     }
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p><important>
     /// <p>You must provide at least one eventVariable</p>
     /// </important>
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>

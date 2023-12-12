@@ -6,9 +6,12 @@ pub struct CreateGeofenceCollectionInput {
     /// <p>A custom name for the geofence collection.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li><p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
-    /// <li><p>Must be a unique geofence collection name.</p></li>
-    /// <li><p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
+    /// <li>
+    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li>
+    /// <p>Must be a unique geofence collection name.</p></li>
+    /// <li>
+    /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
     /// </ul>
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
@@ -23,12 +26,18 @@ pub struct CreateGeofenceCollectionInput {
     /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li><p>Maximum 50 tags per resource</p></li>
-    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
-    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
-    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
-    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li>
+    /// <p>Maximum 50 tags per resource</p></li>
+    /// <li>
+    /// <p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
@@ -38,9 +47,12 @@ impl CreateGeofenceCollectionInput {
     /// <p>A custom name for the geofence collection.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li><p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
-    /// <li><p>Must be a unique geofence collection name.</p></li>
-    /// <li><p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
+    /// <li>
+    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li>
+    /// <p>Must be a unique geofence collection name.</p></li>
+    /// <li>
+    /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
     /// </ul>
     pub fn collection_name(&self) -> ::std::option::Option<&str> {
         self.collection_name.as_deref()
@@ -63,12 +75,18 @@ impl CreateGeofenceCollectionInput {
     /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li><p>Maximum 50 tags per resource</p></li>
-    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
-    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
-    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
-    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li>
+    /// <p>Maximum 50 tags per resource</p></li>
+    /// <li>
+    /// <p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -100,9 +118,12 @@ impl CreateGeofenceCollectionInputBuilder {
     /// <p>A custom name for the geofence collection.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li><p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
-    /// <li><p>Must be a unique geofence collection name.</p></li>
-    /// <li><p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
+    /// <li>
+    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li>
+    /// <p>Must be a unique geofence collection name.</p></li>
+    /// <li>
+    /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,9 +133,12 @@ impl CreateGeofenceCollectionInputBuilder {
     /// <p>A custom name for the geofence collection.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li><p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
-    /// <li><p>Must be a unique geofence collection name.</p></li>
-    /// <li><p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
+    /// <li>
+    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li>
+    /// <p>Must be a unique geofence collection name.</p></li>
+    /// <li>
+    /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
     /// </ul>
     pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_name = input;
@@ -123,9 +147,12 @@ impl CreateGeofenceCollectionInputBuilder {
     /// <p>A custom name for the geofence collection.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li><p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
-    /// <li><p>Must be a unique geofence collection name.</p></li>
-    /// <li><p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
+    /// <li>
+    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li>
+    /// <p>Must be a unique geofence collection name.</p></li>
+    /// <li>
+    /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
     /// </ul>
     pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.collection_name
@@ -186,12 +213,18 @@ impl CreateGeofenceCollectionInputBuilder {
     /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li><p>Maximum 50 tags per resource</p></li>
-    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
-    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
-    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
-    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li>
+    /// <p>Maximum 50 tags per resource</p></li>
+    /// <li>
+    /// <p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
@@ -203,12 +236,18 @@ impl CreateGeofenceCollectionInputBuilder {
     /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li><p>Maximum 50 tags per resource</p></li>
-    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
-    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
-    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
-    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li>
+    /// <p>Maximum 50 tags per resource</p></li>
+    /// <li>
+    /// <p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
@@ -218,12 +257,18 @@ impl CreateGeofenceCollectionInputBuilder {
     /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li><p>Maximum 50 tags per resource</p></li>
-    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
-    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
-    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
-    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
+    /// <li>
+    /// <p>Maximum 50 tags per resource</p></li>
+    /// <li>
+    /// <p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags

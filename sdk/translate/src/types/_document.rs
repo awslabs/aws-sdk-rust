@@ -8,9 +8,12 @@ pub struct Document {
     pub content: ::aws_smithy_types::Blob,
     /// <p>Describes the format of the document. You can specify one of the following:</p>
     /// <ul>
-    /// <li><p><code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p></li>
-    /// <li><p><code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content.</p></li>
-    /// <li><p><code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p></li>
+    /// <li>
+    /// <p><code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p></li>
+    /// <li>
+    /// <p><code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content.</p></li>
+    /// <li>
+    /// <p><code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p></li>
     /// </ul>
     pub content_type: ::std::string::String,
 }
@@ -21,9 +24,12 @@ impl Document {
     }
     /// <p>Describes the format of the document. You can specify one of the following:</p>
     /// <ul>
-    /// <li><p><code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p></li>
-    /// <li><p><code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content.</p></li>
-    /// <li><p><code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p></li>
+    /// <li>
+    /// <p><code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p></li>
+    /// <li>
+    /// <p><code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content.</p></li>
+    /// <li>
+    /// <p><code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p></li>
     /// </ul>
     pub fn content_type(&self) -> &str {
         use std::ops::Deref;
@@ -70,9 +76,12 @@ impl DocumentBuilder {
     }
     /// <p>Describes the format of the document. You can specify one of the following:</p>
     /// <ul>
-    /// <li><p><code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p></li>
-    /// <li><p><code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content.</p></li>
-    /// <li><p><code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p></li>
+    /// <li>
+    /// <p><code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p></li>
+    /// <li>
+    /// <p><code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content.</p></li>
+    /// <li>
+    /// <p><code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p></li>
     /// </ul>
     /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,9 +90,12 @@ impl DocumentBuilder {
     }
     /// <p>Describes the format of the document. You can specify one of the following:</p>
     /// <ul>
-    /// <li><p><code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p></li>
-    /// <li><p><code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content.</p></li>
-    /// <li><p><code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p></li>
+    /// <li>
+    /// <p><code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p></li>
+    /// <li>
+    /// <p><code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content.</p></li>
+    /// <li>
+    /// <p><code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
@@ -91,9 +103,12 @@ impl DocumentBuilder {
     }
     /// <p>Describes the format of the document. You can specify one of the following:</p>
     /// <ul>
-    /// <li><p><code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p></li>
-    /// <li><p><code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content.</p></li>
-    /// <li><p><code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p></li>
+    /// <li>
+    /// <p><code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p></li>
+    /// <li>
+    /// <p><code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content.</p></li>
+    /// <li>
+    /// <p><code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p></li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type

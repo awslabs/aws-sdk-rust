@@ -6,8 +6,10 @@
 pub struct ChartAxisLabelOptions {
     /// <p>The visibility of an axis label on a chart. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>VISIBLE</code>: Shows the axis.</p></li>
-    /// <li><p><code>HIDDEN</code>: Hides the axis.</p></li>
+    /// <li>
+    /// <p><code>VISIBLE</code>: Shows the axis.</p></li>
+    /// <li>
+    /// <p><code>HIDDEN</code>: Hides the axis.</p></li>
     /// </ul>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The visibility configuration of the sort icon on a chart's axis label.</p>
@@ -18,8 +20,10 @@ pub struct ChartAxisLabelOptions {
 impl ChartAxisLabelOptions {
     /// <p>The visibility of an axis label on a chart. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>VISIBLE</code>: Shows the axis.</p></li>
-    /// <li><p><code>HIDDEN</code>: Hides the axis.</p></li>
+    /// <li>
+    /// <p><code>VISIBLE</code>: Shows the axis.</p></li>
+    /// <li>
+    /// <p><code>HIDDEN</code>: Hides the axis.</p></li>
     /// </ul>
     pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
@@ -53,8 +57,10 @@ pub struct ChartAxisLabelOptionsBuilder {
 impl ChartAxisLabelOptionsBuilder {
     /// <p>The visibility of an axis label on a chart. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>VISIBLE</code>: Shows the axis.</p></li>
-    /// <li><p><code>HIDDEN</code>: Hides the axis.</p></li>
+    /// <li>
+    /// <p><code>VISIBLE</code>: Shows the axis.</p></li>
+    /// <li>
+    /// <p><code>HIDDEN</code>: Hides the axis.</p></li>
     /// </ul>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
         self.visibility = ::std::option::Option::Some(input);
@@ -62,8 +68,10 @@ impl ChartAxisLabelOptionsBuilder {
     }
     /// <p>The visibility of an axis label on a chart. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>VISIBLE</code>: Shows the axis.</p></li>
-    /// <li><p><code>HIDDEN</code>: Hides the axis.</p></li>
+    /// <li>
+    /// <p><code>VISIBLE</code>: Shows the axis.</p></li>
+    /// <li>
+    /// <p><code>HIDDEN</code>: Hides the axis.</p></li>
     /// </ul>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
@@ -71,8 +79,10 @@ impl ChartAxisLabelOptionsBuilder {
     }
     /// <p>The visibility of an axis label on a chart. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>VISIBLE</code>: Shows the axis.</p></li>
-    /// <li><p><code>HIDDEN</code>: Hides the axis.</p></li>
+    /// <li>
+    /// <p><code>VISIBLE</code>: Shows the axis.</p></li>
+    /// <li>
+    /// <p><code>HIDDEN</code>: Hides the axis.</p></li>
     /// </ul>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         &self.visibility

@@ -22,7 +22,7 @@ impl DeleteSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSnapshot`.
 ///
-/// <p>Deletes an existing snapshot. When you receive a successful response from this operation, ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this operation.</p> <note>
+/// <p>Deletes an existing snapshot. When you receive a successful response from this operation, ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this operation.</p><note>
 /// <p>This operation is valid for Redis only.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

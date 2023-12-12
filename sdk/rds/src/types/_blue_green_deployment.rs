@@ -22,13 +22,20 @@ pub struct BlueGreenDeployment {
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
-    /// <li><p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
-    /// <li><p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
-    /// <li><p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
-    /// <li><p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
-    /// <li><p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
-    /// <li><p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
+    /// <li>
+    /// <p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the status of the blue/green deployment.</p>
@@ -74,13 +81,20 @@ impl BlueGreenDeployment {
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
-    /// <li><p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
-    /// <li><p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
-    /// <li><p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
-    /// <li><p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
-    /// <li><p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
-    /// <li><p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
+    /// <li>
+    /// <p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -233,13 +247,20 @@ impl BlueGreenDeploymentBuilder {
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
-    /// <li><p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
-    /// <li><p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
-    /// <li><p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
-    /// <li><p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
-    /// <li><p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
-    /// <li><p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
+    /// <li>
+    /// <p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -248,13 +269,20 @@ impl BlueGreenDeploymentBuilder {
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
-    /// <li><p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
-    /// <li><p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
-    /// <li><p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
-    /// <li><p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
-    /// <li><p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
-    /// <li><p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
+    /// <li>
+    /// <p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -263,13 +291,20 @@ impl BlueGreenDeploymentBuilder {
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
-    /// <li><p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
-    /// <li><p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
-    /// <li><p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
-    /// <li><p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
-    /// <li><p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
-    /// <li><p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> - Resources are being created in the green environment.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Resources are available in the green environment.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue environment to the green environment.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green environment is complete.</p></li>
+    /// <li>
+    /// <p><code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid, so switchover isn't possible.</p></li>
+    /// <li>
+    /// <p><code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

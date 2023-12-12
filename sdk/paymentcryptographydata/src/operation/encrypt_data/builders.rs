@@ -29,10 +29,14 @@ impl EncryptDataInputBuilder {
 /// <p><b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>DecryptData</code></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a></p></li>
-/// <li><p><code>ReEncryptData</code></p></li>
+/// <li>
+/// <p><code>DecryptData</code></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a></p></li>
+/// <li>
+/// <p><code>ReEncryptData</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EncryptDataFluentBuilder {

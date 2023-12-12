@@ -113,7 +113,8 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <p>The identifier for the source snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p></li>
+    /// <li>
+    /// <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p></li>
     /// </ul>
     pub fn source_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_snapshot_identifier(input.into());
@@ -122,7 +123,8 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <p>The identifier for the source snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p></li>
+    /// <li>
+    /// <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p></li>
     /// </ul>
     pub fn set_source_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_snapshot_identifier(input);
@@ -131,7 +133,8 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <p>The identifier for the source snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p></li>
+    /// <li>
+    /// <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p></li>
     /// </ul>
     pub fn get_source_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_snapshot_identifier()
@@ -139,7 +142,8 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be the identifier for a valid cluster.</p></li>
+    /// <li>
+    /// <p>Must be the identifier for a valid cluster.</p></li>
     /// </ul>
     pub fn source_snapshot_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_snapshot_cluster_identifier(input.into());
@@ -148,7 +152,8 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be the identifier for a valid cluster.</p></li>
+    /// <li>
+    /// <p>Must be the identifier for a valid cluster.</p></li>
     /// </ul>
     pub fn set_source_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_snapshot_cluster_identifier(input);
@@ -157,7 +162,8 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be the identifier for a valid cluster.</p></li>
+    /// <li>
+    /// <p>Must be the identifier for a valid cluster.</p></li>
     /// </ul>
     pub fn get_source_snapshot_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_snapshot_cluster_identifier()
@@ -165,11 +171,16 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <p>The identifier given to the new manual snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank.</p></li>
-    /// <li><p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for the Amazon Web Services account that is making the request.</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for the Amazon Web Services account that is making the request.</p></li>
     /// </ul>
     pub fn target_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_snapshot_identifier(input.into());
@@ -178,11 +189,16 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <p>The identifier given to the new manual snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank.</p></li>
-    /// <li><p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for the Amazon Web Services account that is making the request.</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for the Amazon Web Services account that is making the request.</p></li>
     /// </ul>
     pub fn set_target_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_snapshot_identifier(input);
@@ -191,11 +207,16 @@ impl CopyClusterSnapshotFluentBuilder {
     /// <p>The identifier given to the new manual snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank.</p></li>
-    /// <li><p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for the Amazon Web Services account that is making the request.</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for the Amazon Web Services account that is making the request.</p></li>
     /// </ul>
     pub fn get_target_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_snapshot_identifier()

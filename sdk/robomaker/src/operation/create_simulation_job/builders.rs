@@ -22,7 +22,7 @@ impl CreateSimulationJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSimulationJob`.
 ///
-/// <p>Creates a simulation job.</p> <note>
+/// <p>Creates a simulation job.</p><note>
 /// <p>After 90 days, simulation jobs expire and will be deleted. They will no longer be accessible.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -276,21 +276,21 @@ impl CreateSimulationJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p> <note>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p><note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.</p>
     /// </note>
     pub fn data_sources(mut self, input: crate::types::DataSourceConfig) -> Self {
         self.inner = self.inner.data_sources(input);
         self
     }
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p> <note>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p><note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.</p>
     /// </note>
     pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>>) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
     }
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p> <note>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p><note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.</p>
     /// </note>
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>> {

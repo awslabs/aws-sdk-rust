@@ -139,9 +139,12 @@ impl CreateChangesetFluentBuilder {
     }
     /// <p>The option to indicate how a Changeset will be applied to a Dataset.</p>
     /// <ul>
-    /// <li><p><code>REPLACE</code> – Changeset will be considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li><p><code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li><p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – Changeset will be considered as a replacement to all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
     /// </ul>
     pub fn change_type(mut self, input: crate::types::ChangeType) -> Self {
         self.inner = self.inner.change_type(input);
@@ -149,9 +152,12 @@ impl CreateChangesetFluentBuilder {
     }
     /// <p>The option to indicate how a Changeset will be applied to a Dataset.</p>
     /// <ul>
-    /// <li><p><code>REPLACE</code> – Changeset will be considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li><p><code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li><p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – Changeset will be considered as a replacement to all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
     /// </ul>
     pub fn set_change_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.inner = self.inner.set_change_type(input);
@@ -159,9 +165,12 @@ impl CreateChangesetFluentBuilder {
     }
     /// <p>The option to indicate how a Changeset will be applied to a Dataset.</p>
     /// <ul>
-    /// <li><p><code>REPLACE</code> – Changeset will be considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li><p><code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li><p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – Changeset will be considered as a replacement to all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
     /// </ul>
     pub fn get_change_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
         self.inner.get_change_type()
@@ -206,10 +215,14 @@ impl CreateChangesetFluentBuilder {
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).</p>
     /// <p><code>formatType</code> is a required attribute and can have the following values:</p>
     /// <ul>
-    /// <li><p><code>PARQUET</code> – Parquet source file format.</p></li>
-    /// <li><p><code>CSV</code> – CSV source file format.</p></li>
-    /// <li><p><code>JSON</code> – JSON source file format.</p></li>
-    /// <li><p><code>XML</code> – XML source file format.</p></li>
+    /// <li>
+    /// <p><code>PARQUET</code> – Parquet source file format.</p></li>
+    /// <li>
+    /// <p><code>CSV</code> – CSV source file format.</p></li>
+    /// <li>
+    /// <p><code>JSON</code> – JSON source file format.</p></li>
+    /// <li>
+    /// <p><code>XML</code> – XML source file format.</p></li>
     /// </ul>
     /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
     /// <p><code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code></p>
@@ -223,10 +236,14 @@ impl CreateChangesetFluentBuilder {
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).</p>
     /// <p><code>formatType</code> is a required attribute and can have the following values:</p>
     /// <ul>
-    /// <li><p><code>PARQUET</code> – Parquet source file format.</p></li>
-    /// <li><p><code>CSV</code> – CSV source file format.</p></li>
-    /// <li><p><code>JSON</code> – JSON source file format.</p></li>
-    /// <li><p><code>XML</code> – XML source file format.</p></li>
+    /// <li>
+    /// <p><code>PARQUET</code> – Parquet source file format.</p></li>
+    /// <li>
+    /// <p><code>CSV</code> – CSV source file format.</p></li>
+    /// <li>
+    /// <p><code>JSON</code> – JSON source file format.</p></li>
+    /// <li>
+    /// <p><code>XML</code> – XML source file format.</p></li>
     /// </ul>
     /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
     /// <p><code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code></p>
@@ -243,10 +260,14 @@ impl CreateChangesetFluentBuilder {
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).</p>
     /// <p><code>formatType</code> is a required attribute and can have the following values:</p>
     /// <ul>
-    /// <li><p><code>PARQUET</code> – Parquet source file format.</p></li>
-    /// <li><p><code>CSV</code> – CSV source file format.</p></li>
-    /// <li><p><code>JSON</code> – JSON source file format.</p></li>
-    /// <li><p><code>XML</code> – XML source file format.</p></li>
+    /// <li>
+    /// <p><code>PARQUET</code> – Parquet source file format.</p></li>
+    /// <li>
+    /// <p><code>CSV</code> – CSV source file format.</p></li>
+    /// <li>
+    /// <p><code>JSON</code> – JSON source file format.</p></li>
+    /// <li>
+    /// <p><code>XML</code> – XML source file format.</p></li>
     /// </ul>
     /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
     /// <p><code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code></p>

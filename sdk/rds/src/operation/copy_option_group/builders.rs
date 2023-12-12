@@ -111,7 +111,8 @@ impl CopyOptionGroupFluentBuilder {
     /// <p>The identifier for the source option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid option group.</p></li>
+    /// <li>
+    /// <p>Must specify a valid option group.</p></li>
     /// </ul>
     pub fn source_option_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_option_group_identifier(input.into());
@@ -120,7 +121,8 @@ impl CopyOptionGroupFluentBuilder {
     /// <p>The identifier for the source option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid option group.</p></li>
+    /// <li>
+    /// <p>Must specify a valid option group.</p></li>
     /// </ul>
     pub fn set_source_option_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_option_group_identifier(input);
@@ -129,7 +131,8 @@ impl CopyOptionGroupFluentBuilder {
     /// <p>The identifier for the source option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid option group.</p></li>
+    /// <li>
+    /// <p>Must specify a valid option group.</p></li>
     /// </ul>
     pub fn get_source_option_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_option_group_identifier()
@@ -137,10 +140,14 @@ impl CopyOptionGroupFluentBuilder {
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Can't be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-option-group</code></p>
     pub fn target_option_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,10 +157,14 @@ impl CopyOptionGroupFluentBuilder {
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Can't be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-option-group</code></p>
     pub fn set_target_option_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -163,10 +174,14 @@ impl CopyOptionGroupFluentBuilder {
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Can't be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-option-group</code></p>
     pub fn get_target_option_group_identifier(&self) -> &::std::option::Option<::std::string::String> {

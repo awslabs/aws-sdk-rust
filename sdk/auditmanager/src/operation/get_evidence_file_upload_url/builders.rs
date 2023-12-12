@@ -25,9 +25,12 @@ impl GetEvidenceFileUploadUrlInputBuilder {
 /// <p>Creates a presigned Amazon S3 URL that can be used to upload a file as manual evidence. For instructions on how to use this operation, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files">Upload a file from your browser </a> in the <i>Audit Manager User Guide</i>.</p>
 /// <p>The following restrictions apply to this operation:</p>
 /// <ul>
-/// <li><p>Maximum size of an individual evidence file: 100 MB</p></li>
-/// <li><p>Number of daily manual evidence uploads per control: 100</p></li>
-/// <li><p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i></p></li>
+/// <li>
+/// <p>Maximum size of an individual evidence file: 100 MB</p></li>
+/// <li>
+/// <p>Number of daily manual evidence uploads per control: 100</p></li>
+/// <li>
+/// <p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i></p></li>
 /// </ul>
 /// <p>For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

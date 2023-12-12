@@ -7,8 +7,7 @@ pub struct UpdateSourceControlFromJobInput {
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.</p>
     pub provider: ::std::option::Option<crate::types::SourceControlProvider>,
-    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code>
-    /// <workspacename>
+    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code><workspacename>
     /// /
     /// <repositoryname></repositoryname>
     /// </workspacename></code>.</p>
@@ -35,8 +34,7 @@ impl UpdateSourceControlFromJobInput {
     pub fn provider(&self) -> ::std::option::Option<&crate::types::SourceControlProvider> {
         self.provider.as_ref()
     }
-    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code>
-    /// <workspacename>
+    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code><workspacename>
     /// /
     /// <repositoryname></repositoryname>
     /// </workspacename></code>.</p>
@@ -118,8 +116,7 @@ impl UpdateSourceControlFromJobInputBuilder {
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::SourceControlProvider> {
         &self.provider
     }
-    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code>
-    /// <workspacename>
+    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code><workspacename>
     /// /
     /// <repositoryname></repositoryname>
     /// </workspacename></code>.</p>
@@ -127,8 +124,7 @@ impl UpdateSourceControlFromJobInputBuilder {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code>
-    /// <workspacename>
+    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code><workspacename>
     /// /
     /// <repositoryname></repositoryname>
     /// </workspacename></code>.</p>
@@ -136,8 +132,7 @@ impl UpdateSourceControlFromJobInputBuilder {
         self.repository_name = input;
         self
     }
-    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code>
-    /// <workspacename>
+    /// <p>The name of the remote repository that contains the job artifacts. For BitBucket providers, <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format <code><workspacename>
     /// /
     /// <repositoryname></repositoryname>
     /// </workspacename></code>.</p>

@@ -5,11 +5,11 @@
 pub struct CreateRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     pub rule_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>An object that defines the rule group rules.</p><note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub rule_group: ::std::option::Option<crate::types::RuleGroup>,
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p><note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
@@ -19,16 +19,19 @@ pub struct CreateRuleGroupInput {
     /// <p>A description of the rule group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.</p>
-    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p> <note>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p><note>
     /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow.</p>
     /// </note>
     /// <p><b>Capacity for a stateless rule group</b></p>
     /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group.</p>
     /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
     /// <ul>
-    /// <li><p>A match setting with no criteria specified has a value of 1.</p></li>
-    /// <li><p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
-    /// <li><p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
+    /// <li>
+    /// <p>A match setting with no criteria specified has a value of 1.</p></li>
+    /// <li>
+    /// <p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
+    /// <li>
+    /// <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
     /// </ul>
     /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.</p>
     /// <p><b>Capacity for a stateful rule group</b></p>
@@ -52,13 +55,13 @@ impl CreateRuleGroupInput {
     pub fn rule_group_name(&self) -> ::std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
-    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>An object that defines the rule group rules.</p><note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn rule_group(&self) -> ::std::option::Option<&crate::types::RuleGroup> {
         self.rule_group.as_ref()
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p><note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
@@ -74,16 +77,19 @@ impl CreateRuleGroupInput {
         self.description.as_deref()
     }
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.</p>
-    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p> <note>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p><note>
     /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow.</p>
     /// </note>
     /// <p><b>Capacity for a stateless rule group</b></p>
     /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group.</p>
     /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
     /// <ul>
-    /// <li><p>A match setting with no criteria specified has a value of 1.</p></li>
-    /// <li><p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
-    /// <li><p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
+    /// <li>
+    /// <p>A match setting with no criteria specified has a value of 1.</p></li>
+    /// <li>
+    /// <p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
+    /// <li>
+    /// <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
     /// </ul>
     /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.</p>
     /// <p><b>Capacity for a stateful rule group</b></p>
@@ -155,27 +161,27 @@ impl CreateRuleGroupInputBuilder {
     pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_group_name
     }
-    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>An object that defines the rule group rules.</p><note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn rule_group(mut self, input: crate::types::RuleGroup) -> Self {
         self.rule_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>An object that defines the rule group rules.</p><note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn set_rule_group(mut self, input: ::std::option::Option<crate::types::RuleGroup>) -> Self {
         self.rule_group = input;
         self
     }
-    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>An object that defines the rule group rules.</p><note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn get_rule_group(&self) -> &::std::option::Option<crate::types::RuleGroup> {
         &self.rule_group
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p><note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
@@ -183,7 +189,7 @@ impl CreateRuleGroupInputBuilder {
         self.rules = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p><note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
@@ -191,7 +197,7 @@ impl CreateRuleGroupInputBuilder {
         self.rules = input;
         self
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p><note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
@@ -228,16 +234,19 @@ impl CreateRuleGroupInputBuilder {
         &self.description
     }
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.</p>
-    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p> <note>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p><note>
     /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow.</p>
     /// </note>
     /// <p><b>Capacity for a stateless rule group</b></p>
     /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group.</p>
     /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
     /// <ul>
-    /// <li><p>A match setting with no criteria specified has a value of 1.</p></li>
-    /// <li><p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
-    /// <li><p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
+    /// <li>
+    /// <p>A match setting with no criteria specified has a value of 1.</p></li>
+    /// <li>
+    /// <p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
+    /// <li>
+    /// <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
     /// </ul>
     /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.</p>
     /// <p><b>Capacity for a stateful rule group</b></p>
@@ -248,16 +257,19 @@ impl CreateRuleGroupInputBuilder {
         self
     }
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.</p>
-    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p> <note>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p><note>
     /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow.</p>
     /// </note>
     /// <p><b>Capacity for a stateless rule group</b></p>
     /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group.</p>
     /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
     /// <ul>
-    /// <li><p>A match setting with no criteria specified has a value of 1.</p></li>
-    /// <li><p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
-    /// <li><p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
+    /// <li>
+    /// <p>A match setting with no criteria specified has a value of 1.</p></li>
+    /// <li>
+    /// <p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
+    /// <li>
+    /// <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
     /// </ul>
     /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.</p>
     /// <p><b>Capacity for a stateful rule group</b></p>
@@ -267,16 +279,19 @@ impl CreateRuleGroupInputBuilder {
         self
     }
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.</p>
-    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p> <note>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p><note>
     /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow.</p>
     /// </note>
     /// <p><b>Capacity for a stateless rule group</b></p>
     /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group.</p>
     /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
     /// <ul>
-    /// <li><p>A match setting with no criteria specified has a value of 1.</p></li>
-    /// <li><p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
-    /// <li><p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
+    /// <li>
+    /// <p>A match setting with no criteria specified has a value of 1.</p></li>
+    /// <li>
+    /// <p>A match setting with <code>Any</code> specified has a value of 1.</p></li>
+    /// <li>
+    /// <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.</p></li>
     /// </ul>
     /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6.</p>
     /// <p><b>Capacity for a stateful rule group</b></p>

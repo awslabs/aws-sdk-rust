@@ -12,9 +12,12 @@ pub struct CloudComponentStatus {
     pub errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> – This component version is available and recommended for use.</p></li>
-    /// <li><p><code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p></li>
-    /// <li><p><code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> – This component version is available and recommended for use.</p></li>
+    /// <li>
+    /// <p><code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p></li>
     /// </ul>
     pub vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
@@ -35,9 +38,12 @@ impl CloudComponentStatus {
     }
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> – This component version is available and recommended for use.</p></li>
-    /// <li><p><code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p></li>
-    /// <li><p><code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> – This component version is available and recommended for use.</p></li>
+    /// <li>
+    /// <p><code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p></li>
     /// </ul>
     pub fn vendor_guidance(&self) -> ::std::option::Option<&crate::types::VendorGuidance> {
         self.vendor_guidance.as_ref()
@@ -115,9 +121,12 @@ impl CloudComponentStatusBuilder {
     }
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> – This component version is available and recommended for use.</p></li>
-    /// <li><p><code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p></li>
-    /// <li><p><code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> – This component version is available and recommended for use.</p></li>
+    /// <li>
+    /// <p><code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p></li>
     /// </ul>
     pub fn vendor_guidance(mut self, input: crate::types::VendorGuidance) -> Self {
         self.vendor_guidance = ::std::option::Option::Some(input);
@@ -125,9 +134,12 @@ impl CloudComponentStatusBuilder {
     }
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> – This component version is available and recommended for use.</p></li>
-    /// <li><p><code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p></li>
-    /// <li><p><code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> – This component version is available and recommended for use.</p></li>
+    /// <li>
+    /// <p><code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p></li>
     /// </ul>
     pub fn set_vendor_guidance(mut self, input: ::std::option::Option<crate::types::VendorGuidance>) -> Self {
         self.vendor_guidance = input;
@@ -135,9 +147,12 @@ impl CloudComponentStatusBuilder {
     }
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> – This component version is available and recommended for use.</p></li>
-    /// <li><p><code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p></li>
-    /// <li><p><code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> – This component version is available and recommended for use.</p></li>
+    /// <li>
+    /// <p><code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p></li>
     /// </ul>
     pub fn get_vendor_guidance(&self) -> &::std::option::Option<crate::types::VendorGuidance> {
         &self.vendor_guidance

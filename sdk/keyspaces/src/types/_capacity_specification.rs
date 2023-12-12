@@ -2,8 +2,10 @@
 
 /// <p>Amazon Keyspaces has two read/write capacity modes for processing reads and writes on your tables:</p>
 /// <ul>
-/// <li><p>On-demand (default)</p></li>
-/// <li><p>Provisioned</p></li>
+/// <li>
+/// <p>On-demand (default)</p></li>
+/// <li>
+/// <p>Provisioned</p></li>
 /// </ul>
 /// <p>The read/write capacity mode that you choose controls how you are charged for read and write throughput and how table throughput capacity is managed.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -12,8 +14,10 @@
 pub struct CapacitySpecification {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
-    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
-    /// <li><p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
+    /// <li>
+    /// <p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
+    /// <li>
+    /// <p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -26,8 +30,10 @@ pub struct CapacitySpecification {
 impl CapacitySpecification {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
-    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
-    /// <li><p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
+    /// <li>
+    /// <p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
+    /// <li>
+    /// <p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -61,8 +67,10 @@ pub struct CapacitySpecificationBuilder {
 impl CapacitySpecificationBuilder {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
-    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
-    /// <li><p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
+    /// <li>
+    /// <p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
+    /// <li>
+    /// <p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -73,8 +81,10 @@ impl CapacitySpecificationBuilder {
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
-    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
-    /// <li><p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
+    /// <li>
+    /// <p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
+    /// <li>
+    /// <p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -84,8 +94,10 @@ impl CapacitySpecificationBuilder {
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
-    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
-    /// <li><p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
+    /// <li>
+    /// <p><code>throughputMode:PAY_PER_REQUEST</code> and</p></li>
+    /// <li>
+    /// <p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>

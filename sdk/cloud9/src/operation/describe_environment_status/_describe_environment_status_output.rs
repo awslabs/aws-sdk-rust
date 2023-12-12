@@ -5,13 +5,20 @@
 pub struct DescribeEnvironmentStatusOutput {
     /// <p>The status of the environment. Available values include:</p>
     /// <ul>
-    /// <li><p><code>connecting</code>: The environment is connecting.</p></li>
-    /// <li><p><code>creating</code>: The environment is being created.</p></li>
-    /// <li><p><code>deleting</code>: The environment is being deleted.</p></li>
-    /// <li><p><code>error</code>: The environment is in an error state.</p></li>
-    /// <li><p><code>ready</code>: The environment is ready.</p></li>
-    /// <li><p><code>stopped</code>: The environment is stopped.</p></li>
-    /// <li><p><code>stopping</code>: The environment is stopping.</p></li>
+    /// <li>
+    /// <p><code>connecting</code>: The environment is connecting.</p></li>
+    /// <li>
+    /// <p><code>creating</code>: The environment is being created.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The environment is being deleted.</p></li>
+    /// <li>
+    /// <p><code>error</code>: The environment is in an error state.</p></li>
+    /// <li>
+    /// <p><code>ready</code>: The environment is ready.</p></li>
+    /// <li>
+    /// <p><code>stopped</code>: The environment is stopped.</p></li>
+    /// <li>
+    /// <p><code>stopping</code>: The environment is stopping.</p></li>
     /// </ul>
     pub status: crate::types::EnvironmentStatus,
     /// <p>Any informational message about the status of the environment.</p>
@@ -21,13 +28,20 @@ pub struct DescribeEnvironmentStatusOutput {
 impl DescribeEnvironmentStatusOutput {
     /// <p>The status of the environment. Available values include:</p>
     /// <ul>
-    /// <li><p><code>connecting</code>: The environment is connecting.</p></li>
-    /// <li><p><code>creating</code>: The environment is being created.</p></li>
-    /// <li><p><code>deleting</code>: The environment is being deleted.</p></li>
-    /// <li><p><code>error</code>: The environment is in an error state.</p></li>
-    /// <li><p><code>ready</code>: The environment is ready.</p></li>
-    /// <li><p><code>stopped</code>: The environment is stopped.</p></li>
-    /// <li><p><code>stopping</code>: The environment is stopping.</p></li>
+    /// <li>
+    /// <p><code>connecting</code>: The environment is connecting.</p></li>
+    /// <li>
+    /// <p><code>creating</code>: The environment is being created.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The environment is being deleted.</p></li>
+    /// <li>
+    /// <p><code>error</code>: The environment is in an error state.</p></li>
+    /// <li>
+    /// <p><code>ready</code>: The environment is ready.</p></li>
+    /// <li>
+    /// <p><code>stopped</code>: The environment is stopped.</p></li>
+    /// <li>
+    /// <p><code>stopping</code>: The environment is stopping.</p></li>
     /// </ul>
     pub fn status(&self) -> &crate::types::EnvironmentStatus {
         &self.status
@@ -61,13 +75,20 @@ pub struct DescribeEnvironmentStatusOutputBuilder {
 impl DescribeEnvironmentStatusOutputBuilder {
     /// <p>The status of the environment. Available values include:</p>
     /// <ul>
-    /// <li><p><code>connecting</code>: The environment is connecting.</p></li>
-    /// <li><p><code>creating</code>: The environment is being created.</p></li>
-    /// <li><p><code>deleting</code>: The environment is being deleted.</p></li>
-    /// <li><p><code>error</code>: The environment is in an error state.</p></li>
-    /// <li><p><code>ready</code>: The environment is ready.</p></li>
-    /// <li><p><code>stopped</code>: The environment is stopped.</p></li>
-    /// <li><p><code>stopping</code>: The environment is stopping.</p></li>
+    /// <li>
+    /// <p><code>connecting</code>: The environment is connecting.</p></li>
+    /// <li>
+    /// <p><code>creating</code>: The environment is being created.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The environment is being deleted.</p></li>
+    /// <li>
+    /// <p><code>error</code>: The environment is in an error state.</p></li>
+    /// <li>
+    /// <p><code>ready</code>: The environment is ready.</p></li>
+    /// <li>
+    /// <p><code>stopped</code>: The environment is stopped.</p></li>
+    /// <li>
+    /// <p><code>stopping</code>: The environment is stopping.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::EnvironmentStatus) -> Self {
@@ -76,13 +97,20 @@ impl DescribeEnvironmentStatusOutputBuilder {
     }
     /// <p>The status of the environment. Available values include:</p>
     /// <ul>
-    /// <li><p><code>connecting</code>: The environment is connecting.</p></li>
-    /// <li><p><code>creating</code>: The environment is being created.</p></li>
-    /// <li><p><code>deleting</code>: The environment is being deleted.</p></li>
-    /// <li><p><code>error</code>: The environment is in an error state.</p></li>
-    /// <li><p><code>ready</code>: The environment is ready.</p></li>
-    /// <li><p><code>stopped</code>: The environment is stopped.</p></li>
-    /// <li><p><code>stopping</code>: The environment is stopping.</p></li>
+    /// <li>
+    /// <p><code>connecting</code>: The environment is connecting.</p></li>
+    /// <li>
+    /// <p><code>creating</code>: The environment is being created.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The environment is being deleted.</p></li>
+    /// <li>
+    /// <p><code>error</code>: The environment is in an error state.</p></li>
+    /// <li>
+    /// <p><code>ready</code>: The environment is ready.</p></li>
+    /// <li>
+    /// <p><code>stopped</code>: The environment is stopped.</p></li>
+    /// <li>
+    /// <p><code>stopping</code>: The environment is stopping.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
         self.status = input;
@@ -90,13 +118,20 @@ impl DescribeEnvironmentStatusOutputBuilder {
     }
     /// <p>The status of the environment. Available values include:</p>
     /// <ul>
-    /// <li><p><code>connecting</code>: The environment is connecting.</p></li>
-    /// <li><p><code>creating</code>: The environment is being created.</p></li>
-    /// <li><p><code>deleting</code>: The environment is being deleted.</p></li>
-    /// <li><p><code>error</code>: The environment is in an error state.</p></li>
-    /// <li><p><code>ready</code>: The environment is ready.</p></li>
-    /// <li><p><code>stopped</code>: The environment is stopped.</p></li>
-    /// <li><p><code>stopping</code>: The environment is stopping.</p></li>
+    /// <li>
+    /// <p><code>connecting</code>: The environment is connecting.</p></li>
+    /// <li>
+    /// <p><code>creating</code>: The environment is being created.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The environment is being deleted.</p></li>
+    /// <li>
+    /// <p><code>error</code>: The environment is in an error state.</p></li>
+    /// <li>
+    /// <p><code>ready</code>: The environment is ready.</p></li>
+    /// <li>
+    /// <p><code>stopped</code>: The environment is stopped.</p></li>
+    /// <li>
+    /// <p><code>stopping</code>: The environment is stopping.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
         &self.status

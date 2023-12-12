@@ -9,11 +9,16 @@ pub struct GetProtectionStatusOutput {
     pub service_type: ::std::option::Option<crate::types::SecurityServiceType>,
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li><p>Attack type</p></li>
-    /// <li><p>Account ID</p></li>
-    /// <li><p>ARN of the resource attacked</p></li>
-    /// <li><p>Start time of the attack</p></li>
-    /// <li><p>End time of the attack (ongoing attacks will not have an end time)</p></li>
+    /// <li>
+    /// <p>Attack type</p></li>
+    /// <li>
+    /// <p>Account ID</p></li>
+    /// <li>
+    /// <p>ARN of the resource attacked</p></li>
+    /// <li>
+    /// <p>Start time of the attack</p></li>
+    /// <li>
+    /// <p>End time of the attack (ongoing attacks will not have an end time)</p></li>
     /// </ul>
     /// <p>The details are in JSON format.</p>
     pub data: ::std::option::Option<::std::string::String>,
@@ -33,11 +38,16 @@ impl GetProtectionStatusOutput {
     }
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li><p>Attack type</p></li>
-    /// <li><p>Account ID</p></li>
-    /// <li><p>ARN of the resource attacked</p></li>
-    /// <li><p>Start time of the attack</p></li>
-    /// <li><p>End time of the attack (ongoing attacks will not have an end time)</p></li>
+    /// <li>
+    /// <p>Attack type</p></li>
+    /// <li>
+    /// <p>Account ID</p></li>
+    /// <li>
+    /// <p>ARN of the resource attacked</p></li>
+    /// <li>
+    /// <p>Start time of the attack</p></li>
+    /// <li>
+    /// <p>End time of the attack (ongoing attacks will not have an end time)</p></li>
     /// </ul>
     /// <p>The details are in JSON format.</p>
     pub fn data(&self) -> ::std::option::Option<&str> {
@@ -102,11 +112,16 @@ impl GetProtectionStatusOutputBuilder {
     }
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li><p>Attack type</p></li>
-    /// <li><p>Account ID</p></li>
-    /// <li><p>ARN of the resource attacked</p></li>
-    /// <li><p>Start time of the attack</p></li>
-    /// <li><p>End time of the attack (ongoing attacks will not have an end time)</p></li>
+    /// <li>
+    /// <p>Attack type</p></li>
+    /// <li>
+    /// <p>Account ID</p></li>
+    /// <li>
+    /// <p>ARN of the resource attacked</p></li>
+    /// <li>
+    /// <p>Start time of the attack</p></li>
+    /// <li>
+    /// <p>End time of the attack (ongoing attacks will not have an end time)</p></li>
     /// </ul>
     /// <p>The details are in JSON format.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,11 +130,16 @@ impl GetProtectionStatusOutputBuilder {
     }
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li><p>Attack type</p></li>
-    /// <li><p>Account ID</p></li>
-    /// <li><p>ARN of the resource attacked</p></li>
-    /// <li><p>Start time of the attack</p></li>
-    /// <li><p>End time of the attack (ongoing attacks will not have an end time)</p></li>
+    /// <li>
+    /// <p>Attack type</p></li>
+    /// <li>
+    /// <p>Account ID</p></li>
+    /// <li>
+    /// <p>ARN of the resource attacked</p></li>
+    /// <li>
+    /// <p>Start time of the attack</p></li>
+    /// <li>
+    /// <p>End time of the attack (ongoing attacks will not have an end time)</p></li>
     /// </ul>
     /// <p>The details are in JSON format.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -128,11 +148,16 @@ impl GetProtectionStatusOutputBuilder {
     }
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li><p>Attack type</p></li>
-    /// <li><p>Account ID</p></li>
-    /// <li><p>ARN of the resource attacked</p></li>
-    /// <li><p>Start time of the attack</p></li>
-    /// <li><p>End time of the attack (ongoing attacks will not have an end time)</p></li>
+    /// <li>
+    /// <p>Attack type</p></li>
+    /// <li>
+    /// <p>Account ID</p></li>
+    /// <li>
+    /// <p>ARN of the resource attacked</p></li>
+    /// <li>
+    /// <p>Start time of the attack</p></li>
+    /// <li>
+    /// <p>End time of the attack (ongoing attacks will not have an end time)</p></li>
     /// </ul>
     /// <p>The details are in JSON format.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {

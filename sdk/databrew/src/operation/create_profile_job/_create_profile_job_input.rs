@@ -9,8 +9,10 @@ pub struct CreateProfileJobInput {
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
-    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li>
+    /// <p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
+    /// <li>
+    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
@@ -47,8 +49,10 @@ impl CreateProfileJobInput {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
-    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li>
+    /// <p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
+    /// <li>
+    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn encryption_mode(&self) -> ::std::option::Option<&crate::types::EncryptionMode> {
         self.encryption_mode.as_ref()
@@ -158,8 +162,10 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
-    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li>
+    /// <p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
+    /// <li>
+    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.encryption_mode = ::std::option::Option::Some(input);
@@ -167,8 +173,10 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
-    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li>
+    /// <p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
+    /// <li>
+    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.encryption_mode = input;
@@ -176,8 +184,10 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
-    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li>
+    /// <p><code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p></li>
+    /// <li>
+    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
         &self.encryption_mode

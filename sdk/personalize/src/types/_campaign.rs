@@ -17,8 +17,10 @@ pub struct Campaign {
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li>
+    /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If a campaign fails, the reason behind the failure.</p>
@@ -54,8 +56,10 @@ impl Campaign {
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li>
+    /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -173,8 +177,10 @@ impl CampaignBuilder {
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li>
+    /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -183,8 +189,10 @@ impl CampaignBuilder {
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li>
+    /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -193,8 +201,10 @@ impl CampaignBuilder {
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li>
+    /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

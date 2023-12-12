@@ -8,9 +8,12 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -18,7 +21,8 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing Snapshot.</p></li>
     /// </ul>
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The database engine to use for the new DB cluster.</p>
@@ -47,8 +51,10 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
     /// <ul>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
     /// </ul>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
@@ -59,7 +65,8 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.</p>
@@ -84,9 +91,12 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -96,7 +106,8 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing Snapshot.</p></li>
     /// </ul>
     pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.snapshot_identifier.as_deref()
@@ -147,8 +158,10 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
     /// <ul>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
     /// </ul>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -167,7 +180,8 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
@@ -247,9 +261,12 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     /// This field is required.
@@ -260,9 +277,12 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -272,9 +292,12 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,7 +307,8 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing Snapshot.</p></li>
     /// </ul>
     /// This field is required.
     pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -295,7 +319,8 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing Snapshot.</p></li>
     /// </ul>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_identifier = input;
@@ -305,7 +330,8 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing Snapshot.</p></li>
     /// </ul>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_identifier
@@ -457,8 +483,10 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
     /// <ul>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -468,8 +496,10 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
     /// <ul>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
@@ -479,8 +509,10 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
     /// <ul>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p></li>
     /// </ul>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
@@ -525,7 +557,8 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
@@ -534,7 +567,8 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
@@ -543,7 +577,8 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name

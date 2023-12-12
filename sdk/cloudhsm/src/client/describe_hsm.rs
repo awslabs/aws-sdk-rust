@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`availability_zone(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::availability_zone): <p>The Availability Zone that the HSM is in.</p>
     ///   - [`eni_id(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::eni_id): <p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>
     ///   - [`eni_ip(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::eni_ip): <p>The IP address assigned to the HSM's ENI.</p>
-    ///   - [`subscription_type(Option<SubscriptionType>)`](crate::operation::describe_hsm::DescribeHsmOutput::subscription_type): <p>Specifies the type of subscription for the HSM.</p> <ul>  <li><p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>  <li><p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li> </ul>
+    ///   - [`subscription_type(Option<SubscriptionType>)`](crate::operation::describe_hsm::DescribeHsmOutput::subscription_type): <p>Specifies the type of subscription for the HSM.</p> <ul>  <li>   <p><b>PRODUCTION</b> - The HSM is being used in a production environment.</p></li>  <li>   <p><b>TRIAL</b> - The HSM is being used in a product trial.</p></li> </ul>
     ///   - [`subscription_start_date(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::subscription_start_date): <p>The subscription start date.</p>
     ///   - [`subscription_end_date(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::subscription_end_date): <p>The subscription end date.</p>
     ///   - [`vpc_id(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::vpc_id): <p>The identifier of the VPC that the HSM is in.</p>

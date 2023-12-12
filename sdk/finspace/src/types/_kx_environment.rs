@@ -12,15 +12,24 @@ pub struct KxEnvironment {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the environment creation.</p>
     /// <ul>
-    /// <li><p>CREATE_REQUESTED – Environment creation has been requested.</p></li>
-    /// <li><p>CREATING – Environment is in the process of being created.</p></li>
-    /// <li><p>FAILED_CREATION – Environment creation has failed.</p></li>
-    /// <li><p>CREATED – Environment is successfully created and is currently active.</p></li>
-    /// <li><p>DELETE REQUESTED – Environment deletion has been requested.</p></li>
-    /// <li><p>DELETING – Environment is in the process of being deleted.</p></li>
-    /// <li><p>RETRY_DELETION – Initial environment deletion failed, system is reattempting delete.</p></li>
-    /// <li><p>DELETED – Environment has been deleted.</p></li>
-    /// <li><p>FAILED_DELETION – Environment deletion has failed.</p></li>
+    /// <li>
+    /// <p>CREATE_REQUESTED – Environment creation has been requested.</p></li>
+    /// <li>
+    /// <p>CREATING – Environment is in the process of being created.</p></li>
+    /// <li>
+    /// <p>FAILED_CREATION – Environment creation has failed.</p></li>
+    /// <li>
+    /// <p>CREATED – Environment is successfully created and is currently active.</p></li>
+    /// <li>
+    /// <p>DELETE REQUESTED – Environment deletion has been requested.</p></li>
+    /// <li>
+    /// <p>DELETING – Environment is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>RETRY_DELETION – Initial environment deletion failed, system is reattempting delete.</p></li>
+    /// <li>
+    /// <p>DELETED – Environment has been deleted.</p></li>
+    /// <li>
+    /// <p>FAILED_DELETION – Environment deletion has failed.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
     /// <p>The status of the network configuration.</p>
@@ -65,15 +74,24 @@ impl KxEnvironment {
     }
     /// <p>The status of the environment creation.</p>
     /// <ul>
-    /// <li><p>CREATE_REQUESTED – Environment creation has been requested.</p></li>
-    /// <li><p>CREATING – Environment is in the process of being created.</p></li>
-    /// <li><p>FAILED_CREATION – Environment creation has failed.</p></li>
-    /// <li><p>CREATED – Environment is successfully created and is currently active.</p></li>
-    /// <li><p>DELETE REQUESTED – Environment deletion has been requested.</p></li>
-    /// <li><p>DELETING – Environment is in the process of being deleted.</p></li>
-    /// <li><p>RETRY_DELETION – Initial environment deletion failed, system is reattempting delete.</p></li>
-    /// <li><p>DELETED – Environment has been deleted.</p></li>
-    /// <li><p>FAILED_DELETION – Environment deletion has failed.</p></li>
+    /// <li>
+    /// <p>CREATE_REQUESTED – Environment creation has been requested.</p></li>
+    /// <li>
+    /// <p>CREATING – Environment is in the process of being created.</p></li>
+    /// <li>
+    /// <p>FAILED_CREATION – Environment creation has failed.</p></li>
+    /// <li>
+    /// <p>CREATED – Environment is successfully created and is currently active.</p></li>
+    /// <li>
+    /// <p>DELETE REQUESTED – Environment deletion has been requested.</p></li>
+    /// <li>
+    /// <p>DELETING – Environment is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>RETRY_DELETION – Initial environment deletion failed, system is reattempting delete.</p></li>
+    /// <li>
+    /// <p>DELETED – Environment has been deleted.</p></li>
+    /// <li>
+    /// <p>FAILED_DELETION – Environment deletion has failed.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
         self.status.as_ref()
@@ -209,15 +227,24 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The status of the environment creation.</p>
     /// <ul>
-    /// <li><p>CREATE_REQUESTED – Environment creation has been requested.</p></li>
-    /// <li><p>CREATING – Environment is in the process of being created.</p></li>
-    /// <li><p>FAILED_CREATION – Environment creation has failed.</p></li>
-    /// <li><p>CREATED – Environment is successfully created and is currently active.</p></li>
-    /// <li><p>DELETE REQUESTED – Environment deletion has been requested.</p></li>
-    /// <li><p>DELETING – Environment is in the process of being deleted.</p></li>
-    /// <li><p>RETRY_DELETION – Initial environment deletion failed, system is reattempting delete.</p></li>
-    /// <li><p>DELETED – Environment has been deleted.</p></li>
-    /// <li><p>FAILED_DELETION – Environment deletion has failed.</p></li>
+    /// <li>
+    /// <p>CREATE_REQUESTED – Environment creation has been requested.</p></li>
+    /// <li>
+    /// <p>CREATING – Environment is in the process of being created.</p></li>
+    /// <li>
+    /// <p>FAILED_CREATION – Environment creation has failed.</p></li>
+    /// <li>
+    /// <p>CREATED – Environment is successfully created and is currently active.</p></li>
+    /// <li>
+    /// <p>DELETE REQUESTED – Environment deletion has been requested.</p></li>
+    /// <li>
+    /// <p>DELETING – Environment is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>RETRY_DELETION – Initial environment deletion failed, system is reattempting delete.</p></li>
+    /// <li>
+    /// <p>DELETED – Environment has been deleted.</p></li>
+    /// <li>
+    /// <p>FAILED_DELETION – Environment deletion has failed.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EnvironmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -225,15 +252,24 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The status of the environment creation.</p>
     /// <ul>
-    /// <li><p>CREATE_REQUESTED – Environment creation has been requested.</p></li>
-    /// <li><p>CREATING – Environment is in the process of being created.</p></li>
-    /// <li><p>FAILED_CREATION – Environment creation has failed.</p></li>
-    /// <li><p>CREATED – Environment is successfully created and is currently active.</p></li>
-    /// <li><p>DELETE REQUESTED – Environment deletion has been requested.</p></li>
-    /// <li><p>DELETING – Environment is in the process of being deleted.</p></li>
-    /// <li><p>RETRY_DELETION – Initial environment deletion failed, system is reattempting delete.</p></li>
-    /// <li><p>DELETED – Environment has been deleted.</p></li>
-    /// <li><p>FAILED_DELETION – Environment deletion has failed.</p></li>
+    /// <li>
+    /// <p>CREATE_REQUESTED – Environment creation has been requested.</p></li>
+    /// <li>
+    /// <p>CREATING – Environment is in the process of being created.</p></li>
+    /// <li>
+    /// <p>FAILED_CREATION – Environment creation has failed.</p></li>
+    /// <li>
+    /// <p>CREATED – Environment is successfully created and is currently active.</p></li>
+    /// <li>
+    /// <p>DELETE REQUESTED – Environment deletion has been requested.</p></li>
+    /// <li>
+    /// <p>DELETING – Environment is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>RETRY_DELETION – Initial environment deletion failed, system is reattempting delete.</p></li>
+    /// <li>
+    /// <p>DELETED – Environment has been deleted.</p></li>
+    /// <li>
+    /// <p>FAILED_DELETION – Environment deletion has failed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
         self.status = input;
@@ -241,15 +277,24 @@ impl KxEnvironmentBuilder {
     }
     /// <p>The status of the environment creation.</p>
     /// <ul>
-    /// <li><p>CREATE_REQUESTED – Environment creation has been requested.</p></li>
-    /// <li><p>CREATING – Environment is in the process of being created.</p></li>
-    /// <li><p>FAILED_CREATION – Environment creation has failed.</p></li>
-    /// <li><p>CREATED – Environment is successfully created and is currently active.</p></li>
-    /// <li><p>DELETE REQUESTED – Environment deletion has been requested.</p></li>
-    /// <li><p>DELETING – Environment is in the process of being deleted.</p></li>
-    /// <li><p>RETRY_DELETION – Initial environment deletion failed, system is reattempting delete.</p></li>
-    /// <li><p>DELETED – Environment has been deleted.</p></li>
-    /// <li><p>FAILED_DELETION – Environment deletion has failed.</p></li>
+    /// <li>
+    /// <p>CREATE_REQUESTED – Environment creation has been requested.</p></li>
+    /// <li>
+    /// <p>CREATING – Environment is in the process of being created.</p></li>
+    /// <li>
+    /// <p>FAILED_CREATION – Environment creation has failed.</p></li>
+    /// <li>
+    /// <p>CREATED – Environment is successfully created and is currently active.</p></li>
+    /// <li>
+    /// <p>DELETE REQUESTED – Environment deletion has been requested.</p></li>
+    /// <li>
+    /// <p>DELETING – Environment is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>RETRY_DELETION – Initial environment deletion failed, system is reattempting delete.</p></li>
+    /// <li>
+    /// <p>DELETED – Environment has been deleted.</p></li>
+    /// <li>
+    /// <p>FAILED_DELETION – Environment deletion has failed.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
         &self.status

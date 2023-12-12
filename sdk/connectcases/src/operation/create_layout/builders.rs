@@ -24,9 +24,11 @@ impl CreateLayoutInputBuilder {
 ///
 /// <p>Creates a layout in the Cases domain. Layouts define the following configuration in the top section and More Info tab of the Cases user interface:</p>
 /// <ul>
-/// <li><p>Fields to display to the users</p></li>
-/// <li><p>Field ordering</p></li>
-/// </ul> <note>
+/// <li>
+/// <p>Fields to display to the users</p></li>
+/// <li>
+/// <p>Field ordering</p></li>
+/// </ul><note>
 /// <p>Title and Status fields cannot be part of layouts since they are not configurable.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -13,11 +13,11 @@ pub struct UpdateDevEnvironmentInput {
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p> <note>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p><note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
-    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p> <note>
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p><note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub inactivity_timeout_minutes: ::std::option::Option<i32>,
@@ -47,13 +47,13 @@ impl UpdateDevEnvironmentInput {
     pub fn ides(&self) -> &[crate::types::IdeConfiguration] {
         self.ides.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p> <note>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p><note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p> <note>
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p><note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub fn inactivity_timeout_minutes(&self) -> ::std::option::Option<i32> {
@@ -164,41 +164,41 @@ impl UpdateDevEnvironmentInputBuilder {
     pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
         &self.ides
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p> <note>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p><note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p> <note>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p><note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p> <note>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p><note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
     }
-    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p> <note>
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p><note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub fn inactivity_timeout_minutes(mut self, input: i32) -> Self {
         self.inactivity_timeout_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p> <note>
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p><note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub fn set_inactivity_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inactivity_timeout_minutes = input;
         self
     }
-    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p> <note>
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p><note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub fn get_inactivity_timeout_minutes(&self) -> &::std::option::Option<i32> {

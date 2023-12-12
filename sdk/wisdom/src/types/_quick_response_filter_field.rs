@@ -3,18 +3,30 @@
 /// <p>The quick response fields to filter the quick response query results by.</p>
 /// <p>The following is the list of supported field names.</p>
 /// <ul>
-/// <li><p>name</p></li>
-/// <li><p>description</p></li>
-/// <li><p>shortcutKey</p></li>
-/// <li><p>isActive</p></li>
-/// <li><p>channels</p></li>
-/// <li><p>language</p></li>
-/// <li><p>contentType</p></li>
-/// <li><p>createdTime</p></li>
-/// <li><p>lastModifiedTime</p></li>
-/// <li><p>lastModifiedBy</p></li>
-/// <li><p>groupingConfiguration.criteria</p></li>
-/// <li><p>groupingConfiguration.values</p></li>
+/// <li>
+/// <p>name</p></li>
+/// <li>
+/// <p>description</p></li>
+/// <li>
+/// <p>shortcutKey</p></li>
+/// <li>
+/// <p>isActive</p></li>
+/// <li>
+/// <p>channels</p></li>
+/// <li>
+/// <p>language</p></li>
+/// <li>
+/// <p>contentType</p></li>
+/// <li>
+/// <p>createdTime</p></li>
+/// <li>
+/// <p>lastModifiedTime</p></li>
+/// <li>
+/// <p>lastModifiedBy</p></li>
+/// <li>
+/// <p>groupingConfiguration.criteria</p></li>
+/// <li>
+/// <p>groupingConfiguration.values</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

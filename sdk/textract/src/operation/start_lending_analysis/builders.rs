@@ -27,9 +27,12 @@ impl StartLendingAnalysisInputBuilder {
 /// <p><code>StartLendingAnalysis</code> returns a job identifier (<code>JobId</code>) that you use to get the results of the operation. When the text analysis is finished, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that you specify in <code>NotificationChannel</code>. To get the results of the text analysis operation, first check that the status value published to the Amazon SNS topic is SUCCEEDED. If the status is SUCCEEDED you can call either <code>GetLendingAnalysis</code> or <code>GetLendingAnalysisSummary</code> and provide the <code>JobId</code> to obtain the results of the analysis.</p>
 /// <p>If using <code>OutputConfig</code> to specify an Amazon S3 bucket, the output will be contained within the specified prefix in a directory labeled with the job-id. In the directory there are 3 sub-directories:</p>
 /// <ul>
-/// <li><p>detailedResponse (contains the GetLendingAnalysis response)</p></li>
-/// <li><p>summaryResponse (for the GetLendingAnalysisSummary response)</p></li>
-/// <li><p>splitDocuments (documents split across logical boundaries)</p></li>
+/// <li>
+/// <p>detailedResponse (contains the GetLendingAnalysis response)</p></li>
+/// <li>
+/// <p>summaryResponse (for the GetLendingAnalysisSummary response)</p></li>
+/// <li>
+/// <p>splitDocuments (documents split across logical boundaries)</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartLendingAnalysisFluentBuilder {

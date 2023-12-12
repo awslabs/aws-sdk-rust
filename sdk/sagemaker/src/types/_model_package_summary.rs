@@ -20,9 +20,12 @@ pub struct ModelPackageSummary {
     pub model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>APPROVED</code> - The model is approved</p></li>
-    /// <li><p><code>REJECTED</code> - The model is rejected.</p></li>
-    /// <li><p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The model is approved</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The model is rejected.</p></li>
+    /// <li>
+    /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
 }
@@ -57,9 +60,12 @@ impl ModelPackageSummary {
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>APPROVED</code> - The model is approved</p></li>
-    /// <li><p><code>REJECTED</code> - The model is rejected.</p></li>
-    /// <li><p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The model is approved</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The model is rejected.</p></li>
+    /// <li>
+    /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
@@ -189,9 +195,12 @@ impl ModelPackageSummaryBuilder {
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>APPROVED</code> - The model is approved</p></li>
-    /// <li><p><code>REJECTED</code> - The model is rejected.</p></li>
-    /// <li><p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The model is approved</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The model is rejected.</p></li>
+    /// <li>
+    /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub fn model_approval_status(mut self, input: crate::types::ModelApprovalStatus) -> Self {
         self.model_approval_status = ::std::option::Option::Some(input);
@@ -199,9 +208,12 @@ impl ModelPackageSummaryBuilder {
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>APPROVED</code> - The model is approved</p></li>
-    /// <li><p><code>REJECTED</code> - The model is rejected.</p></li>
-    /// <li><p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The model is approved</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The model is rejected.</p></li>
+    /// <li>
+    /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub fn set_model_approval_status(mut self, input: ::std::option::Option<crate::types::ModelApprovalStatus>) -> Self {
         self.model_approval_status = input;
@@ -209,9 +221,12 @@ impl ModelPackageSummaryBuilder {
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>APPROVED</code> - The model is approved</p></li>
-    /// <li><p><code>REJECTED</code> - The model is rejected.</p></li>
-    /// <li><p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The model is approved</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The model is rejected.</p></li>
+    /// <li>
+    /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         &self.model_approval_status

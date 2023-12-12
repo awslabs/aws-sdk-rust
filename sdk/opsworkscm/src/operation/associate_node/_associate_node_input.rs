@@ -10,12 +10,15 @@ pub struct AssociateNodeInput {
     /// <p>Engine attributes used for associating the node.</p>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
-    /// <li><p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
-    /// <li><p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
     /// </ul>
     pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
 }
@@ -31,12 +34,15 @@ impl AssociateNodeInput {
     /// <p>Engine attributes used for associating the node.</p>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
-    /// <li><p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
-    /// <li><p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
@@ -97,12 +103,15 @@ impl AssociateNodeInputBuilder {
     /// <p>Engine attributes used for associating the node.</p>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
-    /// <li><p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
-    /// <li><p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
     /// </ul>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         let mut v = self.engine_attributes.unwrap_or_default();
@@ -113,12 +122,15 @@ impl AssociateNodeInputBuilder {
     /// <p>Engine attributes used for associating the node.</p>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
-    /// <li><p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
-    /// <li><p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
     /// </ul>
     pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.engine_attributes = input;
@@ -127,12 +139,15 @@ impl AssociateNodeInputBuilder {
     /// <p>Engine attributes used for associating the node.</p>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Chef</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
-    /// <li><p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
+    /// <li>
+    /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li>
+    /// <p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
-    /// <li><p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
     /// </ul>
     pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         &self.engine_attributes

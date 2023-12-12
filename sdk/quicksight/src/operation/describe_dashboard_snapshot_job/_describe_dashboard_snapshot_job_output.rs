@@ -17,10 +17,14 @@ pub struct DescribeDashboardSnapshotJobOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of a job. The status updates as the job executes. This shows one of the following values.</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code> - The job was completed successfully.</p></li>
-    /// <li><p><code>FAILED</code> - The job failed to execute.</p></li>
-    /// <li><p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
-    /// <li><p><code>RUNNING</code> - The job is still running.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The job was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The job failed to execute.</p></li>
+    /// <li>
+    /// <p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> - The job is still running.</p></li>
     /// </ul>
     pub job_status: ::std::option::Option<crate::types::SnapshotJobStatus>,
     /// <p>The time that the snapshot job was created.</p>
@@ -60,10 +64,14 @@ impl DescribeDashboardSnapshotJobOutput {
     }
     /// <p>Indicates the status of a job. The status updates as the job executes. This shows one of the following values.</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code> - The job was completed successfully.</p></li>
-    /// <li><p><code>FAILED</code> - The job failed to execute.</p></li>
-    /// <li><p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
-    /// <li><p><code>RUNNING</code> - The job is still running.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The job was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The job failed to execute.</p></li>
+    /// <li>
+    /// <p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> - The job is still running.</p></li>
     /// </ul>
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::SnapshotJobStatus> {
         self.job_status.as_ref()
@@ -201,10 +209,14 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
     }
     /// <p>Indicates the status of a job. The status updates as the job executes. This shows one of the following values.</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code> - The job was completed successfully.</p></li>
-    /// <li><p><code>FAILED</code> - The job failed to execute.</p></li>
-    /// <li><p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
-    /// <li><p><code>RUNNING</code> - The job is still running.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The job was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The job failed to execute.</p></li>
+    /// <li>
+    /// <p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> - The job is still running.</p></li>
     /// </ul>
     pub fn job_status(mut self, input: crate::types::SnapshotJobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -212,10 +224,14 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
     }
     /// <p>Indicates the status of a job. The status updates as the job executes. This shows one of the following values.</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code> - The job was completed successfully.</p></li>
-    /// <li><p><code>FAILED</code> - The job failed to execute.</p></li>
-    /// <li><p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
-    /// <li><p><code>RUNNING</code> - The job is still running.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The job was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The job failed to execute.</p></li>
+    /// <li>
+    /// <p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> - The job is still running.</p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::SnapshotJobStatus>) -> Self {
         self.job_status = input;
@@ -223,10 +239,14 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
     }
     /// <p>Indicates the status of a job. The status updates as the job executes. This shows one of the following values.</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code> - The job was completed successfully.</p></li>
-    /// <li><p><code>FAILED</code> - The job failed to execute.</p></li>
-    /// <li><p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
-    /// <li><p><code>RUNNING</code> - The job is still running.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The job was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The job failed to execute.</p></li>
+    /// <li>
+    /// <p><code>QUEUED</code> - The job is queued and hasn't started yet.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> - The job is still running.</p></li>
     /// </ul>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::SnapshotJobStatus> {
         &self.job_status

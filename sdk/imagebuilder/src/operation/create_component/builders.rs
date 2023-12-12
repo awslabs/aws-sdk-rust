@@ -24,8 +24,10 @@ impl CreateComponentInputBuilder {
 ///
 /// <p>Creates a new component that can be used to build, validate, test, and assess your image. The component is based on a YAML document that you specify using exactly one of the following methods:</p>
 /// <ul>
-/// <li><p>Inline, using the <code>data</code> property in the request body.</p></li>
-/// <li><p>A URL that points to a YAML document file stored in Amazon S3, using the <code>uri</code> property in the request body.</p></li>
+/// <li>
+/// <p>Inline, using the <code>data</code> property in the request body.</p></li>
+/// <li>
+/// <p>A URL that points to a YAML document file stored in Amazon S3, using the <code>uri</code> property in the request body.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateComponentFluentBuilder {
@@ -126,7 +128,7 @@ impl CreateComponentFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -146,7 +148,7 @@ impl CreateComponentFluentBuilder {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -166,7 +168,7 @@ impl CreateComponentFluentBuilder {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>

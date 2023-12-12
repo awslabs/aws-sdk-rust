@@ -28,9 +28,12 @@ impl ClaimGameServerInputBuilder {
 /// <p>When a game server is successfully claimed, connection information is returned. A claimed game server's utilization status remains <code>AVAILABLE</code> while the claim status is set to <code>CLAIMED</code> for up to 60 seconds. This time period gives the game server time to update its status to <code>UTILIZED</code> after players join. If the game server's status is not updated within 60 seconds, the game server reverts to unclaimed status and is available to be claimed by another request. The claim time period is a fixed value and is not configurable.</p>
 /// <p>If you try to claim a specific game server, this request will fail in the following cases:</p>
 /// <ul>
-/// <li><p>If the game server utilization status is <code>UTILIZED</code>.</p></li>
-/// <li><p>If the game server claim status is <code>CLAIMED</code>.</p></li>
-/// <li><p>If the game server is running on an instance in <code>DRAINING</code> status and the provided filter option does not allow placing on <code>DRAINING</code> instances.</p></li>
+/// <li>
+/// <p>If the game server utilization status is <code>UTILIZED</code>.</p></li>
+/// <li>
+/// <p>If the game server claim status is <code>CLAIMED</code>.</p></li>
+/// <li>
+/// <p>If the game server is running on an instance in <code>DRAINING</code> status and the provided filter option does not allow placing on <code>DRAINING</code> instances.</p></li>
 /// </ul>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a></p>

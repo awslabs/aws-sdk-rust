@@ -22,12 +22,16 @@ impl StartMessageMoveTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `StartMessageMoveTask`.
 ///
-/// <p>Starts an asynchronous task to move messages from a specified source queue to a specified destination queue.</p> <note>
+/// <p>Starts an asynchronous task to move messages from a specified source queue to a specified destination queue.</p><note>
 /// <ul>
-/// <li><p>This action is currently limited to supporting message redrive from queues that are configured as <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues (DLQs)</a> of other Amazon SQS queues only. Non-SQS queue sources of dead-letter queues, such as Lambda or Amazon SNS topics, are currently not supported.</p></li>
-/// <li><p>In dead-letter queues redrive context, the <code>StartMessageMoveTask</code> the source queue is the DLQ, while the destination queue can be the original source queue (from which the messages were driven to the dead-letter-queue), or a custom destination queue.</p></li>
-/// <li><p>Currently, only standard queues support redrive. FIFO queues don't support redrive.</p></li>
-/// <li><p>Only one active message movement task is supported per queue at any given time.</p></li>
+/// <li>
+/// <p>This action is currently limited to supporting message redrive from queues that are configured as <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues (DLQs)</a> of other Amazon SQS queues only. Non-SQS queue sources of dead-letter queues, such as Lambda or Amazon SNS topics, are currently not supported.</p></li>
+/// <li>
+/// <p>In dead-letter queues redrive context, the <code>StartMessageMoveTask</code> the source queue is the DLQ, while the destination queue can be the original source queue (from which the messages were driven to the dead-letter-queue), or a custom destination queue.</p></li>
+/// <li>
+/// <p>Currently, only standard queues support redrive. FIFO queues don't support redrive.</p></li>
+/// <li>
+/// <p>Only one active message movement task is supported per queue at any given time.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

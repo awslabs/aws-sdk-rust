@@ -24,12 +24,17 @@ impl CreateChannelModeratorInputBuilder {
 ///
 /// <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p>
 /// <ul>
-/// <li><p>Add and remove other members of the channel.</p></li>
-/// <li><p>Add and remove other moderators of the channel.</p></li>
-/// <li><p>Add and remove user bans for the channel.</p></li>
-/// <li><p>Redact messages in the channel.</p></li>
-/// <li><p>List messages in the channel.</p></li>
-/// </ul> <note>
+/// <li>
+/// <p>Add and remove other members of the channel.</p></li>
+/// <li>
+/// <p>Add and remove other moderators of the channel.</p></li>
+/// <li>
+/// <p>Add and remove user bans for the channel.</p></li>
+/// <li>
+/// <p>Redact messages in the channel.</p></li>
+/// <li>
+/// <p>List messages in the channel.</p></li>
+/// </ul><note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>of the user that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

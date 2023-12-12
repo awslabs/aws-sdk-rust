@@ -11,10 +11,14 @@ pub struct UsageStatisticsFilter {
     /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported field are:</p>
     /// <ul>
-    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
-    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
-    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
-    /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
+    /// <li>
+    /// <p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
+    /// <li>
+    /// <p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
+    /// <li>
+    /// <p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -30,10 +34,14 @@ impl UsageStatisticsFilter {
     /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported field are:</p>
     /// <ul>
-    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
-    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
-    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
-    /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
+    /// <li>
+    /// <p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
+    /// <li>
+    /// <p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
+    /// <li>
+    /// <p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
@@ -92,10 +100,14 @@ impl UsageStatisticsFilterBuilder {
     /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported field are:</p>
     /// <ul>
-    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
-    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
-    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
-    /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
+    /// <li>
+    /// <p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
+    /// <li>
+    /// <p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
+    /// <li>
+    /// <p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
@@ -106,10 +118,14 @@ impl UsageStatisticsFilterBuilder {
     /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported field are:</p>
     /// <ul>
-    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
-    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
-    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
-    /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
+    /// <li>
+    /// <p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
+    /// <li>
+    /// <p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
+    /// <li>
+    /// <p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
@@ -118,10 +134,14 @@ impl UsageStatisticsFilterBuilder {
     /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported field are:</p>
     /// <ul>
-    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
-    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
-    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
-    /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
+    /// <li>
+    /// <p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
+    /// <li>
+    /// <p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
+    /// <li>
+    /// <p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values

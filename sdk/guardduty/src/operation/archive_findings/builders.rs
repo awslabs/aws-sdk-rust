@@ -22,7 +22,7 @@ impl ArchiveFindingsInputBuilder {
 }
 /// Fluent builder constructing a request to `ArchiveFindings`.
 ///
-/// <p>Archives GuardDuty findings that are specified by the list of finding IDs.</p> <note>
+/// <p>Archives GuardDuty findings that are specified by the list of finding IDs.</p><note>
 /// <p>Only the administrator account can archive findings. Member accounts don't have permission to archive findings from their accounts.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

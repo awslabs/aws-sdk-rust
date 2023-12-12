@@ -138,8 +138,10 @@ impl CreateGroupFluentBuilder {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li><p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p></li>
-    /// <li><p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p></li>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p></li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub fn insights_configuration(mut self, input: crate::types::InsightsConfiguration) -> Self {
         self.inner = self.inner.insights_configuration(input);
@@ -147,8 +149,10 @@ impl CreateGroupFluentBuilder {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li><p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p></li>
-    /// <li><p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p></li>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p></li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub fn set_insights_configuration(mut self, input: ::std::option::Option<crate::types::InsightsConfiguration>) -> Self {
         self.inner = self.inner.set_insights_configuration(input);
@@ -156,8 +160,10 @@ impl CreateGroupFluentBuilder {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li><p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p></li>
-    /// <li><p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p></li>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p></li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub fn get_insights_configuration(&self) -> &::std::option::Option<crate::types::InsightsConfiguration> {
         self.inner.get_insights_configuration()
@@ -169,12 +175,18 @@ impl CreateGroupFluentBuilder {
     /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of user-applied tags per resource: 50</p></li>
-    /// <li><p>Maximum tag key length: 128 Unicode characters</p></li>
-    /// <li><p>Maximum tag value length: 256 Unicode characters</p></li>
-    /// <li><p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p></li>
-    /// <li><p>Tag keys and values are case sensitive.</p></li>
-    /// <li><p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p></li>
+    /// <li>
+    /// <p>Maximum number of user-applied tags per resource: 50</p></li>
+    /// <li>
+    /// <p>Maximum tag key length: 128 Unicode characters</p></li>
+    /// <li>
+    /// <p>Maximum tag value length: 256 Unicode characters</p></li>
+    /// <li>
+    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p></li>
+    /// <li>
+    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
@@ -183,12 +195,18 @@ impl CreateGroupFluentBuilder {
     /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of user-applied tags per resource: 50</p></li>
-    /// <li><p>Maximum tag key length: 128 Unicode characters</p></li>
-    /// <li><p>Maximum tag value length: 256 Unicode characters</p></li>
-    /// <li><p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p></li>
-    /// <li><p>Tag keys and values are case sensitive.</p></li>
-    /// <li><p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p></li>
+    /// <li>
+    /// <p>Maximum number of user-applied tags per resource: 50</p></li>
+    /// <li>
+    /// <p>Maximum tag key length: 128 Unicode characters</p></li>
+    /// <li>
+    /// <p>Maximum tag value length: 256 Unicode characters</p></li>
+    /// <li>
+    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p></li>
+    /// <li>
+    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -197,12 +215,18 @@ impl CreateGroupFluentBuilder {
     /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of user-applied tags per resource: 50</p></li>
-    /// <li><p>Maximum tag key length: 128 Unicode characters</p></li>
-    /// <li><p>Maximum tag value length: 256 Unicode characters</p></li>
-    /// <li><p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p></li>
-    /// <li><p>Tag keys and values are case sensitive.</p></li>
-    /// <li><p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p></li>
+    /// <li>
+    /// <p>Maximum number of user-applied tags per resource: 50</p></li>
+    /// <li>
+    /// <p>Maximum tag key length: 128 Unicode characters</p></li>
+    /// <li>
+    /// <p>Maximum tag value length: 256 Unicode characters</p></li>
+    /// <li>
+    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p></li>
+    /// <li>
+    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()

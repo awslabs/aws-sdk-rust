@@ -6,7 +6,7 @@
 pub struct FirewallPolicyResponse {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     pub firewall_policy_name: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
     pub firewall_policy_arn: ::std::string::String,
@@ -35,7 +35,7 @@ impl FirewallPolicyResponse {
         use std::ops::Deref;
         self.firewall_policy_name.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
     pub fn firewall_policy_arn(&self) -> &str {
@@ -121,7 +121,7 @@ impl FirewallPolicyResponseBuilder {
     pub fn get_firewall_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_policy_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
     /// This field is required.
@@ -129,14 +129,14 @@ impl FirewallPolicyResponseBuilder {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
     pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
     pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {

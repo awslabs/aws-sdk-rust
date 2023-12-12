@@ -23,7 +23,7 @@ impl ListHandshakesForAccountInputBuilder {
 /// Fluent builder constructing a request to `ListHandshakesForAccount`.
 ///
 /// <p>Lists the current handshakes that are associated with the account of the requesting user.</p>
-/// <p>Handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, <code>CANCELED</code>, or <code>EXPIRED</code> appear in the results of this API for only 30 days after changing to that state. After that, they're deleted and no longer accessible.</p> <note>
+/// <p>Handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, <code>CANCELED</code>, or <code>EXPIRED</code> appear in the results of this API for only 30 days after changing to that state. After that, they're deleted and no longer accessible.</p><note>
 /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
 /// </note>
 /// <p>This operation can be called from any account in the organization.</p>

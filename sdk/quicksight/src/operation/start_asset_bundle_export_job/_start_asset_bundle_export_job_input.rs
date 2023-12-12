@@ -9,13 +9,20 @@ pub struct StartAssetBundleExportJobInput {
     pub asset_bundle_export_job_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
     /// <ul>
-    /// <li><p><code>Analysis</code></p></li>
-    /// <li><p><code>Dashboard</code></p></li>
-    /// <li><p><code>DataSet</code></p></li>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>RefreshSchedule</code></p></li>
-    /// <li><p><code>Theme</code></p></li>
-    /// <li><p><code>VPCConnection</code></p></li>
+    /// <li>
+    /// <p><code>Analysis</code></p></li>
+    /// <li>
+    /// <p><code>Dashboard</code></p></li>
+    /// <li>
+    /// <p><code>DataSet</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>RefreshSchedule</code></p></li>
+    /// <li>
+    /// <p><code>Theme</code></p></li>
+    /// <li>
+    /// <p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,13 +51,20 @@ impl StartAssetBundleExportJobInput {
     }
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
     /// <ul>
-    /// <li><p><code>Analysis</code></p></li>
-    /// <li><p><code>Dashboard</code></p></li>
-    /// <li><p><code>DataSet</code></p></li>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>RefreshSchedule</code></p></li>
-    /// <li><p><code>Theme</code></p></li>
-    /// <li><p><code>VPCConnection</code></p></li>
+    /// <li>
+    /// <p><code>Analysis</code></p></li>
+    /// <li>
+    /// <p><code>Dashboard</code></p></li>
+    /// <li>
+    /// <p><code>DataSet</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>RefreshSchedule</code></p></li>
+    /// <li>
+    /// <p><code>Theme</code></p></li>
+    /// <li>
+    /// <p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
     ///
@@ -145,13 +159,20 @@ impl StartAssetBundleExportJobInputBuilder {
     ///
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
     /// <ul>
-    /// <li><p><code>Analysis</code></p></li>
-    /// <li><p><code>Dashboard</code></p></li>
-    /// <li><p><code>DataSet</code></p></li>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>RefreshSchedule</code></p></li>
-    /// <li><p><code>Theme</code></p></li>
-    /// <li><p><code>VPCConnection</code></p></li>
+    /// <li>
+    /// <p><code>Analysis</code></p></li>
+    /// <li>
+    /// <p><code>Dashboard</code></p></li>
+    /// <li>
+    /// <p><code>DataSet</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>RefreshSchedule</code></p></li>
+    /// <li>
+    /// <p><code>Theme</code></p></li>
+    /// <li>
+    /// <p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,13 +183,20 @@ impl StartAssetBundleExportJobInputBuilder {
     }
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
     /// <ul>
-    /// <li><p><code>Analysis</code></p></li>
-    /// <li><p><code>Dashboard</code></p></li>
-    /// <li><p><code>DataSet</code></p></li>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>RefreshSchedule</code></p></li>
-    /// <li><p><code>Theme</code></p></li>
-    /// <li><p><code>VPCConnection</code></p></li>
+    /// <li>
+    /// <p><code>Analysis</code></p></li>
+    /// <li>
+    /// <p><code>Dashboard</code></p></li>
+    /// <li>
+    /// <p><code>DataSet</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>RefreshSchedule</code></p></li>
+    /// <li>
+    /// <p><code>Theme</code></p></li>
+    /// <li>
+    /// <p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -177,13 +205,20 @@ impl StartAssetBundleExportJobInputBuilder {
     }
     /// <p>An array of resource ARNs to export. The following resources are supported.</p>
     /// <ul>
-    /// <li><p><code>Analysis</code></p></li>
-    /// <li><p><code>Dashboard</code></p></li>
-    /// <li><p><code>DataSet</code></p></li>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>RefreshSchedule</code></p></li>
-    /// <li><p><code>Theme</code></p></li>
-    /// <li><p><code>VPCConnection</code></p></li>
+    /// <li>
+    /// <p><code>Analysis</code></p></li>
+    /// <li>
+    /// <p><code>Dashboard</code></p></li>
+    /// <li>
+    /// <p><code>DataSet</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>RefreshSchedule</code></p></li>
+    /// <li>
+    /// <p><code>Theme</code></p></li>
+    /// <li>
+    /// <p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

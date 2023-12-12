@@ -30,9 +30,12 @@ impl DeleteGeoMatchSetInputBuilder {
 /// <p>If you just want to remove a <code>GeoMatchSet</code> from a <code>Rule</code>, use <code>UpdateRule</code>.</p>
 /// <p>To permanently delete a <code>GeoMatchSet</code> from AWS WAF, perform the following steps:</p>
 /// <ol>
-/// <li><p>Update the <code>GeoMatchSet</code> to remove any countries. For more information, see <code>UpdateGeoMatchSet</code>.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteGeoMatchSet</code> request.</p></li>
-/// <li><p>Submit a <code>DeleteGeoMatchSet</code> request.</p></li>
+/// <li>
+/// <p>Update the <code>GeoMatchSet</code> to remove any countries. For more information, see <code>UpdateGeoMatchSet</code>.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteGeoMatchSet</code> request.</p></li>
+/// <li>
+/// <p>Submit a <code>DeleteGeoMatchSet</code> request.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGeoMatchSetFluentBuilder {

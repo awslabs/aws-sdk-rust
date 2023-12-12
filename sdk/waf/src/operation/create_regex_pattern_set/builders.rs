@@ -29,10 +29,14 @@ impl CreateRegexPatternSetInputBuilder {
 /// <p>Creates a <code>RegexPatternSet</code>. You then use <code>UpdateRegexPatternSet</code> to specify the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those requests.</p>
 /// <p>To create and configure a <code>RegexPatternSet</code>, perform the following steps:</p>
 /// <ol>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>CreateRegexPatternSet</code> request.</p></li>
-/// <li><p>Submit a <code>CreateRegexPatternSet</code> request.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateRegexPatternSet</code> request.</p></li>
-/// <li><p>Submit an <code>UpdateRegexPatternSet</code> request to specify the string that you want AWS WAF to watch for.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>CreateRegexPatternSet</code> request.</p></li>
+/// <li>
+/// <p>Submit a <code>CreateRegexPatternSet</code> request.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of an <code>UpdateRegexPatternSet</code> request.</p></li>
+/// <li>
+/// <p>Submit an <code>UpdateRegexPatternSet</code> request to specify the string that you want AWS WAF to watch for.</p></li>
 /// </ol>
 /// <p>For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

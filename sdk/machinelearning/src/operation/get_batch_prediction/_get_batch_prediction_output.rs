@@ -22,11 +22,16 @@ pub struct GetBatchPredictionOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The batch predictions are in progress.</p></li>
-    /// <li><p><code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The batch prediction process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The batch predictions are in progress.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The batch prediction process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>The location of an Amazon S3 bucket or directory to receive the operation results.</p>
@@ -82,11 +87,16 @@ impl GetBatchPredictionOutput {
     }
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The batch predictions are in progress.</p></li>
-    /// <li><p><code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The batch prediction process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The batch predictions are in progress.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The batch prediction process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EntityStatus> {
         self.status.as_ref()
@@ -274,11 +284,16 @@ impl GetBatchPredictionOutputBuilder {
     }
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The batch predictions are in progress.</p></li>
-    /// <li><p><code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The batch prediction process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The batch predictions are in progress.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The batch prediction process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EntityStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -286,11 +301,16 @@ impl GetBatchPredictionOutputBuilder {
     }
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The batch predictions are in progress.</p></li>
-    /// <li><p><code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The batch prediction process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The batch predictions are in progress.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The batch prediction process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EntityStatus>) -> Self {
         self.status = input;
@@ -298,11 +318,16 @@ impl GetBatchPredictionOutputBuilder {
     }
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The batch predictions are in progress.</p></li>
-    /// <li><p><code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The batch prediction process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The batch predictions are in progress.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The batch prediction process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EntityStatus> {
         &self.status

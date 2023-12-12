@@ -5,17 +5,20 @@
 pub struct CreateRouteCalculatorOutput {
     /// <p>The name of the route calculator resource.</p>
     /// <ul>
-    /// <li><p>For example, <code>ExampleRouteCalculator</code>.</p></li>
+    /// <li>
+    /// <p>For example, <code>ExampleRouteCalculator</code>.</p></li>
     /// </ul>
     pub calculator_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code></p></li>
     /// </ul>
     pub calculator_arn: ::std::string::String,
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li>
+    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
     /// </ul>
     pub create_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
@@ -23,7 +26,8 @@ pub struct CreateRouteCalculatorOutput {
 impl CreateRouteCalculatorOutput {
     /// <p>The name of the route calculator resource.</p>
     /// <ul>
-    /// <li><p>For example, <code>ExampleRouteCalculator</code>.</p></li>
+    /// <li>
+    /// <p>For example, <code>ExampleRouteCalculator</code>.</p></li>
     /// </ul>
     pub fn calculator_name(&self) -> &str {
         use std::ops::Deref;
@@ -31,7 +35,8 @@ impl CreateRouteCalculatorOutput {
     }
     /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code></p></li>
     /// </ul>
     pub fn calculator_arn(&self) -> &str {
         use std::ops::Deref;
@@ -39,7 +44,8 @@ impl CreateRouteCalculatorOutput {
     }
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li>
+    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
     /// </ul>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
@@ -69,7 +75,8 @@ pub struct CreateRouteCalculatorOutputBuilder {
 impl CreateRouteCalculatorOutputBuilder {
     /// <p>The name of the route calculator resource.</p>
     /// <ul>
-    /// <li><p>For example, <code>ExampleRouteCalculator</code>.</p></li>
+    /// <li>
+    /// <p>For example, <code>ExampleRouteCalculator</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,7 +85,8 @@ impl CreateRouteCalculatorOutputBuilder {
     }
     /// <p>The name of the route calculator resource.</p>
     /// <ul>
-    /// <li><p>For example, <code>ExampleRouteCalculator</code>.</p></li>
+    /// <li>
+    /// <p>For example, <code>ExampleRouteCalculator</code>.</p></li>
     /// </ul>
     pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculator_name = input;
@@ -86,14 +94,16 @@ impl CreateRouteCalculatorOutputBuilder {
     }
     /// <p>The name of the route calculator resource.</p>
     /// <ul>
-    /// <li><p>For example, <code>ExampleRouteCalculator</code>.</p></li>
+    /// <li>
+    /// <p>For example, <code>ExampleRouteCalculator</code>.</p></li>
     /// </ul>
     pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.calculator_name
     }
     /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn calculator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,7 +112,8 @@ impl CreateRouteCalculatorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code></p></li>
     /// </ul>
     pub fn set_calculator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculator_arn = input;
@@ -110,14 +121,16 @@ impl CreateRouteCalculatorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code></p></li>
     /// </ul>
     pub fn get_calculator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.calculator_arn
     }
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li>
+    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -126,7 +139,8 @@ impl CreateRouteCalculatorOutputBuilder {
     }
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li>
+    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
     /// </ul>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
@@ -134,7 +148,8 @@ impl CreateRouteCalculatorOutputBuilder {
     }
     /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li>
+    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
     /// </ul>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time

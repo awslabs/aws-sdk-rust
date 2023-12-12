@@ -6,17 +6,24 @@
 pub struct AnalyticsUtteranceMetricResult {
     /// <p>The metric that you requested.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of utterances.</p></li>
-    /// <li><p><code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p></li>
-    /// <li><p><code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p></li>
-    /// <li><p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of utterances.</p></li>
+    /// <li>
+    /// <p><code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p></li>
+    /// <li>
+    /// <p><code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p></li>
+    /// <li>
+    /// <p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::AnalyticsUtteranceMetricName>,
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
-    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
     /// <p>The value of the summary statistic for the metric that you requested.</p>
@@ -25,19 +32,26 @@ pub struct AnalyticsUtteranceMetricResult {
 impl AnalyticsUtteranceMetricResult {
     /// <p>The metric that you requested.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of utterances.</p></li>
-    /// <li><p><code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p></li>
-    /// <li><p><code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p></li>
-    /// <li><p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of utterances.</p></li>
+    /// <li>
+    /// <p><code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p></li>
+    /// <li>
+    /// <p><code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p></li>
+    /// <li>
+    /// <p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsUtteranceMetricName> {
         self.name.as_ref()
     }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
-    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn statistic(&self) -> ::std::option::Option<&crate::types::AnalyticsMetricStatistic> {
         self.statistic.as_ref()
@@ -65,10 +79,14 @@ pub struct AnalyticsUtteranceMetricResultBuilder {
 impl AnalyticsUtteranceMetricResultBuilder {
     /// <p>The metric that you requested.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of utterances.</p></li>
-    /// <li><p><code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p></li>
-    /// <li><p><code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p></li>
-    /// <li><p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of utterances.</p></li>
+    /// <li>
+    /// <p><code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p></li>
+    /// <li>
+    /// <p><code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p></li>
+    /// <li>
+    /// <p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
     /// </ul>
     pub fn name(mut self, input: crate::types::AnalyticsUtteranceMetricName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -76,10 +94,14 @@ impl AnalyticsUtteranceMetricResultBuilder {
     }
     /// <p>The metric that you requested.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of utterances.</p></li>
-    /// <li><p><code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p></li>
-    /// <li><p><code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p></li>
-    /// <li><p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of utterances.</p></li>
+    /// <li>
+    /// <p><code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p></li>
+    /// <li>
+    /// <p><code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p></li>
+    /// <li>
+    /// <p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsUtteranceMetricName>) -> Self {
         self.name = input;
@@ -87,19 +109,26 @@ impl AnalyticsUtteranceMetricResultBuilder {
     }
     /// <p>The metric that you requested.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of utterances.</p></li>
-    /// <li><p><code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p></li>
-    /// <li><p><code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p></li>
-    /// <li><p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of utterances.</p></li>
+    /// <li>
+    /// <p><code>Missed</code> – The number of utterances that Amazon Lex failed to recognize.</p></li>
+    /// <li>
+    /// <p><code>Detected</code> – The number of utterances that Amazon Lex managed to detect.</p></li>
+    /// <li>
+    /// <p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsUtteranceMetricName> {
         &self.name
     }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
-    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn statistic(mut self, input: crate::types::AnalyticsMetricStatistic) -> Self {
         self.statistic = ::std::option::Option::Some(input);
@@ -107,9 +136,12 @@ impl AnalyticsUtteranceMetricResultBuilder {
     }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
-    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
         self.statistic = input;
@@ -117,9 +149,12 @@ impl AnalyticsUtteranceMetricResultBuilder {
     }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
-    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Average</code> – The total count divided by the number of utterances in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::AnalyticsMetricStatistic> {
         &self.statistic

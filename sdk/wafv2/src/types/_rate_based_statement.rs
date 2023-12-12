@@ -5,28 +5,42 @@
 /// <p>Each unique set of values for the aggregation keys that you specify is a separate aggregation instance, with the value from each key contributing to the aggregation instance definition.</p>
 /// <p>For example, assume the rule evaluates web requests with the following IP address and HTTP method values:</p>
 /// <ul>
-/// <li><p>IP address 10.1.1.1, HTTP method POST</p></li>
-/// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
-/// <li><p>IP address 127.0.0.0, HTTP method POST</p></li>
-/// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
+/// <li>
+/// <p>IP address 10.1.1.1, HTTP method POST</p></li>
+/// <li>
+/// <p>IP address 10.1.1.1, HTTP method GET</p></li>
+/// <li>
+/// <p>IP address 127.0.0.0, HTTP method POST</p></li>
+/// <li>
+/// <p>IP address 10.1.1.1, HTTP method GET</p></li>
 /// </ul>
 /// <p>The rule would create different aggregation instances according to your aggregation criteria, for example:</p>
 /// <ul>
-/// <li><p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
+/// <li>
+/// <p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
 /// <ul>
-/// <li><p>IP address 10.1.1.1: count 3</p></li>
-/// <li><p>IP address 127.0.0.0: count 1</p></li>
+/// <li>
+/// <p>IP address 10.1.1.1: count 3</p></li>
+/// <li>
+/// <p>IP address 127.0.0.0: count 1</p></li>
 /// </ul></li>
-/// <li><p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+/// <li>
+/// <p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
 /// <ul>
-/// <li><p>HTTP method POST: count 2</p></li>
-/// <li><p>HTTP method GET: count 2</p></li>
+/// <li>
+/// <p>HTTP method POST: count 2</p></li>
+/// <li>
+/// <p>HTTP method GET: count 2</p></li>
 /// </ul></li>
-/// <li><p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+/// <li>
+/// <p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
 /// <ul>
-/// <li><p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
-/// <li><p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
-/// <li><p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
+/// <li>
+/// <p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
+/// <li>
+/// <p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
+/// <li>
+/// <p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
 /// </ul></li>
 /// </ul>
 /// <p>For any n-tuple of aggregation keys, each unique combination of values for the keys defines a separate aggregation instance, which WAF counts and rate-limits individually.</p>
@@ -41,23 +55,35 @@ pub struct RateBasedStatement {
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li><p>If you aggregate on just the IP address, this is the limit on requests from any single IP address.</p></li>
-    /// <li><p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
+    /// <li>
+    /// <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address.</p></li>
+    /// <li>
+    /// <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
     /// </ul>
     pub limit: i64,
-    /// <p>Setting that indicates how to aggregate the request counts.</p> <note>
+    /// <p>Setting that indicates how to aggregate the request counts.</p><note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling.</p>
     /// </note>
     /// <ul>
-    /// <li><p><code>CONSTANT</code> - Count and limit the requests that match the rate-based rule's scope-down statement. With this option, the counted requests aren't further aggregated. The scope-down statement is the only specification used. When the count of all requests that satisfy the scope-down statement goes over the limit, WAF applies the rule action to all requests that satisfy the scope-down statement.</p> <p>With this option, you must configure the <code>ScopeDownStatement</code> property.</p></li>
-    /// <li><p><code>CUSTOM_KEYS</code> - Aggregate the request counts using one or more web request components as the aggregate keys.</p> <p>With this option, you must specify the aggregate keys in the <code>CustomKeys</code> property.</p> <p>To aggregate on only the IP address or only the forwarded IP address, don't use custom keys. Instead, set the aggregate key type to <code>IP</code> or <code>FORWARDED_IP</code>.</p></li>
-    /// <li><p><code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header.</p> <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property.</p> <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
-    /// <li><p><code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p> <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
+    /// <li>
+    /// <p><code>CONSTANT</code> - Count and limit the requests that match the rate-based rule's scope-down statement. With this option, the counted requests aren't further aggregated. The scope-down statement is the only specification used. When the count of all requests that satisfy the scope-down statement goes over the limit, WAF applies the rule action to all requests that satisfy the scope-down statement.</p>
+    /// <p>With this option, you must configure the <code>ScopeDownStatement</code> property.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_KEYS</code> - Aggregate the request counts using one or more web request components as the aggregate keys.</p>
+    /// <p>With this option, you must specify the aggregate keys in the <code>CustomKeys</code> property.</p>
+    /// <p>To aggregate on only the IP address or only the forwarded IP address, don't use custom keys. Instead, set the aggregate key type to <code>IP</code> or <code>FORWARDED_IP</code>.</p></li>
+    /// <li>
+    /// <p><code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header.</p>
+    /// <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property.</p>
+    /// <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
+    /// <li>
+    /// <p><code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p>
+    /// <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
     /// </ul>
     pub aggregate_key_type: crate::types::RateBasedStatementAggregateKeyType,
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement.</p>
     pub scope_down_statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p> <note>
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings.</p>
@@ -69,20 +95,32 @@ impl RateBasedStatement {
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li><p>If you aggregate on just the IP address, this is the limit on requests from any single IP address.</p></li>
-    /// <li><p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
+    /// <li>
+    /// <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address.</p></li>
+    /// <li>
+    /// <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
     /// </ul>
     pub fn limit(&self) -> i64 {
         self.limit
     }
-    /// <p>Setting that indicates how to aggregate the request counts.</p> <note>
+    /// <p>Setting that indicates how to aggregate the request counts.</p><note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling.</p>
     /// </note>
     /// <ul>
-    /// <li><p><code>CONSTANT</code> - Count and limit the requests that match the rate-based rule's scope-down statement. With this option, the counted requests aren't further aggregated. The scope-down statement is the only specification used. When the count of all requests that satisfy the scope-down statement goes over the limit, WAF applies the rule action to all requests that satisfy the scope-down statement.</p> <p>With this option, you must configure the <code>ScopeDownStatement</code> property.</p></li>
-    /// <li><p><code>CUSTOM_KEYS</code> - Aggregate the request counts using one or more web request components as the aggregate keys.</p> <p>With this option, you must specify the aggregate keys in the <code>CustomKeys</code> property.</p> <p>To aggregate on only the IP address or only the forwarded IP address, don't use custom keys. Instead, set the aggregate key type to <code>IP</code> or <code>FORWARDED_IP</code>.</p></li>
-    /// <li><p><code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header.</p> <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property.</p> <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
-    /// <li><p><code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p> <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
+    /// <li>
+    /// <p><code>CONSTANT</code> - Count and limit the requests that match the rate-based rule's scope-down statement. With this option, the counted requests aren't further aggregated. The scope-down statement is the only specification used. When the count of all requests that satisfy the scope-down statement goes over the limit, WAF applies the rule action to all requests that satisfy the scope-down statement.</p>
+    /// <p>With this option, you must configure the <code>ScopeDownStatement</code> property.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_KEYS</code> - Aggregate the request counts using one or more web request components as the aggregate keys.</p>
+    /// <p>With this option, you must specify the aggregate keys in the <code>CustomKeys</code> property.</p>
+    /// <p>To aggregate on only the IP address or only the forwarded IP address, don't use custom keys. Instead, set the aggregate key type to <code>IP</code> or <code>FORWARDED_IP</code>.</p></li>
+    /// <li>
+    /// <p><code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header.</p>
+    /// <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property.</p>
+    /// <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
+    /// <li>
+    /// <p><code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p>
+    /// <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
     /// </ul>
     pub fn aggregate_key_type(&self) -> &crate::types::RateBasedStatementAggregateKeyType {
         &self.aggregate_key_type
@@ -91,7 +129,7 @@ impl RateBasedStatement {
     pub fn scope_down_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
         self.scope_down_statement.as_deref()
     }
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p> <note>
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings.</p>
@@ -126,8 +164,10 @@ impl RateBasedStatementBuilder {
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li><p>If you aggregate on just the IP address, this is the limit on requests from any single IP address.</p></li>
-    /// <li><p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
+    /// <li>
+    /// <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address.</p></li>
+    /// <li>
+    /// <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
     /// </ul>
     /// This field is required.
     pub fn limit(mut self, input: i64) -> Self {
@@ -137,8 +177,10 @@ impl RateBasedStatementBuilder {
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li><p>If you aggregate on just the IP address, this is the limit on requests from any single IP address.</p></li>
-    /// <li><p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
+    /// <li>
+    /// <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address.</p></li>
+    /// <li>
+    /// <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
     /// </ul>
     pub fn set_limit(mut self, input: ::std::option::Option<i64>) -> Self {
         self.limit = input;
@@ -147,47 +189,79 @@ impl RateBasedStatementBuilder {
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li><p>If you aggregate on just the IP address, this is the limit on requests from any single IP address.</p></li>
-    /// <li><p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
+    /// <li>
+    /// <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address.</p></li>
+    /// <li>
+    /// <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
     /// </ul>
     pub fn get_limit(&self) -> &::std::option::Option<i64> {
         &self.limit
     }
-    /// <p>Setting that indicates how to aggregate the request counts.</p> <note>
+    /// <p>Setting that indicates how to aggregate the request counts.</p><note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling.</p>
     /// </note>
     /// <ul>
-    /// <li><p><code>CONSTANT</code> - Count and limit the requests that match the rate-based rule's scope-down statement. With this option, the counted requests aren't further aggregated. The scope-down statement is the only specification used. When the count of all requests that satisfy the scope-down statement goes over the limit, WAF applies the rule action to all requests that satisfy the scope-down statement.</p> <p>With this option, you must configure the <code>ScopeDownStatement</code> property.</p></li>
-    /// <li><p><code>CUSTOM_KEYS</code> - Aggregate the request counts using one or more web request components as the aggregate keys.</p> <p>With this option, you must specify the aggregate keys in the <code>CustomKeys</code> property.</p> <p>To aggregate on only the IP address or only the forwarded IP address, don't use custom keys. Instead, set the aggregate key type to <code>IP</code> or <code>FORWARDED_IP</code>.</p></li>
-    /// <li><p><code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header.</p> <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property.</p> <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
-    /// <li><p><code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p> <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
+    /// <li>
+    /// <p><code>CONSTANT</code> - Count and limit the requests that match the rate-based rule's scope-down statement. With this option, the counted requests aren't further aggregated. The scope-down statement is the only specification used. When the count of all requests that satisfy the scope-down statement goes over the limit, WAF applies the rule action to all requests that satisfy the scope-down statement.</p>
+    /// <p>With this option, you must configure the <code>ScopeDownStatement</code> property.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_KEYS</code> - Aggregate the request counts using one or more web request components as the aggregate keys.</p>
+    /// <p>With this option, you must specify the aggregate keys in the <code>CustomKeys</code> property.</p>
+    /// <p>To aggregate on only the IP address or only the forwarded IP address, don't use custom keys. Instead, set the aggregate key type to <code>IP</code> or <code>FORWARDED_IP</code>.</p></li>
+    /// <li>
+    /// <p><code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header.</p>
+    /// <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property.</p>
+    /// <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
+    /// <li>
+    /// <p><code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p>
+    /// <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn aggregate_key_type(mut self, input: crate::types::RateBasedStatementAggregateKeyType) -> Self {
         self.aggregate_key_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Setting that indicates how to aggregate the request counts.</p> <note>
+    /// <p>Setting that indicates how to aggregate the request counts.</p><note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling.</p>
     /// </note>
     /// <ul>
-    /// <li><p><code>CONSTANT</code> - Count and limit the requests that match the rate-based rule's scope-down statement. With this option, the counted requests aren't further aggregated. The scope-down statement is the only specification used. When the count of all requests that satisfy the scope-down statement goes over the limit, WAF applies the rule action to all requests that satisfy the scope-down statement.</p> <p>With this option, you must configure the <code>ScopeDownStatement</code> property.</p></li>
-    /// <li><p><code>CUSTOM_KEYS</code> - Aggregate the request counts using one or more web request components as the aggregate keys.</p> <p>With this option, you must specify the aggregate keys in the <code>CustomKeys</code> property.</p> <p>To aggregate on only the IP address or only the forwarded IP address, don't use custom keys. Instead, set the aggregate key type to <code>IP</code> or <code>FORWARDED_IP</code>.</p></li>
-    /// <li><p><code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header.</p> <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property.</p> <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
-    /// <li><p><code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p> <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
+    /// <li>
+    /// <p><code>CONSTANT</code> - Count and limit the requests that match the rate-based rule's scope-down statement. With this option, the counted requests aren't further aggregated. The scope-down statement is the only specification used. When the count of all requests that satisfy the scope-down statement goes over the limit, WAF applies the rule action to all requests that satisfy the scope-down statement.</p>
+    /// <p>With this option, you must configure the <code>ScopeDownStatement</code> property.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_KEYS</code> - Aggregate the request counts using one or more web request components as the aggregate keys.</p>
+    /// <p>With this option, you must specify the aggregate keys in the <code>CustomKeys</code> property.</p>
+    /// <p>To aggregate on only the IP address or only the forwarded IP address, don't use custom keys. Instead, set the aggregate key type to <code>IP</code> or <code>FORWARDED_IP</code>.</p></li>
+    /// <li>
+    /// <p><code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header.</p>
+    /// <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property.</p>
+    /// <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
+    /// <li>
+    /// <p><code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p>
+    /// <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
     /// </ul>
     pub fn set_aggregate_key_type(mut self, input: ::std::option::Option<crate::types::RateBasedStatementAggregateKeyType>) -> Self {
         self.aggregate_key_type = input;
         self
     }
-    /// <p>Setting that indicates how to aggregate the request counts.</p> <note>
+    /// <p>Setting that indicates how to aggregate the request counts.</p><note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling.</p>
     /// </note>
     /// <ul>
-    /// <li><p><code>CONSTANT</code> - Count and limit the requests that match the rate-based rule's scope-down statement. With this option, the counted requests aren't further aggregated. The scope-down statement is the only specification used. When the count of all requests that satisfy the scope-down statement goes over the limit, WAF applies the rule action to all requests that satisfy the scope-down statement.</p> <p>With this option, you must configure the <code>ScopeDownStatement</code> property.</p></li>
-    /// <li><p><code>CUSTOM_KEYS</code> - Aggregate the request counts using one or more web request components as the aggregate keys.</p> <p>With this option, you must specify the aggregate keys in the <code>CustomKeys</code> property.</p> <p>To aggregate on only the IP address or only the forwarded IP address, don't use custom keys. Instead, set the aggregate key type to <code>IP</code> or <code>FORWARDED_IP</code>.</p></li>
-    /// <li><p><code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header.</p> <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property.</p> <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
-    /// <li><p><code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p> <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
+    /// <li>
+    /// <p><code>CONSTANT</code> - Count and limit the requests that match the rate-based rule's scope-down statement. With this option, the counted requests aren't further aggregated. The scope-down statement is the only specification used. When the count of all requests that satisfy the scope-down statement goes over the limit, WAF applies the rule action to all requests that satisfy the scope-down statement.</p>
+    /// <p>With this option, you must configure the <code>ScopeDownStatement</code> property.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_KEYS</code> - Aggregate the request counts using one or more web request components as the aggregate keys.</p>
+    /// <p>With this option, you must specify the aggregate keys in the <code>CustomKeys</code> property.</p>
+    /// <p>To aggregate on only the IP address or only the forwarded IP address, don't use custom keys. Instead, set the aggregate key type to <code>IP</code> or <code>FORWARDED_IP</code>.</p></li>
+    /// <li>
+    /// <p><code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header.</p>
+    /// <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property.</p>
+    /// <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
+    /// <li>
+    /// <p><code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p>
+    /// <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>.</p></li>
     /// </ul>
     pub fn get_aggregate_key_type(&self) -> &::std::option::Option<crate::types::RateBasedStatementAggregateKeyType> {
         &self.aggregate_key_type
@@ -206,7 +280,7 @@ impl RateBasedStatementBuilder {
     pub fn get_scope_down_statement(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::Statement>> {
         &self.scope_down_statement
     }
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p> <note>
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings.</p>
@@ -214,7 +288,7 @@ impl RateBasedStatementBuilder {
         self.forwarded_ip_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p> <note>
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings.</p>
@@ -222,7 +296,7 @@ impl RateBasedStatementBuilder {
         self.forwarded_ip_config = input;
         self
     }
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p> <note>
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings.</p>

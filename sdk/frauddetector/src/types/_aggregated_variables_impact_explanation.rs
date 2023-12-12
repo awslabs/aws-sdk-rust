@@ -11,8 +11,10 @@ pub struct AggregatedVariablesImpactExplanation {
     pub relative_impact: ::std::option::Option<::std::string::String>,
     /// <p>The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
     /// <ul>
-    /// <li><p>A positive value indicates that the variables drove the risk score up.</p></li>
-    /// <li><p>A negative value indicates that the variables drove the risk score down.</p></li>
+    /// <li>
+    /// <p>A positive value indicates that the variables drove the risk score up.</p></li>
+    /// <li>
+    /// <p>A negative value indicates that the variables drove the risk score down.</p></li>
     /// </ul>
     pub log_odds_impact: ::std::option::Option<f32>,
 }
@@ -29,8 +31,10 @@ impl AggregatedVariablesImpactExplanation {
     }
     /// <p>The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
     /// <ul>
-    /// <li><p>A positive value indicates that the variables drove the risk score up.</p></li>
-    /// <li><p>A negative value indicates that the variables drove the risk score down.</p></li>
+    /// <li>
+    /// <p>A positive value indicates that the variables drove the risk score up.</p></li>
+    /// <li>
+    /// <p>A negative value indicates that the variables drove the risk score down.</p></li>
     /// </ul>
     pub fn log_odds_impact(&self) -> ::std::option::Option<f32> {
         self.log_odds_impact
@@ -88,8 +92,10 @@ impl AggregatedVariablesImpactExplanationBuilder {
     }
     /// <p>The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
     /// <ul>
-    /// <li><p>A positive value indicates that the variables drove the risk score up.</p></li>
-    /// <li><p>A negative value indicates that the variables drove the risk score down.</p></li>
+    /// <li>
+    /// <p>A positive value indicates that the variables drove the risk score up.</p></li>
+    /// <li>
+    /// <p>A negative value indicates that the variables drove the risk score down.</p></li>
     /// </ul>
     pub fn log_odds_impact(mut self, input: f32) -> Self {
         self.log_odds_impact = ::std::option::Option::Some(input);
@@ -97,8 +103,10 @@ impl AggregatedVariablesImpactExplanationBuilder {
     }
     /// <p>The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
     /// <ul>
-    /// <li><p>A positive value indicates that the variables drove the risk score up.</p></li>
-    /// <li><p>A negative value indicates that the variables drove the risk score down.</p></li>
+    /// <li>
+    /// <p>A positive value indicates that the variables drove the risk score up.</p></li>
+    /// <li>
+    /// <p>A negative value indicates that the variables drove the risk score down.</p></li>
     /// </ul>
     pub fn set_log_odds_impact(mut self, input: ::std::option::Option<f32>) -> Self {
         self.log_odds_impact = input;
@@ -106,8 +114,10 @@ impl AggregatedVariablesImpactExplanationBuilder {
     }
     /// <p>The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
     /// <ul>
-    /// <li><p>A positive value indicates that the variables drove the risk score up.</p></li>
-    /// <li><p>A negative value indicates that the variables drove the risk score down.</p></li>
+    /// <li>
+    /// <p>A positive value indicates that the variables drove the risk score up.</p></li>
+    /// <li>
+    /// <p>A negative value indicates that the variables drove the risk score down.</p></li>
     /// </ul>
     pub fn get_log_odds_impact(&self) -> &::std::option::Option<f32> {
         &self.log_odds_impact

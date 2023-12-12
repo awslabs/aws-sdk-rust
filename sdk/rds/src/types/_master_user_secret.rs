@@ -10,10 +10,15 @@ pub struct MasterUserSecret {
     /// <p>The status of the secret.</p>
     /// <p>The possible status values include the following:</p>
     /// <ul>
-    /// <li><p><code>creating</code> - The secret is being created.</p></li>
-    /// <li><p><code>active</code> - The secret is available for normal use and rotation.</p></li>
-    /// <li><p><code>rotating</code> - The secret is being rotated.</p></li>
-    /// <li><p><code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
+    /// <li>
+    /// <p><code>creating</code> - The secret is being created.</p></li>
+    /// <li>
+    /// <p><code>active</code> - The secret is available for normal use and rotation.</p></li>
+    /// <li>
+    /// <p><code>rotating</code> - The secret is being rotated.</p></li>
+    /// <li>
+    /// <p><code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p>
+    /// <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
     /// </ul>
     pub secret_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
@@ -27,10 +32,15 @@ impl MasterUserSecret {
     /// <p>The status of the secret.</p>
     /// <p>The possible status values include the following:</p>
     /// <ul>
-    /// <li><p><code>creating</code> - The secret is being created.</p></li>
-    /// <li><p><code>active</code> - The secret is available for normal use and rotation.</p></li>
-    /// <li><p><code>rotating</code> - The secret is being rotated.</p></li>
-    /// <li><p><code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
+    /// <li>
+    /// <p><code>creating</code> - The secret is being created.</p></li>
+    /// <li>
+    /// <p><code>active</code> - The secret is available for normal use and rotation.</p></li>
+    /// <li>
+    /// <p><code>rotating</code> - The secret is being rotated.</p></li>
+    /// <li>
+    /// <p><code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p>
+    /// <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
     /// </ul>
     pub fn secret_status(&self) -> ::std::option::Option<&str> {
         self.secret_status.as_deref()
@@ -73,10 +83,15 @@ impl MasterUserSecretBuilder {
     /// <p>The status of the secret.</p>
     /// <p>The possible status values include the following:</p>
     /// <ul>
-    /// <li><p><code>creating</code> - The secret is being created.</p></li>
-    /// <li><p><code>active</code> - The secret is available for normal use and rotation.</p></li>
-    /// <li><p><code>rotating</code> - The secret is being rotated.</p></li>
-    /// <li><p><code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
+    /// <li>
+    /// <p><code>creating</code> - The secret is being created.</p></li>
+    /// <li>
+    /// <p><code>active</code> - The secret is available for normal use and rotation.</p></li>
+    /// <li>
+    /// <p><code>rotating</code> - The secret is being rotated.</p></li>
+    /// <li>
+    /// <p><code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p>
+    /// <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
     /// </ul>
     pub fn secret_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_status = ::std::option::Option::Some(input.into());
@@ -85,10 +100,15 @@ impl MasterUserSecretBuilder {
     /// <p>The status of the secret.</p>
     /// <p>The possible status values include the following:</p>
     /// <ul>
-    /// <li><p><code>creating</code> - The secret is being created.</p></li>
-    /// <li><p><code>active</code> - The secret is available for normal use and rotation.</p></li>
-    /// <li><p><code>rotating</code> - The secret is being rotated.</p></li>
-    /// <li><p><code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
+    /// <li>
+    /// <p><code>creating</code> - The secret is being created.</p></li>
+    /// <li>
+    /// <p><code>active</code> - The secret is available for normal use and rotation.</p></li>
+    /// <li>
+    /// <p><code>rotating</code> - The secret is being rotated.</p></li>
+    /// <li>
+    /// <p><code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p>
+    /// <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
     /// </ul>
     pub fn set_secret_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_status = input;
@@ -97,10 +117,15 @@ impl MasterUserSecretBuilder {
     /// <p>The status of the secret.</p>
     /// <p>The possible status values include the following:</p>
     /// <ul>
-    /// <li><p><code>creating</code> - The secret is being created.</p></li>
-    /// <li><p><code>active</code> - The secret is available for normal use and rotation.</p></li>
-    /// <li><p><code>rotating</code> - The secret is being rotated.</p></li>
-    /// <li><p><code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
+    /// <li>
+    /// <p><code>creating</code> - The secret is being created.</p></li>
+    /// <li>
+    /// <p><code>active</code> - The secret is available for normal use and rotation.</p></li>
+    /// <li>
+    /// <p><code>rotating</code> - The secret is being rotated.</p></li>
+    /// <li>
+    /// <p><code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p>
+    /// <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
     /// </ul>
     pub fn get_secret_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_status

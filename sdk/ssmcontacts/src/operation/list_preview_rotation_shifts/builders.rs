@@ -22,7 +22,7 @@ impl ListPreviewRotationShiftsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListPreviewRotationShifts`.
 ///
-/// <p>Returns a list of shifts based on rotation configuration parameters.</p> <note>
+/// <p>Returns a list of shifts based on rotation configuration parameters.</p><note>
 /// <p>The Incident Manager primarily uses this operation to populate the <b>Preview</b> calendar. It is not typically run by end users.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

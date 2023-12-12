@@ -18,14 +18,22 @@ pub struct EffectiveDeployment {
     pub target_arn: ::std::string::String,
     /// <p>The status of the deployment job on the Greengrass core device.</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code> – The deployment job is running.</p></li>
-    /// <li><p><code>QUEUED</code> – The deployment job is in the job queue and waiting to run.</p></li>
-    /// <li><p><code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code> field.</p></li>
-    /// <li><p><code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.</p></li>
-    /// <li><p><code>TIMED_OUT</code> – The deployment didn't complete in the allotted time.</p></li>
-    /// <li><p><code>CANCELED</code> – The deployment was canceled by the user.</p></li>
-    /// <li><p><code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p></li>
-    /// <li><p><code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> – The deployment job is running.</p></li>
+    /// <li>
+    /// <p><code>QUEUED</code> – The deployment job is in the job queue and waiting to run.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code> field.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The deployment didn't complete in the allotted time.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – The deployment was canceled by the user.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p></li>
     /// </ul>
     pub core_device_execution_status: crate::types::EffectiveDeploymentExecutionStatus,
     /// <p>The reason code for the update, if the job was updated.</p>
@@ -67,14 +75,22 @@ impl EffectiveDeployment {
     }
     /// <p>The status of the deployment job on the Greengrass core device.</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code> – The deployment job is running.</p></li>
-    /// <li><p><code>QUEUED</code> – The deployment job is in the job queue and waiting to run.</p></li>
-    /// <li><p><code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code> field.</p></li>
-    /// <li><p><code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.</p></li>
-    /// <li><p><code>TIMED_OUT</code> – The deployment didn't complete in the allotted time.</p></li>
-    /// <li><p><code>CANCELED</code> – The deployment was canceled by the user.</p></li>
-    /// <li><p><code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p></li>
-    /// <li><p><code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> – The deployment job is running.</p></li>
+    /// <li>
+    /// <p><code>QUEUED</code> – The deployment job is in the job queue and waiting to run.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code> field.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The deployment didn't complete in the allotted time.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – The deployment was canceled by the user.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p></li>
     /// </ul>
     pub fn core_device_execution_status(&self) -> &crate::types::EffectiveDeploymentExecutionStatus {
         &self.core_device_execution_status
@@ -209,14 +225,22 @@ impl EffectiveDeploymentBuilder {
     }
     /// <p>The status of the deployment job on the Greengrass core device.</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code> – The deployment job is running.</p></li>
-    /// <li><p><code>QUEUED</code> – The deployment job is in the job queue and waiting to run.</p></li>
-    /// <li><p><code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code> field.</p></li>
-    /// <li><p><code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.</p></li>
-    /// <li><p><code>TIMED_OUT</code> – The deployment didn't complete in the allotted time.</p></li>
-    /// <li><p><code>CANCELED</code> – The deployment was canceled by the user.</p></li>
-    /// <li><p><code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p></li>
-    /// <li><p><code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> – The deployment job is running.</p></li>
+    /// <li>
+    /// <p><code>QUEUED</code> – The deployment job is in the job queue and waiting to run.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code> field.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The deployment didn't complete in the allotted time.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – The deployment was canceled by the user.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p></li>
     /// </ul>
     /// This field is required.
     pub fn core_device_execution_status(mut self, input: crate::types::EffectiveDeploymentExecutionStatus) -> Self {
@@ -225,14 +249,22 @@ impl EffectiveDeploymentBuilder {
     }
     /// <p>The status of the deployment job on the Greengrass core device.</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code> – The deployment job is running.</p></li>
-    /// <li><p><code>QUEUED</code> – The deployment job is in the job queue and waiting to run.</p></li>
-    /// <li><p><code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code> field.</p></li>
-    /// <li><p><code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.</p></li>
-    /// <li><p><code>TIMED_OUT</code> – The deployment didn't complete in the allotted time.</p></li>
-    /// <li><p><code>CANCELED</code> – The deployment was canceled by the user.</p></li>
-    /// <li><p><code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p></li>
-    /// <li><p><code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> – The deployment job is running.</p></li>
+    /// <li>
+    /// <p><code>QUEUED</code> – The deployment job is in the job queue and waiting to run.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code> field.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The deployment didn't complete in the allotted time.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – The deployment was canceled by the user.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p></li>
     /// </ul>
     pub fn set_core_device_execution_status(mut self, input: ::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus>) -> Self {
         self.core_device_execution_status = input;
@@ -240,14 +272,22 @@ impl EffectiveDeploymentBuilder {
     }
     /// <p>The status of the deployment job on the Greengrass core device.</p>
     /// <ul>
-    /// <li><p><code>IN_PROGRESS</code> – The deployment job is running.</p></li>
-    /// <li><p><code>QUEUED</code> – The deployment job is in the job queue and waiting to run.</p></li>
-    /// <li><p><code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code> field.</p></li>
-    /// <li><p><code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.</p></li>
-    /// <li><p><code>TIMED_OUT</code> – The deployment didn't complete in the allotted time.</p></li>
-    /// <li><p><code>CANCELED</code> – The deployment was canceled by the user.</p></li>
-    /// <li><p><code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p></li>
-    /// <li><p><code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> – The deployment job is running.</p></li>
+    /// <li>
+    /// <p><code>QUEUED</code> – The deployment job is in the job queue and waiting to run.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code> field.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The deployment didn't complete in the allotted time.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – The deployment was canceled by the user.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p></li>
     /// </ul>
     pub fn get_core_device_execution_status(&self) -> &::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus> {
         &self.core_device_execution_status

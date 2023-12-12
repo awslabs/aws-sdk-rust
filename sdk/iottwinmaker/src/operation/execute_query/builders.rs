@@ -22,7 +22,7 @@ impl ExecuteQueryInputBuilder {
 }
 /// Fluent builder constructing a request to `ExecuteQuery`.
 ///
-/// <p>Run queries to access information from your knowledge graph of entities within individual workspaces.</p> <note>
+/// <p>Run queries to access information from your knowledge graph of entities within individual workspaces.</p><note>
 /// <p>The ExecuteQuery action only works with <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html">Amazon Web Services Java SDK2</a>. ExecuteQuery will not work with any Amazon Web Services Java SDK version &lt; 2.x.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -22,7 +22,7 @@ impl DeleteIdentityPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteIdentityPolicy`.
 ///
-/// <p>Deletes the specified sending authorization policy for the given identity (an email address or a domain). This operation returns successfully even if a policy with the specified name does not exist.</p> <note>
+/// <p>Deletes the specified sending authorization policy for the given identity (an email address or a domain). This operation returns successfully even if a policy with the specified name does not exist.</p><note>
 /// <p>This operation is for the identity owner only. If you have not verified the identity, it returns an error.</p>
 /// </note>
 /// <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.</p>

@@ -29,8 +29,10 @@ impl CreateMembersInputBuilder {
 /// <p>The request provides the behavior graph ARN and the list of accounts to invite or to enable.</p>
 /// <p>The response separates the requested accounts into two lists:</p>
 /// <ul>
-/// <li><p>The accounts that <code>CreateMembers</code> was able to process. For invited accounts, includes member accounts that are being verified, that have passed verification and are to be invited, and that have failed verification. For organization accounts in the organization behavior graph, includes accounts that can be enabled and that cannot be enabled.</p></li>
-/// <li><p>The accounts that <code>CreateMembers</code> was unable to process. This list includes accounts that were already invited to be member accounts in the behavior graph.</p></li>
+/// <li>
+/// <p>The accounts that <code>CreateMembers</code> was able to process. For invited accounts, includes member accounts that are being verified, that have passed verification and are to be invited, and that have failed verification. For organization accounts in the organization behavior graph, includes accounts that can be enabled and that cannot be enabled.</p></li>
+/// <li>
+/// <p>The accounts that <code>CreateMembers</code> was unable to process. This list includes accounts that were already invited to be member accounts in the behavior graph.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMembersFluentBuilder {

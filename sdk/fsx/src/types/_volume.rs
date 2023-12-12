@@ -10,13 +10,20 @@ pub struct Volume {
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the volume.</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - The volume is fully available for use.</p></li>
-    /// <li><p><code>CREATED</code> - The volume has been created.</p></li>
-    /// <li><p><code>CREATING</code> - Amazon FSx is creating the new volume.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon FSx is deleting an existing volume.</p></li>
-    /// <li><p><code>FAILED</code> - Amazon FSx was unable to create the volume.</p></li>
-    /// <li><p><code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p></li>
-    /// <li><p><code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The volume is fully available for use.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The volume has been created.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Amazon FSx is creating the new volume.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon FSx is deleting an existing volume.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Amazon FSx was unable to create the volume.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p></li>
     /// </ul>
     pub lifecycle: ::std::option::Option<crate::types::VolumeLifecycle>,
     /// <p>The name of the volume.</p>
@@ -49,13 +56,20 @@ impl Volume {
     }
     /// <p>The lifecycle status of the volume.</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - The volume is fully available for use.</p></li>
-    /// <li><p><code>CREATED</code> - The volume has been created.</p></li>
-    /// <li><p><code>CREATING</code> - Amazon FSx is creating the new volume.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon FSx is deleting an existing volume.</p></li>
-    /// <li><p><code>FAILED</code> - Amazon FSx was unable to create the volume.</p></li>
-    /// <li><p><code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p></li>
-    /// <li><p><code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The volume is fully available for use.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The volume has been created.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Amazon FSx is creating the new volume.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon FSx is deleting an existing volume.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Amazon FSx was unable to create the volume.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p></li>
     /// </ul>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::VolumeLifecycle> {
         self.lifecycle.as_ref()
@@ -156,13 +170,20 @@ impl VolumeBuilder {
     }
     /// <p>The lifecycle status of the volume.</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - The volume is fully available for use.</p></li>
-    /// <li><p><code>CREATED</code> - The volume has been created.</p></li>
-    /// <li><p><code>CREATING</code> - Amazon FSx is creating the new volume.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon FSx is deleting an existing volume.</p></li>
-    /// <li><p><code>FAILED</code> - Amazon FSx was unable to create the volume.</p></li>
-    /// <li><p><code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p></li>
-    /// <li><p><code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The volume is fully available for use.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The volume has been created.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Amazon FSx is creating the new volume.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon FSx is deleting an existing volume.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Amazon FSx was unable to create the volume.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p></li>
     /// </ul>
     pub fn lifecycle(mut self, input: crate::types::VolumeLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -170,13 +191,20 @@ impl VolumeBuilder {
     }
     /// <p>The lifecycle status of the volume.</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - The volume is fully available for use.</p></li>
-    /// <li><p><code>CREATED</code> - The volume has been created.</p></li>
-    /// <li><p><code>CREATING</code> - Amazon FSx is creating the new volume.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon FSx is deleting an existing volume.</p></li>
-    /// <li><p><code>FAILED</code> - Amazon FSx was unable to create the volume.</p></li>
-    /// <li><p><code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p></li>
-    /// <li><p><code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The volume is fully available for use.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The volume has been created.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Amazon FSx is creating the new volume.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon FSx is deleting an existing volume.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Amazon FSx was unable to create the volume.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p></li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::VolumeLifecycle>) -> Self {
         self.lifecycle = input;
@@ -184,13 +212,20 @@ impl VolumeBuilder {
     }
     /// <p>The lifecycle status of the volume.</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - The volume is fully available for use.</p></li>
-    /// <li><p><code>CREATED</code> - The volume has been created.</p></li>
-    /// <li><p><code>CREATING</code> - Amazon FSx is creating the new volume.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon FSx is deleting an existing volume.</p></li>
-    /// <li><p><code>FAILED</code> - Amazon FSx was unable to create the volume.</p></li>
-    /// <li><p><code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p></li>
-    /// <li><p><code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The volume is fully available for use.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The volume has been created.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Amazon FSx is creating the new volume.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon FSx is deleting an existing volume.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Amazon FSx was unable to create the volume.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p></li>
     /// </ul>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::VolumeLifecycle> {
         &self.lifecycle

@@ -6,15 +6,20 @@
 pub struct ProjectCache {
     /// <p>The type of cache used by the build project. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>NO_CACHE</code>: The build project does not use any cache.</p></li>
-    /// <li><p><code>S3</code>: The build project reads and writes from and to S3.</p></li>
-    /// <li><p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
+    /// <li>
+    /// <p><code>NO_CACHE</code>: The build project does not use any cache.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The build project reads and writes from and to S3.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
     /// </ul>
     pub r#type: crate::types::CacheType,
     /// <p>Information about the cache location:</p>
     /// <ul>
-    /// <li><p><code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p></li>
-    /// <li><p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
+    /// <li>
+    /// <p><code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
     /// </ul>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that specify the local cache modes. You can use one or more local cache modes at the same time. This is only used for <code>LOCAL</code> cache types.</p>
@@ -30,11 +35,14 @@ pub struct ProjectCache {
     /// LOCAL_DOCKER_LAYER_CACHE
     /// </dt>
     /// <dd>
-    /// <p>Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker images down from the network.</p> <note>
+    /// <p>Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker images down from the network.</p><note>
     /// <ul>
-    /// <li><p>You can use a Docker layer cache in the Linux environment only.</p></li>
-    /// <li><p>The <code>privileged</code> flag must be set so that your project has the required Docker permissions.</p></li>
-    /// <li><p>You should consider the security implications before you use a Docker layer cache.</p></li>
+    /// <li>
+    /// <p>You can use a Docker layer cache in the Linux environment only.</p></li>
+    /// <li>
+    /// <p>The <code>privileged</code> flag must be set so that your project has the required Docker permissions.</p></li>
+    /// <li>
+    /// <p>You should consider the security implications before you use a Docker layer cache.</p></li>
     /// </ul>
     /// </note>
     /// </dd>
@@ -44,9 +52,12 @@ pub struct ProjectCache {
     /// <dd>
     /// <p>Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is not suited to one of the other three local cache modes. If you use a custom cache:</p>
     /// <ul>
-    /// <li><p>Only directories can be specified for caching. You cannot specify individual files.</p></li>
-    /// <li><p>Symlinks are used to reference cached directories.</p></li>
-    /// <li><p>Cached directories are linked to your build before it downloads its project sources. Cached items are overridden if a source item has the same name. Directories are specified using cache paths in the buildspec file.</p></li>
+    /// <li>
+    /// <p>Only directories can be specified for caching. You cannot specify individual files.</p></li>
+    /// <li>
+    /// <p>Symlinks are used to reference cached directories.</p></li>
+    /// <li>
+    /// <p>Cached directories are linked to your build before it downloads its project sources. Cached items are overridden if a source item has the same name. Directories are specified using cache paths in the buildspec file.</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -55,17 +66,22 @@ pub struct ProjectCache {
 impl ProjectCache {
     /// <p>The type of cache used by the build project. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>NO_CACHE</code>: The build project does not use any cache.</p></li>
-    /// <li><p><code>S3</code>: The build project reads and writes from and to S3.</p></li>
-    /// <li><p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
+    /// <li>
+    /// <p><code>NO_CACHE</code>: The build project does not use any cache.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The build project reads and writes from and to S3.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
     /// </ul>
     pub fn r#type(&self) -> &crate::types::CacheType {
         &self.r#type
     }
     /// <p>Information about the cache location:</p>
     /// <ul>
-    /// <li><p><code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p></li>
-    /// <li><p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
+    /// <li>
+    /// <p><code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
     /// </ul>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
@@ -83,11 +99,14 @@ impl ProjectCache {
     /// LOCAL_DOCKER_LAYER_CACHE
     /// </dt>
     /// <dd>
-    /// <p>Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker images down from the network.</p> <note>
+    /// <p>Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker images down from the network.</p><note>
     /// <ul>
-    /// <li><p>You can use a Docker layer cache in the Linux environment only.</p></li>
-    /// <li><p>The <code>privileged</code> flag must be set so that your project has the required Docker permissions.</p></li>
-    /// <li><p>You should consider the security implications before you use a Docker layer cache.</p></li>
+    /// <li>
+    /// <p>You can use a Docker layer cache in the Linux environment only.</p></li>
+    /// <li>
+    /// <p>The <code>privileged</code> flag must be set so that your project has the required Docker permissions.</p></li>
+    /// <li>
+    /// <p>You should consider the security implications before you use a Docker layer cache.</p></li>
     /// </ul>
     /// </note>
     /// </dd>
@@ -97,9 +116,12 @@ impl ProjectCache {
     /// <dd>
     /// <p>Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is not suited to one of the other three local cache modes. If you use a custom cache:</p>
     /// <ul>
-    /// <li><p>Only directories can be specified for caching. You cannot specify individual files.</p></li>
-    /// <li><p>Symlinks are used to reference cached directories.</p></li>
-    /// <li><p>Cached directories are linked to your build before it downloads its project sources. Cached items are overridden if a source item has the same name. Directories are specified using cache paths in the buildspec file.</p></li>
+    /// <li>
+    /// <p>Only directories can be specified for caching. You cannot specify individual files.</p></li>
+    /// <li>
+    /// <p>Symlinks are used to reference cached directories.</p></li>
+    /// <li>
+    /// <p>Cached directories are linked to your build before it downloads its project sources. Cached items are overridden if a source item has the same name. Directories are specified using cache paths in the buildspec file.</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -127,9 +149,12 @@ pub struct ProjectCacheBuilder {
 impl ProjectCacheBuilder {
     /// <p>The type of cache used by the build project. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>NO_CACHE</code>: The build project does not use any cache.</p></li>
-    /// <li><p><code>S3</code>: The build project reads and writes from and to S3.</p></li>
-    /// <li><p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
+    /// <li>
+    /// <p><code>NO_CACHE</code>: The build project does not use any cache.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The build project reads and writes from and to S3.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::CacheType) -> Self {
@@ -138,9 +163,12 @@ impl ProjectCacheBuilder {
     }
     /// <p>The type of cache used by the build project. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>NO_CACHE</code>: The build project does not use any cache.</p></li>
-    /// <li><p><code>S3</code>: The build project reads and writes from and to S3.</p></li>
-    /// <li><p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
+    /// <li>
+    /// <p><code>NO_CACHE</code>: The build project does not use any cache.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The build project reads and writes from and to S3.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CacheType>) -> Self {
         self.r#type = input;
@@ -148,17 +176,22 @@ impl ProjectCacheBuilder {
     }
     /// <p>The type of cache used by the build project. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>NO_CACHE</code>: The build project does not use any cache.</p></li>
-    /// <li><p><code>S3</code>: The build project reads and writes from and to S3.</p></li>
-    /// <li><p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
+    /// <li>
+    /// <p><code>NO_CACHE</code>: The build project does not use any cache.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The build project reads and writes from and to S3.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CacheType> {
         &self.r#type
     }
     /// <p>Information about the cache location:</p>
     /// <ul>
-    /// <li><p><code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p></li>
-    /// <li><p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
+    /// <li>
+    /// <p><code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
     /// </ul>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -166,8 +199,10 @@ impl ProjectCacheBuilder {
     }
     /// <p>Information about the cache location:</p>
     /// <ul>
-    /// <li><p><code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p></li>
-    /// <li><p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
+    /// <li>
+    /// <p><code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
     /// </ul>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
@@ -175,8 +210,10 @@ impl ProjectCacheBuilder {
     }
     /// <p>Information about the cache location:</p>
     /// <ul>
-    /// <li><p><code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p></li>
-    /// <li><p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
+    /// <li>
+    /// <p><code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: This is the S3 bucket name/prefix.</p></li>
     /// </ul>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
@@ -198,11 +235,14 @@ impl ProjectCacheBuilder {
     /// LOCAL_DOCKER_LAYER_CACHE
     /// </dt>
     /// <dd>
-    /// <p>Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker images down from the network.</p> <note>
+    /// <p>Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker images down from the network.</p><note>
     /// <ul>
-    /// <li><p>You can use a Docker layer cache in the Linux environment only.</p></li>
-    /// <li><p>The <code>privileged</code> flag must be set so that your project has the required Docker permissions.</p></li>
-    /// <li><p>You should consider the security implications before you use a Docker layer cache.</p></li>
+    /// <li>
+    /// <p>You can use a Docker layer cache in the Linux environment only.</p></li>
+    /// <li>
+    /// <p>The <code>privileged</code> flag must be set so that your project has the required Docker permissions.</p></li>
+    /// <li>
+    /// <p>You should consider the security implications before you use a Docker layer cache.</p></li>
     /// </ul>
     /// </note>
     /// </dd>
@@ -212,9 +252,12 @@ impl ProjectCacheBuilder {
     /// <dd>
     /// <p>Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is not suited to one of the other three local cache modes. If you use a custom cache:</p>
     /// <ul>
-    /// <li><p>Only directories can be specified for caching. You cannot specify individual files.</p></li>
-    /// <li><p>Symlinks are used to reference cached directories.</p></li>
-    /// <li><p>Cached directories are linked to your build before it downloads its project sources. Cached items are overridden if a source item has the same name. Directories are specified using cache paths in the buildspec file.</p></li>
+    /// <li>
+    /// <p>Only directories can be specified for caching. You cannot specify individual files.</p></li>
+    /// <li>
+    /// <p>Symlinks are used to reference cached directories.</p></li>
+    /// <li>
+    /// <p>Cached directories are linked to your build before it downloads its project sources. Cached items are overridden if a source item has the same name. Directories are specified using cache paths in the buildspec file.</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -237,11 +280,14 @@ impl ProjectCacheBuilder {
     /// LOCAL_DOCKER_LAYER_CACHE
     /// </dt>
     /// <dd>
-    /// <p>Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker images down from the network.</p> <note>
+    /// <p>Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker images down from the network.</p><note>
     /// <ul>
-    /// <li><p>You can use a Docker layer cache in the Linux environment only.</p></li>
-    /// <li><p>The <code>privileged</code> flag must be set so that your project has the required Docker permissions.</p></li>
-    /// <li><p>You should consider the security implications before you use a Docker layer cache.</p></li>
+    /// <li>
+    /// <p>You can use a Docker layer cache in the Linux environment only.</p></li>
+    /// <li>
+    /// <p>The <code>privileged</code> flag must be set so that your project has the required Docker permissions.</p></li>
+    /// <li>
+    /// <p>You should consider the security implications before you use a Docker layer cache.</p></li>
     /// </ul>
     /// </note>
     /// </dd>
@@ -251,9 +297,12 @@ impl ProjectCacheBuilder {
     /// <dd>
     /// <p>Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is not suited to one of the other three local cache modes. If you use a custom cache:</p>
     /// <ul>
-    /// <li><p>Only directories can be specified for caching. You cannot specify individual files.</p></li>
-    /// <li><p>Symlinks are used to reference cached directories.</p></li>
-    /// <li><p>Cached directories are linked to your build before it downloads its project sources. Cached items are overridden if a source item has the same name. Directories are specified using cache paths in the buildspec file.</p></li>
+    /// <li>
+    /// <p>Only directories can be specified for caching. You cannot specify individual files.</p></li>
+    /// <li>
+    /// <p>Symlinks are used to reference cached directories.</p></li>
+    /// <li>
+    /// <p>Cached directories are linked to your build before it downloads its project sources. Cached items are overridden if a source item has the same name. Directories are specified using cache paths in the buildspec file.</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -274,11 +323,14 @@ impl ProjectCacheBuilder {
     /// LOCAL_DOCKER_LAYER_CACHE
     /// </dt>
     /// <dd>
-    /// <p>Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker images down from the network.</p> <note>
+    /// <p>Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker images down from the network.</p><note>
     /// <ul>
-    /// <li><p>You can use a Docker layer cache in the Linux environment only.</p></li>
-    /// <li><p>The <code>privileged</code> flag must be set so that your project has the required Docker permissions.</p></li>
-    /// <li><p>You should consider the security implications before you use a Docker layer cache.</p></li>
+    /// <li>
+    /// <p>You can use a Docker layer cache in the Linux environment only.</p></li>
+    /// <li>
+    /// <p>The <code>privileged</code> flag must be set so that your project has the required Docker permissions.</p></li>
+    /// <li>
+    /// <p>You should consider the security implications before you use a Docker layer cache.</p></li>
     /// </ul>
     /// </note>
     /// </dd>
@@ -288,9 +340,12 @@ impl ProjectCacheBuilder {
     /// <dd>
     /// <p>Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is not suited to one of the other three local cache modes. If you use a custom cache:</p>
     /// <ul>
-    /// <li><p>Only directories can be specified for caching. You cannot specify individual files.</p></li>
-    /// <li><p>Symlinks are used to reference cached directories.</p></li>
-    /// <li><p>Cached directories are linked to your build before it downloads its project sources. Cached items are overridden if a source item has the same name. Directories are specified using cache paths in the buildspec file.</p></li>
+    /// <li>
+    /// <p>Only directories can be specified for caching. You cannot specify individual files.</p></li>
+    /// <li>
+    /// <p>Symlinks are used to reference cached directories.</p></li>
+    /// <li>
+    /// <p>Cached directories are linked to your build before it downloads its project sources. Cached items are overridden if a source item has the same name. Directories are specified using cache paths in the buildspec file.</p></li>
     /// </ul>
     /// </dd>
     /// </dl>

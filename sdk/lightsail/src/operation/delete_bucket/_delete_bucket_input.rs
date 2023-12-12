@@ -9,11 +9,15 @@ pub struct DeleteBucketInput {
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
-    /// <li><p>The bucket is the origin of a distribution.</p></li>
-    /// <li><p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
-    /// <li><p>The bucket has objects.</p></li>
-    /// <li><p>The bucket has access keys.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p>The bucket is the origin of a distribution.</p></li>
+    /// <li>
+    /// <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
+    /// <li>
+    /// <p>The bucket has objects.</p></li>
+    /// <li>
+    /// <p>The bucket has access keys.</p></li>
+    /// </ul><important>
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>
     pub force_delete: ::std::option::Option<bool>,
@@ -27,11 +31,15 @@ impl DeleteBucketInput {
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
-    /// <li><p>The bucket is the origin of a distribution.</p></li>
-    /// <li><p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
-    /// <li><p>The bucket has objects.</p></li>
-    /// <li><p>The bucket has access keys.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p>The bucket is the origin of a distribution.</p></li>
+    /// <li>
+    /// <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
+    /// <li>
+    /// <p>The bucket has objects.</p></li>
+    /// <li>
+    /// <p>The bucket has access keys.</p></li>
+    /// </ul><important>
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>
     pub fn force_delete(&self) -> ::std::option::Option<bool> {
@@ -74,11 +82,15 @@ impl DeleteBucketInputBuilder {
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
-    /// <li><p>The bucket is the origin of a distribution.</p></li>
-    /// <li><p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
-    /// <li><p>The bucket has objects.</p></li>
-    /// <li><p>The bucket has access keys.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p>The bucket is the origin of a distribution.</p></li>
+    /// <li>
+    /// <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
+    /// <li>
+    /// <p>The bucket has objects.</p></li>
+    /// <li>
+    /// <p>The bucket has access keys.</p></li>
+    /// </ul><important>
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>
     pub fn force_delete(mut self, input: bool) -> Self {
@@ -88,11 +100,15 @@ impl DeleteBucketInputBuilder {
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
-    /// <li><p>The bucket is the origin of a distribution.</p></li>
-    /// <li><p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
-    /// <li><p>The bucket has objects.</p></li>
-    /// <li><p>The bucket has access keys.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p>The bucket is the origin of a distribution.</p></li>
+    /// <li>
+    /// <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
+    /// <li>
+    /// <p>The bucket has objects.</p></li>
+    /// <li>
+    /// <p>The bucket has access keys.</p></li>
+    /// </ul><important>
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -102,11 +118,15 @@ impl DeleteBucketInputBuilder {
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
-    /// <li><p>The bucket is the origin of a distribution.</p></li>
-    /// <li><p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
-    /// <li><p>The bucket has objects.</p></li>
-    /// <li><p>The bucket has access keys.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p>The bucket is the origin of a distribution.</p></li>
+    /// <li>
+    /// <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
+    /// <li>
+    /// <p>The bucket has objects.</p></li>
+    /// <li>
+    /// <p>The bucket has access keys.</p></li>
+    /// </ul><important>
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {

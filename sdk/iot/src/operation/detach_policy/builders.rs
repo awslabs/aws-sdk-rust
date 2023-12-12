@@ -22,7 +22,7 @@ impl DetachPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `DetachPolicy`.
 ///
-/// <p>Detaches a policy from the specified target.</p> <note>
+/// <p>Detaches a policy from the specified target.</p><note>
 /// <p>Because of the distributed nature of Amazon Web Services, it can take up to five minutes after a policy is detached before it's ready to be deleted.</p>
 /// </note>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPolicy</a> action.</p>

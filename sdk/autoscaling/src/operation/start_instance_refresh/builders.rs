@@ -141,7 +141,7 @@ impl StartInstanceRefreshFluentBuilder {
         self.inner.get_strategy()
     }
     /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
-    /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration.</p> <note>
+    /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration.</p><note>
     /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates.</p>
     /// </note>
     pub fn desired_configuration(mut self, input: crate::types::DesiredConfiguration) -> Self {
@@ -149,7 +149,7 @@ impl StartInstanceRefreshFluentBuilder {
         self
     }
     /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
-    /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration.</p> <note>
+    /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration.</p><note>
     /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates.</p>
     /// </note>
     pub fn set_desired_configuration(mut self, input: ::std::option::Option<crate::types::DesiredConfiguration>) -> Self {
@@ -157,7 +157,7 @@ impl StartInstanceRefreshFluentBuilder {
         self
     }
     /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
-    /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration.</p> <note>
+    /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration.</p><note>
     /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates.</p>
     /// </note>
     pub fn get_desired_configuration(&self) -> &::std::option::Option<crate::types::DesiredConfiguration> {
@@ -165,10 +165,14 @@ impl StartInstanceRefreshFluentBuilder {
     }
     /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
     /// <ul>
-    /// <li><p>Auto rollback</p></li>
-    /// <li><p>Checkpoints</p></li>
-    /// <li><p>CloudWatch alarms</p></li>
-    /// <li><p>Skip matching</p></li>
+    /// <li>
+    /// <p>Auto rollback</p></li>
+    /// <li>
+    /// <p>Checkpoints</p></li>
+    /// <li>
+    /// <p>CloudWatch alarms</p></li>
+    /// <li>
+    /// <p>Skip matching</p></li>
     /// </ul>
     pub fn preferences(mut self, input: crate::types::RefreshPreferences) -> Self {
         self.inner = self.inner.preferences(input);
@@ -176,10 +180,14 @@ impl StartInstanceRefreshFluentBuilder {
     }
     /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
     /// <ul>
-    /// <li><p>Auto rollback</p></li>
-    /// <li><p>Checkpoints</p></li>
-    /// <li><p>CloudWatch alarms</p></li>
-    /// <li><p>Skip matching</p></li>
+    /// <li>
+    /// <p>Auto rollback</p></li>
+    /// <li>
+    /// <p>Checkpoints</p></li>
+    /// <li>
+    /// <p>CloudWatch alarms</p></li>
+    /// <li>
+    /// <p>Skip matching</p></li>
     /// </ul>
     pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::RefreshPreferences>) -> Self {
         self.inner = self.inner.set_preferences(input);
@@ -187,10 +195,14 @@ impl StartInstanceRefreshFluentBuilder {
     }
     /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
     /// <ul>
-    /// <li><p>Auto rollback</p></li>
-    /// <li><p>Checkpoints</p></li>
-    /// <li><p>CloudWatch alarms</p></li>
-    /// <li><p>Skip matching</p></li>
+    /// <li>
+    /// <p>Auto rollback</p></li>
+    /// <li>
+    /// <p>Checkpoints</p></li>
+    /// <li>
+    /// <p>CloudWatch alarms</p></li>
+    /// <li>
+    /// <p>Skip matching</p></li>
     /// </ul>
     pub fn get_preferences(&self) -> &::std::option::Option<crate::types::RefreshPreferences> {
         self.inner.get_preferences()

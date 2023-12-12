@@ -7,9 +7,12 @@ pub struct ListImageRecipesInput {
     pub owner: ::std::option::Option<crate::types::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li><p><code>name</code></p></li>
-    /// <li><p><code>parentImage</code></p></li>
-    /// <li><p><code>platform</code></p></li>
+    /// <li>
+    /// <p><code>name</code></p></li>
+    /// <li>
+    /// <p><code>parentImage</code></p></li>
+    /// <li>
+    /// <p><code>platform</code></p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum items to return in a request.</p>
@@ -24,9 +27,12 @@ impl ListImageRecipesInput {
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li><p><code>name</code></p></li>
-    /// <li><p><code>parentImage</code></p></li>
-    /// <li><p><code>platform</code></p></li>
+    /// <li>
+    /// <p><code>name</code></p></li>
+    /// <li>
+    /// <p><code>parentImage</code></p></li>
+    /// <li>
+    /// <p><code>platform</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -79,9 +85,12 @@ impl ListImageRecipesInputBuilder {
     ///
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li><p><code>name</code></p></li>
-    /// <li><p><code>parentImage</code></p></li>
-    /// <li><p><code>platform</code></p></li>
+    /// <li>
+    /// <p><code>name</code></p></li>
+    /// <li>
+    /// <p><code>parentImage</code></p></li>
+    /// <li>
+    /// <p><code>platform</code></p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -91,9 +100,12 @@ impl ListImageRecipesInputBuilder {
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li><p><code>name</code></p></li>
-    /// <li><p><code>parentImage</code></p></li>
-    /// <li><p><code>platform</code></p></li>
+    /// <li>
+    /// <p><code>name</code></p></li>
+    /// <li>
+    /// <p><code>parentImage</code></p></li>
+    /// <li>
+    /// <p><code>platform</code></p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -101,9 +113,12 @@ impl ListImageRecipesInputBuilder {
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li><p><code>name</code></p></li>
-    /// <li><p><code>parentImage</code></p></li>
-    /// <li><p><code>platform</code></p></li>
+    /// <li>
+    /// <p><code>name</code></p></li>
+    /// <li>
+    /// <p><code>parentImage</code></p></li>
+    /// <li>
+    /// <p><code>platform</code></p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

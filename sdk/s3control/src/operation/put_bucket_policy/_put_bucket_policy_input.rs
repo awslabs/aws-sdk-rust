@@ -7,8 +7,7 @@ pub struct PutBucketPolicyInput {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
-    /// <region>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<region>
     /// :
     /// <account-id>
     /// :outpost/
@@ -19,7 +18,7 @@ pub struct PutBucketPolicyInput {
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
-    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
+    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub confirm_remove_self_bucket_access: ::std::option::Option<bool>,
@@ -33,8 +32,7 @@ impl PutBucketPolicyInput {
     }
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
-    /// <region>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<region>
     /// :
     /// <account-id>
     /// :outpost/
@@ -47,7 +45,7 @@ impl PutBucketPolicyInput {
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
+    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn confirm_remove_self_bucket_access(&self) -> ::std::option::Option<bool> {
@@ -92,8 +90,7 @@ impl PutBucketPolicyInputBuilder {
     }
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
-    /// <region>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<region>
     /// :
     /// <account-id>
     /// :outpost/
@@ -110,8 +107,7 @@ impl PutBucketPolicyInputBuilder {
     }
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
-    /// <region>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<region>
     /// :
     /// <account-id>
     /// :outpost/
@@ -127,8 +123,7 @@ impl PutBucketPolicyInputBuilder {
     }
     /// <p>Specifies the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
-    /// <region>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<region>
     /// :
     /// <account-id>
     /// :outpost/
@@ -141,21 +136,21 @@ impl PutBucketPolicyInputBuilder {
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
-    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
+    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn confirm_remove_self_bucket_access(mut self, input: bool) -> Self {
         self.confirm_remove_self_bucket_access = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
+    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn set_confirm_remove_self_bucket_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.confirm_remove_self_bucket_access = input;
         self
     }
-    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
+    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn get_confirm_remove_self_bucket_access(&self) -> &::std::option::Option<bool> {

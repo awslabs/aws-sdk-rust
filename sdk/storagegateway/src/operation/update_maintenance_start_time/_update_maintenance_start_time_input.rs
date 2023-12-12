@@ -2,10 +2,14 @@
 
 /// <p>A JSON object containing the following fields:</p>
 /// <ul>
-/// <li><p><code>UpdateMaintenanceStartTimeInput$DayOfMonth</code></p></li>
-/// <li><p><code>UpdateMaintenanceStartTimeInput$DayOfWeek</code></p></li>
-/// <li><p><code>UpdateMaintenanceStartTimeInput$HourOfDay</code></p></li>
-/// <li><p><code>UpdateMaintenanceStartTimeInput$MinuteOfHour</code></p></li>
+/// <li>
+/// <p><code>UpdateMaintenanceStartTimeInput$DayOfMonth</code></p></li>
+/// <li>
+/// <p><code>UpdateMaintenanceStartTimeInput$DayOfWeek</code></p></li>
+/// <li>
+/// <p><code>UpdateMaintenanceStartTimeInput$HourOfDay</code></p></li>
+/// <li>
+/// <p><code>UpdateMaintenanceStartTimeInput$MinuteOfHour</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

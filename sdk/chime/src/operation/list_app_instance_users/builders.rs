@@ -22,7 +22,7 @@ impl ListAppInstanceUsersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAppInstanceUsers`.
 ///
-/// <p>List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.</p> <important>
+/// <p>List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.</p><important>
 /// <p><b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceUsers.html">ListAppInstanceUsers</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>

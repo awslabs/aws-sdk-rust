@@ -7,15 +7,24 @@ pub struct InferredWorkloadSaving {
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
     /// <ul>
-    /// <li><p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p></li>
-    /// <li><p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p></li>
-    /// <li><p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p></li>
-    /// <li><p><code>Memcached</code> - Infers that Memcached might be running on the instance.</p></li>
-    /// <li><p><code>NGINX</code> - Infers that NGINX might be running on the instance.</p></li>
-    /// <li><p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p></li>
-    /// <li><p><code>Redis</code> - Infers that Redis might be running on the instance.</p></li>
-    /// <li><p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
-    /// <li><p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Memcached</code> - Infers that Memcached might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>NGINX</code> - Infers that NGINX might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Redis</code> - Infers that Redis might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
     /// </ul>
     pub inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
@@ -25,15 +34,24 @@ impl InferredWorkloadSaving {
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
     /// <ul>
-    /// <li><p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p></li>
-    /// <li><p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p></li>
-    /// <li><p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p></li>
-    /// <li><p><code>Memcached</code> - Infers that Memcached might be running on the instance.</p></li>
-    /// <li><p><code>NGINX</code> - Infers that NGINX might be running on the instance.</p></li>
-    /// <li><p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p></li>
-    /// <li><p><code>Redis</code> - Infers that Redis might be running on the instance.</p></li>
-    /// <li><p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
-    /// <li><p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Memcached</code> - Infers that Memcached might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>NGINX</code> - Infers that NGINX might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Redis</code> - Infers that Redis might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inferred_workload_types.is_none()`.
@@ -67,15 +85,24 @@ impl InferredWorkloadSavingBuilder {
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
     /// <ul>
-    /// <li><p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p></li>
-    /// <li><p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p></li>
-    /// <li><p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p></li>
-    /// <li><p><code>Memcached</code> - Infers that Memcached might be running on the instance.</p></li>
-    /// <li><p><code>NGINX</code> - Infers that NGINX might be running on the instance.</p></li>
-    /// <li><p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p></li>
-    /// <li><p><code>Redis</code> - Infers that Redis might be running on the instance.</p></li>
-    /// <li><p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
-    /// <li><p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Memcached</code> - Infers that Memcached might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>NGINX</code> - Infers that NGINX might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Redis</code> - Infers that Redis might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
     /// </ul>
     pub fn inferred_workload_types(mut self, input: crate::types::InferredWorkloadType) -> Self {
         let mut v = self.inferred_workload_types.unwrap_or_default();
@@ -86,15 +113,24 @@ impl InferredWorkloadSavingBuilder {
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
     /// <ul>
-    /// <li><p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p></li>
-    /// <li><p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p></li>
-    /// <li><p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p></li>
-    /// <li><p><code>Memcached</code> - Infers that Memcached might be running on the instance.</p></li>
-    /// <li><p><code>NGINX</code> - Infers that NGINX might be running on the instance.</p></li>
-    /// <li><p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p></li>
-    /// <li><p><code>Redis</code> - Infers that Redis might be running on the instance.</p></li>
-    /// <li><p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
-    /// <li><p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Memcached</code> - Infers that Memcached might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>NGINX</code> - Infers that NGINX might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Redis</code> - Infers that Redis might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
     /// </ul>
     pub fn set_inferred_workload_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>) -> Self {
         self.inferred_workload_types = input;
@@ -103,15 +139,24 @@ impl InferredWorkloadSavingBuilder {
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
     /// <ul>
-    /// <li><p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p></li>
-    /// <li><p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p></li>
-    /// <li><p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p></li>
-    /// <li><p><code>Memcached</code> - Infers that Memcached might be running on the instance.</p></li>
-    /// <li><p><code>NGINX</code> - Infers that NGINX might be running on the instance.</p></li>
-    /// <li><p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p></li>
-    /// <li><p><code>Redis</code> - Infers that Redis might be running on the instance.</p></li>
-    /// <li><p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
-    /// <li><p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Memcached</code> - Infers that Memcached might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>NGINX</code> - Infers that NGINX might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Redis</code> - Infers that Redis might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>Kafka</code> - Infers that Kafka might be running on the instance.</p></li>
+    /// <li>
+    /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
     /// </ul>
     pub fn get_inferred_workload_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>> {
         &self.inferred_workload_types

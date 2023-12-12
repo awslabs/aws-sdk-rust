@@ -140,15 +140,24 @@ impl SearchTransitGatewayMulticastGroupsFluentBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>group-ip-address</code> - The IP address of the transit gateway multicast group.</p></li>
-    /// <li><p><code>is-group-member</code> - The resource is a group member. Valid values are <code>true</code> | <code>false</code>.</p></li>
-    /// <li><p><code>is-group-source</code> - The resource is a group source. Valid values are <code>true</code> | <code>false</code>.</p></li>
-    /// <li><p><code>member-type</code> - The member type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
-    /// <li><p><code>resource-id</code> - The ID of the resource.</p></li>
-    /// <li><p><code>resource-type</code> - The type of resource. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>.</p></li>
-    /// <li><p><code>source-type</code> - The source type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
-    /// <li><p><code>subnet-id</code> - The ID of the subnet.</p></li>
-    /// <li><p><code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>group-ip-address</code> - The IP address of the transit gateway multicast group.</p></li>
+    /// <li>
+    /// <p><code>is-group-member</code> - The resource is a group member. Valid values are <code>true</code> | <code>false</code>.</p></li>
+    /// <li>
+    /// <p><code>is-group-source</code> - The resource is a group source. Valid values are <code>true</code> | <code>false</code>.</p></li>
+    /// <li>
+    /// <p><code>member-type</code> - The member type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code> - The ID of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource-type</code> - The type of resource. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>.</p></li>
+    /// <li>
+    /// <p><code>source-type</code> - The source type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
+    /// <li>
+    /// <p><code>subnet-id</code> - The ID of the subnet.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -156,15 +165,24 @@ impl SearchTransitGatewayMulticastGroupsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>group-ip-address</code> - The IP address of the transit gateway multicast group.</p></li>
-    /// <li><p><code>is-group-member</code> - The resource is a group member. Valid values are <code>true</code> | <code>false</code>.</p></li>
-    /// <li><p><code>is-group-source</code> - The resource is a group source. Valid values are <code>true</code> | <code>false</code>.</p></li>
-    /// <li><p><code>member-type</code> - The member type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
-    /// <li><p><code>resource-id</code> - The ID of the resource.</p></li>
-    /// <li><p><code>resource-type</code> - The type of resource. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>.</p></li>
-    /// <li><p><code>source-type</code> - The source type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
-    /// <li><p><code>subnet-id</code> - The ID of the subnet.</p></li>
-    /// <li><p><code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>group-ip-address</code> - The IP address of the transit gateway multicast group.</p></li>
+    /// <li>
+    /// <p><code>is-group-member</code> - The resource is a group member. Valid values are <code>true</code> | <code>false</code>.</p></li>
+    /// <li>
+    /// <p><code>is-group-source</code> - The resource is a group source. Valid values are <code>true</code> | <code>false</code>.</p></li>
+    /// <li>
+    /// <p><code>member-type</code> - The member type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code> - The ID of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource-type</code> - The type of resource. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>.</p></li>
+    /// <li>
+    /// <p><code>source-type</code> - The source type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
+    /// <li>
+    /// <p><code>subnet-id</code> - The ID of the subnet.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -172,15 +190,24 @@ impl SearchTransitGatewayMulticastGroupsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>group-ip-address</code> - The IP address of the transit gateway multicast group.</p></li>
-    /// <li><p><code>is-group-member</code> - The resource is a group member. Valid values are <code>true</code> | <code>false</code>.</p></li>
-    /// <li><p><code>is-group-source</code> - The resource is a group source. Valid values are <code>true</code> | <code>false</code>.</p></li>
-    /// <li><p><code>member-type</code> - The member type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
-    /// <li><p><code>resource-id</code> - The ID of the resource.</p></li>
-    /// <li><p><code>resource-type</code> - The type of resource. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>.</p></li>
-    /// <li><p><code>source-type</code> - The source type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
-    /// <li><p><code>subnet-id</code> - The ID of the subnet.</p></li>
-    /// <li><p><code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>group-ip-address</code> - The IP address of the transit gateway multicast group.</p></li>
+    /// <li>
+    /// <p><code>is-group-member</code> - The resource is a group member. Valid values are <code>true</code> | <code>false</code>.</p></li>
+    /// <li>
+    /// <p><code>is-group-source</code> - The resource is a group source. Valid values are <code>true</code> | <code>false</code>.</p></li>
+    /// <li>
+    /// <p><code>member-type</code> - The member type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code> - The ID of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource-type</code> - The type of resource. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>.</p></li>
+    /// <li>
+    /// <p><code>source-type</code> - The source type. Valid values are <code>igmp</code> | <code>static</code>.</p></li>
+    /// <li>
+    /// <p><code>subnet-id</code> - The ID of the subnet.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

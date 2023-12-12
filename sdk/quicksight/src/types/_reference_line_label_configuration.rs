@@ -14,15 +14,20 @@ pub struct ReferenceLineLabelConfiguration {
     pub font_color: ::std::option::Option<::std::string::String>,
     /// <p>The horizontal position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>LEFT</code></p></li>
-    /// <li><p><code>CENTER</code></p></li>
-    /// <li><p><code>RIGHT</code></p></li>
+    /// <li>
+    /// <p><code>LEFT</code></p></li>
+    /// <li>
+    /// <p><code>CENTER</code></p></li>
+    /// <li>
+    /// <p><code>RIGHT</code></p></li>
     /// </ul>
     pub horizontal_position: ::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition>,
     /// <p>The vertical position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>ABOVE</code></p></li>
-    /// <li><p><code>BELOW</code></p></li>
+    /// <li>
+    /// <p><code>ABOVE</code></p></li>
+    /// <li>
+    /// <p><code>BELOW</code></p></li>
     /// </ul>
     pub vertical_position: ::std::option::Option<crate::types::ReferenceLineLabelVerticalPosition>,
 }
@@ -45,17 +50,22 @@ impl ReferenceLineLabelConfiguration {
     }
     /// <p>The horizontal position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>LEFT</code></p></li>
-    /// <li><p><code>CENTER</code></p></li>
-    /// <li><p><code>RIGHT</code></p></li>
+    /// <li>
+    /// <p><code>LEFT</code></p></li>
+    /// <li>
+    /// <p><code>CENTER</code></p></li>
+    /// <li>
+    /// <p><code>RIGHT</code></p></li>
     /// </ul>
     pub fn horizontal_position(&self) -> ::std::option::Option<&crate::types::ReferenceLineLabelHorizontalPosition> {
         self.horizontal_position.as_ref()
     }
     /// <p>The vertical position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>ABOVE</code></p></li>
-    /// <li><p><code>BELOW</code></p></li>
+    /// <li>
+    /// <p><code>ABOVE</code></p></li>
+    /// <li>
+    /// <p><code>BELOW</code></p></li>
     /// </ul>
     pub fn vertical_position(&self) -> ::std::option::Option<&crate::types::ReferenceLineLabelVerticalPosition> {
         self.vertical_position.as_ref()
@@ -138,9 +148,12 @@ impl ReferenceLineLabelConfigurationBuilder {
     }
     /// <p>The horizontal position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>LEFT</code></p></li>
-    /// <li><p><code>CENTER</code></p></li>
-    /// <li><p><code>RIGHT</code></p></li>
+    /// <li>
+    /// <p><code>LEFT</code></p></li>
+    /// <li>
+    /// <p><code>CENTER</code></p></li>
+    /// <li>
+    /// <p><code>RIGHT</code></p></li>
     /// </ul>
     pub fn horizontal_position(mut self, input: crate::types::ReferenceLineLabelHorizontalPosition) -> Self {
         self.horizontal_position = ::std::option::Option::Some(input);
@@ -148,9 +161,12 @@ impl ReferenceLineLabelConfigurationBuilder {
     }
     /// <p>The horizontal position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>LEFT</code></p></li>
-    /// <li><p><code>CENTER</code></p></li>
-    /// <li><p><code>RIGHT</code></p></li>
+    /// <li>
+    /// <p><code>LEFT</code></p></li>
+    /// <li>
+    /// <p><code>CENTER</code></p></li>
+    /// <li>
+    /// <p><code>RIGHT</code></p></li>
     /// </ul>
     pub fn set_horizontal_position(mut self, input: ::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition>) -> Self {
         self.horizontal_position = input;
@@ -158,17 +174,22 @@ impl ReferenceLineLabelConfigurationBuilder {
     }
     /// <p>The horizontal position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>LEFT</code></p></li>
-    /// <li><p><code>CENTER</code></p></li>
-    /// <li><p><code>RIGHT</code></p></li>
+    /// <li>
+    /// <p><code>LEFT</code></p></li>
+    /// <li>
+    /// <p><code>CENTER</code></p></li>
+    /// <li>
+    /// <p><code>RIGHT</code></p></li>
     /// </ul>
     pub fn get_horizontal_position(&self) -> &::std::option::Option<crate::types::ReferenceLineLabelHorizontalPosition> {
         &self.horizontal_position
     }
     /// <p>The vertical position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>ABOVE</code></p></li>
-    /// <li><p><code>BELOW</code></p></li>
+    /// <li>
+    /// <p><code>ABOVE</code></p></li>
+    /// <li>
+    /// <p><code>BELOW</code></p></li>
     /// </ul>
     pub fn vertical_position(mut self, input: crate::types::ReferenceLineLabelVerticalPosition) -> Self {
         self.vertical_position = ::std::option::Option::Some(input);
@@ -176,8 +197,10 @@ impl ReferenceLineLabelConfigurationBuilder {
     }
     /// <p>The vertical position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>ABOVE</code></p></li>
-    /// <li><p><code>BELOW</code></p></li>
+    /// <li>
+    /// <p><code>ABOVE</code></p></li>
+    /// <li>
+    /// <p><code>BELOW</code></p></li>
     /// </ul>
     pub fn set_vertical_position(mut self, input: ::std::option::Option<crate::types::ReferenceLineLabelVerticalPosition>) -> Self {
         self.vertical_position = input;
@@ -185,8 +208,10 @@ impl ReferenceLineLabelConfigurationBuilder {
     }
     /// <p>The vertical position configuration of the label in a reference line. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>ABOVE</code></p></li>
-    /// <li><p><code>BELOW</code></p></li>
+    /// <li>
+    /// <p><code>ABOVE</code></p></li>
+    /// <li>
+    /// <p><code>BELOW</code></p></li>
     /// </ul>
     pub fn get_vertical_position(&self) -> &::std::option::Option<crate::types::ReferenceLineLabelVerticalPosition> {
         &self.vertical_position

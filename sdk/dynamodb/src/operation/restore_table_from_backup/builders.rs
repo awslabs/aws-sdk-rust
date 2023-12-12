@@ -26,12 +26,18 @@ impl RestoreTableFromBackupInputBuilder {
 /// <p>You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per second.</p>
 /// <p>You must manually set up the following on the restored table:</p>
 /// <ul>
-/// <li><p>Auto scaling policies</p></li>
-/// <li><p>IAM policies</p></li>
-/// <li><p>Amazon CloudWatch metrics and alarms</p></li>
-/// <li><p>Tags</p></li>
-/// <li><p>Stream settings</p></li>
-/// <li><p>Time to Live (TTL) settings</p></li>
+/// <li>
+/// <p>Auto scaling policies</p></li>
+/// <li>
+/// <p>IAM policies</p></li>
+/// <li>
+/// <p>Amazon CloudWatch metrics and alarms</p></li>
+/// <li>
+/// <p>Tags</p></li>
+/// <li>
+/// <p>Stream settings</p></li>
+/// <li>
+/// <p>Time to Live (TTL) settings</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreTableFromBackupFluentBuilder {

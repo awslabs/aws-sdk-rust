@@ -4,8 +4,10 @@
 /// <p>Amazon Web Services security credentials consist of three parts: an access key ID, a secret access key, and a session token. You must use all three parts together to authenticate your access requests.</p>
 /// <p>You need Amazon Web Services credentials for the following tasks:</p>
 /// <ul>
-/// <li><p>To upload a game server build directly to Amazon GameLift S3 storage using <code>CreateBuild</code>. To get access for this task, call <code>RequestUploadCredentials</code>.</p></li>
-/// <li><p>To remotely connect to an active Amazon GameLift fleet instances. To get remote access, call <code>GetComputeAccess</code>.</p></li>
+/// <li>
+/// <p>To upload a game server build directly to Amazon GameLift S3 storage using <code>CreateBuild</code>. To get access for this task, call <code>RequestUploadCredentials</code>.</p></li>
+/// <li>
+/// <p>To remotely connect to an active Amazon GameLift fleet instances. To get remote access, call <code>GetComputeAccess</code>.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]

@@ -9,8 +9,10 @@ pub struct AwsElasticsearchDomainDomainEndpointOptions {
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p></li>
-    /// <li><p><code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p></li>
+    /// <li>
+    /// <p><code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p></li>
+    /// <li>
+    /// <p><code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p></li>
     /// </ul>
     pub tls_security_policy: ::std::option::Option<::std::string::String>,
 }
@@ -22,8 +24,10 @@ impl AwsElasticsearchDomainDomainEndpointOptions {
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p></li>
-    /// <li><p><code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p></li>
+    /// <li>
+    /// <p><code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p></li>
+    /// <li>
+    /// <p><code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p></li>
     /// </ul>
     pub fn tls_security_policy(&self) -> ::std::option::Option<&str> {
         self.tls_security_policy.as_deref()
@@ -61,8 +65,10 @@ impl AwsElasticsearchDomainDomainEndpointOptionsBuilder {
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p></li>
-    /// <li><p><code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p></li>
+    /// <li>
+    /// <p><code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p></li>
+    /// <li>
+    /// <p><code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p></li>
     /// </ul>
     pub fn tls_security_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tls_security_policy = ::std::option::Option::Some(input.into());
@@ -71,8 +77,10 @@ impl AwsElasticsearchDomainDomainEndpointOptionsBuilder {
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p></li>
-    /// <li><p><code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p></li>
+    /// <li>
+    /// <p><code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p></li>
+    /// <li>
+    /// <p><code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p></li>
     /// </ul>
     pub fn set_tls_security_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tls_security_policy = input;
@@ -81,8 +89,10 @@ impl AwsElasticsearchDomainDomainEndpointOptionsBuilder {
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p></li>
-    /// <li><p><code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p></li>
+    /// <li>
+    /// <p><code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p></li>
+    /// <li>
+    /// <p><code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p></li>
     /// </ul>
     pub fn get_tls_security_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.tls_security_policy

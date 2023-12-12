@@ -22,21 +22,32 @@ pub struct IpamResourceDiscoveryAssociation {
     pub is_default: ::std::option::Option<bool>,
     /// <p>The resource discovery status.</p>
     /// <ul>
-    /// <li><p><code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p></li>
-    /// <li><p><code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p></li>
+    /// <li>
+    /// <p><code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p></li>
+    /// <li>
+    /// <p><code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p></li>
     /// </ul>
     pub resource_discovery_status: ::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus>,
     /// <p>The lifecycle state of the association when you associate or disassociate a resource discovery.</p>
     /// <ul>
-    /// <li><p><code>associate-in-progress</code> - Resource discovery is being associated.</p></li>
-    /// <li><p><code>associate-complete</code> - Resource discovery association is complete.</p></li>
-    /// <li><p><code>associate-failed</code> - Resource discovery association has failed.</p></li>
-    /// <li><p><code>disassociate-in-progress</code> - Resource discovery is being disassociated.</p></li>
-    /// <li><p><code>disassociate-complete</code> - Resource discovery disassociation is complete.</p></li>
-    /// <li><p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
-    /// <li><p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
-    /// <li><p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
-    /// <li><p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
+    /// <li>
+    /// <p><code>associate-in-progress</code> - Resource discovery is being associated.</p></li>
+    /// <li>
+    /// <p><code>associate-complete</code> - Resource discovery association is complete.</p></li>
+    /// <li>
+    /// <p><code>associate-failed</code> - Resource discovery association has failed.</p></li>
+    /// <li>
+    /// <p><code>disassociate-in-progress</code> - Resource discovery is being disassociated.</p></li>
+    /// <li>
+    /// <p><code>disassociate-complete</code> - Resource discovery disassociation is complete.</p></li>
+    /// <li>
+    /// <p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
+    /// <li>
+    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
+    /// <li>
+    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
+    /// <li>
+    /// <p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::IpamResourceDiscoveryAssociationState>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
@@ -77,23 +88,34 @@ impl IpamResourceDiscoveryAssociation {
     }
     /// <p>The resource discovery status.</p>
     /// <ul>
-    /// <li><p><code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p></li>
-    /// <li><p><code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p></li>
+    /// <li>
+    /// <p><code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p></li>
+    /// <li>
+    /// <p><code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p></li>
     /// </ul>
     pub fn resource_discovery_status(&self) -> ::std::option::Option<&crate::types::IpamAssociatedResourceDiscoveryStatus> {
         self.resource_discovery_status.as_ref()
     }
     /// <p>The lifecycle state of the association when you associate or disassociate a resource discovery.</p>
     /// <ul>
-    /// <li><p><code>associate-in-progress</code> - Resource discovery is being associated.</p></li>
-    /// <li><p><code>associate-complete</code> - Resource discovery association is complete.</p></li>
-    /// <li><p><code>associate-failed</code> - Resource discovery association has failed.</p></li>
-    /// <li><p><code>disassociate-in-progress</code> - Resource discovery is being disassociated.</p></li>
-    /// <li><p><code>disassociate-complete</code> - Resource discovery disassociation is complete.</p></li>
-    /// <li><p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
-    /// <li><p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
-    /// <li><p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
-    /// <li><p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
+    /// <li>
+    /// <p><code>associate-in-progress</code> - Resource discovery is being associated.</p></li>
+    /// <li>
+    /// <p><code>associate-complete</code> - Resource discovery association is complete.</p></li>
+    /// <li>
+    /// <p><code>associate-failed</code> - Resource discovery association has failed.</p></li>
+    /// <li>
+    /// <p><code>disassociate-in-progress</code> - Resource discovery is being disassociated.</p></li>
+    /// <li>
+    /// <p><code>disassociate-complete</code> - Resource discovery disassociation is complete.</p></li>
+    /// <li>
+    /// <p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
+    /// <li>
+    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
+    /// <li>
+    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
+    /// <li>
+    /// <p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::IpamResourceDiscoveryAssociationState> {
         self.state.as_ref()
@@ -243,8 +265,10 @@ impl IpamResourceDiscoveryAssociationBuilder {
     }
     /// <p>The resource discovery status.</p>
     /// <ul>
-    /// <li><p><code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p></li>
-    /// <li><p><code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p></li>
+    /// <li>
+    /// <p><code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p></li>
+    /// <li>
+    /// <p><code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p></li>
     /// </ul>
     pub fn resource_discovery_status(mut self, input: crate::types::IpamAssociatedResourceDiscoveryStatus) -> Self {
         self.resource_discovery_status = ::std::option::Option::Some(input);
@@ -252,8 +276,10 @@ impl IpamResourceDiscoveryAssociationBuilder {
     }
     /// <p>The resource discovery status.</p>
     /// <ul>
-    /// <li><p><code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p></li>
-    /// <li><p><code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p></li>
+    /// <li>
+    /// <p><code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p></li>
+    /// <li>
+    /// <p><code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p></li>
     /// </ul>
     pub fn set_resource_discovery_status(mut self, input: ::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus>) -> Self {
         self.resource_discovery_status = input;
@@ -261,23 +287,34 @@ impl IpamResourceDiscoveryAssociationBuilder {
     }
     /// <p>The resource discovery status.</p>
     /// <ul>
-    /// <li><p><code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p></li>
-    /// <li><p><code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p></li>
+    /// <li>
+    /// <p><code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p></li>
+    /// <li>
+    /// <p><code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p></li>
     /// </ul>
     pub fn get_resource_discovery_status(&self) -> &::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus> {
         &self.resource_discovery_status
     }
     /// <p>The lifecycle state of the association when you associate or disassociate a resource discovery.</p>
     /// <ul>
-    /// <li><p><code>associate-in-progress</code> - Resource discovery is being associated.</p></li>
-    /// <li><p><code>associate-complete</code> - Resource discovery association is complete.</p></li>
-    /// <li><p><code>associate-failed</code> - Resource discovery association has failed.</p></li>
-    /// <li><p><code>disassociate-in-progress</code> - Resource discovery is being disassociated.</p></li>
-    /// <li><p><code>disassociate-complete</code> - Resource discovery disassociation is complete.</p></li>
-    /// <li><p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
-    /// <li><p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
-    /// <li><p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
-    /// <li><p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
+    /// <li>
+    /// <p><code>associate-in-progress</code> - Resource discovery is being associated.</p></li>
+    /// <li>
+    /// <p><code>associate-complete</code> - Resource discovery association is complete.</p></li>
+    /// <li>
+    /// <p><code>associate-failed</code> - Resource discovery association has failed.</p></li>
+    /// <li>
+    /// <p><code>disassociate-in-progress</code> - Resource discovery is being disassociated.</p></li>
+    /// <li>
+    /// <p><code>disassociate-complete</code> - Resource discovery disassociation is complete.</p></li>
+    /// <li>
+    /// <p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
+    /// <li>
+    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
+    /// <li>
+    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
+    /// <li>
+    /// <p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::IpamResourceDiscoveryAssociationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -285,15 +322,24 @@ impl IpamResourceDiscoveryAssociationBuilder {
     }
     /// <p>The lifecycle state of the association when you associate or disassociate a resource discovery.</p>
     /// <ul>
-    /// <li><p><code>associate-in-progress</code> - Resource discovery is being associated.</p></li>
-    /// <li><p><code>associate-complete</code> - Resource discovery association is complete.</p></li>
-    /// <li><p><code>associate-failed</code> - Resource discovery association has failed.</p></li>
-    /// <li><p><code>disassociate-in-progress</code> - Resource discovery is being disassociated.</p></li>
-    /// <li><p><code>disassociate-complete</code> - Resource discovery disassociation is complete.</p></li>
-    /// <li><p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
-    /// <li><p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
-    /// <li><p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
-    /// <li><p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
+    /// <li>
+    /// <p><code>associate-in-progress</code> - Resource discovery is being associated.</p></li>
+    /// <li>
+    /// <p><code>associate-complete</code> - Resource discovery association is complete.</p></li>
+    /// <li>
+    /// <p><code>associate-failed</code> - Resource discovery association has failed.</p></li>
+    /// <li>
+    /// <p><code>disassociate-in-progress</code> - Resource discovery is being disassociated.</p></li>
+    /// <li>
+    /// <p><code>disassociate-complete</code> - Resource discovery disassociation is complete.</p></li>
+    /// <li>
+    /// <p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
+    /// <li>
+    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
+    /// <li>
+    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
+    /// <li>
+    /// <p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IpamResourceDiscoveryAssociationState>) -> Self {
         self.state = input;
@@ -301,15 +347,24 @@ impl IpamResourceDiscoveryAssociationBuilder {
     }
     /// <p>The lifecycle state of the association when you associate or disassociate a resource discovery.</p>
     /// <ul>
-    /// <li><p><code>associate-in-progress</code> - Resource discovery is being associated.</p></li>
-    /// <li><p><code>associate-complete</code> - Resource discovery association is complete.</p></li>
-    /// <li><p><code>associate-failed</code> - Resource discovery association has failed.</p></li>
-    /// <li><p><code>disassociate-in-progress</code> - Resource discovery is being disassociated.</p></li>
-    /// <li><p><code>disassociate-complete</code> - Resource discovery disassociation is complete.</p></li>
-    /// <li><p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
-    /// <li><p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
-    /// <li><p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
-    /// <li><p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
+    /// <li>
+    /// <p><code>associate-in-progress</code> - Resource discovery is being associated.</p></li>
+    /// <li>
+    /// <p><code>associate-complete</code> - Resource discovery association is complete.</p></li>
+    /// <li>
+    /// <p><code>associate-failed</code> - Resource discovery association has failed.</p></li>
+    /// <li>
+    /// <p><code>disassociate-in-progress</code> - Resource discovery is being disassociated.</p></li>
+    /// <li>
+    /// <p><code>disassociate-complete</code> - Resource discovery disassociation is complete.</p></li>
+    /// <li>
+    /// <p><code>disassociate-failed </code> - Resource discovery disassociation has failed.</p></li>
+    /// <li>
+    /// <p><code>isolate-in-progress</code> - Amazon Web Services account that created the resource discovery association has been removed and the resource discovery associatation is being isolated.</p></li>
+    /// <li>
+    /// <p><code>isolate-complete</code> - Resource discovery isolation is complete..</p></li>
+    /// <li>
+    /// <p><code>restore-in-progress</code> - Resource discovery is being restored.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IpamResourceDiscoveryAssociationState> {
         &self.state

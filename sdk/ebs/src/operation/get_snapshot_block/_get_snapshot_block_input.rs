@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSnapshotBlockInput {
-    /// <p>The ID of the snapshot containing the block from which to get data.</p> <important>
+    /// <p>The ID of the snapshot containing the block from which to get data.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct GetSnapshotBlockInput {
     pub block_token: ::std::option::Option<::std::string::String>,
 }
 impl GetSnapshotBlockInput {
-    /// <p>The ID of the snapshot containing the block from which to get data.</p> <important>
+    /// <p>The ID of the snapshot containing the block from which to get data.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
@@ -44,7 +44,7 @@ pub struct GetSnapshotBlockInputBuilder {
     pub(crate) block_token: ::std::option::Option<::std::string::String>,
 }
 impl GetSnapshotBlockInputBuilder {
-    /// <p>The ID of the snapshot containing the block from which to get data.</p> <important>
+    /// <p>The ID of the snapshot containing the block from which to get data.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
     /// This field is required.
@@ -52,14 +52,14 @@ impl GetSnapshotBlockInputBuilder {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the snapshot containing the block from which to get data.</p> <important>
+    /// <p>The ID of the snapshot containing the block from which to get data.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }
-    /// <p>The ID of the snapshot containing the block from which to get data.</p> <important>
+    /// <p>The ID of the snapshot containing the block from which to get data.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {

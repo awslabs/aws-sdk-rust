@@ -8,7 +8,7 @@ pub struct AccessPoint {
     pub name: ::std::string::String,
     /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
     pub network_origin: crate::types::NetworkOrigin,
-    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
+    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p><note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
@@ -31,7 +31,7 @@ impl AccessPoint {
     pub fn network_origin(&self) -> &crate::types::NetworkOrigin {
         &self.network_origin
     }
-    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
+    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p><note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
@@ -105,21 +105,21 @@ impl AccessPointBuilder {
     pub fn get_network_origin(&self) -> &::std::option::Option<crate::types::NetworkOrigin> {
         &self.network_origin
     }
-    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
+    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p><note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
+    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p><note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }
-    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
+    /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p><note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {

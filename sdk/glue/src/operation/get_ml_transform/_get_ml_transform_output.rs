@@ -23,8 +23,7 @@ pub struct GetMlTransformOutput {
     pub evaluation_metrics: ::std::option::Option<crate::types::EvaluationMetrics>,
     /// <p>The number of labels available for this transform.</p>
     pub label_count: i32,
-    /// <p>The <code>Map
-    /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
+    /// <p>The <code>Map<column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
     pub schema: ::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
     pub role: ::std::option::Option<::std::string::String>,
@@ -35,9 +34,12 @@ pub struct GetMlTransformOutput {
     pub max_capacity: ::std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li><p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p></li>
-    /// <li><p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p></li>
-    /// <li><p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p></li>
     /// </ul>
     pub worker_type: ::std::option::Option<crate::types::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
@@ -93,8 +95,7 @@ impl GetMlTransformOutput {
     pub fn label_count(&self) -> i32 {
         self.label_count
     }
-    /// <p>The <code>Map
-    /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
+    /// <p>The <code>Map<column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema.is_none()`.
     pub fn schema(&self) -> &[crate::types::SchemaColumn] {
@@ -115,9 +116,12 @@ impl GetMlTransformOutput {
     }
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li><p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p></li>
-    /// <li><p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p></li>
-    /// <li><p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p></li>
     /// </ul>
     pub fn worker_type(&self) -> ::std::option::Option<&crate::types::WorkerType> {
         self.worker_type.as_ref()
@@ -327,22 +331,19 @@ impl GetMlTransformOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_schema`](Self::set_schema).
     ///
-    /// <p>The <code>Map
-    /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
+    /// <p>The <code>Map<column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
     pub fn schema(mut self, input: crate::types::SchemaColumn) -> Self {
         let mut v = self.schema.unwrap_or_default();
         v.push(input);
         self.schema = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The <code>Map
-    /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
+    /// <p>The <code>Map<column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>>) -> Self {
         self.schema = input;
         self
     }
-    /// <p>The <code>Map
-    /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
+    /// <p>The <code>Map<column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaColumn>> {
         &self.schema
     }
@@ -393,9 +394,12 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li><p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p></li>
-    /// <li><p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p></li>
-    /// <li><p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p></li>
     /// </ul>
     pub fn worker_type(mut self, input: crate::types::WorkerType) -> Self {
         self.worker_type = ::std::option::Option::Some(input);
@@ -403,9 +407,12 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li><p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p></li>
-    /// <li><p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p></li>
-    /// <li><p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p></li>
     /// </ul>
     pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
@@ -413,9 +420,12 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li><p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p></li>
-    /// <li><p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p></li>
-    /// <li><p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p></li>
+    /// <li>
+    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p></li>
     /// </ul>
     pub fn get_worker_type(&self) -> &::std::option::Option<crate::types::WorkerType> {
         &self.worker_type

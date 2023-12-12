@@ -132,10 +132,14 @@ impl ListLicensesFluentBuilder {
     ///
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li><p><code>Beneficiary</code></p></li>
-    /// <li><p><code>ProductSKU</code></p></li>
-    /// <li><p><code>Fingerprint</code></p></li>
-    /// <li><p><code>Status</code></p></li>
+    /// <li>
+    /// <p><code>Beneficiary</code></p></li>
+    /// <li>
+    /// <p><code>ProductSKU</code></p></li>
+    /// <li>
+    /// <p><code>Fingerprint</code></p></li>
+    /// <li>
+    /// <p><code>Status</code></p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -143,10 +147,14 @@ impl ListLicensesFluentBuilder {
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li><p><code>Beneficiary</code></p></li>
-    /// <li><p><code>ProductSKU</code></p></li>
-    /// <li><p><code>Fingerprint</code></p></li>
-    /// <li><p><code>Status</code></p></li>
+    /// <li>
+    /// <p><code>Beneficiary</code></p></li>
+    /// <li>
+    /// <p><code>ProductSKU</code></p></li>
+    /// <li>
+    /// <p><code>Fingerprint</code></p></li>
+    /// <li>
+    /// <p><code>Status</code></p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -154,10 +162,14 @@ impl ListLicensesFluentBuilder {
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li><p><code>Beneficiary</code></p></li>
-    /// <li><p><code>ProductSKU</code></p></li>
-    /// <li><p><code>Fingerprint</code></p></li>
-    /// <li><p><code>Status</code></p></li>
+    /// <li>
+    /// <p><code>Beneficiary</code></p></li>
+    /// <li>
+    /// <p><code>ProductSKU</code></p></li>
+    /// <li>
+    /// <p><code>Fingerprint</code></p></li>
+    /// <li>
+    /// <p><code>Status</code></p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

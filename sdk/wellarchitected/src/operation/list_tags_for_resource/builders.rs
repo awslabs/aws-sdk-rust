@@ -22,7 +22,7 @@ impl ListTagsForResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>List the tags for a resource.</p> <note>
+/// <p>List the tags for a resource.</p><note>
 /// <p>The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

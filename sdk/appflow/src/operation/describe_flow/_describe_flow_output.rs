@@ -41,9 +41,12 @@ pub struct DescribeFlowOutput {
     pub last_run_metadata_catalog_details: ::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>>,
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li><p>Source-to-destination field mappings</p></li>
-    /// <li><p>Field data types</p></li>
-    /// <li><p>Partition keys</p></li>
+    /// <li>
+    /// <p>Source-to-destination field mappings</p></li>
+    /// <li>
+    /// <p>Field data types</p></li>
+    /// <li>
+    /// <p>Partition keys</p></li>
     /// </ul>
     pub schema_version: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -129,9 +132,12 @@ impl DescribeFlowOutput {
     }
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li><p>Source-to-destination field mappings</p></li>
-    /// <li><p>Field data types</p></li>
-    /// <li><p>Partition keys</p></li>
+    /// <li>
+    /// <p>Source-to-destination field mappings</p></li>
+    /// <li>
+    /// <p>Field data types</p></li>
+    /// <li>
+    /// <p>Partition keys</p></li>
     /// </ul>
     pub fn schema_version(&self) -> ::std::option::Option<i64> {
         self.schema_version
@@ -456,9 +462,12 @@ impl DescribeFlowOutputBuilder {
     }
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li><p>Source-to-destination field mappings</p></li>
-    /// <li><p>Field data types</p></li>
-    /// <li><p>Partition keys</p></li>
+    /// <li>
+    /// <p>Source-to-destination field mappings</p></li>
+    /// <li>
+    /// <p>Field data types</p></li>
+    /// <li>
+    /// <p>Partition keys</p></li>
     /// </ul>
     pub fn schema_version(mut self, input: i64) -> Self {
         self.schema_version = ::std::option::Option::Some(input);
@@ -466,9 +475,12 @@ impl DescribeFlowOutputBuilder {
     }
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li><p>Source-to-destination field mappings</p></li>
-    /// <li><p>Field data types</p></li>
-    /// <li><p>Partition keys</p></li>
+    /// <li>
+    /// <p>Source-to-destination field mappings</p></li>
+    /// <li>
+    /// <p>Field data types</p></li>
+    /// <li>
+    /// <p>Partition keys</p></li>
     /// </ul>
     pub fn set_schema_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.schema_version = input;
@@ -476,9 +488,12 @@ impl DescribeFlowOutputBuilder {
     }
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li><p>Source-to-destination field mappings</p></li>
-    /// <li><p>Field data types</p></li>
-    /// <li><p>Partition keys</p></li>
+    /// <li>
+    /// <p>Source-to-destination field mappings</p></li>
+    /// <li>
+    /// <p>Field data types</p></li>
+    /// <li>
+    /// <p>Partition keys</p></li>
     /// </ul>
     pub fn get_schema_version(&self) -> &::std::option::Option<i64> {
         &self.schema_version

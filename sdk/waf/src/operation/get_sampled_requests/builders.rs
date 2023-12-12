@@ -129,8 +129,10 @@ impl GetSampledRequestsFluentBuilder {
     }
     /// <p><code>RuleId</code> is one of three values:</p>
     /// <ul>
-    /// <li><p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
-    /// <li><p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
+    /// <li>
+    /// <p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
     /// </ul>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_id(input.into());
@@ -138,8 +140,10 @@ impl GetSampledRequestsFluentBuilder {
     }
     /// <p><code>RuleId</code> is one of three values:</p>
     /// <ul>
-    /// <li><p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
-    /// <li><p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
+    /// <li>
+    /// <p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
     /// </ul>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_id(input);
@@ -147,8 +151,10 @@ impl GetSampledRequestsFluentBuilder {
     }
     /// <p><code>RuleId</code> is one of three values:</p>
     /// <ul>
-    /// <li><p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
-    /// <li><p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
+    /// <li>
+    /// <p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
     /// </ul>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rule_id()

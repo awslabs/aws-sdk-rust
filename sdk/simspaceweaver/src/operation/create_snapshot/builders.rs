@@ -26,12 +26,18 @@ impl CreateSnapshotInputBuilder {
 /// <p>You specify a <code>Destination</code> when you create a snapshot. The <code>Destination</code> is the name of an Amazon S3 bucket and an optional <code>ObjectKeyPrefix</code>. The <code>ObjectKeyPrefix</code> is usually the name of a folder in the bucket. SimSpace Weaver creates a <code>snapshot</code> folder inside the <code>Destination</code> and places the snapshot file there.</p>
 /// <p>The snapshot file is an Amazon S3 object. It has an object key with the form: <code> <i>object-key-prefix</i>/snapshot/<i>simulation-name</i>-<i>YYMMdd</i>-<i>HHmm</i>-<i>ss</i>.zip</code>, where:</p>
 /// <ul>
-/// <li><p><code> <i>YY</i> </code> is the 2-digit year</p></li>
-/// <li><p><code> <i>MM</i> </code> is the 2-digit month</p></li>
-/// <li><p><code> <i>dd</i> </code> is the 2-digit day of the month</p></li>
-/// <li><p><code> <i>HH</i> </code> is the 2-digit hour (24-hour clock)</p></li>
-/// <li><p><code> <i>mm</i> </code> is the 2-digit minutes</p></li>
-/// <li><p><code> <i>ss</i> </code> is the 2-digit seconds</p></li>
+/// <li>
+/// <p><code> <i>YY</i> </code> is the 2-digit year</p></li>
+/// <li>
+/// <p><code> <i>MM</i> </code> is the 2-digit month</p></li>
+/// <li>
+/// <p><code> <i>dd</i> </code> is the 2-digit day of the month</p></li>
+/// <li>
+/// <p><code> <i>HH</i> </code> is the 2-digit hour (24-hour clock)</p></li>
+/// <li>
+/// <p><code> <i>mm</i> </code> is the 2-digit minutes</p></li>
+/// <li>
+/// <p><code> <i>ss</i> </code> is the 2-digit seconds</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSnapshotFluentBuilder {

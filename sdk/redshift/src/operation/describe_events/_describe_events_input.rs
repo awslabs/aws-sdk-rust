@@ -8,20 +8,28 @@ pub struct DescribeEventsInput {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
-    /// <li><p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
-    /// <li><p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
-    /// <li><p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
     /// </ul>
     pub source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     /// <p>Constraints:</p>
     /// <p>If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
-    /// <li><p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
-    /// <li><p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
-    /// <li><p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
     /// </ul>
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
@@ -45,10 +53,14 @@ impl DescribeEventsInput {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
-    /// <li><p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
-    /// <li><p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
-    /// <li><p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
     /// </ul>
     pub fn source_identifier(&self) -> ::std::option::Option<&str> {
         self.source_identifier.as_deref()
@@ -57,10 +69,14 @@ impl DescribeEventsInput {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
-    /// <li><p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
-    /// <li><p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
-    /// <li><p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
     /// </ul>
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
@@ -115,10 +131,14 @@ impl DescribeEventsInputBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
-    /// <li><p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
-    /// <li><p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
-    /// <li><p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
     /// </ul>
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
@@ -128,10 +148,14 @@ impl DescribeEventsInputBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
-    /// <li><p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
-    /// <li><p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
-    /// <li><p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
     /// </ul>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_identifier = input;
@@ -141,10 +165,14 @@ impl DescribeEventsInputBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
-    /// <li><p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
-    /// <li><p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
-    /// <li><p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
     /// </ul>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_identifier
@@ -153,10 +181,14 @@ impl DescribeEventsInputBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
-    /// <li><p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
-    /// <li><p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
-    /// <li><p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
     /// </ul>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
@@ -166,10 +198,14 @@ impl DescribeEventsInputBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
-    /// <li><p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
-    /// <li><p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
-    /// <li><p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
     /// </ul>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
@@ -179,10 +215,14 @@ impl DescribeEventsInputBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
-    /// <li><p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
-    /// <li><p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
-    /// <li><p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
     /// </ul>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         &self.source_type

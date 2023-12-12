@@ -22,7 +22,7 @@ impl DeleteModelManifestInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteModelManifest`.
 ///
-/// <p>Deletes a vehicle model (model manifest).</p> <note>
+/// <p>Deletes a vehicle model (model manifest).</p><note>
 /// <p>If the vehicle model is successfully deleted, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

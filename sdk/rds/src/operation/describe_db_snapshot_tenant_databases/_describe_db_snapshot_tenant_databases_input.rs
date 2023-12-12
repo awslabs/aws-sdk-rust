@@ -6,34 +6,48 @@ pub struct DescribeDbSnapshotTenantDatabasesInput {
     /// <p>The ID of the DB instance used to create the DB snapshots. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the identifier of an existing <code>DBInstance</code>.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the identifier of an existing <code>DBInstance</code>.</p></li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a DB snapshot that contains the tenant databases to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you specify this parameter, the value must match the ID of an existing DB snapshot.</p></li>
-    /// <li><p>If you specify an automatic snapshot, you must also specify <code>SnapshotType</code>.</p></li>
+    /// <li>
+    /// <p>If you specify this parameter, the value must match the ID of an existing DB snapshot.</p></li>
+    /// <li>
+    /// <p>If you specify an automatic snapshot, you must also specify <code>SnapshotType</code>.</p></li>
     /// </ul>
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of DB snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>automated</code> – All DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
-    /// <li><p><code>manual</code> – All DB snapshots that have been taken by my Amazon Web Services account.</p></li>
-    /// <li><p><code>shared</code> – All manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
-    /// <li><p><code>public</code> – All DB snapshots that have been marked as public.</p></li>
-    /// <li><p><code>awsbackup</code> – All DB snapshots managed by the Amazon Web Services Backup service.</p></li>
+    /// <li>
+    /// <p><code>automated</code> – All DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>manual</code> – All DB snapshots that have been taken by my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>shared</code> – All manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>public</code> – All DB snapshots that have been marked as public.</p></li>
+    /// <li>
+    /// <p><code>awsbackup</code> – All DB snapshots managed by the Amazon Web Services Backup service.</p></li>
     /// </ul>
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more tenant databases to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
-    /// <li><p><code>tenant-database-resource-id</code> - Tenant database resource identifiers. The results list only includes information about the tenant databases contained within the DB snapshots.</p></li>
-    /// <li><p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about snapshots containing tenant databases contained within the DB instances identified by these resource identifiers.</p></li>
-    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
-    /// <li><p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
-    /// <li><p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
+    /// <li>
+    /// <p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
+    /// <li>
+    /// <p><code>tenant-database-resource-id</code> - Tenant database resource identifiers. The results list only includes information about the tenant databases contained within the DB snapshots.</p></li>
+    /// <li>
+    /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about snapshots containing tenant databases contained within the DB instances identified by these resource identifiers.</p></li>
+    /// <li>
+    /// <p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
+    /// <li>
+    /// <p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
+    /// <li>
+    /// <p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
@@ -47,7 +61,8 @@ impl DescribeDbSnapshotTenantDatabasesInput {
     /// <p>The ID of the DB instance used to create the DB snapshots. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the identifier of an existing <code>DBInstance</code>.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the identifier of an existing <code>DBInstance</code>.</p></li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
@@ -55,19 +70,26 @@ impl DescribeDbSnapshotTenantDatabasesInput {
     /// <p>The ID of a DB snapshot that contains the tenant databases to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you specify this parameter, the value must match the ID of an existing DB snapshot.</p></li>
-    /// <li><p>If you specify an automatic snapshot, you must also specify <code>SnapshotType</code>.</p></li>
+    /// <li>
+    /// <p>If you specify this parameter, the value must match the ID of an existing DB snapshot.</p></li>
+    /// <li>
+    /// <p>If you specify an automatic snapshot, you must also specify <code>SnapshotType</code>.</p></li>
     /// </ul>
     pub fn db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.db_snapshot_identifier.as_deref()
     }
     /// <p>The type of DB snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>automated</code> – All DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
-    /// <li><p><code>manual</code> – All DB snapshots that have been taken by my Amazon Web Services account.</p></li>
-    /// <li><p><code>shared</code> – All manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
-    /// <li><p><code>public</code> – All DB snapshots that have been marked as public.</p></li>
-    /// <li><p><code>awsbackup</code> – All DB snapshots managed by the Amazon Web Services Backup service.</p></li>
+    /// <li>
+    /// <p><code>automated</code> – All DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>manual</code> – All DB snapshots that have been taken by my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>shared</code> – All manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>public</code> – All DB snapshots that have been marked as public.</p></li>
+    /// <li>
+    /// <p><code>awsbackup</code> – All DB snapshots managed by the Amazon Web Services Backup service.</p></li>
     /// </ul>
     pub fn snapshot_type(&self) -> ::std::option::Option<&str> {
         self.snapshot_type.as_deref()
@@ -75,12 +97,18 @@ impl DescribeDbSnapshotTenantDatabasesInput {
     /// <p>A filter that specifies one or more tenant databases to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
-    /// <li><p><code>tenant-database-resource-id</code> - Tenant database resource identifiers. The results list only includes information about the tenant databases contained within the DB snapshots.</p></li>
-    /// <li><p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about snapshots containing tenant databases contained within the DB instances identified by these resource identifiers.</p></li>
-    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
-    /// <li><p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
-    /// <li><p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
+    /// <li>
+    /// <p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
+    /// <li>
+    /// <p><code>tenant-database-resource-id</code> - Tenant database resource identifiers. The results list only includes information about the tenant databases contained within the DB snapshots.</p></li>
+    /// <li>
+    /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about snapshots containing tenant databases contained within the DB instances identified by these resource identifiers.</p></li>
+    /// <li>
+    /// <p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
+    /// <li>
+    /// <p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
+    /// <li>
+    /// <p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -123,7 +151,8 @@ impl DescribeDbSnapshotTenantDatabasesInputBuilder {
     /// <p>The ID of the DB instance used to create the DB snapshots. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the identifier of an existing <code>DBInstance</code>.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the identifier of an existing <code>DBInstance</code>.</p></li>
     /// </ul>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
@@ -132,7 +161,8 @@ impl DescribeDbSnapshotTenantDatabasesInputBuilder {
     /// <p>The ID of the DB instance used to create the DB snapshots. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the identifier of an existing <code>DBInstance</code>.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the identifier of an existing <code>DBInstance</code>.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -141,7 +171,8 @@ impl DescribeDbSnapshotTenantDatabasesInputBuilder {
     /// <p>The ID of the DB instance used to create the DB snapshots. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the identifier of an existing <code>DBInstance</code>.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the identifier of an existing <code>DBInstance</code>.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
@@ -149,8 +180,10 @@ impl DescribeDbSnapshotTenantDatabasesInputBuilder {
     /// <p>The ID of a DB snapshot that contains the tenant databases to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you specify this parameter, the value must match the ID of an existing DB snapshot.</p></li>
-    /// <li><p>If you specify an automatic snapshot, you must also specify <code>SnapshotType</code>.</p></li>
+    /// <li>
+    /// <p>If you specify this parameter, the value must match the ID of an existing DB snapshot.</p></li>
+    /// <li>
+    /// <p>If you specify an automatic snapshot, you must also specify <code>SnapshotType</code>.</p></li>
     /// </ul>
     pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_snapshot_identifier = ::std::option::Option::Some(input.into());
@@ -159,8 +192,10 @@ impl DescribeDbSnapshotTenantDatabasesInputBuilder {
     /// <p>The ID of a DB snapshot that contains the tenant databases to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you specify this parameter, the value must match the ID of an existing DB snapshot.</p></li>
-    /// <li><p>If you specify an automatic snapshot, you must also specify <code>SnapshotType</code>.</p></li>
+    /// <li>
+    /// <p>If you specify this parameter, the value must match the ID of an existing DB snapshot.</p></li>
+    /// <li>
+    /// <p>If you specify an automatic snapshot, you must also specify <code>SnapshotType</code>.</p></li>
     /// </ul>
     pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_snapshot_identifier = input;
@@ -169,19 +204,26 @@ impl DescribeDbSnapshotTenantDatabasesInputBuilder {
     /// <p>The ID of a DB snapshot that contains the tenant databases to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you specify this parameter, the value must match the ID of an existing DB snapshot.</p></li>
-    /// <li><p>If you specify an automatic snapshot, you must also specify <code>SnapshotType</code>.</p></li>
+    /// <li>
+    /// <p>If you specify this parameter, the value must match the ID of an existing DB snapshot.</p></li>
+    /// <li>
+    /// <p>If you specify an automatic snapshot, you must also specify <code>SnapshotType</code>.</p></li>
     /// </ul>
     pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_snapshot_identifier
     }
     /// <p>The type of DB snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>automated</code> – All DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
-    /// <li><p><code>manual</code> – All DB snapshots that have been taken by my Amazon Web Services account.</p></li>
-    /// <li><p><code>shared</code> – All manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
-    /// <li><p><code>public</code> – All DB snapshots that have been marked as public.</p></li>
-    /// <li><p><code>awsbackup</code> – All DB snapshots managed by the Amazon Web Services Backup service.</p></li>
+    /// <li>
+    /// <p><code>automated</code> – All DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>manual</code> – All DB snapshots that have been taken by my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>shared</code> – All manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>public</code> – All DB snapshots that have been marked as public.</p></li>
+    /// <li>
+    /// <p><code>awsbackup</code> – All DB snapshots managed by the Amazon Web Services Backup service.</p></li>
     /// </ul>
     pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_type = ::std::option::Option::Some(input.into());
@@ -189,11 +231,16 @@ impl DescribeDbSnapshotTenantDatabasesInputBuilder {
     }
     /// <p>The type of DB snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>automated</code> – All DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
-    /// <li><p><code>manual</code> – All DB snapshots that have been taken by my Amazon Web Services account.</p></li>
-    /// <li><p><code>shared</code> – All manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
-    /// <li><p><code>public</code> – All DB snapshots that have been marked as public.</p></li>
-    /// <li><p><code>awsbackup</code> – All DB snapshots managed by the Amazon Web Services Backup service.</p></li>
+    /// <li>
+    /// <p><code>automated</code> – All DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>manual</code> – All DB snapshots that have been taken by my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>shared</code> – All manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>public</code> – All DB snapshots that have been marked as public.</p></li>
+    /// <li>
+    /// <p><code>awsbackup</code> – All DB snapshots managed by the Amazon Web Services Backup service.</p></li>
     /// </ul>
     pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_type = input;
@@ -201,11 +248,16 @@ impl DescribeDbSnapshotTenantDatabasesInputBuilder {
     }
     /// <p>The type of DB snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>automated</code> – All DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
-    /// <li><p><code>manual</code> – All DB snapshots that have been taken by my Amazon Web Services account.</p></li>
-    /// <li><p><code>shared</code> – All manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
-    /// <li><p><code>public</code> – All DB snapshots that have been marked as public.</p></li>
-    /// <li><p><code>awsbackup</code> – All DB snapshots managed by the Amazon Web Services Backup service.</p></li>
+    /// <li>
+    /// <p><code>automated</code> – All DB snapshots that have been automatically taken by Amazon RDS for my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>manual</code> – All DB snapshots that have been taken by my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>shared</code> – All manual DB snapshots that have been shared to my Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>public</code> – All DB snapshots that have been marked as public.</p></li>
+    /// <li>
+    /// <p><code>awsbackup</code> – All DB snapshots managed by the Amazon Web Services Backup service.</p></li>
     /// </ul>
     pub fn get_snapshot_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_type
@@ -217,12 +269,18 @@ impl DescribeDbSnapshotTenantDatabasesInputBuilder {
     /// <p>A filter that specifies one or more tenant databases to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
-    /// <li><p><code>tenant-database-resource-id</code> - Tenant database resource identifiers. The results list only includes information about the tenant databases contained within the DB snapshots.</p></li>
-    /// <li><p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about snapshots containing tenant databases contained within the DB instances identified by these resource identifiers.</p></li>
-    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
-    /// <li><p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
-    /// <li><p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
+    /// <li>
+    /// <p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
+    /// <li>
+    /// <p><code>tenant-database-resource-id</code> - Tenant database resource identifiers. The results list only includes information about the tenant databases contained within the DB snapshots.</p></li>
+    /// <li>
+    /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about snapshots containing tenant databases contained within the DB instances identified by these resource identifiers.</p></li>
+    /// <li>
+    /// <p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
+    /// <li>
+    /// <p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
+    /// <li>
+    /// <p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -233,12 +291,18 @@ impl DescribeDbSnapshotTenantDatabasesInputBuilder {
     /// <p>A filter that specifies one or more tenant databases to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
-    /// <li><p><code>tenant-database-resource-id</code> - Tenant database resource identifiers. The results list only includes information about the tenant databases contained within the DB snapshots.</p></li>
-    /// <li><p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about snapshots containing tenant databases contained within the DB instances identified by these resource identifiers.</p></li>
-    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
-    /// <li><p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
-    /// <li><p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
+    /// <li>
+    /// <p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
+    /// <li>
+    /// <p><code>tenant-database-resource-id</code> - Tenant database resource identifiers. The results list only includes information about the tenant databases contained within the DB snapshots.</p></li>
+    /// <li>
+    /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about snapshots containing tenant databases contained within the DB instances identified by these resource identifiers.</p></li>
+    /// <li>
+    /// <p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
+    /// <li>
+    /// <p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
+    /// <li>
+    /// <p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -247,12 +311,18 @@ impl DescribeDbSnapshotTenantDatabasesInputBuilder {
     /// <p>A filter that specifies one or more tenant databases to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
-    /// <li><p><code>tenant-database-resource-id</code> - Tenant database resource identifiers. The results list only includes information about the tenant databases contained within the DB snapshots.</p></li>
-    /// <li><p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about snapshots containing tenant databases contained within the DB instances identified by these resource identifiers.</p></li>
-    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
-    /// <li><p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
-    /// <li><p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
+    /// <li>
+    /// <p><code>tenant-db-name</code> - Tenant database names. The results list only includes information about the tenant databases that match these tenant DB names.</p></li>
+    /// <li>
+    /// <p><code>tenant-database-resource-id</code> - Tenant database resource identifiers. The results list only includes information about the tenant databases contained within the DB snapshots.</p></li>
+    /// <li>
+    /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about snapshots containing tenant databases contained within the DB instances identified by these resource identifiers.</p></li>
+    /// <li>
+    /// <p><code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).</p></li>
+    /// <li>
+    /// <p><code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p></li>
+    /// <li>
+    /// <p><code>snapshot-type</code> - Accepts types of DB snapshots.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

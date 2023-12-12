@@ -9,12 +9,18 @@ pub struct RetentionPeriod {
     pub r#type: ::std::option::Option<crate::types::RetentionPeriodType>,
     /// <p>Defines the amount of time for the retention period of an FSx for ONTAP SnapLock volume. You can't set a value for <code>INFINITE</code> or <code>UNSPECIFIED</code>. For all other options, the following ranges are valid:</p>
     /// <ul>
-    /// <li><p><code>Seconds</code>: 0 - 65,535</p></li>
-    /// <li><p><code>Minutes</code>: 0 - 65,535</p></li>
-    /// <li><p><code>Hours</code>: 0 - 24</p></li>
-    /// <li><p><code>Days</code>: 0 - 365</p></li>
-    /// <li><p><code>Months</code>: 0 - 12</p></li>
-    /// <li><p><code>Years</code>: 0 - 100</p></li>
+    /// <li>
+    /// <p><code>Seconds</code>: 0 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Minutes</code>: 0 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Hours</code>: 0 - 24</p></li>
+    /// <li>
+    /// <p><code>Days</code>: 0 - 365</p></li>
+    /// <li>
+    /// <p><code>Months</code>: 0 - 12</p></li>
+    /// <li>
+    /// <p><code>Years</code>: 0 - 100</p></li>
     /// </ul>
     pub value: ::std::option::Option<i32>,
 }
@@ -25,12 +31,18 @@ impl RetentionPeriod {
     }
     /// <p>Defines the amount of time for the retention period of an FSx for ONTAP SnapLock volume. You can't set a value for <code>INFINITE</code> or <code>UNSPECIFIED</code>. For all other options, the following ranges are valid:</p>
     /// <ul>
-    /// <li><p><code>Seconds</code>: 0 - 65,535</p></li>
-    /// <li><p><code>Minutes</code>: 0 - 65,535</p></li>
-    /// <li><p><code>Hours</code>: 0 - 24</p></li>
-    /// <li><p><code>Days</code>: 0 - 365</p></li>
-    /// <li><p><code>Months</code>: 0 - 12</p></li>
-    /// <li><p><code>Years</code>: 0 - 100</p></li>
+    /// <li>
+    /// <p><code>Seconds</code>: 0 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Minutes</code>: 0 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Hours</code>: 0 - 24</p></li>
+    /// <li>
+    /// <p><code>Days</code>: 0 - 365</p></li>
+    /// <li>
+    /// <p><code>Months</code>: 0 - 12</p></li>
+    /// <li>
+    /// <p><code>Years</code>: 0 - 100</p></li>
     /// </ul>
     pub fn value(&self) -> ::std::option::Option<i32> {
         self.value
@@ -68,12 +80,18 @@ impl RetentionPeriodBuilder {
     }
     /// <p>Defines the amount of time for the retention period of an FSx for ONTAP SnapLock volume. You can't set a value for <code>INFINITE</code> or <code>UNSPECIFIED</code>. For all other options, the following ranges are valid:</p>
     /// <ul>
-    /// <li><p><code>Seconds</code>: 0 - 65,535</p></li>
-    /// <li><p><code>Minutes</code>: 0 - 65,535</p></li>
-    /// <li><p><code>Hours</code>: 0 - 24</p></li>
-    /// <li><p><code>Days</code>: 0 - 365</p></li>
-    /// <li><p><code>Months</code>: 0 - 12</p></li>
-    /// <li><p><code>Years</code>: 0 - 100</p></li>
+    /// <li>
+    /// <p><code>Seconds</code>: 0 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Minutes</code>: 0 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Hours</code>: 0 - 24</p></li>
+    /// <li>
+    /// <p><code>Days</code>: 0 - 365</p></li>
+    /// <li>
+    /// <p><code>Months</code>: 0 - 12</p></li>
+    /// <li>
+    /// <p><code>Years</code>: 0 - 100</p></li>
     /// </ul>
     pub fn value(mut self, input: i32) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -81,12 +99,18 @@ impl RetentionPeriodBuilder {
     }
     /// <p>Defines the amount of time for the retention period of an FSx for ONTAP SnapLock volume. You can't set a value for <code>INFINITE</code> or <code>UNSPECIFIED</code>. For all other options, the following ranges are valid:</p>
     /// <ul>
-    /// <li><p><code>Seconds</code>: 0 - 65,535</p></li>
-    /// <li><p><code>Minutes</code>: 0 - 65,535</p></li>
-    /// <li><p><code>Hours</code>: 0 - 24</p></li>
-    /// <li><p><code>Days</code>: 0 - 365</p></li>
-    /// <li><p><code>Months</code>: 0 - 12</p></li>
-    /// <li><p><code>Years</code>: 0 - 100</p></li>
+    /// <li>
+    /// <p><code>Seconds</code>: 0 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Minutes</code>: 0 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Hours</code>: 0 - 24</p></li>
+    /// <li>
+    /// <p><code>Days</code>: 0 - 365</p></li>
+    /// <li>
+    /// <p><code>Months</code>: 0 - 12</p></li>
+    /// <li>
+    /// <p><code>Years</code>: 0 - 100</p></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
@@ -94,12 +118,18 @@ impl RetentionPeriodBuilder {
     }
     /// <p>Defines the amount of time for the retention period of an FSx for ONTAP SnapLock volume. You can't set a value for <code>INFINITE</code> or <code>UNSPECIFIED</code>. For all other options, the following ranges are valid:</p>
     /// <ul>
-    /// <li><p><code>Seconds</code>: 0 - 65,535</p></li>
-    /// <li><p><code>Minutes</code>: 0 - 65,535</p></li>
-    /// <li><p><code>Hours</code>: 0 - 24</p></li>
-    /// <li><p><code>Days</code>: 0 - 365</p></li>
-    /// <li><p><code>Months</code>: 0 - 12</p></li>
-    /// <li><p><code>Years</code>: 0 - 100</p></li>
+    /// <li>
+    /// <p><code>Seconds</code>: 0 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Minutes</code>: 0 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Hours</code>: 0 - 24</p></li>
+    /// <li>
+    /// <p><code>Days</code>: 0 - 365</p></li>
+    /// <li>
+    /// <p><code>Months</code>: 0 - 12</p></li>
+    /// <li>
+    /// <p><code>Years</code>: 0 - 100</p></li>
     /// </ul>
     pub fn get_value(&self) -> &::std::option::Option<i32> {
         &self.value

@@ -8,8 +8,10 @@ pub struct EcsServiceUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li><p><code>Cpu</code> — The amount of CPU capacity that's used in the service.</p></li>
-    /// <li><p><code>Memory</code> — The amount of memory that's used in the service.</p></li>
+    /// <li>
+    /// <p><code>Cpu</code> — The amount of CPU capacity that's used in the service.</p></li>
+    /// <li>
+    /// <p><code>Memory</code> — The amount of memory that's used in the service.</p></li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::EcsServiceMetricName>,
     /// <p>The statistic of the utilization metric.</p>
@@ -23,8 +25,10 @@ impl EcsServiceUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li><p><code>Cpu</code> — The amount of CPU capacity that's used in the service.</p></li>
-    /// <li><p><code>Memory</code> — The amount of memory that's used in the service.</p></li>
+    /// <li>
+    /// <p><code>Cpu</code> — The amount of CPU capacity that's used in the service.</p></li>
+    /// <li>
+    /// <p><code>Memory</code> — The amount of memory that's used in the service.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::EcsServiceMetricName> {
         self.name.as_ref()
@@ -59,8 +63,10 @@ impl EcsServiceUtilizationMetricBuilder {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li><p><code>Cpu</code> — The amount of CPU capacity that's used in the service.</p></li>
-    /// <li><p><code>Memory</code> — The amount of memory that's used in the service.</p></li>
+    /// <li>
+    /// <p><code>Cpu</code> — The amount of CPU capacity that's used in the service.</p></li>
+    /// <li>
+    /// <p><code>Memory</code> — The amount of memory that's used in the service.</p></li>
     /// </ul>
     pub fn name(mut self, input: crate::types::EcsServiceMetricName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -69,8 +75,10 @@ impl EcsServiceUtilizationMetricBuilder {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li><p><code>Cpu</code> — The amount of CPU capacity that's used in the service.</p></li>
-    /// <li><p><code>Memory</code> — The amount of memory that's used in the service.</p></li>
+    /// <li>
+    /// <p><code>Cpu</code> — The amount of CPU capacity that's used in the service.</p></li>
+    /// <li>
+    /// <p><code>Memory</code> — The amount of memory that's used in the service.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::EcsServiceMetricName>) -> Self {
         self.name = input;
@@ -79,8 +87,10 @@ impl EcsServiceUtilizationMetricBuilder {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li><p><code>Cpu</code> — The amount of CPU capacity that's used in the service.</p></li>
-    /// <li><p><code>Memory</code> — The amount of memory that's used in the service.</p></li>
+    /// <li>
+    /// <p><code>Cpu</code> — The amount of CPU capacity that's used in the service.</p></li>
+    /// <li>
+    /// <p><code>Memory</code> — The amount of memory that's used in the service.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::EcsServiceMetricName> {
         &self.name

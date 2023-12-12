@@ -22,7 +22,7 @@ impl DeleteTrackerInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteTracker`.
 ///
-/// <p>Deletes a tracker resource from your Amazon Web Services account.</p> <note>
+/// <p>Deletes a tracker resource from your Amazon Web Services account.</p><note>
 /// <p>This operation deletes the resource permanently. If the tracker resource is in use, you may encounter an error. Make sure that the target resource isn't a dependency for your applications.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -22,7 +22,7 @@ impl SyncDeploymentJobInputBuilder {
 }
 /// Fluent builder constructing a request to `SyncDeploymentJob`.
 ///
-/// <p>Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment.</p> <important>
+/// <p>Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment.</p><important>
 /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
 /// </important>
 #[deprecated(

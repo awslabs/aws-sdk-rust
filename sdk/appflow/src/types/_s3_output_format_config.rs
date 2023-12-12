@@ -12,8 +12,10 @@ pub struct S3OutputFormatConfig {
     pub aggregation_config: ::std::option::Option<crate::types::AggregationConfig>,
     /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3.</p>
     /// <ul>
-    /// <li><p><code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p></li>
-    /// <li><p><code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p></li>
+    /// <li>
+    /// <p><code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p></li>
+    /// <li>
+    /// <p><code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p></li>
     /// </ul>
     pub preserve_source_data_typing: ::std::option::Option<bool>,
 }
@@ -32,8 +34,10 @@ impl S3OutputFormatConfig {
     }
     /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3.</p>
     /// <ul>
-    /// <li><p><code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p></li>
-    /// <li><p><code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p></li>
+    /// <li>
+    /// <p><code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p></li>
+    /// <li>
+    /// <p><code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p></li>
     /// </ul>
     pub fn preserve_source_data_typing(&self) -> ::std::option::Option<bool> {
         self.preserve_source_data_typing
@@ -100,8 +104,10 @@ impl S3OutputFormatConfigBuilder {
     }
     /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3.</p>
     /// <ul>
-    /// <li><p><code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p></li>
-    /// <li><p><code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p></li>
+    /// <li>
+    /// <p><code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p></li>
+    /// <li>
+    /// <p><code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p></li>
     /// </ul>
     pub fn preserve_source_data_typing(mut self, input: bool) -> Self {
         self.preserve_source_data_typing = ::std::option::Option::Some(input);
@@ -109,8 +115,10 @@ impl S3OutputFormatConfigBuilder {
     }
     /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3.</p>
     /// <ul>
-    /// <li><p><code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p></li>
-    /// <li><p><code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p></li>
+    /// <li>
+    /// <p><code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p></li>
+    /// <li>
+    /// <p><code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p></li>
     /// </ul>
     pub fn set_preserve_source_data_typing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserve_source_data_typing = input;
@@ -118,8 +126,10 @@ impl S3OutputFormatConfigBuilder {
     }
     /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3.</p>
     /// <ul>
-    /// <li><p><code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p></li>
-    /// <li><p><code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p></li>
+    /// <li>
+    /// <p><code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon S3. For example, an integer or <code>1</code> in your source data is still an integer in your output.</p></li>
+    /// <li>
+    /// <p><code>false</code>: Amazon AppFlow converts all of the source data into strings when it writes to Amazon S3. For example, an integer of <code>1</code> in your source data becomes the string <code>"1"</code> in the output.</p></li>
     /// </ul>
     pub fn get_preserve_source_data_typing(&self) -> &::std::option::Option<bool> {
         &self.preserve_source_data_typing

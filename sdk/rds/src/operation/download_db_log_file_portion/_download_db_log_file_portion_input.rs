@@ -7,7 +7,8 @@ pub struct DownloadDbLogFilePortionInput {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log file to be downloaded.</p>
@@ -17,10 +18,14 @@ pub struct DownloadDbLogFilePortionInput {
     /// <p>The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file is truncated at 1 MB in size.</p>
     /// <p>If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the end of the log file, depending on the value of the Marker parameter.</p>
     /// <ul>
-    /// <li><p>If neither Marker or NumberOfLines are specified, the entire log file is returned up to a maximum of 10000 lines, starting with the most recent log entries first.</p></li>
-    /// <li><p>If NumberOfLines is specified and Marker isn't specified, then the most recent lines from the end of the log file are returned.</p></li>
-    /// <li><p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li>
-    /// <li><p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li>
+    /// <li>
+    /// <p>If neither Marker or NumberOfLines are specified, the entire log file is returned up to a maximum of 10000 lines, starting with the most recent log entries first.</p></li>
+    /// <li>
+    /// <p>If NumberOfLines is specified and Marker isn't specified, then the most recent lines from the end of the log file are returned.</p></li>
+    /// <li>
+    /// <p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li>
+    /// <li>
+    /// <p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li>
     /// </ul>
     pub number_of_lines: ::std::option::Option<i32>,
 }
@@ -28,7 +33,8 @@ impl DownloadDbLogFilePortionInput {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
@@ -44,10 +50,14 @@ impl DownloadDbLogFilePortionInput {
     /// <p>The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file is truncated at 1 MB in size.</p>
     /// <p>If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the end of the log file, depending on the value of the Marker parameter.</p>
     /// <ul>
-    /// <li><p>If neither Marker or NumberOfLines are specified, the entire log file is returned up to a maximum of 10000 lines, starting with the most recent log entries first.</p></li>
-    /// <li><p>If NumberOfLines is specified and Marker isn't specified, then the most recent lines from the end of the log file are returned.</p></li>
-    /// <li><p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li>
-    /// <li><p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li>
+    /// <li>
+    /// <p>If neither Marker or NumberOfLines are specified, the entire log file is returned up to a maximum of 10000 lines, starting with the most recent log entries first.</p></li>
+    /// <li>
+    /// <p>If NumberOfLines is specified and Marker isn't specified, then the most recent lines from the end of the log file are returned.</p></li>
+    /// <li>
+    /// <p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li>
+    /// <li>
+    /// <p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li>
     /// </ul>
     pub fn number_of_lines(&self) -> ::std::option::Option<i32> {
         self.number_of_lines
@@ -73,7 +83,8 @@ impl DownloadDbLogFilePortionInputBuilder {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,7 +94,8 @@ impl DownloadDbLogFilePortionInputBuilder {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -92,7 +104,8 @@ impl DownloadDbLogFilePortionInputBuilder {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
@@ -129,10 +142,14 @@ impl DownloadDbLogFilePortionInputBuilder {
     /// <p>The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file is truncated at 1 MB in size.</p>
     /// <p>If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the end of the log file, depending on the value of the Marker parameter.</p>
     /// <ul>
-    /// <li><p>If neither Marker or NumberOfLines are specified, the entire log file is returned up to a maximum of 10000 lines, starting with the most recent log entries first.</p></li>
-    /// <li><p>If NumberOfLines is specified and Marker isn't specified, then the most recent lines from the end of the log file are returned.</p></li>
-    /// <li><p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li>
-    /// <li><p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li>
+    /// <li>
+    /// <p>If neither Marker or NumberOfLines are specified, the entire log file is returned up to a maximum of 10000 lines, starting with the most recent log entries first.</p></li>
+    /// <li>
+    /// <p>If NumberOfLines is specified and Marker isn't specified, then the most recent lines from the end of the log file are returned.</p></li>
+    /// <li>
+    /// <p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li>
+    /// <li>
+    /// <p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li>
     /// </ul>
     pub fn number_of_lines(mut self, input: i32) -> Self {
         self.number_of_lines = ::std::option::Option::Some(input);
@@ -141,10 +158,14 @@ impl DownloadDbLogFilePortionInputBuilder {
     /// <p>The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file is truncated at 1 MB in size.</p>
     /// <p>If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the end of the log file, depending on the value of the Marker parameter.</p>
     /// <ul>
-    /// <li><p>If neither Marker or NumberOfLines are specified, the entire log file is returned up to a maximum of 10000 lines, starting with the most recent log entries first.</p></li>
-    /// <li><p>If NumberOfLines is specified and Marker isn't specified, then the most recent lines from the end of the log file are returned.</p></li>
-    /// <li><p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li>
-    /// <li><p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li>
+    /// <li>
+    /// <p>If neither Marker or NumberOfLines are specified, the entire log file is returned up to a maximum of 10000 lines, starting with the most recent log entries first.</p></li>
+    /// <li>
+    /// <p>If NumberOfLines is specified and Marker isn't specified, then the most recent lines from the end of the log file are returned.</p></li>
+    /// <li>
+    /// <p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li>
+    /// <li>
+    /// <p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li>
     /// </ul>
     pub fn set_number_of_lines(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_lines = input;
@@ -153,10 +174,14 @@ impl DownloadDbLogFilePortionInputBuilder {
     /// <p>The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file is truncated at 1 MB in size.</p>
     /// <p>If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the end of the log file, depending on the value of the Marker parameter.</p>
     /// <ul>
-    /// <li><p>If neither Marker or NumberOfLines are specified, the entire log file is returned up to a maximum of 10000 lines, starting with the most recent log entries first.</p></li>
-    /// <li><p>If NumberOfLines is specified and Marker isn't specified, then the most recent lines from the end of the log file are returned.</p></li>
-    /// <li><p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li>
-    /// <li><p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li>
+    /// <li>
+    /// <p>If neither Marker or NumberOfLines are specified, the entire log file is returned up to a maximum of 10000 lines, starting with the most recent log entries first.</p></li>
+    /// <li>
+    /// <p>If NumberOfLines is specified and Marker isn't specified, then the most recent lines from the end of the log file are returned.</p></li>
+    /// <li>
+    /// <p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p></li>
+    /// <li>
+    /// <p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p></li>
     /// </ul>
     pub fn get_number_of_lines(&self) -> &::std::option::Option<i32> {
         &self.number_of_lines

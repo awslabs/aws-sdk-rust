@@ -7,11 +7,13 @@ pub struct CreateLocationFsxWindowsInput {
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
     pub fsx_filesystem_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
+    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
     /// <ul>
-    /// <li><p>Configure the security group to allow it to communicate within itself.</p></li>
-    /// <li><p>Choose a different security group that can communicate with the mount target's security group.</p></li>
+    /// <li>
+    /// <p>Configure the security group to allow it to communicate within itself.</p></li>
+    /// <li>
+    /// <p>Choose a different security group that can communicate with the mount target's security group.</p></li>
     /// </ul>
     /// </note>
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -37,11 +39,13 @@ impl CreateLocationFsxWindowsInput {
     pub fn fsx_filesystem_arn(&self) -> ::std::option::Option<&str> {
         self.fsx_filesystem_arn.as_deref()
     }
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
+    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
     /// <ul>
-    /// <li><p>Configure the security group to allow it to communicate within itself.</p></li>
-    /// <li><p>Choose a different security group that can communicate with the mount target's security group.</p></li>
+    /// <li>
+    /// <p>Configure the security group to allow it to communicate within itself.</p></li>
+    /// <li>
+    /// <p>Choose a different security group that can communicate with the mount target's security group.</p></li>
     /// </ul>
     /// </note>
     ///
@@ -138,11 +142,13 @@ impl CreateLocationFsxWindowsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
+    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
     /// <ul>
-    /// <li><p>Configure the security group to allow it to communicate within itself.</p></li>
-    /// <li><p>Choose a different security group that can communicate with the mount target's security group.</p></li>
+    /// <li>
+    /// <p>Configure the security group to allow it to communicate within itself.</p></li>
+    /// <li>
+    /// <p>Choose a different security group that can communicate with the mount target's security group.</p></li>
     /// </ul>
     /// </note>
     pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,22 +157,26 @@ impl CreateLocationFsxWindowsInputBuilder {
         self.security_group_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
+    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
     /// <ul>
-    /// <li><p>Configure the security group to allow it to communicate within itself.</p></li>
-    /// <li><p>Choose a different security group that can communicate with the mount target's security group.</p></li>
+    /// <li>
+    /// <p>Configure the security group to allow it to communicate within itself.</p></li>
+    /// <li>
+    /// <p>Choose a different security group that can communicate with the mount target's security group.</p></li>
     /// </ul>
     /// </note>
     pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_arns = input;
         self
     }
-    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>
+    /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
     /// <ul>
-    /// <li><p>Configure the security group to allow it to communicate within itself.</p></li>
-    /// <li><p>Choose a different security group that can communicate with the mount target's security group.</p></li>
+    /// <li>
+    /// <p>Configure the security group to allow it to communicate within itself.</p></li>
+    /// <li>
+    /// <p>Choose a different security group that can communicate with the mount target's security group.</p></li>
     /// </ul>
     /// </note>
     pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

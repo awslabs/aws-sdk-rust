@@ -2,8 +2,10 @@
 
 /// <p>The request was rejected for one of the following reasons:</p>
 /// <ul>
-/// <li><p>The KeyUsage value of the KMS key is incompatible with the API operation.</p></li>
-/// <li><p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key (KeySpec).</p></li>
+/// <li>
+/// <p>The KeyUsage value of the KMS key is incompatible with the API operation.</p></li>
+/// <li>
+/// <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key (KeySpec).</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

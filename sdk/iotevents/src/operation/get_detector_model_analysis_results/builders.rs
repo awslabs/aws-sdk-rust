@@ -22,7 +22,7 @@ impl GetDetectorModelAnalysisResultsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDetectorModelAnalysisResults`.
 ///
-/// <p>Retrieves one or more analysis results of the detector model.</p> <note>
+/// <p>Retrieves one or more analysis results of the detector model.</p><note>
 /// <p>After AWS IoT Events starts analyzing your detector model, you have up to 24 hours to retrieve the analysis results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

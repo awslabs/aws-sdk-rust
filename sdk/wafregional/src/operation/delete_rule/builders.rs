@@ -30,9 +30,12 @@ impl DeleteRuleInputBuilder {
 /// <p>If you just want to remove a <code>Rule</code> from a <code>WebACL</code>, use <code>UpdateWebACL</code>.</p>
 /// <p>To permanently delete a <code>Rule</code> from AWS WAF, perform the following steps:</p>
 /// <ol>
-/// <li><p>Update the <code>Rule</code> to remove predicates, if any. For more information, see <code>UpdateRule</code>.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteRule</code> request.</p></li>
-/// <li><p>Submit a <code>DeleteRule</code> request.</p></li>
+/// <li>
+/// <p>Update the <code>Rule</code> to remove predicates, if any. For more information, see <code>UpdateRule</code>.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteRule</code> request.</p></li>
+/// <li>
+/// <p>Submit a <code>DeleteRule</code> request.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRuleFluentBuilder {

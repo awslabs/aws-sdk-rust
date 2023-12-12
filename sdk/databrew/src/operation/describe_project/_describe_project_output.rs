@@ -27,9 +27,12 @@ pub struct DescribeProjectOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li><p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
-    /// <li><p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
-    /// <li><p><code>ASSIGNED</code> - the session is ready for use.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
+    /// <li>
+    /// <p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
+    /// <li>
+    /// <p><code>ASSIGNED</code> - the session is ready for use.</p></li>
     /// </ul>
     pub session_status: ::std::option::Option<crate::types::SessionStatus>,
     /// <p>The identifier (user name) of the user that opened the project for use.</p>
@@ -86,9 +89,12 @@ impl DescribeProjectOutput {
     }
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li><p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
-    /// <li><p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
-    /// <li><p><code>ASSIGNED</code> - the session is ready for use.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
+    /// <li>
+    /// <p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
+    /// <li>
+    /// <p><code>ASSIGNED</code> - the session is ready for use.</p></li>
     /// </ul>
     pub fn session_status(&self) -> ::std::option::Option<&crate::types::SessionStatus> {
         self.session_status.as_ref()
@@ -298,9 +304,12 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li><p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
-    /// <li><p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
-    /// <li><p><code>ASSIGNED</code> - the session is ready for use.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
+    /// <li>
+    /// <p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
+    /// <li>
+    /// <p><code>ASSIGNED</code> - the session is ready for use.</p></li>
     /// </ul>
     pub fn session_status(mut self, input: crate::types::SessionStatus) -> Self {
         self.session_status = ::std::option::Option::Some(input);
@@ -308,9 +317,12 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li><p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
-    /// <li><p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
-    /// <li><p><code>ASSIGNED</code> - the session is ready for use.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
+    /// <li>
+    /// <p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
+    /// <li>
+    /// <p><code>ASSIGNED</code> - the session is ready for use.</p></li>
     /// </ul>
     pub fn set_session_status(mut self, input: ::std::option::Option<crate::types::SessionStatus>) -> Self {
         self.session_status = input;
@@ -318,9 +330,12 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li><p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
-    /// <li><p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
-    /// <li><p><code>ASSIGNED</code> - the session is ready for use.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> - allocating resources for the session.</p></li>
+    /// <li>
+    /// <p><code>INITIALIZING</code> - getting the session ready for first use.</p></li>
+    /// <li>
+    /// <p><code>ASSIGNED</code> - the session is ready for use.</p></li>
     /// </ul>
     pub fn get_session_status(&self) -> &::std::option::Option<crate::types::SessionStatus> {
         &self.session_status

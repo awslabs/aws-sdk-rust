@@ -248,9 +248,12 @@ pub enum CreateGraphError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>This request cannot be completed for one of the following reasons.</p>
     /// <ul>
-    /// <li><p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p></li>
-    /// <li><p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p></li>
-    /// <li><p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p></li>
+    /// <li>
+    /// <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p></li>
+    /// <li>
+    /// <p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p></li>
+    /// <li>
+    /// <p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p></li>
     /// </ul>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).

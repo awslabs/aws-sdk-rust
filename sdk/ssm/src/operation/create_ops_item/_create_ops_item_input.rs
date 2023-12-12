@@ -3,18 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOpsItemInput {
-    /// <p>User-defined text that contains information about the OpsItem, in Markdown format.</p> <note>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format.</p><note>
     /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue.</p>
     /// </note>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li><p><code>/aws/issue</code></p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li><p><code>/aws/changerequest</code></p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li><p><code>/aws/insight</code></p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li>
+    /// <p><code>/aws/issue</code></p>
+    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
+    /// <li>
+    /// <p><code>/aws/changerequest</code></p>
+    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
+    /// <li>
+    /// <p><code>/aws/insight</code></p>
+    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
     /// </ul>
     pub ops_item_type: ::std::option::Option<::std::string::String>,
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p><important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
@@ -26,7 +32,7 @@ pub struct CreateOpsItemInput {
     pub priority: ::std::option::Option<i32>,
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
     pub related_ops_items: ::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>>,
-    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p><note>
     /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>.</p>
     /// </note>
     pub source: ::std::option::Option<::std::string::String>,
@@ -34,7 +40,7 @@ pub struct CreateOpsItemInput {
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource.</p>
     /// <p>Tags use a key-value pair. For example:</p>
-    /// <p><code>Key=Department,Value=Finance</code></p> <important>
+    /// <p><code>Key=Department,Value=Finance</code></p><important>
     /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>
     /// </important>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -54,7 +60,7 @@ pub struct CreateOpsItemInput {
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateOpsItemInput {
-    /// <p>User-defined text that contains information about the OpsItem, in Markdown format.</p> <note>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format.</p><note>
     /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue.</p>
     /// </note>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -62,14 +68,20 @@ impl CreateOpsItemInput {
     }
     /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li><p><code>/aws/issue</code></p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li><p><code>/aws/changerequest</code></p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li><p><code>/aws/insight</code></p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li>
+    /// <p><code>/aws/issue</code></p>
+    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
+    /// <li>
+    /// <p><code>/aws/changerequest</code></p>
+    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
+    /// <li>
+    /// <p><code>/aws/insight</code></p>
+    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
     /// </ul>
     pub fn ops_item_type(&self) -> ::std::option::Option<&str> {
         self.ops_item_type.as_deref()
     }
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p><important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
@@ -93,7 +105,7 @@ impl CreateOpsItemInput {
     pub fn related_ops_items(&self) -> &[crate::types::RelatedOpsItem] {
         self.related_ops_items.as_deref().unwrap_or_default()
     }
-    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p><note>
     /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>.</p>
     /// </note>
     pub fn source(&self) -> ::std::option::Option<&str> {
@@ -105,7 +117,7 @@ impl CreateOpsItemInput {
     }
     /// <p>Optional metadata that you assign to a resource.</p>
     /// <p>Tags use a key-value pair. For example:</p>
-    /// <p><code>Key=Department,Value=Finance</code></p> <important>
+    /// <p><code>Key=Department,Value=Finance</code></p><important>
     /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>
     /// </important>
     ///
@@ -171,7 +183,7 @@ pub struct CreateOpsItemInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateOpsItemInputBuilder {
-    /// <p>User-defined text that contains information about the OpsItem, in Markdown format.</p> <note>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format.</p><note>
     /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue.</p>
     /// </note>
     /// This field is required.
@@ -179,14 +191,14 @@ impl CreateOpsItemInputBuilder {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>User-defined text that contains information about the OpsItem, in Markdown format.</p> <note>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format.</p><note>
     /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue.</p>
     /// </note>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>User-defined text that contains information about the OpsItem, in Markdown format.</p> <note>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format.</p><note>
     /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue.</p>
     /// </note>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,9 +206,15 @@ impl CreateOpsItemInputBuilder {
     }
     /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li><p><code>/aws/issue</code></p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li><p><code>/aws/changerequest</code></p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li><p><code>/aws/insight</code></p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li>
+    /// <p><code>/aws/issue</code></p>
+    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
+    /// <li>
+    /// <p><code>/aws/changerequest</code></p>
+    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
+    /// <li>
+    /// <p><code>/aws/insight</code></p>
+    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
     /// </ul>
     pub fn ops_item_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_type = ::std::option::Option::Some(input.into());
@@ -204,9 +222,15 @@ impl CreateOpsItemInputBuilder {
     }
     /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li><p><code>/aws/issue</code></p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li><p><code>/aws/changerequest</code></p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li><p><code>/aws/insight</code></p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li>
+    /// <p><code>/aws/issue</code></p>
+    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
+    /// <li>
+    /// <p><code>/aws/changerequest</code></p>
+    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
+    /// <li>
+    /// <p><code>/aws/insight</code></p>
+    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
     /// </ul>
     pub fn set_ops_item_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_type = input;
@@ -214,9 +238,15 @@ impl CreateOpsItemInputBuilder {
     }
     /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li><p><code>/aws/issue</code></p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li><p><code>/aws/changerequest</code></p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li><p><code>/aws/insight</code></p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li>
+    /// <p><code>/aws/issue</code></p>
+    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
+    /// <li>
+    /// <p><code>/aws/changerequest</code></p>
+    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
+    /// <li>
+    /// <p><code>/aws/insight</code></p>
+    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
     /// </ul>
     pub fn get_ops_item_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.ops_item_type
@@ -225,7 +255,7 @@ impl CreateOpsItemInputBuilder {
     ///
     /// To override the contents of this collection use [`set_operational_data`](Self::set_operational_data).
     ///
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p><important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
@@ -236,7 +266,7 @@ impl CreateOpsItemInputBuilder {
         self.operational_data = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p><important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
@@ -248,7 +278,7 @@ impl CreateOpsItemInputBuilder {
         self.operational_data = input;
         self
     }
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p><important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
@@ -310,7 +340,7 @@ impl CreateOpsItemInputBuilder {
     pub fn get_related_ops_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>> {
         &self.related_ops_items
     }
-    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p><note>
     /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>.</p>
     /// </note>
     /// This field is required.
@@ -318,14 +348,14 @@ impl CreateOpsItemInputBuilder {
         self.source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p><note>
     /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>.</p>
     /// </note>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
-    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p><note>
     /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>.</p>
     /// </note>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -352,7 +382,7 @@ impl CreateOpsItemInputBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource.</p>
     /// <p>Tags use a key-value pair. For example:</p>
-    /// <p><code>Key=Department,Value=Finance</code></p> <important>
+    /// <p><code>Key=Department,Value=Finance</code></p><important>
     /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>
     /// </important>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -363,7 +393,7 @@ impl CreateOpsItemInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource.</p>
     /// <p>Tags use a key-value pair. For example:</p>
-    /// <p><code>Key=Department,Value=Finance</code></p> <important>
+    /// <p><code>Key=Department,Value=Finance</code></p><important>
     /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>
     /// </important>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
@@ -372,7 +402,7 @@ impl CreateOpsItemInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource.</p>
     /// <p>Tags use a key-value pair. For example:</p>
-    /// <p><code>Key=Department,Value=Finance</code></p> <important>
+    /// <p><code>Key=Department,Value=Finance</code></p><important>
     /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>
     /// </important>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

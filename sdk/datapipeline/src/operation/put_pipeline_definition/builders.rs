@@ -30,7 +30,7 @@ impl PutPipelineDefinitionInputBuilder {
 /// <li>The number of objects in the pipeline exceeds the maximum allowed objects.</li>
 /// <li>The pipeline is in a FINISHED state.</li>
 /// </ol>
-/// <p>Pipeline object definitions are passed to the <code>PutPipelineDefinition</code> action and returned by the <code>GetPipelineDefinition</code> action.</p> <examples>
+/// <p>Pipeline object definitions are passed to the <code>PutPipelineDefinition</code> action and returned by the <code>GetPipelineDefinition</code> action.</p><examples>
 /// <example>
 /// <name>
 /// Example 1

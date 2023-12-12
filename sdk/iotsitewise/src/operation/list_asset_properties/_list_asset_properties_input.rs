@@ -11,8 +11,10 @@ pub struct ListAssetPropertiesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters the requested list of asset properties. You can choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all asset properties for a given asset model ID.</p></li>
-    /// <li><p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all asset properties for a given asset model ID.</p></li>
+    /// <li>
+    /// <p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li>
     /// </ul>
     /// <p>Default: <code>BASE</code></p>
     pub filter: ::std::option::Option<crate::types::ListAssetPropertiesFilter>,
@@ -32,8 +34,10 @@ impl ListAssetPropertiesInput {
     }
     /// <p>Filters the requested list of asset properties. You can choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all asset properties for a given asset model ID.</p></li>
-    /// <li><p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all asset properties for a given asset model ID.</p></li>
+    /// <li>
+    /// <p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li>
     /// </ul>
     /// <p>Default: <code>BASE</code></p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::ListAssetPropertiesFilter> {
@@ -102,8 +106,10 @@ impl ListAssetPropertiesInputBuilder {
     }
     /// <p>Filters the requested list of asset properties. You can choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all asset properties for a given asset model ID.</p></li>
-    /// <li><p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all asset properties for a given asset model ID.</p></li>
+    /// <li>
+    /// <p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li>
     /// </ul>
     /// <p>Default: <code>BASE</code></p>
     pub fn filter(mut self, input: crate::types::ListAssetPropertiesFilter) -> Self {
@@ -112,8 +118,10 @@ impl ListAssetPropertiesInputBuilder {
     }
     /// <p>Filters the requested list of asset properties. You can choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all asset properties for a given asset model ID.</p></li>
-    /// <li><p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all asset properties for a given asset model ID.</p></li>
+    /// <li>
+    /// <p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li>
     /// </ul>
     /// <p>Default: <code>BASE</code></p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListAssetPropertiesFilter>) -> Self {
@@ -122,8 +130,10 @@ impl ListAssetPropertiesInputBuilder {
     }
     /// <p>Filters the requested list of asset properties. You can choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all asset properties for a given asset model ID.</p></li>
-    /// <li><p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all asset properties for a given asset model ID.</p></li>
+    /// <li>
+    /// <p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li>
     /// </ul>
     /// <p>Default: <code>BASE</code></p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListAssetPropertiesFilter> {

@@ -25,12 +25,18 @@ impl AnalyzeDocumentInputBuilder {
 /// <p>Analyzes an input document for relationships between detected items.</p>
 /// <p>The types of information returned are as follows:</p>
 /// <ul>
-/// <li><p>Form data (key-value pairs). The related information is returned in two <code>Block</code> objects, each of type <code>KEY_VALUE_SET</code>: a KEY <code>Block</code> object and a VALUE <code>Block</code> object. For example, <i>Name: Ana Silva Carolina</i> contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the value.</p></li>
-/// <li><p>Table and table cell data. A TABLE <code>Block</code> object contains information about a detected table. A CELL <code>Block</code> object is returned for each cell in a table.</p></li>
-/// <li><p>Lines and words of text. A LINE <code>Block</code> object contains one or more WORD <code>Block</code> objects. All lines and words that are detected in the document are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>).</p></li>
-/// <li><p>Signatures. A SIGNATURE <code>Block</code> object contains the location information of a signature in a document. If used in conjunction with forms or tables, a signature can be given a Key-Value pairing or be detected in the cell of a table.</p></li>
-/// <li><p>Query. A QUERY Block object contains the query text, alias and link to the associated Query results block object.</p></li>
-/// <li><p>Query Result. A QUERY_RESULT Block object contains the answer to the query and an ID that connects it to the query asked. This Block also contains a confidence score.</p></li>
+/// <li>
+/// <p>Form data (key-value pairs). The related information is returned in two <code>Block</code> objects, each of type <code>KEY_VALUE_SET</code>: a KEY <code>Block</code> object and a VALUE <code>Block</code> object. For example, <i>Name: Ana Silva Carolina</i> contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the value.</p></li>
+/// <li>
+/// <p>Table and table cell data. A TABLE <code>Block</code> object contains information about a detected table. A CELL <code>Block</code> object is returned for each cell in a table.</p></li>
+/// <li>
+/// <p>Lines and words of text. A LINE <code>Block</code> object contains one or more WORD <code>Block</code> objects. All lines and words that are detected in the document are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>).</p></li>
+/// <li>
+/// <p>Signatures. A SIGNATURE <code>Block</code> object contains the location information of a signature in a document. If used in conjunction with forms or tables, a signature can be given a Key-Value pairing or be detected in the cell of a table.</p></li>
+/// <li>
+/// <p>Query. A QUERY Block object contains the query text, alias and link to the associated Query results block object.</p></li>
+/// <li>
+/// <p>Query Result. A QUERY_RESULT Block object contains the answer to the query and an ID that connects it to the query asked. This Block also contains a confidence score.</p></li>
 /// </ul>
 /// <p>Selection elements such as check boxes and option buttons (radio buttons) can be detected in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains information about a selection element, including the selection status.</p>
 /// <p>You can choose which type of analysis to perform by specifying the <code>FeatureTypes</code> list.</p>

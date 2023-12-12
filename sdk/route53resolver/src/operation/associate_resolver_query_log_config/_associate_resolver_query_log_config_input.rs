@@ -5,7 +5,7 @@
 pub struct AssociateResolverQueryLogConfigInput {
     /// <p>The ID of the query logging configuration that you want to associate a VPC with.</p>
     pub resolver_query_log_config_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
+    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p><note>
     /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
     /// </note>
     pub resource_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl AssociateResolverQueryLogConfigInput {
     pub fn resolver_query_log_config_id(&self) -> ::std::option::Option<&str> {
         self.resolver_query_log_config_id.as_deref()
     }
-    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
+    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p><note>
     /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
     /// </note>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
@@ -52,7 +52,7 @@ impl AssociateResolverQueryLogConfigInputBuilder {
     pub fn get_resolver_query_log_config_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolver_query_log_config_id
     }
-    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
+    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p><note>
     /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
     /// </note>
     /// This field is required.
@@ -60,14 +60,14 @@ impl AssociateResolverQueryLogConfigInputBuilder {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
+    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p><note>
     /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
     /// </note>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
+    /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p><note>
     /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
     /// </note>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {

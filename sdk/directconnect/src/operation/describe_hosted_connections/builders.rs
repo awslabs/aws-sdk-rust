@@ -22,7 +22,7 @@ impl DescribeHostedConnectionsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeHostedConnections`.
 ///
-/// <p>Lists the hosted connections that have been provisioned on the specified interconnect or link aggregation group (LAG).</p> <note>
+/// <p>Lists the hosted connections that have been provisioned on the specified interconnect or link aggregation group (LAG).</p><note>
 /// <p>Intended for use by Direct Connect Partners only.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

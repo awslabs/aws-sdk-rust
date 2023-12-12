@@ -22,7 +22,7 @@ impl DescribeGlobalClustersInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeGlobalClusters`.
 ///
-/// <p>Returns information about Amazon DocumentDB global clusters. This API supports pagination.</p> <note>
+/// <p>Returns information about Amazon DocumentDB global clusters. This API supports pagination.</p><note>
 /// <p>This action only applies to Amazon DocumentDB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

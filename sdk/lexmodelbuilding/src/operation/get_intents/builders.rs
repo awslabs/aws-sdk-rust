@@ -24,8 +24,10 @@ impl GetIntentsInputBuilder {
 ///
 /// <p>Returns intent information as follows:</p>
 /// <ul>
-/// <li><p>If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code> version of all intents that contain the specified string.</p></li>
-/// <li><p>If you don't specify the <code>nameContains</code> field, returns information about the <code>$LATEST</code> version of all intents.</p></li>
+/// <li>
+/// <p>If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code> version of all intents that contain the specified string.</p></li>
+/// <li>
+/// <p>If you don't specify the <code>nameContains</code> field, returns information about the <code>$LATEST</code> version of all intents.</p></li>
 /// </ul>
 /// <p>The operation requires permission for the <code>lex:GetIntents</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

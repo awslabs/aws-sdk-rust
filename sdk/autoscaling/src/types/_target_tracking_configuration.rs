@@ -8,7 +8,7 @@ pub struct TargetTrackingConfiguration {
     pub predefined_metric_specification: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
     pub customized_metric_specification: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
-    /// <p>The target value for the metric.</p> <note>
+    /// <p>The target value for the metric.</p><note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval.</p>
     /// </note>
     pub target_value: ::std::option::Option<f64>,
@@ -24,7 +24,7 @@ impl TargetTrackingConfiguration {
     pub fn customized_metric_specification(&self) -> ::std::option::Option<&crate::types::CustomizedMetricSpecification> {
         self.customized_metric_specification.as_ref()
     }
-    /// <p>The target value for the metric.</p> <note>
+    /// <p>The target value for the metric.</p><note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval.</p>
     /// </note>
     pub fn target_value(&self) -> ::std::option::Option<f64> {
@@ -80,7 +80,7 @@ impl TargetTrackingConfigurationBuilder {
     pub fn get_customized_metric_specification(&self) -> &::std::option::Option<crate::types::CustomizedMetricSpecification> {
         &self.customized_metric_specification
     }
-    /// <p>The target value for the metric.</p> <note>
+    /// <p>The target value for the metric.</p><note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval.</p>
     /// </note>
     /// This field is required.
@@ -88,14 +88,14 @@ impl TargetTrackingConfigurationBuilder {
         self.target_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The target value for the metric.</p> <note>
+    /// <p>The target value for the metric.</p><note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval.</p>
     /// </note>
     pub fn set_target_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.target_value = input;
         self
     }
-    /// <p>The target value for the metric.</p> <note>
+    /// <p>The target value for the metric.</p><note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval.</p>
     /// </note>
     pub fn get_target_value(&self) -> &::std::option::Option<f64> {

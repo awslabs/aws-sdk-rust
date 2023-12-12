@@ -22,7 +22,7 @@ impl PutRetentionConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `PutRetentionConfiguration`.
 ///
-/// <p>Creates and updates the retention configuration with details about retention period (number of days) that Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named <b>default</b>, calling the API modifies the default object.</p> <note>
+/// <p>Creates and updates the retention configuration with details about retention period (number of days) that Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named <b>default</b>, calling the API modifies the default object.</p><note>
 /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,21 +110,21 @@ impl PutRetentionConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Number of days Config stores your historical information.</p> <note>
+    /// <p>Number of days Config stores your historical information.</p><note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub fn retention_period_in_days(mut self, input: i32) -> Self {
         self.inner = self.inner.retention_period_in_days(input);
         self
     }
-    /// <p>Number of days Config stores your historical information.</p> <note>
+    /// <p>Number of days Config stores your historical information.</p><note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub fn set_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_retention_period_in_days(input);
         self
     }
-    /// <p>Number of days Config stores your historical information.</p> <note>
+    /// <p>Number of days Config stores your historical information.</p><note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub fn get_retention_period_in_days(&self) -> &::std::option::Option<i32> {

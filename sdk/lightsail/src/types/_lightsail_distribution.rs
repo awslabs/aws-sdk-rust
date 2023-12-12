@@ -12,7 +12,7 @@ pub struct LightsailDistribution {
     pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the distribution was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p> <note>
+    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p><note>
     /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </note>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
@@ -67,7 +67,7 @@ impl LightsailDistribution {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p> <note>
+    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p><note>
     /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </note>
     pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
@@ -232,21 +232,21 @@ impl LightsailDistributionBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p> <note>
+    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p><note>
     /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </note>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p> <note>
+    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p><note>
     /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </note>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
-    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p> <note>
+    /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p><note>
     /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </note>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {

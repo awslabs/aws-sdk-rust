@@ -3,10 +3,14 @@
 /// <p>The summarized description of the association.</p>
 /// <p>Each summary is simplified by removing these fields compared to the full <code> <code>PodIdentityAssociation</code> </code>:</p>
 /// <ul>
-/// <li><p>The IAM role: <code>roleArn</code></p></li>
-/// <li><p>The timestamp that the association was created at: <code>createdAt</code></p></li>
-/// <li><p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code></p></li>
-/// <li><p>The tags on the association: <code>tags</code></p></li>
+/// <li>
+/// <p>The IAM role: <code>roleArn</code></p></li>
+/// <li>
+/// <p>The timestamp that the association was created at: <code>createdAt</code></p></li>
+/// <li>
+/// <p>The most recent timestamp that the association was modified at:. <code>modifiedAt</code></p></li>
+/// <li>
+/// <p>The tags on the association: <code>tags</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

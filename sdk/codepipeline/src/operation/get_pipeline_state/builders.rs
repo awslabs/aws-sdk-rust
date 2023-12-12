@@ -22,7 +22,7 @@ impl GetPipelineStateInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPipelineState`.
 ///
-/// <p>Returns information about the state of a pipeline, including the stages and actions.</p> <note>
+/// <p>Returns information about the state of a pipeline, including the stages and actions.</p><note>
 /// <p>Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields indicate the source revision information, such as the commit ID, for the current state.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

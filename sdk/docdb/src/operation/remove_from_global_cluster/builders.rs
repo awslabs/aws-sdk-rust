@@ -22,7 +22,7 @@ impl RemoveFromGlobalClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `RemoveFromGlobalCluster`.
 ///
-/// <p>Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster with read-write capability instead of being read-only and receiving data from a primary in a different region.</p> <note>
+/// <p>Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster with read-write capability instead of being read-only and receiving data from a primary in a different region.</p><note>
 /// <p>This action only applies to Amazon DocumentDB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -157,8 +157,10 @@ impl CreateInstanceConnectEndpointFluentBuilder {
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
-    /// <li><p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
-    /// <li><p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
+    /// <li>
+    /// <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
+    /// <li>
+    /// <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
     /// </ul>
     /// <p>Default: <code>true</code></p>
     pub fn preserve_client_ip(mut self, input: bool) -> Self {
@@ -167,8 +169,10 @@ impl CreateInstanceConnectEndpointFluentBuilder {
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
-    /// <li><p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
-    /// <li><p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
+    /// <li>
+    /// <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
+    /// <li>
+    /// <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
     /// </ul>
     /// <p>Default: <code>true</code></p>
     pub fn set_preserve_client_ip(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -177,8 +181,10 @@ impl CreateInstanceConnectEndpointFluentBuilder {
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
-    /// <li><p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
-    /// <li><p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
+    /// <li>
+    /// <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p></li>
+    /// <li>
+    /// <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p></li>
     /// </ul>
     /// <p>Default: <code>true</code></p>
     pub fn get_preserve_client_ip(&self) -> &::std::option::Option<bool> {

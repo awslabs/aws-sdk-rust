@@ -156,21 +156,21 @@ impl ListNotificationsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>The ARN for the related resource for the notification.</p><note>
     /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
     /// </note>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>The ARN for the related resource for the notification.</p><note>
     /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
     /// </note>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>The ARN for the related resource for the notification.</p><note>
     /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
     /// </note>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {

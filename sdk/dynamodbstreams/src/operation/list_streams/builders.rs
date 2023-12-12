@@ -22,7 +22,7 @@ impl ListStreamsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListStreams`.
 ///
-/// <p>Returns an array of stream ARNs associated with the current account and endpoint. If the <code>TableName</code> parameter is present, then <code>ListStreams</code> will return only the streams ARNs for that table.</p> <note>
+/// <p>Returns an array of stream ARNs associated with the current account and endpoint. If the <code>TableName</code> parameter is present, then <code>ListStreams</code> will return only the streams ARNs for that table.</p><note>
 /// <p>You can call <code>ListStreams</code> at a maximum rate of 5 times per second.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

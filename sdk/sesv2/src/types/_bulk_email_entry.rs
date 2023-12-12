@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BulkEmailEntry {
-    /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
+    /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the local part of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the domain part of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
     pub destination: ::std::option::Option<crate::types::Destination>,
@@ -13,7 +13,7 @@ pub struct BulkEmailEntry {
     pub replacement_email_content: ::std::option::Option<crate::types::ReplacementEmailContent>,
 }
 impl BulkEmailEntry {
-    /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
+    /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the local part of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the domain part of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
     pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
@@ -46,7 +46,7 @@ pub struct BulkEmailEntryBuilder {
     pub(crate) replacement_email_content: ::std::option::Option<crate::types::ReplacementEmailContent>,
 }
 impl BulkEmailEntryBuilder {
-    /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
+    /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the local part of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the domain part of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
     /// This field is required.
@@ -54,14 +54,14 @@ impl BulkEmailEntryBuilder {
         self.destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
+    /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the local part of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the domain part of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.destination = input;
         self
     }
-    /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
+    /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the local part of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the domain part of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {

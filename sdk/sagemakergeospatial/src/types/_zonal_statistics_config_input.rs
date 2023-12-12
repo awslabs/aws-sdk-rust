@@ -13,8 +13,12 @@ pub struct ZonalStatisticsConfigInput {
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub zone_s3_path_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -39,8 +43,12 @@ impl ZonalStatisticsConfigInput {
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub fn zone_s3_path_kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -122,8 +130,12 @@ impl ZonalStatisticsConfigInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub fn zone_s3_path_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,8 +145,12 @@ impl ZonalStatisticsConfigInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub fn set_zone_s3_path_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -144,8 +160,12 @@ impl ZonalStatisticsConfigInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code></p></li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub fn get_zone_s3_path_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {

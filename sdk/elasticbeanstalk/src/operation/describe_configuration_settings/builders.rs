@@ -26,7 +26,8 @@ impl DescribeConfigurationSettingsInputBuilder {
 /// <p>When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy.</p>
 /// <p>Related Topics</p>
 /// <ul>
-/// <li><p><code>DeleteEnvironmentConfiguration</code></p></li>
+/// <li>
+/// <p><code>DeleteEnvironmentConfiguration</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSettingsFluentBuilder {

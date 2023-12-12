@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchRequestEntry {
-    /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
+    /// <p>An identifier for this particular receipt handle used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -15,7 +15,7 @@ pub struct ChangeMessageVisibilityBatchRequestEntry {
     pub visibility_timeout: ::std::option::Option<i32>,
 }
 impl ChangeMessageVisibilityBatchRequestEntry {
-    /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
+    /// <p>An identifier for this particular receipt handle used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -49,7 +49,7 @@ pub struct ChangeMessageVisibilityBatchRequestEntryBuilder {
     pub(crate) visibility_timeout: ::std::option::Option<i32>,
 }
 impl ChangeMessageVisibilityBatchRequestEntryBuilder {
-    /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
+    /// <p>An identifier for this particular receipt handle used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -58,7 +58,7 @@ impl ChangeMessageVisibilityBatchRequestEntryBuilder {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
+    /// <p>An identifier for this particular receipt handle used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -66,7 +66,7 @@ impl ChangeMessageVisibilityBatchRequestEntryBuilder {
         self.id = input;
         self
     }
-    /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
+    /// <p>An identifier for this particular receipt handle used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>

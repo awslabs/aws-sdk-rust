@@ -10,8 +10,10 @@ pub struct BatchPutDocumentInput {
     /// <p>One or more documents to add to the index.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
-    /// <li><p>50 MB total size for any file</p></li>
-    /// <li><p>5 MB extracted text for any file</p></li>
+    /// <li>
+    /// <p>50 MB total size for any file</p></li>
+    /// <li>
+    /// <p>5 MB extracted text for any file</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub documents: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
@@ -31,8 +33,10 @@ impl BatchPutDocumentInput {
     /// <p>One or more documents to add to the index.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
-    /// <li><p>50 MB total size for any file</p></li>
-    /// <li><p>5 MB extracted text for any file</p></li>
+    /// <li>
+    /// <p>50 MB total size for any file</p></li>
+    /// <li>
+    /// <p>5 MB extracted text for any file</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     ///
@@ -99,8 +103,10 @@ impl BatchPutDocumentInputBuilder {
     /// <p>One or more documents to add to the index.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
-    /// <li><p>50 MB total size for any file</p></li>
-    /// <li><p>5 MB extracted text for any file</p></li>
+    /// <li>
+    /// <p>50 MB total size for any file</p></li>
+    /// <li>
+    /// <p>5 MB extracted text for any file</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn documents(mut self, input: crate::types::Document) -> Self {
@@ -112,8 +118,10 @@ impl BatchPutDocumentInputBuilder {
     /// <p>One or more documents to add to the index.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
-    /// <li><p>50 MB total size for any file</p></li>
-    /// <li><p>5 MB extracted text for any file</p></li>
+    /// <li>
+    /// <p>50 MB total size for any file</p></li>
+    /// <li>
+    /// <p>5 MB extracted text for any file</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
@@ -123,8 +131,10 @@ impl BatchPutDocumentInputBuilder {
     /// <p>One or more documents to add to the index.</p>
     /// <p>Documents have the following file size limits.</p>
     /// <ul>
-    /// <li><p>50 MB total size for any file</p></li>
-    /// <li><p>5 MB extracted text for any file</p></li>
+    /// <li>
+    /// <p>50 MB total size for any file</p></li>
+    /// <li>
+    /// <p>5 MB extracted text for any file</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {

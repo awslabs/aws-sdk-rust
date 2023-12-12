@@ -45,12 +45,15 @@ pub struct UserPoolType {
     pub user_attribute_update_settings: ::std::option::Option<crate::types::UserAttributeUpdateSettingsType>,
     /// <p>Can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
-    /// <li><p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you're initially creating a user pool.</p></li>
-    /// <li><p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
+    /// <li>
+    /// <p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you're initially creating a user pool.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
     /// </ul>
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub device_configuration: ::std::option::Option<crate::types::DeviceConfigurationType>,
@@ -184,14 +187,17 @@ impl UserPoolType {
     }
     /// <p>Can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
-    /// <li><p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you're initially creating a user pool.</p></li>
-    /// <li><p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
+    /// <li>
+    /// <p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you're initially creating a user pool.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
     /// </ul>
     pub fn mfa_configuration(&self) -> ::std::option::Option<&crate::types::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn device_configuration(&self) -> ::std::option::Option<&crate::types::DeviceConfigurationType> {
@@ -600,9 +606,12 @@ impl UserPoolTypeBuilder {
     }
     /// <p>Can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
-    /// <li><p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you're initially creating a user pool.</p></li>
-    /// <li><p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
+    /// <li>
+    /// <p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you're initially creating a user pool.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
     /// </ul>
     pub fn mfa_configuration(mut self, input: crate::types::UserPoolMfaType) -> Self {
         self.mfa_configuration = ::std::option::Option::Some(input);
@@ -610,9 +619,12 @@ impl UserPoolTypeBuilder {
     }
     /// <p>Can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
-    /// <li><p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you're initially creating a user pool.</p></li>
-    /// <li><p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
+    /// <li>
+    /// <p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you're initially creating a user pool.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
     /// </ul>
     pub fn set_mfa_configuration(mut self, input: ::std::option::Option<crate::types::UserPoolMfaType>) -> Self {
         self.mfa_configuration = input;
@@ -620,28 +632,31 @@ impl UserPoolTypeBuilder {
     }
     /// <p>Can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
-    /// <li><p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you're initially creating a user pool.</p></li>
-    /// <li><p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p></li>
+    /// <li>
+    /// <p><code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you're initially creating a user pool.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p></li>
     /// </ul>
     pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
         &self.mfa_configuration
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn device_configuration(mut self, input: crate::types::DeviceConfigurationType) -> Self {
         self.device_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn set_device_configuration(mut self, input: ::std::option::Option<crate::types::DeviceConfigurationType>) -> Self {
         self.device_configuration = input;
         self
     }
-    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p><note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
     pub fn get_device_configuration(&self) -> &::std::option::Option<crate::types::DeviceConfigurationType> {

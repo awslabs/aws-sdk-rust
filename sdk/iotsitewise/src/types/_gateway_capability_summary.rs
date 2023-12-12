@@ -8,9 +8,12 @@ pub struct GatewayCapabilitySummary {
     pub capability_namespace: ::std::string::String,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
-    /// <li><p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
-    /// <li><p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
     /// </ul>
     pub capability_sync_status: crate::types::CapabilitySyncStatus,
 }
@@ -22,9 +25,12 @@ impl GatewayCapabilitySummary {
     }
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
-    /// <li><p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
-    /// <li><p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
     /// </ul>
     pub fn capability_sync_status(&self) -> &crate::types::CapabilitySyncStatus {
         &self.capability_sync_status
@@ -62,9 +68,12 @@ impl GatewayCapabilitySummaryBuilder {
     }
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
-    /// <li><p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
-    /// <li><p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
     /// </ul>
     /// This field is required.
     pub fn capability_sync_status(mut self, input: crate::types::CapabilitySyncStatus) -> Self {
@@ -73,9 +82,12 @@ impl GatewayCapabilitySummaryBuilder {
     }
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
-    /// <li><p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
-    /// <li><p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
     /// </ul>
     pub fn set_capability_sync_status(mut self, input: ::std::option::Option<crate::types::CapabilitySyncStatus>) -> Self {
         self.capability_sync_status = input;
@@ -83,9 +95,12 @@ impl GatewayCapabilitySummaryBuilder {
     }
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
-    /// <li><p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
-    /// <li><p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The gateway is running the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p></li>
+    /// <li>
+    /// <p><code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p></li>
     /// </ul>
     pub fn get_capability_sync_status(&self) -> &::std::option::Option<crate::types::CapabilitySyncStatus> {
         &self.capability_sync_status

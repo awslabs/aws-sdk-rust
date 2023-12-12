@@ -10,18 +10,24 @@
 pub struct WafAction {
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code>: AWS WAF allows requests</p></li>
-    /// <li><p><code>BLOCK</code>: AWS WAF blocks requests</p></li>
-    /// <li><p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code>: AWS WAF allows requests</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code>: AWS WAF blocks requests</p></li>
+    /// <li>
+    /// <p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
     /// </ul>
     pub r#type: crate::types::WafActionType,
 }
 impl WafAction {
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code>: AWS WAF allows requests</p></li>
-    /// <li><p><code>BLOCK</code>: AWS WAF blocks requests</p></li>
-    /// <li><p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code>: AWS WAF allows requests</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code>: AWS WAF blocks requests</p></li>
+    /// <li>
+    /// <p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
     /// </ul>
     pub fn r#type(&self) -> &crate::types::WafActionType {
         &self.r#type
@@ -43,9 +49,12 @@ pub struct WafActionBuilder {
 impl WafActionBuilder {
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code>: AWS WAF allows requests</p></li>
-    /// <li><p><code>BLOCK</code>: AWS WAF blocks requests</p></li>
-    /// <li><p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code>: AWS WAF allows requests</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code>: AWS WAF blocks requests</p></li>
+    /// <li>
+    /// <p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::WafActionType) -> Self {
@@ -54,9 +63,12 @@ impl WafActionBuilder {
     }
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code>: AWS WAF allows requests</p></li>
-    /// <li><p><code>BLOCK</code>: AWS WAF blocks requests</p></li>
-    /// <li><p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code>: AWS WAF allows requests</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code>: AWS WAF blocks requests</p></li>
+    /// <li>
+    /// <p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WafActionType>) -> Self {
         self.r#type = input;
@@ -64,9 +76,12 @@ impl WafActionBuilder {
     }
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code>: AWS WAF allows requests</p></li>
-    /// <li><p><code>BLOCK</code>: AWS WAF blocks requests</p></li>
-    /// <li><p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code>: AWS WAF allows requests</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code>: AWS WAF blocks requests</p></li>
+    /// <li>
+    /// <p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WafActionType> {
         &self.r#type

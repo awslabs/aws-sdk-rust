@@ -30,9 +30,12 @@ impl DeleteRateBasedRuleInputBuilder {
 /// <p>If you just want to remove a rule from a <code>WebACL</code>, use <code>UpdateWebACL</code>.</p>
 /// <p>To permanently delete a <code>RateBasedRule</code> from AWS WAF, perform the following steps:</p>
 /// <ol>
-/// <li><p>Update the <code>RateBasedRule</code> to remove predicates, if any. For more information, see <code>UpdateRateBasedRule</code>.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteRateBasedRule</code> request.</p></li>
-/// <li><p>Submit a <code>DeleteRateBasedRule</code> request.</p></li>
+/// <li>
+/// <p>Update the <code>RateBasedRule</code> to remove predicates, if any. For more information, see <code>UpdateRateBasedRule</code>.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteRateBasedRule</code> request.</p></li>
+/// <li>
+/// <p>Submit a <code>DeleteRateBasedRule</code> request.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRateBasedRuleFluentBuilder {

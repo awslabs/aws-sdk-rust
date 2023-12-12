@@ -20,7 +20,7 @@ pub struct TapeArchive {
     pub retrieved_to: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the archived virtual tape.</p>
     pub tape_status: ::std::option::Option<::std::string::String>,
-    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p><note>
     /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
     /// </note>
     pub tape_used_in_bytes: ::std::option::Option<i64>,
@@ -67,7 +67,7 @@ impl TapeArchive {
     pub fn tape_status(&self) -> ::std::option::Option<&str> {
         self.tape_status.as_deref()
     }
-    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p><note>
     /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
     /// </note>
     pub fn tape_used_in_bytes(&self) -> ::std::option::Option<i64> {
@@ -225,21 +225,21 @@ impl TapeArchiveBuilder {
     pub fn get_tape_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.tape_status
     }
-    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p><note>
     /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
     /// </note>
     pub fn tape_used_in_bytes(mut self, input: i64) -> Self {
         self.tape_used_in_bytes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p><note>
     /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
     /// </note>
     pub fn set_tape_used_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.tape_used_in_bytes = input;
         self
     }
-    /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
+    /// <p>The size, in bytes, of data stored on the virtual tape.</p><note>
     /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
     /// </note>
     pub fn get_tape_used_in_bytes(&self) -> &::std::option::Option<i64> {

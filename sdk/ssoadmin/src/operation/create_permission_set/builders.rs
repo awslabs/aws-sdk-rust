@@ -22,7 +22,7 @@ impl CreatePermissionSetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePermissionSet`.
 ///
-/// <p>Creates a permission set within a specified IAM Identity Center instance.</p> <note>
+/// <p>Creates a permission set within a specified IAM Identity Center instance.</p><note>
 /// <p>To grant users and groups access to Amazon Web Services account resources, use <code> <code>CreateAccountAssignment</code> </code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

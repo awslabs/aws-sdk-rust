@@ -65,15 +65,24 @@ pub struct GetPartitionsInput {
     /// </dl>
     /// <p><i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li><p><code>string</code></p></li>
-    /// <li><p><code>date</code></p></li>
-    /// <li><p><code>timestamp</code></p></li>
-    /// <li><p><code>int</code></p></li>
-    /// <li><p><code>bigint</code></p></li>
-    /// <li><p><code>long</code></p></li>
-    /// <li><p><code>tinyint</code></p></li>
-    /// <li><p><code>smallint</code></p></li>
-    /// <li><p><code>decimal</code></p></li>
+    /// <li>
+    /// <p><code>string</code></p></li>
+    /// <li>
+    /// <p><code>date</code></p></li>
+    /// <li>
+    /// <p><code>timestamp</code></p></li>
+    /// <li>
+    /// <p><code>int</code></p></li>
+    /// <li>
+    /// <p><code>bigint</code></p></li>
+    /// <li>
+    /// <p><code>long</code></p></li>
+    /// <li>
+    /// <p><code>tinyint</code></p></li>
+    /// <li>
+    /// <p><code>smallint</code></p></li>
+    /// <li>
+    /// <p><code>decimal</code></p></li>
     /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown.</p>
     /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions.</p>
@@ -161,15 +170,24 @@ impl GetPartitionsInput {
     /// </dl>
     /// <p><i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li><p><code>string</code></p></li>
-    /// <li><p><code>date</code></p></li>
-    /// <li><p><code>timestamp</code></p></li>
-    /// <li><p><code>int</code></p></li>
-    /// <li><p><code>bigint</code></p></li>
-    /// <li><p><code>long</code></p></li>
-    /// <li><p><code>tinyint</code></p></li>
-    /// <li><p><code>smallint</code></p></li>
-    /// <li><p><code>decimal</code></p></li>
+    /// <li>
+    /// <p><code>string</code></p></li>
+    /// <li>
+    /// <p><code>date</code></p></li>
+    /// <li>
+    /// <p><code>timestamp</code></p></li>
+    /// <li>
+    /// <p><code>int</code></p></li>
+    /// <li>
+    /// <p><code>bigint</code></p></li>
+    /// <li>
+    /// <p><code>long</code></p></li>
+    /// <li>
+    /// <p><code>tinyint</code></p></li>
+    /// <li>
+    /// <p><code>smallint</code></p></li>
+    /// <li>
+    /// <p><code>decimal</code></p></li>
     /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown.</p>
     /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions.</p>
@@ -325,15 +343,24 @@ impl GetPartitionsInputBuilder {
     /// </dl>
     /// <p><i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li><p><code>string</code></p></li>
-    /// <li><p><code>date</code></p></li>
-    /// <li><p><code>timestamp</code></p></li>
-    /// <li><p><code>int</code></p></li>
-    /// <li><p><code>bigint</code></p></li>
-    /// <li><p><code>long</code></p></li>
-    /// <li><p><code>tinyint</code></p></li>
-    /// <li><p><code>smallint</code></p></li>
-    /// <li><p><code>decimal</code></p></li>
+    /// <li>
+    /// <p><code>string</code></p></li>
+    /// <li>
+    /// <p><code>date</code></p></li>
+    /// <li>
+    /// <p><code>timestamp</code></p></li>
+    /// <li>
+    /// <p><code>int</code></p></li>
+    /// <li>
+    /// <p><code>bigint</code></p></li>
+    /// <li>
+    /// <p><code>long</code></p></li>
+    /// <li>
+    /// <p><code>tinyint</code></p></li>
+    /// <li>
+    /// <p><code>smallint</code></p></li>
+    /// <li>
+    /// <p><code>decimal</code></p></li>
     /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown.</p>
     /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions.</p>
@@ -398,15 +425,24 @@ impl GetPartitionsInputBuilder {
     /// </dl>
     /// <p><i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li><p><code>string</code></p></li>
-    /// <li><p><code>date</code></p></li>
-    /// <li><p><code>timestamp</code></p></li>
-    /// <li><p><code>int</code></p></li>
-    /// <li><p><code>bigint</code></p></li>
-    /// <li><p><code>long</code></p></li>
-    /// <li><p><code>tinyint</code></p></li>
-    /// <li><p><code>smallint</code></p></li>
-    /// <li><p><code>decimal</code></p></li>
+    /// <li>
+    /// <p><code>string</code></p></li>
+    /// <li>
+    /// <p><code>date</code></p></li>
+    /// <li>
+    /// <p><code>timestamp</code></p></li>
+    /// <li>
+    /// <p><code>int</code></p></li>
+    /// <li>
+    /// <p><code>bigint</code></p></li>
+    /// <li>
+    /// <p><code>long</code></p></li>
+    /// <li>
+    /// <p><code>tinyint</code></p></li>
+    /// <li>
+    /// <p><code>smallint</code></p></li>
+    /// <li>
+    /// <p><code>decimal</code></p></li>
     /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown.</p>
     /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions.</p>
@@ -471,15 +507,24 @@ impl GetPartitionsInputBuilder {
     /// </dl>
     /// <p><i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li><p><code>string</code></p></li>
-    /// <li><p><code>date</code></p></li>
-    /// <li><p><code>timestamp</code></p></li>
-    /// <li><p><code>int</code></p></li>
-    /// <li><p><code>bigint</code></p></li>
-    /// <li><p><code>long</code></p></li>
-    /// <li><p><code>tinyint</code></p></li>
-    /// <li><p><code>smallint</code></p></li>
-    /// <li><p><code>decimal</code></p></li>
+    /// <li>
+    /// <p><code>string</code></p></li>
+    /// <li>
+    /// <p><code>date</code></p></li>
+    /// <li>
+    /// <p><code>timestamp</code></p></li>
+    /// <li>
+    /// <p><code>int</code></p></li>
+    /// <li>
+    /// <p><code>bigint</code></p></li>
+    /// <li>
+    /// <p><code>long</code></p></li>
+    /// <li>
+    /// <p><code>tinyint</code></p></li>
+    /// <li>
+    /// <p><code>smallint</code></p></li>
+    /// <li>
+    /// <p><code>decimal</code></p></li>
     /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown.</p>
     /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions.</p>

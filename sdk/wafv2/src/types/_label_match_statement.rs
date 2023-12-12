@@ -9,8 +9,10 @@ pub struct LabelMatchStatement {
     pub scope: crate::types::LabelMatchScope,
     /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting:</p>
     /// <ul>
-    /// <li><p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name.</p></li>
-    /// <li><p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p></li>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name.</p></li>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p></li>
     /// </ul>
     /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
     pub key: ::std::string::String,
@@ -22,8 +24,10 @@ impl LabelMatchStatement {
     }
     /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting:</p>
     /// <ul>
-    /// <li><p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name.</p></li>
-    /// <li><p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p></li>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name.</p></li>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p></li>
     /// </ul>
     /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
     pub fn key(&self) -> &str {
@@ -63,8 +67,10 @@ impl LabelMatchStatementBuilder {
     }
     /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting:</p>
     /// <ul>
-    /// <li><p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name.</p></li>
-    /// <li><p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p></li>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name.</p></li>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p></li>
     /// </ul>
     /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
     /// This field is required.
@@ -74,8 +80,10 @@ impl LabelMatchStatementBuilder {
     }
     /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting:</p>
     /// <ul>
-    /// <li><p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name.</p></li>
-    /// <li><p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p></li>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name.</p></li>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p></li>
     /// </ul>
     /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -84,8 +92,10 @@ impl LabelMatchStatementBuilder {
     }
     /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting:</p>
     /// <ul>
-    /// <li><p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name.</p></li>
-    /// <li><p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p></li>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name.</p></li>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p></li>
     /// </ul>
     /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {

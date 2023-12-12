@@ -29,10 +29,14 @@ impl RetireGrantInputBuilder {
 /// <p><b>Required permissions:</b>:Permission to retire a grant is determined primarily by the grant. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>CreateGrant</code></p></li>
-/// <li><p><code>ListGrants</code></p></li>
-/// <li><p><code>ListRetirableGrants</code></p></li>
-/// <li><p><code>RevokeGrant</code></p></li>
+/// <li>
+/// <p><code>CreateGrant</code></p></li>
+/// <li>
+/// <p><code>ListGrants</code></p></li>
+/// <li>
+/// <p><code>ListRetirableGrants</code></p></li>
+/// <li>
+/// <p><code>RevokeGrant</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetireGrantFluentBuilder {
@@ -155,7 +159,8 @@ impl RetireGrantFluentBuilder {
     }
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
+    /// <li>
+    /// <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub fn grant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_id(input.into());
@@ -163,7 +168,8 @@ impl RetireGrantFluentBuilder {
     }
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
+    /// <li>
+    /// <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub fn set_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_id(input);
@@ -171,7 +177,8 @@ impl RetireGrantFluentBuilder {
     }
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
+    /// <li>
+    /// <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub fn get_grant_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_grant_id()

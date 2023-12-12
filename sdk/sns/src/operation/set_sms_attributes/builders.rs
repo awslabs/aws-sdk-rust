@@ -23,7 +23,7 @@ impl SetSmsAttributesInputBuilder {
 /// Fluent builder constructing a request to `SetSMSAttributes`.
 ///
 /// <p>Use this request to set the default settings for sending SMS messages and receiving daily SMS usage reports.</p>
-/// <p>You can override some of these settings for a single message when you use the <code>Publish</code> action with the <code>MessageAttributes.entry.N</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p> <note>
+/// <p>You can override some of these settings for a single message when you use the <code>Publish</code> action with the <code>MessageAttributes.entry.N</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p><note>
 /// <p>To use this operation, you must grant the Amazon SNS service principal (<code>sns.amazonaws.com</code>) permission to perform the <code>s3:ListBucket</code> action.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,7 +116,7 @@ impl SetSMSAttributesFluentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values for the following attribute names:</p>
-    /// <p><code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.</p> <important>
+    /// <p><code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.</p><important>
     /// <p>Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During that interval, if you continue to send SMS messages, you will incur costs that exceed your limit.</p>
     /// </important>
     /// <p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to raise the limit, submit an <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly spend limit. In the <b>Use Case Description</b> field, explain that you are requesting an SMS monthly spend limit increase.</p>
@@ -125,19 +125,29 @@ impl SetSMSAttributesFluentBuilder {
     /// <p><code>DefaultSenderID</code> – A string, such as your business brand, that is displayed as the sender on the receiving device. Support for sender IDs varies by country. The sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one letter.</p>
     /// <p><code>DefaultSMSType</code> – The type of SMS message that you will send by default. You can assign the following values:</p>
     /// <ul>
-    /// <li><p><code>Promotional</code> – (Default) Noncritical messages, such as marketing messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p></li>
-    /// <li><p><code>Transactional</code> – Critical messages that support customer transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p></li>
+    /// <li>
+    /// <p><code>Promotional</code> – (Default) Noncritical messages, such as marketing messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p></li>
+    /// <li>
+    /// <p><code>Transactional</code> – Critical messages that support customer transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p></li>
     /// </ul>
     /// <p><code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to the bucket. The report includes the following information for each SMS message that was successfully delivered by your Amazon Web Services account:</p>
     /// <ul>
-    /// <li><p>Time that the message was published (in UTC)</p></li>
-    /// <li><p>Message ID</p></li>
-    /// <li><p>Destination phone number</p></li>
-    /// <li><p>Message type</p></li>
-    /// <li><p>Delivery status</p></li>
-    /// <li><p>Message price (in USD)</p></li>
-    /// <li><p>Part number (a message is split into multiple parts if it is too long for a single message)</p></li>
-    /// <li><p>Total number of parts</p></li>
+    /// <li>
+    /// <p>Time that the message was published (in UTC)</p></li>
+    /// <li>
+    /// <p>Message ID</p></li>
+    /// <li>
+    /// <p>Destination phone number</p></li>
+    /// <li>
+    /// <p>Message type</p></li>
+    /// <li>
+    /// <p>Delivery status</p></li>
+    /// <li>
+    /// <p>Message price (in USD)</p></li>
+    /// <li>
+    /// <p>Part number (a message is split into multiple parts if it is too long for a single message)</p></li>
+    /// <li>
+    /// <p>Total number of parts</p></li>
     /// </ul>
     /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
     /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
@@ -146,7 +156,7 @@ impl SetSMSAttributesFluentBuilder {
         self
     }
     /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values for the following attribute names:</p>
-    /// <p><code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.</p> <important>
+    /// <p><code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.</p><important>
     /// <p>Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During that interval, if you continue to send SMS messages, you will incur costs that exceed your limit.</p>
     /// </important>
     /// <p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to raise the limit, submit an <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly spend limit. In the <b>Use Case Description</b> field, explain that you are requesting an SMS monthly spend limit increase.</p>
@@ -155,19 +165,29 @@ impl SetSMSAttributesFluentBuilder {
     /// <p><code>DefaultSenderID</code> – A string, such as your business brand, that is displayed as the sender on the receiving device. Support for sender IDs varies by country. The sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one letter.</p>
     /// <p><code>DefaultSMSType</code> – The type of SMS message that you will send by default. You can assign the following values:</p>
     /// <ul>
-    /// <li><p><code>Promotional</code> – (Default) Noncritical messages, such as marketing messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p></li>
-    /// <li><p><code>Transactional</code> – Critical messages that support customer transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p></li>
+    /// <li>
+    /// <p><code>Promotional</code> – (Default) Noncritical messages, such as marketing messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p></li>
+    /// <li>
+    /// <p><code>Transactional</code> – Critical messages that support customer transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p></li>
     /// </ul>
     /// <p><code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to the bucket. The report includes the following information for each SMS message that was successfully delivered by your Amazon Web Services account:</p>
     /// <ul>
-    /// <li><p>Time that the message was published (in UTC)</p></li>
-    /// <li><p>Message ID</p></li>
-    /// <li><p>Destination phone number</p></li>
-    /// <li><p>Message type</p></li>
-    /// <li><p>Delivery status</p></li>
-    /// <li><p>Message price (in USD)</p></li>
-    /// <li><p>Part number (a message is split into multiple parts if it is too long for a single message)</p></li>
-    /// <li><p>Total number of parts</p></li>
+    /// <li>
+    /// <p>Time that the message was published (in UTC)</p></li>
+    /// <li>
+    /// <p>Message ID</p></li>
+    /// <li>
+    /// <p>Destination phone number</p></li>
+    /// <li>
+    /// <p>Message type</p></li>
+    /// <li>
+    /// <p>Delivery status</p></li>
+    /// <li>
+    /// <p>Message price (in USD)</p></li>
+    /// <li>
+    /// <p>Part number (a message is split into multiple parts if it is too long for a single message)</p></li>
+    /// <li>
+    /// <p>Total number of parts</p></li>
     /// </ul>
     /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
     /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
@@ -176,7 +196,7 @@ impl SetSMSAttributesFluentBuilder {
         self
     }
     /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values for the following attribute names:</p>
-    /// <p><code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.</p> <important>
+    /// <p><code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.</p><important>
     /// <p>Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During that interval, if you continue to send SMS messages, you will incur costs that exceed your limit.</p>
     /// </important>
     /// <p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to raise the limit, submit an <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly spend limit. In the <b>Use Case Description</b> field, explain that you are requesting an SMS monthly spend limit increase.</p>
@@ -185,19 +205,29 @@ impl SetSMSAttributesFluentBuilder {
     /// <p><code>DefaultSenderID</code> – A string, such as your business brand, that is displayed as the sender on the receiving device. Support for sender IDs varies by country. The sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one letter.</p>
     /// <p><code>DefaultSMSType</code> – The type of SMS message that you will send by default. You can assign the following values:</p>
     /// <ul>
-    /// <li><p><code>Promotional</code> – (Default) Noncritical messages, such as marketing messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p></li>
-    /// <li><p><code>Transactional</code> – Critical messages that support customer transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p></li>
+    /// <li>
+    /// <p><code>Promotional</code> – (Default) Noncritical messages, such as marketing messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p></li>
+    /// <li>
+    /// <p><code>Transactional</code> – Critical messages that support customer transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p></li>
     /// </ul>
     /// <p><code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to the bucket. The report includes the following information for each SMS message that was successfully delivered by your Amazon Web Services account:</p>
     /// <ul>
-    /// <li><p>Time that the message was published (in UTC)</p></li>
-    /// <li><p>Message ID</p></li>
-    /// <li><p>Destination phone number</p></li>
-    /// <li><p>Message type</p></li>
-    /// <li><p>Delivery status</p></li>
-    /// <li><p>Message price (in USD)</p></li>
-    /// <li><p>Part number (a message is split into multiple parts if it is too long for a single message)</p></li>
-    /// <li><p>Total number of parts</p></li>
+    /// <li>
+    /// <p>Time that the message was published (in UTC)</p></li>
+    /// <li>
+    /// <p>Message ID</p></li>
+    /// <li>
+    /// <p>Destination phone number</p></li>
+    /// <li>
+    /// <p>Message type</p></li>
+    /// <li>
+    /// <p>Delivery status</p></li>
+    /// <li>
+    /// <p>Message price (in USD)</p></li>
+    /// <li>
+    /// <p>Part number (a message is split into multiple parts if it is too long for a single message)</p></li>
+    /// <li>
+    /// <p>Total number of parts</p></li>
     /// </ul>
     /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
     /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>

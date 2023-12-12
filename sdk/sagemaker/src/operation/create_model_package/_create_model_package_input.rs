@@ -13,9 +13,12 @@ pub struct CreateModelPackageInput {
     pub model_package_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
-    /// <li><p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li><p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li><p>The input and output content formats that the model package supports for inference.</p></li>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
     /// </ul>
     pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     /// <p>Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.</p>
@@ -71,9 +74,12 @@ impl CreateModelPackageInput {
     }
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
-    /// <li><p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li><p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li><p>The input and output content formats that the model package supports for inference.</p></li>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
     /// </ul>
     pub fn inference_specification(&self) -> ::std::option::Option<&crate::types::InferenceSpecification> {
         self.inference_specification.as_ref()
@@ -230,9 +236,12 @@ impl CreateModelPackageInputBuilder {
     }
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
-    /// <li><p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li><p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li><p>The input and output content formats that the model package supports for inference.</p></li>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
     /// </ul>
     pub fn inference_specification(mut self, input: crate::types::InferenceSpecification) -> Self {
         self.inference_specification = ::std::option::Option::Some(input);
@@ -240,9 +249,12 @@ impl CreateModelPackageInputBuilder {
     }
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
-    /// <li><p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li><p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li><p>The input and output content formats that the model package supports for inference.</p></li>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
     /// </ul>
     pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
         self.inference_specification = input;
@@ -250,9 +262,12 @@ impl CreateModelPackageInputBuilder {
     }
     /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
     /// <ul>
-    /// <li><p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
-    /// <li><p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
-    /// <li><p>The input and output content formats that the model package supports for inference.</p></li>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
     /// </ul>
     pub fn get_inference_specification(&self) -> &::std::option::Option<crate::types::InferenceSpecification> {
         &self.inference_specification

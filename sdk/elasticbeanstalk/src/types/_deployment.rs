@@ -10,9 +10,12 @@ pub struct Deployment {
     pub deployment_id: ::std::option::Option<i64>,
     /// <p>The status of the deployment:</p>
     /// <ul>
-    /// <li><p><code>In Progress</code> : The deployment is in progress.</p></li>
-    /// <li><p><code>Deployed</code> : The deployment succeeded.</p></li>
-    /// <li><p><code>Failed</code> : The deployment failed.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code> : The deployment is in progress.</p></li>
+    /// <li>
+    /// <p><code>Deployed</code> : The deployment succeeded.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> : The deployment failed.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>For in-progress deployments, the time that the deployment started.</p>
@@ -30,9 +33,12 @@ impl Deployment {
     }
     /// <p>The status of the deployment:</p>
     /// <ul>
-    /// <li><p><code>In Progress</code> : The deployment is in progress.</p></li>
-    /// <li><p><code>Deployed</code> : The deployment succeeded.</p></li>
-    /// <li><p><code>Failed</code> : The deployment failed.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code> : The deployment is in progress.</p></li>
+    /// <li>
+    /// <p><code>Deployed</code> : The deployment succeeded.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> : The deployment failed.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -90,9 +96,12 @@ impl DeploymentBuilder {
     }
     /// <p>The status of the deployment:</p>
     /// <ul>
-    /// <li><p><code>In Progress</code> : The deployment is in progress.</p></li>
-    /// <li><p><code>Deployed</code> : The deployment succeeded.</p></li>
-    /// <li><p><code>Failed</code> : The deployment failed.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code> : The deployment is in progress.</p></li>
+    /// <li>
+    /// <p><code>Deployed</code> : The deployment succeeded.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> : The deployment failed.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -100,9 +109,12 @@ impl DeploymentBuilder {
     }
     /// <p>The status of the deployment:</p>
     /// <ul>
-    /// <li><p><code>In Progress</code> : The deployment is in progress.</p></li>
-    /// <li><p><code>Deployed</code> : The deployment succeeded.</p></li>
-    /// <li><p><code>Failed</code> : The deployment failed.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code> : The deployment is in progress.</p></li>
+    /// <li>
+    /// <p><code>Deployed</code> : The deployment succeeded.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> : The deployment failed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -110,9 +122,12 @@ impl DeploymentBuilder {
     }
     /// <p>The status of the deployment:</p>
     /// <ul>
-    /// <li><p><code>In Progress</code> : The deployment is in progress.</p></li>
-    /// <li><p><code>Deployed</code> : The deployment succeeded.</p></li>
-    /// <li><p><code>Failed</code> : The deployment failed.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code> : The deployment is in progress.</p></li>
+    /// <li>
+    /// <p><code>Deployed</code> : The deployment succeeded.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> : The deployment failed.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

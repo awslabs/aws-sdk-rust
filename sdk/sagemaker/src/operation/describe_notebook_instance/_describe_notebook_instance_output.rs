@@ -43,7 +43,7 @@ pub struct DescribeNotebookInstanceOutput {
     pub default_code_repository: ::std::option::Option<::std::string::String>,
     /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub additional_code_repositories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p><note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
     pub root_access: ::std::option::Option<crate::types::RootAccess>,
@@ -138,7 +138,7 @@ impl DescribeNotebookInstanceOutput {
     pub fn additional_code_repositories(&self) -> &[::std::string::String] {
         self.additional_code_repositories.as_deref().unwrap_or_default()
     }
-    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p><note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
     pub fn root_access(&self) -> ::std::option::Option<&crate::types::RootAccess> {
@@ -484,21 +484,21 @@ impl DescribeNotebookInstanceOutputBuilder {
     pub fn get_additional_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_code_repositories
     }
-    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p><note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
     pub fn root_access(mut self, input: crate::types::RootAccess) -> Self {
         self.root_access = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p><note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
     pub fn set_root_access(mut self, input: ::std::option::Option<crate::types::RootAccess>) -> Self {
         self.root_access = input;
         self
     }
-    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
+    /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p><note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
     /// </note>
     pub fn get_root_access(&self) -> &::std::option::Option<crate::types::RootAccess> {

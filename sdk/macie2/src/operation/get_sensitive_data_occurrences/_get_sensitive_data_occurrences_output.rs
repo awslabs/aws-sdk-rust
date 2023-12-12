@@ -10,9 +10,12 @@ pub struct GetSensitiveDataOccurrencesOutput {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DetectedDataDetails>>>,
     /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
     /// <ul>
-    /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
-    /// <li><p>PROCESSING - Macie is processing the request.</p></li>
-    /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
+    /// <li>
+    /// <p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
+    /// <li>
+    /// <p>PROCESSING - Macie is processing the request.</p></li>
+    /// <li>
+    /// <p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::RevealRequestStatus>,
     _request_id: Option<String>,
@@ -30,9 +33,12 @@ impl GetSensitiveDataOccurrencesOutput {
     }
     /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
     /// <ul>
-    /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
-    /// <li><p>PROCESSING - Macie is processing the request.</p></li>
-    /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
+    /// <li>
+    /// <p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
+    /// <li>
+    /// <p>PROCESSING - Macie is processing the request.</p></li>
+    /// <li>
+    /// <p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RevealRequestStatus> {
         self.status.as_ref()
@@ -106,9 +112,12 @@ impl GetSensitiveDataOccurrencesOutputBuilder {
     }
     /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
     /// <ul>
-    /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
-    /// <li><p>PROCESSING - Macie is processing the request.</p></li>
-    /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
+    /// <li>
+    /// <p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
+    /// <li>
+    /// <p>PROCESSING - Macie is processing the request.</p></li>
+    /// <li>
+    /// <p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::RevealRequestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -116,9 +125,12 @@ impl GetSensitiveDataOccurrencesOutputBuilder {
     }
     /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
     /// <ul>
-    /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
-    /// <li><p>PROCESSING - Macie is processing the request.</p></li>
-    /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
+    /// <li>
+    /// <p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
+    /// <li>
+    /// <p>PROCESSING - Macie is processing the request.</p></li>
+    /// <li>
+    /// <p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RevealRequestStatus>) -> Self {
         self.status = input;
@@ -126,9 +138,12 @@ impl GetSensitiveDataOccurrencesOutputBuilder {
     }
     /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
     /// <ul>
-    /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
-    /// <li><p>PROCESSING - Macie is processing the request.</p></li>
-    /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
+    /// <li>
+    /// <p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
+    /// <li>
+    /// <p>PROCESSING - Macie is processing the request.</p></li>
+    /// <li>
+    /// <p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RevealRequestStatus> {
         &self.status

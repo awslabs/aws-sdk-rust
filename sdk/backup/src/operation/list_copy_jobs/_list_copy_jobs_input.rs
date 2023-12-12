@@ -17,22 +17,38 @@ pub struct ListCopyJobsInput {
     pub by_created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
-    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
-    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
-    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li>
+    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li>
+    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub by_resource_type: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
@@ -79,22 +95,38 @@ impl ListCopyJobsInput {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
-    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
-    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
-    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li>
+    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li>
+    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn by_resource_type(&self) -> ::std::option::Option<&str> {
         self.by_resource_type.as_deref()
@@ -240,22 +272,38 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
-    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
-    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
-    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li>
+    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li>
+    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_resource_type = ::std::option::Option::Some(input.into());
@@ -263,22 +311,38 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
-    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
-    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
-    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li>
+    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li>
+    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_resource_type = input;
@@ -286,22 +350,38 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
-    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
-    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
-    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li>
+    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li>
+    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn get_by_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_resource_type

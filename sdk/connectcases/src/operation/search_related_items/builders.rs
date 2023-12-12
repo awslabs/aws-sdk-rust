@@ -22,7 +22,7 @@ impl SearchRelatedItemsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchRelatedItems`.
 ///
-/// <p>Searches for related items that are associated with a case.</p> <note>
+/// <p>Searches for related items that are associated with a case.</p><note>
 /// <p>If no filters are provided, this returns all related items associated with a case.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

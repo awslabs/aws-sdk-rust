@@ -10,7 +10,7 @@ pub struct RemediationConfiguration {
     pub target_type: crate::types::RemediationTargetType,
     /// <p>Target ID is the name of the SSM document.</p>
     pub target_id: ::std::string::String,
-    /// <p>Version of the target. For example, version of the SSM document.</p> <note>
+    /// <p>Version of the target. For example, version of the SSM document.</p><note>
     /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
     /// </note>
     pub target_version: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl RemediationConfiguration {
         use std::ops::Deref;
         self.target_id.deref()
     }
-    /// <p>Version of the target. For example, version of the SSM document.</p> <note>
+    /// <p>Version of the target. For example, version of the SSM document.</p><note>
     /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
     /// </note>
     pub fn target_version(&self) -> ::std::option::Option<&str> {
@@ -159,21 +159,21 @@ impl RemediationConfigurationBuilder {
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_id
     }
-    /// <p>Version of the target. For example, version of the SSM document.</p> <note>
+    /// <p>Version of the target. For example, version of the SSM document.</p><note>
     /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
     /// </note>
     pub fn target_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Version of the target. For example, version of the SSM document.</p> <note>
+    /// <p>Version of the target. For example, version of the SSM document.</p><note>
     /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
     /// </note>
     pub fn set_target_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_version = input;
         self
     }
-    /// <p>Version of the target. For example, version of the SSM document.</p> <note>
+    /// <p>Version of the target. For example, version of the SSM document.</p><note>
     /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
     /// </note>
     pub fn get_target_version(&self) -> &::std::option::Option<::std::string::String> {

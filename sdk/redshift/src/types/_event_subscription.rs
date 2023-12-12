@@ -13,8 +13,10 @@ pub struct EventSubscription {
     /// <p>The status of the Amazon Redshift event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
-    /// <li><p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
+    /// <li>
+    /// <p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
+    /// <li>
+    /// <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the Amazon Redshift event notification subscription was created.</p>
@@ -50,8 +52,10 @@ impl EventSubscription {
     /// <p>The status of the Amazon Redshift event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
-    /// <li><p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
+    /// <li>
+    /// <p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
+    /// <li>
+    /// <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -162,8 +166,10 @@ impl EventSubscriptionBuilder {
     /// <p>The status of the Amazon Redshift event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
-    /// <li><p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
+    /// <li>
+    /// <p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
+    /// <li>
+    /// <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -172,8 +178,10 @@ impl EventSubscriptionBuilder {
     /// <p>The status of the Amazon Redshift event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
-    /// <li><p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
+    /// <li>
+    /// <p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
+    /// <li>
+    /// <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -182,8 +190,10 @@ impl EventSubscriptionBuilder {
     /// <p>The status of the Amazon Redshift event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
-    /// <li><p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
+    /// <li>
+    /// <p>Can be one of the following: active | no-permission | topic-not-exist</p></li>
+    /// <li>
+    /// <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

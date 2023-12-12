@@ -2,20 +2,28 @@
 
 /// <p>Provides details about one of the following actions that affects or that was taken on a resource:</p>
 /// <ul>
-/// <li><p>A remote IP address issued an Amazon Web Services API call</p></li>
-/// <li><p>A DNS request was received</p></li>
-/// <li><p>A remote IP address attempted to connect to an EC2 instance</p></li>
-/// <li><p>A remote IP address attempted a port probe on an EC2 instance</p></li>
+/// <li>
+/// <p>A remote IP address issued an Amazon Web Services API call</p></li>
+/// <li>
+/// <p>A DNS request was received</p></li>
+/// <li>
+/// <p>A remote IP address attempted to connect to an EC2 instance</p></li>
+/// <li>
+/// <p>A remote IP address attempted a port probe on an EC2 instance</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>The type of action that was detected. The possible action types are:</p>
     /// <ul>
-    /// <li><p><code>NETWORK_CONNECTION</code></p></li>
-    /// <li><p><code>AWS_API_CALL</code></p></li>
-    /// <li><p><code>DNS_REQUEST</code></p></li>
-    /// <li><p><code>PORT_PROBE</code></p></li>
+    /// <li>
+    /// <p><code>NETWORK_CONNECTION</code></p></li>
+    /// <li>
+    /// <p><code>AWS_API_CALL</code></p></li>
+    /// <li>
+    /// <p><code>DNS_REQUEST</code></p></li>
+    /// <li>
+    /// <p><code>PORT_PROBE</code></p></li>
     /// </ul>
     pub action_type: ::std::option::Option<::std::string::String>,
     /// <p>Included if <code>ActionType</code> is <code>NETWORK_CONNECTION</code>. Provides details about the network connection that was detected.</p>
@@ -30,10 +38,14 @@ pub struct Action {
 impl Action {
     /// <p>The type of action that was detected. The possible action types are:</p>
     /// <ul>
-    /// <li><p><code>NETWORK_CONNECTION</code></p></li>
-    /// <li><p><code>AWS_API_CALL</code></p></li>
-    /// <li><p><code>DNS_REQUEST</code></p></li>
-    /// <li><p><code>PORT_PROBE</code></p></li>
+    /// <li>
+    /// <p><code>NETWORK_CONNECTION</code></p></li>
+    /// <li>
+    /// <p><code>AWS_API_CALL</code></p></li>
+    /// <li>
+    /// <p><code>DNS_REQUEST</code></p></li>
+    /// <li>
+    /// <p><code>PORT_PROBE</code></p></li>
     /// </ul>
     pub fn action_type(&self) -> ::std::option::Option<&str> {
         self.action_type.as_deref()
@@ -75,10 +87,14 @@ pub struct ActionBuilder {
 impl ActionBuilder {
     /// <p>The type of action that was detected. The possible action types are:</p>
     /// <ul>
-    /// <li><p><code>NETWORK_CONNECTION</code></p></li>
-    /// <li><p><code>AWS_API_CALL</code></p></li>
-    /// <li><p><code>DNS_REQUEST</code></p></li>
-    /// <li><p><code>PORT_PROBE</code></p></li>
+    /// <li>
+    /// <p><code>NETWORK_CONNECTION</code></p></li>
+    /// <li>
+    /// <p><code>AWS_API_CALL</code></p></li>
+    /// <li>
+    /// <p><code>DNS_REQUEST</code></p></li>
+    /// <li>
+    /// <p><code>PORT_PROBE</code></p></li>
     /// </ul>
     pub fn action_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_type = ::std::option::Option::Some(input.into());
@@ -86,10 +102,14 @@ impl ActionBuilder {
     }
     /// <p>The type of action that was detected. The possible action types are:</p>
     /// <ul>
-    /// <li><p><code>NETWORK_CONNECTION</code></p></li>
-    /// <li><p><code>AWS_API_CALL</code></p></li>
-    /// <li><p><code>DNS_REQUEST</code></p></li>
-    /// <li><p><code>PORT_PROBE</code></p></li>
+    /// <li>
+    /// <p><code>NETWORK_CONNECTION</code></p></li>
+    /// <li>
+    /// <p><code>AWS_API_CALL</code></p></li>
+    /// <li>
+    /// <p><code>DNS_REQUEST</code></p></li>
+    /// <li>
+    /// <p><code>PORT_PROBE</code></p></li>
     /// </ul>
     pub fn set_action_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_type = input;
@@ -97,10 +117,14 @@ impl ActionBuilder {
     }
     /// <p>The type of action that was detected. The possible action types are:</p>
     /// <ul>
-    /// <li><p><code>NETWORK_CONNECTION</code></p></li>
-    /// <li><p><code>AWS_API_CALL</code></p></li>
-    /// <li><p><code>DNS_REQUEST</code></p></li>
-    /// <li><p><code>PORT_PROBE</code></p></li>
+    /// <li>
+    /// <p><code>NETWORK_CONNECTION</code></p></li>
+    /// <li>
+    /// <p><code>AWS_API_CALL</code></p></li>
+    /// <li>
+    /// <p><code>DNS_REQUEST</code></p></li>
+    /// <li>
+    /// <p><code>PORT_PROBE</code></p></li>
     /// </ul>
     pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_type

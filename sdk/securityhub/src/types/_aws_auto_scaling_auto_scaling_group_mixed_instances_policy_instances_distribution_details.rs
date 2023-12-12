@@ -12,9 +12,12 @@ pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributi
     pub on_demand_percentage_above_base_capacity: ::std::option::Option<i32>,
     /// <p>How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>lowest-price</code></p></li>
-    /// <li><p><code>capacity-optimized</code></p></li>
-    /// <li><p><code>capacity-optimized-prioritized</code></p></li>
+    /// <li>
+    /// <p><code>lowest-price</code></p></li>
+    /// <li>
+    /// <p><code>capacity-optimized</code></p></li>
+    /// <li>
+    /// <p><code>capacity-optimized-prioritized</code></p></li>
     /// </ul>
     pub spot_allocation_strategy: ::std::option::Option<::std::string::String>,
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances.</p>
@@ -37,9 +40,12 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     }
     /// <p>How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>lowest-price</code></p></li>
-    /// <li><p><code>capacity-optimized</code></p></li>
-    /// <li><p><code>capacity-optimized-prioritized</code></p></li>
+    /// <li>
+    /// <p><code>lowest-price</code></p></li>
+    /// <li>
+    /// <p><code>capacity-optimized</code></p></li>
+    /// <li>
+    /// <p><code>capacity-optimized-prioritized</code></p></li>
     /// </ul>
     pub fn spot_allocation_strategy(&self) -> ::std::option::Option<&str> {
         self.spot_allocation_strategy.as_deref()
@@ -116,9 +122,12 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     }
     /// <p>How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>lowest-price</code></p></li>
-    /// <li><p><code>capacity-optimized</code></p></li>
-    /// <li><p><code>capacity-optimized-prioritized</code></p></li>
+    /// <li>
+    /// <p><code>lowest-price</code></p></li>
+    /// <li>
+    /// <p><code>capacity-optimized</code></p></li>
+    /// <li>
+    /// <p><code>capacity-optimized-prioritized</code></p></li>
     /// </ul>
     pub fn spot_allocation_strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_allocation_strategy = ::std::option::Option::Some(input.into());
@@ -126,9 +135,12 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     }
     /// <p>How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>lowest-price</code></p></li>
-    /// <li><p><code>capacity-optimized</code></p></li>
-    /// <li><p><code>capacity-optimized-prioritized</code></p></li>
+    /// <li>
+    /// <p><code>lowest-price</code></p></li>
+    /// <li>
+    /// <p><code>capacity-optimized</code></p></li>
+    /// <li>
+    /// <p><code>capacity-optimized-prioritized</code></p></li>
     /// </ul>
     pub fn set_spot_allocation_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_allocation_strategy = input;
@@ -136,9 +148,12 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     }
     /// <p>How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>lowest-price</code></p></li>
-    /// <li><p><code>capacity-optimized</code></p></li>
-    /// <li><p><code>capacity-optimized-prioritized</code></p></li>
+    /// <li>
+    /// <p><code>lowest-price</code></p></li>
+    /// <li>
+    /// <p><code>capacity-optimized</code></p></li>
+    /// <li>
+    /// <p><code>capacity-optimized-prioritized</code></p></li>
     /// </ul>
     pub fn get_spot_allocation_strategy(&self) -> &::std::option::Option<::std::string::String> {
         &self.spot_allocation_strategy

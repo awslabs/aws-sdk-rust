@@ -12,15 +12,24 @@ pub struct AllocateConnectionOnInterconnectOutput {
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p></li>
-    /// <li><p><code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
-    /// <li><p><code>pending</code>: The connection has been approved and is being initialized.</p></li>
-    /// <li><p><code>available</code>: The network link is up and the connection is ready for use.</p></li>
-    /// <li><p><code>down</code>: The network link is down.</p></li>
-    /// <li><p><code>deleting</code>: The connection is being deleted.</p></li>
-    /// <li><p><code>deleted</code>: The connection has been deleted.</p></li>
-    /// <li><p><code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p></li>
-    /// <li><p><code>unknown</code>: The state of the connection is not available.</p></li>
+    /// <li>
+    /// <p><code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: The connection has been approved and is being initialized.</p></li>
+    /// <li>
+    /// <p><code>available</code>: The network link is up and the connection is ready for use.</p></li>
+    /// <li>
+    /// <p><code>down</code>: The network link is down.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The connection is being deleted.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The connection has been deleted.</p></li>
+    /// <li>
+    /// <p><code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p></li>
+    /// <li>
+    /// <p><code>unknown</code>: The state of the connection is not available.</p></li>
     /// </ul>
     pub connection_state: ::std::option::Option<crate::types::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -78,15 +87,24 @@ impl AllocateConnectionOnInterconnectOutput {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p></li>
-    /// <li><p><code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
-    /// <li><p><code>pending</code>: The connection has been approved and is being initialized.</p></li>
-    /// <li><p><code>available</code>: The network link is up and the connection is ready for use.</p></li>
-    /// <li><p><code>down</code>: The network link is down.</p></li>
-    /// <li><p><code>deleting</code>: The connection is being deleted.</p></li>
-    /// <li><p><code>deleted</code>: The connection has been deleted.</p></li>
-    /// <li><p><code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p></li>
-    /// <li><p><code>unknown</code>: The state of the connection is not available.</p></li>
+    /// <li>
+    /// <p><code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: The connection has been approved and is being initialized.</p></li>
+    /// <li>
+    /// <p><code>available</code>: The network link is up and the connection is ready for use.</p></li>
+    /// <li>
+    /// <p><code>down</code>: The network link is down.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The connection is being deleted.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The connection has been deleted.</p></li>
+    /// <li>
+    /// <p><code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p></li>
+    /// <li>
+    /// <p><code>unknown</code>: The state of the connection is not available.</p></li>
     /// </ul>
     pub fn connection_state(&self) -> ::std::option::Option<&crate::types::ConnectionState> {
         self.connection_state.as_ref()
@@ -255,15 +273,24 @@ impl AllocateConnectionOnInterconnectOutputBuilder {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p></li>
-    /// <li><p><code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
-    /// <li><p><code>pending</code>: The connection has been approved and is being initialized.</p></li>
-    /// <li><p><code>available</code>: The network link is up and the connection is ready for use.</p></li>
-    /// <li><p><code>down</code>: The network link is down.</p></li>
-    /// <li><p><code>deleting</code>: The connection is being deleted.</p></li>
-    /// <li><p><code>deleted</code>: The connection has been deleted.</p></li>
-    /// <li><p><code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p></li>
-    /// <li><p><code>unknown</code>: The state of the connection is not available.</p></li>
+    /// <li>
+    /// <p><code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: The connection has been approved and is being initialized.</p></li>
+    /// <li>
+    /// <p><code>available</code>: The network link is up and the connection is ready for use.</p></li>
+    /// <li>
+    /// <p><code>down</code>: The network link is down.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The connection is being deleted.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The connection has been deleted.</p></li>
+    /// <li>
+    /// <p><code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p></li>
+    /// <li>
+    /// <p><code>unknown</code>: The state of the connection is not available.</p></li>
     /// </ul>
     pub fn connection_state(mut self, input: crate::types::ConnectionState) -> Self {
         self.connection_state = ::std::option::Option::Some(input);
@@ -271,15 +298,24 @@ impl AllocateConnectionOnInterconnectOutputBuilder {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p></li>
-    /// <li><p><code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
-    /// <li><p><code>pending</code>: The connection has been approved and is being initialized.</p></li>
-    /// <li><p><code>available</code>: The network link is up and the connection is ready for use.</p></li>
-    /// <li><p><code>down</code>: The network link is down.</p></li>
-    /// <li><p><code>deleting</code>: The connection is being deleted.</p></li>
-    /// <li><p><code>deleted</code>: The connection has been deleted.</p></li>
-    /// <li><p><code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p></li>
-    /// <li><p><code>unknown</code>: The state of the connection is not available.</p></li>
+    /// <li>
+    /// <p><code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: The connection has been approved and is being initialized.</p></li>
+    /// <li>
+    /// <p><code>available</code>: The network link is up and the connection is ready for use.</p></li>
+    /// <li>
+    /// <p><code>down</code>: The network link is down.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The connection is being deleted.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The connection has been deleted.</p></li>
+    /// <li>
+    /// <p><code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p></li>
+    /// <li>
+    /// <p><code>unknown</code>: The state of the connection is not available.</p></li>
     /// </ul>
     pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::ConnectionState>) -> Self {
         self.connection_state = input;
@@ -287,15 +323,24 @@ impl AllocateConnectionOnInterconnectOutputBuilder {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p></li>
-    /// <li><p><code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
-    /// <li><p><code>pending</code>: The connection has been approved and is being initialized.</p></li>
-    /// <li><p><code>available</code>: The network link is up and the connection is ready for use.</p></li>
-    /// <li><p><code>down</code>: The network link is down.</p></li>
-    /// <li><p><code>deleting</code>: The connection is being deleted.</p></li>
-    /// <li><p><code>deleted</code>: The connection has been deleted.</p></li>
-    /// <li><p><code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p></li>
-    /// <li><p><code>unknown</code>: The state of the connection is not available.</p></li>
+    /// <li>
+    /// <p><code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: The connection has been approved and is being initialized.</p></li>
+    /// <li>
+    /// <p><code>available</code>: The network link is up and the connection is ready for use.</p></li>
+    /// <li>
+    /// <p><code>down</code>: The network link is down.</p></li>
+    /// <li>
+    /// <p><code>deleting</code>: The connection is being deleted.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The connection has been deleted.</p></li>
+    /// <li>
+    /// <p><code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p></li>
+    /// <li>
+    /// <p><code>unknown</code>: The state of the connection is not available.</p></li>
     /// </ul>
     pub fn get_connection_state(&self) -> &::std::option::Option<crate::types::ConnectionState> {
         &self.connection_state

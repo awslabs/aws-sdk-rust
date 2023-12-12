@@ -25,9 +25,12 @@ impl ImportFirewallDomainsInputBuilder {
 /// <p>Imports domain names from a file into a domain list, for use in a DNS firewall rule group.</p>
 /// <p>Each domain specification in your domain list must satisfy the following requirements:</p>
 /// <ul>
-/// <li><p>It can optionally start with <code>*</code> (asterisk).</p></li>
-/// <li><p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p></li>
-/// <li><p>It must be from 1-255 characters in length.</p></li>
+/// <li>
+/// <p>It can optionally start with <code>*</code> (asterisk).</p></li>
+/// <li>
+/// <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p></li>
+/// <li>
+/// <p>It must be from 1-255 characters in length.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportFirewallDomainsFluentBuilder {

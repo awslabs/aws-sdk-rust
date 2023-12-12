@@ -26,13 +26,13 @@ pub struct ReplicationGroup {
     pub multi_az: ::std::option::Option<crate::types::MultiAzStatus>,
     /// <p>The configuration endpoint for this replication group. Use the configuration endpoint to connect to this replication group.</p>
     pub configuration_endpoint: ::std::option::Option<crate::types::Endpoint>,
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><important>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
     /// <p>Example: <code>05:00-09:00</code></p>
-    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
+    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub snapshot_window: ::std::option::Option<::std::string::String>,
@@ -129,7 +129,7 @@ impl ReplicationGroup {
     pub fn configuration_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.configuration_endpoint.as_ref()
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><important>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
     pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
@@ -137,7 +137,7 @@ impl ReplicationGroup {
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
     /// <p>Example: <code>05:00-09:00</code></p>
-    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
+    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn snapshot_window(&self) -> ::std::option::Option<&str> {
@@ -439,21 +439,21 @@ impl ReplicationGroupBuilder {
     pub fn get_configuration_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         &self.configuration_endpoint
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><important>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
         self.snapshot_retention_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><important>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snapshot_retention_limit = input;
         self
     }
-    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <important>
+    /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p><important>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </important>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
@@ -461,7 +461,7 @@ impl ReplicationGroupBuilder {
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
     /// <p>Example: <code>05:00-09:00</code></p>
-    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
+    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn snapshot_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -470,7 +470,7 @@ impl ReplicationGroupBuilder {
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
     /// <p>Example: <code>05:00-09:00</code></p>
-    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
+    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -479,7 +479,7 @@ impl ReplicationGroupBuilder {
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
     /// <p>Example: <code>05:00-09:00</code></p>
-    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>
+    /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {

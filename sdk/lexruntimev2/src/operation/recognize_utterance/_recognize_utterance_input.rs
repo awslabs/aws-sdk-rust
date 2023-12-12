@@ -19,34 +19,51 @@ pub struct RecognizeUtteranceInput {
     pub request_attributes: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li><p>PCM format, audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p>audio/l16; rate=16000; channels=1</p></li>
-    /// <li><p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
-    /// <li><p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
+    /// <li>
+    /// <p>audio/l16; rate=16000; channels=1</p></li>
+    /// <li>
+    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
+    /// <li>
+    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p></li>
+    /// <li>
+    /// <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub request_content_type: ::std::option::Option<::std::string::String>,
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p>audio/mpeg</p></li>
-    /// <li><p>audio/ogg</p></li>
-    /// <li><p>audio/pcm (16 KHz)</p></li>
-    /// <li><p>audio/* (defaults to mpeg)</p></li>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>audio/mpeg</p></li>
+    /// <li>
+    /// <p>audio/ogg</p></li>
+    /// <li>
+    /// <p>audio/pcm (16 KHz)</p></li>
+    /// <li>
+    /// <p>audio/* (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub response_content_type: ::std::option::Option<::std::string::String>,
@@ -83,19 +100,27 @@ impl RecognizeUtteranceInput {
     }
     /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li><p>PCM format, audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p>audio/l16; rate=16000; channels=1</p></li>
-    /// <li><p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
-    /// <li><p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
+    /// <li>
+    /// <p>audio/l16; rate=16000; channels=1</p></li>
+    /// <li>
+    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
+    /// <li>
+    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p></li>
+    /// <li>
+    /// <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub fn request_content_type(&self) -> ::std::option::Option<&str> {
@@ -103,16 +128,25 @@ impl RecognizeUtteranceInput {
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p>audio/mpeg</p></li>
-    /// <li><p>audio/ogg</p></li>
-    /// <li><p>audio/pcm (16 KHz)</p></li>
-    /// <li><p>audio/* (defaults to mpeg)</p></li>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>audio/mpeg</p></li>
+    /// <li>
+    /// <p>audio/ogg</p></li>
+    /// <li>
+    /// <p>audio/pcm (16 KHz)</p></li>
+    /// <li>
+    /// <p>audio/* (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub fn response_content_type(&self) -> ::std::option::Option<&str> {
@@ -259,19 +293,27 @@ impl RecognizeUtteranceInputBuilder {
     }
     /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li><p>PCM format, audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p>audio/l16; rate=16000; channels=1</p></li>
-    /// <li><p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
-    /// <li><p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
+    /// <li>
+    /// <p>audio/l16; rate=16000; channels=1</p></li>
+    /// <li>
+    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
+    /// <li>
+    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p></li>
+    /// <li>
+    /// <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     /// This field is required.
@@ -281,19 +323,27 @@ impl RecognizeUtteranceInputBuilder {
     }
     /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li><p>PCM format, audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p>audio/l16; rate=16000; channels=1</p></li>
-    /// <li><p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
-    /// <li><p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
+    /// <li>
+    /// <p>audio/l16; rate=16000; channels=1</p></li>
+    /// <li>
+    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
+    /// <li>
+    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p></li>
+    /// <li>
+    /// <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_request_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -302,19 +352,27 @@ impl RecognizeUtteranceInputBuilder {
     }
     /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li><p>PCM format, audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p>audio/l16; rate=16000; channels=1</p></li>
-    /// <li><p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
-    /// <li><p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
+    /// <li>
+    /// <p>audio/l16; rate=16000; channels=1</p></li>
+    /// <li>
+    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
+    /// <li>
+    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p></li>
+    /// <li>
+    /// <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_request_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -322,16 +380,25 @@ impl RecognizeUtteranceInputBuilder {
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p>audio/mpeg</p></li>
-    /// <li><p>audio/ogg</p></li>
-    /// <li><p>audio/pcm (16 KHz)</p></li>
-    /// <li><p>audio/* (defaults to mpeg)</p></li>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>audio/mpeg</p></li>
+    /// <li>
+    /// <p>audio/ogg</p></li>
+    /// <li>
+    /// <p>audio/pcm (16 KHz)</p></li>
+    /// <li>
+    /// <p>audio/* (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub fn response_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -340,16 +407,25 @@ impl RecognizeUtteranceInputBuilder {
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p>audio/mpeg</p></li>
-    /// <li><p>audio/ogg</p></li>
-    /// <li><p>audio/pcm (16 KHz)</p></li>
-    /// <li><p>audio/* (defaults to mpeg)</p></li>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>audio/mpeg</p></li>
+    /// <li>
+    /// <p>audio/ogg</p></li>
+    /// <li>
+    /// <p>audio/pcm (16 KHz)</p></li>
+    /// <li>
+    /// <p>audio/* (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -358,16 +434,25 @@ impl RecognizeUtteranceInputBuilder {
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p>audio/mpeg</p></li>
-    /// <li><p>audio/ogg</p></li>
-    /// <li><p>audio/pcm (16 KHz)</p></li>
-    /// <li><p>audio/* (defaults to mpeg)</p></li>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>audio/mpeg</p></li>
+    /// <li>
+    /// <p>audio/ogg</p></li>
+    /// <li>
+    /// <p>audio/pcm (16 KHz)</p></li>
+    /// <li>
+    /// <p>audio/* (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_response_content_type(&self) -> &::std::option::Option<::std::string::String> {

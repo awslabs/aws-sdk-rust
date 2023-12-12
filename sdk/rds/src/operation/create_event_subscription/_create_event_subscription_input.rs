@@ -17,14 +17,22 @@ pub struct CreateEventSubscriptionInput {
     /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.</p></li>
-    /// <li><p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
     /// </ul>
     pub source_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether to activate the subscription. If the event notification subscription isn't activated, the subscription is created but not active.</p>
@@ -56,14 +64,22 @@ impl CreateEventSubscriptionInput {
     /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.</p></li>
-    /// <li><p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ids.is_none()`.
@@ -178,14 +194,22 @@ impl CreateEventSubscriptionInputBuilder {
     /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.</p></li>
-    /// <li><p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
     /// </ul>
     pub fn source_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_ids.unwrap_or_default();
@@ -196,14 +220,22 @@ impl CreateEventSubscriptionInputBuilder {
     /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.</p></li>
-    /// <li><p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
     /// </ul>
     pub fn set_source_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_ids = input;
@@ -212,14 +244,22 @@ impl CreateEventSubscriptionInputBuilder {
     /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens. It can't end with a hyphen or contain two consecutive hyphens.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.</p></li>
-    /// <li><p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
-    /// <li><p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p></li>
     /// </ul>
     pub fn get_source_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_ids

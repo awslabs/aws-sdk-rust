@@ -156,21 +156,21 @@ impl SendCommandFluentBuilder {
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
         self.inner.get_targets()
     }
-    /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+    /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
     /// </note>
     pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_name(input.into());
         self
     }
-    /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+    /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
     /// </note>
     pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_name(input);
         self
     }
-    /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+    /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.</p>
     /// </note>
     pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,41 +199,41 @@ impl SendCommandFluentBuilder {
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_document_version()
     }
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn document_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_hash(input.into());
         self
     }
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn set_document_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_hash(input);
         self
     }
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn get_document_hash(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_document_hash()
     }
-    /// <p>Sha256 or Sha1.</p> <note>
+    /// <p>Sha256 or Sha1.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn document_hash_type(mut self, input: crate::types::DocumentHashType) -> Self {
         self.inner = self.inner.document_hash_type(input);
         self
     }
-    /// <p>Sha256 or Sha1.</p> <note>
+    /// <p>Sha256 or Sha1.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn set_document_hash_type(mut self, input: ::std::option::Option<crate::types::DocumentHashType>) -> Self {
         self.inner = self.inner.set_document_hash_type(input);
         self
     }
-    /// <p>Sha256 or Sha1.</p> <note>
+    /// <p>Sha256 or Sha1.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn get_document_hash_type(&self) -> &::std::option::Option<crate::types::DocumentHashType> {

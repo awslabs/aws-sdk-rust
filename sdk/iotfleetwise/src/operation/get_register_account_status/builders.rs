@@ -23,7 +23,7 @@ impl GetRegisterAccountStatusInputBuilder {
 /// Fluent builder constructing a request to `GetRegisterAccountStatus`.
 ///
 /// <p>Retrieves information about the status of registering your Amazon Web Services account, IAM, and Amazon Timestream resources so that Amazon Web Services IoT FleetWise can transfer your vehicle data to the Amazon Web Services Cloud.</p>
-/// <p>For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/setting-up.html">Setting up Amazon Web Services IoT FleetWise</a>.</p> <note>
+/// <p>For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/setting-up.html">Setting up Amazon Web Services IoT FleetWise</a>.</p><note>
 /// <p>This API operation doesn't require input parameters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -7,11 +7,16 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p>
@@ -49,9 +54,12 @@ pub struct RestoreFromClusterSnapshotInput {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of security groups to be associated with this cluster.</p>
@@ -121,11 +129,16 @@ impl RestoreFromClusterSnapshotInput {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
@@ -189,9 +202,12 @@ impl RestoreFromClusterSnapshotInput {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.cluster_parameter_group_name.as_deref()
@@ -364,11 +380,16 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -378,11 +399,16 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
@@ -391,11 +417,16 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
@@ -593,9 +624,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_parameter_group_name = ::std::option::Option::Some(input.into());
@@ -605,9 +639,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_parameter_group_name = input;
@@ -617,9 +654,12 @@ impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn get_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_parameter_group_name

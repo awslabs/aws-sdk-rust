@@ -6,7 +6,7 @@
 pub struct DockerVolumeConfiguration {
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a <code>task</code> are automatically provisioned when the task starts and destroyed when the task stops. Docker volumes that are scoped as <code>shared</code> persist after the task stops.</p>
     pub scope: ::std::option::Option<crate::types::Scope>,
-    /// <p>If this value is <code>true</code>, the Docker volume is created if it doesn't already exist.</p> <note>
+    /// <p>If this value is <code>true</code>, the Docker volume is created if it doesn't already exist.</p><note>
     /// <p>This field is only used if the <code>scope</code> is <code>shared</code>.</p>
     /// </note>
     pub autoprovision: ::std::option::Option<bool>,
@@ -22,7 +22,7 @@ impl DockerVolumeConfiguration {
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
-    /// <p>If this value is <code>true</code>, the Docker volume is created if it doesn't already exist.</p> <note>
+    /// <p>If this value is <code>true</code>, the Docker volume is created if it doesn't already exist.</p><note>
     /// <p>This field is only used if the <code>scope</code> is <code>shared</code>.</p>
     /// </note>
     pub fn autoprovision(&self) -> ::std::option::Option<bool> {
@@ -73,21 +73,21 @@ impl DockerVolumeConfigurationBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope
     }
-    /// <p>If this value is <code>true</code>, the Docker volume is created if it doesn't already exist.</p> <note>
+    /// <p>If this value is <code>true</code>, the Docker volume is created if it doesn't already exist.</p><note>
     /// <p>This field is only used if the <code>scope</code> is <code>shared</code>.</p>
     /// </note>
     pub fn autoprovision(mut self, input: bool) -> Self {
         self.autoprovision = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If this value is <code>true</code>, the Docker volume is created if it doesn't already exist.</p> <note>
+    /// <p>If this value is <code>true</code>, the Docker volume is created if it doesn't already exist.</p><note>
     /// <p>This field is only used if the <code>scope</code> is <code>shared</code>.</p>
     /// </note>
     pub fn set_autoprovision(mut self, input: ::std::option::Option<bool>) -> Self {
         self.autoprovision = input;
         self
     }
-    /// <p>If this value is <code>true</code>, the Docker volume is created if it doesn't already exist.</p> <note>
+    /// <p>If this value is <code>true</code>, the Docker volume is created if it doesn't already exist.</p><note>
     /// <p>This field is only used if the <code>scope</code> is <code>shared</code>.</p>
     /// </note>
     pub fn get_autoprovision(&self) -> &::std::option::Option<bool> {

@@ -6,7 +6,7 @@
 pub struct RecipeStep {
     /// <p>The particular action to be performed in the recipe step.</p>
     pub action: ::std::option::Option<crate::types::RecipeAction>,
-    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p><note>
     /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
     /// </note>
     pub condition_expressions: ::std::option::Option<::std::vec::Vec<crate::types::ConditionExpression>>,
@@ -16,7 +16,7 @@ impl RecipeStep {
     pub fn action(&self) -> ::std::option::Option<&crate::types::RecipeAction> {
         self.action.as_ref()
     }
-    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p><note>
     /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
     /// </note>
     ///
@@ -59,7 +59,7 @@ impl RecipeStepBuilder {
     ///
     /// To override the contents of this collection use [`set_condition_expressions`](Self::set_condition_expressions).
     ///
-    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p><note>
     /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
     /// </note>
     pub fn condition_expressions(mut self, input: crate::types::ConditionExpression) -> Self {
@@ -68,14 +68,14 @@ impl RecipeStepBuilder {
         self.condition_expressions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p><note>
     /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
     /// </note>
     pub fn set_condition_expressions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConditionExpression>>) -> Self {
         self.condition_expressions = input;
         self
     }
-    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p><note>
     /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
     /// </note>
     pub fn get_condition_expressions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConditionExpression>> {

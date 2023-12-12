@@ -22,12 +22,15 @@ impl ListRolesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRoles`.
 ///
-/// <p>Lists the IAM roles that have the specified path prefix. If there are none, the operation returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>IAM User Guide</i>.</p> <note>
+/// <p>Lists the IAM roles that have the specified path prefix. If there are none, the operation returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>IAM User Guide</i>.</p><note>
 /// <p>IAM resource-listing operations return a subset of the available attributes for the resource. This operation does not return the following attributes, even though they are an attribute of the returned object:</p>
 /// <ul>
-/// <li><p>PermissionsBoundary</p></li>
-/// <li><p>RoleLastUsed</p></li>
-/// <li><p>Tags</p></li>
+/// <li>
+/// <p>PermissionsBoundary</p></li>
+/// <li>
+/// <p>RoleLastUsed</p></li>
+/// <li>
+/// <p>Tags</p></li>
 /// </ul>
 /// <p>To view all of the information for a role, see <code>GetRole</code>.</p>
 /// </note>

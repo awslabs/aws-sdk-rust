@@ -30,10 +30,14 @@ impl CreateBackupInputBuilder {
 /// <p>If you submit a backup request on 2018-12-14 at 14:25:00, the backup is guaranteed to contain all data committed to the table up to 14:24:00, and data committed after 14:26:00 will not be. The backup might contain data modifications made between 14:24:00 and 14:26:00. On-demand backup does not support causal consistency.</p>
 /// <p>Along with data, the following are also included on the backups:</p>
 /// <ul>
-/// <li><p>Global secondary indexes (GSIs)</p></li>
-/// <li><p>Local secondary indexes (LSIs)</p></li>
-/// <li><p>Streams</p></li>
-/// <li><p>Provisioned read and write capacity</p></li>
+/// <li>
+/// <p>Global secondary indexes (GSIs)</p></li>
+/// <li>
+/// <p>Local secondary indexes (LSIs)</p></li>
+/// <li>
+/// <p>Streams</p></li>
+/// <li>
+/// <p>Provisioned read and write capacity</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBackupFluentBuilder {

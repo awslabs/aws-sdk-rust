@@ -12,10 +12,14 @@ pub struct ScalingPolicy {
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>One of the following policy types:</p>
     /// <ul>
-    /// <li><p><code>TargetTrackingScaling</code></p></li>
-    /// <li><p><code>StepScaling</code></p></li>
-    /// <li><p><code>SimpleScaling</code> (default)</p></li>
-    /// <li><p><code>PredictiveScaling</code></p></li>
+    /// <li>
+    /// <p><code>TargetTrackingScaling</code></p></li>
+    /// <li>
+    /// <p><code>StepScaling</code></p></li>
+    /// <li>
+    /// <p><code>SimpleScaling</code> (default)</p></li>
+    /// <li>
+    /// <p><code>PredictiveScaling</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub policy_type: ::std::option::Option<::std::string::String>,
@@ -59,10 +63,14 @@ impl ScalingPolicy {
     }
     /// <p>One of the following policy types:</p>
     /// <ul>
-    /// <li><p><code>TargetTrackingScaling</code></p></li>
-    /// <li><p><code>StepScaling</code></p></li>
-    /// <li><p><code>SimpleScaling</code> (default)</p></li>
-    /// <li><p><code>PredictiveScaling</code></p></li>
+    /// <li>
+    /// <p><code>TargetTrackingScaling</code></p></li>
+    /// <li>
+    /// <p><code>StepScaling</code></p></li>
+    /// <li>
+    /// <p><code>SimpleScaling</code> (default)</p></li>
+    /// <li>
+    /// <p><code>PredictiveScaling</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn policy_type(&self) -> ::std::option::Option<&str> {
@@ -194,10 +202,14 @@ impl ScalingPolicyBuilder {
     }
     /// <p>One of the following policy types:</p>
     /// <ul>
-    /// <li><p><code>TargetTrackingScaling</code></p></li>
-    /// <li><p><code>StepScaling</code></p></li>
-    /// <li><p><code>SimpleScaling</code> (default)</p></li>
-    /// <li><p><code>PredictiveScaling</code></p></li>
+    /// <li>
+    /// <p><code>TargetTrackingScaling</code></p></li>
+    /// <li>
+    /// <p><code>StepScaling</code></p></li>
+    /// <li>
+    /// <p><code>SimpleScaling</code> (default)</p></li>
+    /// <li>
+    /// <p><code>PredictiveScaling</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn policy_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -206,10 +218,14 @@ impl ScalingPolicyBuilder {
     }
     /// <p>One of the following policy types:</p>
     /// <ul>
-    /// <li><p><code>TargetTrackingScaling</code></p></li>
-    /// <li><p><code>StepScaling</code></p></li>
-    /// <li><p><code>SimpleScaling</code> (default)</p></li>
-    /// <li><p><code>PredictiveScaling</code></p></li>
+    /// <li>
+    /// <p><code>TargetTrackingScaling</code></p></li>
+    /// <li>
+    /// <p><code>StepScaling</code></p></li>
+    /// <li>
+    /// <p><code>SimpleScaling</code> (default)</p></li>
+    /// <li>
+    /// <p><code>PredictiveScaling</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -218,10 +234,14 @@ impl ScalingPolicyBuilder {
     }
     /// <p>One of the following policy types:</p>
     /// <ul>
-    /// <li><p><code>TargetTrackingScaling</code></p></li>
-    /// <li><p><code>StepScaling</code></p></li>
-    /// <li><p><code>SimpleScaling</code> (default)</p></li>
-    /// <li><p><code>PredictiveScaling</code></p></li>
+    /// <li>
+    /// <p><code>TargetTrackingScaling</code></p></li>
+    /// <li>
+    /// <p><code>StepScaling</code></p></li>
+    /// <li>
+    /// <p><code>SimpleScaling</code> (default)</p></li>
+    /// <li>
+    /// <p><code>PredictiveScaling</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<::std::string::String> {

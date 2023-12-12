@@ -10,8 +10,10 @@ pub struct BarChartConfiguration {
     pub sort_configuration: ::std::option::Option<crate::types::BarChartSortConfiguration>,
     /// <p>The orientation of the bars in a bar chart visual. There are two valid values in this structure:</p>
     /// <ul>
-    /// <li><p><code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p></li>
-    /// <li><p><code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p></li>
+    /// <li>
+    /// <p><code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p></li>
+    /// <li>
+    /// <p><code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p></li>
     /// </ul>
     pub orientation: ::std::option::Option<crate::types::BarChartOrientation>,
     /// <p>Determines the arrangement of the bars. The orientation and arrangement of bars determine the type of bar that is used in the visual.</p>
@@ -52,8 +54,10 @@ impl BarChartConfiguration {
     }
     /// <p>The orientation of the bars in a bar chart visual. There are two valid values in this structure:</p>
     /// <ul>
-    /// <li><p><code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p></li>
-    /// <li><p><code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p></li>
+    /// <li>
+    /// <p><code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p></li>
+    /// <li>
+    /// <p><code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p></li>
     /// </ul>
     pub fn orientation(&self) -> ::std::option::Option<&crate::types::BarChartOrientation> {
         self.orientation.as_ref()
@@ -174,8 +178,10 @@ impl BarChartConfigurationBuilder {
     }
     /// <p>The orientation of the bars in a bar chart visual. There are two valid values in this structure:</p>
     /// <ul>
-    /// <li><p><code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p></li>
-    /// <li><p><code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p></li>
+    /// <li>
+    /// <p><code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p></li>
+    /// <li>
+    /// <p><code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p></li>
     /// </ul>
     pub fn orientation(mut self, input: crate::types::BarChartOrientation) -> Self {
         self.orientation = ::std::option::Option::Some(input);
@@ -183,8 +189,10 @@ impl BarChartConfigurationBuilder {
     }
     /// <p>The orientation of the bars in a bar chart visual. There are two valid values in this structure:</p>
     /// <ul>
-    /// <li><p><code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p></li>
-    /// <li><p><code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p></li>
+    /// <li>
+    /// <p><code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p></li>
+    /// <li>
+    /// <p><code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p></li>
     /// </ul>
     pub fn set_orientation(mut self, input: ::std::option::Option<crate::types::BarChartOrientation>) -> Self {
         self.orientation = input;
@@ -192,8 +200,10 @@ impl BarChartConfigurationBuilder {
     }
     /// <p>The orientation of the bars in a bar chart visual. There are two valid values in this structure:</p>
     /// <ul>
-    /// <li><p><code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p></li>
-    /// <li><p><code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p></li>
+    /// <li>
+    /// <p><code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p></li>
+    /// <li>
+    /// <p><code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p></li>
     /// </ul>
     pub fn get_orientation(&self) -> &::std::option::Option<crate::types::BarChartOrientation> {
         &self.orientation

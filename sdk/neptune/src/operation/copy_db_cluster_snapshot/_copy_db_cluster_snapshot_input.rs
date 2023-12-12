@@ -6,17 +6,22 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
-    /// <li><p>Specify a valid DB snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li>
+    /// <p>Specify a valid DB snapshot identifier.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub source_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub target_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -37,8 +42,10 @@ impl CopyDbClusterSnapshotInput {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
-    /// <li><p>Specify a valid DB snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li>
+    /// <p>Specify a valid DB snapshot identifier.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn source_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
@@ -47,9 +54,12 @@ impl CopyDbClusterSnapshotInput {
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn target_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
@@ -100,8 +110,10 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
-    /// <li><p>Specify a valid DB snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li>
+    /// <p>Specify a valid DB snapshot identifier.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     /// This field is required.
@@ -112,8 +124,10 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
-    /// <li><p>Specify a valid DB snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li>
+    /// <p>Specify a valid DB snapshot identifier.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn set_source_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -123,8 +137,10 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
-    /// <li><p>Specify a valid DB snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Must specify a valid system snapshot in the "available" state.</p></li>
+    /// <li>
+    /// <p>Specify a valid DB snapshot identifier.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn get_source_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,9 +149,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
     /// This field is required.
@@ -146,9 +165,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn set_target_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -158,9 +180,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn get_target_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {

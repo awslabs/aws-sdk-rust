@@ -7,18 +7,24 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>The identifier of the cluster snapshot to copy. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
-    /// <li><p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
-    /// <li><p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
+    /// <li>
+    /// <p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
+    /// <li>
+    /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
+    /// <li>
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub source_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the new cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub target_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -32,9 +38,12 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li><p><code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p></li>
-    /// <li><p><code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p></li>
-    /// <li><p><code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p></li>
+    /// <li>
+    /// <p><code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p></li>
+    /// <li>
+    /// <p><code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p></li>
     /// </ul>
     pub pre_signed_url: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to copy all tags from the source cluster snapshot to the target cluster snapshot, and otherwise <code>false</code>. The default is <code>false</code>.</p>
@@ -46,9 +55,12 @@ impl CopyDbClusterSnapshotInput {
     /// <p>The identifier of the cluster snapshot to copy. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
-    /// <li><p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
-    /// <li><p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
+    /// <li>
+    /// <p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
+    /// <li>
+    /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
+    /// <li>
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn source_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
@@ -57,9 +69,12 @@ impl CopyDbClusterSnapshotInput {
     /// <p>The identifier of the new cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn target_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
@@ -77,9 +92,12 @@ impl CopyDbClusterSnapshotInput {
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li><p><code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p></li>
-    /// <li><p><code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p></li>
-    /// <li><p><code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p></li>
+    /// <li>
+    /// <p><code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p></li>
+    /// <li>
+    /// <p><code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p></li>
     /// </ul>
     pub fn pre_signed_url(&self) -> ::std::option::Option<&str> {
         self.pre_signed_url.as_deref()
@@ -117,9 +135,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster snapshot to copy. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
-    /// <li><p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
-    /// <li><p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
+    /// <li>
+    /// <p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
+    /// <li>
+    /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
+    /// <li>
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     /// This field is required.
@@ -130,9 +151,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster snapshot to copy. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
-    /// <li><p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
-    /// <li><p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
+    /// <li>
+    /// <p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
+    /// <li>
+    /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
+    /// <li>
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn set_source_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -142,9 +166,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster snapshot to copy. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
-    /// <li><p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
-    /// <li><p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
+    /// <li>
+    /// <p>Must specify a valid system snapshot in the <i>available</i> state.</p></li>
+    /// <li>
+    /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid snapshot identifier.</p></li>
+    /// <li>
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn get_source_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,9 +180,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the new cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
     /// This field is required.
@@ -166,9 +196,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the new cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn set_target_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -178,9 +211,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the new cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn get_target_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,9 +252,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li><p><code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p></li>
-    /// <li><p><code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p></li>
-    /// <li><p><code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p></li>
+    /// <li>
+    /// <p><code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p></li>
+    /// <li>
+    /// <p><code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p></li>
     /// </ul>
     pub fn pre_signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_signed_url = ::std::option::Option::Some(input.into());
@@ -228,9 +267,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li><p><code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p></li>
-    /// <li><p><code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p></li>
-    /// <li><p><code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p></li>
+    /// <li>
+    /// <p><code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p></li>
+    /// <li>
+    /// <p><code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p></li>
     /// </ul>
     pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_signed_url = input;
@@ -240,9 +282,12 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li><p><code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p></li>
-    /// <li><p><code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p></li>
-    /// <li><p><code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p></li>
+    /// <li>
+    /// <p><code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p></li>
+    /// <li>
+    /// <p><code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p></li>
     /// </ul>
     pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.pre_signed_url

@@ -121,13 +121,17 @@ impl ListLinuxSubscriptionsFluentBuilder {
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>Subscription</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain subscription's name.</p>
     /// <p>The valid names for this filter are:</p>
     /// <ul>
-    /// <li><p><code>Subscription</code></p></li>
+    /// <li>
+    /// <p><code>Subscription</code></p></li>
     /// </ul>
     /// <p>The valid Operators for this filter are:</p>
     /// <ul>
-    /// <li><p><code>contains</code></p></li>
-    /// <li><p><code>equals</code></p></li>
-    /// <li><p><code>Notequal</code></p></li>
+    /// <li>
+    /// <p><code>contains</code></p></li>
+    /// <li>
+    /// <p><code>equals</code></p></li>
+    /// <li>
+    /// <p><code>Notequal</code></p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -136,13 +140,17 @@ impl ListLinuxSubscriptionsFluentBuilder {
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>Subscription</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain subscription's name.</p>
     /// <p>The valid names for this filter are:</p>
     /// <ul>
-    /// <li><p><code>Subscription</code></p></li>
+    /// <li>
+    /// <p><code>Subscription</code></p></li>
     /// </ul>
     /// <p>The valid Operators for this filter are:</p>
     /// <ul>
-    /// <li><p><code>contains</code></p></li>
-    /// <li><p><code>equals</code></p></li>
-    /// <li><p><code>Notequal</code></p></li>
+    /// <li>
+    /// <p><code>contains</code></p></li>
+    /// <li>
+    /// <p><code>equals</code></p></li>
+    /// <li>
+    /// <p><code>Notequal</code></p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -151,13 +159,17 @@ impl ListLinuxSubscriptionsFluentBuilder {
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>Subscription</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain subscription's name.</p>
     /// <p>The valid names for this filter are:</p>
     /// <ul>
-    /// <li><p><code>Subscription</code></p></li>
+    /// <li>
+    /// <p><code>Subscription</code></p></li>
     /// </ul>
     /// <p>The valid Operators for this filter are:</p>
     /// <ul>
-    /// <li><p><code>contains</code></p></li>
-    /// <li><p><code>equals</code></p></li>
-    /// <li><p><code>Notequal</code></p></li>
+    /// <li>
+    /// <p><code>contains</code></p></li>
+    /// <li>
+    /// <p><code>equals</code></p></li>
+    /// <li>
+    /// <p><code>Notequal</code></p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

@@ -22,7 +22,7 @@ impl DeleteCacheSecurityGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCacheSecurityGroup`.
 ///
-/// <p>Deletes a cache security group.</p> <note>
+/// <p>Deletes a cache security group.</p><note>
 /// <p>You cannot delete a cache security group if it is associated with any clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,21 +110,21 @@ impl DeleteCacheSecurityGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the cache security group to delete.</p> <note>
+    /// <p>The name of the cache security group to delete.</p><note>
     /// <p>You cannot delete the default security group.</p>
     /// </note>
     pub fn cache_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_security_group_name(input.into());
         self
     }
-    /// <p>The name of the cache security group to delete.</p> <note>
+    /// <p>The name of the cache security group to delete.</p><note>
     /// <p>You cannot delete the default security group.</p>
     /// </note>
     pub fn set_cache_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_security_group_name(input);
         self
     }
-    /// <p>The name of the cache security group to delete.</p> <note>
+    /// <p>The name of the cache security group to delete.</p><note>
     /// <p>You cannot delete the default security group.</p>
     /// </note>
     pub fn get_cache_security_group_name(&self) -> &::std::option::Option<::std::string::String> {

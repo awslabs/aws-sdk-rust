@@ -10,17 +10,23 @@ pub struct DatasetSummary {
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The dataset type. One of the following values:</p>
     /// <ul>
-    /// <li><p>Interactions</p></li>
-    /// <li><p>Items</p></li>
-    /// <li><p>Users</p></li>
-    /// <li><p>Event-Interactions</p></li>
+    /// <li>
+    /// <p>Interactions</p></li>
+    /// <li>
+    /// <p>Items</p></li>
+    /// <li>
+    /// <p>Users</p></li>
+    /// <li>
+    /// <p>Event-Interactions</p></li>
     /// </ul>
     pub dataset_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li>
+    /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset was created.</p>
@@ -39,10 +45,14 @@ impl DatasetSummary {
     }
     /// <p>The dataset type. One of the following values:</p>
     /// <ul>
-    /// <li><p>Interactions</p></li>
-    /// <li><p>Items</p></li>
-    /// <li><p>Users</p></li>
-    /// <li><p>Event-Interactions</p></li>
+    /// <li>
+    /// <p>Interactions</p></li>
+    /// <li>
+    /// <p>Items</p></li>
+    /// <li>
+    /// <p>Users</p></li>
+    /// <li>
+    /// <p>Event-Interactions</p></li>
     /// </ul>
     pub fn dataset_type(&self) -> ::std::option::Option<&str> {
         self.dataset_type.as_deref()
@@ -50,8 +60,10 @@ impl DatasetSummary {
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li>
+    /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -114,10 +126,14 @@ impl DatasetSummaryBuilder {
     }
     /// <p>The dataset type. One of the following values:</p>
     /// <ul>
-    /// <li><p>Interactions</p></li>
-    /// <li><p>Items</p></li>
-    /// <li><p>Users</p></li>
-    /// <li><p>Event-Interactions</p></li>
+    /// <li>
+    /// <p>Interactions</p></li>
+    /// <li>
+    /// <p>Items</p></li>
+    /// <li>
+    /// <p>Users</p></li>
+    /// <li>
+    /// <p>Event-Interactions</p></li>
     /// </ul>
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_type = ::std::option::Option::Some(input.into());
@@ -125,10 +141,14 @@ impl DatasetSummaryBuilder {
     }
     /// <p>The dataset type. One of the following values:</p>
     /// <ul>
-    /// <li><p>Interactions</p></li>
-    /// <li><p>Items</p></li>
-    /// <li><p>Users</p></li>
-    /// <li><p>Event-Interactions</p></li>
+    /// <li>
+    /// <p>Interactions</p></li>
+    /// <li>
+    /// <p>Items</p></li>
+    /// <li>
+    /// <p>Users</p></li>
+    /// <li>
+    /// <p>Event-Interactions</p></li>
     /// </ul>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_type = input;
@@ -136,10 +156,14 @@ impl DatasetSummaryBuilder {
     }
     /// <p>The dataset type. One of the following values:</p>
     /// <ul>
-    /// <li><p>Interactions</p></li>
-    /// <li><p>Items</p></li>
-    /// <li><p>Users</p></li>
-    /// <li><p>Event-Interactions</p></li>
+    /// <li>
+    /// <p>Interactions</p></li>
+    /// <li>
+    /// <p>Items</p></li>
+    /// <li>
+    /// <p>Users</p></li>
+    /// <li>
+    /// <p>Event-Interactions</p></li>
     /// </ul>
     pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_type
@@ -147,8 +171,10 @@ impl DatasetSummaryBuilder {
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li>
+    /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -157,8 +183,10 @@ impl DatasetSummaryBuilder {
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li>
+    /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -167,8 +195,10 @@ impl DatasetSummaryBuilder {
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
     /// <ul>
-    /// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-    /// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+    /// <li>
+    /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+    /// <li>
+    /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

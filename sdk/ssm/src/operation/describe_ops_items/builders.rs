@@ -121,20 +121,48 @@ impl DescribeOpsItemsFluentBuilder {
     ///
     /// <p>One or more filters to limit the response.</p>
     /// <ul>
-    /// <li><p>Key: CreatedTime</p> <p>Operations: GreaterThan, LessThan</p></li>
-    /// <li><p>Key: LastModifiedBy</p> <p>Operations: Contains, Equals</p></li>
-    /// <li><p>Key: LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p></li>
-    /// <li><p>Key: Priority</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: Source</p> <p>Operations: Contains, Equals</p></li>
-    /// <li><p>Key: Status</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: Title*</p> <p>Operations: Equals,Contains</p></li>
-    /// <li><p>Key: OperationalData**</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: OperationalDataKey</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: OperationalDataValue</p> <p>Operations: Equals, Contains</p></li>
-    /// <li><p>Key: OpsItemId</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: ResourceId</p> <p>Operations: Contains</p></li>
-    /// <li><p>Key: AutomationId</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: AccountId</p> <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: CreatedTime</p>
+    /// <p>Operations: GreaterThan, LessThan</p></li>
+    /// <li>
+    /// <p>Key: LastModifiedBy</p>
+    /// <p>Operations: Contains, Equals</p></li>
+    /// <li>
+    /// <p>Key: LastModifiedTime</p>
+    /// <p>Operations: GreaterThan, LessThan</p></li>
+    /// <li>
+    /// <p>Key: Priority</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: Source</p>
+    /// <p>Operations: Contains, Equals</p></li>
+    /// <li>
+    /// <p>Key: Status</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: Title*</p>
+    /// <p>Operations: Equals,Contains</p></li>
+    /// <li>
+    /// <p>Key: OperationalData**</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: OperationalDataKey</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: OperationalDataValue</p>
+    /// <p>Operations: Equals, Contains</p></li>
+    /// <li>
+    /// <p>Key: OpsItemId</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: ResourceId</p>
+    /// <p>Operations: Contains</p></li>
+    /// <li>
+    /// <p>Key: AutomationId</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: AccountId</p>
+    /// <p>Operations: Equals</p></li>
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
@@ -144,20 +172,48 @@ impl DescribeOpsItemsFluentBuilder {
     }
     /// <p>One or more filters to limit the response.</p>
     /// <ul>
-    /// <li><p>Key: CreatedTime</p> <p>Operations: GreaterThan, LessThan</p></li>
-    /// <li><p>Key: LastModifiedBy</p> <p>Operations: Contains, Equals</p></li>
-    /// <li><p>Key: LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p></li>
-    /// <li><p>Key: Priority</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: Source</p> <p>Operations: Contains, Equals</p></li>
-    /// <li><p>Key: Status</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: Title*</p> <p>Operations: Equals,Contains</p></li>
-    /// <li><p>Key: OperationalData**</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: OperationalDataKey</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: OperationalDataValue</p> <p>Operations: Equals, Contains</p></li>
-    /// <li><p>Key: OpsItemId</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: ResourceId</p> <p>Operations: Contains</p></li>
-    /// <li><p>Key: AutomationId</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: AccountId</p> <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: CreatedTime</p>
+    /// <p>Operations: GreaterThan, LessThan</p></li>
+    /// <li>
+    /// <p>Key: LastModifiedBy</p>
+    /// <p>Operations: Contains, Equals</p></li>
+    /// <li>
+    /// <p>Key: LastModifiedTime</p>
+    /// <p>Operations: GreaterThan, LessThan</p></li>
+    /// <li>
+    /// <p>Key: Priority</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: Source</p>
+    /// <p>Operations: Contains, Equals</p></li>
+    /// <li>
+    /// <p>Key: Status</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: Title*</p>
+    /// <p>Operations: Equals,Contains</p></li>
+    /// <li>
+    /// <p>Key: OperationalData**</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: OperationalDataKey</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: OperationalDataValue</p>
+    /// <p>Operations: Equals, Contains</p></li>
+    /// <li>
+    /// <p>Key: OpsItemId</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: ResourceId</p>
+    /// <p>Operations: Contains</p></li>
+    /// <li>
+    /// <p>Key: AutomationId</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: AccountId</p>
+    /// <p>Operations: Equals</p></li>
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
@@ -167,20 +223,48 @@ impl DescribeOpsItemsFluentBuilder {
     }
     /// <p>One or more filters to limit the response.</p>
     /// <ul>
-    /// <li><p>Key: CreatedTime</p> <p>Operations: GreaterThan, LessThan</p></li>
-    /// <li><p>Key: LastModifiedBy</p> <p>Operations: Contains, Equals</p></li>
-    /// <li><p>Key: LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p></li>
-    /// <li><p>Key: Priority</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: Source</p> <p>Operations: Contains, Equals</p></li>
-    /// <li><p>Key: Status</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: Title*</p> <p>Operations: Equals,Contains</p></li>
-    /// <li><p>Key: OperationalData**</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: OperationalDataKey</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: OperationalDataValue</p> <p>Operations: Equals, Contains</p></li>
-    /// <li><p>Key: OpsItemId</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: ResourceId</p> <p>Operations: Contains</p></li>
-    /// <li><p>Key: AutomationId</p> <p>Operations: Equals</p></li>
-    /// <li><p>Key: AccountId</p> <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: CreatedTime</p>
+    /// <p>Operations: GreaterThan, LessThan</p></li>
+    /// <li>
+    /// <p>Key: LastModifiedBy</p>
+    /// <p>Operations: Contains, Equals</p></li>
+    /// <li>
+    /// <p>Key: LastModifiedTime</p>
+    /// <p>Operations: GreaterThan, LessThan</p></li>
+    /// <li>
+    /// <p>Key: Priority</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: Source</p>
+    /// <p>Operations: Contains, Equals</p></li>
+    /// <li>
+    /// <p>Key: Status</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: Title*</p>
+    /// <p>Operations: Equals,Contains</p></li>
+    /// <li>
+    /// <p>Key: OperationalData**</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: OperationalDataKey</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: OperationalDataValue</p>
+    /// <p>Operations: Equals, Contains</p></li>
+    /// <li>
+    /// <p>Key: OpsItemId</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: ResourceId</p>
+    /// <p>Operations: Contains</p></li>
+    /// <li>
+    /// <p>Key: AutomationId</p>
+    /// <p>Operations: Equals</p></li>
+    /// <li>
+    /// <p>Key: AccountId</p>
+    /// <p>Operations: Equals</p></li>
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>

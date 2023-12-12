@@ -22,7 +22,7 @@ impl ModifyGlobalClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyGlobalCluster`.
 ///
-/// <p>Modifies a setting for an Amazon Aurora global database cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <note>
+/// <p>Modifies a setting for an Amazon Aurora global database cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
 /// <p>This operation only applies to Aurora global database clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -113,7 +113,8 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing global database cluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing global database cluster.</p></li>
     /// </ul>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
@@ -122,7 +123,8 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing global database cluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing global database cluster.</p></li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
@@ -131,7 +133,8 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <p>The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing global database cluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing global database cluster.</p></li>
     /// </ul>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_cluster_identifier()
@@ -139,9 +142,12 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code></p>
     pub fn new_global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,9 +157,12 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code></p>
     pub fn set_new_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -163,9 +172,12 @@ impl ModifyGlobalClusterFluentBuilder {
     /// <p>The new cluster identifier for the global database cluster. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code></p>
     pub fn get_new_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {

@@ -25,20 +25,34 @@ impl SearchAgreementsInputBuilder {
 /// <p>Searches across all agreements that a proposer or an acceptor has in AWS Marketplace. The search returns a list of agreements with basic agreement information.</p>
 /// <p>The following filter combinations are supported:</p>
 /// <ul>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceIdentifier</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>OfferId</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>Status</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>OfferId</code> + <code>Status</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>Status</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceType</code> + <code>Status</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceType</code> + <code>Status</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>OfferId</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>OfferId</code> + <code>Status</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceIdentifier</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
-/// <li><p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceType</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceIdentifier</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>OfferId</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>OfferId</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceType</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceType</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>OfferId</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>OfferId</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceIdentifier</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceType</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchAgreementsFluentBuilder {
@@ -152,15 +166,24 @@ impl SearchAgreementsFluentBuilder {
     /// <p>The filter name and value pair used to return a specific list of results.</p>
     /// <p>The following filters are supported:</p>
     /// <ul>
-    /// <li><p><code>ResourceIdentifier</code> – The unique identifier of the resource.</p></li>
-    /// <li><p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, or <code>SaaSProduct</code>).</p></li>
-    /// <li><p><code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>) of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code> filter.</p></li>
-    /// <li><p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
-    /// <li><p><code>OfferId</code> – The unique identifier of the offer in which the terms are registered in the agreement token.</p></li>
-    /// <li><p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
-    /// <li><p><code>BeforeEndTime</code> – A date used to filter agreements with a date before the <code>endTime</code> of an agreement.</p></li>
-    /// <li><p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
-    /// <li><p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
+    /// <li>
+    /// <p><code>ResourceIdentifier</code> – The unique identifier of the resource.</p></li>
+    /// <li>
+    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, or <code>SaaSProduct</code>).</p></li>
+    /// <li>
+    /// <p><code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>) of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code> filter.</p></li>
+    /// <li>
+    /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
+    /// <li>
+    /// <p><code>OfferId</code> – The unique identifier of the offer in which the terms are registered in the agreement token.</p></li>
+    /// <li>
+    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
+    /// <li>
+    /// <p><code>BeforeEndTime</code> – A date used to filter agreements with a date before the <code>endTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -169,15 +192,24 @@ impl SearchAgreementsFluentBuilder {
     /// <p>The filter name and value pair used to return a specific list of results.</p>
     /// <p>The following filters are supported:</p>
     /// <ul>
-    /// <li><p><code>ResourceIdentifier</code> – The unique identifier of the resource.</p></li>
-    /// <li><p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, or <code>SaaSProduct</code>).</p></li>
-    /// <li><p><code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>) of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code> filter.</p></li>
-    /// <li><p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
-    /// <li><p><code>OfferId</code> – The unique identifier of the offer in which the terms are registered in the agreement token.</p></li>
-    /// <li><p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
-    /// <li><p><code>BeforeEndTime</code> – A date used to filter agreements with a date before the <code>endTime</code> of an agreement.</p></li>
-    /// <li><p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
-    /// <li><p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
+    /// <li>
+    /// <p><code>ResourceIdentifier</code> – The unique identifier of the resource.</p></li>
+    /// <li>
+    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, or <code>SaaSProduct</code>).</p></li>
+    /// <li>
+    /// <p><code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>) of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code> filter.</p></li>
+    /// <li>
+    /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
+    /// <li>
+    /// <p><code>OfferId</code> – The unique identifier of the offer in which the terms are registered in the agreement token.</p></li>
+    /// <li>
+    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
+    /// <li>
+    /// <p><code>BeforeEndTime</code> – A date used to filter agreements with a date before the <code>endTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -186,15 +218,24 @@ impl SearchAgreementsFluentBuilder {
     /// <p>The filter name and value pair used to return a specific list of results.</p>
     /// <p>The following filters are supported:</p>
     /// <ul>
-    /// <li><p><code>ResourceIdentifier</code> – The unique identifier of the resource.</p></li>
-    /// <li><p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, or <code>SaaSProduct</code>).</p></li>
-    /// <li><p><code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>) of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code> filter.</p></li>
-    /// <li><p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
-    /// <li><p><code>OfferId</code> – The unique identifier of the offer in which the terms are registered in the agreement token.</p></li>
-    /// <li><p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
-    /// <li><p><code>BeforeEndTime</code> – A date used to filter agreements with a date before the <code>endTime</code> of an agreement.</p></li>
-    /// <li><p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
-    /// <li><p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
+    /// <li>
+    /// <p><code>ResourceIdentifier</code> – The unique identifier of the resource.</p></li>
+    /// <li>
+    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, or <code>SaaSProduct</code>).</p></li>
+    /// <li>
+    /// <p><code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>) of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code> filter.</p></li>
+    /// <li>
+    /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
+    /// <li>
+    /// <p><code>OfferId</code> – The unique identifier of the offer in which the terms are registered in the agreement token.</p></li>
+    /// <li>
+    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
+    /// <li>
+    /// <p><code>BeforeEndTime</code> – A date used to filter agreements with a date before the <code>endTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

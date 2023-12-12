@@ -2,13 +2,20 @@
 
 /// <p>A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet.</p>
 /// <ul>
-/// <li><p><b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1.</p></li>
-/// <li><p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p></li>
-/// <li><p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
-/// <li><p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p></li>
-/// <li><p><b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p></li>
-/// <li><p><b>TERMINATED</b> -- The fleet location no longer exists.</p></li>
-/// <li><p><b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created.</p></li>
+/// <li>
+/// <p><b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1.</p></li>
+/// <li>
+/// <p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes.</p></li>
+/// <li>
+/// <p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
+/// <li>
+/// <p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.</p></li>
+/// <li>
+/// <p><b>DELETING</b> -- Hosts are responding to a delete fleet location request.</p></li>
+/// <li>
+/// <p><b>TERMINATED</b> -- The fleet location no longer exists.</p></li>
+/// <li>
+/// <p><b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

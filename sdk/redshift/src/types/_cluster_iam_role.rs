@@ -9,9 +9,12 @@ pub struct ClusterIamRole {
     /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
-    /// <li><p><code>in-sync</code>: The role is available for use by the cluster.</p></li>
-    /// <li><p><code>adding</code>: The role is in the process of being associated with the cluster.</p></li>
-    /// <li><p><code>removing</code>: The role is in the process of being disassociated with the cluster.</p></li>
+    /// <li>
+    /// <p><code>in-sync</code>: The role is available for use by the cluster.</p></li>
+    /// <li>
+    /// <p><code>adding</code>: The role is in the process of being associated with the cluster.</p></li>
+    /// <li>
+    /// <p><code>removing</code>: The role is in the process of being disassociated with the cluster.</p></li>
     /// </ul>
     pub apply_status: ::std::option::Option<::std::string::String>,
 }
@@ -23,9 +26,12 @@ impl ClusterIamRole {
     /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
-    /// <li><p><code>in-sync</code>: The role is available for use by the cluster.</p></li>
-    /// <li><p><code>adding</code>: The role is in the process of being associated with the cluster.</p></li>
-    /// <li><p><code>removing</code>: The role is in the process of being disassociated with the cluster.</p></li>
+    /// <li>
+    /// <p><code>in-sync</code>: The role is available for use by the cluster.</p></li>
+    /// <li>
+    /// <p><code>adding</code>: The role is in the process of being associated with the cluster.</p></li>
+    /// <li>
+    /// <p><code>removing</code>: The role is in the process of being disassociated with the cluster.</p></li>
     /// </ul>
     pub fn apply_status(&self) -> ::std::option::Option<&str> {
         self.apply_status.as_deref()
@@ -63,9 +69,12 @@ impl ClusterIamRoleBuilder {
     /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
-    /// <li><p><code>in-sync</code>: The role is available for use by the cluster.</p></li>
-    /// <li><p><code>adding</code>: The role is in the process of being associated with the cluster.</p></li>
-    /// <li><p><code>removing</code>: The role is in the process of being disassociated with the cluster.</p></li>
+    /// <li>
+    /// <p><code>in-sync</code>: The role is available for use by the cluster.</p></li>
+    /// <li>
+    /// <p><code>adding</code>: The role is in the process of being associated with the cluster.</p></li>
+    /// <li>
+    /// <p><code>removing</code>: The role is in the process of being disassociated with the cluster.</p></li>
     /// </ul>
     pub fn apply_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.apply_status = ::std::option::Option::Some(input.into());
@@ -74,9 +83,12 @@ impl ClusterIamRoleBuilder {
     /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
-    /// <li><p><code>in-sync</code>: The role is available for use by the cluster.</p></li>
-    /// <li><p><code>adding</code>: The role is in the process of being associated with the cluster.</p></li>
-    /// <li><p><code>removing</code>: The role is in the process of being disassociated with the cluster.</p></li>
+    /// <li>
+    /// <p><code>in-sync</code>: The role is available for use by the cluster.</p></li>
+    /// <li>
+    /// <p><code>adding</code>: The role is in the process of being associated with the cluster.</p></li>
+    /// <li>
+    /// <p><code>removing</code>: The role is in the process of being disassociated with the cluster.</p></li>
     /// </ul>
     pub fn set_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.apply_status = input;
@@ -85,9 +97,12 @@ impl ClusterIamRoleBuilder {
     /// <p>A value that describes the status of the IAM role's association with an Amazon Redshift cluster.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
-    /// <li><p><code>in-sync</code>: The role is available for use by the cluster.</p></li>
-    /// <li><p><code>adding</code>: The role is in the process of being associated with the cluster.</p></li>
-    /// <li><p><code>removing</code>: The role is in the process of being disassociated with the cluster.</p></li>
+    /// <li>
+    /// <p><code>in-sync</code>: The role is available for use by the cluster.</p></li>
+    /// <li>
+    /// <p><code>adding</code>: The role is in the process of being associated with the cluster.</p></li>
+    /// <li>
+    /// <p><code>removing</code>: The role is in the process of being disassociated with the cluster.</p></li>
     /// </ul>
     pub fn get_apply_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.apply_status

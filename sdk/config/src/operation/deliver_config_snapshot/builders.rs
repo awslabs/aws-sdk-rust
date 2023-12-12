@@ -24,9 +24,12 @@ impl DeliverConfigSnapshotInputBuilder {
 ///
 /// <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After the delivery has started, Config sends the following notifications using an Amazon SNS topic that you have specified.</p>
 /// <ul>
-/// <li><p>Notification of the start of the delivery.</p></li>
-/// <li><p>Notification of the completion of the delivery, if the delivery was successfully completed.</p></li>
-/// <li><p>Notification of delivery failure, if the delivery failed.</p></li>
+/// <li>
+/// <p>Notification of the start of the delivery.</p></li>
+/// <li>
+/// <p>Notification of the completion of the delivery, if the delivery was successfully completed.</p></li>
+/// <li>
+/// <p>Notification of delivery failure, if the delivery failed.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeliverConfigSnapshotFluentBuilder {

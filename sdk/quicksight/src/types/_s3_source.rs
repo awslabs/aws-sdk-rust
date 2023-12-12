@@ -8,7 +8,7 @@ pub struct S3Source {
     pub data_source_arn: ::std::string::String,
     /// <p>Information about the format for the S3 source file or files.</p>
     pub upload_settings: ::std::option::Option<crate::types::UploadSettings>,
-    /// <p>A physical table type for an S3 data source.</p> <note>
+    /// <p>A physical table type for an S3 data source.</p><note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
     pub input_columns: ::std::vec::Vec<crate::types::InputColumn>,
@@ -23,7 +23,7 @@ impl S3Source {
     pub fn upload_settings(&self) -> ::std::option::Option<&crate::types::UploadSettings> {
         self.upload_settings.as_ref()
     }
-    /// <p>A physical table type for an S3 data source.</p> <note>
+    /// <p>A physical table type for an S3 data source.</p><note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
     pub fn input_columns(&self) -> &[crate::types::InputColumn] {
@@ -80,7 +80,7 @@ impl S3SourceBuilder {
     ///
     /// To override the contents of this collection use [`set_input_columns`](Self::set_input_columns).
     ///
-    /// <p>A physical table type for an S3 data source.</p> <note>
+    /// <p>A physical table type for an S3 data source.</p><note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
     pub fn input_columns(mut self, input: crate::types::InputColumn) -> Self {
@@ -89,14 +89,14 @@ impl S3SourceBuilder {
         self.input_columns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A physical table type for an S3 data source.</p> <note>
+    /// <p>A physical table type for an S3 data source.</p><note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
     pub fn set_input_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>) -> Self {
         self.input_columns = input;
         self
     }
-    /// <p>A physical table type for an S3 data source.</p> <note>
+    /// <p>A physical table type for an S3 data source.</p><note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
     pub fn get_input_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {

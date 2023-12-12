@@ -135,9 +135,12 @@ impl PutAccountSettingFluentBuilder {
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
     /// <ul>
-    /// <li><p><code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p></li>
-    /// <li><p><code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p></li>
-    /// <li><p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
+    /// <li>
+    /// <p><code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p></li>
+    /// <li>
+    /// <p><code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p></li>
+    /// <li>
+    /// <p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
     /// </ul>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
@@ -146,9 +149,12 @@ impl PutAccountSettingFluentBuilder {
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
     /// <ul>
-    /// <li><p><code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p></li>
-    /// <li><p><code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p></li>
-    /// <li><p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
+    /// <li>
+    /// <p><code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p></li>
+    /// <li>
+    /// <p><code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p></li>
+    /// <li>
+    /// <p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
@@ -157,14 +163,17 @@ impl PutAccountSettingFluentBuilder {
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
     /// <ul>
-    /// <li><p><code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p></li>
-    /// <li><p><code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p></li>
-    /// <li><p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
+    /// <li>
+    /// <p><code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p></li>
+    /// <li>
+    /// <p><code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p></li>
+    /// <li>
+    /// <p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
     /// </ul>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_value()
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
@@ -172,7 +181,7 @@ impl PutAccountSettingFluentBuilder {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
@@ -180,7 +189,7 @@ impl PutAccountSettingFluentBuilder {
         self.inner = self.inner.set_principal_arn(input);
         self
     }
-    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
+    /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>

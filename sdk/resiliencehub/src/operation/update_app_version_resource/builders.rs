@@ -22,11 +22,14 @@ impl UpdateAppVersionResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAppVersionResource`.
 ///
-/// <p>Updates the resource details in the Resilience Hub application.</p> <note>
+/// <p>Updates the resource details in the Resilience Hub application.</p><note>
 /// <ul>
-/// <li><p>This action has no effect outside Resilience Hub.</p></li>
-/// <li><p>This API updates the Resilience Hub application draft version. To use this resource for running resiliency assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.</p></li>
-/// <li><p>To update application version with new <code>physicalResourceID</code>, you must call <code>ResolveAppVersionResources</code> API.</p></li>
+/// <li>
+/// <p>This action has no effect outside Resilience Hub.</p></li>
+/// <li>
+/// <p>This API updates the Resilience Hub application draft version. To use this resource for running resiliency assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.</p></li>
+/// <li>
+/// <p>To update application version with new <code>physicalResourceID</code>, you must call <code>ResolveAppVersionResources</code> API.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -253,21 +256,21 @@ impl UpdateAppVersionResourceFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_additional_info()
     }
-    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>
+    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p><note>
     /// <p>You can exclude only imported resources from an Resilience Hub application.</p>
     /// </note>
     pub fn excluded(mut self, input: bool) -> Self {
         self.inner = self.inner.excluded(input);
         self
     }
-    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>
+    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p><note>
     /// <p>You can exclude only imported resources from an Resilience Hub application.</p>
     /// </note>
     pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_excluded(input);
         self
     }
-    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>
+    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p><note>
     /// <p>You can exclude only imported resources from an Resilience Hub application.</p>
     /// </note>
     pub fn get_excluded(&self) -> &::std::option::Option<bool> {

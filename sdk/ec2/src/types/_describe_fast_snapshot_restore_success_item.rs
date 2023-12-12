@@ -12,8 +12,10 @@ pub struct DescribeFastSnapshotRestoreSuccessItem {
     pub state: ::std::option::Option<crate::types::FastSnapshotRestoreStateCode>,
     /// <p>The reason for the state transition. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p></li>
-    /// <li><p><code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p></li>
+    /// <li>
+    /// <p><code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p></li>
+    /// <li>
+    /// <p><code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p></li>
     /// </ul>
     pub state_transition_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.</p>
@@ -46,8 +48,10 @@ impl DescribeFastSnapshotRestoreSuccessItem {
     }
     /// <p>The reason for the state transition. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p></li>
-    /// <li><p><code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p></li>
+    /// <li>
+    /// <p><code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p></li>
+    /// <li>
+    /// <p><code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p></li>
     /// </ul>
     pub fn state_transition_reason(&self) -> ::std::option::Option<&str> {
         self.state_transition_reason.as_deref()
@@ -149,8 +153,10 @@ impl DescribeFastSnapshotRestoreSuccessItemBuilder {
     }
     /// <p>The reason for the state transition. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p></li>
-    /// <li><p><code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p></li>
+    /// <li>
+    /// <p><code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p></li>
+    /// <li>
+    /// <p><code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p></li>
     /// </ul>
     pub fn state_transition_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_transition_reason = ::std::option::Option::Some(input.into());
@@ -158,8 +164,10 @@ impl DescribeFastSnapshotRestoreSuccessItemBuilder {
     }
     /// <p>The reason for the state transition. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p></li>
-    /// <li><p><code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p></li>
+    /// <li>
+    /// <p><code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p></li>
+    /// <li>
+    /// <p><code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p></li>
     /// </ul>
     pub fn set_state_transition_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_transition_reason = input;
@@ -167,8 +175,10 @@ impl DescribeFastSnapshotRestoreSuccessItemBuilder {
     }
     /// <p>The reason for the state transition. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p></li>
-    /// <li><p><code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p></li>
+    /// <li>
+    /// <p><code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p></li>
+    /// <li>
+    /// <p><code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p></li>
     /// </ul>
     pub fn get_state_transition_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_transition_reason

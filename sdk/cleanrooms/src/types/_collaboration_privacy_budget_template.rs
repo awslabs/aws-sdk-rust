@@ -20,7 +20,7 @@ pub struct CollaborationPrivacyBudgetTemplate {
     pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The type of privacy budget template.</p>
     pub privacy_budget_type: crate::types::PrivacyBudgetType,
-    /// <p>How often the privacy budget refreshes.</p> <important>
+    /// <p>How often the privacy budget refreshes.</p><important>
     /// <p>If you plan to regularly bring new data into the collaboration, use <code>CALENDAR_MONTH</code> to automatically get a new privacy budget for the collaboration every calendar month. Choosing this option allows arbitrary amounts of information to be revealed about rows of the data when repeatedly queried across refreshes. Avoid choosing this if the same rows will be repeatedly queried between privacy budget refreshes.</p>
     /// </important>
     pub auto_refresh: crate::types::PrivacyBudgetTemplateAutoRefresh,
@@ -65,7 +65,7 @@ impl CollaborationPrivacyBudgetTemplate {
     pub fn privacy_budget_type(&self) -> &crate::types::PrivacyBudgetType {
         &self.privacy_budget_type
     }
-    /// <p>How often the privacy budget refreshes.</p> <important>
+    /// <p>How often the privacy budget refreshes.</p><important>
     /// <p>If you plan to regularly bring new data into the collaboration, use <code>CALENDAR_MONTH</code> to automatically get a new privacy budget for the collaboration every calendar month. Choosing this option allows arbitrary amounts of information to be revealed about rows of the data when repeatedly queried across refreshes. Avoid choosing this if the same rows will be repeatedly queried between privacy budget refreshes.</p>
     /// </important>
     pub fn auto_refresh(&self) -> &crate::types::PrivacyBudgetTemplateAutoRefresh {
@@ -219,7 +219,7 @@ impl CollaborationPrivacyBudgetTemplateBuilder {
     pub fn get_privacy_budget_type(&self) -> &::std::option::Option<crate::types::PrivacyBudgetType> {
         &self.privacy_budget_type
     }
-    /// <p>How often the privacy budget refreshes.</p> <important>
+    /// <p>How often the privacy budget refreshes.</p><important>
     /// <p>If you plan to regularly bring new data into the collaboration, use <code>CALENDAR_MONTH</code> to automatically get a new privacy budget for the collaboration every calendar month. Choosing this option allows arbitrary amounts of information to be revealed about rows of the data when repeatedly queried across refreshes. Avoid choosing this if the same rows will be repeatedly queried between privacy budget refreshes.</p>
     /// </important>
     /// This field is required.
@@ -227,14 +227,14 @@ impl CollaborationPrivacyBudgetTemplateBuilder {
         self.auto_refresh = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How often the privacy budget refreshes.</p> <important>
+    /// <p>How often the privacy budget refreshes.</p><important>
     /// <p>If you plan to regularly bring new data into the collaboration, use <code>CALENDAR_MONTH</code> to automatically get a new privacy budget for the collaboration every calendar month. Choosing this option allows arbitrary amounts of information to be revealed about rows of the data when repeatedly queried across refreshes. Avoid choosing this if the same rows will be repeatedly queried between privacy budget refreshes.</p>
     /// </important>
     pub fn set_auto_refresh(mut self, input: ::std::option::Option<crate::types::PrivacyBudgetTemplateAutoRefresh>) -> Self {
         self.auto_refresh = input;
         self
     }
-    /// <p>How often the privacy budget refreshes.</p> <important>
+    /// <p>How often the privacy budget refreshes.</p><important>
     /// <p>If you plan to regularly bring new data into the collaboration, use <code>CALENDAR_MONTH</code> to automatically get a new privacy budget for the collaboration every calendar month. Choosing this option allows arbitrary amounts of information to be revealed about rows of the data when repeatedly queried across refreshes. Avoid choosing this if the same rows will be repeatedly queried between privacy budget refreshes.</p>
     /// </important>
     pub fn get_auto_refresh(&self) -> &::std::option::Option<crate::types::PrivacyBudgetTemplateAutoRefresh> {

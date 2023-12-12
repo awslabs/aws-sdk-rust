@@ -22,11 +22,14 @@ impl PutChannelExpirationSettingsInputBuilder {
 }
 /// Fluent builder constructing a request to `PutChannelExpirationSettings`.
 ///
-/// <p>Sets the number of days before the channel is automatically deleted.</p> <note>
+/// <p>Sets the number of days before the channel is automatically deleted.</p><note>
 /// <ul>
-/// <li><p>A background process deletes expired channels within 6 hours of expiration. Actual deletion times may vary.</p></li>
-/// <li><p>Expired channels that have not yet been deleted appear as active, and you can update their expiration settings. The system honors the new settings.</p></li>
-/// <li><p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p></li>
+/// <li>
+/// <p>A background process deletes expired channels within 6 hours of expiration. Actual deletion times may vary.</p></li>
+/// <li>
+/// <p>Expired channels that have not yet been deleted appear as active, and you can update their expiration settings. The system honors the new settings.</p></li>
+/// <li>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

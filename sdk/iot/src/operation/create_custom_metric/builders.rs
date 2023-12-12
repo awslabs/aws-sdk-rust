@@ -137,21 +137,21 @@ impl CreateCustomMetricFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
     /// </important>
     pub fn metric_type(mut self, input: crate::types::CustomMetricType) -> Self {
         self.inner = self.inner.metric_type(input);
         self
     }
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
     /// </important>
     pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::CustomMetricType>) -> Self {
         self.inner = self.inner.set_metric_type(input);
         self
     }
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
     /// </important>
     pub fn get_metric_type(&self) -> &::std::option::Option<crate::types::CustomMetricType> {

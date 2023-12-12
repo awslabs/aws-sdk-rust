@@ -22,8 +22,10 @@ pub struct GetAssetPropertyValueHistoryInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li><p>The size of the result set is equal to 4 MB.</p></li>
-    /// <li><p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
+    /// <li>
+    /// <p>The size of the result set is equal to 4 MB.</p></li>
+    /// <li>
+    /// <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
     /// </ul>
     pub max_results: ::std::option::Option<i32>,
 }
@@ -65,8 +67,10 @@ impl GetAssetPropertyValueHistoryInput {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li><p>The size of the result set is equal to 4 MB.</p></li>
-    /// <li><p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
+    /// <li>
+    /// <p>The size of the result set is equal to 4 MB.</p></li>
+    /// <li>
+    /// <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
     /// </ul>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
@@ -217,8 +221,10 @@ impl GetAssetPropertyValueHistoryInputBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li><p>The size of the result set is equal to 4 MB.</p></li>
-    /// <li><p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
+    /// <li>
+    /// <p>The size of the result set is equal to 4 MB.</p></li>
+    /// <li>
+    /// <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
     /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -226,8 +232,10 @@ impl GetAssetPropertyValueHistoryInputBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li><p>The size of the result set is equal to 4 MB.</p></li>
-    /// <li><p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
+    /// <li>
+    /// <p>The size of the result set is equal to 4 MB.</p></li>
+    /// <li>
+    /// <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
     /// </ul>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
@@ -235,8 +243,10 @@ impl GetAssetPropertyValueHistoryInputBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li><p>The size of the result set is equal to 4 MB.</p></li>
-    /// <li><p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
+    /// <li>
+    /// <p>The size of the result set is equal to 4 MB.</p></li>
+    /// <li>
+    /// <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
     /// </ul>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results

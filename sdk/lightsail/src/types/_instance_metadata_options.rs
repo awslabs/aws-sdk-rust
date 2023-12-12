@@ -7,13 +7,15 @@ pub struct InstanceMetadataOptions {
     /// <p>The state of the metadata option changes.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li><p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
-    /// <li><p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
+    /// <li>
+    /// <p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::InstanceMetadataState>,
     /// <p>The state of token usage for your instance metadata requests.</p>
     /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
-    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
+    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p><important>
     /// <p>Not all instance blueprints in Lightsail support version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to track the number of calls to the instance metadata service that are using version 1.0 credentials. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// </important>
     pub http_tokens: ::std::option::Option<crate::types::HttpTokens>,
@@ -29,15 +31,17 @@ impl InstanceMetadataOptions {
     /// <p>The state of the metadata option changes.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li><p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
-    /// <li><p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
+    /// <li>
+    /// <p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceMetadataState> {
         self.state.as_ref()
     }
     /// <p>The state of token usage for your instance metadata requests.</p>
     /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
-    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
+    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p><important>
     /// <p>Not all instance blueprints in Lightsail support version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to track the number of calls to the instance metadata service that are using version 1.0 credentials. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// </important>
     pub fn http_tokens(&self) -> ::std::option::Option<&crate::types::HttpTokens> {
@@ -78,8 +82,10 @@ impl InstanceMetadataOptionsBuilder {
     /// <p>The state of the metadata option changes.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li><p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
-    /// <li><p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
+    /// <li>
+    /// <p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::InstanceMetadataState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -88,8 +94,10 @@ impl InstanceMetadataOptionsBuilder {
     /// <p>The state of the metadata option changes.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li><p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
-    /// <li><p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
+    /// <li>
+    /// <p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceMetadataState>) -> Self {
         self.state = input;
@@ -98,15 +106,17 @@ impl InstanceMetadataOptionsBuilder {
     /// <p>The state of the metadata option changes.</p>
     /// <p>The following states are possible:</p>
     /// <ul>
-    /// <li><p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
-    /// <li><p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p></li>
+    /// <li>
+    /// <p><code>applied</code> - The metadata options have been successfully applied to the instance.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceMetadataState> {
         &self.state
     }
     /// <p>The state of token usage for your instance metadata requests.</p>
     /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
-    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
+    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p><important>
     /// <p>Not all instance blueprints in Lightsail support version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to track the number of calls to the instance metadata service that are using version 1.0 credentials. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// </important>
     pub fn http_tokens(mut self, input: crate::types::HttpTokens) -> Self {
@@ -115,7 +125,7 @@ impl InstanceMetadataOptionsBuilder {
     }
     /// <p>The state of token usage for your instance metadata requests.</p>
     /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
-    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
+    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p><important>
     /// <p>Not all instance blueprints in Lightsail support version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to track the number of calls to the instance metadata service that are using version 1.0 credentials. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// </important>
     pub fn set_http_tokens(mut self, input: ::std::option::Option<crate::types::HttpTokens>) -> Self {
@@ -124,7 +134,7 @@ impl InstanceMetadataOptionsBuilder {
     }
     /// <p>The state of token usage for your instance metadata requests.</p>
     /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
-    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
+    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p><important>
     /// <p>Not all instance blueprints in Lightsail support version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to track the number of calls to the instance metadata service that are using version 1.0 credentials. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// </important>
     pub fn get_http_tokens(&self) -> &::std::option::Option<crate::types::HttpTokens> {

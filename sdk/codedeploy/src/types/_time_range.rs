@@ -4,23 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeRange {
-    /// <p>The start time of the time range.</p> <note>
+    /// <p>The start time of the time range.</p><note>
     /// <p>Specify null to leave the start time open-ended.</p>
     /// </note>
     pub start: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end time of the time range.</p> <note>
+    /// <p>The end time of the time range.</p><note>
     /// <p>Specify null to leave the end time open-ended.</p>
     /// </note>
     pub end: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimeRange {
-    /// <p>The start time of the time range.</p> <note>
+    /// <p>The start time of the time range.</p><note>
     /// <p>Specify null to leave the start time open-ended.</p>
     /// </note>
     pub fn start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start.as_ref()
     }
-    /// <p>The end time of the time range.</p> <note>
+    /// <p>The end time of the time range.</p><note>
     /// <p>Specify null to leave the end time open-ended.</p>
     /// </note>
     pub fn end(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -42,41 +42,41 @@ pub struct TimeRangeBuilder {
     pub(crate) end: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimeRangeBuilder {
-    /// <p>The start time of the time range.</p> <note>
+    /// <p>The start time of the time range.</p><note>
     /// <p>Specify null to leave the start time open-ended.</p>
     /// </note>
     pub fn start(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time of the time range.</p> <note>
+    /// <p>The start time of the time range.</p><note>
     /// <p>Specify null to leave the start time open-ended.</p>
     /// </note>
     pub fn set_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start = input;
         self
     }
-    /// <p>The start time of the time range.</p> <note>
+    /// <p>The start time of the time range.</p><note>
     /// <p>Specify null to leave the start time open-ended.</p>
     /// </note>
     pub fn get_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start
     }
-    /// <p>The end time of the time range.</p> <note>
+    /// <p>The end time of the time range.</p><note>
     /// <p>Specify null to leave the end time open-ended.</p>
     /// </note>
     pub fn end(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time of the time range.</p> <note>
+    /// <p>The end time of the time range.</p><note>
     /// <p>Specify null to leave the end time open-ended.</p>
     /// </note>
     pub fn set_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end = input;
         self
     }
-    /// <p>The end time of the time range.</p> <note>
+    /// <p>The end time of the time range.</p><note>
     /// <p>Specify null to leave the end time open-ended.</p>
     /// </note>
     pub fn get_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {

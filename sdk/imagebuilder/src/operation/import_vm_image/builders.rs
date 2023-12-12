@@ -123,7 +123,7 @@ impl ImportVmImageFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -143,7 +143,7 @@ impl ImportVmImageFluentBuilder {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
-    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -163,7 +163,7 @@ impl ImportVmImageFluentBuilder {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
-    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>

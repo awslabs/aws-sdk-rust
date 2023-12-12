@@ -5,14 +5,18 @@
 pub struct ListSharedReportGroupsInput {
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub sort_by: ::std::option::Option<crate::types::SharedResourceSortByType>,
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
@@ -23,16 +27,20 @@ pub struct ListSharedReportGroupsInput {
 impl ListSharedReportGroupsInput {
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SharedResourceSortByType> {
         self.sort_by.as_ref()
@@ -65,8 +73,10 @@ pub struct ListSharedReportGroupsInputBuilder {
 impl ListSharedReportGroupsInputBuilder {
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -74,8 +84,10 @@ impl ListSharedReportGroupsInputBuilder {
     }
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
@@ -83,16 +95,20 @@ impl ListSharedReportGroupsInputBuilder {
     }
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         &self.sort_order
     }
     /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub fn sort_by(mut self, input: crate::types::SharedResourceSortByType) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -100,8 +116,10 @@ impl ListSharedReportGroupsInputBuilder {
     }
     /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SharedResourceSortByType>) -> Self {
         self.sort_by = input;
@@ -109,8 +127,10 @@ impl ListSharedReportGroupsInputBuilder {
     }
     /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SharedResourceSortByType> {
         &self.sort_by

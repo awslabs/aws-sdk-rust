@@ -10,7 +10,8 @@ pub struct SameSheetTargetVisualConfiguration {
     /// <p>The options that choose the target visual in the same sheet.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
+    /// <li>
+    /// <p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
     /// </ul>
     pub target_visual_options: ::std::option::Option<crate::types::TargetVisualOptions>,
 }
@@ -24,7 +25,8 @@ impl SameSheetTargetVisualConfiguration {
     /// <p>The options that choose the target visual in the same sheet.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
+    /// <li>
+    /// <p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
     /// </ul>
     pub fn target_visual_options(&self) -> ::std::option::Option<&crate::types::TargetVisualOptions> {
         self.target_visual_options.as_ref()
@@ -68,7 +70,8 @@ impl SameSheetTargetVisualConfigurationBuilder {
     /// <p>The options that choose the target visual in the same sheet.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
+    /// <li>
+    /// <p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
     /// </ul>
     pub fn target_visual_options(mut self, input: crate::types::TargetVisualOptions) -> Self {
         self.target_visual_options = ::std::option::Option::Some(input);
@@ -77,7 +80,8 @@ impl SameSheetTargetVisualConfigurationBuilder {
     /// <p>The options that choose the target visual in the same sheet.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
+    /// <li>
+    /// <p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
     /// </ul>
     pub fn set_target_visual_options(mut self, input: ::std::option::Option<crate::types::TargetVisualOptions>) -> Self {
         self.target_visual_options = input;
@@ -86,7 +90,8 @@ impl SameSheetTargetVisualConfigurationBuilder {
     /// <p>The options that choose the target visual in the same sheet.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
+    /// <li>
+    /// <p><code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p></li>
     /// </ul>
     pub fn get_target_visual_options(&self) -> &::std::option::Option<crate::types::TargetVisualOptions> {
         &self.target_visual_options

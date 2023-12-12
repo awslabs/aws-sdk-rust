@@ -22,7 +22,7 @@ impl DescribeChannelMembershipInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeChannelMembership`.
 ///
-/// <p>Returns the full details of a user's channel membership.</p> <note>
+/// <p>Returns the full details of a user's channel membership.</p><note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -152,21 +152,21 @@ impl DescribeChannelMembershipFluentBuilder {
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chime_bearer()
     }
-    /// <p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p> <note>
+    /// <p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p><note>
     /// <p>Only required to get a user’s SubChannel membership details.</p>
     /// </note>
     pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
-    /// <p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p> <note>
+    /// <p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p><note>
     /// <p>Only required to get a user’s SubChannel membership details.</p>
     /// </note>
     pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }
-    /// <p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p> <note>
+    /// <p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p><note>
     /// <p>Only required to get a user’s SubChannel membership details.</p>
     /// </note>
     pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {

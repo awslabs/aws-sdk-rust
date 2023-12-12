@@ -2,11 +2,16 @@
 
 /// <p>A structure that contains the following account information elements:</p>
 /// <ul>
-/// <li><p>Your Amazon QuickSight account name.</p></li>
-/// <li><p>The edition of Amazon QuickSight that your account is using.</p></li>
-/// <li><p>The notification email address that is associated with the Amazon QuickSight account.</p></li>
-/// <li><p>The authentication type of the Amazon QuickSight account.</p></li>
-/// <li><p>The status of the Amazon QuickSight account's subscription.</p></li>
+/// <li>
+/// <p>Your Amazon QuickSight account name.</p></li>
+/// <li>
+/// <p>The edition of Amazon QuickSight that your account is using.</p></li>
+/// <li>
+/// <p>The notification email address that is associated with the Amazon QuickSight account.</p></li>
+/// <li>
+/// <p>The authentication type of the Amazon QuickSight account.</p></li>
+/// <li>
+/// <p>The status of the Amazon QuickSight account's subscription.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

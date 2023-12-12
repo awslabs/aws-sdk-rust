@@ -6,7 +6,7 @@
 pub struct ImageTestsConfiguration {
     /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
     pub image_tests_enabled: ::std::option::Option<bool>,
-    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
+    /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
     /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
     /// </note>
     pub timeout_minutes: ::std::option::Option<i32>,
@@ -16,7 +16,7 @@ impl ImageTestsConfiguration {
     pub fn image_tests_enabled(&self) -> ::std::option::Option<bool> {
         self.image_tests_enabled
     }
-    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
+    /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
     /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
     /// </note>
     pub fn timeout_minutes(&self) -> ::std::option::Option<i32> {
@@ -52,21 +52,21 @@ impl ImageTestsConfigurationBuilder {
     pub fn get_image_tests_enabled(&self) -> &::std::option::Option<bool> {
         &self.image_tests_enabled
     }
-    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
+    /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
     /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
     /// </note>
     pub fn timeout_minutes(mut self, input: i32) -> Self {
         self.timeout_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
+    /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
     /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
     /// </note>
     pub fn set_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_minutes = input;
         self
     }
-    /// <p>The maximum time in minutes that tests are permitted to run.</p> <note>
+    /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
     /// <p>The timeoutMinutes attribute is not currently active. This value is ignored.</p>
     /// </note>
     pub fn get_timeout_minutes(&self) -> &::std::option::Option<i32> {

@@ -20,14 +20,18 @@ pub struct VpcIngressConnection {
     pub ingress_vpc_configuration: ::std::option::Option<crate::types::IngressVpcConfiguration>,
     /// <p>The time when the VPC Ingress Connection was created. It's in the Unix time stamp format.</p>
     /// <ul>
-    /// <li><p>Type: Timestamp</p></li>
-    /// <li><p>Required: Yes</p></li>
+    /// <li>
+    /// <p>Type: Timestamp</p></li>
+    /// <li>
+    /// <p>Required: Yes</p></li>
     /// </ul>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
     /// <ul>
-    /// <li><p>Type: Timestamp</p></li>
-    /// <li><p>Required: No</p></li>
+    /// <li>
+    /// <p>Type: Timestamp</p></li>
+    /// <li>
+    /// <p>Required: No</p></li>
     /// </ul>
     pub deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -62,16 +66,20 @@ impl VpcIngressConnection {
     }
     /// <p>The time when the VPC Ingress Connection was created. It's in the Unix time stamp format.</p>
     /// <ul>
-    /// <li><p>Type: Timestamp</p></li>
-    /// <li><p>Required: Yes</p></li>
+    /// <li>
+    /// <p>Type: Timestamp</p></li>
+    /// <li>
+    /// <p>Required: Yes</p></li>
     /// </ul>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
     /// <ul>
-    /// <li><p>Type: Timestamp</p></li>
-    /// <li><p>Required: No</p></li>
+    /// <li>
+    /// <p>Type: Timestamp</p></li>
+    /// <li>
+    /// <p>Required: No</p></li>
     /// </ul>
     pub fn deleted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
@@ -199,8 +207,10 @@ impl VpcIngressConnectionBuilder {
     }
     /// <p>The time when the VPC Ingress Connection was created. It's in the Unix time stamp format.</p>
     /// <ul>
-    /// <li><p>Type: Timestamp</p></li>
-    /// <li><p>Required: Yes</p></li>
+    /// <li>
+    /// <p>Type: Timestamp</p></li>
+    /// <li>
+    /// <p>Required: Yes</p></li>
     /// </ul>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -208,8 +218,10 @@ impl VpcIngressConnectionBuilder {
     }
     /// <p>The time when the VPC Ingress Connection was created. It's in the Unix time stamp format.</p>
     /// <ul>
-    /// <li><p>Type: Timestamp</p></li>
-    /// <li><p>Required: Yes</p></li>
+    /// <li>
+    /// <p>Type: Timestamp</p></li>
+    /// <li>
+    /// <p>Required: Yes</p></li>
     /// </ul>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
@@ -217,16 +229,20 @@ impl VpcIngressConnectionBuilder {
     }
     /// <p>The time when the VPC Ingress Connection was created. It's in the Unix time stamp format.</p>
     /// <ul>
-    /// <li><p>Type: Timestamp</p></li>
-    /// <li><p>Required: Yes</p></li>
+    /// <li>
+    /// <p>Type: Timestamp</p></li>
+    /// <li>
+    /// <p>Required: Yes</p></li>
     /// </ul>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
     /// <ul>
-    /// <li><p>Type: Timestamp</p></li>
-    /// <li><p>Required: No</p></li>
+    /// <li>
+    /// <p>Type: Timestamp</p></li>
+    /// <li>
+    /// <p>Required: No</p></li>
     /// </ul>
     pub fn deleted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deleted_at = ::std::option::Option::Some(input);
@@ -234,8 +250,10 @@ impl VpcIngressConnectionBuilder {
     }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
     /// <ul>
-    /// <li><p>Type: Timestamp</p></li>
-    /// <li><p>Required: No</p></li>
+    /// <li>
+    /// <p>Type: Timestamp</p></li>
+    /// <li>
+    /// <p>Required: No</p></li>
     /// </ul>
     pub fn set_deleted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deleted_at = input;
@@ -243,8 +261,10 @@ impl VpcIngressConnectionBuilder {
     }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
     /// <ul>
-    /// <li><p>Type: Timestamp</p></li>
-    /// <li><p>Required: No</p></li>
+    /// <li>
+    /// <p>Type: Timestamp</p></li>
+    /// <li>
+    /// <p>Required: No</p></li>
     /// </ul>
     pub fn get_deleted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.deleted_at

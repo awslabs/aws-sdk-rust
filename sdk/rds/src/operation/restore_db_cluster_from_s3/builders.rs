@@ -22,10 +22,10 @@ impl RestoreDbClusterFromS3InputBuilder {
 }
 /// Fluent builder constructing a request to `RestoreDBClusterFromS3`.
 ///
-/// <p>Creates an Amazon Aurora DB cluster from MySQL data stored in an Amazon S3 bucket. Amazon RDS must be authorized to access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3"> Migrating Data from MySQL by Using an Amazon S3 Bucket</a> in the <i>Amazon Aurora User Guide</i>.</p> <note>
+/// <p>Creates an Amazon Aurora DB cluster from MySQL data stored in an Amazon S3 bucket. Amazon RDS must be authorized to access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3"> Migrating Data from MySQL by Using an Amazon S3 Bucket</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
 /// <p>This operation only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the <code>CreateDBInstance</code> operation to create DB instances for the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterFromS3</code> operation has completed and the DB cluster is available.</p>
 /// </note>
-/// <p>For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <note>
+/// <p>For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
 /// <p>This operation only applies to Aurora DB clusters. The source DB engine must be MySQL.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -135,7 +135,8 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.backup_retention_period(input);
@@ -145,7 +146,8 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_backup_retention_period(input);
@@ -155,7 +157,8 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35</p></li>
     /// </ul>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_backup_retention_period()
@@ -191,9 +194,12 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -203,9 +209,12 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -215,9 +224,12 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,7 +238,8 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is omitted, the default parameter group for the engine version is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
@@ -235,7 +248,8 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is omitted, the default parameter group for the engine version is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
@@ -244,7 +258,8 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is omitted, the default parameter group for the engine version is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()
@@ -350,9 +365,12 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The name of the master user for the restored DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_username(input.into());
@@ -361,9 +379,12 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The name of the master user for the restored DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_username(input);
@@ -372,9 +393,12 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The name of the master user for the restored DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 16 letters or numbers.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 16 letters or numbers.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_username()
@@ -382,8 +406,10 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_user_password(input.into());
@@ -392,8 +418,10 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_user_password(input);
@@ -402,8 +430,10 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_password()
@@ -429,10 +459,14 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
@@ -442,10 +476,14 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
@@ -455,10 +493,14 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_backup_window()
@@ -637,37 +679,40 @@ impl RestoreDBClusterFromS3FluentBuilder {
     pub fn get_s3_ingestion_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_ingestion_role_arn()
     }
-    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p><note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
     /// </note>
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
+    /// <li>
+    /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     pub fn backtrack_window(mut self, input: i64) -> Self {
         self.inner = self.inner.backtrack_window(input);
         self
     }
-    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p><note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
     /// </note>
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
+    /// <li>
+    /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     pub fn set_backtrack_window(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_backtrack_window(input);
         self
     }
-    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p><note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
     /// </note>
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
+    /// <li>
+    /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     pub fn get_backtrack_window(&self) -> &::std::option::Option<i64> {
         self.inner.get_backtrack_window()
@@ -778,8 +823,10 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -790,8 +837,10 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -802,8 +851,10 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -814,7 +865,8 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn manage_master_user_password(mut self, input: bool) -> Self {
         self.inner = self.inner.manage_master_user_password(input);
@@ -824,7 +876,8 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_manage_master_user_password(input);
@@ -834,7 +887,8 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
         self.inner.get_manage_master_user_password()

@@ -255,9 +255,12 @@ pub enum PutResourcePolicyError {
     /// <p>This exception is thrown when the resouce-based policy has syntax errors, or contains a principal that is not valid.</p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li><p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li><p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li><p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li>
+    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
+    /// <li>
+    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
+    /// <li>
+    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
     /// </ul>
     ResourcePolicyNotValidException(crate::types::error::ResourcePolicyNotValidException),
     /// <p>This exception is thrown when the specified resource type is not supported by CloudTrail.</p>

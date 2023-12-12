@@ -20,15 +20,24 @@ pub struct GetModelVersionOutput {
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li><p><code>TRAINING_IN_PROGRESS</code></p></li>
-    /// <li><p><code>TRAINING_COMPLETE</code></p></li>
-    /// <li><p><code>ACTIVATE_REQUESTED</code></p></li>
-    /// <li><p><code>ACTIVATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>INACTIVATE_REQUESTED</code></p></li>
-    /// <li><p><code>INACTIVATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>INACTIVE</code></p></li>
-    /// <li><p><code>ERROR</code></p></li>
+    /// <li>
+    /// <p><code>TRAINING_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>TRAINING_COMPLETE</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVATE_REQUESTED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVATE_REQUESTED</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>ERROR</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The model version ARN.</p>
@@ -67,15 +76,24 @@ impl GetModelVersionOutput {
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li><p><code>TRAINING_IN_PROGRESS</code></p></li>
-    /// <li><p><code>TRAINING_COMPLETE</code></p></li>
-    /// <li><p><code>ACTIVATE_REQUESTED</code></p></li>
-    /// <li><p><code>ACTIVATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>INACTIVATE_REQUESTED</code></p></li>
-    /// <li><p><code>INACTIVATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>INACTIVE</code></p></li>
-    /// <li><p><code>ERROR</code></p></li>
+    /// <li>
+    /// <p><code>TRAINING_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>TRAINING_COMPLETE</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVATE_REQUESTED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVATE_REQUESTED</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>ERROR</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -214,15 +232,24 @@ impl GetModelVersionOutputBuilder {
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li><p><code>TRAINING_IN_PROGRESS</code></p></li>
-    /// <li><p><code>TRAINING_COMPLETE</code></p></li>
-    /// <li><p><code>ACTIVATE_REQUESTED</code></p></li>
-    /// <li><p><code>ACTIVATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>INACTIVATE_REQUESTED</code></p></li>
-    /// <li><p><code>INACTIVATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>INACTIVE</code></p></li>
-    /// <li><p><code>ERROR</code></p></li>
+    /// <li>
+    /// <p><code>TRAINING_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>TRAINING_COMPLETE</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVATE_REQUESTED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVATE_REQUESTED</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>ERROR</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -231,15 +258,24 @@ impl GetModelVersionOutputBuilder {
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li><p><code>TRAINING_IN_PROGRESS</code></p></li>
-    /// <li><p><code>TRAINING_COMPLETE</code></p></li>
-    /// <li><p><code>ACTIVATE_REQUESTED</code></p></li>
-    /// <li><p><code>ACTIVATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>INACTIVATE_REQUESTED</code></p></li>
-    /// <li><p><code>INACTIVATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>INACTIVE</code></p></li>
-    /// <li><p><code>ERROR</code></p></li>
+    /// <li>
+    /// <p><code>TRAINING_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>TRAINING_COMPLETE</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVATE_REQUESTED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVATE_REQUESTED</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>ERROR</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -248,15 +284,24 @@ impl GetModelVersionOutputBuilder {
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li><p><code>TRAINING_IN_PROGRESS</code></p></li>
-    /// <li><p><code>TRAINING_COMPLETE</code></p></li>
-    /// <li><p><code>ACTIVATE_REQUESTED</code></p></li>
-    /// <li><p><code>ACTIVATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>INACTIVATE_REQUESTED</code></p></li>
-    /// <li><p><code>INACTIVATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>INACTIVE</code></p></li>
-    /// <li><p><code>ERROR</code></p></li>
+    /// <li>
+    /// <p><code>TRAINING_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>TRAINING_COMPLETE</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVATE_REQUESTED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVATE_REQUESTED</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>ERROR</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

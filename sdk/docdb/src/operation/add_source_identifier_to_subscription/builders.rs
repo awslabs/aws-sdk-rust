@@ -124,10 +124,14 @@ impl AddSourceIdentifierToSubscriptionFluentBuilder {
     }
     /// <p>The identifier of the event source to be added:</p>
     /// <ul>
-    /// <li><p>If the source type is an instance, a <code>DBInstanceIdentifier</code> must be provided.</p></li>
-    /// <li><p>If the source type is a security group, a <code>DBSecurityGroupName</code> must be provided.</p></li>
-    /// <li><p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p></li>
-    /// <li><p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is an instance, a <code>DBInstanceIdentifier</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a security group, a <code>DBSecurityGroupName</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p></li>
     /// </ul>
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_identifier(input.into());
@@ -135,10 +139,14 @@ impl AddSourceIdentifierToSubscriptionFluentBuilder {
     }
     /// <p>The identifier of the event source to be added:</p>
     /// <ul>
-    /// <li><p>If the source type is an instance, a <code>DBInstanceIdentifier</code> must be provided.</p></li>
-    /// <li><p>If the source type is a security group, a <code>DBSecurityGroupName</code> must be provided.</p></li>
-    /// <li><p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p></li>
-    /// <li><p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is an instance, a <code>DBInstanceIdentifier</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a security group, a <code>DBSecurityGroupName</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p></li>
     /// </ul>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_identifier(input);
@@ -146,10 +154,14 @@ impl AddSourceIdentifierToSubscriptionFluentBuilder {
     }
     /// <p>The identifier of the event source to be added:</p>
     /// <ul>
-    /// <li><p>If the source type is an instance, a <code>DBInstanceIdentifier</code> must be provided.</p></li>
-    /// <li><p>If the source type is a security group, a <code>DBSecurityGroupName</code> must be provided.</p></li>
-    /// <li><p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p></li>
-    /// <li><p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is an instance, a <code>DBInstanceIdentifier</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a security group, a <code>DBSecurityGroupName</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p></li>
     /// </ul>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_identifier()

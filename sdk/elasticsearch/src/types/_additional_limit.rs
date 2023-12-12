@@ -4,7 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalLimit {
-    /// <p>Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br></p>
+    /// <p>Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br>
+    /// Attributes and their details: <br><br></p>
     /// <ul>
     /// <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
     /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
@@ -15,7 +16,8 @@ pub struct AdditionalLimit {
     pub limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdditionalLimit {
-    /// <p>Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br></p>
+    /// <p>Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br>
+    /// Attributes and their details: <br><br></p>
     /// <ul>
     /// <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
     /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
@@ -46,7 +48,8 @@ pub struct AdditionalLimitBuilder {
     pub(crate) limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdditionalLimitBuilder {
-    /// <p>Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br></p>
+    /// <p>Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br>
+    /// Attributes and their details: <br><br></p>
     /// <ul>
     /// <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
     /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
@@ -56,7 +59,8 @@ impl AdditionalLimitBuilder {
         self.limit_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br></p>
+    /// <p>Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br>
+    /// Attributes and their details: <br><br></p>
     /// <ul>
     /// <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
     /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
@@ -66,7 +70,8 @@ impl AdditionalLimitBuilder {
         self.limit_name = input;
         self
     }
-    /// <p>Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br></p>
+    /// <p>Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br>
+    /// Attributes and their details: <br><br></p>
     /// <ul>
     /// <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
     /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.

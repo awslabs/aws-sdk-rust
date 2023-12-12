@@ -39,8 +39,7 @@ pub struct DeleteCustomDbEngineVersionOutput {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine
-    /// <engine_name>
+    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
     /// --engine-version
     /// <engine_version></engine_version>
     /// </engine_name></code></p>
@@ -164,8 +163,7 @@ impl DeleteCustomDbEngineVersionOutput {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine
-    /// <engine_name>
+    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
     /// --engine-version
     /// <engine_version></engine_version>
     /// </engine_name></code></p>
@@ -567,8 +565,7 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine
-    /// <engine_name>
+    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
     /// --engine-version
     /// <engine_version></engine_version>
     /// </engine_name></code></p>
@@ -584,8 +581,7 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine
-    /// <engine_name>
+    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
     /// --engine-version
     /// <engine_version></engine_version>
     /// </engine_name></code></p>
@@ -599,8 +595,7 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine
-    /// <engine_name>
+    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
     /// --engine-version
     /// <engine_version></engine_version>
     /// </engine_name></code></p>

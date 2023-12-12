@@ -14,11 +14,16 @@ pub struct ProvisionedProductDetail {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p></li>
-    /// <li><p><code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
-    /// <li><p><code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p></li>
-    /// <li><p><code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p></li>
-    /// <li><p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p></li>
+    /// <li>
+    /// <p><code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
+    /// <li>
+    /// <p><code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p></li>
+    /// <li>
+    /// <p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ProvisionedProductStatus>,
     /// <p>The current status message of the provisioned product.</p>
@@ -31,18 +36,26 @@ pub struct ProvisionedProductDetail {
     pub last_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li><p>ProvisionProduct</p></li>
-    /// <li><p>UpdateProvisionedProduct</p></li>
-    /// <li><p>ExecuteProvisionedProductPlan</p></li>
-    /// <li><p>TerminateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ProvisionProduct</p></li>
+    /// <li>
+    /// <p>UpdateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ExecuteProvisionedProductPlan</p></li>
+    /// <li>
+    /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub last_provisioning_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li><p>ProvisionProduct</p></li>
-    /// <li><p>UpdateProvisionedProduct</p></li>
-    /// <li><p>ExecuteProvisionedProductPlan</p></li>
-    /// <li><p>TerminateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ProvisionProduct</p></li>
+    /// <li>
+    /// <p>UpdateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ExecuteProvisionedProductPlan</p></li>
+    /// <li>
+    /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub last_successful_provisioning_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
@@ -71,11 +84,16 @@ impl ProvisionedProductDetail {
     }
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p></li>
-    /// <li><p><code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
-    /// <li><p><code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p></li>
-    /// <li><p><code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p></li>
-    /// <li><p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p></li>
+    /// <li>
+    /// <p><code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
+    /// <li>
+    /// <p><code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p></li>
+    /// <li>
+    /// <p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ProvisionedProductStatus> {
         self.status.as_ref()
@@ -98,20 +116,28 @@ impl ProvisionedProductDetail {
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li><p>ProvisionProduct</p></li>
-    /// <li><p>UpdateProvisionedProduct</p></li>
-    /// <li><p>ExecuteProvisionedProductPlan</p></li>
-    /// <li><p>TerminateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ProvisionProduct</p></li>
+    /// <li>
+    /// <p>UpdateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ExecuteProvisionedProductPlan</p></li>
+    /// <li>
+    /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub fn last_provisioning_record_id(&self) -> ::std::option::Option<&str> {
         self.last_provisioning_record_id.as_deref()
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li><p>ProvisionProduct</p></li>
-    /// <li><p>UpdateProvisionedProduct</p></li>
-    /// <li><p>ExecuteProvisionedProductPlan</p></li>
-    /// <li><p>TerminateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ProvisionProduct</p></li>
+    /// <li>
+    /// <p>UpdateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ExecuteProvisionedProductPlan</p></li>
+    /// <li>
+    /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub fn last_successful_provisioning_record_id(&self) -> ::std::option::Option<&str> {
         self.last_successful_provisioning_record_id.as_deref()
@@ -214,11 +240,16 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p></li>
-    /// <li><p><code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
-    /// <li><p><code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p></li>
-    /// <li><p><code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p></li>
-    /// <li><p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p></li>
+    /// <li>
+    /// <p><code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
+    /// <li>
+    /// <p><code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p></li>
+    /// <li>
+    /// <p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ProvisionedProductStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -226,11 +257,16 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p></li>
-    /// <li><p><code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
-    /// <li><p><code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p></li>
-    /// <li><p><code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p></li>
-    /// <li><p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p></li>
+    /// <li>
+    /// <p><code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
+    /// <li>
+    /// <p><code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p></li>
+    /// <li>
+    /// <p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProvisionedProductStatus>) -> Self {
         self.status = input;
@@ -238,11 +274,16 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p></li>
-    /// <li><p><code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
-    /// <li><p><code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p></li>
-    /// <li><p><code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p></li>
-    /// <li><p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p></li>
+    /// <li>
+    /// <p><code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
+    /// <li>
+    /// <p><code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p></li>
+    /// <li>
+    /// <p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProvisionedProductStatus> {
         &self.status
@@ -305,10 +346,14 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li><p>ProvisionProduct</p></li>
-    /// <li><p>UpdateProvisionedProduct</p></li>
-    /// <li><p>ExecuteProvisionedProductPlan</p></li>
-    /// <li><p>TerminateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ProvisionProduct</p></li>
+    /// <li>
+    /// <p>UpdateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ExecuteProvisionedProductPlan</p></li>
+    /// <li>
+    /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub fn last_provisioning_record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_provisioning_record_id = ::std::option::Option::Some(input.into());
@@ -316,10 +361,14 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li><p>ProvisionProduct</p></li>
-    /// <li><p>UpdateProvisionedProduct</p></li>
-    /// <li><p>ExecuteProvisionedProductPlan</p></li>
-    /// <li><p>TerminateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ProvisionProduct</p></li>
+    /// <li>
+    /// <p>UpdateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ExecuteProvisionedProductPlan</p></li>
+    /// <li>
+    /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub fn set_last_provisioning_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_provisioning_record_id = input;
@@ -327,20 +376,28 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li><p>ProvisionProduct</p></li>
-    /// <li><p>UpdateProvisionedProduct</p></li>
-    /// <li><p>ExecuteProvisionedProductPlan</p></li>
-    /// <li><p>TerminateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ProvisionProduct</p></li>
+    /// <li>
+    /// <p>UpdateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ExecuteProvisionedProductPlan</p></li>
+    /// <li>
+    /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub fn get_last_provisioning_record_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_provisioning_record_id
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li><p>ProvisionProduct</p></li>
-    /// <li><p>UpdateProvisionedProduct</p></li>
-    /// <li><p>ExecuteProvisionedProductPlan</p></li>
-    /// <li><p>TerminateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ProvisionProduct</p></li>
+    /// <li>
+    /// <p>UpdateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ExecuteProvisionedProductPlan</p></li>
+    /// <li>
+    /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub fn last_successful_provisioning_record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_successful_provisioning_record_id = ::std::option::Option::Some(input.into());
@@ -348,10 +405,14 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li><p>ProvisionProduct</p></li>
-    /// <li><p>UpdateProvisionedProduct</p></li>
-    /// <li><p>ExecuteProvisionedProductPlan</p></li>
-    /// <li><p>TerminateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ProvisionProduct</p></li>
+    /// <li>
+    /// <p>UpdateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ExecuteProvisionedProductPlan</p></li>
+    /// <li>
+    /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub fn set_last_successful_provisioning_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_successful_provisioning_record_id = input;
@@ -359,10 +420,14 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li><p>ProvisionProduct</p></li>
-    /// <li><p>UpdateProvisionedProduct</p></li>
-    /// <li><p>ExecuteProvisionedProductPlan</p></li>
-    /// <li><p>TerminateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ProvisionProduct</p></li>
+    /// <li>
+    /// <p>UpdateProvisionedProduct</p></li>
+    /// <li>
+    /// <p>ExecuteProvisionedProductPlan</p></li>
+    /// <li>
+    /// <p>TerminateProvisionedProduct</p></li>
     /// </ul>
     pub fn get_last_successful_provisioning_record_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_successful_provisioning_record_id

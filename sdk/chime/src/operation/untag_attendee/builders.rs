@@ -22,7 +22,7 @@ impl UntagAttendeeInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagAttendee`.
 ///
-/// <p>Untags the specified tags from the specified Amazon Chime SDK attendee.</p> <important>
+/// <p>Untags the specified tags from the specified Amazon Chime SDK attendee.</p><important>
 /// <p>UntagAttendee is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API.</p>
 /// </important>
 #[deprecated(

@@ -6,8 +6,7 @@
 pub struct Instance {
     /// <p>A unique identifier for the fleet that the instance belongs to.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
@@ -17,15 +16,15 @@ pub struct Instance {
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon Elastic Compute Cloud Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -37,9 +36,12 @@ pub struct Instance {
     pub r#type: ::std::option::Option<crate::types::Ec2InstanceType>,
     /// <p>Current status of the instance. Possible statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions.</p></li>
-    /// <li><p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
+    /// <li>
+    /// <p><b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions.</p></li>
+    /// <li>
+    /// <p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
@@ -52,8 +54,7 @@ impl Instance {
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
@@ -69,15 +70,15 @@ impl Instance {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon Elastic Compute Cloud Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -95,9 +96,12 @@ impl Instance {
     }
     /// <p>Current status of the instance. Possible statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions.</p></li>
-    /// <li><p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
+    /// <li>
+    /// <p><b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions.</p></li>
+    /// <li>
+    /// <p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {
         self.status.as_ref()
@@ -164,24 +168,21 @@ impl InstanceBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,15 +218,15 @@ impl InstanceBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon Elastic Compute Cloud Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -236,15 +237,15 @@ impl InstanceBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon Elastic Compute Cloud Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -255,15 +256,15 @@ impl InstanceBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon Elastic Compute Cloud Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -301,9 +302,12 @@ impl InstanceBuilder {
     }
     /// <p>Current status of the instance. Possible statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions.</p></li>
-    /// <li><p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
+    /// <li>
+    /// <p><b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions.</p></li>
+    /// <li>
+    /// <p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::InstanceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -311,9 +315,12 @@ impl InstanceBuilder {
     }
     /// <p>Current status of the instance. Possible statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions.</p></li>
-    /// <li><p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
+    /// <li>
+    /// <p><b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions.</p></li>
+    /// <li>
+    /// <p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceStatus>) -> Self {
         self.status = input;
@@ -321,9 +328,12 @@ impl InstanceBuilder {
     }
     /// <p>Current status of the instance. Possible statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions.</p></li>
-    /// <li><p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
+    /// <li>
+    /// <p><b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions.</p></li>
+    /// <li>
+    /// <p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
         &self.status

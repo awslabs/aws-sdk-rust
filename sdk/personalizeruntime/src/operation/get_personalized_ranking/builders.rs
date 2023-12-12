@@ -22,7 +22,7 @@ impl GetPersonalizedRankingInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPersonalizedRanking`.
 ///
-/// <p>Re-ranks a list of recommended items for the given user. The first item in the list is deemed the most likely item to be of interest to the user.</p> <note>
+/// <p>Re-ranks a list of recommended items for the given user. The first item in the list is deemed the most likely item to be of interest to the user.</p><note>
 /// <p>The solution backing the campaign must have been created using a recipe of type PERSONALIZED_RANKING.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

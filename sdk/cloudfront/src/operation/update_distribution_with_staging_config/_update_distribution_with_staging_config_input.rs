@@ -8,8 +8,7 @@ pub struct UpdateDistributionWithStagingConfigInput {
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
     pub staging_distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p><code>
-    /// <primary etag>
+    /// <p><code><primary etag>
     /// ,
     /// <staging etag></staging>
     /// </primary></code></p>
@@ -25,8 +24,7 @@ impl UpdateDistributionWithStagingConfigInput {
         self.staging_distribution_id.as_deref()
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p><code>
-    /// <primary etag>
+    /// <p><code><primary etag>
     /// ,
     /// <staging etag></staging>
     /// </primary></code></p>
@@ -80,8 +78,7 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
         &self.staging_distribution_id
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p><code>
-    /// <primary etag>
+    /// <p><code><primary etag>
     /// ,
     /// <staging etag></staging>
     /// </primary></code></p>
@@ -90,8 +87,7 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
         self
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p><code>
-    /// <primary etag>
+    /// <p><code><primary etag>
     /// ,
     /// <staging etag></staging>
     /// </primary></code></p>
@@ -100,8 +96,7 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
         self
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p><code>
-    /// <primary etag>
+    /// <p><code><primary etag>
     /// ,
     /// <staging etag></staging>
     /// </primary></code></p>

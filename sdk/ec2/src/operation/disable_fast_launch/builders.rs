@@ -22,7 +22,7 @@ impl DisableFastLaunchInputBuilder {
 }
 /// Fluent builder constructing a request to `DisableFastLaunch`.
 ///
-/// <p>Discontinue Windows fast launch for a Windows AMI, and clean up existing pre-provisioned snapshots. After you disable Windows fast launch, the AMI uses the standard launch process for each new instance. Amazon EC2 must remove all pre-provisioned snapshots before you can enable Windows fast launch again.</p> <note>
+/// <p>Discontinue Windows fast launch for a Windows AMI, and clean up existing pre-provisioned snapshots. After you disable Windows fast launch, the AMI uses the standard launch process for each new instance. Amazon EC2 must remove all pre-provisioned snapshots before you can enable Windows fast launch again.</p><note>
 /// <p>You can only change these settings for Windows AMIs that you own or that have been shared with you.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

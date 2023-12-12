@@ -26,7 +26,7 @@ impl RunJobFlowInputBuilder {
 /// <p>For additional protection, you can set the <code>JobFlowInstancesConfig</code> <code>TerminationProtected</code> parameter to <code>TRUE</code> to lock the cluster and prevent it from being terminated by API call, user intervention, or in the event of a job flow error.</p>
 /// <p>A maximum of 256 steps are allowed in each job flow.</p>
 /// <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop.</p>
-/// <p>For long-running clusters, we recommend that you periodically store your results.</p> <note>
+/// <p>For long-running clusters, we recommend that you periodically store your results.</p><note>
 /// <p>The instance fleets configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. The RunJobFlow request can contain InstanceFleets parameters or InstanceGroups parameters, but not both.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -257,8 +257,10 @@ impl RunJobFlowFluentBuilder {
     /// </note>
     /// <p>A list of strings that indicates third-party software to use. For more information, see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently supported values are:</p>
     /// <ul>
-    /// <li><p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p></li>
-    /// <li><p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p></li>
     /// </ul>
     pub fn supported_products(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.supported_products(input.into());
@@ -269,8 +271,10 @@ impl RunJobFlowFluentBuilder {
     /// </note>
     /// <p>A list of strings that indicates third-party software to use. For more information, see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently supported values are:</p>
     /// <ul>
-    /// <li><p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p></li>
-    /// <li><p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p></li>
     /// </ul>
     pub fn set_supported_products(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_supported_products(input);
@@ -281,8 +285,10 @@ impl RunJobFlowFluentBuilder {
     /// </note>
     /// <p>A list of strings that indicates third-party software to use. For more information, see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently supported values are:</p>
     /// <ul>
-    /// <li><p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p></li>
-    /// <li><p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p></li>
     /// </ul>
     pub fn get_supported_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_supported_products()
@@ -296,14 +302,22 @@ impl RunJobFlowFluentBuilder {
     /// </note>
     /// <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported values are:</p>
     /// <ul>
-    /// <li><p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p></li>
-    /// <li><p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p></li>
-    /// <li><p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p></li>
-    /// <li><p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p></li>
-    /// <li><p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p></li>
-    /// <li><p>"hue"- launch the cluster with Hue installed.</p></li>
-    /// <li><p>"spark" - launch the cluster with Apache Spark installed.</p></li>
-    /// <li><p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p></li>
+    /// <li>
+    /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p></li>
+    /// <li>
+    /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p></li>
+    /// <li>
+    /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p></li>
+    /// <li>
+    /// <p>"hue"- launch the cluster with Hue installed.</p></li>
+    /// <li>
+    /// <p>"spark" - launch the cluster with Apache Spark installed.</p></li>
+    /// <li>
+    /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p></li>
     /// </ul>
     pub fn new_supported_products(mut self, input: crate::types::SupportedProductConfig) -> Self {
         self.inner = self.inner.new_supported_products(input);
@@ -314,14 +328,22 @@ impl RunJobFlowFluentBuilder {
     /// </note>
     /// <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported values are:</p>
     /// <ul>
-    /// <li><p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p></li>
-    /// <li><p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p></li>
-    /// <li><p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p></li>
-    /// <li><p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p></li>
-    /// <li><p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p></li>
-    /// <li><p>"hue"- launch the cluster with Hue installed.</p></li>
-    /// <li><p>"spark" - launch the cluster with Apache Spark installed.</p></li>
-    /// <li><p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p></li>
+    /// <li>
+    /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p></li>
+    /// <li>
+    /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p></li>
+    /// <li>
+    /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p></li>
+    /// <li>
+    /// <p>"hue"- launch the cluster with Hue installed.</p></li>
+    /// <li>
+    /// <p>"spark" - launch the cluster with Apache Spark installed.</p></li>
+    /// <li>
+    /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p></li>
     /// </ul>
     pub fn set_new_supported_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedProductConfig>>) -> Self {
         self.inner = self.inner.set_new_supported_products(input);
@@ -332,14 +354,22 @@ impl RunJobFlowFluentBuilder {
     /// </note>
     /// <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported values are:</p>
     /// <ul>
-    /// <li><p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p></li>
-    /// <li><p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p></li>
-    /// <li><p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p></li>
-    /// <li><p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p></li>
-    /// <li><p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p></li>
-    /// <li><p>"hue"- launch the cluster with Hue installed.</p></li>
-    /// <li><p>"spark" - launch the cluster with Apache Spark installed.</p></li>
-    /// <li><p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p></li>
+    /// <li>
+    /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p></li>
+    /// <li>
+    /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p></li>
+    /// <li>
+    /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p></li>
+    /// <li>
+    /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p></li>
+    /// <li>
+    /// <p>"hue"- launch the cluster with Hue installed.</p></li>
+    /// <li>
+    /// <p>"spark" - launch the cluster with Apache Spark installed.</p></li>
+    /// <li>
+    /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p></li>
     /// </ul>
     pub fn get_new_supported_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedProductConfig>> {
         self.inner.get_new_supported_products()

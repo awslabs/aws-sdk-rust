@@ -4,12 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceConfig {
-    /// <p>The ML compute instance type.</p> <note>
+    /// <p>The ML compute instance type.</p><note>
     /// <p>SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December 9th, 2022.</p>
     /// <p><a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
     /// </ul>
     /// <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p>
     /// </note>
@@ -23,15 +25,19 @@ pub struct ResourceConfig {
     /// <p>To look up instance types and their instance storage types and volumes, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
     /// <p>To find the default local paths defined by the SageMaker training platform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model Artifacts, and Outputs</a>.</p>
     pub volume_size_in_gb: ::std::option::Option<i32>,
-    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p><note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
     /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
@@ -40,12 +46,14 @@ pub struct ResourceConfig {
     pub keep_alive_period_in_seconds: ::std::option::Option<i32>,
 }
 impl ResourceConfig {
-    /// <p>The ML compute instance type.</p> <note>
+    /// <p>The ML compute instance type.</p><note>
     /// <p>SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December 9th, 2022.</p>
     /// <p><a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
     /// </ul>
     /// <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p>
     /// </note>
@@ -65,15 +73,19 @@ impl ResourceConfig {
     pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
     }
-    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p><note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
     /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
@@ -108,12 +120,14 @@ pub struct ResourceConfigBuilder {
     pub(crate) keep_alive_period_in_seconds: ::std::option::Option<i32>,
 }
 impl ResourceConfigBuilder {
-    /// <p>The ML compute instance type.</p> <note>
+    /// <p>The ML compute instance type.</p><note>
     /// <p>SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December 9th, 2022.</p>
     /// <p><a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
     /// </ul>
     /// <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p>
     /// </note>
@@ -121,12 +135,14 @@ impl ResourceConfigBuilder {
         self.instance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ML compute instance type.</p> <note>
+    /// <p>The ML compute instance type.</p><note>
     /// <p>SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December 9th, 2022.</p>
     /// <p><a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
     /// </ul>
     /// <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p>
     /// </note>
@@ -134,12 +150,14 @@ impl ResourceConfigBuilder {
         self.instance_type = input;
         self
     }
-    /// <p>The ML compute instance type.</p> <note>
+    /// <p>The ML compute instance type.</p><note>
     /// <p>SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December 9th, 2022.</p>
     /// <p><a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
     /// </ul>
     /// <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p>
     /// </note>
@@ -190,43 +208,55 @@ impl ResourceConfigBuilder {
     pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
         &self.volume_size_in_gb
     }
-    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p><note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
     /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p><note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
     /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
         self
     }
-    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
+    /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p><note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
     /// <p>The <code>VolumeKmsKeyId</code> can be in any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_kms_key_id

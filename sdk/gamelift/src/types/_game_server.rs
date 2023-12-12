@@ -22,8 +22,10 @@ pub struct GameServer {
     pub claim_status: ::std::option::Option<crate::types::GameServerClaimStatus>,
     /// <p>Indicates whether the game server is currently available for new games or is busy. Possible statuses include:</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - The game server is available to be claimed. A game server that has been claimed remains in this status until it reports game hosting activity.</p></li>
-    /// <li><p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The game server is available to be claimed. A game server that has been claimed remains in this status until it reports game hosting activity.</p></li>
+    /// <li>
+    /// <p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
     /// </ul>
     pub utilization_status: ::std::option::Option<crate::types::GameServerUtilizationStatus>,
     /// <p>Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
@@ -64,8 +66,10 @@ impl GameServer {
     }
     /// <p>Indicates whether the game server is currently available for new games or is busy. Possible statuses include:</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - The game server is available to be claimed. A game server that has been claimed remains in this status until it reports game hosting activity.</p></li>
-    /// <li><p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The game server is available to be claimed. A game server that has been claimed remains in this status until it reports game hosting activity.</p></li>
+    /// <li>
+    /// <p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
     /// </ul>
     pub fn utilization_status(&self) -> ::std::option::Option<&crate::types::GameServerUtilizationStatus> {
         self.utilization_status.as_ref()
@@ -207,8 +211,10 @@ impl GameServerBuilder {
     }
     /// <p>Indicates whether the game server is currently available for new games or is busy. Possible statuses include:</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - The game server is available to be claimed. A game server that has been claimed remains in this status until it reports game hosting activity.</p></li>
-    /// <li><p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The game server is available to be claimed. A game server that has been claimed remains in this status until it reports game hosting activity.</p></li>
+    /// <li>
+    /// <p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
     /// </ul>
     pub fn utilization_status(mut self, input: crate::types::GameServerUtilizationStatus) -> Self {
         self.utilization_status = ::std::option::Option::Some(input);
@@ -216,8 +222,10 @@ impl GameServerBuilder {
     }
     /// <p>Indicates whether the game server is currently available for new games or is busy. Possible statuses include:</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - The game server is available to be claimed. A game server that has been claimed remains in this status until it reports game hosting activity.</p></li>
-    /// <li><p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The game server is available to be claimed. A game server that has been claimed remains in this status until it reports game hosting activity.</p></li>
+    /// <li>
+    /// <p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
     /// </ul>
     pub fn set_utilization_status(mut self, input: ::std::option::Option<crate::types::GameServerUtilizationStatus>) -> Self {
         self.utilization_status = input;
@@ -225,8 +233,10 @@ impl GameServerBuilder {
     }
     /// <p>Indicates whether the game server is currently available for new games or is busy. Possible statuses include:</p>
     /// <ul>
-    /// <li><p><code>AVAILABLE</code> - The game server is available to be claimed. A game server that has been claimed remains in this status until it reports game hosting activity.</p></li>
-    /// <li><p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The game server is available to be claimed. A game server that has been claimed remains in this status until it reports game hosting activity.</p></li>
+    /// <li>
+    /// <p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
     /// </ul>
     pub fn get_utilization_status(&self) -> &::std::option::Option<crate::types::GameServerUtilizationStatus> {
         &self.utilization_status

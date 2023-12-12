@@ -111,14 +111,21 @@ impl PutParameterFluentBuilder {
     /// <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
     /// <p>Naming Constraints:</p>
     /// <ul>
-    /// <li><p>Parameter names are case sensitive.</p></li>
-    /// <li><p>A parameter name must be unique within an Amazon Web Services Region</p></li>
-    /// <li><p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p></li>
-    /// <li><p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code></p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code></p></li>
-    /// <li><p>A parameter name can't include spaces.</p></li>
-    /// <li><p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p></li>
+    /// <li>
+    /// <p>Parameter names are case sensitive.</p></li>
+    /// <li>
+    /// <p>A parameter name must be unique within an Amazon Web Services Region</p></li>
+    /// <li>
+    /// <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p></li>
+    /// <li>
+    /// <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code></p>
+    /// <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code></p></li>
+    /// <li>
+    /// <p>A parameter name can't include spaces.</p></li>
+    /// <li>
+    /// <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p></li>
     /// </ul>
-    /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+    /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
     /// </note>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,14 +135,21 @@ impl PutParameterFluentBuilder {
     /// <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
     /// <p>Naming Constraints:</p>
     /// <ul>
-    /// <li><p>Parameter names are case sensitive.</p></li>
-    /// <li><p>A parameter name must be unique within an Amazon Web Services Region</p></li>
-    /// <li><p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p></li>
-    /// <li><p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code></p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code></p></li>
-    /// <li><p>A parameter name can't include spaces.</p></li>
-    /// <li><p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p></li>
+    /// <li>
+    /// <p>Parameter names are case sensitive.</p></li>
+    /// <li>
+    /// <p>A parameter name must be unique within an Amazon Web Services Region</p></li>
+    /// <li>
+    /// <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p></li>
+    /// <li>
+    /// <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code></p>
+    /// <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code></p></li>
+    /// <li>
+    /// <p>A parameter name can't include spaces.</p></li>
+    /// <li>
+    /// <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p></li>
     /// </ul>
-    /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+    /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
     /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -145,83 +159,90 @@ impl PutParameterFluentBuilder {
     /// <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
     /// <p>Naming Constraints:</p>
     /// <ul>
-    /// <li><p>Parameter names are case sensitive.</p></li>
-    /// <li><p>A parameter name must be unique within an Amazon Web Services Region</p></li>
-    /// <li><p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p></li>
-    /// <li><p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code></p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code></p></li>
-    /// <li><p>A parameter name can't include spaces.</p></li>
-    /// <li><p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p></li>
+    /// <li>
+    /// <p>Parameter names are case sensitive.</p></li>
+    /// <li>
+    /// <p>A parameter name must be unique within an Amazon Web Services Region</p></li>
+    /// <li>
+    /// <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p></li>
+    /// <li>
+    /// <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code></p>
+    /// <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code></p></li>
+    /// <li>
+    /// <p>A parameter name can't include spaces.</p></li>
+    /// <li>
+    /// <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p></li>
     /// </ul>
-    /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+    /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p><note>
     /// <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
     /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Information about the parameter that you want to add to the system. Optional but recommended.</p> <important>
+    /// <p>Information about the parameter that you want to add to the system. Optional but recommended.</p><important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>Information about the parameter that you want to add to the system. Optional but recommended.</p> <important>
+    /// <p>Information about the parameter that you want to add to the system. Optional but recommended.</p><important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>Information about the parameter that you want to add to the system. Optional but recommended.</p> <important>
+    /// <p>Information about the parameter that you want to add to the system. Optional but recommended.</p><important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p> <note>
+    /// <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p><note>
     /// <p>Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p>
     /// </note>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
         self
     }
-    /// <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p> <note>
+    /// <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p><note>
     /// <p>Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p>
     /// </note>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
         self
     }
-    /// <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p> <note>
+    /// <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p><note>
     /// <p>Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p>
     /// </note>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_value()
     }
-    /// <p>The type of parameter that you want to add to the system.</p> <note>
+    /// <p>The type of parameter that you want to add to the system.</p><note>
     /// <p><code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
     /// </note>
-    /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p> <important>
+    /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p><important>
     /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a parameter type when creating a parameter.</p>
     /// </important>
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of parameter that you want to add to the system.</p> <note>
+    /// <p>The type of parameter that you want to add to the system.</p><note>
     /// <p><code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
     /// </note>
-    /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p> <important>
+    /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p><important>
     /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a parameter type when creating a parameter.</p>
     /// </important>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ParameterType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of parameter that you want to add to the system.</p> <note>
+    /// <p>The type of parameter that you want to add to the system.</p><note>
     /// <p><code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
     /// </note>
-    /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p> <important>
+    /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p><important>
     /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a parameter type when creating a parameter.</p>
     /// </important>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ParameterType> {
@@ -230,7 +251,8 @@ impl PutParameterFluentBuilder {
     /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better security. Required for parameters that use the <code>SecureString</code> data type.</p>
     /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account which is not as secure as using a custom key.</p>
     /// <ul>
-    /// <li><p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p></li>
+    /// <li>
+    /// <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p></li>
     /// </ul>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_id(input.into());
@@ -239,7 +261,8 @@ impl PutParameterFluentBuilder {
     /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better security. Required for parameters that use the <code>SecureString</code> data type.</p>
     /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account which is not as secure as using a custom key.</p>
     /// <ul>
-    /// <li><p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p></li>
+    /// <li>
+    /// <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p></li>
     /// </ul>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_id(input);
@@ -248,7 +271,8 @@ impl PutParameterFluentBuilder {
     /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better security. Required for parameters that use the <code>SecureString</code> data type.</p>
     /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account which is not as secure as using a custom key.</p>
     /// <ul>
-    /// <li><p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p></li>
+    /// <li>
+    /// <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p></li>
     /// </ul>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_id()
@@ -287,10 +311,13 @@ impl PutParameterFluentBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=Resource,Value=S3bucket</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=ParameterType,Value=LicenseKey</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=Resource,Value=S3bucket</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=ParameterType,Value=LicenseKey</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing Systems Manager parameter, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -299,10 +326,13 @@ impl PutParameterFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=Resource,Value=S3bucket</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=ParameterType,Value=LicenseKey</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=Resource,Value=S3bucket</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=ParameterType,Value=LicenseKey</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing Systems Manager parameter, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
@@ -311,10 +341,13 @@ impl PutParameterFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=Resource,Value=S3bucket</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=ParameterType,Value=LicenseKey</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=Resource,Value=S3bucket</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=ParameterType,Value=LicenseKey</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing Systems Manager parameter, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
@@ -329,14 +362,21 @@ impl PutParameterFluentBuilder {
     /// <p>In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if you don't specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store default tier configuration.</p>
     /// <p>The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the advanced-parameter tier, you can specify one of the following as the default:</p>
     /// <ul>
-    /// <li><p><b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.</p></li>
-    /// <li><p><b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the parameter is standard or advanced.</p> <p>If the request doesn't include any options that require an advanced parameter, the parameter is created in the standard-parameter tier. If one or more options requiring an advanced parameter are included in the request, Parameter Store create a parameter in the advanced-parameter tier.</p> <p>This approach helps control your parameter-related costs by always creating standard parameters unless an advanced parameter is necessary.</p></li>
+    /// <li>
+    /// <p><b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.</p></li>
+    /// <li>
+    /// <p><b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the parameter is standard or advanced.</p>
+    /// <p>If the request doesn't include any options that require an advanced parameter, the parameter is created in the standard-parameter tier. If one or more options requiring an advanced parameter are included in the request, Parameter Store create a parameter in the advanced-parameter tier.</p>
+    /// <p>This approach helps control your parameter-related costs by always creating standard parameters unless an advanced parameter is necessary.</p></li>
     /// </ul>
     /// <p>Options that require an advanced parameter include the following:</p>
     /// <ul>
-    /// <li><p>The content size of the parameter is more than 4 KB.</p></li>
-    /// <li><p>The parameter uses a parameter policy.</p></li>
-    /// <li><p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>The content size of the parameter is more than 4 KB.</p></li>
+    /// <li>
+    /// <p>The parameter uses a parameter policy.</p></li>
+    /// <li>
+    /// <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p></li>
     /// </ul>
     /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn tier(mut self, input: crate::types::ParameterTier) -> Self {
@@ -352,14 +392,21 @@ impl PutParameterFluentBuilder {
     /// <p>In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if you don't specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store default tier configuration.</p>
     /// <p>The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the advanced-parameter tier, you can specify one of the following as the default:</p>
     /// <ul>
-    /// <li><p><b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.</p></li>
-    /// <li><p><b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the parameter is standard or advanced.</p> <p>If the request doesn't include any options that require an advanced parameter, the parameter is created in the standard-parameter tier. If one or more options requiring an advanced parameter are included in the request, Parameter Store create a parameter in the advanced-parameter tier.</p> <p>This approach helps control your parameter-related costs by always creating standard parameters unless an advanced parameter is necessary.</p></li>
+    /// <li>
+    /// <p><b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.</p></li>
+    /// <li>
+    /// <p><b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the parameter is standard or advanced.</p>
+    /// <p>If the request doesn't include any options that require an advanced parameter, the parameter is created in the standard-parameter tier. If one or more options requiring an advanced parameter are included in the request, Parameter Store create a parameter in the advanced-parameter tier.</p>
+    /// <p>This approach helps control your parameter-related costs by always creating standard parameters unless an advanced parameter is necessary.</p></li>
     /// </ul>
     /// <p>Options that require an advanced parameter include the following:</p>
     /// <ul>
-    /// <li><p>The content size of the parameter is more than 4 KB.</p></li>
-    /// <li><p>The parameter uses a parameter policy.</p></li>
-    /// <li><p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>The content size of the parameter is more than 4 KB.</p></li>
+    /// <li>
+    /// <p>The parameter uses a parameter policy.</p></li>
+    /// <li>
+    /// <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p></li>
     /// </ul>
     /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::ParameterTier>) -> Self {
@@ -375,14 +422,21 @@ impl PutParameterFluentBuilder {
     /// <p>In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if you don't specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store default tier configuration.</p>
     /// <p>The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the advanced-parameter tier, you can specify one of the following as the default:</p>
     /// <ul>
-    /// <li><p><b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.</p></li>
-    /// <li><p><b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the parameter is standard or advanced.</p> <p>If the request doesn't include any options that require an advanced parameter, the parameter is created in the standard-parameter tier. If one or more options requiring an advanced parameter are included in the request, Parameter Store create a parameter in the advanced-parameter tier.</p> <p>This approach helps control your parameter-related costs by always creating standard parameters unless an advanced parameter is necessary.</p></li>
+    /// <li>
+    /// <p><b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.</p></li>
+    /// <li>
+    /// <p><b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the parameter is standard or advanced.</p>
+    /// <p>If the request doesn't include any options that require an advanced parameter, the parameter is created in the standard-parameter tier. If one or more options requiring an advanced parameter are included in the request, Parameter Store create a parameter in the advanced-parameter tier.</p>
+    /// <p>This approach helps control your parameter-related costs by always creating standard parameters unless an advanced parameter is necessary.</p></li>
     /// </ul>
     /// <p>Options that require an advanced parameter include the following:</p>
     /// <ul>
-    /// <li><p>The content size of the parameter is more than 4 KB.</p></li>
-    /// <li><p>The parameter uses a parameter policy.</p></li>
-    /// <li><p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>The content size of the parameter is more than 4 KB.</p></li>
+    /// <li>
+    /// <p>The parameter uses a parameter policy.</p></li>
+    /// <li>
+    /// <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p></li>
     /// </ul>
     /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::ParameterTier> {
@@ -417,11 +471,14 @@ impl PutParameterFluentBuilder {
     /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine Image (AMI) IDs.</p>
     /// <p><b>The following data type values are supported.</b></p>
     /// <ul>
-    /// <li><p><code>text</code></p></li>
-    /// <li><p><code>aws:ec2:image</code></p></li>
-    /// <li><p><code>aws:ssm:integration</code></p></li>
+    /// <li>
+    /// <p><code>text</code></p></li>
+    /// <li>
+    /// <p><code>aws:ec2:image</code></p></li>
+    /// <li>
+    /// <p><code>aws:ssm:integration</code></p></li>
     /// </ul>
-    /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.</p> <note>
+    /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.</p><note>
     /// <p>If the action is successful, the service sends back an HTTP 200 response which indicates a successful <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is validated asynchronously, and the <code>PutParameter</code> call returns before the validation is complete. If you submit an invalid AMI value, the PutParameter operation will return success, but the asynchronous validation will fail and the parameter will not be created or updated. To monitor whether your <code>aws:ec2:image</code> parameters are created successfully, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up notifications or trigger actions based on Parameter Store events</a>. For more information about AMI format validation , see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a>.</p>
     /// </note>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -431,11 +488,14 @@ impl PutParameterFluentBuilder {
     /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine Image (AMI) IDs.</p>
     /// <p><b>The following data type values are supported.</b></p>
     /// <ul>
-    /// <li><p><code>text</code></p></li>
-    /// <li><p><code>aws:ec2:image</code></p></li>
-    /// <li><p><code>aws:ssm:integration</code></p></li>
+    /// <li>
+    /// <p><code>text</code></p></li>
+    /// <li>
+    /// <p><code>aws:ec2:image</code></p></li>
+    /// <li>
+    /// <p><code>aws:ssm:integration</code></p></li>
     /// </ul>
-    /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.</p> <note>
+    /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.</p><note>
     /// <p>If the action is successful, the service sends back an HTTP 200 response which indicates a successful <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is validated asynchronously, and the <code>PutParameter</code> call returns before the validation is complete. If you submit an invalid AMI value, the PutParameter operation will return success, but the asynchronous validation will fail and the parameter will not be created or updated. To monitor whether your <code>aws:ec2:image</code> parameters are created successfully, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up notifications or trigger actions based on Parameter Store events</a>. For more information about AMI format validation , see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a>.</p>
     /// </note>
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -445,11 +505,14 @@ impl PutParameterFluentBuilder {
     /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine Image (AMI) IDs.</p>
     /// <p><b>The following data type values are supported.</b></p>
     /// <ul>
-    /// <li><p><code>text</code></p></li>
-    /// <li><p><code>aws:ec2:image</code></p></li>
-    /// <li><p><code>aws:ssm:integration</code></p></li>
+    /// <li>
+    /// <p><code>text</code></p></li>
+    /// <li>
+    /// <p><code>aws:ec2:image</code></p></li>
+    /// <li>
+    /// <p><code>aws:ssm:integration</code></p></li>
     /// </ul>
-    /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.</p> <note>
+    /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.</p><note>
     /// <p>If the action is successful, the service sends back an HTTP 200 response which indicates a successful <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is validated asynchronously, and the <code>PutParameter</code> call returns before the validation is complete. If you submit an invalid AMI value, the PutParameter operation will return success, but the asynchronous validation will fail and the parameter will not be created or updated. To monitor whether your <code>aws:ec2:image</code> parameters are created successfully, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up notifications or trigger actions based on Parameter Store events</a>. For more information about AMI format validation , see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a>.</p>
     /// </note>
     pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {

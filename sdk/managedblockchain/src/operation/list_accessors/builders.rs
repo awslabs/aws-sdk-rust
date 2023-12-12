@@ -142,21 +142,21 @@ impl ListAccessorsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
+    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p><note>
     /// <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were created before the <code>networkType</code> property was introduced.</p>
     /// </note>
     pub fn network_type(mut self, input: crate::types::AccessorNetworkType) -> Self {
         self.inner = self.inner.network_type(input);
         self
     }
-    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
+    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p><note>
     /// <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were created before the <code>networkType</code> property was introduced.</p>
     /// </note>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::AccessorNetworkType>) -> Self {
         self.inner = self.inner.set_network_type(input);
         self
     }
-    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
+    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p><note>
     /// <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were created before the <code>networkType</code> property was introduced.</p>
     /// </note>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::AccessorNetworkType> {

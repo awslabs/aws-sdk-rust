@@ -20,7 +20,7 @@ pub struct DbInstance {
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The initial database name that you provided (if required) when you created the DB instance. This name is returned for the life of your DB instance. For an RDS for Oracle CDB instance, the name identifies the PDB rather than the CDB.</p>
     pub db_name: ::std::option::Option<::std::string::String>,
-    /// <p>The connection endpoint for the DB instance.</p> <note>
+    /// <p>The connection endpoint for the DB instance.</p><note>
     /// <p>The endpoint might not be shown for instances with the status of <code>creating</code>.</p>
     /// </note>
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
@@ -58,11 +58,11 @@ pub struct DbInstance {
     pub read_replica_source_db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the read replicas associated with this DB instance.</p>
     pub read_replica_db_instance_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.</p> <note>
+    /// <p>The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.</p><note>
     /// <p>Currently, each RDS DB instance can have only one Aurora read replica.</p>
     /// </note>
     pub read_replica_db_cluster_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p><note>
     /// <p>This attribute is only supported in RDS for Oracle.</p>
     /// </note>
     pub replica_mode: ::std::option::Option<crate::types::ReplicaMode>,
@@ -131,9 +131,12 @@ pub struct DbInstance {
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub performance_insights_retention_period: ::std::option::Option<i32>,
@@ -177,9 +180,12 @@ pub struct DbInstance {
     pub resume_full_automation_mode_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>The profile must exist in your account.</p></li>
-    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
@@ -243,7 +249,7 @@ impl DbInstance {
     pub fn db_name(&self) -> ::std::option::Option<&str> {
         self.db_name.as_deref()
     }
-    /// <p>The connection endpoint for the DB instance.</p> <note>
+    /// <p>The connection endpoint for the DB instance.</p><note>
     /// <p>The endpoint might not be shown for instances with the status of <code>creating</code>.</p>
     /// </note>
     pub fn endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
@@ -325,7 +331,7 @@ impl DbInstance {
     pub fn read_replica_db_instance_identifiers(&self) -> &[::std::string::String] {
         self.read_replica_db_instance_identifiers.as_deref().unwrap_or_default()
     }
-    /// <p>The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.</p> <note>
+    /// <p>The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.</p><note>
     /// <p>Currently, each RDS DB instance can have only one Aurora read replica.</p>
     /// </note>
     ///
@@ -333,7 +339,7 @@ impl DbInstance {
     pub fn read_replica_db_cluster_identifiers(&self) -> &[::std::string::String] {
         self.read_replica_db_cluster_identifiers.as_deref().unwrap_or_default()
     }
-    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p><note>
     /// <p>This attribute is only supported in RDS for Oracle.</p>
     /// </note>
     pub fn replica_mode(&self) -> ::std::option::Option<&crate::types::ReplicaMode> {
@@ -464,9 +470,12 @@ impl DbInstance {
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn performance_insights_retention_period(&self) -> ::std::option::Option<i32> {
@@ -556,9 +565,12 @@ impl DbInstance {
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>The profile must exist in your account.</p></li>
-    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn custom_iam_instance_profile(&self) -> ::std::option::Option<&str> {
@@ -818,21 +830,21 @@ impl DbInstanceBuilder {
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_name
     }
-    /// <p>The connection endpoint for the DB instance.</p> <note>
+    /// <p>The connection endpoint for the DB instance.</p><note>
     /// <p>The endpoint might not be shown for instances with the status of <code>creating</code>.</p>
     /// </note>
     pub fn endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The connection endpoint for the DB instance.</p> <note>
+    /// <p>The connection endpoint for the DB instance.</p><note>
     /// <p>The endpoint might not be shown for instances with the status of <code>creating</code>.</p>
     /// </note>
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.endpoint = input;
         self
     }
-    /// <p>The connection endpoint for the DB instance.</p> <note>
+    /// <p>The connection endpoint for the DB instance.</p><note>
     /// <p>The endpoint might not be shown for instances with the status of <code>creating</code>.</p>
     /// </note>
     pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
@@ -1104,7 +1116,7 @@ impl DbInstanceBuilder {
     ///
     /// To override the contents of this collection use [`set_read_replica_db_cluster_identifiers`](Self::set_read_replica_db_cluster_identifiers).
     ///
-    /// <p>The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.</p> <note>
+    /// <p>The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.</p><note>
     /// <p>Currently, each RDS DB instance can have only one Aurora read replica.</p>
     /// </note>
     pub fn read_replica_db_cluster_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1113,34 +1125,34 @@ impl DbInstanceBuilder {
         self.read_replica_db_cluster_identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.</p> <note>
+    /// <p>The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.</p><note>
     /// <p>Currently, each RDS DB instance can have only one Aurora read replica.</p>
     /// </note>
     pub fn set_read_replica_db_cluster_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.read_replica_db_cluster_identifiers = input;
         self
     }
-    /// <p>The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.</p> <note>
+    /// <p>The identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica. For example, when you create an Aurora read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica is shown. This output doesn't contain information about cross-Region Aurora read replicas.</p><note>
     /// <p>Currently, each RDS DB instance can have only one Aurora read replica.</p>
     /// </note>
     pub fn get_read_replica_db_cluster_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.read_replica_db_cluster_identifiers
     }
-    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p><note>
     /// <p>This attribute is only supported in RDS for Oracle.</p>
     /// </note>
     pub fn replica_mode(mut self, input: crate::types::ReplicaMode) -> Self {
         self.replica_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p><note>
     /// <p>This attribute is only supported in RDS for Oracle.</p>
     /// </note>
     pub fn set_replica_mode(mut self, input: ::std::option::Option<crate::types::ReplicaMode>) -> Self {
         self.replica_mode = input;
         self
     }
-    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+    /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p><note>
     /// <p>This attribute is only supported in RDS for Oracle.</p>
     /// </note>
     pub fn get_replica_mode(&self) -> &::std::option::Option<crate::types::ReplicaMode> {
@@ -1569,9 +1581,12 @@ impl DbInstanceBuilder {
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
@@ -1581,9 +1596,12 @@ impl DbInstanceBuilder {
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn set_performance_insights_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -1593,9 +1611,12 @@ impl DbInstanceBuilder {
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
@@ -1888,9 +1909,12 @@ impl DbInstanceBuilder {
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>The profile must exist in your account.</p></li>
-    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn custom_iam_instance_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1899,9 +1923,12 @@ impl DbInstanceBuilder {
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>The profile must exist in your account.</p></li>
-    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_custom_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1910,9 +1937,12 @@ impl DbInstanceBuilder {
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>The profile must exist in your account.</p></li>
-    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
-    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
+    /// <li>
+    /// <p>The profile must exist in your account.</p></li>
+    /// <li>
+    /// <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li>
+    /// <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {

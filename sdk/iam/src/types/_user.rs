@@ -3,9 +3,12 @@
 /// <p>Contains information about an IAM user entity.</p>
 /// <p>This data type is used as a response element in the following operations:</p>
 /// <ul>
-/// <li><p><code>CreateUser</code></p></li>
-/// <li><p><code>GetUser</code></p></li>
-/// <li><p><code>ListUsers</code></p></li>
+/// <li>
+/// <p><code>CreateUser</code></p></li>
+/// <li>
+/// <p><code>GetUser</code></p></li>
+/// <li>
+/// <p><code>ListUsers</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -23,8 +26,10 @@ pub struct User {
     pub create_date: ::aws_smithy_types::DateTime,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
-    /// <li><p>The user never had a password.</p></li>
-    /// <li><p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
+    /// <li>
+    /// <p>The user never had a password.</p></li>
+    /// <li>
+    /// <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
     /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
@@ -62,8 +67,10 @@ impl User {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
-    /// <li><p>The user never had a password.</p></li>
-    /// <li><p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
+    /// <li>
+    /// <p>The user never had a password.</p></li>
+    /// <li>
+    /// <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
     /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
@@ -182,8 +189,10 @@ impl UserBuilder {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
-    /// <li><p>The user never had a password.</p></li>
-    /// <li><p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
+    /// <li>
+    /// <p>The user never had a password.</p></li>
+    /// <li>
+    /// <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
     /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
@@ -193,8 +202,10 @@ impl UserBuilder {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
-    /// <li><p>The user never had a password.</p></li>
-    /// <li><p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
+    /// <li>
+    /// <p>The user never had a password.</p></li>
+    /// <li>
+    /// <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
     /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
@@ -204,8 +215,10 @@ impl UserBuilder {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
-    /// <li><p>The user never had a password.</p></li>
-    /// <li><p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
+    /// <li>
+    /// <p>The user never had a password.</p></li>
+    /// <li>
+    /// <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
     /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>

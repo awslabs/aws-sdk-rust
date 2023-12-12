@@ -5,17 +5,22 @@
 pub struct ListOrganizationPortfolioAccessInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>The organization node type that will be returned in the output.</p>
     /// <ul>
-    /// <li><p><code>ORGANIZATION</code> - Organization that has access to the portfolio.</p></li>
-    /// <li><p><code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p></li>
-    /// <li><p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
+    /// <li>
+    /// <p><code>ORGANIZATION</code> - Organization that has access to the portfolio.</p></li>
+    /// <li>
+    /// <p><code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
     /// </ul>
     pub organization_node_type: ::std::option::Option<crate::types::OrganizationNodeType>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -26,8 +31,10 @@ pub struct ListOrganizationPortfolioAccessInput {
 impl ListOrganizationPortfolioAccessInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -38,9 +45,12 @@ impl ListOrganizationPortfolioAccessInput {
     }
     /// <p>The organization node type that will be returned in the output.</p>
     /// <ul>
-    /// <li><p><code>ORGANIZATION</code> - Organization that has access to the portfolio.</p></li>
-    /// <li><p><code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p></li>
-    /// <li><p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
+    /// <li>
+    /// <p><code>ORGANIZATION</code> - Organization that has access to the portfolio.</p></li>
+    /// <li>
+    /// <p><code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
     /// </ul>
     pub fn organization_node_type(&self) -> ::std::option::Option<&crate::types::OrganizationNodeType> {
         self.organization_node_type.as_ref()
@@ -74,8 +84,10 @@ pub struct ListOrganizationPortfolioAccessInputBuilder {
 impl ListOrganizationPortfolioAccessInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
@@ -83,8 +95,10 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
@@ -92,8 +106,10 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language
@@ -115,9 +131,12 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     }
     /// <p>The organization node type that will be returned in the output.</p>
     /// <ul>
-    /// <li><p><code>ORGANIZATION</code> - Organization that has access to the portfolio.</p></li>
-    /// <li><p><code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p></li>
-    /// <li><p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
+    /// <li>
+    /// <p><code>ORGANIZATION</code> - Organization that has access to the portfolio.</p></li>
+    /// <li>
+    /// <p><code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
     /// </ul>
     /// This field is required.
     pub fn organization_node_type(mut self, input: crate::types::OrganizationNodeType) -> Self {
@@ -126,9 +145,12 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     }
     /// <p>The organization node type that will be returned in the output.</p>
     /// <ul>
-    /// <li><p><code>ORGANIZATION</code> - Organization that has access to the portfolio.</p></li>
-    /// <li><p><code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p></li>
-    /// <li><p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
+    /// <li>
+    /// <p><code>ORGANIZATION</code> - Organization that has access to the portfolio.</p></li>
+    /// <li>
+    /// <p><code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
     /// </ul>
     pub fn set_organization_node_type(mut self, input: ::std::option::Option<crate::types::OrganizationNodeType>) -> Self {
         self.organization_node_type = input;
@@ -136,9 +158,12 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     }
     /// <p>The organization node type that will be returned in the output.</p>
     /// <ul>
-    /// <li><p><code>ORGANIZATION</code> - Organization that has access to the portfolio.</p></li>
-    /// <li><p><code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p></li>
-    /// <li><p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
+    /// <li>
+    /// <p><code>ORGANIZATION</code> - Organization that has access to the portfolio.</p></li>
+    /// <li>
+    /// <p><code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
     /// </ul>
     pub fn get_organization_node_type(&self) -> &::std::option::Option<crate::types::OrganizationNodeType> {
         &self.organization_node_type

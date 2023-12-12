@@ -15,11 +15,16 @@ pub struct IncidentRecord {
     /// <p>The impact of the incident on customers and applications.</p>
     /// <p class="title"><b>Supported impact codes</b></p>
     /// <ul>
-    /// <li><p><code>1</code> - Critical</p></li>
-    /// <li><p><code>2</code> - High</p></li>
-    /// <li><p><code>3</code> - Medium</p></li>
-    /// <li><p><code>4</code> - Low</p></li>
-    /// <li><p><code>5</code> - No Impact</p></li>
+    /// <li>
+    /// <p><code>1</code> - Critical</p></li>
+    /// <li>
+    /// <p><code>2</code> - High</p></li>
+    /// <li>
+    /// <p><code>3</code> - Medium</p></li>
+    /// <li>
+    /// <p><code>4</code> - Low</p></li>
+    /// <li>
+    /// <p><code>5</code> - No Impact</p></li>
     /// </ul>
     pub impact: i32,
     /// <p>The timestamp for when Incident Manager created the incident record.</p>
@@ -63,11 +68,16 @@ impl IncidentRecord {
     /// <p>The impact of the incident on customers and applications.</p>
     /// <p class="title"><b>Supported impact codes</b></p>
     /// <ul>
-    /// <li><p><code>1</code> - Critical</p></li>
-    /// <li><p><code>2</code> - High</p></li>
-    /// <li><p><code>3</code> - Medium</p></li>
-    /// <li><p><code>4</code> - Low</p></li>
-    /// <li><p><code>5</code> - No Impact</p></li>
+    /// <li>
+    /// <p><code>1</code> - Critical</p></li>
+    /// <li>
+    /// <p><code>2</code> - High</p></li>
+    /// <li>
+    /// <p><code>3</code> - Medium</p></li>
+    /// <li>
+    /// <p><code>4</code> - Low</p></li>
+    /// <li>
+    /// <p><code>5</code> - No Impact</p></li>
     /// </ul>
     pub fn impact(&self) -> i32 {
         self.impact
@@ -204,11 +214,16 @@ impl IncidentRecordBuilder {
     /// <p>The impact of the incident on customers and applications.</p>
     /// <p class="title"><b>Supported impact codes</b></p>
     /// <ul>
-    /// <li><p><code>1</code> - Critical</p></li>
-    /// <li><p><code>2</code> - High</p></li>
-    /// <li><p><code>3</code> - Medium</p></li>
-    /// <li><p><code>4</code> - Low</p></li>
-    /// <li><p><code>5</code> - No Impact</p></li>
+    /// <li>
+    /// <p><code>1</code> - Critical</p></li>
+    /// <li>
+    /// <p><code>2</code> - High</p></li>
+    /// <li>
+    /// <p><code>3</code> - Medium</p></li>
+    /// <li>
+    /// <p><code>4</code> - Low</p></li>
+    /// <li>
+    /// <p><code>5</code> - No Impact</p></li>
     /// </ul>
     /// This field is required.
     pub fn impact(mut self, input: i32) -> Self {
@@ -218,11 +233,16 @@ impl IncidentRecordBuilder {
     /// <p>The impact of the incident on customers and applications.</p>
     /// <p class="title"><b>Supported impact codes</b></p>
     /// <ul>
-    /// <li><p><code>1</code> - Critical</p></li>
-    /// <li><p><code>2</code> - High</p></li>
-    /// <li><p><code>3</code> - Medium</p></li>
-    /// <li><p><code>4</code> - Low</p></li>
-    /// <li><p><code>5</code> - No Impact</p></li>
+    /// <li>
+    /// <p><code>1</code> - Critical</p></li>
+    /// <li>
+    /// <p><code>2</code> - High</p></li>
+    /// <li>
+    /// <p><code>3</code> - Medium</p></li>
+    /// <li>
+    /// <p><code>4</code> - Low</p></li>
+    /// <li>
+    /// <p><code>5</code> - No Impact</p></li>
     /// </ul>
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
         self.impact = input;
@@ -231,11 +251,16 @@ impl IncidentRecordBuilder {
     /// <p>The impact of the incident on customers and applications.</p>
     /// <p class="title"><b>Supported impact codes</b></p>
     /// <ul>
-    /// <li><p><code>1</code> - Critical</p></li>
-    /// <li><p><code>2</code> - High</p></li>
-    /// <li><p><code>3</code> - Medium</p></li>
-    /// <li><p><code>4</code> - Low</p></li>
-    /// <li><p><code>5</code> - No Impact</p></li>
+    /// <li>
+    /// <p><code>1</code> - Critical</p></li>
+    /// <li>
+    /// <p><code>2</code> - High</p></li>
+    /// <li>
+    /// <p><code>3</code> - Medium</p></li>
+    /// <li>
+    /// <p><code>4</code> - Low</p></li>
+    /// <li>
+    /// <p><code>5</code> - No Impact</p></li>
     /// </ul>
     pub fn get_impact(&self) -> &::std::option::Option<i32> {
         &self.impact

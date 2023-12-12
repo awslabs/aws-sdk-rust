@@ -9,8 +9,10 @@ pub struct DescribeInstanceTypeOfferingsInput {
     pub location_type: ::std::option::Option<crate::types::LocationType>,
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
-    /// <li><p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <li>
+    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
+    /// <li>
+    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -29,8 +31,10 @@ impl DescribeInstanceTypeOfferingsInput {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
-    /// <li><p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <li>
+    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
+    /// <li>
+    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -98,8 +102,10 @@ impl DescribeInstanceTypeOfferingsInputBuilder {
     ///
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
-    /// <li><p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <li>
+    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
+    /// <li>
+    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -109,8 +115,10 @@ impl DescribeInstanceTypeOfferingsInputBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
-    /// <li><p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <li>
+    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
+    /// <li>
+    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -118,8 +126,10 @@ impl DescribeInstanceTypeOfferingsInputBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
-    /// <li><p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <li>
+    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
+    /// <li>
+    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

@@ -6,9 +6,12 @@
 pub struct CloneReceiptRuleSetInput {
     /// <p>The name of the rule set to create. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li><p>Start and end with a letter or number.</p></li>
-    /// <li><p>Contain 64 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li>
+    /// <p>Start and end with a letter or number.</p></li>
+    /// <li>
+    /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule set to clone.</p>
@@ -17,9 +20,12 @@ pub struct CloneReceiptRuleSetInput {
 impl CloneReceiptRuleSetInput {
     /// <p>The name of the rule set to create. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li><p>Start and end with a letter or number.</p></li>
-    /// <li><p>Contain 64 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li>
+    /// <p>Start and end with a letter or number.</p></li>
+    /// <li>
+    /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn rule_set_name(&self) -> ::std::option::Option<&str> {
         self.rule_set_name.as_deref()
@@ -46,9 +52,12 @@ pub struct CloneReceiptRuleSetInputBuilder {
 impl CloneReceiptRuleSetInputBuilder {
     /// <p>The name of the rule set to create. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li><p>Start and end with a letter or number.</p></li>
-    /// <li><p>Contain 64 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li>
+    /// <p>Start and end with a letter or number.</p></li>
+    /// <li>
+    /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     /// This field is required.
     pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -57,9 +66,12 @@ impl CloneReceiptRuleSetInputBuilder {
     }
     /// <p>The name of the rule set to create. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li><p>Start and end with a letter or number.</p></li>
-    /// <li><p>Contain 64 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li>
+    /// <p>Start and end with a letter or number.</p></li>
+    /// <li>
+    /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_name = input;
@@ -67,9 +79,12 @@ impl CloneReceiptRuleSetInputBuilder {
     }
     /// <p>The name of the rule set to create. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
-    /// <li><p>Start and end with a letter or number.</p></li>
-    /// <li><p>Contain 64 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li>
+    /// <p>Start and end with a letter or number.</p></li>
+    /// <li>
+    /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_set_name

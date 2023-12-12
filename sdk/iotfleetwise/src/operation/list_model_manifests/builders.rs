@@ -22,7 +22,7 @@ impl ListModelManifestsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListModelManifests`.
 ///
-/// <p>Retrieves a list of vehicle models (model manifests).</p> <note>
+/// <p>Retrieves a list of vehicle models (model manifests).</p><note>
 /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the request to return more results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -7,47 +7,53 @@ pub struct CalculateRouteInput {
     pub calculator_name: ::std::option::Option<::std::string::String>,
     /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>[-123.115, 49.285]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, <code>[-123.115, 49.285]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
     pub departure_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>[-122.339, 47.615]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, <code>[-122.339, 47.615]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
     pub destination_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position.</p>
     /// <ul>
-    /// <li><p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
     pub waypoint_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p> <note>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p><note>
     /// <p><code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
     /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences:</p>
     /// <ul>
-    /// <li><p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
-    /// <li><p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
+    /// <li>
+    /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
+    /// <li>
+    /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
     /// </ul>
     /// <p>Default Value: <code>Car</code></p>
     pub travel_mode: ::std::option::Option<crate::types::TravelMode>,
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
     /// </note>
     /// <ul>
-    /// <li><p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li>
+    /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
     /// </ul>
     pub departure_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate a route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
@@ -77,8 +83,9 @@ impl CalculateRouteInput {
     }
     /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>[-123.115, 49.285]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, <code>[-123.115, 49.285]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
@@ -89,8 +96,9 @@ impl CalculateRouteInput {
     }
     /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>[-122.339, 47.615]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, <code>[-122.339, 47.615]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
@@ -101,8 +109,9 @@ impl CalculateRouteInput {
     }
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position.</p>
     /// <ul>
-    /// <li><p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
@@ -113,25 +122,28 @@ impl CalculateRouteInput {
     pub fn waypoint_positions(&self) -> &[::std::vec::Vec<f64>] {
         self.waypoint_positions.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p> <note>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p><note>
     /// <p><code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
     /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences:</p>
     /// <ul>
-    /// <li><p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
-    /// <li><p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
+    /// <li>
+    /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
+    /// <li>
+    /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
     /// </ul>
     /// <p>Default Value: <code>Car</code></p>
     pub fn travel_mode(&self) -> ::std::option::Option<&crate::types::TravelMode> {
         self.travel_mode.as_ref()
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
     /// </note>
     /// <ul>
-    /// <li><p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li>
+    /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
     /// </ul>
     pub fn departure_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.departure_time.as_ref()
@@ -232,8 +244,9 @@ impl CalculateRouteInputBuilder {
     ///
     /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>[-123.115, 49.285]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, <code>[-123.115, 49.285]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
@@ -245,8 +258,9 @@ impl CalculateRouteInputBuilder {
     }
     /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>[-123.115, 49.285]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, <code>[-123.115, 49.285]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
@@ -256,8 +270,9 @@ impl CalculateRouteInputBuilder {
     }
     /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>[-123.115, 49.285]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, <code>[-123.115, 49.285]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
@@ -270,8 +285,9 @@ impl CalculateRouteInputBuilder {
     ///
     /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>[-122.339, 47.615]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, <code>[-122.339, 47.615]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
@@ -283,8 +299,9 @@ impl CalculateRouteInputBuilder {
     }
     /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>[-122.339, 47.615]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, <code>[-122.339, 47.615]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
@@ -294,8 +311,9 @@ impl CalculateRouteInputBuilder {
     }
     /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li><p>For example, <code>[-122.339, 47.615]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, <code>[-122.339, 47.615]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
@@ -308,8 +326,9 @@ impl CalculateRouteInputBuilder {
     ///
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position.</p>
     /// <ul>
-    /// <li><p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
@@ -323,8 +342,9 @@ impl CalculateRouteInputBuilder {
     }
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position.</p>
     /// <ul>
-    /// <li><p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
@@ -336,8 +356,9 @@ impl CalculateRouteInputBuilder {
     }
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position.</p>
     /// <ul>
-    /// <li><p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code></p></li>
+    /// </ul><note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
@@ -346,75 +367,84 @@ impl CalculateRouteInputBuilder {
     pub fn get_waypoint_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
         &self.waypoint_positions
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p> <note>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p><note>
     /// <p><code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
     /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences:</p>
     /// <ul>
-    /// <li><p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
-    /// <li><p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
+    /// <li>
+    /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
+    /// <li>
+    /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
     /// </ul>
     /// <p>Default Value: <code>Car</code></p>
     pub fn travel_mode(mut self, input: crate::types::TravelMode) -> Self {
         self.travel_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p> <note>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p><note>
     /// <p><code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
     /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences:</p>
     /// <ul>
-    /// <li><p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
-    /// <li><p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
+    /// <li>
+    /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
+    /// <li>
+    /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
     /// </ul>
     /// <p>Default Value: <code>Car</code></p>
     pub fn set_travel_mode(mut self, input: ::std::option::Option<crate::types::TravelMode>) -> Self {
         self.travel_mode = input;
         self
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p> <note>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p><note>
     /// <p><code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
     /// <p><code>Truck</code> is not available for Grab.</p>
     /// <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences:</p>
     /// <ul>
-    /// <li><p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
-    /// <li><p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
+    /// <li>
+    /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p></li>
+    /// <li>
+    /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p></li>
     /// </ul>
     /// <p>Default Value: <code>Car</code></p>
     pub fn get_travel_mode(&self) -> &::std::option::Option<crate::types::TravelMode> {
         &self.travel_mode
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
     /// </note>
     /// <ul>
-    /// <li><p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li>
+    /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
     /// </ul>
     pub fn departure_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.departure_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
     /// </note>
     /// <ul>
-    /// <li><p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li>
+    /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
     /// </ul>
     pub fn set_departure_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.departure_time = input;
         self
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
     /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
     /// </note>
     /// <ul>
-    /// <li><p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
+    /// <li>
+    /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
     /// </ul>
     pub fn get_departure_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.departure_time

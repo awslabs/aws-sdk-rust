@@ -7,10 +7,14 @@ pub struct CreateClusterSnapshotInput {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -27,10 +31,14 @@ impl CreateClusterSnapshotInput {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
@@ -73,10 +81,14 @@ impl CreateClusterSnapshotInputBuilder {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     /// This field is required.
@@ -87,10 +99,14 @@ impl CreateClusterSnapshotInputBuilder {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -100,10 +116,14 @@ impl CreateClusterSnapshotInputBuilder {
     /// <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {

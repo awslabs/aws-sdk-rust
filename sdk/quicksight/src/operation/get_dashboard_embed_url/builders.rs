@@ -25,11 +25,16 @@ impl GetDashboardEmbedUrlInputBuilder {
 /// <p>Generates a temporary session URL and authorization code(bearer token) that you can use to embed an Amazon QuickSight read-only dashboard in your website or application. Before you use this command, make sure that you have configured the dashboards and permissions.</p>
 /// <p>Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The following rules apply to the generated URL:</p>
 /// <ul>
-/// <li><p>They must be used together.</p></li>
-/// <li><p>They can be used one time only.</p></li>
-/// <li><p>They are valid for 5 minutes after you run this command.</p></li>
-/// <li><p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p></li>
-/// <li><p>The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum). You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customize session duration.</p></li>
+/// <li>
+/// <p>They must be used together.</p></li>
+/// <li>
+/// <p>They can be used one time only.</p></li>
+/// <li>
+/// <p>They are valid for 5 minutes after you run this command.</p></li>
+/// <li>
+/// <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p></li>
+/// <li>
+/// <p>The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum). You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customize session duration.</p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
@@ -218,9 +223,12 @@ impl GetDashboardEmbedUrlFluentBuilder {
     }
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
-    /// <li><p>Active Directory (AD) users or group members</p></li>
-    /// <li><p>Invited nonfederated users</p></li>
-    /// <li><p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p></li>
+    /// <li>
+    /// <p>Active Directory (AD) users or group members</p></li>
+    /// <li>
+    /// <p>Invited nonfederated users</p></li>
+    /// <li>
+    /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p></li>
     /// </ul>
     /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -229,9 +237,12 @@ impl GetDashboardEmbedUrlFluentBuilder {
     }
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
-    /// <li><p>Active Directory (AD) users or group members</p></li>
-    /// <li><p>Invited nonfederated users</p></li>
-    /// <li><p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p></li>
+    /// <li>
+    /// <p>Active Directory (AD) users or group members</p></li>
+    /// <li>
+    /// <p>Invited nonfederated users</p></li>
+    /// <li>
+    /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p></li>
     /// </ul>
     /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -240,9 +251,12 @@ impl GetDashboardEmbedUrlFluentBuilder {
     }
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
     /// <ul>
-    /// <li><p>Active Directory (AD) users or group members</p></li>
-    /// <li><p>Invited nonfederated users</p></li>
-    /// <li><p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p></li>
+    /// <li>
+    /// <p>Active Directory (AD) users or group members</p></li>
+    /// <li>
+    /// <p>Invited nonfederated users</p></li>
+    /// <li>
+    /// <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p></li>
     /// </ul>
     /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {

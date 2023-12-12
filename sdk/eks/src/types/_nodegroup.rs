@@ -34,7 +34,7 @@ pub struct Nodegroup {
     pub ami_type: ::std::option::Option<crate::types::AmiTypes>,
     /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies.</p>
     pub node_role: ::std::option::Option<::std::string::String>,
-    /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+    /// <p>The Kubernetes labels applied to the nodes in the node group.</p><note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
     pub labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -118,7 +118,7 @@ impl Nodegroup {
     pub fn node_role(&self) -> ::std::option::Option<&str> {
         self.node_role.as_deref()
     }
-    /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+    /// <p>The Kubernetes labels applied to the nodes in the node group.</p><note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
     pub fn labels(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -417,7 +417,7 @@ impl NodegroupBuilder {
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
-    /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+    /// <p>The Kubernetes labels applied to the nodes in the node group.</p><note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
     pub fn labels(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -426,14 +426,14 @@ impl NodegroupBuilder {
         self.labels = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+    /// <p>The Kubernetes labels applied to the nodes in the node group.</p><note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
     pub fn set_labels(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
-    /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+    /// <p>The Kubernetes labels applied to the nodes in the node group.</p><note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
     pub fn get_labels(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

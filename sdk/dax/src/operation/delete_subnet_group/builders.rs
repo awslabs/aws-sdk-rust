@@ -22,7 +22,7 @@ impl DeleteSubnetGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSubnetGroup`.
 ///
-/// <p>Deletes a subnet group.</p> <note>
+/// <p>Deletes a subnet group.</p><note>
 /// <p>You cannot delete a subnet group if it is associated with any DAX clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -22,7 +22,7 @@ impl ListDeploymentJobsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDeploymentJobs`.
 ///
-/// <p>Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs.</p> <important>
+/// <p>Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs.</p><important>
 /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
 /// </important>
 #[deprecated(

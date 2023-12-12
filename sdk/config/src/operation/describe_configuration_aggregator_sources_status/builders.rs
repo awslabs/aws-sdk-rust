@@ -145,9 +145,12 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     ///
     /// <p>Filters the status type.</p>
     /// <ul>
-    /// <li><p>Valid value FAILED indicates errors while moving data.</p></li>
-    /// <li><p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
-    /// <li><p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
+    /// <li>
+    /// <p>Valid value FAILED indicates errors while moving data.</p></li>
+    /// <li>
+    /// <p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
+    /// <li>
+    /// <p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
     /// </ul>
     pub fn update_status(mut self, input: crate::types::AggregatedSourceStatusType) -> Self {
         self.inner = self.inner.update_status(input);
@@ -155,9 +158,12 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     }
     /// <p>Filters the status type.</p>
     /// <ul>
-    /// <li><p>Valid value FAILED indicates errors while moving data.</p></li>
-    /// <li><p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
-    /// <li><p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
+    /// <li>
+    /// <p>Valid value FAILED indicates errors while moving data.</p></li>
+    /// <li>
+    /// <p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
+    /// <li>
+    /// <p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
     /// </ul>
     pub fn set_update_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>) -> Self {
         self.inner = self.inner.set_update_status(input);
@@ -165,9 +171,12 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     }
     /// <p>Filters the status type.</p>
     /// <ul>
-    /// <li><p>Valid value FAILED indicates errors while moving data.</p></li>
-    /// <li><p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
-    /// <li><p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
+    /// <li>
+    /// <p>Valid value FAILED indicates errors while moving data.</p></li>
+    /// <li>
+    /// <p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
+    /// <li>
+    /// <p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
     /// </ul>
     pub fn get_update_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>> {
         self.inner.get_update_status()

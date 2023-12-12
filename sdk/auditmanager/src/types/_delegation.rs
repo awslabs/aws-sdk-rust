@@ -14,7 +14,7 @@ pub struct Delegation {
     pub status: ::std::option::Option<crate::types::DelegationStatus>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The type of customer persona.</p> <note>
+    /// <p>The type of customer persona.</p><note>
     /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
@@ -52,7 +52,7 @@ impl Delegation {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The type of customer persona.</p> <note>
+    /// <p>The type of customer persona.</p><note>
     /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
@@ -192,7 +192,7 @@ impl DelegationBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The type of customer persona.</p> <note>
+    /// <p>The type of customer persona.</p><note>
     /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
@@ -201,7 +201,7 @@ impl DelegationBuilder {
         self.role_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of customer persona.</p> <note>
+    /// <p>The type of customer persona.</p><note>
     /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
@@ -210,7 +210,7 @@ impl DelegationBuilder {
         self.role_type = input;
         self
     }
-    /// <p>The type of customer persona.</p> <note>
+    /// <p>The type of customer persona.</p><note>
     /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>

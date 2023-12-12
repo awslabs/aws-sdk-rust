@@ -24,19 +24,25 @@ impl CreateAccountInputBuilder {
 ///
 /// <p>Creates an Amazon Web Services account that is automatically a member of the organization whose credentials made the request. This is an asynchronous request that Amazon Web Services performs in the background. Because <code>CreateAccount</code> operates asynchronously, it can return a successful completion message even though account initialization might still be in progress. You might need to wait a few minutes before you can successfully access the account. To check the status of the request, do one of the following:</p>
 /// <ul>
-/// <li><p>Use the <code>Id</code> value of the <code>CreateAccountStatus</code> response element from this operation to provide as a parameter to the <code>DescribeCreateAccountStatus</code> operation.</p></li>
-/// <li><p>Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.</p></li>
+/// <li>
+/// <p>Use the <code>Id</code> value of the <code>CreateAccountStatus</code> response element from this operation to provide as a parameter to the <code>DescribeCreateAccountStatus</code> operation.</p></li>
+/// <li>
+/// <p>Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.</p></li>
 /// </ul>
 /// <p>The user who calls the API to create an account must have the <code>organizations:CreateAccount</code> permission. If you enabled all features in the organization, Organizations creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations and service-linked roles</a> in the <i>Organizations User Guide</i>.</p>
 /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
 /// <p>Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code> by default) that grants users in the management account administrator permissions in the new member account. Principals in the management account can assume the role. Organizations clones the company name and address information for the new account from the organization's management account.</p>
 /// <p>This operation can be called only from the organization's management account.</p>
-/// <p>For more information about creating accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating a member account in your organization</a> in the <i>Organizations User Guide</i>.</p> <important>
+/// <p>For more information about creating accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating a member account in your organization</a> in the <i>Organizations User Guide</i>.</p><important>
 /// <ul>
-/// <li><p>When you create an account in an organization using the Organizations console, API, or CLI commands, the information required for the account to operate as a standalone account, such as a payment method and signing the end user license agreement (EULA) is <i>not</i> automatically collected. If you must remove an account from your organization later, you can do so only after you provide the missing information. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations before removing an account from an organization</a> in the <i>Organizations User Guide</i>.</p></li>
-/// <li><p>If you get an exception that indicates that you exceeded your account limits for the organization, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p></li>
-/// <li><p>If you get an exception that indicates that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p></li>
-/// <li><p>Using <code>CreateAccount</code> to create multiple temporary accounts isn't recommended. You can only close an account from the Billing and Cost Management console, and you must be signed in as the root user. For information on the requirements and process for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing a member account in your organization</a> in the <i>Organizations User Guide</i>.</p></li>
+/// <li>
+/// <p>When you create an account in an organization using the Organizations console, API, or CLI commands, the information required for the account to operate as a standalone account, such as a payment method and signing the end user license agreement (EULA) is <i>not</i> automatically collected. If you must remove an account from your organization later, you can do so only after you provide the missing information. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations before removing an account from an organization</a> in the <i>Organizations User Guide</i>.</p></li>
+/// <li>
+/// <p>If you get an exception that indicates that you exceeded your account limits for the organization, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p></li>
+/// <li>
+/// <p>If you get an exception that indicates that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p></li>
+/// <li>
+/// <p>Using <code>CreateAccount</code> to create multiple temporary accounts isn't recommended. You can only close an account from the Billing and Cost Management console, and you must be signed in as the root user. For information on the requirements and process for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing a member account in your organization</a> in the <i>Organizations User Guide</i>.</p></li>
 /// </ul>
 /// </important> <note>
 /// <p>When you create a member account with this operation, you can choose whether to create the account with the <b>IAM User and Role Access to Billing Information</b> switch enabled. If you enable it, IAM users and roles that have appropriate permissions can view billing information for the account. If you disable it, only the account root user can access billing information. For information about how to disable this switch for an account, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html#grantaccess">Granting access to your billing information and tools</a>.</p>
@@ -129,14 +135,23 @@ impl CreateAccountFluentBuilder {
     /// <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>
     /// <p>The rules for a valid email address:</p>
     /// <ul>
-    /// <li><p>The address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
-    /// <li><p>All characters must be 7-bit ASCII characters.</p></li>
-    /// <li><p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
-    /// <li><p>The local name can't contain any of the following characters:</p> <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
-    /// <li><p>The local name can't begin with a dot (.)</p></li>
-    /// <li><p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
-    /// <li><p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
-    /// <li><p>The domain name must contain at least one dot</p></li>
+    /// <li>
+    /// <p>The address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
+    /// <li>
+    /// <p>All characters must be 7-bit ASCII characters.</p></li>
+    /// <li>
+    /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
+    /// <li>
+    /// <p>The local name can't contain any of the following characters:</p>
+    /// <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
+    /// <li>
+    /// <p>The local name can't begin with a dot (.)</p></li>
+    /// <li>
+    /// <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
+    /// <li>
+    /// <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
+    /// <li>
+    /// <p>The domain name must contain at least one dot</p></li>
     /// </ul>
     /// <p>You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,14 +161,23 @@ impl CreateAccountFluentBuilder {
     /// <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>
     /// <p>The rules for a valid email address:</p>
     /// <ul>
-    /// <li><p>The address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
-    /// <li><p>All characters must be 7-bit ASCII characters.</p></li>
-    /// <li><p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
-    /// <li><p>The local name can't contain any of the following characters:</p> <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
-    /// <li><p>The local name can't begin with a dot (.)</p></li>
-    /// <li><p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
-    /// <li><p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
-    /// <li><p>The domain name must contain at least one dot</p></li>
+    /// <li>
+    /// <p>The address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
+    /// <li>
+    /// <p>All characters must be 7-bit ASCII characters.</p></li>
+    /// <li>
+    /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
+    /// <li>
+    /// <p>The local name can't contain any of the following characters:</p>
+    /// <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
+    /// <li>
+    /// <p>The local name can't begin with a dot (.)</p></li>
+    /// <li>
+    /// <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
+    /// <li>
+    /// <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
+    /// <li>
+    /// <p>The domain name must contain at least one dot</p></li>
     /// </ul>
     /// <p>You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -163,14 +187,23 @@ impl CreateAccountFluentBuilder {
     /// <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>
     /// <p>The rules for a valid email address:</p>
     /// <ul>
-    /// <li><p>The address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
-    /// <li><p>All characters must be 7-bit ASCII characters.</p></li>
-    /// <li><p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
-    /// <li><p>The local name can't contain any of the following characters:</p> <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
-    /// <li><p>The local name can't begin with a dot (.)</p></li>
-    /// <li><p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
-    /// <li><p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
-    /// <li><p>The domain name must contain at least one dot</p></li>
+    /// <li>
+    /// <p>The address must be a minimum of 6 and a maximum of 64 characters long.</p></li>
+    /// <li>
+    /// <p>All characters must be 7-bit ASCII characters.</p></li>
+    /// <li>
+    /// <p>There must be one and only one @ symbol, which separates the local name from the domain name.</p></li>
+    /// <li>
+    /// <p>The local name can't contain any of the following characters:</p>
+    /// <p>whitespace, " ' ( ) &lt; &gt; [ ] : ; , \ | % &amp;</p></li>
+    /// <li>
+    /// <p>The local name can't begin with a dot (.)</p></li>
+    /// <li>
+    /// <p>The domain name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.)</p></li>
+    /// <li>
+    /// <p>The domain name can't begin or end with a hyphen (-) or dot (.)</p></li>
+    /// <li>
+    /// <p>The domain name must contain at least one dot</p></li>
     /// </ul>
     /// <p>You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +227,10 @@ impl CreateAccountFluentBuilder {
     /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
     /// <p>For more information about how to use this role to access the member account, see the following links:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations User Guide</i></p></li>
-    /// <li><p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations User Guide</i></p></li>
+    /// <li>
+    /// <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i></p></li>
     /// </ul>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -206,8 +241,10 @@ impl CreateAccountFluentBuilder {
     /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
     /// <p>For more information about how to use this role to access the member account, see the following links:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations User Guide</i></p></li>
-    /// <li><p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations User Guide</i></p></li>
+    /// <li>
+    /// <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i></p></li>
     /// </ul>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -218,8 +255,10 @@ impl CreateAccountFluentBuilder {
     /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
     /// <p>For more information about how to use this role to access the member account, see the following links:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations User Guide</i></p></li>
-    /// <li><p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations User Guide</i></p></li>
+    /// <li>
+    /// <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i></p></li>
     /// </ul>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,21 +285,21 @@ impl CreateAccountFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
+    /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p><note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
+    /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p><note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
+    /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p><note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

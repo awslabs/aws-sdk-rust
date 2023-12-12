@@ -31,14 +31,17 @@ pub struct WebAcl {
     pub managed_by_firewall_manager: bool,
     /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.</p>
     /// <ul>
-    /// <li><p>The syntax for the label namespace prefix for a web ACL is the following:</p> <p><code>awswaf:
-    /// <account id>
+    /// <li>
+    /// <p>The syntax for the label namespace prefix for a web ACL is the following:</p>
+    /// <p><code>awswaf:<account id>
     /// :webacl:
     /// <web acl name>
     /// :
     /// </web>
     /// </account></code></p></li>
-    /// <li><p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p> <p><code><label namespace>:<label from rule></label></label></code></p></li>
+    /// <li>
+    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
+    /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub label_namespace: ::std::option::Option<::std::string::String>,
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL.</p>
@@ -52,7 +55,7 @@ pub struct WebAcl {
     /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
     pub token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub association_config: ::std::option::Option<crate::types::AssociationConfig>,
@@ -116,14 +119,17 @@ impl WebAcl {
     }
     /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.</p>
     /// <ul>
-    /// <li><p>The syntax for the label namespace prefix for a web ACL is the following:</p> <p><code>awswaf:
-    /// <account id>
+    /// <li>
+    /// <p>The syntax for the label namespace prefix for a web ACL is the following:</p>
+    /// <p><code>awswaf:<account id>
     /// :webacl:
     /// <web acl name>
     /// :
     /// </web>
     /// </account></code></p></li>
-    /// <li><p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p> <p><code><label namespace>:<label from rule></label></label></code></p></li>
+    /// <li>
+    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
+    /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn label_namespace(&self) -> ::std::option::Option<&str> {
         self.label_namespace.as_deref()
@@ -151,7 +157,7 @@ impl WebAcl {
         self.token_domains.as_deref().unwrap_or_default()
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn association_config(&self) -> ::std::option::Option<&crate::types::AssociationConfig> {
@@ -382,14 +388,17 @@ impl WebAclBuilder {
     }
     /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.</p>
     /// <ul>
-    /// <li><p>The syntax for the label namespace prefix for a web ACL is the following:</p> <p><code>awswaf:
-    /// <account id>
+    /// <li>
+    /// <p>The syntax for the label namespace prefix for a web ACL is the following:</p>
+    /// <p><code>awswaf:<account id>
     /// :webacl:
     /// <web acl name>
     /// :
     /// </web>
     /// </account></code></p></li>
-    /// <li><p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p> <p><code><label namespace>:<label from rule></label></label></code></p></li>
+    /// <li>
+    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
+    /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn label_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_namespace = ::std::option::Option::Some(input.into());
@@ -397,14 +406,17 @@ impl WebAclBuilder {
     }
     /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.</p>
     /// <ul>
-    /// <li><p>The syntax for the label namespace prefix for a web ACL is the following:</p> <p><code>awswaf:
-    /// <account id>
+    /// <li>
+    /// <p>The syntax for the label namespace prefix for a web ACL is the following:</p>
+    /// <p><code>awswaf:<account id>
     /// :webacl:
     /// <web acl name>
     /// :
     /// </web>
     /// </account></code></p></li>
-    /// <li><p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p> <p><code><label namespace>:<label from rule></label></label></code></p></li>
+    /// <li>
+    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
+    /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn set_label_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_namespace = input;
@@ -412,14 +424,17 @@ impl WebAclBuilder {
     }
     /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.</p>
     /// <ul>
-    /// <li><p>The syntax for the label namespace prefix for a web ACL is the following:</p> <p><code>awswaf:
-    /// <account id>
+    /// <li>
+    /// <p>The syntax for the label namespace prefix for a web ACL is the following:</p>
+    /// <p><code>awswaf:<account id>
     /// :webacl:
     /// <web acl name>
     /// :
     /// </web>
     /// </account></code></p></li>
-    /// <li><p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p> <p><code><label namespace>:<label from rule></label></label></code></p></li>
+    /// <li>
+    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
+    /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn get_label_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_namespace
@@ -504,7 +519,7 @@ impl WebAclBuilder {
         &self.token_domains
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn association_config(mut self, input: crate::types::AssociationConfig) -> Self {
@@ -512,7 +527,7 @@ impl WebAclBuilder {
         self
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn set_association_config(mut self, input: ::std::option::Option<crate::types::AssociationConfig>) -> Self {
@@ -520,7 +535,7 @@ impl WebAclBuilder {
         self
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn get_association_config(&self) -> &::std::option::Option<crate::types::AssociationConfig> {

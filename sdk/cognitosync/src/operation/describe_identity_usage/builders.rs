@@ -23,7 +23,7 @@ impl DescribeIdentityUsageInputBuilder {
 /// Fluent builder constructing a request to `DescribeIdentityUsage`.
 ///
 /// <p>Gets usage information for an identity, including number of datasets and data usage.</p>
-/// <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p> <examples>
+/// <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p><examples>
 /// <example>
 /// <name>
 /// DescribeIdentityUsage

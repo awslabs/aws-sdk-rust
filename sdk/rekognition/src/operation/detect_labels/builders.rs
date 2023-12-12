@@ -32,19 +32,29 @@ impl DetectLabelsInputBuilder {
 /// <p><b>Response Elements</b></p>
 /// <p>For each object, scene, and concept the API returns one or more labels. The API returns the following types of information about labels:</p>
 /// <ul>
-/// <li><p>Name - The name of the detected label.</p></li>
-/// <li><p>Confidence - The level of confidence in the label assigned to a detected object.</p></li>
-/// <li><p>Parents - The ancestor labels for a detected label. DetectLabels returns a hierarchical taxonomy of detected labels. For example, a detected car might be assigned the label car. The label car has two parent labels: Vehicle (its parent) and Transportation (its grandparent). The response includes the all ancestors for a label, where every ancestor is a unique label. In the previous example, Car, Vehicle, and Transportation are returned as unique labels in the response.</p></li>
-/// <li><p>Aliases - Possible Aliases for the label.</p></li>
-/// <li><p>Categories - The label categories that the detected label belongs to.</p></li>
-/// <li><p>BoundingBox — Bounding boxes are described for all instances of detected common object labels, returned in an array of Instance objects. An Instance object contains a BoundingBox object, describing the location of the label on the input image. It also includes the confidence for the accuracy of the detected bounding box.</p></li>
+/// <li>
+/// <p>Name - The name of the detected label.</p></li>
+/// <li>
+/// <p>Confidence - The level of confidence in the label assigned to a detected object.</p></li>
+/// <li>
+/// <p>Parents - The ancestor labels for a detected label. DetectLabels returns a hierarchical taxonomy of detected labels. For example, a detected car might be assigned the label car. The label car has two parent labels: Vehicle (its parent) and Transportation (its grandparent). The response includes the all ancestors for a label, where every ancestor is a unique label. In the previous example, Car, Vehicle, and Transportation are returned as unique labels in the response.</p></li>
+/// <li>
+/// <p>Aliases - Possible Aliases for the label.</p></li>
+/// <li>
+/// <p>Categories - The label categories that the detected label belongs to.</p></li>
+/// <li>
+/// <p>BoundingBox — Bounding boxes are described for all instances of detected common object labels, returned in an array of Instance objects. An Instance object contains a BoundingBox object, describing the location of the label on the input image. It also includes the confidence for the accuracy of the detected bounding box.</p></li>
 /// </ul>
 /// <p>The API returns the following information regarding the image, as part of the ImageProperties structure:</p>
 /// <ul>
-/// <li><p>Quality - Information about the Sharpness, Brightness, and Contrast of the input image, scored between 0 to 100. Image quality is returned for the entire image, as well as the background and the foreground.</p></li>
-/// <li><p>Dominant Color - An array of the dominant colors in the image.</p></li>
-/// <li><p>Foreground - Information about the sharpness, brightness, and dominant colors of the input image’s foreground.</p></li>
-/// <li><p>Background - Information about the sharpness, brightness, and dominant colors of the input image’s background.</p></li>
+/// <li>
+/// <p>Quality - Information about the Sharpness, Brightness, and Contrast of the input image, scored between 0 to 100. Image quality is returned for the entire image, as well as the background and the foreground.</p></li>
+/// <li>
+/// <p>Dominant Color - An array of the dominant colors in the image.</p></li>
+/// <li>
+/// <p>Foreground - Information about the sharpness, brightness, and dominant colors of the input image’s foreground.</p></li>
+/// <li>
+/// <p>Background - Information about the sharpness, brightness, and dominant colors of the input image’s background.</p></li>
 /// </ul>
 /// <p>The list of returned labels will include at least one label for every detected object, along with information about that label. In the following example, suppose the input image has a lighthouse, the sea, and a rock. The response includes all three labels, one for each object, as well as the confidence in the label:</p>
 /// <p><code>{Name: lighthouse, Confidence: 98.4629}</code></p>
@@ -54,7 +64,7 @@ impl DetectLabelsInputBuilder {
 /// <p><code>{Name: flower,Confidence: 99.0562}</code></p>
 /// <p><code>{Name: plant,Confidence: 99.0562}</code></p>
 /// <p><code>{Name: tulip,Confidence: 99.0562}</code></p>
-/// <p>In this example, the detection algorithm more precisely identifies the flower as a tulip.</p> <note>
+/// <p>In this example, the detection algorithm more precisely identifies the flower as a tulip.</p><note>
 /// <p>If the object detected is a person, the operation doesn't provide the same facial details that the <code>DetectFaces</code> operation provides.</p>
 /// </note>
 /// <p>This is a stateless API operation that doesn't return any data.</p>

@@ -22,7 +22,7 @@ impl ListAttendeeTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAttendeeTags`.
 ///
-/// <p>Lists the tags applied to an Amazon Chime SDK attendee resource.</p> <important>
+/// <p>Lists the tags applied to an Amazon Chime SDK attendee resource.</p><important>
 /// <p>ListAttendeeTags is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API.</p>
 /// </important>
 #[deprecated(

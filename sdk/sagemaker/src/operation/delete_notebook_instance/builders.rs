@@ -22,7 +22,7 @@ impl DeleteNotebookInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteNotebookInstance`.
 ///
-/// <p>Deletes an SageMaker notebook instance. Before you can delete a notebook instance, you must call the <code>StopNotebookInstance</code> API.</p> <important>
+/// <p>Deletes an SageMaker notebook instance. Before you can delete a notebook instance, you must call the <code>StopNotebookInstance</code> API.</p><important>
 /// <p>When you delete a notebook instance, you lose all of your data. SageMaker removes the ML compute instance, and deletes the ML storage volume and the network interface associated with the notebook instance.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

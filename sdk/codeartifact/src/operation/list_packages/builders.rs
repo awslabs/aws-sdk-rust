@@ -173,10 +173,14 @@ impl ListPackagesFluentBuilder {
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -185,10 +189,14 @@ impl ListPackagesFluentBuilder {
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
@@ -197,10 +205,14 @@ impl ListPackagesFluentBuilder {
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()

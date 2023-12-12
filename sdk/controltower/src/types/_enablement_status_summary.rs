@@ -7,9 +7,12 @@ pub struct EnablementStatusSummary {
     /// <p>The deployment status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>SUCCEEDED</code>: The <code>enabledControl</code> configuration was deployed successfully.</p></li>
-    /// <li><p><code>UNDER_CHANGE</code>: The <code>enabledControl</code> configuration is changing.</p></li>
-    /// <li><p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code>: The <code>enabledControl</code> configuration was deployed successfully.</p></li>
+    /// <li>
+    /// <p><code>UNDER_CHANGE</code>: The <code>enabledControl</code> configuration is changing.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::EnablementStatus>,
     /// <p>The last operation identifier for the enabled control.</p>
@@ -19,9 +22,12 @@ impl EnablementStatusSummary {
     /// <p>The deployment status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>SUCCEEDED</code>: The <code>enabledControl</code> configuration was deployed successfully.</p></li>
-    /// <li><p><code>UNDER_CHANGE</code>: The <code>enabledControl</code> configuration is changing.</p></li>
-    /// <li><p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code>: The <code>enabledControl</code> configuration was deployed successfully.</p></li>
+    /// <li>
+    /// <p><code>UNDER_CHANGE</code>: The <code>enabledControl</code> configuration is changing.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnablementStatus> {
         self.status.as_ref()
@@ -49,9 +55,12 @@ impl EnablementStatusSummaryBuilder {
     /// <p>The deployment status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>SUCCEEDED</code>: The <code>enabledControl</code> configuration was deployed successfully.</p></li>
-    /// <li><p><code>UNDER_CHANGE</code>: The <code>enabledControl</code> configuration is changing.</p></li>
-    /// <li><p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code>: The <code>enabledControl</code> configuration was deployed successfully.</p></li>
+    /// <li>
+    /// <p><code>UNDER_CHANGE</code>: The <code>enabledControl</code> configuration is changing.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EnablementStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,9 +69,12 @@ impl EnablementStatusSummaryBuilder {
     /// <p>The deployment status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>SUCCEEDED</code>: The <code>enabledControl</code> configuration was deployed successfully.</p></li>
-    /// <li><p><code>UNDER_CHANGE</code>: The <code>enabledControl</code> configuration is changing.</p></li>
-    /// <li><p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code>: The <code>enabledControl</code> configuration was deployed successfully.</p></li>
+    /// <li>
+    /// <p><code>UNDER_CHANGE</code>: The <code>enabledControl</code> configuration is changing.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnablementStatus>) -> Self {
         self.status = input;
@@ -71,9 +83,12 @@ impl EnablementStatusSummaryBuilder {
     /// <p>The deployment status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>SUCCEEDED</code>: The <code>enabledControl</code> configuration was deployed successfully.</p></li>
-    /// <li><p><code>UNDER_CHANGE</code>: The <code>enabledControl</code> configuration is changing.</p></li>
-    /// <li><p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code>: The <code>enabledControl</code> configuration was deployed successfully.</p></li>
+    /// <li>
+    /// <p><code>UNDER_CHANGE</code>: The <code>enabledControl</code> configuration is changing.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnablementStatus> {
         &self.status

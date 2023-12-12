@@ -22,7 +22,7 @@ impl UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Removes one or more tags from the specified resource.</p> <important>
+/// <p>Removes one or more tags from the specified resource.</p><important>
 /// <p>Unlike tagging permissions in other Amazon Web Services services, to tag or untag links and sinks you must have the <code>oam:ResourceTag</code> permission. The <code>iam:TagResource</code> permission does not allow you to tag and untag links and sinks.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

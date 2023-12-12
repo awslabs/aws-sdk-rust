@@ -13,8 +13,10 @@ pub struct VolumeRecommendation {
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
     /// <ul>
-    /// <li><p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
-    /// <li><p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
+    /// <li>
+    /// <p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
+    /// <li>
+    /// <p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
     /// </ul>
     pub finding: ::std::option::Option<crate::types::EbsFinding>,
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
@@ -48,8 +50,10 @@ impl VolumeRecommendation {
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
     /// <ul>
-    /// <li><p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
-    /// <li><p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
+    /// <li>
+    /// <p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
+    /// <li>
+    /// <p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
     /// </ul>
     pub fn finding(&self) -> ::std::option::Option<&crate::types::EbsFinding> {
         self.finding.as_ref()
@@ -158,8 +162,10 @@ impl VolumeRecommendationBuilder {
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
     /// <ul>
-    /// <li><p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
-    /// <li><p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
+    /// <li>
+    /// <p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
+    /// <li>
+    /// <p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
     /// </ul>
     pub fn finding(mut self, input: crate::types::EbsFinding) -> Self {
         self.finding = ::std::option::Option::Some(input);
@@ -168,8 +174,10 @@ impl VolumeRecommendationBuilder {
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
     /// <ul>
-    /// <li><p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
-    /// <li><p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
+    /// <li>
+    /// <p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
+    /// <li>
+    /// <p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
     /// </ul>
     pub fn set_finding(mut self, input: ::std::option::Option<crate::types::EbsFinding>) -> Self {
         self.finding = input;
@@ -178,8 +186,10 @@ impl VolumeRecommendationBuilder {
     /// <p>The finding classification of the volume.</p>
     /// <p>Findings for volumes include:</p>
     /// <ul>
-    /// <li><p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
-    /// <li><p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
+    /// <li>
+    /// <p><b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p></li>
+    /// <li>
+    /// <p><b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p></li>
     /// </ul>
     pub fn get_finding(&self) -> &::std::option::Option<crate::types::EbsFinding> {
         &self.finding

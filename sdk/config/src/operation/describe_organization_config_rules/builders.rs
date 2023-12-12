@@ -22,7 +22,7 @@ impl DescribeOrganizationConfigRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeOrganizationConfigRules`.
 ///
-/// <p>Returns a list of organization Config rules.</p> <note>
+/// <p>Returns a list of organization Config rules.</p><note>
 /// <p>When you specify the limit and the next token, you receive a paginated response.</p>
 /// <p>Limit and next token are not applicable if you specify organization Config rule names. It is only applicable, when you request all the organization Config rules.</p>
 /// <p><i>For accounts within an organzation</i></p>

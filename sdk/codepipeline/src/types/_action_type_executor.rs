@@ -9,7 +9,7 @@ pub struct ActionTypeExecutor {
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>.</p>
     pub r#type: crate::types::ExecutorType,
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer account that are needed to successfully run an action.</p>
-    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
+    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p><note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
     pub policy_statements_template: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl ActionTypeExecutor {
         &self.r#type
     }
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer account that are needed to successfully run an action.</p>
-    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
+    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p><note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
     pub fn policy_statements_template(&self) -> ::std::option::Option<&str> {
@@ -85,7 +85,7 @@ impl ActionTypeExecutorBuilder {
         &self.r#type
     }
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer account that are needed to successfully run an action.</p>
-    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
+    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p><note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
     pub fn policy_statements_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,7 +93,7 @@ impl ActionTypeExecutorBuilder {
         self
     }
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer account that are needed to successfully run an action.</p>
-    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
+    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p><note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
     pub fn set_policy_statements_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -101,7 +101,7 @@ impl ActionTypeExecutorBuilder {
         self
     }
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer account that are needed to successfully run an action.</p>
-    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
+    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p><note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
     pub fn get_policy_statements_template(&self) -> &::std::option::Option<::std::string::String> {

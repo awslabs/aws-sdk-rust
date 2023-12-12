@@ -112,9 +112,12 @@ impl CreateClusterSubnetGroupFluentBuilder {
     /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Must not be "Default".</p></li>
-    /// <li><p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Must not be "Default".</p></li>
+    /// <li>
+    /// <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code></p>
     pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,9 +127,12 @@ impl CreateClusterSubnetGroupFluentBuilder {
     /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Must not be "Default".</p></li>
-    /// <li><p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Must not be "Default".</p></li>
+    /// <li>
+    /// <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code></p>
     pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -136,9 +142,12 @@ impl CreateClusterSubnetGroupFluentBuilder {
     /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Must not be "Default".</p></li>
-    /// <li><p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Must not be "Default".</p></li>
+    /// <li>
+    /// <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code></p>
     pub fn get_cluster_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {

@@ -14,8 +14,10 @@ pub struct ResourceSetSummary {
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the resource set is in or out of an admin's Region scope.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> - The administrator can manage and delete the resource set.</p></li>
-    /// <li><p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The administrator can manage and delete the resource set.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
     /// </ul>
     pub resource_set_status: ::std::option::Option<crate::types::ResourceSetStatus>,
 }
@@ -38,8 +40,10 @@ impl ResourceSetSummary {
     }
     /// <p>Indicates whether the resource set is in or out of an admin's Region scope.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> - The administrator can manage and delete the resource set.</p></li>
-    /// <li><p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The administrator can manage and delete the resource set.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
     /// </ul>
     pub fn resource_set_status(&self) -> ::std::option::Option<&crate::types::ResourceSetStatus> {
         self.resource_set_status.as_ref()
@@ -121,8 +125,10 @@ impl ResourceSetSummaryBuilder {
     }
     /// <p>Indicates whether the resource set is in or out of an admin's Region scope.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> - The administrator can manage and delete the resource set.</p></li>
-    /// <li><p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The administrator can manage and delete the resource set.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
     /// </ul>
     pub fn resource_set_status(mut self, input: crate::types::ResourceSetStatus) -> Self {
         self.resource_set_status = ::std::option::Option::Some(input);
@@ -130,8 +136,10 @@ impl ResourceSetSummaryBuilder {
     }
     /// <p>Indicates whether the resource set is in or out of an admin's Region scope.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> - The administrator can manage and delete the resource set.</p></li>
-    /// <li><p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The administrator can manage and delete the resource set.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
     /// </ul>
     pub fn set_resource_set_status(mut self, input: ::std::option::Option<crate::types::ResourceSetStatus>) -> Self {
         self.resource_set_status = input;
@@ -139,8 +147,10 @@ impl ResourceSetSummaryBuilder {
     }
     /// <p>Indicates whether the resource set is in or out of an admin's Region scope.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> - The administrator can manage and delete the resource set.</p></li>
-    /// <li><p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The administrator can manage and delete the resource set.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
     /// </ul>
     pub fn get_resource_set_status(&self) -> &::std::option::Option<crate::types::ResourceSetStatus> {
         &self.resource_set_status

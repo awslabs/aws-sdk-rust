@@ -25,21 +25,36 @@ impl PutComplianceItemsInputBuilder {
 /// <p>Registers a compliance type and other compliance details on a designated resource. This operation lets you register custom compliance details with a resource. This call overwrites existing compliance information on the resource, so you must provide a full list of compliance items each time that you send the request.</p>
 /// <p>ComplianceType can be one of the following:</p>
 /// <ul>
-/// <li><p>ExecutionId: The execution ID when the patch, association, or custom compliance item was applied.</p></li>
-/// <li><p>ExecutionType: Specify patch, association, or Custom:<code>string</code>.</p></li>
-/// <li><p>ExecutionTime. The time the patch, association, or custom compliance item was applied to the managed node.</p></li>
-/// <li><p>Id: The patch, association, or custom compliance ID.</p></li>
-/// <li><p>Title: A title.</p></li>
-/// <li><p>Status: The status of the compliance item. For example, <code>approved</code> for patches, or <code>Failed</code> for associations.</p></li>
-/// <li><p>Severity: A patch severity. For example, <code>Critical</code>.</p></li>
-/// <li><p>DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p></li>
-/// <li><p>DocumentVersion: An SSM document version number. For example, 4.</p></li>
-/// <li><p>Classification: A patch classification. For example, <code>security updates</code>.</p></li>
-/// <li><p>PatchBaselineId: A patch baseline ID.</p></li>
-/// <li><p>PatchSeverity: A patch severity. For example, <code>Critical</code>.</p></li>
-/// <li><p>PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.</p></li>
-/// <li><p>PatchGroup: The name of a patch group.</p></li>
-/// <li><p>InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p></li>
+/// <li>
+/// <p>ExecutionId: The execution ID when the patch, association, or custom compliance item was applied.</p></li>
+/// <li>
+/// <p>ExecutionType: Specify patch, association, or Custom:<code>string</code>.</p></li>
+/// <li>
+/// <p>ExecutionTime. The time the patch, association, or custom compliance item was applied to the managed node.</p></li>
+/// <li>
+/// <p>Id: The patch, association, or custom compliance ID.</p></li>
+/// <li>
+/// <p>Title: A title.</p></li>
+/// <li>
+/// <p>Status: The status of the compliance item. For example, <code>approved</code> for patches, or <code>Failed</code> for associations.</p></li>
+/// <li>
+/// <p>Severity: A patch severity. For example, <code>Critical</code>.</p></li>
+/// <li>
+/// <p>DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p></li>
+/// <li>
+/// <p>DocumentVersion: An SSM document version number. For example, 4.</p></li>
+/// <li>
+/// <p>Classification: A patch classification. For example, <code>security updates</code>.</p></li>
+/// <li>
+/// <p>PatchBaselineId: A patch baseline ID.</p></li>
+/// <li>
+/// <p>PatchSeverity: A patch severity. For example, <code>Critical</code>.</p></li>
+/// <li>
+/// <p>PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.</p></li>
+/// <li>
+/// <p>PatchGroup: The name of a patch group.</p></li>
+/// <li>
+/// <p>InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutComplianceItemsFluentBuilder {
@@ -215,7 +230,7 @@ impl PutComplianceItemsFluentBuilder {
         self.inner.get_item_content_hash()
     }
     /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
-    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p><note>
     /// <p>This attribute is only valid for association compliance.</p>
     /// </note>
     pub fn upload_type(mut self, input: crate::types::ComplianceUploadType) -> Self {
@@ -223,7 +238,7 @@ impl PutComplianceItemsFluentBuilder {
         self
     }
     /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
-    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p><note>
     /// <p>This attribute is only valid for association compliance.</p>
     /// </note>
     pub fn set_upload_type(mut self, input: ::std::option::Option<crate::types::ComplianceUploadType>) -> Self {
@@ -231,7 +246,7 @@ impl PutComplianceItemsFluentBuilder {
         self
     }
     /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
-    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p><note>
     /// <p>This attribute is only valid for association compliance.</p>
     /// </note>
     pub fn get_upload_type(&self) -> &::std::option::Option<crate::types::ComplianceUploadType> {

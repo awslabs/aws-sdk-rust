@@ -115,9 +115,12 @@ impl CreateLinkFluentBuilder {
     /// <p>Specify a friendly human-readable name to use to identify this source account when you are viewing data from it in the monitoring account.</p>
     /// <p>You can use a custom label or use the following variables:</p>
     /// <ul>
-    /// <li><p><code>$AccountName</code> is the name of the account</p></li>
-    /// <li><p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
-    /// <li><p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
+    /// <li>
+    /// <p><code>$AccountName</code> is the name of the account</p></li>
+    /// <li>
+    /// <p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
+    /// <li>
+    /// <p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
     /// </ul>
     pub fn label_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_template(input.into());
@@ -126,9 +129,12 @@ impl CreateLinkFluentBuilder {
     /// <p>Specify a friendly human-readable name to use to identify this source account when you are viewing data from it in the monitoring account.</p>
     /// <p>You can use a custom label or use the following variables:</p>
     /// <ul>
-    /// <li><p><code>$AccountName</code> is the name of the account</p></li>
-    /// <li><p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
-    /// <li><p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
+    /// <li>
+    /// <p><code>$AccountName</code> is the name of the account</p></li>
+    /// <li>
+    /// <p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
+    /// <li>
+    /// <p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
     /// </ul>
     pub fn set_label_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_template(input);
@@ -137,9 +143,12 @@ impl CreateLinkFluentBuilder {
     /// <p>Specify a friendly human-readable name to use to identify this source account when you are viewing data from it in the monitoring account.</p>
     /// <p>You can use a custom label or use the following variables:</p>
     /// <ul>
-    /// <li><p><code>$AccountName</code> is the name of the account</p></li>
-    /// <li><p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
-    /// <li><p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
+    /// <li>
+    /// <p><code>$AccountName</code> is the name of the account</p></li>
+    /// <li>
+    /// <p><code>$AccountEmail</code> is the globally unique email address of the account</p></li>
+    /// <li>
+    /// <p><code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p></li>
     /// </ul>
     pub fn get_label_template(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_template()

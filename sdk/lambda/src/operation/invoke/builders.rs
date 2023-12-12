@@ -104,9 +104,12 @@ impl InvokeFluentBuilder {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li><p><b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p></li>
-    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p></li>
+    /// <li>
+    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,9 +119,12 @@ impl InvokeFluentBuilder {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li><p><b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p></li>
-    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p></li>
+    /// <li>
+    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -128,9 +134,12 @@ impl InvokeFluentBuilder {
     /// <p>The name of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li><p><b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p></li>
-    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p></li>
+    /// <li>
+    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,9 +147,12 @@ impl InvokeFluentBuilder {
     }
     /// <p>Choose from the following options.</p>
     /// <ul>
-    /// <li><p><code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p></li>
-    /// <li><p><code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p></li>
-    /// <li><p><code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p></li>
+    /// <li>
+    /// <p><code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p></li>
+    /// <li>
+    /// <p><code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p></li>
+    /// <li>
+    /// <p><code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p></li>
     /// </ul>
     pub fn invocation_type(mut self, input: crate::types::InvocationType) -> Self {
         self.inner = self.inner.invocation_type(input);
@@ -148,9 +160,12 @@ impl InvokeFluentBuilder {
     }
     /// <p>Choose from the following options.</p>
     /// <ul>
-    /// <li><p><code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p></li>
-    /// <li><p><code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p></li>
-    /// <li><p><code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p></li>
+    /// <li>
+    /// <p><code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p></li>
+    /// <li>
+    /// <p><code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p></li>
+    /// <li>
+    /// <p><code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p></li>
     /// </ul>
     pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::InvocationType>) -> Self {
         self.inner = self.inner.set_invocation_type(input);
@@ -158,9 +173,12 @@ impl InvokeFluentBuilder {
     }
     /// <p>Choose from the following options.</p>
     /// <ul>
-    /// <li><p><code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p></li>
-    /// <li><p><code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p></li>
-    /// <li><p><code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p></li>
+    /// <li>
+    /// <p><code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p></li>
+    /// <li>
+    /// <p><code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p></li>
+    /// <li>
+    /// <p><code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p></li>
     /// </ul>
     pub fn get_invocation_type(&self) -> &::std::option::Option<crate::types::InvocationType> {
         self.inner.get_invocation_type()

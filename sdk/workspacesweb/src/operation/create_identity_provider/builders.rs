@@ -156,43 +156,71 @@ impl CreateIdentityProviderFluentBuilder {
     ///
     /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
     /// <ul>
-    /// <li><p>For Google and Login with Amazon:</p>
+    /// <li>
+    /// <p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>client_secret</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>client_secret</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
     /// </ul></li>
-    /// <li><p>For Facebook:</p>
+    /// <li>
+    /// <p>For Facebook:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>client_secret</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
-    /// <li><p><code>api_version</code></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>client_secret</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>api_version</code></p></li>
     /// </ul></li>
-    /// <li><p>For Sign in with Apple:</p>
+    /// <li>
+    /// <p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>team_id</code></p></li>
-    /// <li><p><code>key_id</code></p></li>
-    /// <li><p><code>private_key</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>team_id</code></p></li>
+    /// <li>
+    /// <p><code>key_id</code></p></li>
+    /// <li>
+    /// <p><code>private_key</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
     /// </ul></li>
-    /// <li><p>For OIDC providers:</p>
+    /// <li>
+    /// <p>For OIDC providers:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>client_secret</code></p></li>
-    /// <li><p><code>attributes_request_method</code></p></li>
-    /// <li><p><code>oidc_issuer</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
-    /// <li><p><code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
-    /// <li><p><code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
-    /// <li><p><code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
-    /// <li><p><code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>client_secret</code></p></li>
+    /// <li>
+    /// <p><code>attributes_request_method</code></p></li>
+    /// <li>
+    /// <p><code>oidc_issuer</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
     /// </ul></li>
-    /// <li><p>For SAML providers:</p>
+    /// <li>
+    /// <p>For SAML providers:</p>
     /// <ul>
-    /// <li><p><code>MetadataFile</code> OR <code>MetadataURL</code></p></li>
-    /// <li><p><code>IDPSignout</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>MetadataFile</code> OR <code>MetadataURL</code></p></li>
+    /// <li>
+    /// <p><code>IDPSignout</code> (boolean) <i>optional</i></p></li>
     /// </ul></li>
     /// </ul>
     pub fn identity_provider_details(
@@ -205,43 +233,71 @@ impl CreateIdentityProviderFluentBuilder {
     }
     /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
     /// <ul>
-    /// <li><p>For Google and Login with Amazon:</p>
+    /// <li>
+    /// <p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>client_secret</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>client_secret</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
     /// </ul></li>
-    /// <li><p>For Facebook:</p>
+    /// <li>
+    /// <p>For Facebook:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>client_secret</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
-    /// <li><p><code>api_version</code></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>client_secret</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>api_version</code></p></li>
     /// </ul></li>
-    /// <li><p>For Sign in with Apple:</p>
+    /// <li>
+    /// <p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>team_id</code></p></li>
-    /// <li><p><code>key_id</code></p></li>
-    /// <li><p><code>private_key</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>team_id</code></p></li>
+    /// <li>
+    /// <p><code>key_id</code></p></li>
+    /// <li>
+    /// <p><code>private_key</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
     /// </ul></li>
-    /// <li><p>For OIDC providers:</p>
+    /// <li>
+    /// <p>For OIDC providers:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>client_secret</code></p></li>
-    /// <li><p><code>attributes_request_method</code></p></li>
-    /// <li><p><code>oidc_issuer</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
-    /// <li><p><code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
-    /// <li><p><code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
-    /// <li><p><code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
-    /// <li><p><code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>client_secret</code></p></li>
+    /// <li>
+    /// <p><code>attributes_request_method</code></p></li>
+    /// <li>
+    /// <p><code>oidc_issuer</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
     /// </ul></li>
-    /// <li><p>For SAML providers:</p>
+    /// <li>
+    /// <p>For SAML providers:</p>
     /// <ul>
-    /// <li><p><code>MetadataFile</code> OR <code>MetadataURL</code></p></li>
-    /// <li><p><code>IDPSignout</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>MetadataFile</code> OR <code>MetadataURL</code></p></li>
+    /// <li>
+    /// <p><code>IDPSignout</code> (boolean) <i>optional</i></p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_identity_provider_details(
@@ -253,43 +309,71 @@ impl CreateIdentityProviderFluentBuilder {
     }
     /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
     /// <ul>
-    /// <li><p>For Google and Login with Amazon:</p>
+    /// <li>
+    /// <p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>client_secret</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>client_secret</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
     /// </ul></li>
-    /// <li><p>For Facebook:</p>
+    /// <li>
+    /// <p>For Facebook:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>client_secret</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
-    /// <li><p><code>api_version</code></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>client_secret</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>api_version</code></p></li>
     /// </ul></li>
-    /// <li><p>For Sign in with Apple:</p>
+    /// <li>
+    /// <p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>team_id</code></p></li>
-    /// <li><p><code>key_id</code></p></li>
-    /// <li><p><code>private_key</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>team_id</code></p></li>
+    /// <li>
+    /// <p><code>key_id</code></p></li>
+    /// <li>
+    /// <p><code>private_key</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
     /// </ul></li>
-    /// <li><p>For OIDC providers:</p>
+    /// <li>
+    /// <p>For OIDC providers:</p>
     /// <ul>
-    /// <li><p><code>client_id</code></p></li>
-    /// <li><p><code>client_secret</code></p></li>
-    /// <li><p><code>attributes_request_method</code></p></li>
-    /// <li><p><code>oidc_issuer</code></p></li>
-    /// <li><p><code>authorize_scopes</code></p></li>
-    /// <li><p><code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
-    /// <li><p><code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
-    /// <li><p><code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
-    /// <li><p><code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>client_id</code></p></li>
+    /// <li>
+    /// <p><code>client_secret</code></p></li>
+    /// <li>
+    /// <p><code>attributes_request_method</code></p></li>
+    /// <li>
+    /// <p><code>oidc_issuer</code></p></li>
+    /// <li>
+    /// <p><code>authorize_scopes</code></p></li>
+    /// <li>
+    /// <p><code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
+    /// <li>
+    /// <p><code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i></p></li>
     /// </ul></li>
-    /// <li><p>For SAML providers:</p>
+    /// <li>
+    /// <p>For SAML providers:</p>
     /// <ul>
-    /// <li><p><code>MetadataFile</code> OR <code>MetadataURL</code></p></li>
-    /// <li><p><code>IDPSignout</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>MetadataFile</code> OR <code>MetadataURL</code></p></li>
+    /// <li>
+    /// <p><code>IDPSignout</code> (boolean) <i>optional</i></p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_identity_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

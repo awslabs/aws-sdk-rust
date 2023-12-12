@@ -10,8 +10,7 @@ pub struct EngineConfiguration {
     pub max_concurrent_dpus: i32,
     /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
     pub default_executor_dpu_size: ::std::option::Option<i32>,
-    /// <p>Contains additional notebook engine <code>MAP
-    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
+    /// <p>Contains additional notebook engine <code>MAP<string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
     pub additional_configs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general Spark tuning.</p>
     pub spark_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -29,8 +28,7 @@ impl EngineConfiguration {
     pub fn default_executor_dpu_size(&self) -> ::std::option::Option<i32> {
         self.default_executor_dpu_size
     }
-    /// <p>Contains additional notebook engine <code>MAP
-    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
+    /// <p>Contains additional notebook engine <code>MAP<string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
     pub fn additional_configs(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_configs.as_ref()
     }
@@ -104,8 +102,7 @@ impl EngineConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_configs`](Self::set_additional_configs).
     ///
-    /// <p>Contains additional notebook engine <code>MAP
-    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
+    /// <p>Contains additional notebook engine <code>MAP<string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
     pub fn additional_configs(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -116,8 +113,7 @@ impl EngineConfigurationBuilder {
         self.additional_configs = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Contains additional notebook engine <code>MAP
-    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
+    /// <p>Contains additional notebook engine <code>MAP<string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
     pub fn set_additional_configs(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -125,8 +121,7 @@ impl EngineConfigurationBuilder {
         self.additional_configs = input;
         self
     }
-    /// <p>Contains additional notebook engine <code>MAP
-    /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
+    /// <p>Contains additional notebook engine <code>MAP<string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
     pub fn get_additional_configs(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_configs
     }

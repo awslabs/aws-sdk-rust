@@ -25,19 +25,30 @@ impl ResizeClusterInputBuilder {
 /// <p>Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read and write operations more quickly than with the classic resize method.</p>
 /// <p>Elastic resize operations have the following restrictions:</p>
 /// <ul>
-/// <li><p>You can only resize clusters of the following types:</p>
+/// <li>
+/// <p>You can only resize clusters of the following types:</p>
 /// <ul>
-/// <li><p>dc1.large (if your cluster is in a VPC)</p></li>
-/// <li><p>dc1.8xlarge (if your cluster is in a VPC)</p></li>
-/// <li><p>dc2.large</p></li>
-/// <li><p>dc2.8xlarge</p></li>
-/// <li><p>ds2.xlarge</p></li>
-/// <li><p>ds2.8xlarge</p></li>
-/// <li><p>ra3.xlplus</p></li>
-/// <li><p>ra3.4xlarge</p></li>
-/// <li><p>ra3.16xlarge</p></li>
+/// <li>
+/// <p>dc1.large (if your cluster is in a VPC)</p></li>
+/// <li>
+/// <p>dc1.8xlarge (if your cluster is in a VPC)</p></li>
+/// <li>
+/// <p>dc2.large</p></li>
+/// <li>
+/// <p>dc2.8xlarge</p></li>
+/// <li>
+/// <p>ds2.xlarge</p></li>
+/// <li>
+/// <p>ds2.8xlarge</p></li>
+/// <li>
+/// <p>ra3.xlplus</p></li>
+/// <li>
+/// <p>ra3.4xlarge</p></li>
+/// <li>
+/// <p>ra3.16xlarge</p></li>
 /// </ul></li>
-/// <li><p>The type of nodes that you add must match the node type for the cluster.</p></li>
+/// <li>
+/// <p>The type of nodes that you add must match the node type for the cluster.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResizeClusterFluentBuilder {

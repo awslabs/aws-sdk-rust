@@ -126,9 +126,17 @@ impl CreateResolverQueryLogConfigFluentBuilder {
     }
     /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
     /// <ul>
-    /// <li><p><b>S3 bucket</b>:</p> <p><code>arn:aws:s3:::examplebucket</code></p> <p>You can optionally append a file prefix to the end of the ARN.</p> <p><code>arn:aws:s3:::examplebucket/development/</code></p></li>
-    /// <li><p><b>CloudWatch Logs log group</b>:</p> <p><code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code></p></li>
-    /// <li><p><b>Kinesis Data Firehose delivery stream</b>:</p> <p><code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code></p></li>
+    /// <li>
+    /// <p><b>S3 bucket</b>:</p>
+    /// <p><code>arn:aws:s3:::examplebucket</code></p>
+    /// <p>You can optionally append a file prefix to the end of the ARN.</p>
+    /// <p><code>arn:aws:s3:::examplebucket/development/</code></p></li>
+    /// <li>
+    /// <p><b>CloudWatch Logs log group</b>:</p>
+    /// <p><code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code></p></li>
+    /// <li>
+    /// <p><b>Kinesis Data Firehose delivery stream</b>:</p>
+    /// <p><code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code></p></li>
     /// </ul>
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
@@ -136,9 +144,17 @@ impl CreateResolverQueryLogConfigFluentBuilder {
     }
     /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
     /// <ul>
-    /// <li><p><b>S3 bucket</b>:</p> <p><code>arn:aws:s3:::examplebucket</code></p> <p>You can optionally append a file prefix to the end of the ARN.</p> <p><code>arn:aws:s3:::examplebucket/development/</code></p></li>
-    /// <li><p><b>CloudWatch Logs log group</b>:</p> <p><code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code></p></li>
-    /// <li><p><b>Kinesis Data Firehose delivery stream</b>:</p> <p><code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code></p></li>
+    /// <li>
+    /// <p><b>S3 bucket</b>:</p>
+    /// <p><code>arn:aws:s3:::examplebucket</code></p>
+    /// <p>You can optionally append a file prefix to the end of the ARN.</p>
+    /// <p><code>arn:aws:s3:::examplebucket/development/</code></p></li>
+    /// <li>
+    /// <p><b>CloudWatch Logs log group</b>:</p>
+    /// <p><code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code></p></li>
+    /// <li>
+    /// <p><b>Kinesis Data Firehose delivery stream</b>:</p>
+    /// <p><code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code></p></li>
     /// </ul>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
@@ -146,9 +162,17 @@ impl CreateResolverQueryLogConfigFluentBuilder {
     }
     /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:</p>
     /// <ul>
-    /// <li><p><b>S3 bucket</b>:</p> <p><code>arn:aws:s3:::examplebucket</code></p> <p>You can optionally append a file prefix to the end of the ARN.</p> <p><code>arn:aws:s3:::examplebucket/development/</code></p></li>
-    /// <li><p><b>CloudWatch Logs log group</b>:</p> <p><code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code></p></li>
-    /// <li><p><b>Kinesis Data Firehose delivery stream</b>:</p> <p><code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code></p></li>
+    /// <li>
+    /// <p><b>S3 bucket</b>:</p>
+    /// <p><code>arn:aws:s3:::examplebucket</code></p>
+    /// <p>You can optionally append a file prefix to the end of the ARN.</p>
+    /// <p><code>arn:aws:s3:::examplebucket/development/</code></p></li>
+    /// <li>
+    /// <p><b>CloudWatch Logs log group</b>:</p>
+    /// <p><code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code></p></li>
+    /// <li>
+    /// <p><b>Kinesis Data Firehose delivery stream</b>:</p>
+    /// <p><code>arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name</code></p></li>
     /// </ul>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_arn()

@@ -5,8 +5,10 @@
 pub struct CreateProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The name of the product.</p>
@@ -34,16 +36,20 @@ pub struct CreateProductInput {
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li><p><code>Type</code></p></li>
-    /// <li><p><code>ConnectionParamters</code></p></li>
+    /// <li>
+    /// <p><code>Type</code></p></li>
+    /// <li>
+    /// <p><code>ConnectionParamters</code></p></li>
     /// </ul>
     pub source_connection: ::std::option::Option<crate::types::SourceConnection>,
 }
 impl CreateProductInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -97,8 +103,10 @@ impl CreateProductInput {
     }
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li><p><code>Type</code></p></li>
-    /// <li><p><code>ConnectionParamters</code></p></li>
+    /// <li>
+    /// <p><code>Type</code></p></li>
+    /// <li>
+    /// <p><code>ConnectionParamters</code></p></li>
     /// </ul>
     pub fn source_connection(&self) -> ::std::option::Option<&crate::types::SourceConnection> {
         self.source_connection.as_ref()
@@ -132,8 +140,10 @@ pub struct CreateProductInputBuilder {
 impl CreateProductInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
@@ -141,8 +151,10 @@ impl CreateProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
@@ -150,8 +162,10 @@ impl CreateProductInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language
@@ -325,8 +339,10 @@ impl CreateProductInputBuilder {
     }
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li><p><code>Type</code></p></li>
-    /// <li><p><code>ConnectionParamters</code></p></li>
+    /// <li>
+    /// <p><code>Type</code></p></li>
+    /// <li>
+    /// <p><code>ConnectionParamters</code></p></li>
     /// </ul>
     pub fn source_connection(mut self, input: crate::types::SourceConnection) -> Self {
         self.source_connection = ::std::option::Option::Some(input);
@@ -334,8 +350,10 @@ impl CreateProductInputBuilder {
     }
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li><p><code>Type</code></p></li>
-    /// <li><p><code>ConnectionParamters</code></p></li>
+    /// <li>
+    /// <p><code>Type</code></p></li>
+    /// <li>
+    /// <p><code>ConnectionParamters</code></p></li>
     /// </ul>
     pub fn set_source_connection(mut self, input: ::std::option::Option<crate::types::SourceConnection>) -> Self {
         self.source_connection = input;
@@ -343,8 +361,10 @@ impl CreateProductInputBuilder {
     }
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
-    /// <li><p><code>Type</code></p></li>
-    /// <li><p><code>ConnectionParamters</code></p></li>
+    /// <li>
+    /// <p><code>Type</code></p></li>
+    /// <li>
+    /// <p><code>ConnectionParamters</code></p></li>
     /// </ul>
     pub fn get_source_connection(&self) -> &::std::option::Option<crate::types::SourceConnection> {
         &self.source_connection

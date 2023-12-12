@@ -26,7 +26,7 @@ impl CreateDbClusterParameterGroupInputBuilder {
 /// <p>Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.</p>
 /// <p>A DB cluster parameter group is initially created with the default parameters for the database engine used by instances in the DB cluster. To provide custom values for any of the parameters, you must modify the group after creating it using <code>ModifyDBClusterParameterGroup</code>. Once you've created a DB cluster parameter group, you need to associate it with your DB cluster using <code>ModifyDBCluster</code>.</p>
 /// <p>When you associate a new DB cluster parameter group with a running Aurora DB cluster, reboot the DB instances in the DB cluster without failover for the new DB cluster parameter group and associated settings to take effect.</p>
-/// <p>When you associate a new DB cluster parameter group with a running Multi-AZ DB cluster, reboot the DB cluster without failover for the new DB cluster parameter group and associated settings to take effect.</p> <important>
+/// <p>When you associate a new DB cluster parameter group with a running Multi-AZ DB cluster, reboot the DB cluster without failover for the new DB cluster parameter group and associated settings to take effect.</p><important>
 /// <p>After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon RDS to fully complete the create action before the DB cluster parameter group is used as the default for a new DB cluster. This is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code> parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the <code>DescribeDBClusterParameters</code> operation to verify that your DB cluster parameter group has been created or modified.</p>
 /// </important>
 /// <p>For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -119,8 +119,9 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must not match the name of an existing DB cluster parameter group.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Must not match the name of an existing DB cluster parameter group.</p></li>
+    /// </ul><note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,8 +131,9 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must not match the name of an existing DB cluster parameter group.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Must not match the name of an existing DB cluster parameter group.</p></li>
+    /// </ul><note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -141,8 +143,9 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must not match the name of an existing DB cluster parameter group.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Must not match the name of an existing DB cluster parameter group.</p></li>
+    /// </ul><note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,18 +161,21 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Example: <code>postgres12</code></p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine
-    /// <engine></engine></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
     /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code></p> <note>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
     /// <ul>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
-    /// <li><p><code>mysql</code></p></li>
-    /// <li><p><code>postgres</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>mysql</code></p></li>
+    /// <li>
+    /// <p><code>postgres</code></p></li>
     /// </ul>
     pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_family(input.into());
@@ -185,18 +191,21 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Example: <code>postgres12</code></p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine
-    /// <engine></engine></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
     /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code></p> <note>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
     /// <ul>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
-    /// <li><p><code>mysql</code></p></li>
-    /// <li><p><code>postgres</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>mysql</code></p></li>
+    /// <li>
+    /// <p><code>postgres</code></p></li>
     /// </ul>
     pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_family(input);
@@ -212,18 +221,21 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Example: <code>postgres12</code></p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine
-    /// <engine></engine></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine></engine></code></p>
     /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code></p> <note>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
     /// <p>The output contains duplicates.</p>
     /// </note>
     /// <p>The following are the valid DB engine values:</p>
     /// <ul>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
-    /// <li><p><code>mysql</code></p></li>
-    /// <li><p><code>postgres</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>mysql</code></p></li>
+    /// <li>
+    /// <p><code>postgres</code></p></li>
     /// </ul>
     pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_parameter_group_family()

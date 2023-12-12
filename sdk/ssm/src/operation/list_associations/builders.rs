@@ -118,21 +118,21 @@ impl ListAssociationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_association_filter_list`](Self::set_association_filter_list).
     ///
-    /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
     pub fn association_filter_list(mut self, input: crate::types::AssociationFilter) -> Self {
         self.inner = self.inner.association_filter_list(input);
         self
     }
-    /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
     pub fn set_association_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>) -> Self {
         self.inner = self.inner.set_association_filter_list(input);
         self
     }
-    /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p><note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
     pub fn get_association_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>> {

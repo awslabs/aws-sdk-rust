@@ -5,12 +5,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlgorithmSpecification {
-    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
+    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p><note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>For more information, see the note in the <code>AlgorithmName</code> parameter description.</p>
     /// </note>
     pub training_image: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
+    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p><note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
     /// <p>If you specify values for both parameters, the training job might break; if you don't specify any value for both parameters, the training job might raise a <code>null</code> error.</p>
@@ -31,14 +31,20 @@ pub struct AlgorithmSpecification {
     pub metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
     /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
     /// <ul>
-    /// <li><p>You use one of the SageMaker built-in algorithms</p></li>
-    /// <li><p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
+    /// <li>
+    /// <p>You use one of the SageMaker built-in algorithms</p></li>
+    /// <li>
+    /// <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
     /// <ul>
-    /// <li><p>Tensorflow (version &gt;= 1.15)</p></li>
-    /// <li><p>MXNet (version &gt;= 1.6)</p></li>
-    /// <li><p>PyTorch (version &gt;= 1.3)</p></li>
+    /// <li>
+    /// <p>Tensorflow (version &gt;= 1.15)</p></li>
+    /// <li>
+    /// <p>MXNet (version &gt;= 1.6)</p></li>
+    /// <li>
+    /// <p>PyTorch (version &gt;= 1.3)</p></li>
     /// </ul></li>
-    /// <li><p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a></p></li>
+    /// <li>
+    /// <p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a></p></li>
     /// </ul>
     pub enable_sage_maker_metrics_time_series: ::std::option::Option<bool>,
     /// <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker container</a> used to run a training job. This script takes precedence over the default train processing instructions. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon SageMaker Runs Your Training Image</a> for more information.</p>
@@ -49,14 +55,14 @@ pub struct AlgorithmSpecification {
     pub training_image_config: ::std::option::Option<crate::types::TrainingImageConfig>,
 }
 impl AlgorithmSpecification {
-    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
+    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p><note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>For more information, see the note in the <code>AlgorithmName</code> parameter description.</p>
     /// </note>
     pub fn training_image(&self) -> ::std::option::Option<&str> {
         self.training_image.as_deref()
     }
-    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
+    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p><note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
     /// <p>If you specify values for both parameters, the training job might break; if you don't specify any value for both parameters, the training job might raise a <code>null</code> error.</p>
@@ -85,14 +91,20 @@ impl AlgorithmSpecification {
     }
     /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
     /// <ul>
-    /// <li><p>You use one of the SageMaker built-in algorithms</p></li>
-    /// <li><p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
+    /// <li>
+    /// <p>You use one of the SageMaker built-in algorithms</p></li>
+    /// <li>
+    /// <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
     /// <ul>
-    /// <li><p>Tensorflow (version &gt;= 1.15)</p></li>
-    /// <li><p>MXNet (version &gt;= 1.6)</p></li>
-    /// <li><p>PyTorch (version &gt;= 1.3)</p></li>
+    /// <li>
+    /// <p>Tensorflow (version &gt;= 1.15)</p></li>
+    /// <li>
+    /// <p>MXNet (version &gt;= 1.6)</p></li>
+    /// <li>
+    /// <p>PyTorch (version &gt;= 1.3)</p></li>
     /// </ul></li>
-    /// <li><p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a></p></li>
+    /// <li>
+    /// <p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a></p></li>
     /// </ul>
     pub fn enable_sage_maker_metrics_time_series(&self) -> ::std::option::Option<bool> {
         self.enable_sage_maker_metrics_time_series
@@ -135,7 +147,7 @@ pub struct AlgorithmSpecificationBuilder {
     pub(crate) training_image_config: ::std::option::Option<crate::types::TrainingImageConfig>,
 }
 impl AlgorithmSpecificationBuilder {
-    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
+    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p><note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>For more information, see the note in the <code>AlgorithmName</code> parameter description.</p>
     /// </note>
@@ -143,7 +155,7 @@ impl AlgorithmSpecificationBuilder {
         self.training_image = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
+    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p><note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>For more information, see the note in the <code>AlgorithmName</code> parameter description.</p>
     /// </note>
@@ -151,14 +163,14 @@ impl AlgorithmSpecificationBuilder {
         self.training_image = input;
         self
     }
-    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
+    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p><note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>For more information, see the note in the <code>AlgorithmName</code> parameter description.</p>
     /// </note>
     pub fn get_training_image(&self) -> &::std::option::Option<::std::string::String> {
         &self.training_image
     }
-    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
+    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p><note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
     /// <p>If you specify values for both parameters, the training job might break; if you don't specify any value for both parameters, the training job might raise a <code>null</code> error.</p>
@@ -167,7 +179,7 @@ impl AlgorithmSpecificationBuilder {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
+    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p><note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
     /// <p>If you specify values for both parameters, the training job might break; if you don't specify any value for both parameters, the training job might raise a <code>null</code> error.</p>
@@ -176,7 +188,7 @@ impl AlgorithmSpecificationBuilder {
         self.algorithm_name = input;
         self
     }
-    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
+    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p><note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
     /// <p>If you specify values for both parameters, the training job might break; if you don't specify any value for both parameters, the training job might raise a <code>null</code> error.</p>
@@ -248,14 +260,20 @@ impl AlgorithmSpecificationBuilder {
     }
     /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
     /// <ul>
-    /// <li><p>You use one of the SageMaker built-in algorithms</p></li>
-    /// <li><p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
+    /// <li>
+    /// <p>You use one of the SageMaker built-in algorithms</p></li>
+    /// <li>
+    /// <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
     /// <ul>
-    /// <li><p>Tensorflow (version &gt;= 1.15)</p></li>
-    /// <li><p>MXNet (version &gt;= 1.6)</p></li>
-    /// <li><p>PyTorch (version &gt;= 1.3)</p></li>
+    /// <li>
+    /// <p>Tensorflow (version &gt;= 1.15)</p></li>
+    /// <li>
+    /// <p>MXNet (version &gt;= 1.6)</p></li>
+    /// <li>
+    /// <p>PyTorch (version &gt;= 1.3)</p></li>
     /// </ul></li>
-    /// <li><p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a></p></li>
+    /// <li>
+    /// <p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a></p></li>
     /// </ul>
     pub fn enable_sage_maker_metrics_time_series(mut self, input: bool) -> Self {
         self.enable_sage_maker_metrics_time_series = ::std::option::Option::Some(input);
@@ -263,14 +281,20 @@ impl AlgorithmSpecificationBuilder {
     }
     /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
     /// <ul>
-    /// <li><p>You use one of the SageMaker built-in algorithms</p></li>
-    /// <li><p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
+    /// <li>
+    /// <p>You use one of the SageMaker built-in algorithms</p></li>
+    /// <li>
+    /// <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
     /// <ul>
-    /// <li><p>Tensorflow (version &gt;= 1.15)</p></li>
-    /// <li><p>MXNet (version &gt;= 1.6)</p></li>
-    /// <li><p>PyTorch (version &gt;= 1.3)</p></li>
+    /// <li>
+    /// <p>Tensorflow (version &gt;= 1.15)</p></li>
+    /// <li>
+    /// <p>MXNet (version &gt;= 1.6)</p></li>
+    /// <li>
+    /// <p>PyTorch (version &gt;= 1.3)</p></li>
     /// </ul></li>
-    /// <li><p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a></p></li>
+    /// <li>
+    /// <p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a></p></li>
     /// </ul>
     pub fn set_enable_sage_maker_metrics_time_series(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_sage_maker_metrics_time_series = input;
@@ -278,14 +302,20 @@ impl AlgorithmSpecificationBuilder {
     }
     /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
     /// <ul>
-    /// <li><p>You use one of the SageMaker built-in algorithms</p></li>
-    /// <li><p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
+    /// <li>
+    /// <p>You use one of the SageMaker built-in algorithms</p></li>
+    /// <li>
+    /// <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
     /// <ul>
-    /// <li><p>Tensorflow (version &gt;= 1.15)</p></li>
-    /// <li><p>MXNet (version &gt;= 1.6)</p></li>
-    /// <li><p>PyTorch (version &gt;= 1.3)</p></li>
+    /// <li>
+    /// <p>Tensorflow (version &gt;= 1.15)</p></li>
+    /// <li>
+    /// <p>MXNet (version &gt;= 1.6)</p></li>
+    /// <li>
+    /// <p>PyTorch (version &gt;= 1.3)</p></li>
     /// </ul></li>
-    /// <li><p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a></p></li>
+    /// <li>
+    /// <p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a></p></li>
     /// </ul>
     pub fn get_enable_sage_maker_metrics_time_series(&self) -> &::std::option::Option<bool> {
         &self.enable_sage_maker_metrics_time_series

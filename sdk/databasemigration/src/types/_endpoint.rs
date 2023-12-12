@@ -2,9 +2,12 @@
 
 /// <p>Describes an endpoint of a database instance in response to operations such as the following:</p>
 /// <ul>
-/// <li><p><code>CreateEndpoint</code></p></li>
-/// <li><p><code>DescribeEndpoint</code></p></li>
-/// <li><p><code>ModifyEndpoint</code></p></li>
+/// <li>
+/// <p><code>CreateEndpoint</code></p></li>
+/// <li>
+/// <p><code>DescribeEndpoint</code></p></li>
+/// <li>
+/// <p><code>ModifyEndpoint</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

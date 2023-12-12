@@ -22,11 +22,14 @@ impl RemovePermissionInputBuilder {
 }
 /// Fluent builder constructing a request to `RemovePermission`.
 ///
-/// <p>Revokes any permissions in the queue policy that matches the specified <code>Label</code> parameter.</p> <note>
+/// <p>Revokes any permissions in the queue policy that matches the specified <code>Label</code> parameter.</p><note>
 /// <ul>
-/// <li><p>Only the owner of a queue can remove permissions from it.</p></li>
-/// <li><p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p></li>
-/// <li><p>To remove the ability to change queue permissions, you must deny permission to the <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in your IAM policy.</p></li>
+/// <li>
+/// <p>Only the owner of a queue can remove permissions from it.</p></li>
+/// <li>
+/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.</p></li>
+/// <li>
+/// <p>To remove the ability to change queue permissions, you must deny permission to the <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in your IAM policy.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

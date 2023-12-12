@@ -12,11 +12,11 @@ pub struct LifecycleRule {
     pub filter: ::std::option::Option<crate::types::LifecycleRuleFilter>,
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
     pub status: crate::types::ExpirationStatus,
-    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
+    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub transitions: ::std::option::Option<::std::vec::Vec<crate::types::Transition>>,
-    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p> <note>
+    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub noncurrent_version_transitions: ::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>>,
@@ -42,7 +42,7 @@ impl LifecycleRule {
     pub fn status(&self) -> &crate::types::ExpirationStatus {
         &self.status
     }
-    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
+    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     ///
@@ -50,7 +50,7 @@ impl LifecycleRule {
     pub fn transitions(&self) -> &[crate::types::Transition] {
         self.transitions.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p> <note>
+    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     ///
@@ -149,7 +149,7 @@ impl LifecycleRuleBuilder {
     ///
     /// To override the contents of this collection use [`set_transitions`](Self::set_transitions).
     ///
-    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
+    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn transitions(mut self, input: crate::types::Transition) -> Self {
@@ -158,14 +158,14 @@ impl LifecycleRuleBuilder {
         self.transitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
+    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn set_transitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Transition>>) -> Self {
         self.transitions = input;
         self
     }
-    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p> <note>
+    /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn get_transitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Transition>> {
@@ -175,7 +175,7 @@ impl LifecycleRuleBuilder {
     ///
     /// To override the contents of this collection use [`set_noncurrent_version_transitions`](Self::set_noncurrent_version_transitions).
     ///
-    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p> <note>
+    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn noncurrent_version_transitions(mut self, input: crate::types::NoncurrentVersionTransition) -> Self {
@@ -184,7 +184,7 @@ impl LifecycleRuleBuilder {
         self.noncurrent_version_transitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p> <note>
+    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn set_noncurrent_version_transitions(
@@ -194,7 +194,7 @@ impl LifecycleRuleBuilder {
         self.noncurrent_version_transitions = input;
         self
     }
-    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p> <note>
+    /// <p>Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime.</p><note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn get_noncurrent_version_transitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>> {

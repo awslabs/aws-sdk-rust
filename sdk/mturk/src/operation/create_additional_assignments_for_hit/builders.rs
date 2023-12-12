@@ -23,10 +23,12 @@ impl CreateAdditionalAssignmentsForHitInputBuilder {
 /// Fluent builder constructing a request to `CreateAdditionalAssignmentsForHIT`.
 ///
 /// <p>The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the maximum number of assignments of an existing HIT.</p>
-/// <p>To extend the maximum number of assignments, specify the number of additional assignments.</p> <note>
+/// <p>To extend the maximum number of assignments, specify the number of additional assignments.</p><note>
 /// <ul>
-/// <li><p>HITs created with fewer than 10 assignments cannot be extended to have 10 or more assignments. Attempting to add assignments in a way that brings the total number of assignments for a HIT from fewer than 10 assignments to 10 or more assignments will result in an <code>AWS.MechanicalTurk.InvalidMaximumAssignmentsIncrease</code> exception.</p></li>
-/// <li><p>HITs that were created before July 22, 2015 cannot be extended. Attempting to extend HITs that were created before July 22, 2015 will result in an <code>AWS.MechanicalTurk.HITTooOldForExtension</code> exception.</p></li>
+/// <li>
+/// <p>HITs created with fewer than 10 assignments cannot be extended to have 10 or more assignments. Attempting to add assignments in a way that brings the total number of assignments for a HIT from fewer than 10 assignments to 10 or more assignments will result in an <code>AWS.MechanicalTurk.InvalidMaximumAssignmentsIncrease</code> exception.</p></li>
+/// <li>
+/// <p>HITs that were created before July 22, 2015 cannot be extended. Attempting to extend HITs that were created before July 22, 2015 will result in an <code>AWS.MechanicalTurk.HITTooOldForExtension</code> exception.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

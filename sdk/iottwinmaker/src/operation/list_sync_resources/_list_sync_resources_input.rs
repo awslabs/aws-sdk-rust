@@ -5,16 +5,19 @@
 pub struct ListSyncResourcesInput {
     /// <p>The ID of the workspace that contains the sync job.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub sync_source: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li><p>Filter with state</p></li>
-    /// <li><p>Filter with ResourceType and ResourceId</p></li>
-    /// <li><p>Filter with ResourceType and ExternalId</p></li>
+    /// <li>
+    /// <p>Filter with state</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ResourceId</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>>,
     /// <p>The maximum number of results to return at one time. The default is 50.</p>
@@ -28,7 +31,7 @@ impl ListSyncResourcesInput {
     pub fn workspace_id(&self) -> ::std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn sync_source(&self) -> ::std::option::Option<&str> {
@@ -37,9 +40,12 @@ impl ListSyncResourcesInput {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li><p>Filter with state</p></li>
-    /// <li><p>Filter with ResourceType and ResourceId</p></li>
-    /// <li><p>Filter with ResourceType and ExternalId</p></li>
+    /// <li>
+    /// <p>Filter with state</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ResourceId</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -89,7 +95,7 @@ impl ListSyncResourcesInputBuilder {
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_id
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     /// This field is required.
@@ -97,14 +103,14 @@ impl ListSyncResourcesInputBuilder {
         self.sync_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_source = input;
         self
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,9 +123,12 @@ impl ListSyncResourcesInputBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li><p>Filter with state</p></li>
-    /// <li><p>Filter with ResourceType and ResourceId</p></li>
-    /// <li><p>Filter with ResourceType and ExternalId</p></li>
+    /// <li>
+    /// <p>Filter with state</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ResourceId</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::SyncResourceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -130,9 +139,12 @@ impl ListSyncResourcesInputBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li><p>Filter with state</p></li>
-    /// <li><p>Filter with ResourceType and ResourceId</p></li>
-    /// <li><p>Filter with ResourceType and ExternalId</p></li>
+    /// <li>
+    /// <p>Filter with state</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ResourceId</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>>) -> Self {
         self.filters = input;
@@ -141,9 +153,12 @@ impl ListSyncResourcesInputBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li><p>Filter with state</p></li>
-    /// <li><p>Filter with ResourceType and ResourceId</p></li>
-    /// <li><p>Filter with ResourceType and ExternalId</p></li>
+    /// <li>
+    /// <p>Filter with state</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ResourceId</p></li>
+    /// <li>
+    /// <p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>> {
         &self.filters

@@ -10,11 +10,16 @@ pub struct ListGeofenceResponseEntry {
     pub geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> — The geofence has been indexed by the system.</p></li>
-    /// <li><p><code>PENDING</code> — The geofence is being processed by the system.</p></li>
-    /// <li><p><code>FAILED</code> — The geofence failed to be indexed by the system.</p></li>
-    /// <li><p><code>DELETED</code> — The geofence has been deleted from the system index.</p></li>
-    /// <li><p><code>DELETING</code> — The geofence is being deleted from the system index.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> — The geofence has been indexed by the system.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> — The geofence is being processed by the system.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> — The geofence failed to be indexed by the system.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> — The geofence has been deleted from the system index.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> — The geofence is being deleted from the system index.</p></li>
     /// </ul>
     pub status: ::std::string::String,
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
@@ -37,11 +42,16 @@ impl ListGeofenceResponseEntry {
     }
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> — The geofence has been indexed by the system.</p></li>
-    /// <li><p><code>PENDING</code> — The geofence is being processed by the system.</p></li>
-    /// <li><p><code>FAILED</code> — The geofence failed to be indexed by the system.</p></li>
-    /// <li><p><code>DELETED</code> — The geofence has been deleted from the system index.</p></li>
-    /// <li><p><code>DELETING</code> — The geofence is being deleted from the system index.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> — The geofence has been indexed by the system.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> — The geofence is being processed by the system.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> — The geofence failed to be indexed by the system.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> — The geofence has been deleted from the system index.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> — The geofence is being deleted from the system index.</p></li>
     /// </ul>
     pub fn status(&self) -> &str {
         use std::ops::Deref;
@@ -124,11 +134,16 @@ impl ListGeofenceResponseEntryBuilder {
     }
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> — The geofence has been indexed by the system.</p></li>
-    /// <li><p><code>PENDING</code> — The geofence is being processed by the system.</p></li>
-    /// <li><p><code>FAILED</code> — The geofence failed to be indexed by the system.</p></li>
-    /// <li><p><code>DELETED</code> — The geofence has been deleted from the system index.</p></li>
-    /// <li><p><code>DELETING</code> — The geofence is being deleted from the system index.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> — The geofence has been indexed by the system.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> — The geofence is being processed by the system.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> — The geofence failed to be indexed by the system.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> — The geofence has been deleted from the system index.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> — The geofence is being deleted from the system index.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,11 +152,16 @@ impl ListGeofenceResponseEntryBuilder {
     }
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> — The geofence has been indexed by the system.</p></li>
-    /// <li><p><code>PENDING</code> — The geofence is being processed by the system.</p></li>
-    /// <li><p><code>FAILED</code> — The geofence failed to be indexed by the system.</p></li>
-    /// <li><p><code>DELETED</code> — The geofence has been deleted from the system index.</p></li>
-    /// <li><p><code>DELETING</code> — The geofence is being deleted from the system index.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> — The geofence has been indexed by the system.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> — The geofence is being processed by the system.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> — The geofence failed to be indexed by the system.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> — The geofence has been deleted from the system index.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> — The geofence is being deleted from the system index.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -149,11 +169,16 @@ impl ListGeofenceResponseEntryBuilder {
     }
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> — The geofence has been indexed by the system.</p></li>
-    /// <li><p><code>PENDING</code> — The geofence is being processed by the system.</p></li>
-    /// <li><p><code>FAILED</code> — The geofence failed to be indexed by the system.</p></li>
-    /// <li><p><code>DELETED</code> — The geofence has been deleted from the system index.</p></li>
-    /// <li><p><code>DELETING</code> — The geofence is being deleted from the system index.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> — The geofence has been indexed by the system.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> — The geofence is being processed by the system.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> — The geofence failed to be indexed by the system.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> — The geofence has been deleted from the system index.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> — The geofence is being deleted from the system index.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

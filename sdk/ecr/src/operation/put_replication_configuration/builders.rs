@@ -22,7 +22,7 @@ impl PutReplicationConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `PutReplicationConfiguration`.
 ///
-/// <p>Creates or updates the replication configuration for a registry. The existing replication configuration for a repository can be retrieved with the <code>DescribeRegistry</code> API action. The first time the PutReplicationConfiguration API is called, a service-linked IAM role is created in your account for the replication process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p> <note>
+/// <p>Creates or updates the replication configuration for a registry. The existing replication configuration for a repository can be retrieved with the <code>DescribeRegistry</code> API action. The first time the PutReplicationConfiguration API is called, a service-linked IAM role is created in your account for the replication process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p><note>
 /// <p>When configuring cross-account replication, the destination account must grant the source account permission to replicate. This permission is controlled using a registry permissions policy. For more information, see <code>PutRegistryPolicy</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

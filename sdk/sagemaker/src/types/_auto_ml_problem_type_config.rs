@@ -10,7 +10,7 @@ pub enum AutoMlProblemTypeConfig {
     TabularJobConfig(crate::types::TabularJobConfig),
     /// <p>Settings used to configure an AutoML job V2 for the text classification problem type.</p>
     TextClassificationJobConfig(crate::types::TextClassificationJobConfig),
-    /// <p>Settings used to configure an AutoML job V2 for the text generation (LLMs fine-tuning) problem type.</p> <note>
+    /// <p>Settings used to configure an AutoML job V2 for the text generation (LLMs fine-tuning) problem type.</p><note>
     /// <p>The text generation models that support fine-tuning in Autopilot are currently accessible exclusively in regions supported by Canvas. Refer to the documentation of Canvas for the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/canvas.html">full list of its supported Regions</a>.</p>
     /// </note>
     TextGenerationJobConfig(crate::types::TextGenerationJobConfig),

@@ -9,18 +9,24 @@ pub struct DescribeVpcEndpointServiceConfigurationsInput {
     pub service_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>service-name</code> - The name of the service.</p></li>
-    /// <li><p><code>service-id</code> - The ID of the service.</p></li>
-    /// <li><p><code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).</p></li>
-    /// <li><p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>service-name</code> - The name of the service.</p></li>
+    /// <li>
+    /// <p><code>service-id</code> - The ID of the service.</p></li>
+    /// <li>
+    /// <p><code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).</p></li>
+    /// <li>
+    /// <p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned.</p>
@@ -41,18 +47,24 @@ impl DescribeVpcEndpointServiceConfigurationsInput {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>service-name</code> - The name of the service.</p></li>
-    /// <li><p><code>service-id</code> - The ID of the service.</p></li>
-    /// <li><p><code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).</p></li>
-    /// <li><p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>service-name</code> - The name of the service.</p></li>
+    /// <li>
+    /// <p><code>service-id</code> - The ID of the service.</p></li>
+    /// <li>
+    /// <p><code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).</p></li>
+    /// <li>
+    /// <p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -127,18 +139,24 @@ impl DescribeVpcEndpointServiceConfigurationsInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>service-name</code> - The name of the service.</p></li>
-    /// <li><p><code>service-id</code> - The ID of the service.</p></li>
-    /// <li><p><code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).</p></li>
-    /// <li><p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>service-name</code> - The name of the service.</p></li>
+    /// <li>
+    /// <p><code>service-id</code> - The ID of the service.</p></li>
+    /// <li>
+    /// <p><code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).</p></li>
+    /// <li>
+    /// <p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -148,18 +166,24 @@ impl DescribeVpcEndpointServiceConfigurationsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>service-name</code> - The name of the service.</p></li>
-    /// <li><p><code>service-id</code> - The ID of the service.</p></li>
-    /// <li><p><code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).</p></li>
-    /// <li><p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>service-name</code> - The name of the service.</p></li>
+    /// <li>
+    /// <p><code>service-id</code> - The ID of the service.</p></li>
+    /// <li>
+    /// <p><code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).</p></li>
+    /// <li>
+    /// <p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -167,18 +191,24 @@ impl DescribeVpcEndpointServiceConfigurationsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>service-name</code> - The name of the service.</p></li>
-    /// <li><p><code>service-id</code> - The ID of the service.</p></li>
-    /// <li><p><code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).</p></li>
-    /// <li><p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>service-name</code> - The name of the service.</p></li>
+    /// <li>
+    /// <p><code>service-id</code> - The ID of the service.</p></li>
+    /// <li>
+    /// <p><code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).</p></li>
+    /// <li>
+    /// <p><code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

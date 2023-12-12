@@ -120,15 +120,24 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
     ///
     /// <p>If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p></li>
-    /// <li><p><code>database-id</code> – The ID of the schema's database.</p></li>
-    /// <li><p><code>database-ip-address</code> – The IP address of the schema's database.</p></li>
-    /// <li><p><code>database-name</code> – The name of the schema's database.</p></li>
-    /// <li><p><code>database-engine</code> – The name of the schema database's engine.</p></li>
-    /// <li><p><code>original-schema-name</code> – The name of the schema's database's main schema.</p></li>
-    /// <li><p><code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p></li>
-    /// <li><p><code>schema-name</code> – The name of the schema.</p></li>
-    /// <li><p><code>server-ip-address</code> – The IP address of the schema database's server.</p></li>
+    /// <li>
+    /// <p><code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p></li>
+    /// <li>
+    /// <p><code>database-id</code> – The ID of the schema's database.</p></li>
+    /// <li>
+    /// <p><code>database-ip-address</code> – The IP address of the schema's database.</p></li>
+    /// <li>
+    /// <p><code>database-name</code> – The name of the schema's database.</p></li>
+    /// <li>
+    /// <p><code>database-engine</code> – The name of the schema database's engine.</p></li>
+    /// <li>
+    /// <p><code>original-schema-name</code> – The name of the schema's database's main schema.</p></li>
+    /// <li>
+    /// <p><code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p></li>
+    /// <li>
+    /// <p><code>schema-name</code> – The name of the schema.</p></li>
+    /// <li>
+    /// <p><code>server-ip-address</code> – The IP address of the schema database's server.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
@@ -137,15 +146,24 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
     }
     /// <p>If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p></li>
-    /// <li><p><code>database-id</code> – The ID of the schema's database.</p></li>
-    /// <li><p><code>database-ip-address</code> – The IP address of the schema's database.</p></li>
-    /// <li><p><code>database-name</code> – The name of the schema's database.</p></li>
-    /// <li><p><code>database-engine</code> – The name of the schema database's engine.</p></li>
-    /// <li><p><code>original-schema-name</code> – The name of the schema's database's main schema.</p></li>
-    /// <li><p><code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p></li>
-    /// <li><p><code>schema-name</code> – The name of the schema.</p></li>
-    /// <li><p><code>server-ip-address</code> – The IP address of the schema database's server.</p></li>
+    /// <li>
+    /// <p><code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p></li>
+    /// <li>
+    /// <p><code>database-id</code> – The ID of the schema's database.</p></li>
+    /// <li>
+    /// <p><code>database-ip-address</code> – The IP address of the schema's database.</p></li>
+    /// <li>
+    /// <p><code>database-name</code> – The name of the schema's database.</p></li>
+    /// <li>
+    /// <p><code>database-engine</code> – The name of the schema database's engine.</p></li>
+    /// <li>
+    /// <p><code>original-schema-name</code> – The name of the schema's database's main schema.</p></li>
+    /// <li>
+    /// <p><code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p></li>
+    /// <li>
+    /// <p><code>schema-name</code> – The name of the schema.</p></li>
+    /// <li>
+    /// <p><code>server-ip-address</code> – The IP address of the schema database's server.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code></p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
@@ -154,15 +172,24 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
     }
     /// <p>If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p></li>
-    /// <li><p><code>database-id</code> – The ID of the schema's database.</p></li>
-    /// <li><p><code>database-ip-address</code> – The IP address of the schema's database.</p></li>
-    /// <li><p><code>database-name</code> – The name of the schema's database.</p></li>
-    /// <li><p><code>database-engine</code> – The name of the schema database's engine.</p></li>
-    /// <li><p><code>original-schema-name</code> – The name of the schema's database's main schema.</p></li>
-    /// <li><p><code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p></li>
-    /// <li><p><code>schema-name</code> – The name of the schema.</p></li>
-    /// <li><p><code>server-ip-address</code> – The IP address of the schema database's server.</p></li>
+    /// <li>
+    /// <p><code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p></li>
+    /// <li>
+    /// <p><code>database-id</code> – The ID of the schema's database.</p></li>
+    /// <li>
+    /// <p><code>database-ip-address</code> – The IP address of the schema's database.</p></li>
+    /// <li>
+    /// <p><code>database-name</code> – The name of the schema's database.</p></li>
+    /// <li>
+    /// <p><code>database-engine</code> – The name of the schema database's engine.</p></li>
+    /// <li>
+    /// <p><code>original-schema-name</code> – The name of the schema's database's main schema.</p></li>
+    /// <li>
+    /// <p><code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p></li>
+    /// <li>
+    /// <p><code>schema-name</code> – The name of the schema.</p></li>
+    /// <li>
+    /// <p><code>server-ip-address</code> – The IP address of the schema database's server.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code></p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {

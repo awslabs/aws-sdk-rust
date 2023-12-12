@@ -5,7 +5,7 @@
 pub struct ModifyInstanceAttributeInput {
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
     pub source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    /// <p>The name of the attribute to modify.</p> <important>
+    /// <p>The name of the attribute to modify.</p><important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code></p>
     /// </important>
     pub attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
@@ -50,7 +50,7 @@ impl ModifyInstanceAttributeInput {
     pub fn source_dest_check(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.source_dest_check.as_ref()
     }
-    /// <p>The name of the attribute to modify.</p> <important>
+    /// <p>The name of the attribute to modify.</p><important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code></p>
     /// </important>
     pub fn attribute(&self) -> ::std::option::Option<&crate::types::InstanceAttributeName> {
@@ -170,21 +170,21 @@ impl ModifyInstanceAttributeInputBuilder {
     pub fn get_source_dest_check(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.source_dest_check
     }
-    /// <p>The name of the attribute to modify.</p> <important>
+    /// <p>The name of the attribute to modify.</p><important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code></p>
     /// </important>
     pub fn attribute(mut self, input: crate::types::InstanceAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the attribute to modify.</p> <important>
+    /// <p>The name of the attribute to modify.</p><important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code></p>
     /// </important>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
         self.attribute = input;
         self
     }
-    /// <p>The name of the attribute to modify.</p> <important>
+    /// <p>The name of the attribute to modify.</p><important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code></p>
     /// </important>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {

@@ -6,7 +6,7 @@
 pub struct PutDedicatedIpPoolScalingAttributesInput {
     /// <p>The name of the dedicated IP pool.</p>
     pub pool_name: ::std::option::Option<::std::string::String>,
-    /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
+    /// <p>The scaling mode to apply to the dedicated IP pool.</p><note>
     /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
     /// </note>
     pub scaling_mode: ::std::option::Option<crate::types::ScalingMode>,
@@ -16,7 +16,7 @@ impl PutDedicatedIpPoolScalingAttributesInput {
     pub fn pool_name(&self) -> ::std::option::Option<&str> {
         self.pool_name.as_deref()
     }
-    /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
+    /// <p>The scaling mode to apply to the dedicated IP pool.</p><note>
     /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
     /// </note>
     pub fn scaling_mode(&self) -> ::std::option::Option<&crate::types::ScalingMode> {
@@ -53,7 +53,7 @@ impl PutDedicatedIpPoolScalingAttributesInputBuilder {
     pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_name
     }
-    /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
+    /// <p>The scaling mode to apply to the dedicated IP pool.</p><note>
     /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
     /// </note>
     /// This field is required.
@@ -61,14 +61,14 @@ impl PutDedicatedIpPoolScalingAttributesInputBuilder {
         self.scaling_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
+    /// <p>The scaling mode to apply to the dedicated IP pool.</p><note>
     /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
     /// </note>
     pub fn set_scaling_mode(mut self, input: ::std::option::Option<crate::types::ScalingMode>) -> Self {
         self.scaling_mode = input;
         self
     }
-    /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
+    /// <p>The scaling mode to apply to the dedicated IP pool.</p><note>
     /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
     /// </note>
     pub fn get_scaling_mode(&self) -> &::std::option::Option<crate::types::ScalingMode> {

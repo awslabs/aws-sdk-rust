@@ -22,7 +22,7 @@ impl DeleteTrustedTokenIssuerInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteTrustedTokenIssuer`.
 ///
-/// <p>Deletes a trusted token issuer configuration from an instance of IAM Identity Center.</p> <note>
+/// <p>Deletes a trusted token issuer configuration from an instance of IAM Identity Center.</p><note>
 /// <p>Deleting this trusted token issuer configuration will cause users to lose access to any applications that are configured to use the trusted token issuer.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

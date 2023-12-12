@@ -186,7 +186,7 @@ impl RegisterCACertificateFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>Metadata which can be used to manage the CA certificate.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -195,7 +195,7 @@ impl RegisterCACertificateFluentBuilder {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>Metadata which can be used to manage the CA certificate.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -204,7 +204,7 @@ impl RegisterCACertificateFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>Metadata which can be used to manage the CA certificate.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>

@@ -2,8 +2,10 @@
 
 /// <p>This request cannot be completed for one of the following reasons:</p>
 /// <ul>
-/// <li><p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
-/// <li><p>The requested resource was being concurrently modified by another request.</p></li>
+/// <li>
+/// <p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
+/// <li>
+/// <p>The requested resource was being concurrently modified by another request.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -14,8 +16,10 @@ pub struct ConflictException {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>This request cannot be completed for one of the following reasons:</p>
     /// <ul>
-    /// <li><p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
-    /// <li><p>The requested resource was being concurrently modified by another request.</p></li>
+    /// <li>
+    /// <p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
+    /// <li>
+    /// <p>The requested resource was being concurrently modified by another request.</p></li>
     /// </ul>
     pub reason: ::std::option::Option<crate::types::ConflictExceptionReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
@@ -27,8 +31,10 @@ impl ConflictException {
     }
     /// <p>This request cannot be completed for one of the following reasons:</p>
     /// <ul>
-    /// <li><p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
-    /// <li><p>The requested resource was being concurrently modified by another request.</p></li>
+    /// <li>
+    /// <p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
+    /// <li>
+    /// <p>The requested resource was being concurrently modified by another request.</p></li>
     /// </ul>
     pub fn reason(&self) -> ::std::option::Option<&crate::types::ConflictExceptionReason> {
         self.reason.as_ref()
@@ -110,8 +116,10 @@ impl ConflictExceptionBuilder {
     }
     /// <p>This request cannot be completed for one of the following reasons:</p>
     /// <ul>
-    /// <li><p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
-    /// <li><p>The requested resource was being concurrently modified by another request.</p></li>
+    /// <li>
+    /// <p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
+    /// <li>
+    /// <p>The requested resource was being concurrently modified by another request.</p></li>
     /// </ul>
     pub fn reason(mut self, input: crate::types::ConflictExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -119,8 +127,10 @@ impl ConflictExceptionBuilder {
     }
     /// <p>This request cannot be completed for one of the following reasons:</p>
     /// <ul>
-    /// <li><p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
-    /// <li><p>The requested resource was being concurrently modified by another request.</p></li>
+    /// <li>
+    /// <p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
+    /// <li>
+    /// <p>The requested resource was being concurrently modified by another request.</p></li>
     /// </ul>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ConflictExceptionReason>) -> Self {
         self.reason = input;
@@ -128,8 +138,10 @@ impl ConflictExceptionBuilder {
     }
     /// <p>This request cannot be completed for one of the following reasons:</p>
     /// <ul>
-    /// <li><p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
-    /// <li><p>The requested resource was being concurrently modified by another request.</p></li>
+    /// <li>
+    /// <p>Performing the requested operation would violate an existing uniqueness claim in the identity store. Resolve the conflict before retrying this request.</p></li>
+    /// <li>
+    /// <p>The requested resource was being concurrently modified by another request.</p></li>
     /// </ul>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::ConflictExceptionReason> {
         &self.reason

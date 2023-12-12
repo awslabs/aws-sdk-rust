@@ -13,7 +13,7 @@ pub struct GetComplianceDetailsByResourceInput {
     pub compliance_types: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl GetComplianceDetailsByResourceInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn resource_evaluation_id(&self) -> ::std::option::Option<&str> {
@@ -128,21 +128,21 @@ impl GetComplianceDetailsByResourceInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn resource_evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn set_resource_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_evaluation_id = input;
         self
     }
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {

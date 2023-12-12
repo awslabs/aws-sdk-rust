@@ -27,8 +27,10 @@ pub struct DescribeAssetModelOutput {
     pub asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li><p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li><p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li>
+    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
+    /// <li>
+    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
     pub asset_model_type: ::std::option::Option<crate::types::AssetModelType>,
     /// <p>The list of the immediate child custom composite model summaries for the asset model.</p>
@@ -90,8 +92,10 @@ impl DescribeAssetModelOutput {
     }
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li><p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li><p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li>
+    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
+    /// <li>
+    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
     pub fn asset_model_type(&self) -> ::std::option::Option<&crate::types::AssetModelType> {
         self.asset_model_type.as_ref()
@@ -312,8 +316,10 @@ impl DescribeAssetModelOutputBuilder {
     }
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li><p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li><p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li>
+    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
+    /// <li>
+    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
     pub fn asset_model_type(mut self, input: crate::types::AssetModelType) -> Self {
         self.asset_model_type = ::std::option::Option::Some(input);
@@ -321,8 +327,10 @@ impl DescribeAssetModelOutputBuilder {
     }
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li><p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li><p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li>
+    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
+    /// <li>
+    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
     pub fn set_asset_model_type(mut self, input: ::std::option::Option<crate::types::AssetModelType>) -> Self {
         self.asset_model_type = input;
@@ -330,8 +338,10 @@ impl DescribeAssetModelOutputBuilder {
     }
     /// <p>The type of asset model.</p>
     /// <ul>
-    /// <li><p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
-    /// <li><p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
+    /// <li>
+    /// <p><b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p></li>
+    /// <li>
+    /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
     pub fn get_asset_model_type(&self) -> &::std::option::Option<crate::types::AssetModelType> {
         &self.asset_model_type

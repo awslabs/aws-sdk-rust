@@ -17,8 +17,10 @@ pub struct TestDnsAnswerInput {
     /// <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>
     /// <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p>
     /// <ul>
-    /// <li><p><b>IPv4</b>: Specify a value between 0 and 32</p></li>
-    /// <li><p><b>IPv6</b>: Specify a value between 0 and 128</p></li>
+    /// <li>
+    /// <p><b>IPv4</b>: Specify a value between 0 and 32</p></li>
+    /// <li>
+    /// <p><b>IPv6</b>: Specify a value between 0 and 128</p></li>
     /// </ul>
     pub edns0_client_subnet_mask: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +48,10 @@ impl TestDnsAnswerInput {
     /// <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>
     /// <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p>
     /// <ul>
-    /// <li><p><b>IPv4</b>: Specify a value between 0 and 32</p></li>
-    /// <li><p><b>IPv6</b>: Specify a value between 0 and 128</p></li>
+    /// <li>
+    /// <p><b>IPv4</b>: Specify a value between 0 and 32</p></li>
+    /// <li>
+    /// <p><b>IPv6</b>: Specify a value between 0 and 128</p></li>
     /// </ul>
     pub fn edns0_client_subnet_mask(&self) -> ::std::option::Option<&str> {
         self.edns0_client_subnet_mask.as_deref()
@@ -148,8 +152,10 @@ impl TestDnsAnswerInputBuilder {
     /// <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>
     /// <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p>
     /// <ul>
-    /// <li><p><b>IPv4</b>: Specify a value between 0 and 32</p></li>
-    /// <li><p><b>IPv6</b>: Specify a value between 0 and 128</p></li>
+    /// <li>
+    /// <p><b>IPv4</b>: Specify a value between 0 and 32</p></li>
+    /// <li>
+    /// <p><b>IPv6</b>: Specify a value between 0 and 128</p></li>
     /// </ul>
     pub fn edns0_client_subnet_mask(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edns0_client_subnet_mask = ::std::option::Option::Some(input.into());
@@ -158,8 +164,10 @@ impl TestDnsAnswerInputBuilder {
     /// <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>
     /// <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p>
     /// <ul>
-    /// <li><p><b>IPv4</b>: Specify a value between 0 and 32</p></li>
-    /// <li><p><b>IPv6</b>: Specify a value between 0 and 128</p></li>
+    /// <li>
+    /// <p><b>IPv4</b>: Specify a value between 0 and 32</p></li>
+    /// <li>
+    /// <p><b>IPv6</b>: Specify a value between 0 and 128</p></li>
     /// </ul>
     pub fn set_edns0_client_subnet_mask(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edns0_client_subnet_mask = input;
@@ -168,8 +176,10 @@ impl TestDnsAnswerInputBuilder {
     /// <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>
     /// <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p>
     /// <ul>
-    /// <li><p><b>IPv4</b>: Specify a value between 0 and 32</p></li>
-    /// <li><p><b>IPv6</b>: Specify a value between 0 and 128</p></li>
+    /// <li>
+    /// <p><b>IPv4</b>: Specify a value between 0 and 32</p></li>
+    /// <li>
+    /// <p><b>IPv6</b>: Specify a value between 0 and 128</p></li>
     /// </ul>
     pub fn get_edns0_client_subnet_mask(&self) -> &::std::option::Option<::std::string::String> {
         &self.edns0_client_subnet_mask

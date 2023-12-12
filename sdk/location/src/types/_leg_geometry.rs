@@ -7,7 +7,8 @@ pub struct LegGeometry {
     /// <p>An ordered list of positions used to plot a route on a map.</p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
     /// <ul>
-    /// <li><p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
+    /// <li>
+    /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
     /// </ul>
     pub line_string: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
 }
@@ -15,7 +16,8 @@ impl LegGeometry {
     /// <p>An ordered list of positions used to plot a route on a map.</p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
     /// <ul>
-    /// <li><p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
+    /// <li>
+    /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_string.is_none()`.
@@ -44,7 +46,8 @@ impl LegGeometryBuilder {
     /// <p>An ordered list of positions used to plot a route on a map.</p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
     /// <ul>
-    /// <li><p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
+    /// <li>
+    /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
     /// </ul>
     pub fn line_string(mut self, input: ::std::vec::Vec<f64>) -> Self {
         let mut v = self.line_string.unwrap_or_default();
@@ -55,7 +58,8 @@ impl LegGeometryBuilder {
     /// <p>An ordered list of positions used to plot a route on a map.</p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
     /// <ul>
-    /// <li><p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
+    /// <li>
+    /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
     /// </ul>
     pub fn set_line_string(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
         self.line_string = input;
@@ -64,7 +68,8 @@ impl LegGeometryBuilder {
     /// <p>An ordered list of positions used to plot a route on a map.</p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
     /// <ul>
-    /// <li><p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
+    /// <li>
+    /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
     /// </ul>
     pub fn get_line_string(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
         &self.line_string

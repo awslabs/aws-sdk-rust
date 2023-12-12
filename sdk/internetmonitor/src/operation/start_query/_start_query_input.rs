@@ -11,9 +11,12 @@ pub struct StartQueryInput {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of query to run. The following are the three types of queries that you can run using the Internet Monitor query interface:</p>
     /// <ul>
-    /// <li><p><code>MEASUREMENTS</code>: TBD definition</p></li>
-    /// <li><p><code>TOP_LOCATIONS</code>: TBD definition</p></li>
-    /// <li><p><code>TOP_LOCATION_DETAILS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>MEASUREMENTS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>TOP_LOCATIONS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>TOP_LOCATION_DETAILS</code>: TBD definition</p></li>
     /// </ul>
     /// <p>For lists of the fields returned with each query type and more information about how each type of query is performed, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html"> Using the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub query_type: ::std::option::Option<crate::types::QueryType>,
@@ -36,9 +39,12 @@ impl StartQueryInput {
     }
     /// <p>The type of query to run. The following are the three types of queries that you can run using the Internet Monitor query interface:</p>
     /// <ul>
-    /// <li><p><code>MEASUREMENTS</code>: TBD definition</p></li>
-    /// <li><p><code>TOP_LOCATIONS</code>: TBD definition</p></li>
-    /// <li><p><code>TOP_LOCATION_DETAILS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>MEASUREMENTS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>TOP_LOCATIONS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>TOP_LOCATION_DETAILS</code>: TBD definition</p></li>
     /// </ul>
     /// <p>For lists of the fields returned with each query type and more information about how each type of query is performed, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html"> Using the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn query_type(&self) -> ::std::option::Option<&crate::types::QueryType> {
@@ -117,9 +123,12 @@ impl StartQueryInputBuilder {
     }
     /// <p>The type of query to run. The following are the three types of queries that you can run using the Internet Monitor query interface:</p>
     /// <ul>
-    /// <li><p><code>MEASUREMENTS</code>: TBD definition</p></li>
-    /// <li><p><code>TOP_LOCATIONS</code>: TBD definition</p></li>
-    /// <li><p><code>TOP_LOCATION_DETAILS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>MEASUREMENTS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>TOP_LOCATIONS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>TOP_LOCATION_DETAILS</code>: TBD definition</p></li>
     /// </ul>
     /// <p>For lists of the fields returned with each query type and more information about how each type of query is performed, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html"> Using the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     /// This field is required.
@@ -129,9 +138,12 @@ impl StartQueryInputBuilder {
     }
     /// <p>The type of query to run. The following are the three types of queries that you can run using the Internet Monitor query interface:</p>
     /// <ul>
-    /// <li><p><code>MEASUREMENTS</code>: TBD definition</p></li>
-    /// <li><p><code>TOP_LOCATIONS</code>: TBD definition</p></li>
-    /// <li><p><code>TOP_LOCATION_DETAILS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>MEASUREMENTS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>TOP_LOCATIONS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>TOP_LOCATION_DETAILS</code>: TBD definition</p></li>
     /// </ul>
     /// <p>For lists of the fields returned with each query type and more information about how each type of query is performed, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html"> Using the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn set_query_type(mut self, input: ::std::option::Option<crate::types::QueryType>) -> Self {
@@ -140,9 +152,12 @@ impl StartQueryInputBuilder {
     }
     /// <p>The type of query to run. The following are the three types of queries that you can run using the Internet Monitor query interface:</p>
     /// <ul>
-    /// <li><p><code>MEASUREMENTS</code>: TBD definition</p></li>
-    /// <li><p><code>TOP_LOCATIONS</code>: TBD definition</p></li>
-    /// <li><p><code>TOP_LOCATION_DETAILS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>MEASUREMENTS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>TOP_LOCATIONS</code>: TBD definition</p></li>
+    /// <li>
+    /// <p><code>TOP_LOCATION_DETAILS</code>: TBD definition</p></li>
     /// </ul>
     /// <p>For lists of the fields returned with each query type and more information about how each type of query is performed, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html"> Using the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn get_query_type(&self) -> &::std::option::Option<crate::types::QueryType> {

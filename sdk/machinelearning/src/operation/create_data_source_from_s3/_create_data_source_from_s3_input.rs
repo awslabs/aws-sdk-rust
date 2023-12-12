@@ -9,10 +9,15 @@ pub struct CreateDataSourceFromS3Input {
     pub data_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
-    /// <li><p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
-    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
-    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
+    /// <li>
+    /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+    /// <li>
+    /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p>
+    /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub data_spec: ::std::option::Option<crate::types::S3DataSpec>,
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
@@ -29,10 +34,15 @@ impl CreateDataSourceFromS3Input {
     }
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
-    /// <li><p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
-    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
-    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
+    /// <li>
+    /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+    /// <li>
+    /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p>
+    /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn data_spec(&self) -> ::std::option::Option<&crate::types::S3DataSpec> {
         self.data_spec.as_ref()
@@ -90,10 +100,15 @@ impl CreateDataSourceFromS3InputBuilder {
     }
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
-    /// <li><p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
-    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
-    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
+    /// <li>
+    /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+    /// <li>
+    /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p>
+    /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn data_spec(mut self, input: crate::types::S3DataSpec) -> Self {
@@ -102,10 +117,15 @@ impl CreateDataSourceFromS3InputBuilder {
     }
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
-    /// <li><p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
-    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
-    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
+    /// <li>
+    /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+    /// <li>
+    /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p>
+    /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn set_data_spec(mut self, input: ::std::option::Option<crate::types::S3DataSpec>) -> Self {
         self.data_spec = input;
@@ -113,10 +133,15 @@ impl CreateDataSourceFromS3InputBuilder {
     }
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
-    /// <li><p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
-    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
-    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
+    /// <li>
+    /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+    /// <li>
+    /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p>
+    /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn get_data_spec(&self) -> &::std::option::Option<crate::types::S3DataSpec> {
         &self.data_spec

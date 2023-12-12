@@ -7,7 +7,7 @@ pub struct DescribeCustomMetricOutput {
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the custom metric.</p>
     pub metric_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
     /// </important>
     pub metric_type: ::std::option::Option<crate::types::CustomMetricType>,
@@ -28,7 +28,7 @@ impl DescribeCustomMetricOutput {
     pub fn metric_arn(&self) -> ::std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
     /// </important>
     pub fn metric_type(&self) -> ::std::option::Option<&crate::types::CustomMetricType> {
@@ -100,21 +100,21 @@ impl DescribeCustomMetricOutputBuilder {
     pub fn get_metric_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_arn
     }
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
     /// </important>
     pub fn metric_type(mut self, input: crate::types::CustomMetricType) -> Self {
         self.metric_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
     /// </important>
     pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::CustomMetricType>) -> Self {
         self.metric_type = input;
         self
     }
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
     /// </important>
     pub fn get_metric_type(&self) -> &::std::option::Option<crate::types::CustomMetricType> {

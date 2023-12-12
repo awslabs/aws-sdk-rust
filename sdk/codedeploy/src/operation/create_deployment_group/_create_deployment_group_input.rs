@@ -38,8 +38,7 @@ pub struct CreateDeploymentGroupInput {
     pub load_balancer_info: ::std::option::Option<crate::types::LoadBalancerInfo>,
     /// <p>Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
     pub ec2_tag_set: ::std::option::Option<crate::types::Ec2TagSet>,
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
@@ -127,8 +126,7 @@ impl CreateDeploymentGroupInput {
     pub fn ec2_tag_set(&self) -> ::std::option::Option<&crate::types::Ec2TagSet> {
         self.ec2_tag_set.as_ref()
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
@@ -440,8 +438,7 @@ impl CreateDeploymentGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).
     ///
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
@@ -451,8 +448,7 @@ impl CreateDeploymentGroupInputBuilder {
         self.ecs_services = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
@@ -460,8 +456,7 @@ impl CreateDeploymentGroupInputBuilder {
         self.ecs_services = input;
         self
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>

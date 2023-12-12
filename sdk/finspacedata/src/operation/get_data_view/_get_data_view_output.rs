@@ -28,14 +28,22 @@ pub struct GetDataViewOutput {
     pub destination_type_params: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
-    /// <li><p><code>RUNNING</code> – Dataview creation is running.</p></li>
-    /// <li><p><code>STARTING</code> – Dataview creation is starting.</p></li>
-    /// <li><p><code>FAILED</code> – Dataview creation has failed.</p></li>
-    /// <li><p><code>CANCELLED</code> – Dataview creation has been cancelled.</p></li>
-    /// <li><p><code>TIMEOUT</code> – Dataview creation has timed out.</p></li>
-    /// <li><p><code>SUCCESS</code> – Dataview creation has succeeded.</p></li>
-    /// <li><p><code>PENDING</code> – Dataview creation is pending.</p></li>
-    /// <li><p><code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> – Dataview creation is running.</p></li>
+    /// <li>
+    /// <p><code>STARTING</code> – Dataview creation is starting.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – Dataview creation has failed.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – Dataview creation has been cancelled.</p></li>
+    /// <li>
+    /// <p><code>TIMEOUT</code> – Dataview creation has timed out.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> – Dataview creation has succeeded.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> – Dataview creation is pending.</p></li>
+    /// <li>
+    /// <p><code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::DataViewStatus>,
     _request_id: Option<String>,
@@ -91,14 +99,22 @@ impl GetDataViewOutput {
     }
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
-    /// <li><p><code>RUNNING</code> – Dataview creation is running.</p></li>
-    /// <li><p><code>STARTING</code> – Dataview creation is starting.</p></li>
-    /// <li><p><code>FAILED</code> – Dataview creation has failed.</p></li>
-    /// <li><p><code>CANCELLED</code> – Dataview creation has been cancelled.</p></li>
-    /// <li><p><code>TIMEOUT</code> – Dataview creation has timed out.</p></li>
-    /// <li><p><code>SUCCESS</code> – Dataview creation has succeeded.</p></li>
-    /// <li><p><code>PENDING</code> – Dataview creation is pending.</p></li>
-    /// <li><p><code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> – Dataview creation is running.</p></li>
+    /// <li>
+    /// <p><code>STARTING</code> – Dataview creation is starting.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – Dataview creation has failed.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – Dataview creation has been cancelled.</p></li>
+    /// <li>
+    /// <p><code>TIMEOUT</code> – Dataview creation has timed out.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> – Dataview creation has succeeded.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> – Dataview creation is pending.</p></li>
+    /// <li>
+    /// <p><code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DataViewStatus> {
         self.status.as_ref()
@@ -303,14 +319,22 @@ impl GetDataViewOutputBuilder {
     }
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
-    /// <li><p><code>RUNNING</code> – Dataview creation is running.</p></li>
-    /// <li><p><code>STARTING</code> – Dataview creation is starting.</p></li>
-    /// <li><p><code>FAILED</code> – Dataview creation has failed.</p></li>
-    /// <li><p><code>CANCELLED</code> – Dataview creation has been cancelled.</p></li>
-    /// <li><p><code>TIMEOUT</code> – Dataview creation has timed out.</p></li>
-    /// <li><p><code>SUCCESS</code> – Dataview creation has succeeded.</p></li>
-    /// <li><p><code>PENDING</code> – Dataview creation is pending.</p></li>
-    /// <li><p><code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> – Dataview creation is running.</p></li>
+    /// <li>
+    /// <p><code>STARTING</code> – Dataview creation is starting.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – Dataview creation has failed.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – Dataview creation has been cancelled.</p></li>
+    /// <li>
+    /// <p><code>TIMEOUT</code> – Dataview creation has timed out.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> – Dataview creation has succeeded.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> – Dataview creation is pending.</p></li>
+    /// <li>
+    /// <p><code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::DataViewStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -318,14 +342,22 @@ impl GetDataViewOutputBuilder {
     }
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
-    /// <li><p><code>RUNNING</code> – Dataview creation is running.</p></li>
-    /// <li><p><code>STARTING</code> – Dataview creation is starting.</p></li>
-    /// <li><p><code>FAILED</code> – Dataview creation has failed.</p></li>
-    /// <li><p><code>CANCELLED</code> – Dataview creation has been cancelled.</p></li>
-    /// <li><p><code>TIMEOUT</code> – Dataview creation has timed out.</p></li>
-    /// <li><p><code>SUCCESS</code> – Dataview creation has succeeded.</p></li>
-    /// <li><p><code>PENDING</code> – Dataview creation is pending.</p></li>
-    /// <li><p><code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> – Dataview creation is running.</p></li>
+    /// <li>
+    /// <p><code>STARTING</code> – Dataview creation is starting.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – Dataview creation has failed.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – Dataview creation has been cancelled.</p></li>
+    /// <li>
+    /// <p><code>TIMEOUT</code> – Dataview creation has timed out.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> – Dataview creation has succeeded.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> – Dataview creation is pending.</p></li>
+    /// <li>
+    /// <p><code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataViewStatus>) -> Self {
         self.status = input;
@@ -333,14 +365,22 @@ impl GetDataViewOutputBuilder {
     }
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
-    /// <li><p><code>RUNNING</code> – Dataview creation is running.</p></li>
-    /// <li><p><code>STARTING</code> – Dataview creation is starting.</p></li>
-    /// <li><p><code>FAILED</code> – Dataview creation has failed.</p></li>
-    /// <li><p><code>CANCELLED</code> – Dataview creation has been cancelled.</p></li>
-    /// <li><p><code>TIMEOUT</code> – Dataview creation has timed out.</p></li>
-    /// <li><p><code>SUCCESS</code> – Dataview creation has succeeded.</p></li>
-    /// <li><p><code>PENDING</code> – Dataview creation is pending.</p></li>
-    /// <li><p><code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> – Dataview creation is running.</p></li>
+    /// <li>
+    /// <p><code>STARTING</code> – Dataview creation is starting.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – Dataview creation has failed.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – Dataview creation has been cancelled.</p></li>
+    /// <li>
+    /// <p><code>TIMEOUT</code> – Dataview creation has timed out.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> – Dataview creation has succeeded.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> – Dataview creation is pending.</p></li>
+    /// <li>
+    /// <p><code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataViewStatus> {
         &self.status

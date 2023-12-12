@@ -7,10 +7,15 @@ pub struct ByteMatchStatement {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li><p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
-    /// <li><p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li><p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p> <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
-    /// <li><p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
+    /// <li>
+    /// <p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
+    /// <li>
+    /// <p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
+    /// <li>
+    /// <p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p><b>If you're using the WAF API</b></p>
@@ -29,8 +34,10 @@ pub struct ByteMatchStatement {
     /// <p><b>CONTAINS_WORD</b></p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li><p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
-    /// <li><p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
+    /// <li>
+    /// <p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
     /// </ul>
     /// <p><b>EXACTLY</b></p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
@@ -44,10 +51,15 @@ impl ByteMatchStatement {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li><p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
-    /// <li><p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li><p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p> <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
-    /// <li><p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
+    /// <li>
+    /// <p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
+    /// <li>
+    /// <p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
+    /// <li>
+    /// <p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p><b>If you're using the WAF API</b></p>
@@ -73,8 +85,10 @@ impl ByteMatchStatement {
     /// <p><b>CONTAINS_WORD</b></p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li><p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
-    /// <li><p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
+    /// <li>
+    /// <p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
     /// </ul>
     /// <p><b>EXACTLY</b></p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
@@ -106,10 +120,15 @@ impl ByteMatchStatementBuilder {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li><p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
-    /// <li><p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li><p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p> <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
-    /// <li><p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
+    /// <li>
+    /// <p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
+    /// <li>
+    /// <p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
+    /// <li>
+    /// <p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p><b>If you're using the WAF API</b></p>
@@ -125,10 +144,15 @@ impl ByteMatchStatementBuilder {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li><p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
-    /// <li><p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li><p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p> <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
-    /// <li><p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
+    /// <li>
+    /// <p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
+    /// <li>
+    /// <p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
+    /// <li>
+    /// <p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p><b>If you're using the WAF API</b></p>
@@ -143,10 +167,15 @@ impl ByteMatchStatementBuilder {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li><p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
-    /// <li><p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li><p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p> <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
-    /// <li><p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
+    /// <li>
+    /// <p><code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request.</p></li>
+    /// <li>
+    /// <p><code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>.</p></li>
+    /// <li>
+    /// <p><code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><code>HeaderOrder</code>: The list of header names to match for. WAF creates a string that contains the ordered list of header names, from the headers in the web request, and then matches against that string.</p></li>
     /// </ul>
     /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p><b>If you're using the WAF API</b></p>
@@ -198,8 +227,10 @@ impl ByteMatchStatementBuilder {
     /// <p><b>CONTAINS_WORD</b></p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li><p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
-    /// <li><p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
+    /// <li>
+    /// <p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
     /// </ul>
     /// <p><b>EXACTLY</b></p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
@@ -218,8 +249,10 @@ impl ByteMatchStatementBuilder {
     /// <p><b>CONTAINS_WORD</b></p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li><p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
-    /// <li><p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
+    /// <li>
+    /// <p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
     /// </ul>
     /// <p><b>EXACTLY</b></p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
@@ -237,8 +270,10 @@ impl ByteMatchStatementBuilder {
     /// <p><b>CONTAINS_WORD</b></p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li><p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
-    /// <li><p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p></li>
+    /// <li>
+    /// <p><code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p></li>
     /// </ul>
     /// <p><b>EXACTLY</b></p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>

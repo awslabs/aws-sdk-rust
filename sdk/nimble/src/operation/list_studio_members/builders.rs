@@ -22,7 +22,7 @@ impl ListStudioMembersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListStudioMembers`.
 ///
-/// <p>Get all users in a given studio membership.</p> <note>
+/// <p>Get all users in a given studio membership.</p><note>
 /// <p><code>ListStudioMembers</code> only returns admin members.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

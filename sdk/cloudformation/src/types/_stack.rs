@@ -28,8 +28,10 @@ pub struct Stack {
     pub stack_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li><p><code>true</code>: disable rollback.</p></li>
-    /// <li><p><code>false</code>: enable rollback.</p></li>
+    /// <li>
+    /// <p><code>true</code>: disable rollback.</p></li>
+    /// <li>
+    /// <p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub disable_rollback: ::std::option::Option<bool>,
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
@@ -108,8 +110,10 @@ impl Stack {
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li><p><code>true</code>: disable rollback.</p></li>
-    /// <li><p><code>false</code>: enable rollback.</p></li>
+    /// <li>
+    /// <p><code>true</code>: disable rollback.</p></li>
+    /// <li>
+    /// <p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub fn disable_rollback(&self) -> ::std::option::Option<bool> {
         self.disable_rollback
@@ -372,8 +376,10 @@ impl StackBuilder {
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li><p><code>true</code>: disable rollback.</p></li>
-    /// <li><p><code>false</code>: enable rollback.</p></li>
+    /// <li>
+    /// <p><code>true</code>: disable rollback.</p></li>
+    /// <li>
+    /// <p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub fn disable_rollback(mut self, input: bool) -> Self {
         self.disable_rollback = ::std::option::Option::Some(input);
@@ -381,8 +387,10 @@ impl StackBuilder {
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li><p><code>true</code>: disable rollback.</p></li>
-    /// <li><p><code>false</code>: enable rollback.</p></li>
+    /// <li>
+    /// <p><code>true</code>: disable rollback.</p></li>
+    /// <li>
+    /// <p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub fn set_disable_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_rollback = input;
@@ -390,8 +398,10 @@ impl StackBuilder {
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li><p><code>true</code>: disable rollback.</p></li>
-    /// <li><p><code>false</code>: enable rollback.</p></li>
+    /// <li>
+    /// <p><code>true</code>: disable rollback.</p></li>
+    /// <li>
+    /// <p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub fn get_disable_rollback(&self) -> &::std::option::Option<bool> {
         &self.disable_rollback

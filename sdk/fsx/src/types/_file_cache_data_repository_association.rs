@@ -6,19 +6,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileCacheDataRepositoryAssociation {
     /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
-    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p> <note>
+    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p><note>
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
     pub file_cache_path: ::std::option::Option<::std::string::String>,
     /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
     /// <ul>
-    /// <li><p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
+    /// <li>
+    /// <p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
     /// <ul>
-    /// <li><p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
-    /// <li><p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
+    /// <li>
+    /// <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
+    /// <li>
+    /// <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
     /// </ul></li>
-    /// <li><p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <li>
+    /// <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
     pub data_repository_path: ::std::option::Option<::std::string::String>,
     /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
@@ -28,7 +32,7 @@ pub struct FileCacheDataRepositoryAssociation {
 }
 impl FileCacheDataRepositoryAssociation {
     /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
-    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p> <note>
+    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p><note>
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
@@ -37,12 +41,16 @@ impl FileCacheDataRepositoryAssociation {
     }
     /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
     /// <ul>
-    /// <li><p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
+    /// <li>
+    /// <p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
     /// <ul>
-    /// <li><p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
-    /// <li><p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
+    /// <li>
+    /// <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
+    /// <li>
+    /// <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
     /// </ul></li>
-    /// <li><p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <li>
+    /// <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
     pub fn data_repository_path(&self) -> ::std::option::Option<&str> {
         self.data_repository_path.as_deref()
@@ -76,7 +84,7 @@ pub struct FileCacheDataRepositoryAssociationBuilder {
 }
 impl FileCacheDataRepositoryAssociationBuilder {
     /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
-    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p> <note>
+    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p><note>
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
@@ -86,7 +94,7 @@ impl FileCacheDataRepositoryAssociationBuilder {
         self
     }
     /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
-    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p> <note>
+    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p><note>
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
@@ -95,7 +103,7 @@ impl FileCacheDataRepositoryAssociationBuilder {
         self
     }
     /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
-    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p> <note>
+    /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p><note>
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
@@ -104,12 +112,16 @@ impl FileCacheDataRepositoryAssociationBuilder {
     }
     /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
     /// <ul>
-    /// <li><p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
+    /// <li>
+    /// <p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
     /// <ul>
-    /// <li><p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
-    /// <li><p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
+    /// <li>
+    /// <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
+    /// <li>
+    /// <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
     /// </ul></li>
-    /// <li><p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <li>
+    /// <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn data_repository_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,12 +130,16 @@ impl FileCacheDataRepositoryAssociationBuilder {
     }
     /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
     /// <ul>
-    /// <li><p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
+    /// <li>
+    /// <p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
     /// <ul>
-    /// <li><p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
-    /// <li><p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
+    /// <li>
+    /// <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
+    /// <li>
+    /// <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
     /// </ul></li>
-    /// <li><p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <li>
+    /// <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
     pub fn set_data_repository_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_repository_path = input;
@@ -131,12 +147,16 @@ impl FileCacheDataRepositoryAssociationBuilder {
     }
     /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
     /// <ul>
-    /// <li><p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
+    /// <li>
+    /// <p>The path can be an NFS data repository that links to the cache. The path can be in one of two formats:</p>
     /// <ul>
-    /// <li><p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
-    /// <li><p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
+    /// <li>
+    /// <p>If you are not using the <code>DataRepositorySubdirectories</code> parameter, the path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore link a single NFS Export to a single data repository association.</p></li>
+    /// <li>
+    /// <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the path is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>, which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code> parameter.</p></li>
     /// </ul></li>
-    /// <li><p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
+    /// <li>
+    /// <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
     pub fn get_data_repository_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_repository_path

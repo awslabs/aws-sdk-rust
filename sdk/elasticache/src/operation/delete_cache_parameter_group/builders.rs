@@ -108,21 +108,21 @@ impl DeleteCacheParameterGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the cache parameter group to delete.</p> <note>
+    /// <p>The name of the cache parameter group to delete.</p><note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
     pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_parameter_group_name(input.into());
         self
     }
-    /// <p>The name of the cache parameter group to delete.</p> <note>
+    /// <p>The name of the cache parameter group to delete.</p><note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
     pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_parameter_group_name(input);
         self
     }
-    /// <p>The name of the cache parameter group to delete.</p> <note>
+    /// <p>The name of the cache parameter group to delete.</p><note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
     pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {

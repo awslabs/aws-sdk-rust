@@ -26,7 +26,8 @@ impl UpdateGroupQueryInputBuilder {
 /// <p><b>Minimum permissions</b></p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li><p><code>resource-groups:UpdateGroupQuery</code></p></li>
+/// <li>
+/// <p><code>resource-groups:UpdateGroupQuery</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGroupQueryFluentBuilder {
@@ -144,21 +145,21 @@ impl UpdateGroupQueryFluentBuilder {
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group()
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p><note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.inner = self.inner.resource_query(input);
         self
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p><note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub fn set_resource_query(mut self, input: ::std::option::Option<crate::types::ResourceQuery>) -> Self {
         self.inner = self.inner.set_resource_query(input);
         self
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p><note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
     pub fn get_resource_query(&self) -> &::std::option::Option<crate::types::ResourceQuery> {

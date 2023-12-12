@@ -16,10 +16,14 @@ pub struct UtteranceSpecification {
     pub channel: ::std::option::Option<::std::string::String>,
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>Speech</code> – The session consisted of spoken dialogue.</p></li>
-    /// <li><p><code>Text</code> – The session consisted of written dialogue.</p></li>
-    /// <li><p><code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p></li>
-    /// <li><p><code>MultiMode</code> – The session consisted of multiple modes.</p></li>
+    /// <li>
+    /// <p><code>Speech</code> – The session consisted of spoken dialogue.</p></li>
+    /// <li>
+    /// <p><code>Text</code> – The session consisted of written dialogue.</p></li>
+    /// <li>
+    /// <p><code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p></li>
+    /// <li>
+    /// <p><code>MultiMode</code> – The session consisted of multiple modes.</p></li>
     /// </ul>
     pub mode: ::std::option::Option<crate::types::AnalyticsModality>,
     /// <p>The date and time when the conversation in which the utterance took place began. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
@@ -36,29 +40,42 @@ pub struct UtteranceSpecification {
     pub utterance_understood: bool,
     /// <p>The input type of the utterance. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p>PCM format: audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format: audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p><code>audio/l16; rate=16000; channels=1</code></p></li>
-    /// <li><p><code>audio/x-l16; sample-rate=16000; channel-count=1</code></p></li>
-    /// <li><p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p></li>
+    /// <li>
+    /// <p><code>audio/l16; rate=16000; channels=1</code></p></li>
+    /// <li>
+    /// <p><code>audio/x-l16; sample-rate=16000; channel-count=1</code></p></li>
+    /// <li>
+    /// <p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p><code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code></p></li>
+    /// <li>
+    /// <p><code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code></p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul></li>
     /// </ul>
     pub input_type: ::std::option::Option<::std::string::String>,
     /// <p>The output type of the utterance. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>audio/mpeg</code></p></li>
-    /// <li><p><code>audio/ogg</code></p></li>
-    /// <li><p><code>audio/pcm (16 KHz)</code></p></li>
-    /// <li><p><code>audio/</code> (defaults to <code>mpeg</code>)</p></li>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>audio/mpeg</code></p></li>
+    /// <li>
+    /// <p><code>audio/ogg</code></p></li>
+    /// <li>
+    /// <p><code>audio/pcm (16 KHz)</code></p></li>
+    /// <li>
+    /// <p><code>audio/</code> (defaults to <code>mpeg</code>)</p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul>
     pub output_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the intent that the utterance is associated to.</p>
@@ -101,10 +118,14 @@ impl UtteranceSpecification {
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>Speech</code> – The session consisted of spoken dialogue.</p></li>
-    /// <li><p><code>Text</code> – The session consisted of written dialogue.</p></li>
-    /// <li><p><code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p></li>
-    /// <li><p><code>MultiMode</code> – The session consisted of multiple modes.</p></li>
+    /// <li>
+    /// <p><code>Speech</code> – The session consisted of spoken dialogue.</p></li>
+    /// <li>
+    /// <p><code>Text</code> – The session consisted of written dialogue.</p></li>
+    /// <li>
+    /// <p><code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p></li>
+    /// <li>
+    /// <p><code>MultiMode</code> – The session consisted of multiple modes.</p></li>
     /// </ul>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::AnalyticsModality> {
         self.mode.as_ref()
@@ -135,19 +156,27 @@ impl UtteranceSpecification {
     }
     /// <p>The input type of the utterance. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p>PCM format: audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format: audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p><code>audio/l16; rate=16000; channels=1</code></p></li>
-    /// <li><p><code>audio/x-l16; sample-rate=16000; channel-count=1</code></p></li>
-    /// <li><p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p></li>
+    /// <li>
+    /// <p><code>audio/l16; rate=16000; channels=1</code></p></li>
+    /// <li>
+    /// <p><code>audio/x-l16; sample-rate=16000; channel-count=1</code></p></li>
+    /// <li>
+    /// <p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p><code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code></p></li>
+    /// <li>
+    /// <p><code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code></p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn input_type(&self) -> ::std::option::Option<&str> {
@@ -155,11 +184,16 @@ impl UtteranceSpecification {
     }
     /// <p>The output type of the utterance. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>audio/mpeg</code></p></li>
-    /// <li><p><code>audio/ogg</code></p></li>
-    /// <li><p><code>audio/pcm (16 KHz)</code></p></li>
-    /// <li><p><code>audio/</code> (defaults to <code>mpeg</code>)</p></li>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>audio/mpeg</code></p></li>
+    /// <li>
+    /// <p><code>audio/ogg</code></p></li>
+    /// <li>
+    /// <p><code>audio/pcm (16 KHz)</code></p></li>
+    /// <li>
+    /// <p><code>audio/</code> (defaults to <code>mpeg</code>)</p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul>
     pub fn output_type(&self) -> ::std::option::Option<&str> {
         self.output_type.as_deref()
@@ -306,10 +340,14 @@ impl UtteranceSpecificationBuilder {
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>Speech</code> – The session consisted of spoken dialogue.</p></li>
-    /// <li><p><code>Text</code> – The session consisted of written dialogue.</p></li>
-    /// <li><p><code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p></li>
-    /// <li><p><code>MultiMode</code> – The session consisted of multiple modes.</p></li>
+    /// <li>
+    /// <p><code>Speech</code> – The session consisted of spoken dialogue.</p></li>
+    /// <li>
+    /// <p><code>Text</code> – The session consisted of written dialogue.</p></li>
+    /// <li>
+    /// <p><code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p></li>
+    /// <li>
+    /// <p><code>MultiMode</code> – The session consisted of multiple modes.</p></li>
     /// </ul>
     pub fn mode(mut self, input: crate::types::AnalyticsModality) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -317,10 +355,14 @@ impl UtteranceSpecificationBuilder {
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>Speech</code> – The session consisted of spoken dialogue.</p></li>
-    /// <li><p><code>Text</code> – The session consisted of written dialogue.</p></li>
-    /// <li><p><code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p></li>
-    /// <li><p><code>MultiMode</code> – The session consisted of multiple modes.</p></li>
+    /// <li>
+    /// <p><code>Speech</code> – The session consisted of spoken dialogue.</p></li>
+    /// <li>
+    /// <p><code>Text</code> – The session consisted of written dialogue.</p></li>
+    /// <li>
+    /// <p><code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p></li>
+    /// <li>
+    /// <p><code>MultiMode</code> – The session consisted of multiple modes.</p></li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::AnalyticsModality>) -> Self {
         self.mode = input;
@@ -328,10 +370,14 @@ impl UtteranceSpecificationBuilder {
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>Speech</code> – The session consisted of spoken dialogue.</p></li>
-    /// <li><p><code>Text</code> – The session consisted of written dialogue.</p></li>
-    /// <li><p><code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p></li>
-    /// <li><p><code>MultiMode</code> – The session consisted of multiple modes.</p></li>
+    /// <li>
+    /// <p><code>Speech</code> – The session consisted of spoken dialogue.</p></li>
+    /// <li>
+    /// <p><code>Text</code> – The session consisted of written dialogue.</p></li>
+    /// <li>
+    /// <p><code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p></li>
+    /// <li>
+    /// <p><code>MultiMode</code> – The session consisted of multiple modes.</p></li>
     /// </ul>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::AnalyticsModality> {
         &self.mode
@@ -422,19 +468,27 @@ impl UtteranceSpecificationBuilder {
     }
     /// <p>The input type of the utterance. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p>PCM format: audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format: audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p><code>audio/l16; rate=16000; channels=1</code></p></li>
-    /// <li><p><code>audio/x-l16; sample-rate=16000; channel-count=1</code></p></li>
-    /// <li><p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p></li>
+    /// <li>
+    /// <p><code>audio/l16; rate=16000; channels=1</code></p></li>
+    /// <li>
+    /// <p><code>audio/x-l16; sample-rate=16000; channel-count=1</code></p></li>
+    /// <li>
+    /// <p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p><code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code></p></li>
+    /// <li>
+    /// <p><code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code></p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn input_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -443,19 +497,27 @@ impl UtteranceSpecificationBuilder {
     }
     /// <p>The input type of the utterance. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p>PCM format: audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format: audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p><code>audio/l16; rate=16000; channels=1</code></p></li>
-    /// <li><p><code>audio/x-l16; sample-rate=16000; channel-count=1</code></p></li>
-    /// <li><p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p></li>
+    /// <li>
+    /// <p><code>audio/l16; rate=16000; channels=1</code></p></li>
+    /// <li>
+    /// <p><code>audio/x-l16; sample-rate=16000; channel-count=1</code></p></li>
+    /// <li>
+    /// <p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p><code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code></p></li>
+    /// <li>
+    /// <p><code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code></p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_input_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -464,19 +526,27 @@ impl UtteranceSpecificationBuilder {
     }
     /// <p>The input type of the utterance. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p>PCM format: audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format: audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p><code>audio/l16; rate=16000; channels=1</code></p></li>
-    /// <li><p><code>audio/x-l16; sample-rate=16000; channel-count=1</code></p></li>
-    /// <li><p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p></li>
+    /// <li>
+    /// <p><code>audio/l16; rate=16000; channels=1</code></p></li>
+    /// <li>
+    /// <p><code>audio/x-l16; sample-rate=16000; channel-count=1</code></p></li>
+    /// <li>
+    /// <p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p><code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code></p></li>
+    /// <li>
+    /// <p><code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code></p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_input_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -484,11 +554,16 @@ impl UtteranceSpecificationBuilder {
     }
     /// <p>The output type of the utterance. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>audio/mpeg</code></p></li>
-    /// <li><p><code>audio/ogg</code></p></li>
-    /// <li><p><code>audio/pcm (16 KHz)</code></p></li>
-    /// <li><p><code>audio/</code> (defaults to <code>mpeg</code>)</p></li>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>audio/mpeg</code></p></li>
+    /// <li>
+    /// <p><code>audio/ogg</code></p></li>
+    /// <li>
+    /// <p><code>audio/pcm (16 KHz)</code></p></li>
+    /// <li>
+    /// <p><code>audio/</code> (defaults to <code>mpeg</code>)</p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul>
     pub fn output_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_type = ::std::option::Option::Some(input.into());
@@ -496,11 +571,16 @@ impl UtteranceSpecificationBuilder {
     }
     /// <p>The output type of the utterance. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>audio/mpeg</code></p></li>
-    /// <li><p><code>audio/ogg</code></p></li>
-    /// <li><p><code>audio/pcm (16 KHz)</code></p></li>
-    /// <li><p><code>audio/</code> (defaults to <code>mpeg</code>)</p></li>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>audio/mpeg</code></p></li>
+    /// <li>
+    /// <p><code>audio/ogg</code></p></li>
+    /// <li>
+    /// <p><code>audio/pcm (16 KHz)</code></p></li>
+    /// <li>
+    /// <p><code>audio/</code> (defaults to <code>mpeg</code>)</p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul>
     pub fn set_output_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_type = input;
@@ -508,11 +588,16 @@ impl UtteranceSpecificationBuilder {
     }
     /// <p>The output type of the utterance. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p><code>audio/mpeg</code></p></li>
-    /// <li><p><code>audio/ogg</code></p></li>
-    /// <li><p><code>audio/pcm (16 KHz)</code></p></li>
-    /// <li><p><code>audio/</code> (defaults to <code>mpeg</code>)</p></li>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>audio/mpeg</code></p></li>
+    /// <li>
+    /// <p><code>audio/ogg</code></p></li>
+    /// <li>
+    /// <p><code>audio/pcm (16 KHz)</code></p></li>
+    /// <li>
+    /// <p><code>audio/</code> (defaults to <code>mpeg</code>)</p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul>
     pub fn get_output_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_type

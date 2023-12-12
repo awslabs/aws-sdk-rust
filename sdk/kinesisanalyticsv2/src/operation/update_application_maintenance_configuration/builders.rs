@@ -25,7 +25,7 @@ impl UpdateApplicationMaintenanceConfigurationInputBuilder {
 /// <p>Updates the maintenance configuration of the Kinesis Data Analytics application.</p>
 /// <p>You can invoke this operation on an application that is in one of the two following states: <code>READY</code> or <code>RUNNING</code>. If you invoke it when the application is in a state other than these two states, it throws a <code>ResourceInUseException</code>. The service makes use of the updated configuration the next time it schedules maintenance for the application. If you invoke this operation after the service schedules maintenance, the service will apply the configuration update the next time it schedules maintenance for the application. This means that you might not see the maintenance configuration update applied to the maintenance process that follows a successful invocation of this operation, but to the following maintenance process instead.</p>
 /// <p>To see the current maintenance configuration of your application, invoke the <code>DescribeApplication</code> operation.</p>
-/// <p>For information about application maintenance, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis Data Analytics for Apache Flink Maintenance</a>.</p> <note>
+/// <p>For information about application maintenance, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis Data Analytics for Apache Flink Maintenance</a>.</p><note>
 /// <p>This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -28,8 +28,10 @@ impl VerifyAuthRequestCryptogramInputBuilder {
 /// <p><b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>VerifyCardValidationData</code></p></li>
-/// <li><p><code>VerifyPinData</code></p></li>
+/// <li>
+/// <p><code>VerifyCardValidationData</code></p></li>
+/// <li>
+/// <p><code>VerifyPinData</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct VerifyAuthRequestCryptogramFluentBuilder {

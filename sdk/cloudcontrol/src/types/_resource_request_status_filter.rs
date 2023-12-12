@@ -8,12 +8,18 @@ pub struct ResourceRequestStatusFilter {
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code>: The operation has been requested, but not yet initiated.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The operation is in progress.</p></li>
-    /// <li><p><code>SUCCESS</code>: The operation completed.</p></li>
-    /// <li><p><code>FAILED</code>: The operation failed.</p></li>
-    /// <li><p><code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p></li>
-    /// <li><p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code>: The operation has been requested, but not yet initiated.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The operation is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code>: The operation completed.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The operation failed.</p></li>
+    /// <li>
+    /// <p><code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p></li>
+    /// <li>
+    /// <p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
     /// </ul>
     pub operation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
 }
@@ -26,12 +32,18 @@ impl ResourceRequestStatusFilter {
     }
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code>: The operation has been requested, but not yet initiated.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The operation is in progress.</p></li>
-    /// <li><p><code>SUCCESS</code>: The operation completed.</p></li>
-    /// <li><p><code>FAILED</code>: The operation failed.</p></li>
-    /// <li><p><code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p></li>
-    /// <li><p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code>: The operation has been requested, but not yet initiated.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The operation is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code>: The operation completed.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The operation failed.</p></li>
+    /// <li>
+    /// <p><code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p></li>
+    /// <li>
+    /// <p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operation_statuses.is_none()`.
@@ -80,12 +92,18 @@ impl ResourceRequestStatusFilterBuilder {
     ///
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code>: The operation has been requested, but not yet initiated.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The operation is in progress.</p></li>
-    /// <li><p><code>SUCCESS</code>: The operation completed.</p></li>
-    /// <li><p><code>FAILED</code>: The operation failed.</p></li>
-    /// <li><p><code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p></li>
-    /// <li><p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code>: The operation has been requested, but not yet initiated.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The operation is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code>: The operation completed.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The operation failed.</p></li>
+    /// <li>
+    /// <p><code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p></li>
+    /// <li>
+    /// <p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
     /// </ul>
     pub fn operation_statuses(mut self, input: crate::types::OperationStatus) -> Self {
         let mut v = self.operation_statuses.unwrap_or_default();
@@ -95,12 +113,18 @@ impl ResourceRequestStatusFilterBuilder {
     }
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code>: The operation has been requested, but not yet initiated.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The operation is in progress.</p></li>
-    /// <li><p><code>SUCCESS</code>: The operation completed.</p></li>
-    /// <li><p><code>FAILED</code>: The operation failed.</p></li>
-    /// <li><p><code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p></li>
-    /// <li><p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code>: The operation has been requested, but not yet initiated.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The operation is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code>: The operation completed.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The operation failed.</p></li>
+    /// <li>
+    /// <p><code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p></li>
+    /// <li>
+    /// <p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
     /// </ul>
     pub fn set_operation_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>) -> Self {
         self.operation_statuses = input;
@@ -108,12 +132,18 @@ impl ResourceRequestStatusFilterBuilder {
     }
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code>: The operation has been requested, but not yet initiated.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The operation is in progress.</p></li>
-    /// <li><p><code>SUCCESS</code>: The operation completed.</p></li>
-    /// <li><p><code>FAILED</code>: The operation failed.</p></li>
-    /// <li><p><code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p></li>
-    /// <li><p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code>: The operation has been requested, but not yet initiated.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The operation is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code>: The operation completed.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The operation failed.</p></li>
+    /// <li>
+    /// <p><code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p></li>
+    /// <li>
+    /// <p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
     /// </ul>
     pub fn get_operation_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
         &self.operation_statuses

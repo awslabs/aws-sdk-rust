@@ -21,17 +21,25 @@ pub struct CreateEnvironmentEc2Input {
     /// <p>Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p>
     /// <p><b>AMI aliases </b></p>
     /// <ul>
-    /// <li><p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
-    /// <li><p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
-    /// <li><p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
-    /// <li><p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     /// <p><b>SSM paths</b></p>
     /// <ul>
-    /// <li><p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
-    /// <li><p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
-    /// <li><p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
-    /// <li><p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of minutes until the running instance is shut down after the environment has last been used.</p>
@@ -75,17 +83,25 @@ impl CreateEnvironmentEc2Input {
     /// <p>Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p>
     /// <p><b>AMI aliases </b></p>
     /// <ul>
-    /// <li><p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
-    /// <li><p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
-    /// <li><p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
-    /// <li><p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     /// <p><b>SSM paths</b></p>
     /// <ul>
-    /// <li><p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
-    /// <li><p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
-    /// <li><p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
-    /// <li><p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
@@ -239,17 +255,25 @@ impl CreateEnvironmentEc2InputBuilder {
     /// <p>Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p>
     /// <p><b>AMI aliases </b></p>
     /// <ul>
-    /// <li><p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
-    /// <li><p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
-    /// <li><p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
-    /// <li><p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     /// <p><b>SSM paths</b></p>
     /// <ul>
-    /// <li><p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
-    /// <li><p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
-    /// <li><p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
-    /// <li><p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -262,17 +286,25 @@ impl CreateEnvironmentEc2InputBuilder {
     /// <p>Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p>
     /// <p><b>AMI aliases </b></p>
     /// <ul>
-    /// <li><p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
-    /// <li><p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
-    /// <li><p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
-    /// <li><p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     /// <p><b>SSM paths</b></p>
     /// <ul>
-    /// <li><p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
-    /// <li><p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
-    /// <li><p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
-    /// <li><p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
@@ -284,17 +316,25 @@ impl CreateEnvironmentEc2InputBuilder {
     /// <p>Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.</p>
     /// <p><b>AMI aliases </b></p>
     /// <ul>
-    /// <li><p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
-    /// <li><p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
-    /// <li><p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
-    /// <li><p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux: <code>amazonlinux-1-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     /// <p><b>SSM paths</b></p>
     /// <ul>
-    /// <li><p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
-    /// <li><p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
-    /// <li><p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
-    /// <li><p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></p></li>
+    /// <li>
+    /// <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></p></li>
+    /// <li>
+    /// <p>Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code></p></li>
     /// </ul>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id

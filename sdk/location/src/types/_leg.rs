@@ -3,28 +3,33 @@
 /// <p>Contains the calculated route's details for each path between a pair of positions. The number of legs returned corresponds to one fewer than the total number of positions in the request.</p>
 /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
 /// <ul>
-/// <li><p>The <code>StartPosition</code> is the departure position.</p></li>
-/// <li><p>The <code>EndPosition</code> is the destination position.</p></li>
+/// <li>
+/// <p>The <code>StartPosition</code> is the departure position.</p></li>
+/// <li>
+/// <p>The <code>EndPosition</code> is the destination position.</p></li>
 /// </ul>
 /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
 /// <ul>
-/// <li><p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p></li>
-/// <li><p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p></li>
+/// <li>
+/// <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p></li>
+/// <li>
+/// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Leg {
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub start_position: ::std::vec::Vec<f64>,
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub end_position: ::std::vec::Vec<f64>,
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route.</p>
     /// <ul>
-    /// <li><p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p></li>
+    /// <li>
+    /// <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p></li>
     /// </ul>
     pub distance: f64,
     /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
@@ -35,14 +40,14 @@ pub struct Leg {
     pub steps: ::std::vec::Vec<crate::types::Step>,
 }
 impl Leg {
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn start_position(&self) -> &[f64] {
         use std::ops::Deref;
         self.start_position.deref()
     }
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn end_position(&self) -> &[f64] {
@@ -51,7 +56,8 @@ impl Leg {
     }
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route.</p>
     /// <ul>
-    /// <li><p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p></li>
+    /// <li>
+    /// <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p></li>
     /// </ul>
     pub fn distance(&self) -> f64 {
         self.distance
@@ -105,7 +111,7 @@ impl LegBuilder {
     ///
     /// To override the contents of this collection use [`set_start_position`](Self::set_start_position).
     ///
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn start_position(mut self, input: f64) -> Self {
@@ -114,14 +120,14 @@ impl LegBuilder {
         self.start_position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn set_start_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.start_position = input;
         self
     }
-    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn get_start_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
@@ -131,7 +137,7 @@ impl LegBuilder {
     ///
     /// To override the contents of this collection use [`set_end_position`](Self::set_end_position).
     ///
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn end_position(mut self, input: f64) -> Self {
@@ -140,14 +146,14 @@ impl LegBuilder {
         self.end_position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn set_end_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.end_position = input;
         self
     }
-    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
+    /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
     pub fn get_end_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
@@ -155,7 +161,8 @@ impl LegBuilder {
     }
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route.</p>
     /// <ul>
-    /// <li><p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p></li>
+    /// <li>
+    /// <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn distance(mut self, input: f64) -> Self {
@@ -164,7 +171,8 @@ impl LegBuilder {
     }
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route.</p>
     /// <ul>
-    /// <li><p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p></li>
+    /// <li>
+    /// <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p></li>
     /// </ul>
     pub fn set_distance(mut self, input: ::std::option::Option<f64>) -> Self {
         self.distance = input;
@@ -172,7 +180,8 @@ impl LegBuilder {
     }
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route.</p>
     /// <ul>
-    /// <li><p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p></li>
+    /// <li>
+    /// <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p></li>
     /// </ul>
     pub fn get_distance(&self) -> &::std::option::Option<f64> {
         &self.distance

@@ -7,7 +7,8 @@ pub struct DescribeGeofenceCollectionOutput {
     pub collection_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code></p></li>
     /// </ul>
     pub collection_arn: ::std::string::String,
     /// <p>The optional description for the geofence collection.</p>
@@ -38,7 +39,8 @@ impl DescribeGeofenceCollectionOutput {
     }
     /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code></p></li>
     /// </ul>
     pub fn collection_arn(&self) -> &str {
         use std::ops::Deref;
@@ -126,7 +128,8 @@ impl DescribeGeofenceCollectionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn collection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,7 +138,8 @@ impl DescribeGeofenceCollectionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code></p></li>
     /// </ul>
     pub fn set_collection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_arn = input;
@@ -143,7 +147,8 @@ impl DescribeGeofenceCollectionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code></p></li>
     /// </ul>
     pub fn get_collection_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.collection_arn

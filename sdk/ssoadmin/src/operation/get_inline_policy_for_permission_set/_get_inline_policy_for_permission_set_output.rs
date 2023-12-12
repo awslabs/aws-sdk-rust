@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInlinePolicyForPermissionSetOutput {
-    /// <p>The inline policy that is attached to the permission set.</p> <note>
+    /// <p>The inline policy that is attached to the permission set.</p><note>
     /// <p>For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for an empty inline policy to be returned.</p>
     /// </note>
     pub inline_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetInlinePolicyForPermissionSetOutput {
-    /// <p>The inline policy that is attached to the permission set.</p> <note>
+    /// <p>The inline policy that is attached to the permission set.</p><note>
     /// <p>For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for an empty inline policy to be returned.</p>
     /// </note>
     pub fn inline_policy(&self) -> ::std::option::Option<&str> {
@@ -37,21 +37,21 @@ pub struct GetInlinePolicyForPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetInlinePolicyForPermissionSetOutputBuilder {
-    /// <p>The inline policy that is attached to the permission set.</p> <note>
+    /// <p>The inline policy that is attached to the permission set.</p><note>
     /// <p>For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for an empty inline policy to be returned.</p>
     /// </note>
     pub fn inline_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inline_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The inline policy that is attached to the permission set.</p> <note>
+    /// <p>The inline policy that is attached to the permission set.</p><note>
     /// <p>For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for an empty inline policy to be returned.</p>
     /// </note>
     pub fn set_inline_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inline_policy = input;
         self
     }
-    /// <p>The inline policy that is attached to the permission set.</p> <note>
+    /// <p>The inline policy that is attached to the permission set.</p><note>
     /// <p>For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for an empty inline policy to be returned.</p>
     /// </note>
     pub fn get_inline_policy(&self) -> &::std::option::Option<::std::string::String> {

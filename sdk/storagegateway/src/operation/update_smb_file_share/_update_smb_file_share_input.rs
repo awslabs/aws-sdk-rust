@@ -22,7 +22,7 @@ pub struct UpdateSmbFileShareInput {
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub guess_mime_type_enabled: ::std::option::Option<bool>,
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -43,13 +43,13 @@ pub struct UpdateSmbFileShareInput {
     pub audit_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
     pub case_sensitivity: ::std::option::Option<crate::types::CaseSensitivity>,
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub file_share_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies refresh cache information for the file share.</p>
     pub cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
@@ -57,7 +57,7 @@ pub struct UpdateSmbFileShareInput {
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p><code>{}</code></p>
     pub notification_policy: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p><note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -96,7 +96,7 @@ impl UpdateSmbFileShareInput {
     pub fn guess_mime_type_enabled(&self) -> ::std::option::Option<bool> {
         self.guess_mime_type_enabled
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -139,7 +139,7 @@ impl UpdateSmbFileShareInput {
     pub fn case_sensitivity(&self) -> ::std::option::Option<&crate::types::CaseSensitivity> {
         self.case_sensitivity.as_ref()
     }
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn file_share_name(&self) -> ::std::option::Option<&str> {
@@ -149,7 +149,7 @@ impl UpdateSmbFileShareInput {
     pub fn cache_attributes(&self) -> ::std::option::Option<&crate::types::CacheAttributes> {
         self.cache_attributes.as_ref()
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
@@ -159,7 +159,7 @@ impl UpdateSmbFileShareInput {
     pub fn notification_policy(&self) -> ::std::option::Option<&str> {
         self.notification_policy.as_deref()
     }
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p><note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -310,7 +310,7 @@ impl UpdateSmbFileShareInputBuilder {
     pub fn get_guess_mime_type_enabled(&self) -> &::std::option::Option<bool> {
         &self.guess_mime_type_enabled
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -318,7 +318,7 @@ impl UpdateSmbFileShareInputBuilder {
         self.requester_pays = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -326,7 +326,7 @@ impl UpdateSmbFileShareInputBuilder {
         self.requester_pays = input;
         self
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -455,21 +455,21 @@ impl UpdateSmbFileShareInputBuilder {
     pub fn get_case_sensitivity(&self) -> &::std::option::Option<crate::types::CaseSensitivity> {
         &self.case_sensitivity
     }
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_name = input;
         self
     }
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn get_file_share_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -489,7 +489,7 @@ impl UpdateSmbFileShareInputBuilder {
     pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
         &self.cache_attributes
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
@@ -500,7 +500,7 @@ impl UpdateSmbFileShareInputBuilder {
         self.notification_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
@@ -511,7 +511,7 @@ impl UpdateSmbFileShareInputBuilder {
         self.notification_policy = input;
         self
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
@@ -521,7 +521,7 @@ impl UpdateSmbFileShareInputBuilder {
     pub fn get_notification_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_policy
     }
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p><note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -529,7 +529,7 @@ impl UpdateSmbFileShareInputBuilder {
         self.oplocks_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p><note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -537,7 +537,7 @@ impl UpdateSmbFileShareInputBuilder {
         self.oplocks_enabled = input;
         self
     }
-    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p><note>
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>

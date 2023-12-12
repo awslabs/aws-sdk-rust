@@ -6,9 +6,12 @@ pub struct CreateFunctionUrlConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
-    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: ::std::option::Option<::std::string::String>,
@@ -20,8 +23,10 @@ pub struct CreateFunctionUrlConfigInput {
     pub cors: ::std::option::Option<crate::types::Cors>,
     /// <p>Use one of the following options:</p>
     /// <ul>
-    /// <li><p><code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p></li>
-    /// <li><p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
+    /// <li>
+    /// <p><code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p></li>
+    /// <li>
+    /// <p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
     /// </ul>
     pub invoke_mode: ::std::option::Option<crate::types::InvokeMode>,
 }
@@ -29,9 +34,12 @@ impl CreateFunctionUrlConfigInput {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
-    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> ::std::option::Option<&str> {
@@ -51,8 +59,10 @@ impl CreateFunctionUrlConfigInput {
     }
     /// <p>Use one of the following options:</p>
     /// <ul>
-    /// <li><p><code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p></li>
-    /// <li><p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
+    /// <li>
+    /// <p><code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p></li>
+    /// <li>
+    /// <p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
     /// </ul>
     pub fn invoke_mode(&self) -> ::std::option::Option<&crate::types::InvokeMode> {
         self.invoke_mode.as_ref()
@@ -79,9 +89,12 @@ impl CreateFunctionUrlConfigInputBuilder {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
-    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     /// This field is required.
@@ -92,9 +105,12 @@ impl CreateFunctionUrlConfigInputBuilder {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
-    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -104,9 +120,12 @@ impl CreateFunctionUrlConfigInputBuilder {
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li><p><b>Function name</b> – <code>my-function</code>.</p></li>
-    /// <li><p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
-    /// <li><p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function name</b> – <code>my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p></li>
+    /// <li>
+    /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +176,10 @@ impl CreateFunctionUrlConfigInputBuilder {
     }
     /// <p>Use one of the following options:</p>
     /// <ul>
-    /// <li><p><code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p></li>
-    /// <li><p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
+    /// <li>
+    /// <p><code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p></li>
+    /// <li>
+    /// <p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
     /// </ul>
     pub fn invoke_mode(mut self, input: crate::types::InvokeMode) -> Self {
         self.invoke_mode = ::std::option::Option::Some(input);
@@ -166,8 +187,10 @@ impl CreateFunctionUrlConfigInputBuilder {
     }
     /// <p>Use one of the following options:</p>
     /// <ul>
-    /// <li><p><code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p></li>
-    /// <li><p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
+    /// <li>
+    /// <p><code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p></li>
+    /// <li>
+    /// <p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
     /// </ul>
     pub fn set_invoke_mode(mut self, input: ::std::option::Option<crate::types::InvokeMode>) -> Self {
         self.invoke_mode = input;
@@ -175,8 +198,10 @@ impl CreateFunctionUrlConfigInputBuilder {
     }
     /// <p>Use one of the following options:</p>
     /// <ul>
-    /// <li><p><code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p></li>
-    /// <li><p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
+    /// <li>
+    /// <p><code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p></li>
+    /// <li>
+    /// <p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
     /// </ul>
     pub fn get_invoke_mode(&self) -> &::std::option::Option<crate::types::InvokeMode> {
         &self.invoke_mode

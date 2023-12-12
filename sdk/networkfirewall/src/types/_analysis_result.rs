@@ -8,11 +8,19 @@ pub struct AnalysisResult {
     pub identified_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of rule configurations that Network Firewall analyzes your rule groups for. Network Firewall analyzes stateless rule groups for the following types of rule configurations:</p>
     /// <ul>
-    /// <li><p><code>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</code></p> <p>Cause: One or more stateless rules with the action <code>pass</code> or <code>forward</code> are forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses or their associated port numbers, don't match the set of destination IP addresses or their associated port numbers.</p> <p>To mitigate: Make sure that there's an existing return path. For example, if the rule allows traffic from source 10.1.0.0/24 to destination 20.1.0.0/24, you should allow return traffic from source 20.1.0.0/24 to destination 10.1.0.0/24.</p></li>
-    /// <li><p><code>STATELESS_RULE_CONTAINS_TCP_FLAGS</code></p> <p>Cause: At least one stateless rule with the action <code>pass</code> or<code>forward</code> contains TCP flags that are inconsistent in the forward and return directions.</p> <p>To mitigate: Prevent asymmetric routing issues caused by TCP flags by following these actions:</p>
+    /// <li>
+    /// <p><code>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</code></p>
+    /// <p>Cause: One or more stateless rules with the action <code>pass</code> or <code>forward</code> are forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses or their associated port numbers, don't match the set of destination IP addresses or their associated port numbers.</p>
+    /// <p>To mitigate: Make sure that there's an existing return path. For example, if the rule allows traffic from source 10.1.0.0/24 to destination 20.1.0.0/24, you should allow return traffic from source 20.1.0.0/24 to destination 10.1.0.0/24.</p></li>
+    /// <li>
+    /// <p><code>STATELESS_RULE_CONTAINS_TCP_FLAGS</code></p>
+    /// <p>Cause: At least one stateless rule with the action <code>pass</code> or<code>forward</code> contains TCP flags that are inconsistent in the forward and return directions.</p>
+    /// <p>To mitigate: Prevent asymmetric routing issues caused by TCP flags by following these actions:</p>
     /// <ul>
-    /// <li><p>Remove unnecessary TCP flag inspections from the rules.</p></li>
-    /// <li><p>If you need to inspect TCP flags, check that the rules correctly account for changes in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP handshake.</p></li>
+    /// <li>
+    /// <p>Remove unnecessary TCP flag inspections from the rules.</p></li>
+    /// <li>
+    /// <p>If you need to inspect TCP flags, check that the rules correctly account for changes in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP handshake.</p></li>
     /// </ul></li>
     /// </ul>
     pub identified_type: ::std::option::Option<crate::types::IdentifiedType>,
@@ -28,11 +36,19 @@ impl AnalysisResult {
     }
     /// <p>The types of rule configurations that Network Firewall analyzes your rule groups for. Network Firewall analyzes stateless rule groups for the following types of rule configurations:</p>
     /// <ul>
-    /// <li><p><code>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</code></p> <p>Cause: One or more stateless rules with the action <code>pass</code> or <code>forward</code> are forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses or their associated port numbers, don't match the set of destination IP addresses or their associated port numbers.</p> <p>To mitigate: Make sure that there's an existing return path. For example, if the rule allows traffic from source 10.1.0.0/24 to destination 20.1.0.0/24, you should allow return traffic from source 20.1.0.0/24 to destination 10.1.0.0/24.</p></li>
-    /// <li><p><code>STATELESS_RULE_CONTAINS_TCP_FLAGS</code></p> <p>Cause: At least one stateless rule with the action <code>pass</code> or<code>forward</code> contains TCP flags that are inconsistent in the forward and return directions.</p> <p>To mitigate: Prevent asymmetric routing issues caused by TCP flags by following these actions:</p>
+    /// <li>
+    /// <p><code>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</code></p>
+    /// <p>Cause: One or more stateless rules with the action <code>pass</code> or <code>forward</code> are forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses or their associated port numbers, don't match the set of destination IP addresses or their associated port numbers.</p>
+    /// <p>To mitigate: Make sure that there's an existing return path. For example, if the rule allows traffic from source 10.1.0.0/24 to destination 20.1.0.0/24, you should allow return traffic from source 20.1.0.0/24 to destination 10.1.0.0/24.</p></li>
+    /// <li>
+    /// <p><code>STATELESS_RULE_CONTAINS_TCP_FLAGS</code></p>
+    /// <p>Cause: At least one stateless rule with the action <code>pass</code> or<code>forward</code> contains TCP flags that are inconsistent in the forward and return directions.</p>
+    /// <p>To mitigate: Prevent asymmetric routing issues caused by TCP flags by following these actions:</p>
     /// <ul>
-    /// <li><p>Remove unnecessary TCP flag inspections from the rules.</p></li>
-    /// <li><p>If you need to inspect TCP flags, check that the rules correctly account for changes in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP handshake.</p></li>
+    /// <li>
+    /// <p>Remove unnecessary TCP flag inspections from the rules.</p></li>
+    /// <li>
+    /// <p>If you need to inspect TCP flags, check that the rules correctly account for changes in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP handshake.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn identified_type(&self) -> ::std::option::Option<&crate::types::IdentifiedType> {
@@ -81,11 +97,19 @@ impl AnalysisResultBuilder {
     }
     /// <p>The types of rule configurations that Network Firewall analyzes your rule groups for. Network Firewall analyzes stateless rule groups for the following types of rule configurations:</p>
     /// <ul>
-    /// <li><p><code>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</code></p> <p>Cause: One or more stateless rules with the action <code>pass</code> or <code>forward</code> are forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses or their associated port numbers, don't match the set of destination IP addresses or their associated port numbers.</p> <p>To mitigate: Make sure that there's an existing return path. For example, if the rule allows traffic from source 10.1.0.0/24 to destination 20.1.0.0/24, you should allow return traffic from source 20.1.0.0/24 to destination 10.1.0.0/24.</p></li>
-    /// <li><p><code>STATELESS_RULE_CONTAINS_TCP_FLAGS</code></p> <p>Cause: At least one stateless rule with the action <code>pass</code> or<code>forward</code> contains TCP flags that are inconsistent in the forward and return directions.</p> <p>To mitigate: Prevent asymmetric routing issues caused by TCP flags by following these actions:</p>
+    /// <li>
+    /// <p><code>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</code></p>
+    /// <p>Cause: One or more stateless rules with the action <code>pass</code> or <code>forward</code> are forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses or their associated port numbers, don't match the set of destination IP addresses or their associated port numbers.</p>
+    /// <p>To mitigate: Make sure that there's an existing return path. For example, if the rule allows traffic from source 10.1.0.0/24 to destination 20.1.0.0/24, you should allow return traffic from source 20.1.0.0/24 to destination 10.1.0.0/24.</p></li>
+    /// <li>
+    /// <p><code>STATELESS_RULE_CONTAINS_TCP_FLAGS</code></p>
+    /// <p>Cause: At least one stateless rule with the action <code>pass</code> or<code>forward</code> contains TCP flags that are inconsistent in the forward and return directions.</p>
+    /// <p>To mitigate: Prevent asymmetric routing issues caused by TCP flags by following these actions:</p>
     /// <ul>
-    /// <li><p>Remove unnecessary TCP flag inspections from the rules.</p></li>
-    /// <li><p>If you need to inspect TCP flags, check that the rules correctly account for changes in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP handshake.</p></li>
+    /// <li>
+    /// <p>Remove unnecessary TCP flag inspections from the rules.</p></li>
+    /// <li>
+    /// <p>If you need to inspect TCP flags, check that the rules correctly account for changes in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP handshake.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn identified_type(mut self, input: crate::types::IdentifiedType) -> Self {
@@ -94,11 +118,19 @@ impl AnalysisResultBuilder {
     }
     /// <p>The types of rule configurations that Network Firewall analyzes your rule groups for. Network Firewall analyzes stateless rule groups for the following types of rule configurations:</p>
     /// <ul>
-    /// <li><p><code>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</code></p> <p>Cause: One or more stateless rules with the action <code>pass</code> or <code>forward</code> are forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses or their associated port numbers, don't match the set of destination IP addresses or their associated port numbers.</p> <p>To mitigate: Make sure that there's an existing return path. For example, if the rule allows traffic from source 10.1.0.0/24 to destination 20.1.0.0/24, you should allow return traffic from source 20.1.0.0/24 to destination 10.1.0.0/24.</p></li>
-    /// <li><p><code>STATELESS_RULE_CONTAINS_TCP_FLAGS</code></p> <p>Cause: At least one stateless rule with the action <code>pass</code> or<code>forward</code> contains TCP flags that are inconsistent in the forward and return directions.</p> <p>To mitigate: Prevent asymmetric routing issues caused by TCP flags by following these actions:</p>
+    /// <li>
+    /// <p><code>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</code></p>
+    /// <p>Cause: One or more stateless rules with the action <code>pass</code> or <code>forward</code> are forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses or their associated port numbers, don't match the set of destination IP addresses or their associated port numbers.</p>
+    /// <p>To mitigate: Make sure that there's an existing return path. For example, if the rule allows traffic from source 10.1.0.0/24 to destination 20.1.0.0/24, you should allow return traffic from source 20.1.0.0/24 to destination 10.1.0.0/24.</p></li>
+    /// <li>
+    /// <p><code>STATELESS_RULE_CONTAINS_TCP_FLAGS</code></p>
+    /// <p>Cause: At least one stateless rule with the action <code>pass</code> or<code>forward</code> contains TCP flags that are inconsistent in the forward and return directions.</p>
+    /// <p>To mitigate: Prevent asymmetric routing issues caused by TCP flags by following these actions:</p>
     /// <ul>
-    /// <li><p>Remove unnecessary TCP flag inspections from the rules.</p></li>
-    /// <li><p>If you need to inspect TCP flags, check that the rules correctly account for changes in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP handshake.</p></li>
+    /// <li>
+    /// <p>Remove unnecessary TCP flag inspections from the rules.</p></li>
+    /// <li>
+    /// <p>If you need to inspect TCP flags, check that the rules correctly account for changes in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP handshake.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_identified_type(mut self, input: ::std::option::Option<crate::types::IdentifiedType>) -> Self {
@@ -107,11 +139,19 @@ impl AnalysisResultBuilder {
     }
     /// <p>The types of rule configurations that Network Firewall analyzes your rule groups for. Network Firewall analyzes stateless rule groups for the following types of rule configurations:</p>
     /// <ul>
-    /// <li><p><code>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</code></p> <p>Cause: One or more stateless rules with the action <code>pass</code> or <code>forward</code> are forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses or their associated port numbers, don't match the set of destination IP addresses or their associated port numbers.</p> <p>To mitigate: Make sure that there's an existing return path. For example, if the rule allows traffic from source 10.1.0.0/24 to destination 20.1.0.0/24, you should allow return traffic from source 20.1.0.0/24 to destination 10.1.0.0/24.</p></li>
-    /// <li><p><code>STATELESS_RULE_CONTAINS_TCP_FLAGS</code></p> <p>Cause: At least one stateless rule with the action <code>pass</code> or<code>forward</code> contains TCP flags that are inconsistent in the forward and return directions.</p> <p>To mitigate: Prevent asymmetric routing issues caused by TCP flags by following these actions:</p>
+    /// <li>
+    /// <p><code>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</code></p>
+    /// <p>Cause: One or more stateless rules with the action <code>pass</code> or <code>forward</code> are forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses or their associated port numbers, don't match the set of destination IP addresses or their associated port numbers.</p>
+    /// <p>To mitigate: Make sure that there's an existing return path. For example, if the rule allows traffic from source 10.1.0.0/24 to destination 20.1.0.0/24, you should allow return traffic from source 20.1.0.0/24 to destination 10.1.0.0/24.</p></li>
+    /// <li>
+    /// <p><code>STATELESS_RULE_CONTAINS_TCP_FLAGS</code></p>
+    /// <p>Cause: At least one stateless rule with the action <code>pass</code> or<code>forward</code> contains TCP flags that are inconsistent in the forward and return directions.</p>
+    /// <p>To mitigate: Prevent asymmetric routing issues caused by TCP flags by following these actions:</p>
     /// <ul>
-    /// <li><p>Remove unnecessary TCP flag inspections from the rules.</p></li>
-    /// <li><p>If you need to inspect TCP flags, check that the rules correctly account for changes in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP handshake.</p></li>
+    /// <li>
+    /// <p>Remove unnecessary TCP flag inspections from the rules.</p></li>
+    /// <li>
+    /// <p>If you need to inspect TCP flags, check that the rules correctly account for changes in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP handshake.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_identified_type(&self) -> &::std::option::Option<crate::types::IdentifiedType> {

@@ -24,8 +24,10 @@ impl CreateLocalGatewayRouteInputBuilder {
 ///
 /// <p>Creates a static route for the specified local gateway route table. You must specify one of the following targets:</p>
 /// <ul>
-/// <li><p><code>LocalGatewayVirtualInterfaceGroupId</code></p></li>
-/// <li><p><code>NetworkInterfaceId</code></p></li>
+/// <li>
+/// <p><code>LocalGatewayVirtualInterfaceGroupId</code></p></li>
+/// <li>
+/// <p><code>NetworkInterfaceId</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteFluentBuilder {

@@ -150,10 +150,14 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>local-gateway-id</code> - The ID of a local gateway.</p></li>
-    /// <li><p><code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.</p></li>
-    /// <li><p><code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p></li>
-    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p></li>
+    /// <li>
+    /// <p><code>local-gateway-id</code> - The ID of a local gateway.</p></li>
+    /// <li>
+    /// <p><code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.</p></li>
+    /// <li>
+    /// <p><code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -161,10 +165,14 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>local-gateway-id</code> - The ID of a local gateway.</p></li>
-    /// <li><p><code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.</p></li>
-    /// <li><p><code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p></li>
-    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p></li>
+    /// <li>
+    /// <p><code>local-gateway-id</code> - The ID of a local gateway.</p></li>
+    /// <li>
+    /// <p><code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.</p></li>
+    /// <li>
+    /// <p><code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -172,10 +180,14 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>local-gateway-id</code> - The ID of a local gateway.</p></li>
-    /// <li><p><code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.</p></li>
-    /// <li><p><code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p></li>
-    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p></li>
+    /// <li>
+    /// <p><code>local-gateway-id</code> - The ID of a local gateway.</p></li>
+    /// <li>
+    /// <p><code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.</p></li>
+    /// <li>
+    /// <p><code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

@@ -25,7 +25,7 @@ impl AssociatePrincipalWithPortfolioInputBuilder {
 /// <p>Associates the specified principal ARN with the specified portfolio.</p>
 /// <p>If you share the portfolio with principal name sharing enabled, the <code>PrincipalARN</code> association is included in the share.</p>
 /// <p>The <code>PortfolioID</code>, <code>PrincipalARN</code>, and <code>PrincipalType</code> parameters are required.</p>
-/// <p>You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code> as <code>IAM_PATTERN</code>.</p> <note>
+/// <p>You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code> as <code>IAM_PATTERN</code>.</p><note>
 /// <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -115,8 +115,10 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
@@ -124,8 +126,10 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -133,8 +137,10 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept_language()
@@ -157,17 +163,23 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     /// <p><i>arn:partition:iam:::resource-type/resource-id</i></p>
     /// <p>The ARN resource-id can be either:</p>
     /// <ul>
-    /// <li><p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i></p></li>
-    /// <li><p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*" or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values.</p> <p>The ARN path and principal name allow unlimited wildcard characters.</p></li>
+    /// <li>
+    /// <p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i></p></li>
+    /// <li>
+    /// <p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*" or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values.</p>
+    /// <p>The ARN path and principal name allow unlimited wildcard characters.</p></li>
     /// </ul>
     /// <p>Examples of an <b>acceptable</b> wildcard ARN:</p>
     /// <ul>
-    /// <li><p>arn:aws:iam:::role/ResourceName_*</p></li>
-    /// <li><p>arn:aws:iam:::role/*/ResourceName_?</p></li>
+    /// <li>
+    /// <p>arn:aws:iam:::role/ResourceName_*</p></li>
+    /// <li>
+    /// <p>arn:aws:iam:::role/*/ResourceName_?</p></li>
     /// </ul>
     /// <p>Examples of an <b>unacceptable</b> wildcard ARN:</p>
     /// <ul>
-    /// <li><p>arn:aws:iam:::*/ResourceName</p></li>
+    /// <li>
+    /// <p>arn:aws:iam:::*/ResourceName</p></li>
     /// </ul>
     /// <p>You can associate multiple <code>IAM_PATTERN</code>s even if the account has no principal with that name.</p>
     /// <p>The "?" wildcard character matches zero or one of any character. This is similar to ".?" in regular regex context. The "*" wildcard character matches any number of any characters. This is similar to ".*" in regular regex context.</p>
@@ -181,17 +193,23 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     /// <p><i>arn:partition:iam:::resource-type/resource-id</i></p>
     /// <p>The ARN resource-id can be either:</p>
     /// <ul>
-    /// <li><p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i></p></li>
-    /// <li><p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*" or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values.</p> <p>The ARN path and principal name allow unlimited wildcard characters.</p></li>
+    /// <li>
+    /// <p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i></p></li>
+    /// <li>
+    /// <p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*" or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values.</p>
+    /// <p>The ARN path and principal name allow unlimited wildcard characters.</p></li>
     /// </ul>
     /// <p>Examples of an <b>acceptable</b> wildcard ARN:</p>
     /// <ul>
-    /// <li><p>arn:aws:iam:::role/ResourceName_*</p></li>
-    /// <li><p>arn:aws:iam:::role/*/ResourceName_?</p></li>
+    /// <li>
+    /// <p>arn:aws:iam:::role/ResourceName_*</p></li>
+    /// <li>
+    /// <p>arn:aws:iam:::role/*/ResourceName_?</p></li>
     /// </ul>
     /// <p>Examples of an <b>unacceptable</b> wildcard ARN:</p>
     /// <ul>
-    /// <li><p>arn:aws:iam:::*/ResourceName</p></li>
+    /// <li>
+    /// <p>arn:aws:iam:::*/ResourceName</p></li>
     /// </ul>
     /// <p>You can associate multiple <code>IAM_PATTERN</code>s even if the account has no principal with that name.</p>
     /// <p>The "?" wildcard character matches zero or one of any character. This is similar to ".?" in regular regex context. The "*" wildcard character matches any number of any characters. This is similar to ".*" in regular regex context.</p>
@@ -205,17 +223,23 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     /// <p><i>arn:partition:iam:::resource-type/resource-id</i></p>
     /// <p>The ARN resource-id can be either:</p>
     /// <ul>
-    /// <li><p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i></p></li>
-    /// <li><p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*" or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values.</p> <p>The ARN path and principal name allow unlimited wildcard characters.</p></li>
+    /// <li>
+    /// <p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i></p></li>
+    /// <li>
+    /// <p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*" or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values.</p>
+    /// <p>The ARN path and principal name allow unlimited wildcard characters.</p></li>
     /// </ul>
     /// <p>Examples of an <b>acceptable</b> wildcard ARN:</p>
     /// <ul>
-    /// <li><p>arn:aws:iam:::role/ResourceName_*</p></li>
-    /// <li><p>arn:aws:iam:::role/*/ResourceName_?</p></li>
+    /// <li>
+    /// <p>arn:aws:iam:::role/ResourceName_*</p></li>
+    /// <li>
+    /// <p>arn:aws:iam:::role/*/ResourceName_?</p></li>
     /// </ul>
     /// <p>Examples of an <b>unacceptable</b> wildcard ARN:</p>
     /// <ul>
-    /// <li><p>arn:aws:iam:::*/ResourceName</p></li>
+    /// <li>
+    /// <p>arn:aws:iam:::*/ResourceName</p></li>
     /// </ul>
     /// <p>You can associate multiple <code>IAM_PATTERN</code>s even if the account has no principal with that name.</p>
     /// <p>The "?" wildcard character matches zero or one of any character. This is similar to ".?" in regular regex context. The "*" wildcard character matches any number of any characters. This is similar to ".*" in regular regex context.</p>

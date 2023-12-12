@@ -22,7 +22,7 @@ impl CancelUpdateStackInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelUpdateStack`.
 ///
-/// <p>Cancels an update on the specified stack. If the call completes successfully, the stack rolls back the update and reverts to the previous stack configuration.</p> <note>
+/// <p>Cancels an update on the specified stack. If the call completes successfully, the stack rolls back the update and reverts to the previous stack configuration.</p><note>
 /// <p>You can cancel only stacks that are in the <code>UPDATE_IN_PROGRESS</code> state.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -154,9 +154,12 @@ impl PutKeywordFluentBuilder {
     }
     /// <p>The action to perform for the new keyword when it is received.</p>
     /// <ul>
-    /// <li><p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p></li>
-    /// <li><p>OPT_OUT: Keeps the recipient from receiving future messages.</p></li>
-    /// <li><p>OPT_IN: The recipient wants to receive future messages.</p></li>
+    /// <li>
+    /// <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p></li>
+    /// <li>
+    /// <p>OPT_OUT: Keeps the recipient from receiving future messages.</p></li>
+    /// <li>
+    /// <p>OPT_IN: The recipient wants to receive future messages.</p></li>
     /// </ul>
     pub fn keyword_action(mut self, input: crate::types::KeywordAction) -> Self {
         self.inner = self.inner.keyword_action(input);
@@ -164,9 +167,12 @@ impl PutKeywordFluentBuilder {
     }
     /// <p>The action to perform for the new keyword when it is received.</p>
     /// <ul>
-    /// <li><p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p></li>
-    /// <li><p>OPT_OUT: Keeps the recipient from receiving future messages.</p></li>
-    /// <li><p>OPT_IN: The recipient wants to receive future messages.</p></li>
+    /// <li>
+    /// <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p></li>
+    /// <li>
+    /// <p>OPT_OUT: Keeps the recipient from receiving future messages.</p></li>
+    /// <li>
+    /// <p>OPT_IN: The recipient wants to receive future messages.</p></li>
     /// </ul>
     pub fn set_keyword_action(mut self, input: ::std::option::Option<crate::types::KeywordAction>) -> Self {
         self.inner = self.inner.set_keyword_action(input);
@@ -174,9 +180,12 @@ impl PutKeywordFluentBuilder {
     }
     /// <p>The action to perform for the new keyword when it is received.</p>
     /// <ul>
-    /// <li><p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p></li>
-    /// <li><p>OPT_OUT: Keeps the recipient from receiving future messages.</p></li>
-    /// <li><p>OPT_IN: The recipient wants to receive future messages.</p></li>
+    /// <li>
+    /// <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p></li>
+    /// <li>
+    /// <p>OPT_OUT: Keeps the recipient from receiving future messages.</p></li>
+    /// <li>
+    /// <p>OPT_IN: The recipient wants to receive future messages.</p></li>
     /// </ul>
     pub fn get_keyword_action(&self) -> &::std::option::Option<crate::types::KeywordAction> {
         self.inner.get_keyword_action()

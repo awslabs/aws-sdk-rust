@@ -2,9 +2,12 @@
 
 /// <p>Settings to configure your translation output. You can configure the following options:</p>
 /// <ul>
-/// <li><p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
-/// <li><p>Formality: sets the formality level of the translation output.</p></li>
-/// <li><p>Profanity: masks profane words and phrases in the translation output.</p></li>
+/// <li>
+/// <p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
+/// <li>
+/// <p>Formality: sets the formality level of the translation output.</p></li>
+/// <li>
+/// <p>Profanity: masks profane words and phrases in the translation output.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

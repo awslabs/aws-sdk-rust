@@ -10,13 +10,19 @@ pub struct ResolverQueryLogConfig {
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
-    /// <li><p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
-    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
-    /// <li><p><code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
+    /// <li>
+    /// <p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
     /// <ul>
-    /// <li><p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
-    /// <li><p>Permissions don't allow sending logs to the destination.</p></li>
+    /// <li>
+    /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li>
+    /// <p>Permissions don't allow sending logs to the destination.</p></li>
     /// </ul></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ResolverQueryLogConfigStatus>,
@@ -46,13 +52,19 @@ impl ResolverQueryLogConfig {
     }
     /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
-    /// <li><p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
-    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
-    /// <li><p><code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
+    /// <li>
+    /// <p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
     /// <ul>
-    /// <li><p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
-    /// <li><p>Permissions don't allow sending logs to the destination.</p></li>
+    /// <li>
+    /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li>
+    /// <p>Permissions don't allow sending logs to the destination.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResolverQueryLogConfigStatus> {
@@ -140,13 +152,19 @@ impl ResolverQueryLogConfigBuilder {
     }
     /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
-    /// <li><p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
-    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
-    /// <li><p><code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
+    /// <li>
+    /// <p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
     /// <ul>
-    /// <li><p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
-    /// <li><p>Permissions don't allow sending logs to the destination.</p></li>
+    /// <li>
+    /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li>
+    /// <p>Permissions don't allow sending logs to the destination.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ResolverQueryLogConfigStatus) -> Self {
@@ -155,13 +173,19 @@ impl ResolverQueryLogConfigBuilder {
     }
     /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
-    /// <li><p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
-    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
-    /// <li><p><code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
+    /// <li>
+    /// <p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
     /// <ul>
-    /// <li><p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
-    /// <li><p>Permissions don't allow sending logs to the destination.</p></li>
+    /// <li>
+    /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li>
+    /// <p>Permissions don't allow sending logs to the destination.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResolverQueryLogConfigStatus>) -> Self {
@@ -170,13 +194,19 @@ impl ResolverQueryLogConfigBuilder {
     }
     /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
-    /// <li><p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
-    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
-    /// <li><p><code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
+    /// <li>
+    /// <p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: Resolver can't deliver logs to the location that is specified in the query logging configuration. Here are two common causes:</p>
     /// <ul>
-    /// <li><p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
-    /// <li><p>Permissions don't allow sending logs to the destination.</p></li>
+    /// <li>
+    /// <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li>
+    /// <p>Permissions don't allow sending logs to the destination.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResolverQueryLogConfigStatus> {

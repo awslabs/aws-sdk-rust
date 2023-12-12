@@ -6,9 +6,12 @@
 pub struct IdentityInfo {
     /// <p>The email identity type. The identity type can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>EMAIL_ADDRESS</code> – The identity is an email address.</p></li>
-    /// <li><p><code>DOMAIN</code> – The identity is a domain.</p></li>
-    /// <li><p><code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p></li>
+    /// <li>
+    /// <p><code>EMAIL_ADDRESS</code> – The identity is an email address.</p></li>
+    /// <li>
+    /// <p><code>DOMAIN</code> – The identity is a domain.</p></li>
+    /// <li>
+    /// <p><code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p></li>
     /// </ul>
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The address or domain of the identity.</p>
@@ -20,9 +23,12 @@ pub struct IdentityInfo {
 impl IdentityInfo {
     /// <p>The email identity type. The identity type can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>EMAIL_ADDRESS</code> – The identity is an email address.</p></li>
-    /// <li><p><code>DOMAIN</code> – The identity is a domain.</p></li>
-    /// <li><p><code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p></li>
+    /// <li>
+    /// <p><code>EMAIL_ADDRESS</code> – The identity is an email address.</p></li>
+    /// <li>
+    /// <p><code>DOMAIN</code> – The identity is a domain.</p></li>
+    /// <li>
+    /// <p><code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p></li>
     /// </ul>
     pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
         self.identity_type.as_ref()
@@ -55,9 +61,12 @@ pub struct IdentityInfoBuilder {
 impl IdentityInfoBuilder {
     /// <p>The email identity type. The identity type can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>EMAIL_ADDRESS</code> – The identity is an email address.</p></li>
-    /// <li><p><code>DOMAIN</code> – The identity is a domain.</p></li>
-    /// <li><p><code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p></li>
+    /// <li>
+    /// <p><code>EMAIL_ADDRESS</code> – The identity is an email address.</p></li>
+    /// <li>
+    /// <p><code>DOMAIN</code> – The identity is a domain.</p></li>
+    /// <li>
+    /// <p><code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p></li>
     /// </ul>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.identity_type = ::std::option::Option::Some(input);
@@ -65,9 +74,12 @@ impl IdentityInfoBuilder {
     }
     /// <p>The email identity type. The identity type can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>EMAIL_ADDRESS</code> – The identity is an email address.</p></li>
-    /// <li><p><code>DOMAIN</code> – The identity is a domain.</p></li>
-    /// <li><p><code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p></li>
+    /// <li>
+    /// <p><code>EMAIL_ADDRESS</code> – The identity is an email address.</p></li>
+    /// <li>
+    /// <p><code>DOMAIN</code> – The identity is a domain.</p></li>
+    /// <li>
+    /// <p><code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p></li>
     /// </ul>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
@@ -75,9 +87,12 @@ impl IdentityInfoBuilder {
     }
     /// <p>The email identity type. The identity type can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>EMAIL_ADDRESS</code> – The identity is an email address.</p></li>
-    /// <li><p><code>DOMAIN</code> – The identity is a domain.</p></li>
-    /// <li><p><code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p></li>
+    /// <li>
+    /// <p><code>EMAIL_ADDRESS</code> – The identity is an email address.</p></li>
+    /// <li>
+    /// <p><code>DOMAIN</code> – The identity is a domain.</p></li>
+    /// <li>
+    /// <p><code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p></li>
     /// </ul>
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
         &self.identity_type

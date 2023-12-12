@@ -8,7 +8,7 @@ pub struct ThirdPartyJobData {
     pub action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     /// <p>Represents information about an action configuration.</p>
     pub action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
-    /// <p>Represents information about a pipeline to a job worker.</p> <note>
+    /// <p>Represents information about a pipeline to a job worker.</p><note>
     /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p>
     /// </note>
     pub pipeline_context: ::std::option::Option<crate::types::PipelineContext>,
@@ -32,7 +32,7 @@ impl ThirdPartyJobData {
     pub fn action_configuration(&self) -> ::std::option::Option<&crate::types::ActionConfiguration> {
         self.action_configuration.as_ref()
     }
-    /// <p>Represents information about a pipeline to a job worker.</p> <note>
+    /// <p>Represents information about a pipeline to a job worker.</p><note>
     /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p>
     /// </note>
     pub fn pipeline_context(&self) -> ::std::option::Option<&crate::types::PipelineContext> {
@@ -126,21 +126,21 @@ impl ThirdPartyJobDataBuilder {
     pub fn get_action_configuration(&self) -> &::std::option::Option<crate::types::ActionConfiguration> {
         &self.action_configuration
     }
-    /// <p>Represents information about a pipeline to a job worker.</p> <note>
+    /// <p>Represents information about a pipeline to a job worker.</p><note>
     /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p>
     /// </note>
     pub fn pipeline_context(mut self, input: crate::types::PipelineContext) -> Self {
         self.pipeline_context = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents information about a pipeline to a job worker.</p> <note>
+    /// <p>Represents information about a pipeline to a job worker.</p><note>
     /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p>
     /// </note>
     pub fn set_pipeline_context(mut self, input: ::std::option::Option<crate::types::PipelineContext>) -> Self {
         self.pipeline_context = input;
         self
     }
-    /// <p>Represents information about a pipeline to a job worker.</p> <note>
+    /// <p>Represents information about a pipeline to a job worker.</p><note>
     /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p>
     /// </note>
     pub fn get_pipeline_context(&self) -> &::std::option::Option<crate::types::PipelineContext> {

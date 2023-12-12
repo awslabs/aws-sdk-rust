@@ -125,9 +125,12 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,9 +140,12 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -149,9 +155,12 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -344,9 +353,12 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_name(input.into());
@@ -355,9 +367,12 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
@@ -366,9 +381,12 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_parameter_group_name()
@@ -378,8 +396,10 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 0 to 35</p></li>
-    /// <li><p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p></li>
+    /// <li>
+    /// <p>Must be a value from 0 to 35</p></li>
+    /// <li>
+    /// <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p></li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.backup_retention_period(input);
@@ -390,8 +410,10 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 0 to 35</p></li>
-    /// <li><p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p></li>
+    /// <li>
+    /// <p>Must be a value from 0 to 35</p></li>
+    /// <li>
+    /// <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p></li>
     /// </ul>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_backup_retention_period(input);
@@ -402,8 +424,10 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 0 to 35</p></li>
-    /// <li><p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p></li>
+    /// <li>
+    /// <p>Must be a value from 0 to 35</p></li>
+    /// <li>
+    /// <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p></li>
     /// </ul>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_backup_retention_period()

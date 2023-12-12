@@ -49,11 +49,14 @@ impl GetChannelMessageStatusInputBuilder {
 /// <dd>
 /// <p>Message denied by the processor</p>
 /// </dd>
-/// </dl> <note>
+/// </dl><note>
 /// <ul>
-/// <li><p>This API does not return statuses for denied messages, because we don't store them once the processor denies them.</p></li>
-/// <li><p>Only the message sender can invoke this API.</p></li>
-/// <li><p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p></li>
+/// <li>
+/// <p>This API does not return statuses for denied messages, because we don't store them once the processor denies them.</p></li>
+/// <li>
+/// <p>Only the message sender can invoke this API.</p></li>
+/// <li>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -183,21 +186,21 @@ impl GetChannelMessageStatusFluentBuilder {
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chime_bearer()
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>The ID of the SubChannel in the request.</p><note>
     /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p>
     /// </note>
     pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>The ID of the SubChannel in the request.</p><note>
     /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p>
     /// </note>
     pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>The ID of the SubChannel in the request.</p><note>
     /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p>
     /// </note>
     pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {

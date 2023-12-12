@@ -13,7 +13,8 @@ pub struct StartContinuousExportOutput {
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>A dictionary which describes how the data is stored.</p>
     /// <ul>
-    /// <li><p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
+    /// <li>
+    /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
     pub schema_storage_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -37,7 +38,8 @@ impl StartContinuousExportOutput {
     }
     /// <p>A dictionary which describes how the data is stored.</p>
     /// <ul>
-    /// <li><p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
+    /// <li>
+    /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
     pub fn schema_storage_config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.schema_storage_config.as_ref()
@@ -129,7 +131,8 @@ impl StartContinuousExportOutputBuilder {
     ///
     /// <p>A dictionary which describes how the data is stored.</p>
     /// <ul>
-    /// <li><p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
+    /// <li>
+    /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
     pub fn schema_storage_config(
         mut self,
@@ -143,7 +146,8 @@ impl StartContinuousExportOutputBuilder {
     }
     /// <p>A dictionary which describes how the data is stored.</p>
     /// <ul>
-    /// <li><p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
+    /// <li>
+    /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
     pub fn set_schema_storage_config(
         mut self,
@@ -154,7 +158,8 @@ impl StartContinuousExportOutputBuilder {
     }
     /// <p>A dictionary which describes how the data is stored.</p>
     /// <ul>
-    /// <li><p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
+    /// <li>
+    /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
     pub fn get_schema_storage_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.schema_storage_config

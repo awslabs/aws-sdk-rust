@@ -7,29 +7,40 @@ pub struct DescribeDbClusterBacktracksInput {
     /// <p>The DB cluster identifier of the DB cluster to be described. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>If specified, this value is the backtrack identifier of the backtrack to be described.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p></li>
+    /// <li>
+    /// <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p></li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code></p>
     pub backtrack_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more DB clusters to describe. Supported filters include the following:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.</p></li>
-    /// <li><p><code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack status values:</p>
+    /// <li>
+    /// <p><code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack status values:</p>
     /// <ul>
-    /// <li><p><code>applying</code></p></li>
-    /// <li><p><code>completed</code></p></li>
-    /// <li><p><code>failed</code></p></li>
-    /// <li><p><code>pending</code></p></li>
-    /// </ul> <p>The results list includes information about only the backtracks identified by these values.</p></li>
+    /// <li>
+    /// <p><code>applying</code></p></li>
+    /// <li>
+    /// <p><code>completed</code></p></li>
+    /// <li>
+    /// <p><code>failed</code></p></li>
+    /// <li>
+    /// <p><code>pending</code></p></li>
+    /// </ul>
+    /// <p>The results list includes information about only the backtracks identified by these values.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
@@ -43,9 +54,12 @@ impl DescribeDbClusterBacktracksInput {
     /// <p>The DB cluster identifier of the DB cluster to be described. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -54,7 +68,8 @@ impl DescribeDbClusterBacktracksInput {
     /// <p>If specified, this value is the backtrack identifier of the backtrack to be described.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p></li>
+    /// <li>
+    /// <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p></li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code></p>
     pub fn backtrack_identifier(&self) -> ::std::option::Option<&str> {
@@ -62,14 +77,21 @@ impl DescribeDbClusterBacktracksInput {
     }
     /// <p>A filter that specifies one or more DB clusters to describe. Supported filters include the following:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.</p></li>
-    /// <li><p><code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack status values:</p>
+    /// <li>
+    /// <p><code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack status values:</p>
     /// <ul>
-    /// <li><p><code>applying</code></p></li>
-    /// <li><p><code>completed</code></p></li>
-    /// <li><p><code>failed</code></p></li>
-    /// <li><p><code>pending</code></p></li>
-    /// </ul> <p>The results list includes information about only the backtracks identified by these values.</p></li>
+    /// <li>
+    /// <p><code>applying</code></p></li>
+    /// <li>
+    /// <p><code>completed</code></p></li>
+    /// <li>
+    /// <p><code>failed</code></p></li>
+    /// <li>
+    /// <p><code>pending</code></p></li>
+    /// </ul>
+    /// <p>The results list includes information about only the backtracks identified by these values.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -108,9 +130,12 @@ impl DescribeDbClusterBacktracksInputBuilder {
     /// <p>The DB cluster identifier of the DB cluster to be described. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     /// This field is required.
@@ -121,9 +146,12 @@ impl DescribeDbClusterBacktracksInputBuilder {
     /// <p>The DB cluster identifier of the DB cluster to be described. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -133,9 +161,12 @@ impl DescribeDbClusterBacktracksInputBuilder {
     /// <p>The DB cluster identifier of the DB cluster to be described. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code></p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,7 +175,8 @@ impl DescribeDbClusterBacktracksInputBuilder {
     /// <p>If specified, this value is the backtrack identifier of the backtrack to be described.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p></li>
+    /// <li>
+    /// <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p></li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code></p>
     pub fn backtrack_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,7 +186,8 @@ impl DescribeDbClusterBacktracksInputBuilder {
     /// <p>If specified, this value is the backtrack identifier of the backtrack to be described.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p></li>
+    /// <li>
+    /// <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p></li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code></p>
     pub fn set_backtrack_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -164,7 +197,8 @@ impl DescribeDbClusterBacktracksInputBuilder {
     /// <p>If specified, this value is the backtrack identifier of the backtrack to be described.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p></li>
+    /// <li>
+    /// <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p></li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code></p>
     pub fn get_backtrack_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,14 +210,21 @@ impl DescribeDbClusterBacktracksInputBuilder {
     ///
     /// <p>A filter that specifies one or more DB clusters to describe. Supported filters include the following:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.</p></li>
-    /// <li><p><code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack status values:</p>
+    /// <li>
+    /// <p><code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack status values:</p>
     /// <ul>
-    /// <li><p><code>applying</code></p></li>
-    /// <li><p><code>completed</code></p></li>
-    /// <li><p><code>failed</code></p></li>
-    /// <li><p><code>pending</code></p></li>
-    /// </ul> <p>The results list includes information about only the backtracks identified by these values.</p></li>
+    /// <li>
+    /// <p><code>applying</code></p></li>
+    /// <li>
+    /// <p><code>completed</code></p></li>
+    /// <li>
+    /// <p><code>failed</code></p></li>
+    /// <li>
+    /// <p><code>pending</code></p></li>
+    /// </ul>
+    /// <p>The results list includes information about only the backtracks identified by these values.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -193,14 +234,21 @@ impl DescribeDbClusterBacktracksInputBuilder {
     }
     /// <p>A filter that specifies one or more DB clusters to describe. Supported filters include the following:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.</p></li>
-    /// <li><p><code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack status values:</p>
+    /// <li>
+    /// <p><code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack status values:</p>
     /// <ul>
-    /// <li><p><code>applying</code></p></li>
-    /// <li><p><code>completed</code></p></li>
-    /// <li><p><code>failed</code></p></li>
-    /// <li><p><code>pending</code></p></li>
-    /// </ul> <p>The results list includes information about only the backtracks identified by these values.</p></li>
+    /// <li>
+    /// <p><code>applying</code></p></li>
+    /// <li>
+    /// <p><code>completed</code></p></li>
+    /// <li>
+    /// <p><code>failed</code></p></li>
+    /// <li>
+    /// <p><code>pending</code></p></li>
+    /// </ul>
+    /// <p>The results list includes information about only the backtracks identified by these values.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -208,14 +256,21 @@ impl DescribeDbClusterBacktracksInputBuilder {
     }
     /// <p>A filter that specifies one or more DB clusters to describe. Supported filters include the following:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.</p></li>
-    /// <li><p><code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack status values:</p>
+    /// <li>
+    /// <p><code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results list includes information about only the backtracks identified by these identifiers.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack status values:</p>
     /// <ul>
-    /// <li><p><code>applying</code></p></li>
-    /// <li><p><code>completed</code></p></li>
-    /// <li><p><code>failed</code></p></li>
-    /// <li><p><code>pending</code></p></li>
-    /// </ul> <p>The results list includes information about only the backtracks identified by these values.</p></li>
+    /// <li>
+    /// <p><code>applying</code></p></li>
+    /// <li>
+    /// <p><code>completed</code></p></li>
+    /// <li>
+    /// <p><code>failed</code></p></li>
+    /// <li>
+    /// <p><code>pending</code></p></li>
+    /// </ul>
+    /// <p>The results list includes information about only the backtracks identified by these values.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

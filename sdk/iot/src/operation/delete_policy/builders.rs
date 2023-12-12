@@ -25,7 +25,7 @@ impl DeletePolicyInputBuilder {
 /// <p>Deletes the specified policy.</p>
 /// <p>A policy cannot be deleted if it has non-default versions or it is attached to any certificate.</p>
 /// <p>To delete a policy, use the <code>DeletePolicyVersion</code> action to delete all non-default versions of the policy; use the <code>DetachPolicy</code> action to detach the policy from any certificate; and then use the DeletePolicy action to delete the policy.</p>
-/// <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p> <note>
+/// <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p><note>
 /// <p>Because of the distributed nature of Amazon Web Services, it can take up to five minutes after a policy is detached before it's ready to be deleted.</p>
 /// </note>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicy</a> action.</p>

@@ -24,7 +24,7 @@ impl AllocateConnectionOnInterconnectInputBuilder {
 ///
 /// <p>Deprecated. Use <code>AllocateHostedConnection</code> instead.</p>
 /// <p>Creates a hosted connection on an interconnect.</p>
-/// <p>Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the specified interconnect.</p> <note>
+/// <p>Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the specified interconnect.</p><note>
 /// <p>Intended for use by Direct Connect Partners only.</p>
 /// </note>
 #[deprecated]

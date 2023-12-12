@@ -9,10 +9,14 @@ pub struct PostContentInput {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li><p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
-    /// <li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
-    /// <li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
-    /// <li><p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
+    /// <li>
+    /// <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+    /// <li>
+    /// <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+    /// <li>
+    /// <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+    /// <li>
+    /// <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code> HTTP header.</p>
@@ -27,35 +31,52 @@ pub struct PostContentInput {
     /// <p>You pass this value as the <code>Content-Type</code> HTTP header.</p>
     /// <p>Indicates the audio format or text. The header value must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li><p>PCM format, audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p>audio/l16; rate=16000; channels=1</p></li>
-    /// <li><p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
-    /// <li><p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
+    /// <li>
+    /// <p>audio/l16; rate=16000; channels=1</p></li>
+    /// <li>
+    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
+    /// <li>
+    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p></li>
+    /// <li>
+    /// <p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>You pass this value as the <code>Accept</code> HTTP header.</p>
     /// <p>The message Amazon Lex returns in the response can be either text or speech based on the <code>Accept</code> HTTP header value in the request.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p>audio/mpeg</p></li>
-    /// <li><p>audio/ogg</p></li>
-    /// <li><p>audio/pcm</p></li>
-    /// <li><p>text/plain; charset=utf-8</p></li>
-    /// <li><p>audio/* (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p>audio/mpeg</p></li>
+    /// <li>
+    /// <p>audio/ogg</p></li>
+    /// <li>
+    /// <p>audio/pcm</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>audio/* (defaults to mpeg)</p></li>
     /// </ul></li>
     /// </ul>
     pub accept: ::std::option::Option<::std::string::String>,
@@ -78,10 +99,14 @@ impl PostContentInput {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li><p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
-    /// <li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
-    /// <li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
-    /// <li><p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
+    /// <li>
+    /// <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+    /// <li>
+    /// <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+    /// <li>
+    /// <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+    /// <li>
+    /// <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
@@ -102,19 +127,27 @@ impl PostContentInput {
     /// <p>You pass this value as the <code>Content-Type</code> HTTP header.</p>
     /// <p>Indicates the audio format or text. The header value must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li><p>PCM format, audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p>audio/l16; rate=16000; channels=1</p></li>
-    /// <li><p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
-    /// <li><p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
+    /// <li>
+    /// <p>audio/l16; rate=16000; channels=1</p></li>
+    /// <li>
+    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
+    /// <li>
+    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p></li>
+    /// <li>
+    /// <p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
@@ -123,16 +156,25 @@ impl PostContentInput {
     /// <p>You pass this value as the <code>Accept</code> HTTP header.</p>
     /// <p>The message Amazon Lex returns in the response can be either text or speech based on the <code>Accept</code> HTTP header value in the request.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p>audio/mpeg</p></li>
-    /// <li><p>audio/ogg</p></li>
-    /// <li><p>audio/pcm</p></li>
-    /// <li><p>text/plain; charset=utf-8</p></li>
-    /// <li><p>audio/* (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p>audio/mpeg</p></li>
+    /// <li>
+    /// <p>audio/ogg</p></li>
+    /// <li>
+    /// <p>audio/pcm</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>audio/* (defaults to mpeg)</p></li>
     /// </ul></li>
     /// </ul>
     pub fn accept(&self) -> ::std::option::Option<&str> {
@@ -219,10 +261,14 @@ impl PostContentInputBuilder {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li><p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
-    /// <li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
-    /// <li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
-    /// <li><p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
+    /// <li>
+    /// <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+    /// <li>
+    /// <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+    /// <li>
+    /// <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+    /// <li>
+    /// <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
     /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -232,10 +278,14 @@ impl PostContentInputBuilder {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li><p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
-    /// <li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
-    /// <li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
-    /// <li><p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
+    /// <li>
+    /// <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+    /// <li>
+    /// <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+    /// <li>
+    /// <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+    /// <li>
+    /// <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
@@ -244,10 +294,14 @@ impl PostContentInputBuilder {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
-    /// <li><p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
-    /// <li><p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
-    /// <li><p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
-    /// <li><p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
+    /// <li>
+    /// <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p></li>
+    /// <li>
+    /// <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p></li>
+    /// <li>
+    /// <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p></li>
+    /// <li>
+    /// <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
@@ -298,19 +352,27 @@ impl PostContentInputBuilder {
     /// <p>You pass this value as the <code>Content-Type</code> HTTP header.</p>
     /// <p>Indicates the audio format or text. The header value must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li><p>PCM format, audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p>audio/l16; rate=16000; channels=1</p></li>
-    /// <li><p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
-    /// <li><p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
+    /// <li>
+    /// <p>audio/l16; rate=16000; channels=1</p></li>
+    /// <li>
+    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
+    /// <li>
+    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p></li>
+    /// <li>
+    /// <p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     /// This field is required.
@@ -321,19 +383,27 @@ impl PostContentInputBuilder {
     /// <p>You pass this value as the <code>Content-Type</code> HTTP header.</p>
     /// <p>Indicates the audio format or text. The header value must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li><p>PCM format, audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p>audio/l16; rate=16000; channels=1</p></li>
-    /// <li><p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
-    /// <li><p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
+    /// <li>
+    /// <p>audio/l16; rate=16000; channels=1</p></li>
+    /// <li>
+    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
+    /// <li>
+    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p></li>
+    /// <li>
+    /// <p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -343,19 +413,27 @@ impl PostContentInputBuilder {
     /// <p>You pass this value as the <code>Content-Type</code> HTTP header.</p>
     /// <p>Indicates the audio format or text. The header value must start with one of the following prefixes:</p>
     /// <ul>
-    /// <li><p>PCM format, audio data must be in little-endian byte order.</p>
+    /// <li>
+    /// <p>PCM format, audio data must be in little-endian byte order.</p>
     /// <ul>
-    /// <li><p>audio/l16; rate=16000; channels=1</p></li>
-    /// <li><p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
-    /// <li><p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
+    /// <li>
+    /// <p>audio/l16; rate=16000; channels=1</p></li>
+    /// <li>
+    /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p></li>
+    /// <li>
+    /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p></li>
     /// </ul></li>
-    /// <li><p>Opus format</p>
+    /// <li>
+    /// <p>Opus format</p>
     /// <ul>
-    /// <li><p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p></li>
+    /// <li>
+    /// <p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p></li>
     /// </ul></li>
-    /// <li><p>Text format</p>
+    /// <li>
+    /// <p>Text format</p>
     /// <ul>
-    /// <li><p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -364,16 +442,25 @@ impl PostContentInputBuilder {
     /// <p>You pass this value as the <code>Accept</code> HTTP header.</p>
     /// <p>The message Amazon Lex returns in the response can be either text or speech based on the <code>Accept</code> HTTP header value in the request.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p>audio/mpeg</p></li>
-    /// <li><p>audio/ogg</p></li>
-    /// <li><p>audio/pcm</p></li>
-    /// <li><p>text/plain; charset=utf-8</p></li>
-    /// <li><p>audio/* (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p>audio/mpeg</p></li>
+    /// <li>
+    /// <p>audio/ogg</p></li>
+    /// <li>
+    /// <p>audio/pcm</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>audio/* (defaults to mpeg)</p></li>
     /// </ul></li>
     /// </ul>
     pub fn accept(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -383,16 +470,25 @@ impl PostContentInputBuilder {
     /// <p>You pass this value as the <code>Accept</code> HTTP header.</p>
     /// <p>The message Amazon Lex returns in the response can be either text or speech based on the <code>Accept</code> HTTP header value in the request.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p>audio/mpeg</p></li>
-    /// <li><p>audio/ogg</p></li>
-    /// <li><p>audio/pcm</p></li>
-    /// <li><p>text/plain; charset=utf-8</p></li>
-    /// <li><p>audio/* (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p>audio/mpeg</p></li>
+    /// <li>
+    /// <p>audio/ogg</p></li>
+    /// <li>
+    /// <p>audio/pcm</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>audio/* (defaults to mpeg)</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_accept(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -402,16 +498,25 @@ impl PostContentInputBuilder {
     /// <p>You pass this value as the <code>Accept</code> HTTP header.</p>
     /// <p>The message Amazon Lex returns in the response can be either text or speech based on the <code>Accept</code> HTTP header value in the request.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p>audio/mpeg</p></li>
-    /// <li><p>audio/ogg</p></li>
-    /// <li><p>audio/pcm</p></li>
-    /// <li><p>text/plain; charset=utf-8</p></li>
-    /// <li><p>audio/* (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p>audio/mpeg</p></li>
+    /// <li>
+    /// <p>audio/ogg</p></li>
+    /// <li>
+    /// <p>audio/pcm</p></li>
+    /// <li>
+    /// <p>text/plain; charset=utf-8</p></li>
+    /// <li>
+    /// <p>audio/* (defaults to mpeg)</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {

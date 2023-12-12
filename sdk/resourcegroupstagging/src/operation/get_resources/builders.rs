@@ -25,8 +25,10 @@ impl GetResourcesInputBuilder {
 /// <p>Returns all the tagged or previously tagged resources that are located in the specified Amazon Web Services Region for the account.</p>
 /// <p>Depending on what information you want returned, you can also specify the following:</p>
 /// <ul>
-/// <li><p><i>Filters</i> that specify what tags and resource types you want returned. The response includes all tags that are associated with the requested resources.</p></li>
-/// <li><p>Information about compliance with the account's effective tag policy. For more information on tag policies, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag Policies</a> in the <i>Organizations User Guide.</i></p></li>
+/// <li>
+/// <p><i>Filters</i> that specify what tags and resource types you want returned. The response includes all tags that are associated with the requested resources.</p></li>
+/// <li>
+/// <p>Information about compliance with the account's effective tag policy. For more information on tag policies, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag Policies</a> in the <i>Organizations User Guide.</i></p></li>
 /// </ul>
 /// <p>This operation supports pagination, where the response can be sent in multiple pages. You should check the <code>PaginationToken</code> response parameter to determine if there are additional results available to return. Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that there are no more results waiting to be returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -141,15 +143,24 @@ impl GetResourcesFluentBuilder {
     /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values.</p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
-    /// <li><p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p></li>
-    /// <li><p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
-    /// <li><p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p></li>
-    /// <li><p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p> <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
+    /// <li>
+    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p></li>
+    /// <li>
+    /// <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
+    /// <li>
+    /// <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p></li>
+    /// <li>
+    /// <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p>
+    /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
     /// <ul>
-    /// <li><p><code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code></p></li>
-    /// <li><p><code>GetResources({filter2})</code> returns resources tagged with <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code></p></li>
-    /// <li><p><code>GetResources({filter3})</code> returns resources tagged with any tag with the key <code>key3</code>, and with any or no value</p></li>
-    /// <li><p><code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</code></p></li>
+    /// <li>
+    /// <p><code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code></p></li>
+    /// <li>
+    /// <p><code>GetResources({filter2})</code> returns resources tagged with <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code></p></li>
+    /// <li>
+    /// <p><code>GetResources({filter3})</code> returns resources tagged with any tag with the key <code>key3</code>, and with any or no value</p></li>
+    /// <li>
+    /// <p><code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn tag_filters(mut self, input: crate::types::TagFilter) -> Self {
@@ -159,15 +170,24 @@ impl GetResourcesFluentBuilder {
     /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values.</p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
-    /// <li><p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p></li>
-    /// <li><p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
-    /// <li><p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p></li>
-    /// <li><p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p> <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
+    /// <li>
+    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p></li>
+    /// <li>
+    /// <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
+    /// <li>
+    /// <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p></li>
+    /// <li>
+    /// <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p>
+    /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
     /// <ul>
-    /// <li><p><code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code></p></li>
-    /// <li><p><code>GetResources({filter2})</code> returns resources tagged with <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code></p></li>
-    /// <li><p><code>GetResources({filter3})</code> returns resources tagged with any tag with the key <code>key3</code>, and with any or no value</p></li>
-    /// <li><p><code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</code></p></li>
+    /// <li>
+    /// <p><code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code></p></li>
+    /// <li>
+    /// <p><code>GetResources({filter2})</code> returns resources tagged with <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code></p></li>
+    /// <li>
+    /// <p><code>GetResources({filter3})</code> returns resources tagged with any tag with the key <code>key3</code>, and with any or no value</p></li>
+    /// <li>
+    /// <p><code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
@@ -177,15 +197,24 @@ impl GetResourcesFluentBuilder {
     /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values.</p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
-    /// <li><p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p></li>
-    /// <li><p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
-    /// <li><p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p></li>
-    /// <li><p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p> <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
+    /// <li>
+    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p></li>
+    /// <li>
+    /// <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
+    /// <li>
+    /// <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p></li>
+    /// <li>
+    /// <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p>
+    /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
     /// <ul>
-    /// <li><p><code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code></p></li>
-    /// <li><p><code>GetResources({filter2})</code> returns resources tagged with <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code></p></li>
-    /// <li><p><code>GetResources({filter3})</code> returns resources tagged with any tag with the key <code>key3</code>, and with any or no value</p></li>
-    /// <li><p><code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</code></p></li>
+    /// <li>
+    /// <p><code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code></p></li>
+    /// <li>
+    /// <p><code>GetResources({filter2})</code> returns resources tagged with <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code></p></li>
+    /// <li>
+    /// <p><code>GetResources({filter3})</code> returns resources tagged with any tag with the key <code>key3</code>, and with any or no value</p></li>
+    /// <li>
+    /// <p><code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {

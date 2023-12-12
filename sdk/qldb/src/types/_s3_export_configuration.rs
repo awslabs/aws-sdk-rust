@@ -11,9 +11,12 @@ pub struct S3ExportConfiguration {
     /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>The following are examples of valid <code>Prefix</code> values:</p>
     /// <ul>
-    /// <li><p><code>JournalExports-ForMyLedger/Testing/</code></p></li>
-    /// <li><p><code>JournalExports</code></p></li>
-    /// <li><p><code>My:Tests/</code></p></li>
+    /// <li>
+    /// <p><code>JournalExports-ForMyLedger/Testing/</code></p></li>
+    /// <li>
+    /// <p><code>JournalExports</code></p></li>
+    /// <li>
+    /// <p><code>My:Tests/</code></p></li>
     /// </ul>
     pub prefix: ::std::string::String,
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
@@ -30,9 +33,12 @@ impl S3ExportConfiguration {
     /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>The following are examples of valid <code>Prefix</code> values:</p>
     /// <ul>
-    /// <li><p><code>JournalExports-ForMyLedger/Testing/</code></p></li>
-    /// <li><p><code>JournalExports</code></p></li>
-    /// <li><p><code>My:Tests/</code></p></li>
+    /// <li>
+    /// <p><code>JournalExports-ForMyLedger/Testing/</code></p></li>
+    /// <li>
+    /// <p><code>JournalExports</code></p></li>
+    /// <li>
+    /// <p><code>My:Tests/</code></p></li>
     /// </ul>
     pub fn prefix(&self) -> &str {
         use std::ops::Deref;
@@ -81,9 +87,12 @@ impl S3ExportConfigurationBuilder {
     /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>The following are examples of valid <code>Prefix</code> values:</p>
     /// <ul>
-    /// <li><p><code>JournalExports-ForMyLedger/Testing/</code></p></li>
-    /// <li><p><code>JournalExports</code></p></li>
-    /// <li><p><code>My:Tests/</code></p></li>
+    /// <li>
+    /// <p><code>JournalExports-ForMyLedger/Testing/</code></p></li>
+    /// <li>
+    /// <p><code>JournalExports</code></p></li>
+    /// <li>
+    /// <p><code>My:Tests/</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,9 +103,12 @@ impl S3ExportConfigurationBuilder {
     /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>The following are examples of valid <code>Prefix</code> values:</p>
     /// <ul>
-    /// <li><p><code>JournalExports-ForMyLedger/Testing/</code></p></li>
-    /// <li><p><code>JournalExports</code></p></li>
-    /// <li><p><code>My:Tests/</code></p></li>
+    /// <li>
+    /// <p><code>JournalExports-ForMyLedger/Testing/</code></p></li>
+    /// <li>
+    /// <p><code>JournalExports</code></p></li>
+    /// <li>
+    /// <p><code>My:Tests/</code></p></li>
     /// </ul>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
@@ -106,9 +118,12 @@ impl S3ExportConfigurationBuilder {
     /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>The following are examples of valid <code>Prefix</code> values:</p>
     /// <ul>
-    /// <li><p><code>JournalExports-ForMyLedger/Testing/</code></p></li>
-    /// <li><p><code>JournalExports</code></p></li>
-    /// <li><p><code>My:Tests/</code></p></li>
+    /// <li>
+    /// <p><code>JournalExports-ForMyLedger/Testing/</code></p></li>
+    /// <li>
+    /// <p><code>JournalExports</code></p></li>
+    /// <li>
+    /// <p><code>My:Tests/</code></p></li>
     /// </ul>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix

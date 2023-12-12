@@ -22,7 +22,7 @@ impl CreateJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateJob`.
 ///
-/// <p>Creates a job to import or export data between Amazon S3 and your on-premises data center. Your Amazon Web Services account must have the right trust policies and permissions in place to create a job for a Snow device. If you're creating a job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are inherited from the cluster.</p> <note>
+/// <p>Creates a job to import or export data between Amazon S3 and your on-premises data center. Your Amazon Web Services account must have the right trust policies and permissions in place to create a job for a Snow device. If you're creating a job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are inherited from the cluster.</p><note>
 /// <p>Only the Snowball; Edge device type is supported when ordering clustered jobs.</p>
 /// <p>The device capacity is optional.</p>
 /// <p>Availability of device types differ by Amazon Web Services Region. For more information about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon Web Services Regional Services</a>.</p>
@@ -30,61 +30,99 @@ impl CreateJobInputBuilder {
 /// <p></p>
 /// <p class="title"><b>Snow Family devices and their capacities.</b></p>
 /// <ul>
-/// <li><p>Device type: <b>SNC1_SSD</b></p>
+/// <li>
+/// <p>Device type: <b>SNC1_SSD</b></p>
 /// <ul>
-/// <li><p>Capacity: T14</p></li>
-/// <li><p>Description: Snowcone</p></li>
-/// </ul> <p></p></li>
-/// <li><p>Device type: <b>SNC1_HDD</b></p>
+/// <li>
+/// <p>Capacity: T14</p></li>
+/// <li>
+/// <p>Description: Snowcone</p></li>
+/// </ul>
+/// <p></p></li>
+/// <li>
+/// <p>Device type: <b>SNC1_HDD</b></p>
 /// <ul>
-/// <li><p>Capacity: T8</p></li>
-/// <li><p>Description: Snowcone</p></li>
-/// </ul> <p></p></li>
-/// <li><p>Device type: <b>EDGE_S</b></p>
+/// <li>
+/// <p>Capacity: T8</p></li>
+/// <li>
+/// <p>Description: Snowcone</p></li>
+/// </ul>
+/// <p></p></li>
+/// <li>
+/// <p>Device type: <b>EDGE_S</b></p>
 /// <ul>
-/// <li><p>Capacity: T98</p></li>
-/// <li><p>Description: Snowball Edge Storage Optimized for data transfer only</p></li>
-/// </ul> <p></p></li>
-/// <li><p>Device type: <b>EDGE_CG</b></p>
+/// <li>
+/// <p>Capacity: T98</p></li>
+/// <li>
+/// <p>Description: Snowball Edge Storage Optimized for data transfer only</p></li>
+/// </ul>
+/// <p></p></li>
+/// <li>
+/// <p>Device type: <b>EDGE_CG</b></p>
 /// <ul>
-/// <li><p>Capacity: T42</p></li>
-/// <li><p>Description: Snowball Edge Compute Optimized with GPU</p></li>
-/// </ul> <p></p></li>
-/// <li><p>Device type: <b>EDGE_C</b></p>
+/// <li>
+/// <p>Capacity: T42</p></li>
+/// <li>
+/// <p>Description: Snowball Edge Compute Optimized with GPU</p></li>
+/// </ul>
+/// <p></p></li>
+/// <li>
+/// <p>Device type: <b>EDGE_C</b></p>
 /// <ul>
-/// <li><p>Capacity: T42</p></li>
-/// <li><p>Description: Snowball Edge Compute Optimized without GPU</p></li>
-/// </ul> <p></p></li>
-/// <li><p>Device type: <b>EDGE</b></p>
+/// <li>
+/// <p>Capacity: T42</p></li>
+/// <li>
+/// <p>Description: Snowball Edge Compute Optimized without GPU</p></li>
+/// </ul>
+/// <p></p></li>
+/// <li>
+/// <p>Device type: <b>EDGE</b></p>
 /// <ul>
-/// <li><p>Capacity: T100</p></li>
-/// <li><p>Description: Snowball Edge Storage Optimized with EC2 Compute</p></li>
-/// </ul> <note>
+/// <li>
+/// <p>Capacity: T100</p></li>
+/// <li>
+/// <p>Description: Snowball Edge Storage Optimized with EC2 Compute</p></li>
+/// </ul><note>
 /// <p>This device is replaced with T98.</p>
-/// </note> <p></p></li>
-/// <li><p>Device type: <b>STANDARD</b></p>
+/// </note>
+/// <p></p></li>
+/// <li>
+/// <p>Device type: <b>STANDARD</b></p>
 /// <ul>
-/// <li><p>Capacity: T50</p></li>
-/// <li><p>Description: Original Snowball device</p> <note>
+/// <li>
+/// <p>Capacity: T50</p></li>
+/// <li>
+/// <p>Description: Original Snowball device</p><note>
 /// <p>This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region</p>
 /// </note></li>
-/// </ul> <p></p></li>
-/// <li><p>Device type: <b>STANDARD</b></p>
+/// </ul>
+/// <p></p></li>
+/// <li>
+/// <p>Device type: <b>STANDARD</b></p>
 /// <ul>
-/// <li><p>Capacity: T80</p></li>
-/// <li><p>Description: Original Snowball device</p> <note>
+/// <li>
+/// <p>Capacity: T80</p></li>
+/// <li>
+/// <p>Description: Original Snowball device</p><note>
 /// <p>This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region.</p>
 /// </note></li>
-/// </ul> <p></p></li>
-/// <li><p>Snow Family device type: <b>RACK_5U_C</b></p>
+/// </ul>
+/// <p></p></li>
+/// <li>
+/// <p>Snow Family device type: <b>RACK_5U_C</b></p>
 /// <ul>
-/// <li><p>Capacity: T13</p></li>
-/// <li><p>Description: Snowblade.</p></li>
+/// <li>
+/// <p>Capacity: T13</p></li>
+/// <li>
+/// <p>Description: Snowblade.</p></li>
 /// </ul></li>
-/// <li><p>Device type: <b>V3_5S</b></p>
+/// <li>
+/// <p>Device type: <b>V3_5S</b></p>
 /// <ul>
-/// <li><p>Capacity: T240</p></li>
-/// <li><p>Description: Snowball Edge Storage Optimized 210TB</p></li>
+/// <li>
+/// <p>Capacity: T240</p></li>
+/// <li>
+/// <p>Description: Snowball Edge Storage Optimized 210TB</p></li>
 /// </ul></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -289,10 +327,14 @@ impl CreateJobFluentBuilder {
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
         self.inner = self.inner.shipping_option(input);
@@ -300,10 +342,14 @@ impl CreateJobFluentBuilder {
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
         self.inner = self.inner.set_shipping_option(input);
@@ -311,10 +357,14 @@ impl CreateJobFluentBuilder {
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn get_shipping_option(&self) -> &::std::option::Option<crate::types::ShippingOption> {
         self.inner.get_shipping_option()
@@ -347,7 +397,7 @@ impl CreateJobFluentBuilder {
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_id()
     }
-    /// <p>The type of Snow Family devices to use for this job.</p> <note>
+    /// <p>The type of Snow Family devices to use for this job.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -357,7 +407,7 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.snowball_type(input);
         self
     }
-    /// <p>The type of Snow Family devices to use for this job.</p> <note>
+    /// <p>The type of Snow Family devices to use for this job.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -367,7 +417,7 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.set_snowball_type(input);
         self
     }
-    /// <p>The type of Snow Family devices to use for this job.</p> <note>
+    /// <p>The type of Snow Family devices to use for this job.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>

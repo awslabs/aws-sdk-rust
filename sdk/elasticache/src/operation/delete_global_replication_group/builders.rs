@@ -24,8 +24,10 @@ impl DeleteGlobalReplicationGroupInputBuilder {
 ///
 /// <p>Deleting a Global datastore is a two-step process:</p>
 /// <ul>
-/// <li><p>First, you must <code>DisassociateGlobalReplicationGroup</code> to remove the secondary clusters in the Global datastore.</p></li>
-/// <li><p>Once the Global datastore contains only the primary cluster, you can use the <code>DeleteGlobalReplicationGroup</code> API to delete the Global datastore while retainining the primary cluster using <code>RetainPrimaryReplicationGroup=true</code>.</p></li>
+/// <li>
+/// <p>First, you must <code>DisassociateGlobalReplicationGroup</code> to remove the secondary clusters in the Global datastore.</p></li>
+/// <li>
+/// <p>Once the Global datastore contains only the primary cluster, you can use the <code>DeleteGlobalReplicationGroup</code> API to delete the Global datastore while retainining the primary cluster using <code>RetainPrimaryReplicationGroup=true</code>.</p></li>
 /// </ul>
 /// <p>Since the Global Datastore has only a primary cluster, you can delete the Global Datastore while retaining the primary by setting <code>RetainPrimaryReplicationGroup=true</code>. The primary cluster is never deleted when deleting a Global Datastore. It can only be deleted when it no longer is associated with any Global Datastore.</p>
 /// <p>When you receive a successful response from this operation, Amazon ElastiCache immediately begins deleting the selected resources; you cannot cancel or revert this operation.</p>

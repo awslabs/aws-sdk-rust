@@ -207,13 +207,20 @@ impl CreateCostCategoryDefinitionFluentBuilder {
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
-    /// <li><p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p></li>
-    /// <li><p>The maximum length of a key is 128 characters</p></li>
-    /// <li><p>The maximum length of a value is 256 characters</p></li>
-    /// <li><p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code></p></li>
-    /// <li><p>Keys and values are case sensitive</p></li>
-    /// <li><p>Keys and values are trimmed for any leading or trailing whitespaces</p></li>
-    /// <li><p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
+    /// <li>
+    /// <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p></li>
+    /// <li>
+    /// <p>The maximum length of a key is 128 characters</p></li>
+    /// <li>
+    /// <p>The maximum length of a value is 256 characters</p></li>
+    /// <li>
+    /// <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code></p></li>
+    /// <li>
+    /// <p>Keys and values are case sensitive</p></li>
+    /// <li>
+    /// <p>Keys and values are trimmed for any leading or trailing whitespaces</p></li>
+    /// <li>
+    /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
     /// </ul>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         self.inner = self.inner.resource_tags(input);
@@ -222,13 +229,20 @@ impl CreateCostCategoryDefinitionFluentBuilder {
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
-    /// <li><p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p></li>
-    /// <li><p>The maximum length of a key is 128 characters</p></li>
-    /// <li><p>The maximum length of a value is 256 characters</p></li>
-    /// <li><p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code></p></li>
-    /// <li><p>Keys and values are case sensitive</p></li>
-    /// <li><p>Keys and values are trimmed for any leading or trailing whitespaces</p></li>
-    /// <li><p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
+    /// <li>
+    /// <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p></li>
+    /// <li>
+    /// <p>The maximum length of a key is 128 characters</p></li>
+    /// <li>
+    /// <p>The maximum length of a value is 256 characters</p></li>
+    /// <li>
+    /// <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code></p></li>
+    /// <li>
+    /// <p>Keys and values are case sensitive</p></li>
+    /// <li>
+    /// <p>Keys and values are trimmed for any leading or trailing whitespaces</p></li>
+    /// <li>
+    /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
     /// </ul>
     pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.inner = self.inner.set_resource_tags(input);
@@ -237,13 +251,20 @@ impl CreateCostCategoryDefinitionFluentBuilder {
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
     /// <ul>
-    /// <li><p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p></li>
-    /// <li><p>The maximum length of a key is 128 characters</p></li>
-    /// <li><p>The maximum length of a value is 256 characters</p></li>
-    /// <li><p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code></p></li>
-    /// <li><p>Keys and values are case sensitive</p></li>
-    /// <li><p>Keys and values are trimmed for any leading or trailing whitespaces</p></li>
-    /// <li><p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
+    /// <li>
+    /// <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p></li>
+    /// <li>
+    /// <p>The maximum length of a key is 128 characters</p></li>
+    /// <li>
+    /// <p>The maximum length of a value is 256 characters</p></li>
+    /// <li>
+    /// <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code></p></li>
+    /// <li>
+    /// <p>Keys and values are case sensitive</p></li>
+    /// <li>
+    /// <p>Keys and values are trimmed for any leading or trailing whitespaces</p></li>
+    /// <li>
+    /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
     /// </ul>
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         self.inner.get_resource_tags()

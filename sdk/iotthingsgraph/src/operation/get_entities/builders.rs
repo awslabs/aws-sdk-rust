@@ -24,15 +24,24 @@ impl GetEntitiesInputBuilder {
 ///
 /// <p>Gets definitions of the specified entities. Uses the latest version of the user's namespace by default. This API returns the following TDM entities.</p>
 /// <ul>
-/// <li><p>Properties</p></li>
-/// <li><p>States</p></li>
-/// <li><p>Events</p></li>
-/// <li><p>Actions</p></li>
-/// <li><p>Capabilities</p></li>
-/// <li><p>Mappings</p></li>
-/// <li><p>Devices</p></li>
-/// <li><p>Device Models</p></li>
-/// <li><p>Services</p></li>
+/// <li>
+/// <p>Properties</p></li>
+/// <li>
+/// <p>States</p></li>
+/// <li>
+/// <p>Events</p></li>
+/// <li>
+/// <p>Actions</p></li>
+/// <li>
+/// <p>Capabilities</p></li>
+/// <li>
+/// <p>Mappings</p></li>
+/// <li>
+/// <p>Devices</p></li>
+/// <li>
+/// <p>Device Models</p></li>
+/// <li>
+/// <p>Services</p></li>
 /// </ul>
 /// <p>This action doesn't return definitions for systems, flows, and deployments.</p>
 #[deprecated(note = "since: 2022-08-30")]

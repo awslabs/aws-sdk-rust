@@ -22,10 +22,9 @@ impl CreateAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAlias`.
 ///
-/// <p>Creates an alias for a directory and assigns the alias to the directory. The alias is used to construct the access URL for the directory, such as <code>http://
-/// <alias>
+/// <p>Creates an alias for a directory and assigns the alias to the directory. The alias is used to construct the access URL for the directory, such as <code>http://<alias>
 /// .awsapps.com
-/// </alias></code>.</p> <important>
+/// </alias></code>.</p><important>
 /// <p>After an alias has been created, it cannot be deleted or reused, so this operation should only be used when absolutely necessary.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

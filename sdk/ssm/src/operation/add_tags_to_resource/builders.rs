@@ -24,12 +24,18 @@ impl AddTagsToResourceInputBuilder {
 ///
 /// <p>Adds or overwrites one or more tags for the specified resource. <i>Tags</i> are metadata that you can assign to your automations, documents, managed nodes, maintenance windows, Parameter Store parameters, and patch baselines. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example, you could define a set of tags for your account's managed nodes that helps you track each node's owner and stack level. For example:</p>
 /// <ul>
-/// <li><p><code>Key=Owner,Value=DbAdmin</code></p></li>
-/// <li><p><code>Key=Owner,Value=SysAdmin</code></p></li>
-/// <li><p><code>Key=Owner,Value=Dev</code></p></li>
-/// <li><p><code>Key=Stack,Value=Production</code></p></li>
-/// <li><p><code>Key=Stack,Value=Pre-Production</code></p></li>
-/// <li><p><code>Key=Stack,Value=Test</code></p></li>
+/// <li>
+/// <p><code>Key=Owner,Value=DbAdmin</code></p></li>
+/// <li>
+/// <p><code>Key=Owner,Value=SysAdmin</code></p></li>
+/// <li>
+/// <p><code>Key=Owner,Value=Dev</code></p></li>
+/// <li>
+/// <p><code>Key=Stack,Value=Production</code></p></li>
+/// <li>
+/// <p><code>Key=Stack,Value=Pre-Production</code></p></li>
+/// <li>
+/// <p><code>Key=Stack,Value=Test</code></p></li>
 /// </ul>
 /// <p>Most resources can have a maximum of 50 tags. Automations can have a maximum of 5 tags.</p>
 /// <p>We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based on the tags you add. Tags don't have any semantic meaning to and are interpreted strictly as a string of characters.</p>
@@ -119,21 +125,21 @@ impl AddTagsToResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the type of resource you are tagging.</p> <note>
+    /// <p>Specifies the type of resource you are tagging.</p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn resource_type(mut self, input: crate::types::ResourceTypeForTagging) -> Self {
         self.inner = self.inner.resource_type(input);
         self
     }
-    /// <p>Specifies the type of resource you are tagging.</p> <note>
+    /// <p>Specifies the type of resource you are tagging.</p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceTypeForTagging>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>Specifies the type of resource you are tagging.</p> <note>
+    /// <p>Specifies the type of resource you are tagging.</p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
@@ -146,7 +152,7 @@ impl AddTagsToResourceFluentBuilder {
     /// <p><code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code></p>
     /// <p><code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging a shared document, you must use the full ARN of the document.</p>
-    /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p> <note>
+    /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,7 +166,7 @@ impl AddTagsToResourceFluentBuilder {
     /// <p><code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code></p>
     /// <p><code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging a shared document, you must use the full ARN of the document.</p>
-    /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p> <note>
+    /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -174,7 +180,7 @@ impl AddTagsToResourceFluentBuilder {
     /// <p><code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code></p>
     /// <p><code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource. If you're tagging a shared document, you must use the full ARN of the document.</p>
-    /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p> <note>
+    /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,21 +190,21 @@ impl AddTagsToResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>One or more tags. The value parameter is required.</p> <important>
+    /// <p>One or more tags. The value parameter is required.</p><important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>One or more tags. The value parameter is required.</p> <important>
+    /// <p>One or more tags. The value parameter is required.</p><important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>One or more tags. The value parameter is required.</p> <important>
+    /// <p>One or more tags. The value parameter is required.</p><important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

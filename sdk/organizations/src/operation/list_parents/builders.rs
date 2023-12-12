@@ -22,10 +22,10 @@ impl ListParentsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListParents`.
 ///
-/// <p>Lists the root or organizational units (OUs) that serve as the immediate parent of the specified child OU or account. This operation, along with <code>ListChildren</code> enables you to traverse the tree structure that makes up this root.</p> <note>
+/// <p>Lists the root or organizational units (OUs) that serve as the immediate parent of the specified child OU or account. This operation, along with <code>ListChildren</code> enables you to traverse the tree structure that makes up this root.</p><note>
 /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
 /// </note>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p> <note>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p><note>
 /// <p>In the current release, a child can have only a single parent.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -122,8 +122,10 @@ impl ListParentsFluentBuilder {
     /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
     /// <ul>
-    /// <li><p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
-    /// <li><p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
+    /// <li>
+    /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     pub fn child_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.child_id(input.into());
@@ -132,8 +134,10 @@ impl ListParentsFluentBuilder {
     /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
     /// <ul>
-    /// <li><p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
-    /// <li><p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
+    /// <li>
+    /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     pub fn set_child_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_child_id(input);
@@ -142,8 +146,10 @@ impl ListParentsFluentBuilder {
     /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
     /// <ul>
-    /// <li><p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
-    /// <li><p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
+    /// <li>
+    /// <p><b>Account</b> - A string that consists of exactly 12 digits.</p></li>
+    /// <li>
+    /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     pub fn get_child_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_child_id()

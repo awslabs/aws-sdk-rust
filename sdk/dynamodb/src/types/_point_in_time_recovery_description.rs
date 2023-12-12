@@ -6,8 +6,10 @@
 pub struct PointInTimeRecoveryDescription {
     /// <p>The current state of point in time recovery:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code> - Point in time recovery is enabled.</p></li>
-    /// <li><p><code>DISABLED</code> - Point in time recovery is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> - Point in time recovery is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> - Point in time recovery is disabled.</p></li>
     /// </ul>
     pub point_in_time_recovery_status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
     /// <p>Specifies the earliest point in time you can restore your table to. You can restore your table to any point in time during the last 35 days.</p>
@@ -18,8 +20,10 @@ pub struct PointInTimeRecoveryDescription {
 impl PointInTimeRecoveryDescription {
     /// <p>The current state of point in time recovery:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code> - Point in time recovery is enabled.</p></li>
-    /// <li><p><code>DISABLED</code> - Point in time recovery is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> - Point in time recovery is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> - Point in time recovery is disabled.</p></li>
     /// </ul>
     pub fn point_in_time_recovery_status(&self) -> ::std::option::Option<&crate::types::PointInTimeRecoveryStatus> {
         self.point_in_time_recovery_status.as_ref()
@@ -51,8 +55,10 @@ pub struct PointInTimeRecoveryDescriptionBuilder {
 impl PointInTimeRecoveryDescriptionBuilder {
     /// <p>The current state of point in time recovery:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code> - Point in time recovery is enabled.</p></li>
-    /// <li><p><code>DISABLED</code> - Point in time recovery is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> - Point in time recovery is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> - Point in time recovery is disabled.</p></li>
     /// </ul>
     pub fn point_in_time_recovery_status(mut self, input: crate::types::PointInTimeRecoveryStatus) -> Self {
         self.point_in_time_recovery_status = ::std::option::Option::Some(input);
@@ -60,8 +66,10 @@ impl PointInTimeRecoveryDescriptionBuilder {
     }
     /// <p>The current state of point in time recovery:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code> - Point in time recovery is enabled.</p></li>
-    /// <li><p><code>DISABLED</code> - Point in time recovery is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> - Point in time recovery is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> - Point in time recovery is disabled.</p></li>
     /// </ul>
     pub fn set_point_in_time_recovery_status(mut self, input: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>) -> Self {
         self.point_in_time_recovery_status = input;
@@ -69,8 +77,10 @@ impl PointInTimeRecoveryDescriptionBuilder {
     }
     /// <p>The current state of point in time recovery:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code> - Point in time recovery is enabled.</p></li>
-    /// <li><p><code>DISABLED</code> - Point in time recovery is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> - Point in time recovery is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> - Point in time recovery is disabled.</p></li>
     /// </ul>
     pub fn get_point_in_time_recovery_status(&self) -> &::std::option::Option<crate::types::PointInTimeRecoveryStatus> {
         &self.point_in_time_recovery_status

@@ -22,7 +22,7 @@ impl DeleteDataProviderInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDataProvider`.
 ///
-/// <p>Deletes the specified data provider.</p> <note>
+/// <p>Deletes the specified data provider.</p><note>
 /// <p>All migration projects associated with the data provider must be deleted or modified before you can delete the data provider.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

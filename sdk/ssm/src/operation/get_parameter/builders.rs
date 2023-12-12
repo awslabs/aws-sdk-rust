@@ -22,7 +22,7 @@ impl GetParameterInputBuilder {
 }
 /// Fluent builder constructing a request to `GetParameter`.
 ///
-/// <p>Get information about a single parameter by specifying the parameter name.</p> <note>
+/// <p>Get information about a single parameter by specifying the parameter name.</p><note>
 /// <p>To get information about more than one parameter at a time, use the <code>GetParameters</code> operation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

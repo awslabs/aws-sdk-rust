@@ -9,7 +9,7 @@ pub struct ListNotificationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>The ARN for the related resource for the notification.</p><note>
     /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
     /// </note>
     pub resource_arn: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl ListNotificationsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>The ARN for the related resource for the notification.</p><note>
     /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
     /// </note>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
@@ -93,21 +93,21 @@ impl ListNotificationsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>The ARN for the related resource for the notification.</p><note>
     /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
     /// </note>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>The ARN for the related resource for the notification.</p><note>
     /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
     /// </note>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>The ARN for the related resource for the notification.</p><note>
     /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
     /// </note>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {

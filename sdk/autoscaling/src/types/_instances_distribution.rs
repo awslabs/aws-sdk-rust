@@ -60,7 +60,7 @@ pub struct InstancesDistribution {
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined from the different instance types in the overrides. Valid only when the <code>SpotAllocationStrategy</code> is <code>lowest-price</code>. Value must be in the range of 1–20.</p>
     /// <p>Default: 2</p>
     pub spot_instance_pools: ::std::option::Option<i32>,
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p> <important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify one.</p>
     /// </important>
     /// <p>Valid Range: Minimum value of 0.001</p>
@@ -133,7 +133,7 @@ impl InstancesDistribution {
     pub fn spot_instance_pools(&self) -> ::std::option::Option<i32> {
         self.spot_instance_pools
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p> <important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify one.</p>
     /// </important>
     /// <p>Valid Range: Minimum value of 0.001</p>
@@ -368,7 +368,7 @@ impl InstancesDistributionBuilder {
     pub fn get_spot_instance_pools(&self) -> &::std::option::Option<i32> {
         &self.spot_instance_pools
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p> <important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify one.</p>
     /// </important>
     /// <p>Valid Range: Minimum value of 0.001</p>
@@ -376,7 +376,7 @@ impl InstancesDistributionBuilder {
         self.spot_max_price = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p> <important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify one.</p>
     /// </important>
     /// <p>Valid Range: Minimum value of 0.001</p>
@@ -384,7 +384,7 @@ impl InstancesDistributionBuilder {
         self.spot_max_price = input;
         self
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p> <important>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched. We do not recommend specifying a maximum price because it can lead to increased interruptions. When Spot Instances launch, you pay the current Spot price. To remove a maximum price that you previously set, include the property but specify an empty string ("") for the value.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify one.</p>
     /// </important>
     /// <p>Valid Range: Minimum value of 0.001</p>

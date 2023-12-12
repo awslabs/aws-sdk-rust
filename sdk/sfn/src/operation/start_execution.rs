@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartExecutio
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartExecutionError {
-    /// <p>The execution has the same <code>name</code> as another execution (but a different <code>input</code>).</p> <note>
+    /// <p>The execution has the same <code>name</code> as another execution (but a different <code>input</code>).</p><note>
     /// <p>Executions with the same <code>name</code> and <code>input</code> are considered idempotent.</p>
     /// </note>
     ExecutionAlreadyExists(crate::types::error::ExecutionAlreadyExists),

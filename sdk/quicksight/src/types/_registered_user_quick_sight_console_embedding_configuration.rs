@@ -7,12 +7,18 @@ pub struct RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
     /// <p>The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li><p><code>/start</code></p></li>
-    /// <li><p><code>/start/analyses</code></p></li>
-    /// <li><p><code>/start/dashboards</code></p></li>
-    /// <li><p><code>/start/favorites</code></p></li>
-    /// <li><p><code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p></li>
-    /// <li><p><code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p></li>
+    /// <li>
+    /// <p><code>/start</code></p></li>
+    /// <li>
+    /// <p><code>/start/analyses</code></p></li>
+    /// <li>
+    /// <p><code>/start/dashboards</code></p></li>
+    /// <li>
+    /// <p><code>/start/favorites</code></p></li>
+    /// <li>
+    /// <p><code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p></li>
+    /// <li>
+    /// <p><code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p></li>
     /// </ul>
     pub initial_path: ::std::option::Option<::std::string::String>,
     /// <p>The embedding configuration of an embedded Amazon QuickSight console.</p>
@@ -22,12 +28,18 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
     /// <p>The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li><p><code>/start</code></p></li>
-    /// <li><p><code>/start/analyses</code></p></li>
-    /// <li><p><code>/start/dashboards</code></p></li>
-    /// <li><p><code>/start/favorites</code></p></li>
-    /// <li><p><code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p></li>
-    /// <li><p><code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p></li>
+    /// <li>
+    /// <p><code>/start</code></p></li>
+    /// <li>
+    /// <p><code>/start/analyses</code></p></li>
+    /// <li>
+    /// <p><code>/start/dashboards</code></p></li>
+    /// <li>
+    /// <p><code>/start/favorites</code></p></li>
+    /// <li>
+    /// <p><code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p></li>
+    /// <li>
+    /// <p><code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p></li>
     /// </ul>
     pub fn initial_path(&self) -> ::std::option::Option<&str> {
         self.initial_path.as_deref()
@@ -55,12 +67,18 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
     /// <p>The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li><p><code>/start</code></p></li>
-    /// <li><p><code>/start/analyses</code></p></li>
-    /// <li><p><code>/start/dashboards</code></p></li>
-    /// <li><p><code>/start/favorites</code></p></li>
-    /// <li><p><code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p></li>
-    /// <li><p><code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p></li>
+    /// <li>
+    /// <p><code>/start</code></p></li>
+    /// <li>
+    /// <p><code>/start/analyses</code></p></li>
+    /// <li>
+    /// <p><code>/start/dashboards</code></p></li>
+    /// <li>
+    /// <p><code>/start/favorites</code></p></li>
+    /// <li>
+    /// <p><code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p></li>
+    /// <li>
+    /// <p><code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p></li>
     /// </ul>
     pub fn initial_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_path = ::std::option::Option::Some(input.into());
@@ -69,12 +87,18 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
     /// <p>The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li><p><code>/start</code></p></li>
-    /// <li><p><code>/start/analyses</code></p></li>
-    /// <li><p><code>/start/dashboards</code></p></li>
-    /// <li><p><code>/start/favorites</code></p></li>
-    /// <li><p><code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p></li>
-    /// <li><p><code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p></li>
+    /// <li>
+    /// <p><code>/start</code></p></li>
+    /// <li>
+    /// <p><code>/start/analyses</code></p></li>
+    /// <li>
+    /// <p><code>/start/dashboards</code></p></li>
+    /// <li>
+    /// <p><code>/start/favorites</code></p></li>
+    /// <li>
+    /// <p><code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p></li>
+    /// <li>
+    /// <p><code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p></li>
     /// </ul>
     pub fn set_initial_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initial_path = input;
@@ -83,12 +107,18 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
     /// <p>The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li><p><code>/start</code></p></li>
-    /// <li><p><code>/start/analyses</code></p></li>
-    /// <li><p><code>/start/dashboards</code></p></li>
-    /// <li><p><code>/start/favorites</code></p></li>
-    /// <li><p><code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p></li>
-    /// <li><p><code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p></li>
+    /// <li>
+    /// <p><code>/start</code></p></li>
+    /// <li>
+    /// <p><code>/start/analyses</code></p></li>
+    /// <li>
+    /// <p><code>/start/dashboards</code></p></li>
+    /// <li>
+    /// <p><code>/start/favorites</code></p></li>
+    /// <li>
+    /// <p><code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p></li>
+    /// <li>
+    /// <p><code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p></li>
     /// </ul>
     pub fn get_initial_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.initial_path

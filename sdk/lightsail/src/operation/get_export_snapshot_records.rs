@@ -258,7 +258,7 @@ pub enum GetExportSnapshotRecordsError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::types::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p><note>
     /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::types::error::InvalidInputException),

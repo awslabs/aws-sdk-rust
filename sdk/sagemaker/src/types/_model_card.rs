@@ -14,10 +14,14 @@ pub struct ModelCard {
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li><p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li><p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li><p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li><p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li>
+    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
+    /// <li>
+    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
+    /// <li>
+    /// <p><code>Approved</code>: The model card is approved.</p></li>
+    /// <li>
+    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
     /// </ul>
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
     /// <p>The security configuration used to protect model card data.</p>
@@ -58,10 +62,14 @@ impl ModelCard {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li><p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li><p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li><p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li><p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li>
+    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
+    /// <li>
+    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
+    /// <li>
+    /// <p><code>Approved</code>: The model card is approved.</p></li>
+    /// <li>
+    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
     /// </ul>
     pub fn model_card_status(&self) -> ::std::option::Option<&crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
@@ -210,10 +218,14 @@ impl ModelCardBuilder {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li><p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li><p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li><p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li><p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li>
+    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
+    /// <li>
+    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
+    /// <li>
+    /// <p><code>Approved</code>: The model card is approved.</p></li>
+    /// <li>
+    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
     /// </ul>
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
         self.model_card_status = ::std::option::Option::Some(input);
@@ -221,10 +233,14 @@ impl ModelCardBuilder {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li><p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li><p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li><p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li><p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li>
+    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
+    /// <li>
+    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
+    /// <li>
+    /// <p><code>Approved</code>: The model card is approved.</p></li>
+    /// <li>
+    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
     /// </ul>
     pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
         self.model_card_status = input;
@@ -232,10 +248,14 @@ impl ModelCardBuilder {
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
-    /// <li><p><code>Draft</code>: The model card is a work in progress.</p></li>
-    /// <li><p><code>PendingReview</code>: The model card is pending review.</p></li>
-    /// <li><p><code>Approved</code>: The model card is approved.</p></li>
-    /// <li><p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
+    /// <li>
+    /// <p><code>Draft</code>: The model card is a work in progress.</p></li>
+    /// <li>
+    /// <p><code>PendingReview</code>: The model card is pending review.</p></li>
+    /// <li>
+    /// <p><code>Approved</code>: The model card is approved.</p></li>
+    /// <li>
+    /// <p><code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p></li>
     /// </ul>
     pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
         &self.model_card_status

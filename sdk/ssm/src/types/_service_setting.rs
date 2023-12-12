@@ -18,9 +18,12 @@ pub struct ServiceSetting {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service setting. The value can be Default, Customized or PendingUpdate.</p>
     /// <ul>
-    /// <li><p>Default: The current setting uses a default value provisioned by the Amazon Web Services service team.</p></li>
-    /// <li><p>Customized: The current setting use a custom value specified by the customer.</p></li>
-    /// <li><p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
+    /// <li>
+    /// <p>Default: The current setting uses a default value provisioned by the Amazon Web Services service team.</p></li>
+    /// <li>
+    /// <p>Customized: The current setting use a custom value specified by the customer.</p></li>
+    /// <li>
+    /// <p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
@@ -47,9 +50,12 @@ impl ServiceSetting {
     }
     /// <p>The status of the service setting. The value can be Default, Customized or PendingUpdate.</p>
     /// <ul>
-    /// <li><p>Default: The current setting uses a default value provisioned by the Amazon Web Services service team.</p></li>
-    /// <li><p>Customized: The current setting use a custom value specified by the customer.</p></li>
-    /// <li><p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
+    /// <li>
+    /// <p>Default: The current setting uses a default value provisioned by the Amazon Web Services service team.</p></li>
+    /// <li>
+    /// <p>Customized: The current setting use a custom value specified by the customer.</p></li>
+    /// <li>
+    /// <p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -146,9 +152,12 @@ impl ServiceSettingBuilder {
     }
     /// <p>The status of the service setting. The value can be Default, Customized or PendingUpdate.</p>
     /// <ul>
-    /// <li><p>Default: The current setting uses a default value provisioned by the Amazon Web Services service team.</p></li>
-    /// <li><p>Customized: The current setting use a custom value specified by the customer.</p></li>
-    /// <li><p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
+    /// <li>
+    /// <p>Default: The current setting uses a default value provisioned by the Amazon Web Services service team.</p></li>
+    /// <li>
+    /// <p>Customized: The current setting use a custom value specified by the customer.</p></li>
+    /// <li>
+    /// <p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -156,9 +165,12 @@ impl ServiceSettingBuilder {
     }
     /// <p>The status of the service setting. The value can be Default, Customized or PendingUpdate.</p>
     /// <ul>
-    /// <li><p>Default: The current setting uses a default value provisioned by the Amazon Web Services service team.</p></li>
-    /// <li><p>Customized: The current setting use a custom value specified by the customer.</p></li>
-    /// <li><p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
+    /// <li>
+    /// <p>Default: The current setting uses a default value provisioned by the Amazon Web Services service team.</p></li>
+    /// <li>
+    /// <p>Customized: The current setting use a custom value specified by the customer.</p></li>
+    /// <li>
+    /// <p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -166,9 +178,12 @@ impl ServiceSettingBuilder {
     }
     /// <p>The status of the service setting. The value can be Default, Customized or PendingUpdate.</p>
     /// <ul>
-    /// <li><p>Default: The current setting uses a default value provisioned by the Amazon Web Services service team.</p></li>
-    /// <li><p>Customized: The current setting use a custom value specified by the customer.</p></li>
-    /// <li><p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
+    /// <li>
+    /// <p>Default: The current setting uses a default value provisioned by the Amazon Web Services service team.</p></li>
+    /// <li>
+    /// <p>Customized: The current setting use a custom value specified by the customer.</p></li>
+    /// <li>
+    /// <p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

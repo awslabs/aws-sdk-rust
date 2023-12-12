@@ -9,9 +9,12 @@ pub struct DescribeModelCardExportJobOutput {
     pub model_card_export_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The completion status of the model card export job.</p>
     /// <ul>
-    /// <li><p><code>InProgress</code>: The model card export job is in progress.</p></li>
-    /// <li><p><code>Completed</code>: The model card export job is complete.</p></li>
-    /// <li><p><code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code>: The model card export job is in progress.</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The model card export job is complete.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ModelCardExportJobStatus>,
     /// <p>The name or Amazon Resource Name (ARN) of the model card that the model export job exports.</p>
@@ -41,9 +44,12 @@ impl DescribeModelCardExportJobOutput {
     }
     /// <p>The completion status of the model card export job.</p>
     /// <ul>
-    /// <li><p><code>InProgress</code>: The model card export job is in progress.</p></li>
-    /// <li><p><code>Completed</code>: The model card export job is complete.</p></li>
-    /// <li><p><code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code>: The model card export job is in progress.</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The model card export job is complete.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ModelCardExportJobStatus> {
         self.status.as_ref()
@@ -138,9 +144,12 @@ impl DescribeModelCardExportJobOutputBuilder {
     }
     /// <p>The completion status of the model card export job.</p>
     /// <ul>
-    /// <li><p><code>InProgress</code>: The model card export job is in progress.</p></li>
-    /// <li><p><code>Completed</code>: The model card export job is complete.</p></li>
-    /// <li><p><code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code>: The model card export job is in progress.</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The model card export job is complete.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ModelCardExportJobStatus) -> Self {
@@ -149,9 +158,12 @@ impl DescribeModelCardExportJobOutputBuilder {
     }
     /// <p>The completion status of the model card export job.</p>
     /// <ul>
-    /// <li><p><code>InProgress</code>: The model card export job is in progress.</p></li>
-    /// <li><p><code>Completed</code>: The model card export job is complete.</p></li>
-    /// <li><p><code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code>: The model card export job is in progress.</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The model card export job is complete.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelCardExportJobStatus>) -> Self {
         self.status = input;
@@ -159,9 +171,12 @@ impl DescribeModelCardExportJobOutputBuilder {
     }
     /// <p>The completion status of the model card export job.</p>
     /// <ul>
-    /// <li><p><code>InProgress</code>: The model card export job is in progress.</p></li>
-    /// <li><p><code>Completed</code>: The model card export job is complete.</p></li>
-    /// <li><p><code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code>: The model card export job is in progress.</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The model card export job is complete.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelCardExportJobStatus> {
         &self.status

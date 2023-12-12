@@ -15,9 +15,12 @@ pub struct GetTableObjectsInput {
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
     /// <ul>
-    /// <li><p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p></li>
-    /// <li><p>The logical operators supported are: AND</p></li>
-    /// <li><p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p></li>
+    /// <li>
+    /// <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p></li>
+    /// <li>
+    /// <p>The logical operators supported are: AND</p></li>
+    /// <li>
+    /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p></li>
     /// </ul>
     pub partition_predicate: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how many values to return in a page.</p>
@@ -48,9 +51,12 @@ impl GetTableObjectsInput {
     }
     /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
     /// <ul>
-    /// <li><p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p></li>
-    /// <li><p>The logical operators supported are: AND</p></li>
-    /// <li><p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p></li>
+    /// <li>
+    /// <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p></li>
+    /// <li>
+    /// <p>The logical operators supported are: AND</p></li>
+    /// <li>
+    /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p></li>
     /// </ul>
     pub fn partition_predicate(&self) -> ::std::option::Option<&str> {
         self.partition_predicate.as_deref()
@@ -159,9 +165,12 @@ impl GetTableObjectsInputBuilder {
     }
     /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
     /// <ul>
-    /// <li><p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p></li>
-    /// <li><p>The logical operators supported are: AND</p></li>
-    /// <li><p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p></li>
+    /// <li>
+    /// <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p></li>
+    /// <li>
+    /// <p>The logical operators supported are: AND</p></li>
+    /// <li>
+    /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p></li>
     /// </ul>
     pub fn partition_predicate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partition_predicate = ::std::option::Option::Some(input.into());
@@ -169,9 +178,12 @@ impl GetTableObjectsInputBuilder {
     }
     /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
     /// <ul>
-    /// <li><p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p></li>
-    /// <li><p>The logical operators supported are: AND</p></li>
-    /// <li><p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p></li>
+    /// <li>
+    /// <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p></li>
+    /// <li>
+    /// <p>The logical operators supported are: AND</p></li>
+    /// <li>
+    /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p></li>
     /// </ul>
     pub fn set_partition_predicate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partition_predicate = input;
@@ -179,9 +191,12 @@ impl GetTableObjectsInputBuilder {
     }
     /// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p>
     /// <ul>
-    /// <li><p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p></li>
-    /// <li><p>The logical operators supported are: AND</p></li>
-    /// <li><p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p></li>
+    /// <li>
+    /// <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p></li>
+    /// <li>
+    /// <p>The logical operators supported are: AND</p></li>
+    /// <li>
+    /// <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p></li>
     /// </ul>
     pub fn get_partition_predicate(&self) -> &::std::option::Option<::std::string::String> {
         &self.partition_predicate

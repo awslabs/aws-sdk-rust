@@ -14,11 +14,16 @@ pub struct ListedHostKey {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ssh-rsa</code></p></li>
-    /// <li><p><code>ssh-ed25519</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp256</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp384</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp521</code></p></li>
+    /// <li>
+    /// <p><code>ssh-rsa</code></p></li>
+    /// <li>
+    /// <p><code>ssh-ed25519</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp256</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp384</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp521</code></p></li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the host key was added to the server.</p>
@@ -44,11 +49,16 @@ impl ListedHostKey {
     }
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ssh-rsa</code></p></li>
-    /// <li><p><code>ssh-ed25519</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp256</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp384</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp521</code></p></li>
+    /// <li>
+    /// <p><code>ssh-rsa</code></p></li>
+    /// <li>
+    /// <p><code>ssh-ed25519</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp256</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp384</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp521</code></p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -136,11 +146,16 @@ impl ListedHostKeyBuilder {
     }
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ssh-rsa</code></p></li>
-    /// <li><p><code>ssh-ed25519</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp256</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp384</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp521</code></p></li>
+    /// <li>
+    /// <p><code>ssh-rsa</code></p></li>
+    /// <li>
+    /// <p><code>ssh-ed25519</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp256</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp384</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp521</code></p></li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -148,11 +163,16 @@ impl ListedHostKeyBuilder {
     }
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ssh-rsa</code></p></li>
-    /// <li><p><code>ssh-ed25519</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp256</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp384</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp521</code></p></li>
+    /// <li>
+    /// <p><code>ssh-rsa</code></p></li>
+    /// <li>
+    /// <p><code>ssh-ed25519</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp256</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp384</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp521</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -160,11 +180,16 @@ impl ListedHostKeyBuilder {
     }
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ssh-rsa</code></p></li>
-    /// <li><p><code>ssh-ed25519</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp256</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp384</code></p></li>
-    /// <li><p><code>ecdsa-sha2-nistp521</code></p></li>
+    /// <li>
+    /// <p><code>ssh-rsa</code></p></li>
+    /// <li>
+    /// <p><code>ssh-ed25519</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp256</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp384</code></p></li>
+    /// <li>
+    /// <p><code>ecdsa-sha2-nistp521</code></p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

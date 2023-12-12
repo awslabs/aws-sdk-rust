@@ -26,7 +26,7 @@ impl CreatePortfolioShareInputBuilder {
 /// <p>Note that if a delegated admin is de-registered, they can no longer create portfolio shares.</p>
 /// <p><code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p>
 /// <p>You can't share a shared resource, including portfolios that contain a shared product.</p>
-/// <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead.</p> <note>
+/// <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead.</p><note>
 /// <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,8 +116,10 @@ impl CreatePortfolioShareFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
@@ -125,8 +127,10 @@ impl CreatePortfolioShareFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -134,8 +138,10 @@ impl CreatePortfolioShareFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept_language()

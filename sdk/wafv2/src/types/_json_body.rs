@@ -14,26 +14,35 @@ pub struct JsonBody {
     pub match_scope: crate::types::JsonMatchScope,
     /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
-    /// <li><p><code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p>
     /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.</p>
     /// <p>WAF parses the JSON in the following examples as two valid key, value pairs:</p>
     /// <ul>
-    /// <li><p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
-    /// <li><p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
-    /// <li><p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
+    /// <li>
+    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
+    /// <li>
+    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
+    /// <li>
+    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
     /// </ul>
     pub invalid_fallback_behavior: ::std::option::Option<crate::types::BodyParsingFallbackBehavior>,
     /// <p>What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.</p>
     /// <p>The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li><p><code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit.</p>
     /// <p>Default: <code>CONTINUE</code></p>
@@ -51,17 +60,23 @@ impl JsonBody {
     }
     /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
-    /// <li><p><code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p>
     /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.</p>
     /// <p>WAF parses the JSON in the following examples as two valid key, value pairs:</p>
     /// <ul>
-    /// <li><p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
-    /// <li><p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
-    /// <li><p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
+    /// <li>
+    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
+    /// <li>
+    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
+    /// <li>
+    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
     /// </ul>
     pub fn invalid_fallback_behavior(&self) -> ::std::option::Option<&crate::types::BodyParsingFallbackBehavior> {
         self.invalid_fallback_behavior.as_ref()
@@ -70,9 +85,12 @@ impl JsonBody {
     /// <p>The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li><p><code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit.</p>
     /// <p>Default: <code>CONTINUE</code></p>
@@ -132,17 +150,23 @@ impl JsonBodyBuilder {
     }
     /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
-    /// <li><p><code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p>
     /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.</p>
     /// <p>WAF parses the JSON in the following examples as two valid key, value pairs:</p>
     /// <ul>
-    /// <li><p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
-    /// <li><p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
-    /// <li><p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
+    /// <li>
+    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
+    /// <li>
+    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
+    /// <li>
+    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
     /// </ul>
     pub fn invalid_fallback_behavior(mut self, input: crate::types::BodyParsingFallbackBehavior) -> Self {
         self.invalid_fallback_behavior = ::std::option::Option::Some(input);
@@ -150,17 +174,23 @@ impl JsonBodyBuilder {
     }
     /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
-    /// <li><p><code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p>
     /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.</p>
     /// <p>WAF parses the JSON in the following examples as two valid key, value pairs:</p>
     /// <ul>
-    /// <li><p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
-    /// <li><p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
-    /// <li><p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
+    /// <li>
+    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
+    /// <li>
+    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
+    /// <li>
+    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
     /// </ul>
     pub fn set_invalid_fallback_behavior(mut self, input: ::std::option::Option<crate::types::BodyParsingFallbackBehavior>) -> Self {
         self.invalid_fallback_behavior = input;
@@ -168,17 +198,23 @@ impl JsonBodyBuilder {
     }
     /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
-    /// <li><p><code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters.</p>
     /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.</p>
     /// <p>WAF parses the JSON in the following examples as two valid key, value pairs:</p>
     /// <ul>
-    /// <li><p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
-    /// <li><p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
-    /// <li><p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
+    /// <li>
+    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code></p></li>
+    /// <li>
+    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code></p></li>
+    /// <li>
+    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
     /// </ul>
     pub fn get_invalid_fallback_behavior(&self) -> &::std::option::Option<crate::types::BodyParsingFallbackBehavior> {
         &self.invalid_fallback_behavior
@@ -187,9 +223,12 @@ impl JsonBodyBuilder {
     /// <p>The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li><p><code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit.</p>
     /// <p>Default: <code>CONTINUE</code></p>
@@ -201,9 +240,12 @@ impl JsonBodyBuilder {
     /// <p>The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li><p><code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit.</p>
     /// <p>Default: <code>CONTINUE</code></p>
@@ -215,9 +257,12 @@ impl JsonBodyBuilder {
     /// <p>The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
-    /// <li><p><code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.</p></li>
-    /// <li><p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
-    /// <li><p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Inspect the available body contents normally, according to the rule inspection criteria.</p></li>
+    /// <li>
+    /// <p><code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p></li>
+    /// <li>
+    /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit.</p>
     /// <p>Default: <code>CONTINUE</code></p>

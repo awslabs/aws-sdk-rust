@@ -22,10 +22,12 @@ impl GetAssetContractInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAssetContract`.
 ///
-/// <p>Gets the information about a specific contract deployed on the blockchain.</p> <note>
+/// <p>Gets the information about a specific contract deployed on the blockchain.</p><note>
 /// <ul>
-/// <li><p>The Bitcoin blockchain networks do not support this operation.</p></li>
-/// <li><p>Metadata is currently only available for some <code>ERC-20</code> contracts. Metadata will be available for additional contracts in the future.</p></li>
+/// <li>
+/// <p>The Bitcoin blockchain networks do not support this operation.</p></li>
+/// <li>
+/// <p>Metadata is currently only available for some <code>ERC-20</code> contracts. Metadata will be available for additional contracts in the future.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

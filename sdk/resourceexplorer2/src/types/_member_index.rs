@@ -12,8 +12,10 @@ pub struct MemberIndex {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of index. It can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>LOCAL</code> – The index contains information about resources from only the same Amazon Web Services Region.</p></li>
-    /// <li><p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> – The index contains information about resources from only the same Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::IndexType>,
 }
@@ -32,8 +34,10 @@ impl MemberIndex {
     }
     /// <p>The type of index. It can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>LOCAL</code> – The index contains information about resources from only the same Amazon Web Services Region.</p></li>
-    /// <li><p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> – The index contains information about resources from only the same Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
         self.r#type.as_ref()
@@ -100,8 +104,10 @@ impl MemberIndexBuilder {
     }
     /// <p>The type of index. It can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>LOCAL</code> – The index contains information about resources from only the same Amazon Web Services Region.</p></li>
-    /// <li><p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> – The index contains information about resources from only the same Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::IndexType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -109,8 +115,10 @@ impl MemberIndexBuilder {
     }
     /// <p>The type of index. It can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>LOCAL</code> – The index contains information about resources from only the same Amazon Web Services Region.</p></li>
-    /// <li><p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> – The index contains information about resources from only the same Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
         self.r#type = input;
@@ -118,8 +126,10 @@ impl MemberIndexBuilder {
     }
     /// <p>The type of index. It can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>LOCAL</code> – The index contains information about resources from only the same Amazon Web Services Region.</p></li>
-    /// <li><p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> – The index contains information about resources from only the same Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
         &self.r#type

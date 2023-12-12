@@ -6,8 +6,10 @@ pub struct CreateRelationalDatabaseFromSnapshotInput {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
@@ -26,10 +28,15 @@ pub struct CreateRelationalDatabaseFromSnapshotInput {
     /// <p>The date and time to restore your database from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be before the latest restorable time for the database.</p></li>
-    /// <li><p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the database.</p></li>
+    /// <li>
+    /// <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
     /// </ul>
     pub restore_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time.</p>
@@ -44,8 +51,10 @@ impl CreateRelationalDatabaseFromSnapshotInput {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
         self.relational_database_name.as_deref()
@@ -76,10 +85,15 @@ impl CreateRelationalDatabaseFromSnapshotInput {
     /// <p>The date and time to restore your database from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be before the latest restorable time for the database.</p></li>
-    /// <li><p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the database.</p></li>
+    /// <li>
+    /// <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
     /// </ul>
     pub fn restore_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.restore_time.as_ref()
@@ -123,8 +137,10 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     /// This field is required.
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,8 +150,10 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
@@ -144,8 +162,10 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_name
@@ -232,10 +252,15 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>The date and time to restore your database from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be before the latest restorable time for the database.</p></li>
-    /// <li><p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the database.</p></li>
+    /// <li>
+    /// <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
     /// </ul>
     pub fn restore_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.restore_time = ::std::option::Option::Some(input);
@@ -244,10 +269,15 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>The date and time to restore your database from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be before the latest restorable time for the database.</p></li>
-    /// <li><p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the database.</p></li>
+    /// <li>
+    /// <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
     /// </ul>
     pub fn set_restore_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.restore_time = input;
@@ -256,10 +286,15 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>The date and time to restore your database from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be before the latest restorable time for the database.</p></li>
-    /// <li><p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
-    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
-    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the database.</p></li>
+    /// <li>
+    /// <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
+    /// <li>
+    /// <p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li>
+    /// <p>Specified in the Unix time format.</p>
+    /// <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
     /// </ul>
     pub fn get_restore_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.restore_time

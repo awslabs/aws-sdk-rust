@@ -9,13 +9,15 @@ pub struct DeleteRelationalDatabaseInput {
     /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the <code>skip final snapshot</code> parameter is <code>false</code>.</p>
     /// <p>Default: <code>false</code></p>
     pub skip_final_snapshot: ::std::option::Option<bool>,
-    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>
+    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p><note>
     /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code> parameter to <code>true</code> results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub final_relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
 }
@@ -30,13 +32,15 @@ impl DeleteRelationalDatabaseInput {
     pub fn skip_final_snapshot(&self) -> ::std::option::Option<bool> {
         self.skip_final_snapshot
     }
-    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>
+    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p><note>
     /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code> parameter to <code>true</code> results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn final_relational_database_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.final_relational_database_snapshot_name.as_deref()
@@ -93,37 +97,43 @@ impl DeleteRelationalDatabaseInputBuilder {
     pub fn get_skip_final_snapshot(&self) -> &::std::option::Option<bool> {
         &self.skip_final_snapshot
     }
-    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>
+    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p><note>
     /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code> parameter to <code>true</code> results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn final_relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_relational_database_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>
+    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p><note>
     /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code> parameter to <code>true</code> results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn set_final_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_relational_database_snapshot_name = input;
         self
     }
-    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>
+    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p><note>
     /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code> parameter to <code>true</code> results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn get_final_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_relational_database_snapshot_name

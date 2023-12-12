@@ -18,7 +18,7 @@ pub struct FileSystemAssociationInfo {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
     pub cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
     pub endpoint_network_configuration: ::std::option::Option<crate::types::EndpointNetworkConfiguration>,
@@ -56,7 +56,7 @@ impl FileSystemAssociationInfo {
     pub fn cache_attributes(&self) -> ::std::option::Option<&crate::types::CacheAttributes> {
         self.cache_attributes.as_ref()
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
     pub fn endpoint_network_configuration(&self) -> ::std::option::Option<&crate::types::EndpointNetworkConfiguration> {
@@ -195,21 +195,21 @@ impl FileSystemAssociationInfoBuilder {
     pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
         &self.cache_attributes
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
     pub fn endpoint_network_configuration(mut self, input: crate::types::EndpointNetworkConfiguration) -> Self {
         self.endpoint_network_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
     pub fn set_endpoint_network_configuration(mut self, input: ::std::option::Option<crate::types::EndpointNetworkConfiguration>) -> Self {
         self.endpoint_network_configuration = input;
         self
     }
-    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
+    /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
     pub fn get_endpoint_network_configuration(&self) -> &::std::option::Option<crate::types::EndpointNetworkConfiguration> {

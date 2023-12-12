@@ -5,14 +5,18 @@
 pub struct ListSharedProjectsInput {
     /// <p>The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
     /// </ul>
     pub sort_by: ::std::option::Option<crate::types::SharedResourceSortByType>,
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p>The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100.</p>
@@ -23,16 +27,20 @@ pub struct ListSharedProjectsInput {
 impl ListSharedProjectsInput {
     /// <p>The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
     /// </ul>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SharedResourceSortByType> {
         self.sort_by.as_ref()
     }
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
         self.sort_order.as_ref()
@@ -65,8 +73,10 @@ pub struct ListSharedProjectsInputBuilder {
 impl ListSharedProjectsInputBuilder {
     /// <p>The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
     /// </ul>
     pub fn sort_by(mut self, input: crate::types::SharedResourceSortByType) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -74,8 +84,10 @@ impl ListSharedProjectsInputBuilder {
     }
     /// <p>The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
     /// </ul>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SharedResourceSortByType>) -> Self {
         self.sort_by = input;
@@ -83,16 +95,20 @@ impl ListSharedProjectsInputBuilder {
     }
     /// <p>The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed.</p></li>
     /// </ul>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SharedResourceSortByType> {
         &self.sort_by
     }
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -100,8 +116,10 @@ impl ListSharedProjectsInputBuilder {
     }
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
@@ -109,8 +127,10 @@ impl ListSharedProjectsInputBuilder {
     }
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         &self.sort_order

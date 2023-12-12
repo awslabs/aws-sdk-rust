@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetConfigurationOutput {
-    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>The content of the configuration or the configuration data.</p><important>
     /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -14,7 +14,7 @@ pub struct GetConfigurationOutput {
     _request_id: Option<String>,
 }
 impl GetConfigurationOutput {
-    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>The content of the configuration or the configuration data.</p><important>
     /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
     pub fn content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
@@ -61,21 +61,21 @@ pub struct GetConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetConfigurationOutputBuilder {
-    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>The content of the configuration or the configuration data.</p><important>
     /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
     pub fn content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>The content of the configuration or the configuration data.</p><important>
     /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
     pub fn set_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>The content of the configuration or the configuration data.</p><important>
     /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
     /// </important>
     pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {

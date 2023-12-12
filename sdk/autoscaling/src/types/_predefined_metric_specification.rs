@@ -6,10 +6,14 @@
 pub struct PredefinedMetricSpecification {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
-    /// <li><p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
-    /// <li><p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li><p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li><p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
     /// </ul>
     pub predefined_metric_type: ::std::option::Option<crate::types::MetricType>,
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
@@ -17,13 +21,15 @@ pub struct PredefinedMetricSpecification {
     /// <p><code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
     /// <p>Where:</p>
     /// <ul>
-    /// <li><p>app/<load-balancer-name>
+    /// <li>
+    /// <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
     /// </load-balancer-name></p></li>
-    /// <li><p>targetgroup/<target-group-name>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
@@ -36,10 +42,14 @@ pub struct PredefinedMetricSpecification {
 impl PredefinedMetricSpecification {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
-    /// <li><p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
-    /// <li><p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li><p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li><p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
     /// </ul>
     pub fn predefined_metric_type(&self) -> ::std::option::Option<&crate::types::MetricType> {
         self.predefined_metric_type.as_ref()
@@ -49,13 +59,15 @@ impl PredefinedMetricSpecification {
     /// <p><code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
     /// <p>Where:</p>
     /// <ul>
-    /// <li><p>app/<load-balancer-name>
+    /// <li>
+    /// <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
     /// </load-balancer-name></p></li>
-    /// <li><p>targetgroup/<target-group-name>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
@@ -84,10 +96,14 @@ pub struct PredefinedMetricSpecificationBuilder {
 impl PredefinedMetricSpecificationBuilder {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
-    /// <li><p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
-    /// <li><p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li><p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li><p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
     /// </ul>
     /// This field is required.
     pub fn predefined_metric_type(mut self, input: crate::types::MetricType) -> Self {
@@ -96,10 +112,14 @@ impl PredefinedMetricSpecificationBuilder {
     }
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
-    /// <li><p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
-    /// <li><p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li><p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li><p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
     /// </ul>
     pub fn set_predefined_metric_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.predefined_metric_type = input;
@@ -107,10 +127,14 @@ impl PredefinedMetricSpecificationBuilder {
     }
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
-    /// <li><p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
-    /// <li><p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li><p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
-    /// <li><p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
     /// </ul>
     pub fn get_predefined_metric_type(&self) -> &::std::option::Option<crate::types::MetricType> {
         &self.predefined_metric_type
@@ -120,13 +144,15 @@ impl PredefinedMetricSpecificationBuilder {
     /// <p><code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
     /// <p>Where:</p>
     /// <ul>
-    /// <li><p>app/<load-balancer-name>
+    /// <li>
+    /// <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
     /// </load-balancer-name></p></li>
-    /// <li><p>targetgroup/<target-group-name>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
@@ -143,13 +169,15 @@ impl PredefinedMetricSpecificationBuilder {
     /// <p><code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
     /// <p>Where:</p>
     /// <ul>
-    /// <li><p>app/<load-balancer-name>
+    /// <li>
+    /// <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
     /// </load-balancer-name></p></li>
-    /// <li><p>targetgroup/<target-group-name>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
@@ -166,13 +194,15 @@ impl PredefinedMetricSpecificationBuilder {
     /// <p><code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
     /// <p>Where:</p>
     /// <ul>
-    /// <li><p>app/<load-balancer-name>
+    /// <li>
+    /// <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
     /// </load-balancer-name></p></li>
-    /// <li><p>targetgroup/<target-group-name>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.

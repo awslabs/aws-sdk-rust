@@ -22,7 +22,7 @@ impl DescribeBudgetInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeBudget`.
 ///
-/// <p>Describes a budget.</p> <important>
+/// <p>Describes a budget.</p><important>
 /// <p>The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a> section.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

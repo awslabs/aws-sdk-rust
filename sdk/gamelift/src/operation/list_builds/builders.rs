@@ -22,7 +22,7 @@ impl ListBuildsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListBuilds`.
 ///
-/// <p>Retrieves build resources for all builds associated with the Amazon Web Services account in use. You can limit results to builds that are in a specific status by using the <code>Status</code> parameter. Use the pagination parameters to retrieve results in a set of sequential pages.</p> <note>
+/// <p>Retrieves build resources for all builds associated with the Amazon Web Services account in use. You can limit results to builds that are in a specific status by using the <code>Status</code> parameter. Use the pagination parameters to retrieve results in a set of sequential pages.</p><note>
 /// <p>Build resources are not listed in any particular order.</p>
 /// </note>
 /// <p><b>Learn more</b></p>
@@ -122,9 +122,12 @@ impl ListBuildsFluentBuilder {
     /// <p>Build status to filter results by. To retrieve all builds, leave this parameter empty.</p>
     /// <p>Possible build statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value.</p></li>
-    /// <li><p><b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p></li>
-    /// <li><p><b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.</p></li>
+    /// <li>
+    /// <p><b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value.</p></li>
+    /// <li>
+    /// <p><b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::BuildStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -133,9 +136,12 @@ impl ListBuildsFluentBuilder {
     /// <p>Build status to filter results by. To retrieve all builds, leave this parameter empty.</p>
     /// <p>Possible build statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value.</p></li>
-    /// <li><p><b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p></li>
-    /// <li><p><b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.</p></li>
+    /// <li>
+    /// <p><b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value.</p></li>
+    /// <li>
+    /// <p><b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BuildStatus>) -> Self {
         self.inner = self.inner.set_status(input);
@@ -144,9 +150,12 @@ impl ListBuildsFluentBuilder {
     /// <p>Build status to filter results by. To retrieve all builds, leave this parameter empty.</p>
     /// <p>Possible build statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value.</p></li>
-    /// <li><p><b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p></li>
-    /// <li><p><b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.</p></li>
+    /// <li>
+    /// <p><b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value.</p></li>
+    /// <li>
+    /// <p><b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BuildStatus> {
         self.inner.get_status()

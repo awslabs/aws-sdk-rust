@@ -8,9 +8,12 @@ pub struct FilterCondition {
     pub name: crate::types::ListDomainsAttributeName,
     /// <p>The operator values for filtering domain names. The values can be:</p>
     /// <ul>
-    /// <li><p><code>LE</code>: Less than, or equal to</p></li>
-    /// <li><p><code>GE</code>: Greater than, or equal to</p></li>
-    /// <li><p><code>BEGINS_WITH</code>: Begins with</p></li>
+    /// <li>
+    /// <p><code>LE</code>: Less than, or equal to</p></li>
+    /// <li>
+    /// <p><code>GE</code>: Greater than, or equal to</p></li>
+    /// <li>
+    /// <p><code>BEGINS_WITH</code>: Begins with</p></li>
     /// </ul>
     pub operator: crate::types::Operator,
     /// <p>An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
@@ -23,9 +26,12 @@ impl FilterCondition {
     }
     /// <p>The operator values for filtering domain names. The values can be:</p>
     /// <ul>
-    /// <li><p><code>LE</code>: Less than, or equal to</p></li>
-    /// <li><p><code>GE</code>: Greater than, or equal to</p></li>
-    /// <li><p><code>BEGINS_WITH</code>: Begins with</p></li>
+    /// <li>
+    /// <p><code>LE</code>: Less than, or equal to</p></li>
+    /// <li>
+    /// <p><code>GE</code>: Greater than, or equal to</p></li>
+    /// <li>
+    /// <p><code>BEGINS_WITH</code>: Begins with</p></li>
     /// </ul>
     pub fn operator(&self) -> &crate::types::Operator {
         &self.operator
@@ -69,9 +75,12 @@ impl FilterConditionBuilder {
     }
     /// <p>The operator values for filtering domain names. The values can be:</p>
     /// <ul>
-    /// <li><p><code>LE</code>: Less than, or equal to</p></li>
-    /// <li><p><code>GE</code>: Greater than, or equal to</p></li>
-    /// <li><p><code>BEGINS_WITH</code>: Begins with</p></li>
+    /// <li>
+    /// <p><code>LE</code>: Less than, or equal to</p></li>
+    /// <li>
+    /// <p><code>GE</code>: Greater than, or equal to</p></li>
+    /// <li>
+    /// <p><code>BEGINS_WITH</code>: Begins with</p></li>
     /// </ul>
     /// This field is required.
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
@@ -80,9 +89,12 @@ impl FilterConditionBuilder {
     }
     /// <p>The operator values for filtering domain names. The values can be:</p>
     /// <ul>
-    /// <li><p><code>LE</code>: Less than, or equal to</p></li>
-    /// <li><p><code>GE</code>: Greater than, or equal to</p></li>
-    /// <li><p><code>BEGINS_WITH</code>: Begins with</p></li>
+    /// <li>
+    /// <p><code>LE</code>: Less than, or equal to</p></li>
+    /// <li>
+    /// <p><code>GE</code>: Greater than, or equal to</p></li>
+    /// <li>
+    /// <p><code>BEGINS_WITH</code>: Begins with</p></li>
     /// </ul>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
         self.operator = input;
@@ -90,9 +102,12 @@ impl FilterConditionBuilder {
     }
     /// <p>The operator values for filtering domain names. The values can be:</p>
     /// <ul>
-    /// <li><p><code>LE</code>: Less than, or equal to</p></li>
-    /// <li><p><code>GE</code>: Greater than, or equal to</p></li>
-    /// <li><p><code>BEGINS_WITH</code>: Begins with</p></li>
+    /// <li>
+    /// <p><code>LE</code>: Less than, or equal to</p></li>
+    /// <li>
+    /// <p><code>GE</code>: Greater than, or equal to</p></li>
+    /// <li>
+    /// <p><code>BEGINS_WITH</code>: Begins with</p></li>
     /// </ul>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
         &self.operator

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedExecution {
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p><note>
     /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
     /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
     /// </note>
@@ -12,7 +12,7 @@ pub struct ManagedExecution {
     pub active: ::std::option::Option<bool>,
 }
 impl ManagedExecution {
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p><note>
     /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
     /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
     /// </note>
@@ -35,7 +35,7 @@ pub struct ManagedExecutionBuilder {
     pub(crate) active: ::std::option::Option<bool>,
 }
 impl ManagedExecutionBuilder {
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p><note>
     /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
     /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
     /// </note>
@@ -44,7 +44,7 @@ impl ManagedExecutionBuilder {
         self.active = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p><note>
     /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
     /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
     /// </note>
@@ -53,7 +53,7 @@ impl ManagedExecutionBuilder {
         self.active = input;
         self
     }
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p><note>
     /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
     /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
     /// </note>

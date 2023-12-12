@@ -11,7 +11,7 @@ pub struct UpdateDistributionInput {
     pub origin: ::std::option::Option<crate::types::InputOrigin>,
     /// <p>An object that describes the default cache behavior for the distribution.</p>
     pub default_cache_behavior: ::std::option::Option<crate::types::CacheBehavior>,
-    /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
+    /// <p>An object that describes the cache behavior settings for the distribution.</p><note>
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
     /// </note>
     pub cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
@@ -35,7 +35,7 @@ impl UpdateDistributionInput {
     pub fn default_cache_behavior(&self) -> ::std::option::Option<&crate::types::CacheBehavior> {
         self.default_cache_behavior.as_ref()
     }
-    /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
+    /// <p>An object that describes the cache behavior settings for the distribution.</p><note>
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
     /// </note>
     pub fn cache_behavior_settings(&self) -> ::std::option::Option<&crate::types::CacheSettings> {
@@ -120,21 +120,21 @@ impl UpdateDistributionInputBuilder {
     pub fn get_default_cache_behavior(&self) -> &::std::option::Option<crate::types::CacheBehavior> {
         &self.default_cache_behavior
     }
-    /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
+    /// <p>An object that describes the cache behavior settings for the distribution.</p><note>
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
     /// </note>
     pub fn cache_behavior_settings(mut self, input: crate::types::CacheSettings) -> Self {
         self.cache_behavior_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
+    /// <p>An object that describes the cache behavior settings for the distribution.</p><note>
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
     /// </note>
     pub fn set_cache_behavior_settings(mut self, input: ::std::option::Option<crate::types::CacheSettings>) -> Self {
         self.cache_behavior_settings = input;
         self
     }
-    /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
+    /// <p>An object that describes the cache behavior settings for the distribution.</p><note>
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
     /// </note>
     pub fn get_cache_behavior_settings(&self) -> &::std::option::Option<crate::types::CacheSettings> {

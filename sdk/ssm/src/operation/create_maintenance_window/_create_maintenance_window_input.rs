@@ -31,10 +31,13 @@ pub struct CreateMaintenanceWindowInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=Environment,Value=Production</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -90,10 +93,13 @@ impl CreateMaintenanceWindowInput {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=Environment,Value=Production</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     ///
@@ -322,10 +328,13 @@ impl CreateMaintenanceWindowInputBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=Environment,Value=Production</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -336,10 +345,13 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=Environment,Value=Production</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
@@ -348,10 +360,13 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=TaskType,Value=AgentUpdate</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=Environment,Value=Production</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

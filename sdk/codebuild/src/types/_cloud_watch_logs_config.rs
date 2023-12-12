@@ -6,8 +6,10 @@
 pub struct CloudWatchLogsConfig {
     /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p></li>
-    /// <li><p><code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p></li>
     /// </ul>
     pub status: crate::types::LogsConfigStatusType,
     /// <p>The group name of the logs in CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>.</p>
@@ -18,8 +20,10 @@ pub struct CloudWatchLogsConfig {
 impl CloudWatchLogsConfig {
     /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p></li>
-    /// <li><p><code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p></li>
     /// </ul>
     pub fn status(&self) -> &crate::types::LogsConfigStatusType {
         &self.status
@@ -51,8 +55,10 @@ pub struct CloudWatchLogsConfigBuilder {
 impl CloudWatchLogsConfigBuilder {
     /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p></li>
-    /// <li><p><code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::LogsConfigStatusType) -> Self {
@@ -61,8 +67,10 @@ impl CloudWatchLogsConfigBuilder {
     }
     /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p></li>
-    /// <li><p><code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LogsConfigStatusType>) -> Self {
         self.status = input;
@@ -70,8 +78,10 @@ impl CloudWatchLogsConfigBuilder {
     }
     /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p></li>
-    /// <li><p><code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LogsConfigStatusType> {
         &self.status

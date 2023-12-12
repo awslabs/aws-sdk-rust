@@ -128,9 +128,12 @@ impl StopInferenceExperimentFluentBuilder {
     ///
     /// <p>Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following:</p>
     /// <ul>
-    /// <li><p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
-    /// <li><p><code>Remove</code> - Delete the variant</p></li>
-    /// <li><p><code>Retain</code> - Keep the variant as it is</p></li>
+    /// <li>
+    /// <p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
+    /// <li>
+    /// <p><code>Remove</code> - Delete the variant</p></li>
+    /// <li>
+    /// <p><code>Retain</code> - Keep the variant as it is</p></li>
     /// </ul>
     pub fn model_variant_actions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ModelVariantAction) -> Self {
         self.inner = self.inner.model_variant_actions(k.into(), v);
@@ -138,9 +141,12 @@ impl StopInferenceExperimentFluentBuilder {
     }
     /// <p>Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following:</p>
     /// <ul>
-    /// <li><p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
-    /// <li><p><code>Remove</code> - Delete the variant</p></li>
-    /// <li><p><code>Retain</code> - Keep the variant as it is</p></li>
+    /// <li>
+    /// <p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
+    /// <li>
+    /// <p><code>Remove</code> - Delete the variant</p></li>
+    /// <li>
+    /// <p><code>Retain</code> - Keep the variant as it is</p></li>
     /// </ul>
     pub fn set_model_variant_actions(
         mut self,
@@ -151,9 +157,12 @@ impl StopInferenceExperimentFluentBuilder {
     }
     /// <p>Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following:</p>
     /// <ul>
-    /// <li><p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
-    /// <li><p><code>Remove</code> - Delete the variant</p></li>
-    /// <li><p><code>Retain</code> - Keep the variant as it is</p></li>
+    /// <li>
+    /// <p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
+    /// <li>
+    /// <p><code>Remove</code> - Delete the variant</p></li>
+    /// <li>
+    /// <p><code>Retain</code> - Keep the variant as it is</p></li>
     /// </ul>
     pub fn get_model_variant_actions(
         &self,
@@ -180,8 +189,10 @@ impl StopInferenceExperimentFluentBuilder {
     }
     /// <p>The desired state of the experiment after stopping. The possible states are the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The experiment completed successfully</p></li>
-    /// <li><p><code>Cancelled</code>: The experiment was canceled</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The experiment completed successfully</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code>: The experiment was canceled</p></li>
     /// </ul>
     pub fn desired_state(mut self, input: crate::types::InferenceExperimentStopDesiredState) -> Self {
         self.inner = self.inner.desired_state(input);
@@ -189,8 +200,10 @@ impl StopInferenceExperimentFluentBuilder {
     }
     /// <p>The desired state of the experiment after stopping. The possible states are the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The experiment completed successfully</p></li>
-    /// <li><p><code>Cancelled</code>: The experiment was canceled</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The experiment completed successfully</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code>: The experiment was canceled</p></li>
     /// </ul>
     pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::InferenceExperimentStopDesiredState>) -> Self {
         self.inner = self.inner.set_desired_state(input);
@@ -198,8 +211,10 @@ impl StopInferenceExperimentFluentBuilder {
     }
     /// <p>The desired state of the experiment after stopping. The possible states are the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The experiment completed successfully</p></li>
-    /// <li><p><code>Cancelled</code>: The experiment was canceled</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The experiment completed successfully</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code>: The experiment was canceled</p></li>
     /// </ul>
     pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::InferenceExperimentStopDesiredState> {
         self.inner.get_desired_state()

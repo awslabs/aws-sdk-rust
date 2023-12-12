@@ -25,9 +25,12 @@ impl DescribeTagsInputBuilder {
 /// <p>Returns a list of tags. You can return tags from a specific resource by specifying an ARN, or you can return all tags for a given type of resource, such as clusters, snapshots, and so on.</p>
 /// <p>The following are limitations for <code>DescribeTags</code>:</p>
 /// <ul>
-/// <li><p>You cannot specify an ARN and a resource-type value together in the same request.</p></li>
-/// <li><p>You cannot use the <code>MaxRecords</code> and <code>Marker</code> parameters together with the ARN parameter.</p></li>
-/// <li><p>The <code>MaxRecords</code> parameter can be a range from 10 to 50 results to return in a request.</p></li>
+/// <li>
+/// <p>You cannot specify an ARN and a resource-type value together in the same request.</p></li>
+/// <li>
+/// <p>You cannot use the <code>MaxRecords</code> and <code>Marker</code> parameters together with the ARN parameter.</p></li>
+/// <li>
+/// <p>The <code>MaxRecords</code> parameter can be a range from 10 to 50 results to return in a request.</p></li>
 /// </ul>
 /// <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all resources that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all resources that have any combination of those values are returned.</p>
 /// <p>If both tag keys and values are omitted from the request, resources are returned regardless of whether they have tag keys or values associated with them.</p>
@@ -138,16 +141,26 @@ impl DescribeTagsFluentBuilder {
     }
     /// <p>The type of resource with which you want to view tags. Valid resource types are:</p>
     /// <ul>
-    /// <li><p>Cluster</p></li>
-    /// <li><p>CIDR/IP</p></li>
-    /// <li><p>EC2 security group</p></li>
-    /// <li><p>Snapshot</p></li>
-    /// <li><p>Cluster security group</p></li>
-    /// <li><p>Subnet group</p></li>
-    /// <li><p>HSM connection</p></li>
-    /// <li><p>HSM certificate</p></li>
-    /// <li><p>Parameter group</p></li>
-    /// <li><p>Snapshot copy grant</p></li>
+    /// <li>
+    /// <p>Cluster</p></li>
+    /// <li>
+    /// <p>CIDR/IP</p></li>
+    /// <li>
+    /// <p>EC2 security group</p></li>
+    /// <li>
+    /// <p>Snapshot</p></li>
+    /// <li>
+    /// <p>Cluster security group</p></li>
+    /// <li>
+    /// <p>Subnet group</p></li>
+    /// <li>
+    /// <p>HSM connection</p></li>
+    /// <li>
+    /// <p>HSM certificate</p></li>
+    /// <li>
+    /// <p>Parameter group</p></li>
+    /// <li>
+    /// <p>Snapshot copy grant</p></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -156,16 +169,26 @@ impl DescribeTagsFluentBuilder {
     }
     /// <p>The type of resource with which you want to view tags. Valid resource types are:</p>
     /// <ul>
-    /// <li><p>Cluster</p></li>
-    /// <li><p>CIDR/IP</p></li>
-    /// <li><p>EC2 security group</p></li>
-    /// <li><p>Snapshot</p></li>
-    /// <li><p>Cluster security group</p></li>
-    /// <li><p>Subnet group</p></li>
-    /// <li><p>HSM connection</p></li>
-    /// <li><p>HSM certificate</p></li>
-    /// <li><p>Parameter group</p></li>
-    /// <li><p>Snapshot copy grant</p></li>
+    /// <li>
+    /// <p>Cluster</p></li>
+    /// <li>
+    /// <p>CIDR/IP</p></li>
+    /// <li>
+    /// <p>EC2 security group</p></li>
+    /// <li>
+    /// <p>Snapshot</p></li>
+    /// <li>
+    /// <p>Cluster security group</p></li>
+    /// <li>
+    /// <p>Subnet group</p></li>
+    /// <li>
+    /// <p>HSM connection</p></li>
+    /// <li>
+    /// <p>HSM certificate</p></li>
+    /// <li>
+    /// <p>Parameter group</p></li>
+    /// <li>
+    /// <p>Snapshot copy grant</p></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -174,16 +197,26 @@ impl DescribeTagsFluentBuilder {
     }
     /// <p>The type of resource with which you want to view tags. Valid resource types are:</p>
     /// <ul>
-    /// <li><p>Cluster</p></li>
-    /// <li><p>CIDR/IP</p></li>
-    /// <li><p>EC2 security group</p></li>
-    /// <li><p>Snapshot</p></li>
-    /// <li><p>Cluster security group</p></li>
-    /// <li><p>Subnet group</p></li>
-    /// <li><p>HSM connection</p></li>
-    /// <li><p>HSM certificate</p></li>
-    /// <li><p>Parameter group</p></li>
-    /// <li><p>Snapshot copy grant</p></li>
+    /// <li>
+    /// <p>Cluster</p></li>
+    /// <li>
+    /// <p>CIDR/IP</p></li>
+    /// <li>
+    /// <p>EC2 security group</p></li>
+    /// <li>
+    /// <p>Snapshot</p></li>
+    /// <li>
+    /// <p>Cluster security group</p></li>
+    /// <li>
+    /// <p>Subnet group</p></li>
+    /// <li>
+    /// <p>HSM connection</p></li>
+    /// <li>
+    /// <p>HSM certificate</p></li>
+    /// <li>
+    /// <p>Parameter group</p></li>
+    /// <li>
+    /// <p>Snapshot copy grant</p></li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {

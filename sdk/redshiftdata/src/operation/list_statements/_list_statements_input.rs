@@ -11,13 +11,20 @@ pub struct ListStatementsInput {
     pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the SQL statement to list. Status values are defined as follows:</p>
     /// <ul>
-    /// <li><p>ABORTED - The query run was stopped by the user.</p></li>
-    /// <li><p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
-    /// <li><p>FAILED - The query run failed.</p></li>
-    /// <li><p>FINISHED - The query has finished running.</p></li>
-    /// <li><p>PICKED - The query has been chosen to be run.</p></li>
-    /// <li><p>STARTED - The query run has started.</p></li>
-    /// <li><p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
+    /// <li>
+    /// <p>ABORTED - The query run was stopped by the user.</p></li>
+    /// <li>
+    /// <p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
+    /// <li>
+    /// <p>FAILED - The query run failed.</p></li>
+    /// <li>
+    /// <p>FINISHED - The query has finished running.</p></li>
+    /// <li>
+    /// <p>PICKED - The query has been chosen to be run.</p></li>
+    /// <li>
+    /// <p>STARTED - The query run has started.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::StatusString>,
     /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.</p>
@@ -38,13 +45,20 @@ impl ListStatementsInput {
     }
     /// <p>The status of the SQL statement to list. Status values are defined as follows:</p>
     /// <ul>
-    /// <li><p>ABORTED - The query run was stopped by the user.</p></li>
-    /// <li><p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
-    /// <li><p>FAILED - The query run failed.</p></li>
-    /// <li><p>FINISHED - The query has finished running.</p></li>
-    /// <li><p>PICKED - The query has been chosen to be run.</p></li>
-    /// <li><p>STARTED - The query run has started.</p></li>
-    /// <li><p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
+    /// <li>
+    /// <p>ABORTED - The query run was stopped by the user.</p></li>
+    /// <li>
+    /// <p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
+    /// <li>
+    /// <p>FAILED - The query run failed.</p></li>
+    /// <li>
+    /// <p>FINISHED - The query has finished running.</p></li>
+    /// <li>
+    /// <p>PICKED - The query has been chosen to be run.</p></li>
+    /// <li>
+    /// <p>STARTED - The query run has started.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::StatusString> {
         self.status.as_ref()
@@ -116,13 +130,20 @@ impl ListStatementsInputBuilder {
     }
     /// <p>The status of the SQL statement to list. Status values are defined as follows:</p>
     /// <ul>
-    /// <li><p>ABORTED - The query run was stopped by the user.</p></li>
-    /// <li><p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
-    /// <li><p>FAILED - The query run failed.</p></li>
-    /// <li><p>FINISHED - The query has finished running.</p></li>
-    /// <li><p>PICKED - The query has been chosen to be run.</p></li>
-    /// <li><p>STARTED - The query run has started.</p></li>
-    /// <li><p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
+    /// <li>
+    /// <p>ABORTED - The query run was stopped by the user.</p></li>
+    /// <li>
+    /// <p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
+    /// <li>
+    /// <p>FAILED - The query run failed.</p></li>
+    /// <li>
+    /// <p>FINISHED - The query has finished running.</p></li>
+    /// <li>
+    /// <p>PICKED - The query has been chosen to be run.</p></li>
+    /// <li>
+    /// <p>STARTED - The query run has started.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::StatusString) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -130,13 +151,20 @@ impl ListStatementsInputBuilder {
     }
     /// <p>The status of the SQL statement to list. Status values are defined as follows:</p>
     /// <ul>
-    /// <li><p>ABORTED - The query run was stopped by the user.</p></li>
-    /// <li><p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
-    /// <li><p>FAILED - The query run failed.</p></li>
-    /// <li><p>FINISHED - The query has finished running.</p></li>
-    /// <li><p>PICKED - The query has been chosen to be run.</p></li>
-    /// <li><p>STARTED - The query run has started.</p></li>
-    /// <li><p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
+    /// <li>
+    /// <p>ABORTED - The query run was stopped by the user.</p></li>
+    /// <li>
+    /// <p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
+    /// <li>
+    /// <p>FAILED - The query run failed.</p></li>
+    /// <li>
+    /// <p>FINISHED - The query has finished running.</p></li>
+    /// <li>
+    /// <p>PICKED - The query has been chosen to be run.</p></li>
+    /// <li>
+    /// <p>STARTED - The query run has started.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusString>) -> Self {
         self.status = input;
@@ -144,13 +172,20 @@ impl ListStatementsInputBuilder {
     }
     /// <p>The status of the SQL statement to list. Status values are defined as follows:</p>
     /// <ul>
-    /// <li><p>ABORTED - The query run was stopped by the user.</p></li>
-    /// <li><p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
-    /// <li><p>FAILED - The query run failed.</p></li>
-    /// <li><p>FINISHED - The query has finished running.</p></li>
-    /// <li><p>PICKED - The query has been chosen to be run.</p></li>
-    /// <li><p>STARTED - The query run has started.</p></li>
-    /// <li><p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
+    /// <li>
+    /// <p>ABORTED - The query run was stopped by the user.</p></li>
+    /// <li>
+    /// <p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
+    /// <li>
+    /// <p>FAILED - The query run failed.</p></li>
+    /// <li>
+    /// <p>FINISHED - The query has finished running.</p></li>
+    /// <li>
+    /// <p>PICKED - The query has been chosen to be run.</p></li>
+    /// <li>
+    /// <p>STARTED - The query run has started.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusString> {
         &self.status

@@ -200,7 +200,7 @@ impl GetEventPredictionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
     ///
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p><important>
     /// <p>You must provide at least one eventVariable</p>
     /// </important>
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
@@ -216,7 +216,7 @@ impl GetEventPredictionFluentBuilder {
         self.inner = self.inner.event_variables(k.into(), v.into());
         self
     }
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p><important>
     /// <p>You must provide at least one eventVariable</p>
     /// </important>
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
@@ -231,7 +231,7 @@ impl GetEventPredictionFluentBuilder {
         self.inner = self.inner.set_event_variables(input);
         self
     }
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p><important>
     /// <p>You must provide at least one eventVariable</p>
     /// </important>
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>

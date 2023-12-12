@@ -8,8 +8,10 @@ pub struct ItemsLimitConfiguration {
     pub items_limit: ::std::option::Option<i64>,
     /// <p>The <code>Show other</code> of an axis in the chart. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>INCLUDE</code></p></li>
-    /// <li><p><code>EXCLUDE</code></p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code></p></li>
+    /// <li>
+    /// <p><code>EXCLUDE</code></p></li>
     /// </ul>
     pub other_categories: ::std::option::Option<crate::types::OtherCategories>,
 }
@@ -20,8 +22,10 @@ impl ItemsLimitConfiguration {
     }
     /// <p>The <code>Show other</code> of an axis in the chart. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>INCLUDE</code></p></li>
-    /// <li><p><code>EXCLUDE</code></p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code></p></li>
+    /// <li>
+    /// <p><code>EXCLUDE</code></p></li>
     /// </ul>
     pub fn other_categories(&self) -> ::std::option::Option<&crate::types::OtherCategories> {
         self.other_categories.as_ref()
@@ -58,8 +62,10 @@ impl ItemsLimitConfigurationBuilder {
     }
     /// <p>The <code>Show other</code> of an axis in the chart. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>INCLUDE</code></p></li>
-    /// <li><p><code>EXCLUDE</code></p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code></p></li>
+    /// <li>
+    /// <p><code>EXCLUDE</code></p></li>
     /// </ul>
     pub fn other_categories(mut self, input: crate::types::OtherCategories) -> Self {
         self.other_categories = ::std::option::Option::Some(input);
@@ -67,8 +73,10 @@ impl ItemsLimitConfigurationBuilder {
     }
     /// <p>The <code>Show other</code> of an axis in the chart. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>INCLUDE</code></p></li>
-    /// <li><p><code>EXCLUDE</code></p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code></p></li>
+    /// <li>
+    /// <p><code>EXCLUDE</code></p></li>
     /// </ul>
     pub fn set_other_categories(mut self, input: ::std::option::Option<crate::types::OtherCategories>) -> Self {
         self.other_categories = input;
@@ -76,8 +84,10 @@ impl ItemsLimitConfigurationBuilder {
     }
     /// <p>The <code>Show other</code> of an axis in the chart. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>INCLUDE</code></p></li>
-    /// <li><p><code>EXCLUDE</code></p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code></p></li>
+    /// <li>
+    /// <p><code>EXCLUDE</code></p></li>
     /// </ul>
     pub fn get_other_categories(&self) -> &::std::option::Option<crate::types::OtherCategories> {
         &self.other_categories

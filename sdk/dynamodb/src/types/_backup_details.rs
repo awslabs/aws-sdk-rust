@@ -14,9 +14,12 @@ pub struct BackupDetails {
     pub backup_status: crate::types::BackupStatus,
     /// <p>BackupType:</p>
     /// <ul>
-    /// <li><p><code>USER</code> - You create and manage these using the on-demand backup feature.</p></li>
-    /// <li><p><code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion.</p></li>
-    /// <li><p><code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p></li>
+    /// <li>
+    /// <p><code>USER</code> - You create and manage these using the on-demand backup feature.</p></li>
+    /// <li>
+    /// <p><code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion.</p></li>
+    /// <li>
+    /// <p><code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p></li>
     /// </ul>
     pub backup_type: crate::types::BackupType,
     /// <p>Time at which the backup was created. This is the request time of the backup.</p>
@@ -45,9 +48,12 @@ impl BackupDetails {
     }
     /// <p>BackupType:</p>
     /// <ul>
-    /// <li><p><code>USER</code> - You create and manage these using the on-demand backup feature.</p></li>
-    /// <li><p><code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion.</p></li>
-    /// <li><p><code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p></li>
+    /// <li>
+    /// <p><code>USER</code> - You create and manage these using the on-demand backup feature.</p></li>
+    /// <li>
+    /// <p><code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion.</p></li>
+    /// <li>
+    /// <p><code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p></li>
     /// </ul>
     pub fn backup_type(&self) -> &crate::types::BackupType {
         &self.backup_type
@@ -142,9 +148,12 @@ impl BackupDetailsBuilder {
     }
     /// <p>BackupType:</p>
     /// <ul>
-    /// <li><p><code>USER</code> - You create and manage these using the on-demand backup feature.</p></li>
-    /// <li><p><code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion.</p></li>
-    /// <li><p><code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p></li>
+    /// <li>
+    /// <p><code>USER</code> - You create and manage these using the on-demand backup feature.</p></li>
+    /// <li>
+    /// <p><code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion.</p></li>
+    /// <li>
+    /// <p><code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p></li>
     /// </ul>
     /// This field is required.
     pub fn backup_type(mut self, input: crate::types::BackupType) -> Self {
@@ -153,9 +162,12 @@ impl BackupDetailsBuilder {
     }
     /// <p>BackupType:</p>
     /// <ul>
-    /// <li><p><code>USER</code> - You create and manage these using the on-demand backup feature.</p></li>
-    /// <li><p><code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion.</p></li>
-    /// <li><p><code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p></li>
+    /// <li>
+    /// <p><code>USER</code> - You create and manage these using the on-demand backup feature.</p></li>
+    /// <li>
+    /// <p><code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion.</p></li>
+    /// <li>
+    /// <p><code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p></li>
     /// </ul>
     pub fn set_backup_type(mut self, input: ::std::option::Option<crate::types::BackupType>) -> Self {
         self.backup_type = input;
@@ -163,9 +175,12 @@ impl BackupDetailsBuilder {
     }
     /// <p>BackupType:</p>
     /// <ul>
-    /// <li><p><code>USER</code> - You create and manage these using the on-demand backup feature.</p></li>
-    /// <li><p><code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion.</p></li>
-    /// <li><p><code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p></li>
+    /// <li>
+    /// <p><code>USER</code> - You create and manage these using the on-demand backup feature.</p></li>
+    /// <li>
+    /// <p><code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion.</p></li>
+    /// <li>
+    /// <p><code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p></li>
     /// </ul>
     pub fn get_backup_type(&self) -> &::std::option::Option<crate::types::BackupType> {
         &self.backup_type

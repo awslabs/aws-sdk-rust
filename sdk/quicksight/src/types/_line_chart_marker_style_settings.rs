@@ -8,11 +8,16 @@ pub struct LineChartMarkerStyleSettings {
     pub marker_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Shape option for markers in the series.</p>
     /// <ul>
-    /// <li><p><code>CIRCLE</code>: Show marker as a circle.</p></li>
-    /// <li><p><code>TRIANGLE</code>: Show marker as a triangle.</p></li>
-    /// <li><p><code>SQUARE</code>: Show marker as a square.</p></li>
-    /// <li><p><code>DIAMOND</code>: Show marker as a diamond.</p></li>
-    /// <li><p><code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p></li>
+    /// <li>
+    /// <p><code>CIRCLE</code>: Show marker as a circle.</p></li>
+    /// <li>
+    /// <p><code>TRIANGLE</code>: Show marker as a triangle.</p></li>
+    /// <li>
+    /// <p><code>SQUARE</code>: Show marker as a square.</p></li>
+    /// <li>
+    /// <p><code>DIAMOND</code>: Show marker as a diamond.</p></li>
+    /// <li>
+    /// <p><code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p></li>
     /// </ul>
     pub marker_shape: ::std::option::Option<crate::types::LineChartMarkerShape>,
     /// <p>Size of marker in the series.</p>
@@ -27,11 +32,16 @@ impl LineChartMarkerStyleSettings {
     }
     /// <p>Shape option for markers in the series.</p>
     /// <ul>
-    /// <li><p><code>CIRCLE</code>: Show marker as a circle.</p></li>
-    /// <li><p><code>TRIANGLE</code>: Show marker as a triangle.</p></li>
-    /// <li><p><code>SQUARE</code>: Show marker as a square.</p></li>
-    /// <li><p><code>DIAMOND</code>: Show marker as a diamond.</p></li>
-    /// <li><p><code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p></li>
+    /// <li>
+    /// <p><code>CIRCLE</code>: Show marker as a circle.</p></li>
+    /// <li>
+    /// <p><code>TRIANGLE</code>: Show marker as a triangle.</p></li>
+    /// <li>
+    /// <p><code>SQUARE</code>: Show marker as a square.</p></li>
+    /// <li>
+    /// <p><code>DIAMOND</code>: Show marker as a diamond.</p></li>
+    /// <li>
+    /// <p><code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p></li>
     /// </ul>
     pub fn marker_shape(&self) -> ::std::option::Option<&crate::types::LineChartMarkerShape> {
         self.marker_shape.as_ref()
@@ -78,11 +88,16 @@ impl LineChartMarkerStyleSettingsBuilder {
     }
     /// <p>Shape option for markers in the series.</p>
     /// <ul>
-    /// <li><p><code>CIRCLE</code>: Show marker as a circle.</p></li>
-    /// <li><p><code>TRIANGLE</code>: Show marker as a triangle.</p></li>
-    /// <li><p><code>SQUARE</code>: Show marker as a square.</p></li>
-    /// <li><p><code>DIAMOND</code>: Show marker as a diamond.</p></li>
-    /// <li><p><code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p></li>
+    /// <li>
+    /// <p><code>CIRCLE</code>: Show marker as a circle.</p></li>
+    /// <li>
+    /// <p><code>TRIANGLE</code>: Show marker as a triangle.</p></li>
+    /// <li>
+    /// <p><code>SQUARE</code>: Show marker as a square.</p></li>
+    /// <li>
+    /// <p><code>DIAMOND</code>: Show marker as a diamond.</p></li>
+    /// <li>
+    /// <p><code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p></li>
     /// </ul>
     pub fn marker_shape(mut self, input: crate::types::LineChartMarkerShape) -> Self {
         self.marker_shape = ::std::option::Option::Some(input);
@@ -90,11 +105,16 @@ impl LineChartMarkerStyleSettingsBuilder {
     }
     /// <p>Shape option for markers in the series.</p>
     /// <ul>
-    /// <li><p><code>CIRCLE</code>: Show marker as a circle.</p></li>
-    /// <li><p><code>TRIANGLE</code>: Show marker as a triangle.</p></li>
-    /// <li><p><code>SQUARE</code>: Show marker as a square.</p></li>
-    /// <li><p><code>DIAMOND</code>: Show marker as a diamond.</p></li>
-    /// <li><p><code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p></li>
+    /// <li>
+    /// <p><code>CIRCLE</code>: Show marker as a circle.</p></li>
+    /// <li>
+    /// <p><code>TRIANGLE</code>: Show marker as a triangle.</p></li>
+    /// <li>
+    /// <p><code>SQUARE</code>: Show marker as a square.</p></li>
+    /// <li>
+    /// <p><code>DIAMOND</code>: Show marker as a diamond.</p></li>
+    /// <li>
+    /// <p><code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p></li>
     /// </ul>
     pub fn set_marker_shape(mut self, input: ::std::option::Option<crate::types::LineChartMarkerShape>) -> Self {
         self.marker_shape = input;
@@ -102,11 +122,16 @@ impl LineChartMarkerStyleSettingsBuilder {
     }
     /// <p>Shape option for markers in the series.</p>
     /// <ul>
-    /// <li><p><code>CIRCLE</code>: Show marker as a circle.</p></li>
-    /// <li><p><code>TRIANGLE</code>: Show marker as a triangle.</p></li>
-    /// <li><p><code>SQUARE</code>: Show marker as a square.</p></li>
-    /// <li><p><code>DIAMOND</code>: Show marker as a diamond.</p></li>
-    /// <li><p><code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p></li>
+    /// <li>
+    /// <p><code>CIRCLE</code>: Show marker as a circle.</p></li>
+    /// <li>
+    /// <p><code>TRIANGLE</code>: Show marker as a triangle.</p></li>
+    /// <li>
+    /// <p><code>SQUARE</code>: Show marker as a square.</p></li>
+    /// <li>
+    /// <p><code>DIAMOND</code>: Show marker as a diamond.</p></li>
+    /// <li>
+    /// <p><code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p></li>
     /// </ul>
     pub fn get_marker_shape(&self) -> &::std::option::Option<crate::types::LineChartMarkerShape> {
         &self.marker_shape

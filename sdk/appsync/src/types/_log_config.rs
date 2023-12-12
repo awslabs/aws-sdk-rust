@@ -6,17 +6,25 @@
 pub struct LogConfig {
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
-    /// <li><p><b>NONE</b>: No field-level logs are captured.</p></li>
-    /// <li><p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
+    /// <li>
+    /// <p><b>NONE</b>: No field-level logs are captured.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
     /// <ul>
-    /// <li><p>The error section in the server response.</p></li>
-    /// <li><p>Field-level errors.</p></li>
-    /// <li><p>The generated request/response functions that got resolved for error fields.</p></li>
+    /// <li>
+    /// <p>The error section in the server response.</p></li>
+    /// <li>
+    /// <p>Field-level errors.</p></li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for error fields.</p></li>
     /// </ul></li>
-    /// <li><p><b>ALL</b>: The following information is logged for all fields in the query:</p>
+    /// <li>
+    /// <p><b>ALL</b>: The following information is logged for all fields in the query:</p>
     /// <ul>
-    /// <li><p>Field-level tracing information.</p></li>
-    /// <li><p>The generated request/response functions that got resolved for each field.</p></li>
+    /// <li>
+    /// <p>Field-level tracing information.</p></li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for each field.</p></li>
     /// </ul></li>
     /// </ul>
     pub field_log_level: crate::types::FieldLogLevel,
@@ -28,17 +36,25 @@ pub struct LogConfig {
 impl LogConfig {
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
-    /// <li><p><b>NONE</b>: No field-level logs are captured.</p></li>
-    /// <li><p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
+    /// <li>
+    /// <p><b>NONE</b>: No field-level logs are captured.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
     /// <ul>
-    /// <li><p>The error section in the server response.</p></li>
-    /// <li><p>Field-level errors.</p></li>
-    /// <li><p>The generated request/response functions that got resolved for error fields.</p></li>
+    /// <li>
+    /// <p>The error section in the server response.</p></li>
+    /// <li>
+    /// <p>Field-level errors.</p></li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for error fields.</p></li>
     /// </ul></li>
-    /// <li><p><b>ALL</b>: The following information is logged for all fields in the query:</p>
+    /// <li>
+    /// <p><b>ALL</b>: The following information is logged for all fields in the query:</p>
     /// <ul>
-    /// <li><p>Field-level tracing information.</p></li>
-    /// <li><p>The generated request/response functions that got resolved for each field.</p></li>
+    /// <li>
+    /// <p>Field-level tracing information.</p></li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for each field.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn field_log_level(&self) -> &crate::types::FieldLogLevel {
@@ -72,17 +88,25 @@ pub struct LogConfigBuilder {
 impl LogConfigBuilder {
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
-    /// <li><p><b>NONE</b>: No field-level logs are captured.</p></li>
-    /// <li><p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
+    /// <li>
+    /// <p><b>NONE</b>: No field-level logs are captured.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
     /// <ul>
-    /// <li><p>The error section in the server response.</p></li>
-    /// <li><p>Field-level errors.</p></li>
-    /// <li><p>The generated request/response functions that got resolved for error fields.</p></li>
+    /// <li>
+    /// <p>The error section in the server response.</p></li>
+    /// <li>
+    /// <p>Field-level errors.</p></li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for error fields.</p></li>
     /// </ul></li>
-    /// <li><p><b>ALL</b>: The following information is logged for all fields in the query:</p>
+    /// <li>
+    /// <p><b>ALL</b>: The following information is logged for all fields in the query:</p>
     /// <ul>
-    /// <li><p>Field-level tracing information.</p></li>
-    /// <li><p>The generated request/response functions that got resolved for each field.</p></li>
+    /// <li>
+    /// <p>Field-level tracing information.</p></li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for each field.</p></li>
     /// </ul></li>
     /// </ul>
     /// This field is required.
@@ -92,17 +116,25 @@ impl LogConfigBuilder {
     }
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
-    /// <li><p><b>NONE</b>: No field-level logs are captured.</p></li>
-    /// <li><p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
+    /// <li>
+    /// <p><b>NONE</b>: No field-level logs are captured.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
     /// <ul>
-    /// <li><p>The error section in the server response.</p></li>
-    /// <li><p>Field-level errors.</p></li>
-    /// <li><p>The generated request/response functions that got resolved for error fields.</p></li>
+    /// <li>
+    /// <p>The error section in the server response.</p></li>
+    /// <li>
+    /// <p>Field-level errors.</p></li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for error fields.</p></li>
     /// </ul></li>
-    /// <li><p><b>ALL</b>: The following information is logged for all fields in the query:</p>
+    /// <li>
+    /// <p><b>ALL</b>: The following information is logged for all fields in the query:</p>
     /// <ul>
-    /// <li><p>Field-level tracing information.</p></li>
-    /// <li><p>The generated request/response functions that got resolved for each field.</p></li>
+    /// <li>
+    /// <p>Field-level tracing information.</p></li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for each field.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_field_log_level(mut self, input: ::std::option::Option<crate::types::FieldLogLevel>) -> Self {
@@ -111,17 +143,25 @@ impl LogConfigBuilder {
     }
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
-    /// <li><p><b>NONE</b>: No field-level logs are captured.</p></li>
-    /// <li><p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
+    /// <li>
+    /// <p><b>NONE</b>: No field-level logs are captured.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b>: Logs the following information only for the fields that are in error:</p>
     /// <ul>
-    /// <li><p>The error section in the server response.</p></li>
-    /// <li><p>Field-level errors.</p></li>
-    /// <li><p>The generated request/response functions that got resolved for error fields.</p></li>
+    /// <li>
+    /// <p>The error section in the server response.</p></li>
+    /// <li>
+    /// <p>Field-level errors.</p></li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for error fields.</p></li>
     /// </ul></li>
-    /// <li><p><b>ALL</b>: The following information is logged for all fields in the query:</p>
+    /// <li>
+    /// <p><b>ALL</b>: The following information is logged for all fields in the query:</p>
     /// <ul>
-    /// <li><p>Field-level tracing information.</p></li>
-    /// <li><p>The generated request/response functions that got resolved for each field.</p></li>
+    /// <li>
+    /// <p>Field-level tracing information.</p></li>
+    /// <li>
+    /// <p>The generated request/response functions that got resolved for each field.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_field_log_level(&self) -> &::std::option::Option<crate::types::FieldLogLevel> {

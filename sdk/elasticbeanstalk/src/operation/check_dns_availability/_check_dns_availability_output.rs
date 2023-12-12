@@ -6,8 +6,10 @@
 pub struct CheckDnsAvailabilityOutput {
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
-    /// <li><p><code>true</code> : The CNAME is available.</p></li>
-    /// <li><p><code>false</code> : The CNAME is not available.</p></li>
+    /// <li>
+    /// <p><code>true</code> : The CNAME is available.</p></li>
+    /// <li>
+    /// <p><code>false</code> : The CNAME is not available.</p></li>
     /// </ul>
     pub available: ::std::option::Option<bool>,
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
@@ -17,8 +19,10 @@ pub struct CheckDnsAvailabilityOutput {
 impl CheckDnsAvailabilityOutput {
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
-    /// <li><p><code>true</code> : The CNAME is available.</p></li>
-    /// <li><p><code>false</code> : The CNAME is not available.</p></li>
+    /// <li>
+    /// <p><code>true</code> : The CNAME is available.</p></li>
+    /// <li>
+    /// <p><code>false</code> : The CNAME is not available.</p></li>
     /// </ul>
     pub fn available(&self) -> ::std::option::Option<bool> {
         self.available
@@ -51,8 +55,10 @@ pub struct CheckDnsAvailabilityOutputBuilder {
 impl CheckDnsAvailabilityOutputBuilder {
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
-    /// <li><p><code>true</code> : The CNAME is available.</p></li>
-    /// <li><p><code>false</code> : The CNAME is not available.</p></li>
+    /// <li>
+    /// <p><code>true</code> : The CNAME is available.</p></li>
+    /// <li>
+    /// <p><code>false</code> : The CNAME is not available.</p></li>
     /// </ul>
     pub fn available(mut self, input: bool) -> Self {
         self.available = ::std::option::Option::Some(input);
@@ -60,8 +66,10 @@ impl CheckDnsAvailabilityOutputBuilder {
     }
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
-    /// <li><p><code>true</code> : The CNAME is available.</p></li>
-    /// <li><p><code>false</code> : The CNAME is not available.</p></li>
+    /// <li>
+    /// <p><code>true</code> : The CNAME is available.</p></li>
+    /// <li>
+    /// <p><code>false</code> : The CNAME is not available.</p></li>
     /// </ul>
     pub fn set_available(mut self, input: ::std::option::Option<bool>) -> Self {
         self.available = input;
@@ -69,8 +77,10 @@ impl CheckDnsAvailabilityOutputBuilder {
     }
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
-    /// <li><p><code>true</code> : The CNAME is available.</p></li>
-    /// <li><p><code>false</code> : The CNAME is not available.</p></li>
+    /// <li>
+    /// <p><code>true</code> : The CNAME is available.</p></li>
+    /// <li>
+    /// <p><code>false</code> : The CNAME is not available.</p></li>
     /// </ul>
     pub fn get_available(&self) -> &::std::option::Option<bool> {
         &self.available

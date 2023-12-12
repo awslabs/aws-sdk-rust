@@ -4,18 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerRecipe {
-    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -29,7 +32,7 @@ pub struct ContainerRecipe {
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The owner of the container recipe.</p>
     pub owner: ::std::option::Option<::std::string::String>,
-    /// <p>The semantic version of the container recipe.</p> <note>
+    /// <p>The semantic version of the container recipe.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -69,18 +72,21 @@ pub struct ContainerRecipe {
     pub target_repository: ::std::option::Option<crate::types::TargetContainerRepository>,
 }
 impl ContainerRecipe {
-    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -106,7 +112,7 @@ impl ContainerRecipe {
     pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
-    /// <p>The semantic version of the container recipe.</p> <note>
+    /// <p>The semantic version of the container recipe.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -199,54 +205,63 @@ pub struct ContainerRecipeBuilder {
     pub(crate) target_repository: ::std::option::Option<crate::types::TargetContainerRepository>,
 }
 impl ContainerRecipeBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -322,7 +337,7 @@ impl ContainerRecipeBuilder {
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner
     }
-    /// <p>The semantic version of the container recipe.</p> <note>
+    /// <p>The semantic version of the container recipe.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -343,7 +358,7 @@ impl ContainerRecipeBuilder {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The semantic version of the container recipe.</p> <note>
+    /// <p>The semantic version of the container recipe.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -364,7 +379,7 @@ impl ContainerRecipeBuilder {
         self.version = input;
         self
     }
-    /// <p>The semantic version of the container recipe.</p> <note>
+    /// <p>The semantic version of the container recipe.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>

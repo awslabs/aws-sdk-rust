@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCacheParameterGroupInput {
-    /// <p>The name of the cache parameter group to delete.</p> <note>
+    /// <p>The name of the cache parameter group to delete.</p><note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCacheParameterGroupInput {
-    /// <p>The name of the cache parameter group to delete.</p> <note>
+    /// <p>The name of the cache parameter group to delete.</p><note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
     pub fn cache_parameter_group_name(&self) -> ::std::option::Option<&str> {
@@ -31,7 +31,7 @@ pub struct DeleteCacheParameterGroupInputBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCacheParameterGroupInputBuilder {
-    /// <p>The name of the cache parameter group to delete.</p> <note>
+    /// <p>The name of the cache parameter group to delete.</p><note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
     /// This field is required.
@@ -39,14 +39,14 @@ impl DeleteCacheParameterGroupInputBuilder {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cache parameter group to delete.</p> <note>
+    /// <p>The name of the cache parameter group to delete.</p><note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
     pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_parameter_group_name = input;
         self
     }
-    /// <p>The name of the cache parameter group to delete.</p> <note>
+    /// <p>The name of the cache parameter group to delete.</p><note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
     pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {

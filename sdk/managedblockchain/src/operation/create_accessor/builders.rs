@@ -122,21 +122,21 @@ impl CreateAccessorFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
-    /// <p>The type of accessor.</p> <note>
+    /// <p>The type of accessor.</p><note>
     /// <p>Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     pub fn accessor_type(mut self, input: crate::types::AccessorType) -> Self {
         self.inner = self.inner.accessor_type(input);
         self
     }
-    /// <p>The type of accessor.</p> <note>
+    /// <p>The type of accessor.</p><note>
     /// <p>Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     pub fn set_accessor_type(mut self, input: ::std::option::Option<crate::types::AccessorType>) -> Self {
         self.inner = self.inner.set_accessor_type(input);
         self
     }
-    /// <p>The type of accessor.</p> <note>
+    /// <p>The type of accessor.</p><note>
     /// <p>Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     pub fn get_accessor_type(&self) -> &::std::option::Option<crate::types::AccessorType> {
@@ -166,36 +166,42 @@ impl CreateAccessorFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
+    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p><note>
     /// <p>We recommend using the appropriate <code>networkType</code> value for the blockchain network that you are creating the <code>Accessor</code> token for. You cannnot use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> to specify a <code>networkType</code> for your Accessor token.</p>
     /// <p>The default value of <code>ETHEREUM_MAINNET_AND_GOERLI</code> is only applied:</p>
     /// <ul>
-    /// <li><p>when the <code>CreateAccessor</code> action does not set a <code>networkType</code>.</p></li>
-    /// <li><p>to all existing <code>Accessor</code> tokens that were created before the <code>networkType</code> property was introduced.</p></li>
+    /// <li>
+    /// <p>when the <code>CreateAccessor</code> action does not set a <code>networkType</code>.</p></li>
+    /// <li>
+    /// <p>to all existing <code>Accessor</code> tokens that were created before the <code>networkType</code> property was introduced.</p></li>
     /// </ul>
     /// </note>
     pub fn network_type(mut self, input: crate::types::AccessorNetworkType) -> Self {
         self.inner = self.inner.network_type(input);
         self
     }
-    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
+    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p><note>
     /// <p>We recommend using the appropriate <code>networkType</code> value for the blockchain network that you are creating the <code>Accessor</code> token for. You cannnot use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> to specify a <code>networkType</code> for your Accessor token.</p>
     /// <p>The default value of <code>ETHEREUM_MAINNET_AND_GOERLI</code> is only applied:</p>
     /// <ul>
-    /// <li><p>when the <code>CreateAccessor</code> action does not set a <code>networkType</code>.</p></li>
-    /// <li><p>to all existing <code>Accessor</code> tokens that were created before the <code>networkType</code> property was introduced.</p></li>
+    /// <li>
+    /// <p>when the <code>CreateAccessor</code> action does not set a <code>networkType</code>.</p></li>
+    /// <li>
+    /// <p>to all existing <code>Accessor</code> tokens that were created before the <code>networkType</code> property was introduced.</p></li>
     /// </ul>
     /// </note>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::AccessorNetworkType>) -> Self {
         self.inner = self.inner.set_network_type(input);
         self
     }
-    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
+    /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p><note>
     /// <p>We recommend using the appropriate <code>networkType</code> value for the blockchain network that you are creating the <code>Accessor</code> token for. You cannnot use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> to specify a <code>networkType</code> for your Accessor token.</p>
     /// <p>The default value of <code>ETHEREUM_MAINNET_AND_GOERLI</code> is only applied:</p>
     /// <ul>
-    /// <li><p>when the <code>CreateAccessor</code> action does not set a <code>networkType</code>.</p></li>
-    /// <li><p>to all existing <code>Accessor</code> tokens that were created before the <code>networkType</code> property was introduced.</p></li>
+    /// <li>
+    /// <p>when the <code>CreateAccessor</code> action does not set a <code>networkType</code>.</p></li>
+    /// <li>
+    /// <p>to all existing <code>Accessor</code> tokens that were created before the <code>networkType</code> property was introduced.</p></li>
     /// </ul>
     /// </note>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::AccessorNetworkType> {

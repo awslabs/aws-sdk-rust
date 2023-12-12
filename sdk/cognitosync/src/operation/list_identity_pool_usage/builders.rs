@@ -23,7 +23,7 @@ impl ListIdentityPoolUsageInputBuilder {
 /// Fluent builder constructing a request to `ListIdentityPoolUsage`.
 ///
 /// <p>Gets a list of identity pools registered with Cognito.</p>
-/// <p>ListIdentityPoolUsage can only be called with developer credentials. You cannot make this API call with the temporary user credentials provided by Cognito Identity.</p> <examples>
+/// <p>ListIdentityPoolUsage can only be called with developer credentials. You cannot make this API call with the temporary user credentials provided by Cognito Identity.</p><examples>
 /// <example>
 /// <name>
 /// ListIdentityPoolUsage

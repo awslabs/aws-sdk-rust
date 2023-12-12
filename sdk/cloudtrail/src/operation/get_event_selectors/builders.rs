@@ -24,14 +24,19 @@ impl GetEventSelectorsInputBuilder {
 ///
 /// <p>Describes the settings for the event selectors that you configured for your trail. The information returned for your event selectors includes the following:</p>
 /// <ul>
-/// <li><p>If your event selector includes read-only events, write-only events, or all events. This applies to both management events and data events.</p></li>
-/// <li><p>If your event selector includes management events.</p></li>
-/// <li><p>If your event selector includes data events, the resources on which you are logging data events.</p></li>
+/// <li>
+/// <p>If your event selector includes read-only events, write-only events, or all events. This applies to both management events and data events.</p></li>
+/// <li>
+/// <p>If your event selector includes management events.</p></li>
+/// <li>
+/// <p>If your event selector includes data events, the resources on which you are logging data events.</p></li>
 /// </ul>
 /// <p>For more information about logging management and data events, see the following topics in the <i>CloudTrail User Guide</i>:</p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging management events</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging management events</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEventSelectorsFluentBuilder {
@@ -120,11 +125,16 @@ impl GetEventSelectorsFluentBuilder {
     }
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li><p>Be between 3 and 128 characters</p></li>
-    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p></li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
@@ -134,11 +144,16 @@ impl GetEventSelectorsFluentBuilder {
     }
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li><p>Be between 3 and 128 characters</p></li>
-    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p></li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
@@ -148,11 +163,16 @@ impl GetEventSelectorsFluentBuilder {
     }
     /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li><p>Be between 3 and 128 characters</p></li>
-    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p></li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>

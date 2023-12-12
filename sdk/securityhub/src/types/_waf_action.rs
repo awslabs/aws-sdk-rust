@@ -7,9 +7,12 @@ pub struct WafAction {
     /// <p>Specifies how you want WAF to respond to requests that match the settings in a rule.</p>
     /// <p>Valid settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code> - WAF allows requests</p></li>
-    /// <li><p><code>BLOCK</code> - WAF blocks requests</p></li>
-    /// <li><p><code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> - WAF allows requests</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code> - WAF blocks requests</p></li>
+    /// <li>
+    /// <p><code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
@@ -17,9 +20,12 @@ impl WafAction {
     /// <p>Specifies how you want WAF to respond to requests that match the settings in a rule.</p>
     /// <p>Valid settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code> - WAF allows requests</p></li>
-    /// <li><p><code>BLOCK</code> - WAF blocks requests</p></li>
-    /// <li><p><code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> - WAF allows requests</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code> - WAF blocks requests</p></li>
+    /// <li>
+    /// <p><code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -42,9 +48,12 @@ impl WafActionBuilder {
     /// <p>Specifies how you want WAF to respond to requests that match the settings in a rule.</p>
     /// <p>Valid settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code> - WAF allows requests</p></li>
-    /// <li><p><code>BLOCK</code> - WAF blocks requests</p></li>
-    /// <li><p><code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> - WAF allows requests</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code> - WAF blocks requests</p></li>
+    /// <li>
+    /// <p><code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -53,9 +62,12 @@ impl WafActionBuilder {
     /// <p>Specifies how you want WAF to respond to requests that match the settings in a rule.</p>
     /// <p>Valid settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code> - WAF allows requests</p></li>
-    /// <li><p><code>BLOCK</code> - WAF blocks requests</p></li>
-    /// <li><p><code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> - WAF allows requests</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code> - WAF blocks requests</p></li>
+    /// <li>
+    /// <p><code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -64,9 +76,12 @@ impl WafActionBuilder {
     /// <p>Specifies how you want WAF to respond to requests that match the settings in a rule.</p>
     /// <p>Valid settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ALLOW</code> - WAF allows requests</p></li>
-    /// <li><p><code>BLOCK</code> - WAF blocks requests</p></li>
-    /// <li><p><code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> - WAF allows requests</p></li>
+    /// <li>
+    /// <p><code>BLOCK</code> - WAF blocks requests</p></li>
+    /// <li>
+    /// <p><code>COUNT</code> - WAF increments a counter of the requests that match all of the conditions in the rule. WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a web ACL.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

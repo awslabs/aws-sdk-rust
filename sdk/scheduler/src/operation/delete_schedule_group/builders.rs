@@ -22,7 +22,7 @@ impl DeleteScheduleGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteScheduleGroup`.
 ///
-/// <p>Deletes the specified schedule group. Deleting a schedule group results in EventBridge Scheduler deleting all schedules associated with the group. When you delete a group, it remains in a <code>DELETING</code> state until all of its associated schedules are deleted. Schedules associated with the group that are set to run while the schedule group is in the process of being deleted might continue to invoke their targets until the schedule group and its associated schedules are deleted.</p> <note>
+/// <p>Deletes the specified schedule group. Deleting a schedule group results in EventBridge Scheduler deleting all schedules associated with the group. When you delete a group, it remains in a <code>DELETING</code> state until all of its associated schedules are deleted. Schedules associated with the group that are set to run while the schedule group is in the process of being deleted might continue to invoke their targets until the schedule group and its associated schedules are deleted.</p><note>
 /// <p>This operation is eventually consistent.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

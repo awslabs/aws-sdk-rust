@@ -23,7 +23,7 @@ impl GetAccountLimitInputBuilder {
 /// Fluent builder constructing a request to `GetAccountLimit`.
 ///
 /// <p>Gets the specified limit for the current account, for example, the maximum number of health checks that you can create using the account.</p>
-/// <p>For the default limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open a case</a>.</p> <note>
+/// <p>For the default limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open a case</a>.</p><note>
 /// <p>You can also view account limits in Amazon Web Services Trusted Advisor. Sign in to the Amazon Web Services Management Console and open the Trusted Advisor console at <a href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>. Then choose <b>Service limits</b> in the navigation pane.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -113,11 +113,16 @@ impl GetAccountLimitFluentBuilder {
     }
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p></li>
+    /// <li>
+    /// <p><b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::AccountLimitType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -125,11 +130,16 @@ impl GetAccountLimitFluentBuilder {
     }
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p></li>
+    /// <li>
+    /// <p><b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccountLimitType>) -> Self {
         self.inner = self.inner.set_type(input);
@@ -137,11 +147,16 @@ impl GetAccountLimitFluentBuilder {
     }
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p></li>
-    /// <li><p><b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p></li>
+    /// <li>
+    /// <p><b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p></li>
+    /// <li>
+    /// <p><b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AccountLimitType> {
         self.inner.get_type()

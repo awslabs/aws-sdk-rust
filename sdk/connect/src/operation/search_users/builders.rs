@@ -22,7 +22,7 @@ impl SearchUsersInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchUsers`.
 ///
-/// <p>Searches users in an Amazon Connect instance, with optional filtering.</p> <note>
+/// <p>Searches users in an Amazon Connect instance, with optional filtering.</p><note>
 /// <p><code>AfterContactWorkTimeLimit</code> is returned in milliseconds.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,21 +116,21 @@ impl SearchUsersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_users::paginator::SearchUsersPaginator {
         crate::operation::search_users::paginator::SearchUsersPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p> <note>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><note>
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
     /// </note>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p> <note>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><note>
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
     /// </note>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p> <note>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><note>
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
     /// </note>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,21 +178,21 @@ impl SearchUsersFluentBuilder {
     pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::UserSearchFilter> {
         self.inner.get_search_filter()
     }
-    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The search criteria to be used to return users.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn search_criteria(mut self, input: crate::types::UserSearchCriteria) -> Self {
         self.inner = self.inner.search_criteria(input);
         self
     }
-    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The search criteria to be used to return users.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::UserSearchCriteria>) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
     }
-    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The search criteria to be used to return users.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::UserSearchCriteria> {

@@ -22,7 +22,7 @@ impl ValidatePipelineDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `ValidatePipelineDefinition`.
 ///
-/// <p>Validates the specified pipeline definition to ensure that it is well formed and can be run without error.</p> <examples>
+/// <p>Validates the specified pipeline definition to ensure that it is well formed and can be run without error.</p><examples>
 /// <example>
 /// <name>
 /// Example 1

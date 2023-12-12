@@ -15,7 +15,7 @@ pub struct RegisterCaCertificateInput {
     pub allow_auto_registration: ::std::option::Option<bool>,
     /// <p>Information about the registration configuration.</p>
     pub registration_config: ::std::option::Option<crate::types::RegistrationConfig>,
-    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>Metadata which can be used to manage the CA certificate.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -46,7 +46,7 @@ impl RegisterCaCertificateInput {
     pub fn registration_config(&self) -> ::std::option::Option<&crate::types::RegistrationConfig> {
         self.registration_config.as_ref()
     }
-    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>Metadata which can be used to manage the CA certificate.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -159,7 +159,7 @@ impl RegisterCaCertificateInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>Metadata which can be used to manage the CA certificate.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -170,7 +170,7 @@ impl RegisterCaCertificateInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>Metadata which can be used to manage the CA certificate.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -179,7 +179,7 @@ impl RegisterCaCertificateInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>Metadata which can be used to manage the CA certificate.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>

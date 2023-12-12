@@ -5,8 +5,10 @@
 pub struct ListPrincipalsInput {
     /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
     /// <ul>
-    /// <li><p><b> <code>SELF</code> </b> – principals that your account is sharing resources with</p></li>
-    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p></li>
+    /// <li>
+    /// <p><b> <code>SELF</code> </b> – principals that your account is sharing resources with</p></li>
+    /// <li>
+    /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p></li>
     /// </ul>
     pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     /// <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
@@ -14,12 +16,17 @@ pub struct ListPrincipalsInput {
     /// <p>Specifies that you want to list information for only the listed principals.</p>
     /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li><p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
-    /// <li><p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
-    /// <li><p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
-    /// <li><p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
-    /// <li><p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
+    /// <li>
+    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
+    /// <li>
+    /// <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
+    /// <li>
+    /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
+    /// <li>
+    /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -36,8 +43,10 @@ pub struct ListPrincipalsInput {
 impl ListPrincipalsInput {
     /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
     /// <ul>
-    /// <li><p><b> <code>SELF</code> </b> – principals that your account is sharing resources with</p></li>
-    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p></li>
+    /// <li>
+    /// <p><b> <code>SELF</code> </b> – principals that your account is sharing resources with</p></li>
+    /// <li>
+    /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p></li>
     /// </ul>
     pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
         self.resource_owner.as_ref()
@@ -49,12 +58,17 @@ impl ListPrincipalsInput {
     /// <p>Specifies that you want to list information for only the listed principals.</p>
     /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li><p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
-    /// <li><p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
-    /// <li><p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
-    /// <li><p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
-    /// <li><p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
+    /// <li>
+    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
+    /// <li>
+    /// <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
+    /// <li>
+    /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
+    /// <li>
+    /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     ///
@@ -104,8 +118,10 @@ pub struct ListPrincipalsInputBuilder {
 impl ListPrincipalsInputBuilder {
     /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
     /// <ul>
-    /// <li><p><b> <code>SELF</code> </b> – principals that your account is sharing resources with</p></li>
-    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p></li>
+    /// <li>
+    /// <p><b> <code>SELF</code> </b> – principals that your account is sharing resources with</p></li>
+    /// <li>
+    /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
@@ -114,8 +130,10 @@ impl ListPrincipalsInputBuilder {
     }
     /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
     /// <ul>
-    /// <li><p><b> <code>SELF</code> </b> – principals that your account is sharing resources with</p></li>
-    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p></li>
+    /// <li>
+    /// <p><b> <code>SELF</code> </b> – principals that your account is sharing resources with</p></li>
+    /// <li>
+    /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p></li>
     /// </ul>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.resource_owner = input;
@@ -123,8 +141,10 @@ impl ListPrincipalsInputBuilder {
     }
     /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
     /// <ul>
-    /// <li><p><b> <code>SELF</code> </b> – principals that your account is sharing resources with</p></li>
-    /// <li><p><b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p></li>
+    /// <li>
+    /// <p><b> <code>SELF</code> </b> – principals that your account is sharing resources with</p></li>
+    /// <li>
+    /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p></li>
     /// </ul>
     pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
         &self.resource_owner
@@ -150,12 +170,17 @@ impl ListPrincipalsInputBuilder {
     /// <p>Specifies that you want to list information for only the listed principals.</p>
     /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li><p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
-    /// <li><p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
-    /// <li><p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
-    /// <li><p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
-    /// <li><p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
+    /// <li>
+    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
+    /// <li>
+    /// <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
+    /// <li>
+    /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
+    /// <li>
+    /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,12 +192,17 @@ impl ListPrincipalsInputBuilder {
     /// <p>Specifies that you want to list information for only the listed principals.</p>
     /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li><p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
-    /// <li><p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
-    /// <li><p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
-    /// <li><p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
-    /// <li><p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
+    /// <li>
+    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
+    /// <li>
+    /// <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
+    /// <li>
+    /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
+    /// <li>
+    /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -182,12 +212,17 @@ impl ListPrincipalsInputBuilder {
     /// <p>Specifies that you want to list information for only the listed principals.</p>
     /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li><p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
-    /// <li><p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
-    /// <li><p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
-    /// <li><p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
-    /// <li><p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>An Amazon Web Services account ID, for example: <code>123456789012</code></p></li>
+    /// <li>
+    /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></p></li>
+    /// <li>
+    /// <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></p></li>
+    /// <li>
+    /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
+    /// <li>
+    /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

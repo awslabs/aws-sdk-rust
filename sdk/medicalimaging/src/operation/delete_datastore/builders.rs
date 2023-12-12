@@ -22,7 +22,7 @@ impl DeleteDatastoreInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDatastore`.
 ///
-/// <p>Delete a data store.</p> <note>
+/// <p>Delete a data store.</p><note>
 /// <p>Before a data store can be deleted, you must first delete all image sets within it.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

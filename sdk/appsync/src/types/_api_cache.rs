@@ -9,8 +9,10 @@ pub struct ApiCache {
     pub ttl: i64,
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li><p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
-    /// <li><p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
+    /// <li>
+    /// <p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <li>
+    /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
     pub api_caching_behavior: ::std::option::Option<crate::types::ApiCachingBehavior>,
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
@@ -19,34 +21,54 @@ pub struct ApiCache {
     pub at_rest_encryption_enabled: bool,
     /// <p>The cache instance type. Valid values are</p>
     /// <ul>
-    /// <li><p><code>SMALL</code></p></li>
-    /// <li><p><code>MEDIUM</code></p></li>
-    /// <li><p><code>LARGE</code></p></li>
-    /// <li><p><code>XLARGE</code></p></li>
-    /// <li><p><code>LARGE_2X</code></p></li>
-    /// <li><p><code>LARGE_4X</code></p></li>
-    /// <li><p><code>LARGE_8X</code> (not available in all regions)</p></li>
-    /// <li><p><code>LARGE_12X</code></p></li>
+    /// <li>
+    /// <p><code>SMALL</code></p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code></p></li>
+    /// <li>
+    /// <p><code>LARGE</code></p></li>
+    /// <li>
+    /// <p><code>XLARGE</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_2X</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_4X</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_8X</code> (not available in all regions)</p></li>
+    /// <li>
+    /// <p><code>LARGE_12X</code></p></li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li><p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
-    /// <li><p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
-    /// <li><p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
-    /// <li><p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
-    /// <li><p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
-    /// <li><p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
-    /// <li><p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
+    /// <li>
+    /// <p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ApiCacheType>,
     /// <p>The cache instance status.</p>
     /// <ul>
-    /// <li><p><b>AVAILABLE</b>: The instance is available for use.</p></li>
-    /// <li><p><b>CREATING</b>: The instance is currently creating.</p></li>
-    /// <li><p><b>DELETING</b>: The instance is currently deleting.</p></li>
-    /// <li><p><b>MODIFYING</b>: The instance is currently modifying.</p></li>
-    /// <li><p><b>FAILED</b>: The instance has failed creation.</p></li>
+    /// <li>
+    /// <p><b>AVAILABLE</b>: The instance is available for use.</p></li>
+    /// <li>
+    /// <p><b>CREATING</b>: The instance is currently creating.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b>: The instance is currently deleting.</p></li>
+    /// <li>
+    /// <p><b>MODIFYING</b>: The instance is currently modifying.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b>: The instance has failed creation.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ApiCacheStatus>,
 }
@@ -58,8 +80,10 @@ impl ApiCache {
     }
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li><p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
-    /// <li><p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
+    /// <li>
+    /// <p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <li>
+    /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
     pub fn api_caching_behavior(&self) -> ::std::option::Option<&crate::types::ApiCachingBehavior> {
         self.api_caching_behavior.as_ref()
@@ -74,36 +98,56 @@ impl ApiCache {
     }
     /// <p>The cache instance type. Valid values are</p>
     /// <ul>
-    /// <li><p><code>SMALL</code></p></li>
-    /// <li><p><code>MEDIUM</code></p></li>
-    /// <li><p><code>LARGE</code></p></li>
-    /// <li><p><code>XLARGE</code></p></li>
-    /// <li><p><code>LARGE_2X</code></p></li>
-    /// <li><p><code>LARGE_4X</code></p></li>
-    /// <li><p><code>LARGE_8X</code> (not available in all regions)</p></li>
-    /// <li><p><code>LARGE_12X</code></p></li>
+    /// <li>
+    /// <p><code>SMALL</code></p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code></p></li>
+    /// <li>
+    /// <p><code>LARGE</code></p></li>
+    /// <li>
+    /// <p><code>XLARGE</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_2X</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_4X</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_8X</code> (not available in all regions)</p></li>
+    /// <li>
+    /// <p><code>LARGE_12X</code></p></li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li><p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
-    /// <li><p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
-    /// <li><p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
-    /// <li><p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
-    /// <li><p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
-    /// <li><p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
-    /// <li><p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
+    /// <li>
+    /// <p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ApiCacheType> {
         self.r#type.as_ref()
     }
     /// <p>The cache instance status.</p>
     /// <ul>
-    /// <li><p><b>AVAILABLE</b>: The instance is available for use.</p></li>
-    /// <li><p><b>CREATING</b>: The instance is currently creating.</p></li>
-    /// <li><p><b>DELETING</b>: The instance is currently deleting.</p></li>
-    /// <li><p><b>MODIFYING</b>: The instance is currently modifying.</p></li>
-    /// <li><p><b>FAILED</b>: The instance has failed creation.</p></li>
+    /// <li>
+    /// <p><b>AVAILABLE</b>: The instance is available for use.</p></li>
+    /// <li>
+    /// <p><b>CREATING</b>: The instance is currently creating.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b>: The instance is currently deleting.</p></li>
+    /// <li>
+    /// <p><b>MODIFYING</b>: The instance is currently modifying.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b>: The instance has failed creation.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ApiCacheStatus> {
         self.status.as_ref()
@@ -147,8 +191,10 @@ impl ApiCacheBuilder {
     }
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li><p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
-    /// <li><p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
+    /// <li>
+    /// <p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <li>
+    /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
     pub fn api_caching_behavior(mut self, input: crate::types::ApiCachingBehavior) -> Self {
         self.api_caching_behavior = ::std::option::Option::Some(input);
@@ -156,8 +202,10 @@ impl ApiCacheBuilder {
     }
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li><p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
-    /// <li><p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
+    /// <li>
+    /// <p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <li>
+    /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
     pub fn set_api_caching_behavior(mut self, input: ::std::option::Option<crate::types::ApiCachingBehavior>) -> Self {
         self.api_caching_behavior = input;
@@ -165,8 +213,10 @@ impl ApiCacheBuilder {
     }
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li><p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
-    /// <li><p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
+    /// <li>
+    /// <p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <li>
+    /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
     pub fn get_api_caching_behavior(&self) -> &::std::option::Option<crate::types::ApiCachingBehavior> {
         &self.api_caching_behavior
@@ -201,25 +251,40 @@ impl ApiCacheBuilder {
     }
     /// <p>The cache instance type. Valid values are</p>
     /// <ul>
-    /// <li><p><code>SMALL</code></p></li>
-    /// <li><p><code>MEDIUM</code></p></li>
-    /// <li><p><code>LARGE</code></p></li>
-    /// <li><p><code>XLARGE</code></p></li>
-    /// <li><p><code>LARGE_2X</code></p></li>
-    /// <li><p><code>LARGE_4X</code></p></li>
-    /// <li><p><code>LARGE_8X</code> (not available in all regions)</p></li>
-    /// <li><p><code>LARGE_12X</code></p></li>
+    /// <li>
+    /// <p><code>SMALL</code></p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code></p></li>
+    /// <li>
+    /// <p><code>LARGE</code></p></li>
+    /// <li>
+    /// <p><code>XLARGE</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_2X</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_4X</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_8X</code> (not available in all regions)</p></li>
+    /// <li>
+    /// <p><code>LARGE_12X</code></p></li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li><p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
-    /// <li><p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
-    /// <li><p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
-    /// <li><p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
-    /// <li><p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
-    /// <li><p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
-    /// <li><p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
+    /// <li>
+    /// <p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ApiCacheType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -227,25 +292,40 @@ impl ApiCacheBuilder {
     }
     /// <p>The cache instance type. Valid values are</p>
     /// <ul>
-    /// <li><p><code>SMALL</code></p></li>
-    /// <li><p><code>MEDIUM</code></p></li>
-    /// <li><p><code>LARGE</code></p></li>
-    /// <li><p><code>XLARGE</code></p></li>
-    /// <li><p><code>LARGE_2X</code></p></li>
-    /// <li><p><code>LARGE_4X</code></p></li>
-    /// <li><p><code>LARGE_8X</code> (not available in all regions)</p></li>
-    /// <li><p><code>LARGE_12X</code></p></li>
+    /// <li>
+    /// <p><code>SMALL</code></p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code></p></li>
+    /// <li>
+    /// <p><code>LARGE</code></p></li>
+    /// <li>
+    /// <p><code>XLARGE</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_2X</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_4X</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_8X</code> (not available in all regions)</p></li>
+    /// <li>
+    /// <p><code>LARGE_12X</code></p></li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li><p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
-    /// <li><p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
-    /// <li><p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
-    /// <li><p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
-    /// <li><p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
-    /// <li><p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
-    /// <li><p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
+    /// <li>
+    /// <p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApiCacheType>) -> Self {
         self.r#type = input;
@@ -253,36 +333,56 @@ impl ApiCacheBuilder {
     }
     /// <p>The cache instance type. Valid values are</p>
     /// <ul>
-    /// <li><p><code>SMALL</code></p></li>
-    /// <li><p><code>MEDIUM</code></p></li>
-    /// <li><p><code>LARGE</code></p></li>
-    /// <li><p><code>XLARGE</code></p></li>
-    /// <li><p><code>LARGE_2X</code></p></li>
-    /// <li><p><code>LARGE_4X</code></p></li>
-    /// <li><p><code>LARGE_8X</code> (not available in all regions)</p></li>
-    /// <li><p><code>LARGE_12X</code></p></li>
+    /// <li>
+    /// <p><code>SMALL</code></p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code></p></li>
+    /// <li>
+    /// <p><code>LARGE</code></p></li>
+    /// <li>
+    /// <p><code>XLARGE</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_2X</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_4X</code></p></li>
+    /// <li>
+    /// <p><code>LARGE_8X</code> (not available in all regions)</p></li>
+    /// <li>
+    /// <p><code>LARGE_12X</code></p></li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li><p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
-    /// <li><p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
-    /// <li><p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
-    /// <li><p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
-    /// <li><p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
-    /// <li><p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
-    /// <li><p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
+    /// <li>
+    /// <p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
+    /// <li>
+    /// <p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ApiCacheType> {
         &self.r#type
     }
     /// <p>The cache instance status.</p>
     /// <ul>
-    /// <li><p><b>AVAILABLE</b>: The instance is available for use.</p></li>
-    /// <li><p><b>CREATING</b>: The instance is currently creating.</p></li>
-    /// <li><p><b>DELETING</b>: The instance is currently deleting.</p></li>
-    /// <li><p><b>MODIFYING</b>: The instance is currently modifying.</p></li>
-    /// <li><p><b>FAILED</b>: The instance has failed creation.</p></li>
+    /// <li>
+    /// <p><b>AVAILABLE</b>: The instance is available for use.</p></li>
+    /// <li>
+    /// <p><b>CREATING</b>: The instance is currently creating.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b>: The instance is currently deleting.</p></li>
+    /// <li>
+    /// <p><b>MODIFYING</b>: The instance is currently modifying.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b>: The instance has failed creation.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ApiCacheStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -290,11 +390,16 @@ impl ApiCacheBuilder {
     }
     /// <p>The cache instance status.</p>
     /// <ul>
-    /// <li><p><b>AVAILABLE</b>: The instance is available for use.</p></li>
-    /// <li><p><b>CREATING</b>: The instance is currently creating.</p></li>
-    /// <li><p><b>DELETING</b>: The instance is currently deleting.</p></li>
-    /// <li><p><b>MODIFYING</b>: The instance is currently modifying.</p></li>
-    /// <li><p><b>FAILED</b>: The instance has failed creation.</p></li>
+    /// <li>
+    /// <p><b>AVAILABLE</b>: The instance is available for use.</p></li>
+    /// <li>
+    /// <p><b>CREATING</b>: The instance is currently creating.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b>: The instance is currently deleting.</p></li>
+    /// <li>
+    /// <p><b>MODIFYING</b>: The instance is currently modifying.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b>: The instance has failed creation.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApiCacheStatus>) -> Self {
         self.status = input;
@@ -302,11 +407,16 @@ impl ApiCacheBuilder {
     }
     /// <p>The cache instance status.</p>
     /// <ul>
-    /// <li><p><b>AVAILABLE</b>: The instance is available for use.</p></li>
-    /// <li><p><b>CREATING</b>: The instance is currently creating.</p></li>
-    /// <li><p><b>DELETING</b>: The instance is currently deleting.</p></li>
-    /// <li><p><b>MODIFYING</b>: The instance is currently modifying.</p></li>
-    /// <li><p><b>FAILED</b>: The instance has failed creation.</p></li>
+    /// <li>
+    /// <p><b>AVAILABLE</b>: The instance is available for use.</p></li>
+    /// <li>
+    /// <p><b>CREATING</b>: The instance is currently creating.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b>: The instance is currently deleting.</p></li>
+    /// <li>
+    /// <p><b>MODIFYING</b>: The instance is currently modifying.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b>: The instance has failed creation.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApiCacheStatus> {
         &self.status

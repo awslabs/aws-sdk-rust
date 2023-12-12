@@ -188,12 +188,18 @@ impl UpdateStackFluentBuilder {
     }
     /// <p>The stack's operating system, which must be set to one of the following:</p>
     /// <ul>
-    /// <li><p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
-    /// <li><p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
-    /// <li><p><code>CentOS Linux 7</code></p></li>
-    /// <li><p><code>Red Hat Enterprise Linux 7</code></p></li>
-    /// <li><p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p></li>
-    /// <li><p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p></li>
+    /// <li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
+    /// <li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
+    /// <li>
+    /// <p><code>CentOS Linux 7</code></p></li>
+    /// <li>
+    /// <p><code>Red Hat Enterprise Linux 7</code></p></li>
+    /// <li>
+    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p></li>
+    /// <li>
+    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p></li>
     /// </ul>
     /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
     pub fn default_os(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -202,12 +208,18 @@ impl UpdateStackFluentBuilder {
     }
     /// <p>The stack's operating system, which must be set to one of the following:</p>
     /// <ul>
-    /// <li><p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
-    /// <li><p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
-    /// <li><p><code>CentOS Linux 7</code></p></li>
-    /// <li><p><code>Red Hat Enterprise Linux 7</code></p></li>
-    /// <li><p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p></li>
-    /// <li><p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p></li>
+    /// <li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
+    /// <li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
+    /// <li>
+    /// <p><code>CentOS Linux 7</code></p></li>
+    /// <li>
+    /// <p><code>Red Hat Enterprise Linux 7</code></p></li>
+    /// <li>
+    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p></li>
+    /// <li>
+    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p></li>
     /// </ul>
     /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
     pub fn set_default_os(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -216,12 +228,18 @@ impl UpdateStackFluentBuilder {
     }
     /// <p>The stack's operating system, which must be set to one of the following:</p>
     /// <ul>
-    /// <li><p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
-    /// <li><p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
-    /// <li><p><code>CentOS Linux 7</code></p></li>
-    /// <li><p><code>Red Hat Enterprise Linux 7</code></p></li>
-    /// <li><p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p></li>
-    /// <li><p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p></li>
+    /// <li>
+    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p></li>
+    /// <li>
+    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p></li>
+    /// <li>
+    /// <p><code>CentOS Linux 7</code></p></li>
+    /// <li>
+    /// <p><code>Red Hat Enterprise Linux 7</code></p></li>
+    /// <li>
+    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p></li>
+    /// <li>
+    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p></li>
     /// </ul>
     /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
     pub fn get_default_os(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,17 +247,28 @@ impl UpdateStackFluentBuilder {
     }
     /// <p>The stack's new host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
-    /// <li><p><code>Baked_Goods</code></p></li>
-    /// <li><p><code>Clouds</code></p></li>
-    /// <li><p><code>Europe_Cities</code></p></li>
-    /// <li><p><code>Fruits</code></p></li>
-    /// <li><p><code>Greek_Deities_and_Titans</code></p></li>
-    /// <li><p><code>Legendary_creatures_from_Japan</code></p></li>
-    /// <li><p><code>Planets_and_Moons</code></p></li>
-    /// <li><p><code>Roman_Deities</code></p></li>
-    /// <li><p><code>Scottish_Islands</code></p></li>
-    /// <li><p><code>US_Cities</code></p></li>
-    /// <li><p><code>Wild_Cats</code></p></li>
+    /// <li>
+    /// <p><code>Baked_Goods</code></p></li>
+    /// <li>
+    /// <p><code>Clouds</code></p></li>
+    /// <li>
+    /// <p><code>Europe_Cities</code></p></li>
+    /// <li>
+    /// <p><code>Fruits</code></p></li>
+    /// <li>
+    /// <p><code>Greek_Deities_and_Titans</code></p></li>
+    /// <li>
+    /// <p><code>Legendary_creatures_from_Japan</code></p></li>
+    /// <li>
+    /// <p><code>Planets_and_Moons</code></p></li>
+    /// <li>
+    /// <p><code>Roman_Deities</code></p></li>
+    /// <li>
+    /// <p><code>Scottish_Islands</code></p></li>
+    /// <li>
+    /// <p><code>US_Cities</code></p></li>
+    /// <li>
+    /// <p><code>Wild_Cats</code></p></li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
     pub fn hostname_theme(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -248,17 +277,28 @@ impl UpdateStackFluentBuilder {
     }
     /// <p>The stack's new host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
-    /// <li><p><code>Baked_Goods</code></p></li>
-    /// <li><p><code>Clouds</code></p></li>
-    /// <li><p><code>Europe_Cities</code></p></li>
-    /// <li><p><code>Fruits</code></p></li>
-    /// <li><p><code>Greek_Deities_and_Titans</code></p></li>
-    /// <li><p><code>Legendary_creatures_from_Japan</code></p></li>
-    /// <li><p><code>Planets_and_Moons</code></p></li>
-    /// <li><p><code>Roman_Deities</code></p></li>
-    /// <li><p><code>Scottish_Islands</code></p></li>
-    /// <li><p><code>US_Cities</code></p></li>
-    /// <li><p><code>Wild_Cats</code></p></li>
+    /// <li>
+    /// <p><code>Baked_Goods</code></p></li>
+    /// <li>
+    /// <p><code>Clouds</code></p></li>
+    /// <li>
+    /// <p><code>Europe_Cities</code></p></li>
+    /// <li>
+    /// <p><code>Fruits</code></p></li>
+    /// <li>
+    /// <p><code>Greek_Deities_and_Titans</code></p></li>
+    /// <li>
+    /// <p><code>Legendary_creatures_from_Japan</code></p></li>
+    /// <li>
+    /// <p><code>Planets_and_Moons</code></p></li>
+    /// <li>
+    /// <p><code>Roman_Deities</code></p></li>
+    /// <li>
+    /// <p><code>Scottish_Islands</code></p></li>
+    /// <li>
+    /// <p><code>US_Cities</code></p></li>
+    /// <li>
+    /// <p><code>Wild_Cats</code></p></li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
     pub fn set_hostname_theme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -267,17 +307,28 @@ impl UpdateStackFluentBuilder {
     }
     /// <p>The stack's new host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
-    /// <li><p><code>Baked_Goods</code></p></li>
-    /// <li><p><code>Clouds</code></p></li>
-    /// <li><p><code>Europe_Cities</code></p></li>
-    /// <li><p><code>Fruits</code></p></li>
-    /// <li><p><code>Greek_Deities_and_Titans</code></p></li>
-    /// <li><p><code>Legendary_creatures_from_Japan</code></p></li>
-    /// <li><p><code>Planets_and_Moons</code></p></li>
-    /// <li><p><code>Roman_Deities</code></p></li>
-    /// <li><p><code>Scottish_Islands</code></p></li>
-    /// <li><p><code>US_Cities</code></p></li>
-    /// <li><p><code>Wild_Cats</code></p></li>
+    /// <li>
+    /// <p><code>Baked_Goods</code></p></li>
+    /// <li>
+    /// <p><code>Clouds</code></p></li>
+    /// <li>
+    /// <p><code>Europe_Cities</code></p></li>
+    /// <li>
+    /// <p><code>Fruits</code></p></li>
+    /// <li>
+    /// <p><code>Greek_Deities_and_Titans</code></p></li>
+    /// <li>
+    /// <p><code>Legendary_creatures_from_Japan</code></p></li>
+    /// <li>
+    /// <p><code>Planets_and_Moons</code></p></li>
+    /// <li>
+    /// <p><code>Roman_Deities</code></p></li>
+    /// <li>
+    /// <p><code>Scottish_Islands</code></p></li>
+    /// <li>
+    /// <p><code>US_Cities</code></p></li>
+    /// <li>
+    /// <p><code>Wild_Cats</code></p></li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
     pub fn get_hostname_theme(&self) -> &::std::option::Option<::std::string::String> {
@@ -418,8 +469,10 @@ impl UpdateStackFluentBuilder {
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
     /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to provide your own custom security groups instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has the following settings:</p>
     /// <ul>
-    /// <li><p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p></li>
-    /// <li><p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p></li>
+    /// <li>
+    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p></li>
+    /// <li>
+    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
@@ -429,8 +482,10 @@ impl UpdateStackFluentBuilder {
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
     /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to provide your own custom security groups instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has the following settings:</p>
     /// <ul>
-    /// <li><p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p></li>
-    /// <li><p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p></li>
+    /// <li>
+    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p></li>
+    /// <li>
+    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn set_use_opsworks_security_groups(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -440,8 +495,10 @@ impl UpdateStackFluentBuilder {
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
     /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to provide your own custom security groups instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has the following settings:</p>
     /// <ul>
-    /// <li><p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p></li>
-    /// <li><p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p></li>
+    /// <li>
+    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p></li>
+    /// <li>
+    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn get_use_opsworks_security_groups(&self) -> &::std::option::Option<bool> {
@@ -449,10 +506,12 @@ impl UpdateStackFluentBuilder {
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li><p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p></li>
-    /// <li><p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p></li>
+    /// <li>
+    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p></li>
+    /// <li>
+    /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p></li>
     /// </ul>
-    /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
+    /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p><note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -461,10 +520,12 @@ impl UpdateStackFluentBuilder {
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li><p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p></li>
-    /// <li><p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p></li>
+    /// <li>
+    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p></li>
+    /// <li>
+    /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p></li>
     /// </ul>
-    /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
+    /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p><note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -473,10 +534,12 @@ impl UpdateStackFluentBuilder {
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li><p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p></li>
-    /// <li><p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p></li>
+    /// <li>
+    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p></li>
+    /// <li>
+    /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p></li>
     /// </ul>
-    /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
+    /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p><note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {

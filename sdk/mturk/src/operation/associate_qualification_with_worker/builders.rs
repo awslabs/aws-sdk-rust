@@ -23,7 +23,7 @@ impl AssociateQualificationWithWorkerInputBuilder {
 /// Fluent builder constructing a request to `AssociateQualificationWithWorker`.
 ///
 /// <p>The <code>AssociateQualificationWithWorker</code> operation gives a Worker a Qualification. <code>AssociateQualificationWithWorker</code> does not require that the Worker submit a Qualification request. It gives the Qualification directly to the Worker.</p>
-/// <p>You can only assign a Qualification of a Qualification type that you created (using the <code>CreateQualificationType</code> operation).</p> <note>
+/// <p>You can only assign a Qualification of a Qualification type that you created (using the <code>CreateQualificationType</code> operation).</p><note>
 /// <p>Note: <code>AssociateQualificationWithWorker</code> does not affect any pending Qualification requests for the Qualification by the Worker. If you assign a Qualification to a Worker, then later grant a Qualification request made by the Worker, the granting of the request may modify the Qualification score. To resolve a pending Qualification request without affecting the Qualification the Worker already has, reject the request with the <code>RejectQualificationRequest</code> operation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

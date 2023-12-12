@@ -22,7 +22,7 @@ impl CreateHostInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateHost`.
 ///
-/// <p>Creates a resource that represents the infrastructure where a third-party provider is installed. The host is used when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You create one host for all connections to that provider.</p> <note>
+/// <p>Creates a resource that represents the infrastructure where a third-party provider is installed. The host is used when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You create one host for all connections to that provider.</p><note>
 /// <p>A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by setting up the host in the console.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

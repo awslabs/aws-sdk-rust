@@ -34,7 +34,7 @@ pub struct MongoDbSettings {
     pub auth_source: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
@@ -45,8 +45,10 @@ pub struct MongoDbSettings {
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
     /// <ul>
-    /// <li><p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
-    /// <li><p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
+    /// <li>
+    /// <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
+    /// <li>
+    /// <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
     /// </ul>
     pub replicate_shard_collections: ::std::option::Option<bool>,
 }
@@ -105,7 +107,7 @@ impl MongoDbSettings {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<&str> {
@@ -122,8 +124,10 @@ impl MongoDbSettings {
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
     /// <ul>
-    /// <li><p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
-    /// <li><p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
+    /// <li>
+    /// <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
+    /// <li>
+    /// <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
     /// </ul>
     pub fn replicate_shard_collections(&self) -> ::std::option::Option<bool> {
         self.replicate_shard_collections
@@ -366,21 +370,21 @@ impl MongoDbSettingsBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     pub fn secrets_manager_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_manager_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     pub fn set_secrets_manager_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secrets_manager_access_role_arn = input;
         self
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     pub fn get_secrets_manager_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -417,8 +421,10 @@ impl MongoDbSettingsBuilder {
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
     /// <ul>
-    /// <li><p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
-    /// <li><p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
+    /// <li>
+    /// <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
+    /// <li>
+    /// <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
     /// </ul>
     pub fn replicate_shard_collections(mut self, input: bool) -> Self {
         self.replicate_shard_collections = ::std::option::Option::Some(input);
@@ -427,8 +433,10 @@ impl MongoDbSettingsBuilder {
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
     /// <ul>
-    /// <li><p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
-    /// <li><p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
+    /// <li>
+    /// <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
+    /// <li>
+    /// <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
     /// </ul>
     pub fn set_replicate_shard_collections(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replicate_shard_collections = input;
@@ -437,8 +445,10 @@ impl MongoDbSettingsBuilder {
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
     /// <ul>
-    /// <li><p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
-    /// <li><p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
+    /// <li>
+    /// <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
+    /// <li>
+    /// <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
     /// </ul>
     pub fn get_replicate_shard_collections(&self) -> &::std::option::Option<bool> {
         &self.replicate_shard_collections
