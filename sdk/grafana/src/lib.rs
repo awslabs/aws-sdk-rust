@@ -28,7 +28,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
 //! aws-sdk-grafana = "1.5.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
