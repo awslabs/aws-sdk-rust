@@ -3,9 +3,9 @@
 # GA updates: https://github.com/awsdocs/aws-doc-sdk-examples/issues/4134
 ARG MSRV=1.62.1
 FROM rust:$MSRV
-COPY . /rustv1/
-WORKDIR /rustv1
+COPY . /rust_dev_preview/
+WORKDIR /rust_dev_preview
 RUN apt-get update && \
   apt-get install libclang-dev -y && \
-  cargo check --manifest-path /rustv1/Cargo.toml
+  cargo check --manifest-path /rust_dev_preview/Cargo.toml
 CMD ["bash"]

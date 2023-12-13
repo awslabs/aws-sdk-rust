@@ -70,6 +70,7 @@ once_cell = "1.15.0"
 rand = "0.8.5"
 wiremock = "0.5.15"
 aws-smithy-runtime= { version = "1.0.3", path = "../../../sdk/aws-smithy-runtime" }
+aws-smithy-http= { version = "0.60.0", path = "../../../sdk/aws-smithy-http" }
 
 [dev-dependencies.fake]
 version = "2.5.0"

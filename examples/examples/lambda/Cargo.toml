@@ -11,12 +11,12 @@ serde_json = "1.0.94"
 anyhow = "1.0.71"
 lambda_runtime = "0.8.0"
 serde = "1.0.164"
+aws-config= { version = "1.0.3", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-ec2= { version = "1.8.0", path = "../../../sdk/ec2" }
 aws-sdk-iam= { version = "1.6.0", path = "../../../sdk/iam" }
 aws-sdk-lambda= { version = "1.6.0", path = "../../../sdk/lambda" }
 aws-sdk-s3= { version = "1.7.0", path = "../../../sdk/s3" }
 aws-smithy-types= { version = "1.0.3", path = "../../../sdk/aws-smithy-types" }
-aws-config= { version = "1.0.3", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-types= { version = "1.0.3", path = "../../../sdk/aws-types" }
 
 [dependencies.clap]
